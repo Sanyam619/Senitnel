@@ -1,0 +1,9 @@
+{
+  "holds": [
+    {
+      "prefix": "10.1.1.0/24",
+      "peer": "peer_b",
+      "reason": "export_hold"
+    }
+  ]
+}

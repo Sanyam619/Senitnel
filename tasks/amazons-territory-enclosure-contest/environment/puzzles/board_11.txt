@@ -1,0 +1,8 @@
+board_id: 11
+to_move: white
+board:
+BXX.X
+.XXX.
+.XXX.
+X..XX
+X.X.W

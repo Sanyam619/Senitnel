@@ -1,0 +1,3 @@
+queue_directory = /var/spool/postfix-cinder-surface
+transport_maps = hash:/var/lib/postfix/surface/maps/nexthop.prefer
+myhostname = cinder.surface.local

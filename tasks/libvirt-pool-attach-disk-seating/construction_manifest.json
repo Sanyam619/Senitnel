@@ -1,0 +1,96 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/fold_g.sh",
+      "symbol": "fold_g",
+      "kind": "ops-helper",
+      "signature": "bash /app/ops/fold_g.sh",
+      "purpose": "Resolves the durable identity+path per roster pool from the cutover journal capped by the seal, and writes the per-pool seating plan the engine consumes."
+    },
+    {
+      "path": "ops/pref_k.sh",
+      "symbol": "pref_k",
+      "kind": "ops-helper",
+      "signature": "bash /app/ops/pref_k.sh",
+      "purpose": "Writes the selection drop-in the engine reads to prefer durable authority over drifted surface definitions."
+    },
+    {
+      "path": "ops/tidy_v.sh",
+      "symbol": "tidy_v",
+      "kind": "ops-helper",
+      "signature": "bash /app/ops/tidy_v.sh",
+      "purpose": "Clears torn .part/.lock lease markers left under /var/run/libvirt by the crash."
+    },
+    {
+      "path": "stage/seat_r.sh",
+      "symbol": "seat_r",
+      "kind": "ops-helper",
+      "signature": "bash /app/stage/seat_r.sh",
+      "purpose": "Brings each planned pool up (writes runtime state) at its durable target path."
+    },
+    {
+      "path": "stage/mark_c.sh",
+      "symbol": "mark_c",
+      "kind": "ops-helper",
+      "signature": "bash /app/stage/mark_c.sh",
+      "purpose": "Writes per-roster-disk cutover authorizations as key=value records under the durable identity."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/fold_g.sh",
+        "controls_tests": ["test_j4_slate_first_roster_disk_bound_to_durable_identity", "test_p8_quartz_superseded_generation_pool_uses_latest", "test_w2_onyx_naive_domain_edit_is_rematerialized"]
+      },
+      {
+        "id": "B",
+        "path": "ops/pref_k.sh",
+        "controls_tests": ["test_m6_verd_surface_selection_reverts_to_decoy", "test_r5_flint_all_disks_attached_with_durable_sources", "test_w2_onyx_naive_domain_edit_is_rematerialized"]
+      },
+      {
+        "id": "C",
+        "path": "ops/tidy_v.sh",
+        "controls_tests": ["test_t7_umber_torn_lease_markers_cleaned"]
+      },
+      {
+        "id": "D",
+        "path": "stage/seat_r.sh",
+        "controls_tests": ["test_k9_marl_every_pool_active", "test_r5_flint_all_disks_attached_with_durable_sources"]
+      },
+      {
+        "id": "E",
+        "path": "stage/mark_c.sh",
+        "controls_tests": ["test_c3_ochre_receipts_are_key_value_not_json", "test_r5_flint_all_disks_attached_with_durable_sources"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "tools/virthealth",
+      "kind": "helper",
+      "rhymes_with": "run_pool_attach",
+      "non_fix_purpose": "Surface health probe; prints a healthy status line from definition-file presence while seating and attach_ok remain wrong."
+    },
+    {
+      "path": "etc/libvirt/storage/pool_alpha.xml",
+      "kind": "config",
+      "rhymes_with": "cutover.journal",
+      "non_fix_purpose": "Surface pool definition carrying a decoy identity that the broken resolver copies in place of the durable journal identity."
+    },
+    {
+      "path": "var/lib/libvirt/ops/cutover.journal",
+      "kind": "fixture",
+      "rhymes_with": "attach.seal",
+      "non_fix_purpose": "Holds beyond-seal and off-roster generations that must be discarded rather than materialized."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "pool", "disk", "domain", "uuid", "receipt", "attach", "authority", "seating",
+    "source", "volume", "durable", "surface", "active", "journal", "seal", "roster",
+    "health", "cutover", "storage", "attached", "state", "path", "schema", "decoy",
+    "identity", "libvirt", "target", "definition", "report"
+  ]
+}

@@ -1,0 +1,23 @@
+--- a/cmd/packctl/main.go
++++ b/cmd/packctl/main.go
+@@ -48,9 +48,18 @@
+ 	}
+ 	var ids []string
+ 	for _, e := range entries {
+-		if e.IsDir() {
+-			ids = append(ids, e.Name())
++		if !e.IsDir() {
++			continue
+ 		}
++		name := e.Name()
++		base := filepath.Join(root, name)
++		if _, err := os.Stat(filepath.Join(base, "index.json")); err != nil {
++			continue
++		}
++		if _, err := os.Stat(filepath.Join(base, "wire.json")); err != nil {
++			continue
++		}
++		ids = append(ids, name)
+ 	}
+ 	sort.Strings(ids)
+ 	return ids, nil

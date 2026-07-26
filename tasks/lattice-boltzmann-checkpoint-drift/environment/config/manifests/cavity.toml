@@ -1,0 +1,3 @@
+# Run manifest for lid-driven cavity
+omega = 1.0
+fold_pref = "spatial"

@@ -1,0 +1,5 @@
+# Scratch session D - two ways a try can fail
+$ java -jar /app/bin/judge.jar probe --board scratch_a.txt --move "W-G1>-1,1"
+{"move":"W-G1>-1,1","legal":false,"reason":"illegal_move"}
+$ java -jar /app/bin/judge.jar probe --board scratch_a.txt --move "W-Q1>-1,1"
+{"move":"W-Q1>-1,1","legal":false,"reason":"unknown_piece"}

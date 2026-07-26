@@ -1,0 +1,29 @@
+# Cross-toolchain build matrix after profile cutover.
+# Each target declares its build profile, feature set, and optional release mode.
+
+[[cells]]
+id = "alpha"
+profile = "ship"
+features = ["facet_x"]
+
+[[cells]]
+id = "beta"
+profile = "fleet"
+features = ["facet_x", "facet_y"]
+
+[[cells]]
+id = "gamma"
+profile = "fleet"
+features = ["facet_y"]
+release = true
+
+[[cells]]
+id = "delta"
+profile = "fleet"
+features = ["facet_y"]
+
+[[cells]]
+id = "epsilon"
+profile = "ship"
+features = ["facet_x", "facet_y"]
+release = true

@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+"""File-backed nft shim for unprivileged seating drills."""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+KERNEL = Path("/var/lib/nft/ops/kernel.nft")
+
+
+def _read() -> str:
+    if not KERNEL.exists():
+        return ""
+    return KERNEL.read_text()
+
+
+def _write(text: str) -> None:
+    KERNEL.parent.mkdir(parents=True, exist_ok=True)
+    KERNEL.write_text(text)
+
+
+def main(argv: list[str]) -> int:
+    if len(argv) >= 2 and argv[1] == "flush" and len(argv) >= 3 and argv[2] == "ruleset":
+        _write("")
+        return 0
+    if len(argv) >= 2 and argv[1] == "list" and len(argv) >= 3 and argv[2] == "ruleset":
+        sys.stdout.write(_read())
+        if _read() and not _read().endswith("\n"):
+            sys.stdout.write("\n")
+        return 0
+    if len(argv) >= 3 and argv[1] == "-f":
+        src = Path(argv[2])
+        body = src.read_text() if src.is_file() else ""
+        # Additive append when NFT_APPEND=1 (broken apply path sets this).
+        if (Path("/var/lib/nft/state/append.flag").exists()
+                or __import__("os").environ.get("NFT_APPEND") == "1"):
+            cur = _read()
+            if cur and not cur.endswith("\n"):
+                cur += "\n"
+            _write(cur + body)
+        else:
+            _write(body)
+        return 0
+    sys.stderr.write("nft: unsupported invocation\n")
+    return 2
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(sys.argv))

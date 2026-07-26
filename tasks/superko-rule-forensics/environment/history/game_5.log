@@ -1,0 +1,20 @@
+# game_5.log — 9x9 board, empty start
+# recorded 2025-03-12; five-game exhibition, game 3 of 5
+# format: <ply>  <color> <coord|pass>  <verdict>  [reason]  [# note]
+
+001  black 7,5    accepted
+002  white 7,4    accepted
+003  black 6,6    accepted
+004  white 6,3    accepted
+005  black 5,5    accepted
+006  white 5,4    accepted
+007  black 1,1    accepted  # distant tempo move
+008  white 6,5    accepted  # white plays into the pocket, one liberty at 6,4
+009  black 6,4    accepted  # captures white 6,5 stone
+010  white 6,5    rejected   superko:recreates_board_from_ply_008
+011  white 3,3    accepted  # ko surrendered; extends elsewhere
+012  black 3,4    accepted
+013  white 4,3    accepted
+014  black 2,2    accepted
+015  white pass   accepted
+016  black pass   accepted

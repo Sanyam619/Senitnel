@@ -1,0 +1,33 @@
+user_visible_outputs = [
+  "/output/vrrp-seat.json",
+  "/etc/keepalived/",
+  "/etc/keepalived/runtime/advert.map",
+  "/var/lib/keepalived/ops/",
+  "/app/ops/run_vrrp_seat.sh",
+  "/app/publisher/vrrpseat",
+  "/app/docs/",
+  "/app/data/vrrp/",
+]
+
+internal_harness_files = [
+  "/app/packaging/vrrp.sha256",
+]
+
+[structured_outputs.vrrp_seat]
+target = "/output/vrrp-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "instances",
+  "transitions",
+  "seat_ok",
+  "name",
+  "vrid",
+  "state",
+  "priority",
+  "vip",
+  "generation",
+  "epoch",
+  "from",
+  "to",
+]

@@ -1,0 +1,7 @@
+[package]
+name = "n6"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+k2 = { path = "../k2" }

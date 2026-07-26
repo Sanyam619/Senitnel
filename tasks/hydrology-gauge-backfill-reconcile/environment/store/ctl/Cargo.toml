@@ -1,0 +1,21 @@
+[package]
+name = "ctl"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "ctl"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+clap.workspace = true
+hex.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+toml.workspace = true
+store = { path = ".." }
+manifest = { path = "../manifest" }
+wal = { path = "../wal" }
+index = { path = "../index" }
+ops = { path = "../ops" }

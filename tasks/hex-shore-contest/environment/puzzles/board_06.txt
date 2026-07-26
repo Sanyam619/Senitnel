@@ -1,0 +1,9 @@
+round_id: 6
+to_move: black
+link_goal: top_bottom
+board:
+BB..W
+..WBW
+WB.WW
+B..WB
+.BW.B

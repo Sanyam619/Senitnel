@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Coarse surface probe — not deep evaluation.
+set -euo pipefail
+python3 /app/tools/probe_calc.py "$@"

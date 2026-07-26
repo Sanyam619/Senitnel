@@ -1,0 +1,28 @@
+{
+  "symbol_table": [
+    {"path": "rim/fold_k.sh", "symbol": "fold_k", "kind": "function"},
+    {"path": "ops/pin_m.sh", "symbol": "pin_m", "kind": "function"},
+    {"path": "bag/swap_r.sh", "symbol": "swap_r", "kind": "function"},
+    {"path": "ops/echo_t.sh", "symbol": "echo_t", "kind": "function"},
+    {"path": "ops/helm_w.sh", "symbol": "helm_w", "kind": "function"},
+    {"path": "deck/card_w.sh", "symbol": "card_w", "kind": "function"}
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {"id": "A", "path": "rim/fold_k.sh", "controls_tests": ["test_j2_onyx", "test_p9_jade", "test_u2_mica", "test_w7_quartz"]},
+      {"id": "B", "path": "ops/pin_m.sh", "controls_tests": ["test_v5_coral", "test_u2_mica", "test_m1_opal"]},
+      {"id": "C", "path": "bag/swap_r.sh", "controls_tests": ["test_r6_slate", "test_h8_amber", "test_t4_pearl"]},
+      {"id": "D", "path": "ops/helm_w.sh", "controls_tests": ["test_c1_flint", "test_j2_onyx", "test_h8_amber"]},
+      {"id": "E", "path": "deck/card_w.sh", "controls_tests": ["test_q3_topaz", "test_n4_beryl", "test_m1_opal", "test_u2_mica"]},
+      {"id": "F", "path": "ops/echo_t.sh", "controls_tests": ["test_h8_amber", "test_n4_beryl"]}
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {"path": "wire/knit_p.sh", "rhymes_with": "fold_k"},
+    {"path": "rim/scan_m.sh", "rhymes_with": "pin_m"},
+    {"path": "bag/note_t.sh", "rhymes_with": "swap_r"}
+  ],
+  "code_forbidden_tokens": ["packet", "filter", "desk", "ruleset", "fragment", "fold", "abort", "prefer", "surface", "decoy", "generation", "cutover", "nft", "tables", "chains", "policy", "hook", "priority", "seat_ok", "fwhealth"]
+}

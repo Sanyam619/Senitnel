@@ -482,7 +482,7 @@ def add_manual_checklist(report: Report, task_name: str) -> None:
     items = [
         (
             "instruction.md quality (concise, no hints/answers, absolute paths)",
-            "Review prose; optional: harbor tasks check … -m openai/gpt-5.2",
+            "Review prose; optional: harbor tasks check … -m openai/gpt-5.6",
         ),
         (
             "Tests cover every explicit and critical implicit requirement",
@@ -490,7 +490,7 @@ def add_manual_checklist(report: Report, task_name: str) -> None:
         ),
         (
             "Difficulty: frontier pass rate < 80% (worst model)",
-            "harbor run -a terminus-2 -m openai/@openai/gpt-5.2 -p tasks/"
+            "harbor run -a terminus-2 -m openai/@openai/gpt-5.6 -p tasks/"
             + task_name
             + "  (and Claude); calibrate difficulty in task.toml",
         ),
@@ -505,7 +505,7 @@ def add_manual_checklist(report: Report, task_name: str) -> None:
         ),
         (
             "LLMaJ checks (behavior_in_task_description, anti_cheating, …)",
-            "harbor tasks check tasks/" + task_name + " -m openai/gpt-5.2",
+            "harbor tasks check tasks/" + task_name + " -m openai/gpt-5.6",
         ),
         (
             "Preflight + packaging approval",

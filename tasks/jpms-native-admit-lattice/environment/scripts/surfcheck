@@ -1,0 +1,15 @@
+#!/bin/bash
+# Surface probe — leaf token digest only; not host admit authority.
+set -euo pipefail
+TOKEN_DIR=/app/data/token
+for f in "$TOKEN_DIR"/*.tok; do
+  [ -f "$f" ] || continue
+  id=$(basename "$f" .tok)
+  # FNV-ish via cksum as portable stand-in when JNI skim unavailable in shell.
+  dig=$(cksum "$f" | awk '{print $1}')
+  if [ -n "$dig" ]; then
+    echo "$id OK"
+  else
+    echo "$id FAIL"
+  fi
+done

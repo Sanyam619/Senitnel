@@ -1,0 +1,10 @@
+[window]
+floor = 2
+
+[lane]
+ns = "broker"
+kind = "filesystem"
+
+[anchor]
+ns = "host"
+kind = "inode"

@@ -1,0 +1,7 @@
+Winter cutover checklist (partial)
+[ ] active runner linked from /opt/ramp/bin/rampd
+[ ] wrapper sources only the live ramp.conf fragment
+[ ] WorkingDirectory resolves site.toml
+[ ] reports land under /data/out/<shift>/
+[ ] fixture archive pointer retired
+[ ] health probe not treated as cutover complete

@@ -1,0 +1,4 @@
+# Optional per-utterance hypothesis trace. Off for published passes.
+[trace]
+stream = "off"
+width = 4

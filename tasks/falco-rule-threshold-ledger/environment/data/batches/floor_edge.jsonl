@@ -1,0 +1,1 @@
+{"seq":1,"ts":9000,"syscall":"clone","container_id":"prod-edge-1","pid":900,"labels":{"app":"edge","env":"prod"}}

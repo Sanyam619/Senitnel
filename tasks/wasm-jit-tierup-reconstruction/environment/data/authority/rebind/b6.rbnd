@@ -1,0 +1,10 @@
+id=b6
+recorded=0
+old_type=i32
+new_type=i32
+old_arity=2
+new_arity=2
+old_bounds=768
+new_bounds=768
+old_table=0
+new_table=0

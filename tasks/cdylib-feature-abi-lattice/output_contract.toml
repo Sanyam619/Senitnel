@@ -1,0 +1,21 @@
+user_visible_outputs = [
+  "/output/abi-matrix.json",
+  "/app/bin/abi_probe",
+  "/app/ops/matrix.toml",
+]
+
+internal_harness_files = [
+  "/app/q3/build.rs",
+  "/app/q3/src/exports.rs",
+  "/app/q5/build.rs",
+  "/app/q5/src/exports.rs",
+  "/app/k9/src/meta.rs",
+  "/app/hosts/",
+]
+
+[structured_outputs.abi_matrix]
+target = "/output/abi-matrix.json"
+format = "json"
+instruction_checks = [
+  "status",
+]

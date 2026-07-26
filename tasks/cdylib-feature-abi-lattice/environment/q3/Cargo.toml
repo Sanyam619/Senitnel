@@ -1,0 +1,21 @@
+[package]
+name = "q3"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+name = "nuclide"
+crate-type = ["cdylib", "rlib"]
+path = "src/lib.rs"
+
+[features]
+default = ["trunk"]
+trunk = []
+facet_a = ["dep:n6"]
+facet_b = ["dep:n7"]
+facet_c = ["dep:n7"]
+
+[dependencies]
+k2 = { path = "../k2" }
+n6 = { path = "../n6", optional = true }
+n7 = { path = "../n7", optional = true }

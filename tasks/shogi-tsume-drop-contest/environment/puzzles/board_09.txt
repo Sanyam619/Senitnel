@@ -1,0 +1,4 @@
+# Round 09 — edge bishop and pawn reserve
+sfen: 9/8B/8k/9/9/9/9/9/9
+hand: b:LP
+side: b

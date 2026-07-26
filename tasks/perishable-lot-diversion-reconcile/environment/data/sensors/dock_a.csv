@@ -1,0 +1,4 @@
+seq,lot,zone,reading,status
+690,CEDAR-31,A,4,clear
+704,GLEN-17,A,5,clear
+713,NOVA-22,B,9,hold

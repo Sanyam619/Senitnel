@@ -1,0 +1,13 @@
+board_id: 06
+quilt: 5x4
+blocked: r1c3,r2c2,r2c3
+time_track: 10
+income: 3,6,9
+floor: 2
+red_start: 6
+blue_start: 6
+market:
+P1 2 3 1 : XX/X.
+P2 4 2 2 : .XX/XX.
+P3 2 0 3 : XXX
+P4 4 2 2 : X

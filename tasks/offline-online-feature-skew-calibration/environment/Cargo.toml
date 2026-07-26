@@ -1,0 +1,6 @@
+[workspace]
+members = ["core", "sx", "emit"]
+resolver = "2"
+
+[profile.release]
+debug = false

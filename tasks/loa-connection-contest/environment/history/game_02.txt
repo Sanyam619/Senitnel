@@ -1,0 +1,7 @@
+# Scratch session B - White answers, and a capture changes the count
+$ java -jar /app/bin/judge.jar view --board board.txt
+{"round_id": 94, "size": 5, "to_move": "black", "black_connected": false, "white_connected": false, "black_components": 3, "white_components": 2, "board": "....B/..W../.B.../...../W...B"}
+$ java -jar /app/bin/judge.jar validate --board board.txt --moves "black e1-e3;white a5-c5;black b3-d3"
+{"all_legal": true, "black_connected": false, "white_connected": false, "black_components": 2, "white_components": 2, "final_board": "...../..W../...BB/...../..W.B", "steps": [{"ply": 0, "ok": true, "side": "black", "move": "e1-e3", "black_connected": false, "white_connected": false, "black_components": 3, "white_components": 2}, {"ply": 1, "ok": true, "side": "white", "move": "a5-c5", "black_connected": false, "white_connected": false, "black_components": 3, "white_components": 2}, {"ply": 2, "ok": true, "side": "black", "move": "b3-d3", "black_connected": false, "white_connected": false, "black_components": 2, "white_components": 2}]}
+$ java -jar /app/bin/judge.jar probe --board board.txt --side white --move a5-c5
+{"legal": true, "connects": false, "black_connected": false, "white_connected": false, "black_components": 3, "white_components": 2, "board": "....B/..W../.B.../...../..W.B"}

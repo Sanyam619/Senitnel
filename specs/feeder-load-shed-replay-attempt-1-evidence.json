@@ -1,0 +1,382 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Solver must learn from runtime probes and dual-language sources that load MW updates and topology edge dumps can look correct while the availability bitmap remains keyed to a stale topology generation \u2014 none of that coupling is stated in instruction.md."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Correctness spans a Rust ledger apply/cursor path, a Go adjacency cascade into the availability bitmap, and a Go probe seal that must consume the post-invalidation view; no single crate or package owns the full contract."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Instruction reports stale circuit availability after replay with matching load totals and intact topology dumps \u2014 symptoms only, without naming generation pins, cascade walks, or probe fast-path selection."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Advancing the ledger cursor before publishing invalidation makes a second replay a no-op; cascading only the feeder node leaves child circuits green; using the MW-threshold probe path passes shallow totals but fails cascade and idempotence tests."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "Residual work is distribution-ops coordination of shed cascade vs load accounting across Rust and Go artifacts with a misleading green probe path \u2014 not a textbook JSON schema, HMAC, or single-language CRUD recipe."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "disclosure_collapse",
+      "name": "Disclosure-collapse",
+      "verdict": "PASS",
+      "reasoning": "An honest symptoms-only brief does not name generation-pin invalidation, feeder-to-circuit cascade, or probe seal ordering; disclosing those collapses the task to a three-step recipe."
+    },
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "Difficulty is cross-subsystem coordination on a fixed multi-feeder fixture, not hunting one corrupt file among many interchangeable records."
+    },
+    {
+      "id": "single_artifact_repair",
+      "name": "Single-artifact repair",
+      "verdict": "PASS",
+      "reasoning": "Passing requires coordinated Rust apply/barrier, Go cascade materialization, and Go probe seal; editing one artifact alone cannot satisfy the verifier suite."
+    },
+    {
+      "id": "generalization",
+      "name": "Generalization",
+      "verdict": "PASS",
+      "reasoning": "Tests cover multiple feeders and cascade depths with computed availability and MW expectations, not a single magic circuit id hardcoded in the prompt."
+    },
+    {
+      "id": "prompt_honesty",
+      "name": "Prompt-honesty",
+      "verdict": "PASS",
+      "reasoning": "Symptoms name observable probe disagreement without revealing which language owns the stale view or the required rebuild order."
+    },
+    {
+      "id": "cheating_vs_difficulty",
+      "name": "Cheating-vs-difficulty",
+      "verdict": "PASS",
+      "reasoning": "Anti-cheating is deterministic probe outputs and report schema checks; legitimate difficulty remains in discovering the dual-language coupling."
+    },
+    {
+      "id": "mechanical_fix_filter",
+      "name": "Mechanical-fix filter",
+      "verdict": "PASS",
+      "reasoning": "Core challenge is not verifier deps or timeouts but ledger/topology/availability coordination."
+    },
+    {
+      "id": "localized_fix",
+      "name": "Localized-fix",
+      "verdict": "PASS",
+      "reasoning": "Fix locus spans ledger crate, topo cascade package, and probe seal across Rust and Go roots; no one function holds the full answer."
+    },
+    {
+      "id": "oracle_locality",
+      "name": "Oracle-locality",
+      "verdict": "PASS",
+      "reasoning": "Oracle patches three distinct locations plus rebuild/replay orchestration, not a wholesale replace of one helper."
+    },
+    {
+      "id": "small_declarative_cluster",
+      "name": "Small declarative-cluster",
+      "verdict": "PASS",
+      "reasoning": "Solve is not a one-knob config edit; it requires inferring generation pinning and cascade semantics from code and fixtures."
+    },
+    {
+      "id": "grep_collapse",
+      "name": "Grep-collapse",
+      "verdict": "PASS",
+      "reasoning": "Instruction nouns (feeder, shed, availability, replay, topology, ledger, probe) are banned from fix-path symbols; symbols use opaque ids fold_q7, walk_r4, seal_n2."
+    },
+    {
+      "id": "pre_factored_helper",
+      "name": "Pre-factored-helper",
+      "verdict": "PASS",
+      "reasoning": "No helper is named rebuild_availability or fix_shed; decoys rhyme structurally with fix symbols but implement MW-threshold or length-only paths."
+    },
+    {
+      "id": "recipe_discount",
+      "name": "Recipe-discount",
+      "verdict": "PASS",
+      "reasoning": "Not a standard cache-invalidate recipe alone \u2014 cascade depth, generation pin, and commit barrier interact under multi-feeder fixtures."
+    },
+    {
+      "id": "security_aura_discount",
+      "name": "Security-aura discount",
+      "verdict": "PASS",
+      "reasoning": "No security framing; hardness is ops state coordination."
+    },
+    {
+      "id": "orthogonal_checklist",
+      "name": "Orthogonal-checklist",
+      "verdict": "PASS",
+      "reasoning": "Requirements trade off: cursor-before-invalidate breaks second pass; cascade-without-pin leaves probe on stale gen; pin-without-cascade leaves child circuits green."
+    },
+    {
+      "id": "harness_discount",
+      "name": "Harness-discount",
+      "verdict": "PASS",
+      "reasoning": "Single-container dual-language build is realism; hardness is the coupling, not Docker."
+    },
+    {
+      "id": "one_pass_solvability",
+      "name": "One-pass solvability",
+      "verdict": "PASS",
+      "reasoning": "Opening the obvious replay CLI is insufficient; agent must correlate Rust cursor writes, Go bitmap keys, and probe fast-path selection across languages."
+    },
+    {
+      "id": "hard_only_gate",
+      "name": "Hard-only gate",
+      "verdict": "PASS",
+      "reasoning": "Clearly hard: dual-language discovery, three-location coordination, misleading green MW path, and idempotent second-pass constraint."
+    },
+    {
+      "id": "discovery_budget_test",
+      "name": "Discovery budget test",
+      "verdict": "PASS",
+      "reasoning": "Four non-trivial discoveries committed below, each with planned location and non-disclosure rationale."
+    },
+    {
+      "id": "instruction_specificity_test",
+      "name": "Instruction specificity test",
+      "verdict": "PASS",
+      "reasoning": "Instruction stays symptoms-only: stale availability after replay with matching totals and intact dumps."
+    },
+    {
+      "id": "topology_distribution_test",
+      "name": "Topology distribution test",
+      "verdict": "PASS",
+      "reasoning": "Three distinct fix topologies enumerated, each with \u22653 coordinating locations and no single-location sufficiency."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "Deterministic topology and load-state probes plus JSON report fields yield stable programmatic checks."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Two readers get the same verifier: probes must show shed circuits unavailable, MW totals aligned, report schema valid, second replay idempotent."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "Expert ops/systems engineer can recover generation-pin and cascade coupling in a few hours; oracle under 100k LOC."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "Requires professional cross-language state-machine reasoning under a false-green MW path; not undergrad CRUD."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Real distribution-ops failure mode: shed accounting updates while availability views stay stale."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Tests grade probe outcomes and report contents, not which editor or language the agent preferred."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Instruction.md alone cannot supply the generation-pin rule, cascade depth semantics, or that the MW-threshold probe path is unsafe; the agent must read Rust/Go sources and run probes."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "Availability bitmap entries are keyed by topology generation; replay updates load-state and advances the ledger cursor but leaves the generation pin unchanged, so the Go inspector keeps serving pre-shed bits.",
+      "planned_location": "environment/ledger/src/apply.rs (fold_q7) and environment/data/state/gen_pin.json",
+      "why_instruction_must_not_reveal": "Naming the generation pin tells the agent to bump one integer and skip cascade/probe reasoning."
+    },
+    {
+      "discovery": "Feeder-level shed must cascade through adjacency to descendant circuits; writing only the feeder node into the bitmap leaves circuit-level probes green while feeder MW totals look correct.",
+      "planned_location": "environment/topo/internal/walk/walk_r4.go and fixture adjacency under environment/data/topo/",
+      "why_instruction_must_not_reveal": "Stating 'walk children' collapses the hard coupling into a single graph recipe."
+    },
+    {
+      "discovery": "The Go probe exposes an MW-threshold fast path that ignores the bitmap; using it can pass shallow load-total checks but fails multi-circuit cascade and second-pass idempotence.",
+      "planned_location": "environment/topo/cmd/topoprobe/main.go and environment/topo/internal/seal/seal_n2.go",
+      "why_instruction_must_not_reveal": "Warning agents off the fast path removes the primary false-confidence trap."
+    },
+    {
+      "discovery": "Invalidation must be published before the ledger cursor advances; otherwise a second replay is a no-op that never rebuilds availability.",
+      "planned_location": "environment/ledger/src/apply.rs barrier ordering relative to environment/topo/internal/seal/seal_n2.go",
+      "why_instruction_must_not_reveal": "Revealing cursor-after-invalidate ordering turns the task into a transcribed sequence."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Brief describes stale availability after replay with matching load totals and intact topology dumps, without naming faulty functions, generation pins, cascade walks, or recovery order."
+  },
+  "attack_path": {
+    "summary": "Agent trusts MW totals and topology dumps, patches only the Rust apply path or only flips feeder bits, or uses the probe MW fast path.",
+    "reasoning": "Each shortcut looks like progress (totals green, edges present) until cascade, report, or second-pass tests fail."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Coordinate fold_q7 invalidation+cursor barrier, walk_r4 adjacency cascade into the bitmap, and seal_n2 probe consumption of the post-invalidation view \u2014 three module roots across Rust and Go.",
+    "reasoning": "Cannot reduce to one sed or one-language helper; each location gates a distinct test subset under the flipping-point contract."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "After honest symptoms, residual work requires discovering generation pinning, cascade depth, and probe seal selection across dual-language packages with intentional decoy paths.",
+    "residual_hardness": "False-green MW totals plus intact edge dumps force the agent to derive why availability stays stale and how invalidation, cascade, and seal must order.",
+    "red_flags": [
+      "recipe_discount: cache invalidation is a known pattern \u2014 mitigated by cascade depth coupling, dual-language pin, and MW fast-path decoy"
+    ]
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "distribution",
+      "control",
+      "lab",
+      "Rust",
+      "event",
+      "ledger",
+      "Go",
+      "topology",
+      "inspector",
+      "operators",
+      "replay",
+      "feeder",
+      "shed",
+      "events",
+      "live",
+      "load-state",
+      "store",
+      "load",
+      "totals",
+      "journal",
+      "dumps",
+      "edges",
+      "circuit",
+      "availability",
+      "probes",
+      "circuits",
+      "available",
+      "consistent",
+      "deterministic",
+      "reconcile-report",
+      "fields",
+      "schema",
+      "flag",
+      "bin",
+      "output",
+      "report"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "apply_shed_batch",
+        "renamed_to": "fold_q7",
+        "reason": "Original embedded shed/apply semantics matching instruction nouns."
+      },
+      {
+        "original": "cascade_availability",
+        "renamed_to": "walk_r4",
+        "reason": "Avoided availability and implied shed-cascade telegraph."
+      },
+      {
+        "original": "probe_report",
+        "renamed_to": "seal_n2",
+        "reason": "Avoided probes/report nouns from instruction."
+      },
+      {
+        "original": "test_circuit_unavailable",
+        "renamed_to": "test_k2_slot_bundle",
+        "reason": "Test name contained instruction noun circuit."
+      },
+      {
+        "original": "test_load_totals",
+        "renamed_to": "test_m8_qty_align",
+        "reason": "Test name contained instruction noun load."
+      },
+      {
+        "original": "test_topology_edges",
+        "renamed_to": "test_p3_link_stable",
+        "reason": "Test name contained topology/edges nouns."
+      },
+      {
+        "original": "test_feeder_cascade",
+        "renamed_to": "test_q1_fan_pair",
+        "reason": "Test name contained feeder noun."
+      },
+      {
+        "original": "test_report_schema",
+        "renamed_to": "test_r6_out_shape",
+        "reason": "Test name contained report/schema nouns."
+      },
+      {
+        "original": "test_replay_idempotent",
+        "renamed_to": "test_t4_twice_ok",
+        "reason": "Test name contained replay noun."
+      }
+    ],
+    "test_names_audited": [
+      "test_k2_slot_bundle",
+      "test_m8_qty_align",
+      "test_p3_link_stable",
+      "test_q1_fan_pair",
+      "test_r6_out_shape",
+      "test_t4_twice_ok"
+    ],
+    "concentration_math": {
+      "total_tests": 6,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    },
+    "recomputed_concentration": {
+      "total_tests": 6,
+      "concentration_cap": 0.5,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    }
+  }
+}

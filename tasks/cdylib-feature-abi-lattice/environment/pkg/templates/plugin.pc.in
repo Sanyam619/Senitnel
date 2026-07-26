@@ -1,0 +1,9 @@
+prefix=@PREFIX@
+libdir=${prefix}/pkg/lib
+includedir=${prefix}/pkg/include
+
+Name: nuclide
+Description: Nuclide plugin ABI
+Version: @VERSION@
+Libs: -L${libdir} -lnuclide
+Cflags: -I${includedir}

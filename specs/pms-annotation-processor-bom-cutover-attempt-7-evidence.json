@@ -1,0 +1,19 @@
+{
+  "note": "Platform rubric mismatch feedback: replace Maven/layerctl rubric with mesh-attestation rubric. Task complexity unchanged.",
+  "rubric_path": "specs/pms-annotation-processor-bom-cutover-rubric.txt",
+  "grades": [
+    "/output/mesh-attestation.json",
+    "/output/reject-ledger.json",
+    "keyed WAL integrity",
+    "replay/revocation reject-ledger",
+    "suspended co-presence",
+    "rebuild/stability",
+    "fixture preservation"
+  ],
+  "does_not_grade": [
+    "/app/link/module-notes.toml",
+    "/app/bin/layerctl",
+    "/output/layer-report.json",
+    "Maven/APT/JPMS"
+  ]
+}

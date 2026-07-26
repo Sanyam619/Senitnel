@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+"""Movement audit probe CLI."""
+
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+sys.path.insert(0, "/app/ops/scripts")
+import yard_lib  # noqa: E402
+
+
+def main() -> None:
+    if len(sys.argv) < 2:
+        raise SystemExit("usage: lane probe|emit")
+    cmd = sys.argv[1]
+    if cmd == "probe":
+        print(yard_lib.resolve_seq())
+        return
+    if cmd == "emit":
+        if "--out" not in sys.argv:
+            raise SystemExit("emit requires --out")
+        out = Path(sys.argv[sys.argv.index("--out") + 1])
+        seq = yard_lib.resolve_seq()
+        rows = yard_lib.load_events()
+        allow_pulls = yard_lib.replay_gate() == 0
+        tracks = yard_lib.consist_at(rows, seq, allow_pulls=allow_pulls)
+        payload = {
+            "replay_seq": seq,
+            "tracks": tracks,
+            "audit_digest": yard_lib.audit_digest(tracks),
+        }
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(json.dumps(payload, indent=2) + "\n")
+        return
+    raise SystemExit(f"unknown subcommand {cmd!r}")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,122 @@
+{
+  "symbol_table": [
+    {
+      "path": "flux/Q7.java",
+      "symbol": "Q7",
+      "kind": "class",
+      "signature": "public final class Q7",
+      "purpose": "Wire-authority preference constants consumed by flux.OpA."
+    },
+    {
+      "path": "nest/M3.java",
+      "symbol": "M3",
+      "kind": "class",
+      "signature": "public final class M3",
+      "purpose": "Hold-authority preference constants consumed by nest.OpB."
+    },
+    {
+      "path": "forge/P9.java",
+      "symbol": "P9",
+      "kind": "class",
+      "signature": "public final class P9",
+      "purpose": "Stamp-authority preference constants consumed by forge.OpC."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "flux/Q7.java",
+        "controls_tests": ["test_w4_cobal", "test_n7_quartz", "test_g3_obsidian"]
+      },
+      {
+        "id": "B",
+        "path": "nest/M3.java",
+        "controls_tests": ["test_h2_jade", "test_v9_felsic", "test_g3_obsidian"]
+      },
+      {
+        "id": "C",
+        "path": "forge/P9.java",
+        "controls_tests": ["test_s5_basalt", "test_m1_rhyolite", "test_k8_pyrite", "test_g3_obsidian"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "flux/LabelPick.java",
+      "kind": "helper",
+      "rhymes_with": "Q7",
+      "non_fix_purpose": "Binds first object-row matching a label; archive wins when labels duplicate after restore."
+    },
+    {
+      "path": "nest/CacheKeep.java",
+      "kind": "helper",
+      "rhymes_with": "M3",
+      "non_fix_purpose": "Stretches PIN markers for offline tooling; ignores pin_policy.toml."
+    },
+    {
+      "path": "scripts/quick-green.sh",
+      "kind": "helper",
+      "rhymes_with": "P9",
+      "non_fix_purpose": "Runs findscan plus LabelPick/CacheKeep so object counts look healthy without authcheck."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "Java",
+    "host",
+    "software",
+    "PKCS",
+    "module",
+    "slots",
+    "slot",
+    "token",
+    "key",
+    "rotation",
+    "restore",
+    "drills",
+    "signing",
+    "verify",
+    "outcomes",
+    "object",
+    "scan",
+    "green",
+    "runtime",
+    "authorization",
+    "rejects",
+    "lane",
+    "provider",
+    "PIN",
+    "contexts",
+    "ttl",
+    "reload",
+    "churn",
+    "cert",
+    "rows",
+    "count",
+    "helpers",
+    "sources",
+    "authority",
+    "preference",
+    "sheets",
+    "fixtures",
+    "seed",
+    "output",
+    "version",
+    "array",
+    "role",
+    "provider_bound",
+    "sessions",
+    "slot_id",
+    "pin_alive",
+    "ttl_sec",
+    "certs",
+    "label",
+    "handle_auth",
+    "inventory",
+    "pin_policy",
+    "depth",
+    "rebind"
+  ]
+}

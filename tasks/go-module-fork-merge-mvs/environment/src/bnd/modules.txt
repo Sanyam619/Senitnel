@@ -1,0 +1,15 @@
+# example.org/httpmux v0.5.2 => example.org/httpmux-fork v0.4.9
+## explicit; go 1.20
+example.org/httpmux
+# example.org/logstream v1.4.1
+## explicit; go 1.20
+example.org/logstream
+# example.org/mathkit v0.1.0
+## explicit; go 1.20
+example.org/mathkit
+# example.org/serde v2.0.0
+## explicit; go 1.20
+example.org/serde
+# example.org/toolchain v0.9.0
+## explicit; go 1.20
+example.org/toolchain

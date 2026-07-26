@@ -1,0 +1,6 @@
+# Which pass the recovery desk is running.
+#   rehearsal - warm-up sweeps, published numbers are not claimed
+#   scoring   - the pass whose numbers are published against the bands
+[evaluation]
+pass = "scoring"
+report = "bands"

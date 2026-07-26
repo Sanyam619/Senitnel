@@ -1,0 +1,26 @@
+user_visible_outputs = [
+  "/output/session-rebind.json",
+]
+
+internal_harness_files = []
+
+[structured_outputs.session_rebind]
+target = "/output/session-rebind.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "slots",
+  "sessions",
+  "certs",
+  "id",
+  "role",
+  "provider_bound",
+  "slot_id",
+  "pin_alive",
+  "ttl_sec",
+  "label",
+  "handle_auth",
+  "integer",
+  "boolean",
+  "string",
+]

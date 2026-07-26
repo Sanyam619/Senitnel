@@ -1,0 +1,17 @@
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "8AF3D8F5", "timestamp_ns": 1784994939159548000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "8AF3D8F5", "timestamp_ns": 1784994939333682000, "tool": "run_static_checks"}
+{"outcome": "FAIL", "run_id": "8AF3D8F5", "timestamp_ns": 1784994939561652000, "tool": "collapse_check"}
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "ED4E2590", "timestamp_ns": 1784994971943729000, "tool": "marker"}
+{"outcome": "FAIL", "run_id": "ED4E2590", "timestamp_ns": 1784994972249614000, "tool": "run_static_checks"}
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "6194EAB9", "timestamp_ns": 1784994976699530000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "6194EAB9", "timestamp_ns": 1784994977005685000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "6194EAB9", "timestamp_ns": 1784994977451402000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "6194EAB9", "timestamp_ns": 1784994977661861000, "tool": "marker"}
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "6595A87F", "timestamp_ns": 1784995047072121000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "6595A87F", "timestamp_ns": 1784995047313554000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "6595A87F", "timestamp_ns": 1784995047548556000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "6595A87F", "timestamp_ns": 1784995047655421000, "tool": "marker"}
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "350B2C08", "timestamp_ns": 1784995317658967000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "350B2C08", "timestamp_ns": 1784995318013493000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "350B2C08", "timestamp_ns": 1784995318282519000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "350B2C08", "timestamp_ns": 1784995318402719000, "tool": "marker"}

@@ -1,0 +1,24 @@
+user_visible_outputs = [
+  "/data/out/<shift>/fluid_ledger.jsonl",
+  "/data/out/<shift>/runoff_compliance.json",
+  "/data/out/<shift>/truck_utilization_audit.tsv",
+]
+
+internal_harness_files = [
+  "/data/fixtures/shifts/",
+]
+
+[structured_outputs.fluid_ledger]
+target = "/data/out/<shift>/fluid_ledger.jsonl"
+format = "jsonl"
+instruction_checks = ["aircraft_id", "pad_id", "gallons_applied", "fluid_code", "seq"]
+
+[structured_outputs.runoff_compliance]
+target = "/data/out/<shift>/runoff_compliance.json"
+format = "json"
+instruction_checks = ["version", "tanks"]
+
+[structured_outputs.truck_utilization_audit]
+target = "/data/out/<shift>/truck_utilization_audit.tsv"
+format = "tsv"
+instruction_checks = ["truck_id", "active_min", "gallons_pumped", "efficiency_pct"]

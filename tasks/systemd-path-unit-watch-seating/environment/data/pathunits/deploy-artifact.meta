@@ -1,0 +1,3 @@
+id=deploy-artifact
+service=deploy-artifact.service
+base=/run/deploy/placeholder

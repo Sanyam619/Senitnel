@@ -1,0 +1,8 @@
+{"kind":"move","eid":"e1","vrid":51,"epoch":5,"from":"MASTER","to":"BACKUP"}
+{"kind":"move","eid":"e2","vrid":51,"epoch":6,"from":"MASTER","to":"BACKUP"}
+{"kind":"retract","eid":"e1","epoch":7}
+{"kind":"retract","eid":"e2","epoch":8}
+{"kind":"move","eid":"e3","vrid":52,"epoch":9,"from":"MASTER","to":"BACKUP"}
+{"kind":"retract","eid":"e3","epoch":10}
+{"kind":"move","eid":"e4","vrid":52,"epoch":11,"from":"BACKUP","to":"FAULT"}
+{"kind":"retract","eid":"e4","epoch":12}

@@ -1,0 +1,3 @@
+{"seq":1,"tag":"rollback","gen":3,"mode":"decoy","hold":"lab-tmp","note":"abort window"}
+{"seq":2,"tag":"cutover","gen":7,"mode":"seal","hold":"ridge-k4","note":"sealed maintenance cutover"}
+{"seq":3,"tag":"rollback","gen":3,"mode":"decoy","hold":"lab-tmp","note":"stale reopen"}

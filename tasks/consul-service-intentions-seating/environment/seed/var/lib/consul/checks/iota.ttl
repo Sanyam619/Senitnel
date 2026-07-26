@@ -1,0 +1,4 @@
+# ttl check emitted by the local agent
+service = iota
+status = passing
+ttl = 30s

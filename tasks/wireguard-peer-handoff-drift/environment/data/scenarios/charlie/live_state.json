@@ -1,0 +1,13 @@
+{
+  "epoch": 3,
+  "member_ids": [
+    "m-c2",
+    "m-c4",
+    "m-c5"
+  ],
+  "retired_ids": [
+    "m-c1",
+    "m-c2",
+    "m-c3"
+  ]
+}

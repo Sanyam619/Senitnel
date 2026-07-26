@@ -1,0 +1,4 @@
+.example.com    relay:[mx.surface.decoy]
+lab.corp        smtp:[smtp.surface.decoy]
+collide.lab     smtp:[smtp.surface.decoy]
+orphan.lab      smtp:[smtp.surface.decoy]

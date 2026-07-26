@@ -1,0 +1,15 @@
+user_visible_outputs = [
+  "/output/lattice-report.json",
+]
+
+internal_harness_files = []
+
+[structured_outputs.lattice_report]
+target = "/output/lattice-report.json"
+format = "json"
+instruction_checks = [
+  "status",
+  "bitcode_epoch",
+  "vis_digest",
+  "archive_members",
+]

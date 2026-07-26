@@ -1,0 +1,18 @@
+user_visible_outputs = [
+  "/output/mark-cutover.json",
+]
+
+internal_harness_files = []
+
+[structured_outputs.mark_cutover]
+target = "/output/mark-cutover.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "watches",
+  "path",
+  "mark_ns",
+  "mark_kind",
+  "inherited_ok",
+  "race_stable",
+]

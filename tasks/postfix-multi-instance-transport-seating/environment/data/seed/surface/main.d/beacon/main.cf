@@ -1,0 +1,3 @@
+queue_directory = /var/spool/postfix-beacon-surface
+transport_maps = hash:/var/lib/postfix/surface/maps/nexthop.prefer
+myhostname = beacon.surface.local

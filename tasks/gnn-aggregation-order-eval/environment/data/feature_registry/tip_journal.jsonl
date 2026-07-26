@@ -1,0 +1,7 @@
+{"idx":3,"state":"durable","tip":"tip_g3","agg":"sum","norm":"degree","sheet":"a7","weft_c":["graph_01","graph_03","graph_05","graph_07"],"weft_d":["graph_02","graph_04","graph_06","graph_08"],"note":"quarterly refresh"}
+{"idx":4,"state":"durable","tip":"tip_g4","agg":"mean","norm":"degree","sheet":"a7","weft_c":["graph_02","graph_03","graph_06","graph_07"],"weft_d":["graph_01","graph_04","graph_05","graph_08"],"note":"post-ingest rebalance"}
+{"idx":5,"state":"live","tip":"tip_live","agg":"max","norm":"raw","sheet":"w2","note":"sweep prep"}
+{"idx":6,"state":"durable","tip":"tip_g7","agg":"mean","norm":"degree","sheet":"a7","weft_c":["graph_01","graph_02","graph_05","graph_06"],"weft_d":["graph_03","graph_04","graph_07","graph_08"],"note":"composition refresh"}
+{"idx":7,"state":"live","tip":"tip_live","agg":"max","norm":"raw","sheet":"w2","note":"recal sweep pass one"}
+{"idx":8,"state":"durable","tip":"tip_g9","agg":"pna","norm":"degree","sheet":"a7","weft_c":["graph_01","graph_04","graph_06","graph_07"],"weft_d":["graph_02","graph_03","graph_05","graph_08"],"note":"rolled tip"}
+{"idx":9,"state":"live","tip":"tip_live","agg":"max","norm":"raw","sheet":"w2","note":"recal sweep pass two"}

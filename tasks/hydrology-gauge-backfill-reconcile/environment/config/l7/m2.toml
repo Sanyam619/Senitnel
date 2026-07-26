@@ -1,0 +1,6 @@
+scan_tier = "c"
+seq_cutoff = 99100
+wal_floor = 0
+barrier_live = false
+replay_gate = 1
+tomb_scan = false

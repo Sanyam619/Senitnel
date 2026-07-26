@@ -1,0 +1,7 @@
+# Pre-cutover working sheet captured off the live cache plane.
+lv=alpha mode=writeback pool=pool-alpha-uu99
+lv=beta mode=writeback pool=pool-beta-uu99
+lv=gamma mode=writeback pool=pool-gamma-uu99
+lv=delta mode=writeback pool=pool-delta-uu99
+lv=epsilon mode=writeback pool=pool-epsilon-uu99
+lv=zeta mode=writeback pool=pool-zeta-uu99

@@ -1,0 +1,12 @@
+{
+  "name": "zeta-tool",
+  "vers": "1.0.0",
+  "gen": 4,
+  "deps": [
+    {
+      "crate": "delta-cli",
+      "version": "2.0.0"
+    }
+  ],
+  "cksum": "2211ff00aabbccdd"
+}

@@ -1,0 +1,8 @@
+{
+  "active_gen": 22,
+  "ceiling_gen": 22,
+  "wal_seq": 10000,
+  "sidecar_gen": { "events": 15, "metrics": 12 },
+  "tombstone_keys": [],
+  "tombstone_seq": 0
+}

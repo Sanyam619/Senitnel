@@ -1,0 +1,291 @@
+{
+  "task_name": "continual-learning-replay-buffer-tip-eval",
+  "attempt": 1,
+  "decision": "GO",
+  "construction_manifest": {
+    "symbol_table": [
+      {
+        "path": "seat/knit_b.rs",
+        "symbol": "pick_t",
+        "kind": "function",
+        "signature": "pub fn pick_t(a: &str, b: &str, c: &str) -> (f64, i64)",
+        "purpose": "resolve a replay fraction and epoch from journal/mirror/live sources"
+      },
+      {
+        "path": "flag/xv_c.rs",
+        "symbol": "bit_z",
+        "kind": "function",
+        "signature": "pub fn bit_z(a: &[String], b: &[(String, String, i64)], ids: &[String], g: i64) -> Vec<bool>",
+        "purpose": "resolve per-stratum active flags from roster/ledger at tip epoch"
+      },
+      {
+        "path": "mix/ward_d.rs",
+        "symbol": "mix_w",
+        "kind": "function",
+        "signature": "pub fn mix_w(base: f64, durable_hit: f64, overflow_hit: f64, frac: f64, epoch: i64, active: bool) -> f64",
+        "purpose": "turn a task's baseline and buffer-affinity hits into a scored accuracy"
+      },
+      {
+        "path": "score/helm_e.rs",
+        "symbol": "score_u",
+        "kind": "function",
+        "signature": "pub fn score_u(acc: f64, peak: f64) -> f64",
+        "purpose": "derive a forgetting scalar from scored accuracy and a task's peak accuracy"
+      },
+      {
+        "path": "gate/emit_f.rs",
+        "symbol": "gate_y",
+        "kind": "function",
+        "signature": "pub fn gate_y(accs: &[f64], forgettings: &[f64], fracs: &[f64], actives: &[bool], rows_ok: bool) -> bool",
+        "purpose": "combine per-task accuracy/forgetting/fraction invariants and row-band status into a single boolean"
+      },
+      {
+        "path": "eng/build.rs",
+        "symbol": "seated",
+        "kind": "build-script gate",
+        "signature": "fn seated(root: &Path) -> bool",
+        "purpose": "rematerialize seating surfaces from eng/seeds unless calib binding matches the resolved journal tip"
+      }
+    ],
+    "flipping_point_contract": {
+      "locations": [
+        {
+          "id": "A",
+          "path": "seat/knit_b.rs",
+          "controls_tests": [
+            "test_c1_biotite",
+            "test_d9_epidote",
+            "test_l7_dunite"
+          ]
+        },
+        {
+          "id": "B",
+          "path": "flag/xv_c.rs",
+          "controls_tests": [
+            "test_m2_obsidian",
+            "test_f5_dolomite",
+            "test_l7_dunite"
+          ]
+        },
+        {
+          "id": "C",
+          "path": "mix/ward_d.rs",
+          "controls_tests": [
+            "test_f5_dolomite",
+            "test_g8_feldspar",
+            "test_i6_marl",
+            "test_m2_obsidian"
+          ]
+        },
+        {
+          "id": "D",
+          "path": "score/helm_e.rs",
+          "controls_tests": [
+            "test_f5_dolomite",
+            "test_g8_feldspar"
+          ]
+        },
+        {
+          "id": "E",
+          "path": "gate/emit_f.rs",
+          "controls_tests": [
+            "test_g8_feldspar",
+            "test_h4_gneiss"
+          ]
+        },
+        {
+          "id": "F",
+          "path": "calib/ (trial_pref.toml removal + tip_bind.accept)",
+          "controls_tests": [
+            "test_j0_schist"
+          ]
+        }
+      ],
+      "no_single_location_flips_majority": true,
+      "concentration_cap": 0.5
+    },
+    "decoy_manifest": [
+      {
+        "path": "eng/src/decoy_p.rs",
+        "kind": "helper",
+        "rhymes_with": "pick_t",
+        "non_fix_purpose": "computes a decorative accuracy rollup for calibration logging; unused by graded path"
+      },
+      {
+        "path": "eng/src/decoy_q.rs",
+        "kind": "helper",
+        "rhymes_with": "mix_w",
+        "non_fix_purpose": "computes a decorative histogram string for operator logs"
+      },
+      {
+        "path": "data/replay/durable.toml",
+        "kind": "fixture",
+        "rhymes_with": "tip_journal.jsonl",
+        "non_fix_purpose": "stale mirror replay-fraction sheet; reading it yields an out-of-band fraction"
+      },
+      {
+        "path": "data/replay/live.toml",
+        "kind": "fixture",
+        "rhymes_with": "tip_journal.jsonl",
+        "non_fix_purpose": "newest-epoch unsealed overflow sheet; reading it yields an out-of-band fraction"
+      },
+      {
+        "path": "data/ledger/journal.jsonl",
+        "kind": "fixture",
+        "rhymes_with": "tip_journal.jsonl",
+        "non_fix_purpose": "leftover pre-migration replay export; not read by the engine"
+      },
+      {
+        "path": "data/fixtures/surface_ok.json",
+        "kind": "fixture",
+        "rhymes_with": "cl-eval.json",
+        "non_fix_purpose": "pre-baked healthy-looking report that a copied answer would match"
+      }
+    ],
+    "code_forbidden_tokens": [
+      "continual",
+      "learning",
+      "replay",
+      "buffer",
+      "curriculum",
+      "task",
+      "accuracy",
+      "forgetting",
+      "peak",
+      "band",
+      "calibration",
+      "calib",
+      "seating",
+      "surfaces",
+      "engine",
+      "tip",
+      "epoch",
+      "sealed",
+      "retired",
+      "durable",
+      "overflow",
+      "live",
+      "journal",
+      "trial",
+      "binding",
+      "probe",
+      "healthy",
+      "status",
+      "eval",
+      "schema",
+      "report"
+    ]
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "continual",
+      "learning",
+      "replay",
+      "buffer",
+      "curriculum",
+      "task",
+      "accuracy",
+      "forgetting",
+      "peak",
+      "band",
+      "calibration",
+      "calib",
+      "seating",
+      "surfaces",
+      "engine",
+      "tip",
+      "epoch",
+      "sealed",
+      "retired",
+      "durable",
+      "overflow",
+      "live",
+      "journal",
+      "trial",
+      "binding",
+      "probe",
+      "healthy",
+      "status",
+      "eval",
+      "schema",
+      "report",
+      "seeds"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "ops/bind.accept",
+        "renamed_to": "calib/tip_bind.accept",
+        "reason": "keep desk vocabulary ML-flavored, avoid ops-cutover aura"
+      }
+    ],
+    "test_names_audited": [
+      "test_a3_garnet",
+      "test_b7_zircon",
+      "test_c1_biotite",
+      "test_d9_epidote",
+      "test_e2_scoria",
+      "test_f5_dolomite",
+      "test_g8_feldspar",
+      "test_h4_gneiss",
+      "test_i6_marl",
+      "test_j0_schist",
+      "test_k3_pumice",
+      "test_l7_dunite"
+    ],
+    "concentration_math": {
+      "total_tests": 12,
+      "per_location": {
+        "A": 0.25,
+        "B": 0.25,
+        "C": 0.25,
+        "D": 0.167,
+        "E": 0.167,
+        "F": 0.083
+      },
+      "cap": 0.5,
+      "status": "PASS"
+    }
+  },
+  "hardness_axes": {},
+  "anti_trivialization_checks": {},
+  "rubric_axes": {},
+  "instruction_completeness_test": {},
+  "discovery_budget": [
+    {
+      "discovery": "durable replay tip resolves from the sealed-and-not-retired max-epoch journal entry, not the mirror or live sheets, and not the retired sealed-max entry",
+      "planned_location": "data/replay/tip_journal.jsonl + retired_tips.jsonl + knit_b.rs",
+      "why_instruction_must_not_reveal_it": "pasting the resolution rule beside the source paths collapses tip seating to transcription; docs state the outcome only"
+    },
+    {
+      "discovery": "the resolved replay fraction must propagate through the durable-preference check rather than short-circuit to a fast-path zero",
+      "planned_location": "flag/xv_c.rs + seat/knit_b.rs output",
+      "why_instruction_must_not_reveal_it": "naming the fast-path short-circuit would point directly at the diff; docs describe only that durable preference must propagate"
+    },
+    {
+      "discovery": "per-task accuracy blends baseline with the durable buffer-affinity hit scaled by replay fraction, not the live-overflow affinity hit",
+      "planned_location": "data/tasks/*.json (durable_hit vs overflow_hit) + ward_d.rs",
+      "why_instruction_must_not_reveal_it": "the blend formula must be reverse-derived from fixtures and band behavior, not transcribed"
+    },
+    {
+      "discovery": "forgetting is peak-relative per task (peak - accuracy, floored at zero), not a flat 1 - accuracy proxy",
+      "planned_location": "data/tasks/*.json (peak field) + helm_e.rs",
+      "why_instruction_must_not_reveal_it": "stating the exact formula would let agents transcribe it without checking it against the fixtures"
+    },
+    {
+      "discovery": "engine builds rematerialize the five seating surfaces from eng/seeds until the calib trial preference is set to serving and tip_bind.accept matches the journal-resolved tip",
+      "planned_location": "eng/build.rs + calib/",
+      "why_instruction_must_not_reveal_it": "instruction states surfaces refresh in trial mode; the binding rule and gate mechanics are discovered from docs and build behavior"
+    },
+    {
+      "discovery": "clprobe's last-task heuristic is non-authoritative for eval_ok",
+      "planned_location": "tools/clprobe + tools/probe_calc.py + emit_f.rs",
+      "why_instruction_must_not_reveal_it": "hardcode eval_ok without coupling to per-task band/forgetting/fraction invariants"
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only"
+  },
+  "attack_path": {},
+  "smallest_plausible_patch": {},
+  "collapse_audit": {}
+}

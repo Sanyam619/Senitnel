@@ -1,0 +1,11 @@
+[macro_surface]
+soname = "libflux_macro.so.1"
+lib_base = "libflux_macro"
+
+[cdylib]
+soname = "libflux_cdylib.so.1"
+lib_base = "libflux_cdylib"
+
+[install]
+debug_libdir = "/app/pkg/lib/debug"
+release_libdir = "/app/pkg/lib/release"

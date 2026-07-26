@@ -22,7 +22,7 @@ from pathlib import Path
 
 # CUSTOMIZE VALIDATION PIPELINE — change the default rubric file or model
 DEFAULT_RUBRIC_FILE = Path(__file__).parent.parent / "web" / "TASK_PROPOSAL_RUBRIC.md"
-DEFAULT_MODEL = "claude-opus-4-6"
+DEFAULT_MODEL = "claude-opus-4-8"
 VISIBLE_FILE_SUMMARY_LIMIT = 40
 TEST_NAME_SUMMARY_LIMIT = 30
 METADATA_SUMMARY_KEYS = (

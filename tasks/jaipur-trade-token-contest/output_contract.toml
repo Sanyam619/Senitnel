@@ -1,0 +1,22 @@
+user_visible_outputs = [
+  "/output/jaipur-card.json",
+  "/app/bin/judge.jar",
+]
+
+internal_harness_files = []
+
+[structured_outputs.jaipur_card]
+target = "/output/jaipur-card.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "rounds",
+  "board_id",
+  "status",
+  "action",
+  "tokens",
+  "score",
+  "sequence",
+  "refutations",
+  "coop_seal",
+]

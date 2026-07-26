@@ -1,0 +1,15 @@
+<pool type='dir'>
+  <name>alpha</name>
+  <uuid>aaaa1111-0000-4000-8000-0000000000a1</uuid>
+  <capacity unit='bytes'>0</capacity>
+  <allocation unit='bytes'>0</allocation>
+  <available unit='bytes'>0</available>
+  <target>
+    <path>/srv/surface/alpha</path>
+    <permissions>
+      <mode>0711</mode>
+      <owner>0</owner>
+      <group>0</group>
+    </permissions>
+  </target>
+</pool>

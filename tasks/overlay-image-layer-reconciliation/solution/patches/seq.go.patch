@@ -1,0 +1,51 @@
+--- a/internal/layerwire/seq.go
++++ b/internal/layerwire/seq.go
+@@ -4,25 +4,36 @@
+ 	"crypto/sha256"
+ 	"encoding/hex"
+ 	"fmt"
+-	"sort"
+ 
+ 	"github.com/opencontainers/go-digest"
+ )
+ 
+-// BuildStack materializes the blob digest stack for one bundle.
++// BuildStack materializes the blob digest stack bottom-to-top from chain metadata.
+ func BuildStack(manifestDigests []digest.Digest, wireIDs []digest.Digest, blobs map[digest.Digest][]byte) ([]digest.Digest, error) {
+-	if len(manifestDigests) == 0 {
+-		return nil, fmt.Errorf("empty manifest")
++	if len(wireIDs) == 0 {
++		return nil, fmt.Errorf("empty wire chain")
+ 	}
+-	_ = wireIDs
+-	out := append([]digest.Digest(nil), manifestDigests...)
+-	sort.SliceStable(out, func(i, j int) bool {
+-		return out[i].String() < out[j].String()
+-	})
+-	for _, d := range out {
+-		if _, ok := blobs[d]; !ok {
+-			return nil, fmt.Errorf("missing blob %s", d)
++	diffToBlob := map[digest.Digest]digest.Digest{}
++	for _, md := range manifestDigests {
++		payload, ok := blobs[md]
++		if !ok {
++			continue
+ 		}
++		raw, err := gunzip(payload)
++		if err != nil {
++			return nil, err
++		}
++		h := sha256.Sum256(raw)
++		diff := digest.Digest("sha256:" + hex.EncodeToString(h[:]))
++		diffToBlob[diff] = md
++	}
++	out := make([]digest.Digest, 0, len(wireIDs))
++	for _, wid := range wireIDs {
++		bd, ok := diffToBlob[wid]
++		if !ok {
++			return nil, fmt.Errorf("no blob for wire id %s", wid)
++		}
++		out = append(out, bd)
+ 	}
+ 	return out, nil
+ }

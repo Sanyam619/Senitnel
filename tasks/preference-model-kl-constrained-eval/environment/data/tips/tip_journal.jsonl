@@ -1,0 +1,7 @@
+{"tip": "tip_a1", "epoch": 1, "beta": 0.25, "sealed": true}
+{"tip": "tip_b3", "epoch": 2, "beta": 0.22, "sealed": true}
+{"tip": "tip_live", "epoch": 5, "beta": 1.8, "sealed": false}
+{"tip": "tip_g7", "epoch": 4, "beta": 0.2, "sealed": true}
+{"tip": "tip_c2", "epoch": 3, "beta": 0.3, "sealed": true}
+{"tip": "tip_g9", "epoch": 7, "beta": 0.05, "sealed": true}
+{"tip": "tip_d4", "epoch": 2, "beta": 0.4, "sealed": false}

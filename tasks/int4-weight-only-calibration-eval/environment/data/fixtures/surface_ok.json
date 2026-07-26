@@ -1,0 +1,49 @@
+{
+  "schema_tag": "int4-eval-v1",
+  "captured": "sweep-live-2",
+  "scenarios": [
+    {
+      "id": "cold_a",
+      "perplexity": 1.494303,
+      "top1": 0.8875,
+      "group_size": 32,
+      "tip_epoch": 12
+    },
+    {
+      "id": "resume_a",
+      "perplexity": 1.494303,
+      "top1": 0.8875,
+      "group_size": 32,
+      "tip_epoch": 12
+    },
+    {
+      "id": "cold_b",
+      "perplexity": 1.474398,
+      "top1": 0.875,
+      "group_size": 32,
+      "tip_epoch": 12
+    },
+    {
+      "id": "resume_b",
+      "perplexity": 1.474398,
+      "top1": 0.875,
+      "group_size": 32,
+      "tip_epoch": 12
+    },
+    {
+      "id": "mix_c",
+      "perplexity": 1.599937,
+      "top1": 0.8375,
+      "group_size": 32,
+      "tip_epoch": 12
+    },
+    {
+      "id": "mix_d",
+      "perplexity": 1.44196,
+      "top1": 0.8625,
+      "group_size": 32,
+      "tip_epoch": 12
+    }
+  ],
+  "bands_ok": true
+}

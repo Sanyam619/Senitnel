@@ -1,0 +1,2 @@
+rule = "Host(`alpha.lab`)"
+service = "svc-alpha"

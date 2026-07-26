@@ -1,0 +1,3 @@
+local_as = 65000
+router_id = "10.0.0.1"
+always_compare_med = false

@@ -1,0 +1,33 @@
+package core
+
+import (
+	"ramp.local/account/capturelane"
+	"ramp.local/account/config"
+	"ramp.local/account/internal/ingest/retaingauge"
+	"ramp.local/account/internal/model"
+	"ramp.local/account/settle"
+)
+
+func complianceTanks(applied, divert float64, gauges []retaingauge.Row) []model.TankRow {
+	totalRunoff := applied * config.CfgK()
+	primary, alternate := capturelane.TwinBookQ(totalRunoff, divert)
+	var tanks []model.TankRow
+	for _, g := range gauges {
+		var captured float64
+		switch g.NodeID {
+		case "N-P":
+			captured = primary
+		case "N-X":
+			captured = alternate
+		default:
+			captured = 0
+		}
+		tanks = append(tanks, model.TankRow{
+			NodeID:       g.NodeID,
+			Captured:     captured,
+			Headroom:     settle.Headroom(g.CapQty, g.BaseQty, captured),
+			WithinPermit: settle.Within(g.CapQty, g.BaseQty, captured),
+		})
+	}
+	return tanks
+}

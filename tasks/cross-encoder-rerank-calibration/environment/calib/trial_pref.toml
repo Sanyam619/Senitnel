@@ -1,0 +1,9 @@
+# Evaluation selection for the cross-encoder rerank desk.
+
+[evaluation]
+selection = "trial"
+refresh = "auto"
+
+[desk]
+owner = "rerank-eval-rotation"
+window = "weekly"

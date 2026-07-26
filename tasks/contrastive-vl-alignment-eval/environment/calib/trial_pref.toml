@@ -1,0 +1,9 @@
+# Evaluation selection for the contrastive VL retrieval desk.
+
+[evaluation]
+selection = "trial"
+refresh = "auto"
+
+[desk]
+owner = "vl-eval-rotation"
+window = "weekly"

@@ -1,0 +1,18 @@
+# pre-incident verifier samples (seed/payload/check; material not exported)
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":10,"lane":1,"payload_hex":"6f70656e2d6d32","check":53}
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":10,"lane":2,"payload_hex":"6f70656e2d6b39","check":51}
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":10,"lane":3,"payload_hex":"657865632d7037","check":86}
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":10,"lane":4,"payload_hex":"657865632d7431","check":89}
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":10,"lane":5,"payload_hex":"6f70656e2d7635","check":69}
+# same seed/strand sampled at other epochs and lanes (epoch low byte enters per-index)
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":8,"lane":1,"payload_hex":"6f70656e2d7832","check":112}
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":8,"lane":3,"payload_hex":"657865632d7431","check":120}
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":11,"lane":2,"payload_hex":"6f70656e2d7538","check":18}
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":12,"lane":4,"payload_hex":"657865632d6834","check":42}
+{"seed_hex":"a1b2c3d4e5f60718293a4b5c6d7e8f90","epoch":9,"lane":5,"payload_hex":"6f70656e2d7732","check":71}
+# prior-schedule traps (must integrity_failure under deep rules)
+{"epoch":10,"lane":1,"payload_hex":"6f70656e2d6d32","check":129,"note":"prior_schedule"}
+{"epoch":10,"lane":2,"payload_hex":"6f70656e2d6b39","check":120,"note":"prior_schedule"}
+{"epoch":11,"lane":2,"payload_hex":"6f70656e2d7538","check":116,"note":"prior_schedule"}
+{"epoch":9,"lane":5,"payload_hex":"6f70656e2d7732","check":122,"note":"prior_schedule"}
+{"epoch":8,"lane":3,"payload_hex":"657865632d7431","check":130,"note":"prior_schedule"}

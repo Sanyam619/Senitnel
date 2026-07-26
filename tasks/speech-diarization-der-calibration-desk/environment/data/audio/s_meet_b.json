@@ -1,0 +1,31 @@
+{
+  "id": "s_meet_b",
+  "seq": 2,
+  "speakers_ref": 3,
+  "der_ahc_e5": 0.112,
+  "jer_ahc_e5": 0.148,
+  "der_ahc_e8": 0.171,
+  "jer_ahc_e8": 0.218,
+  "der_ahc_e10": 0.081,
+  "jer_ahc_e10": 0.109,
+  "der_spectral_e5": 0.201,
+  "jer_spectral_e5": 0.255,
+  "der_spectral_e11": 0.234,
+  "jer_spectral_e11": 0.289,
+  "der_nme_e5": 0.163,
+  "jer_nme_e5": 0.207,
+  "der_oracle": 0.048,
+  "jer_oracle": 0.066,
+  "der_obs": 0.258,
+  "jer_obs": 0.325,
+  "emb": [
+    0.2,
+    0.30000000000000004,
+    0.4,
+    0.5,
+    0.6000000000000001,
+    0.7000000000000001,
+    0.8,
+    0.9
+  ]
+}

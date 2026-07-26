@@ -1,0 +1,8 @@
+{
+  "checkpoint_id": "cp_b_pre",
+  "shard": "beta",
+  "epoch": 50,
+  "tree_size": 96,
+  "root_hash": "b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1",
+  "cross_attested": false
+}

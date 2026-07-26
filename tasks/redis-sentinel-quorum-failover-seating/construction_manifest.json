@@ -1,0 +1,169 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/helm_r.sh",
+      "symbol": "helm_r",
+      "kind": "function",
+      "signature": "helm_r",
+      "purpose": "Gate live monitor refresh on the selected material plane and a matching apply receipt"
+    },
+    {
+      "path": "ops/axle_n.sh",
+      "symbol": "axle_n",
+      "kind": "function",
+      "signature": "axle_n",
+      "purpose": "Apply sealed journal tip addresses and generations against durable floors"
+    },
+    {
+      "path": "rim/mesh_k.sh",
+      "symbol": "mesh_k",
+      "kind": "function",
+      "signature": "mesh_k",
+      "purpose": "Fold drop-in conf keys in lexical order into the effective policy file"
+    },
+    {
+      "path": "bag/skim_p.sh",
+      "symbol": "skim_p",
+      "kind": "function",
+      "signature": "skim_p",
+      "purpose": "Evaluate quorum under the prefer-selected sheet"
+    },
+    {
+      "path": "bag/sock_v.sh",
+      "symbol": "sock_v",
+      "kind": "function",
+      "signature": "sock_v",
+      "purpose": "Mark replica attach against durable tip addresses"
+    },
+    {
+      "path": "deck/slate_j.sh",
+      "symbol": "slate_j",
+      "kind": "function",
+      "signature": "slate_j",
+      "purpose": "Publish the seating ledger from prepared state"
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/helm_r.sh",
+        "controls_tests": [
+          "test_h8_amber",
+          "test_c1_flint",
+          "test_r6_slate",
+          "test_k5_garnet",
+          "test_y3_jasper"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "ops/axle_n.sh",
+        "controls_tests": [
+          "test_v5_coral",
+          "test_r6_slate",
+          "test_m1_opal",
+          "test_c1_flint"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "bag/skim_p.sh",
+        "controls_tests": [
+          "test_m1_opal",
+          "test_v5_coral",
+          "test_t4_pearl"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "bag/sock_v.sh",
+        "controls_tests": [
+          "test_p9_jade",
+          "test_u2_mica",
+          "test_y3_jasper"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "rim/mesh_k.sh",
+        "controls_tests": [
+          "test_j2_onyx",
+          "test_h8_amber",
+          "test_m1_opal"
+        ]
+      },
+      {
+        "id": "F",
+        "path": "deck/slate_j.sh",
+        "controls_tests": [
+          "test_q3_topaz",
+          "test_n4_beryl",
+          "test_u2_mica",
+          "test_t4_pearl",
+          "test_k5_garnet"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "wire/dune_p.sh",
+      "kind": "helper",
+      "rhymes_with": "helm_r",
+      "non_fix_purpose": "Ensures seating directories exist; not a seating decision"
+    },
+    {
+      "path": "rim/moss_b.sh",
+      "kind": "helper",
+      "rhymes_with": "mesh_k",
+      "non_fix_purpose": "Surface readiness for redishhealth only"
+    },
+    {
+      "path": "bag/note_c.sh",
+      "kind": "helper",
+      "rhymes_with": "sock_v",
+      "non_fix_purpose": "Writes a non-graded stamp for shift handover"
+    }
+  ],
+  "code_forbidden_tokens": [
+    "schema_tag",
+    "masters",
+    "replicas",
+    "seat_ok",
+    "authoritative",
+    "attached",
+    "generation",
+    "quorum",
+    "failover",
+    "sentinel",
+    "prefer",
+    "journal",
+    "rematerialize",
+    "durable",
+    "authority",
+    "receipt",
+    "plane",
+    "fold",
+    "policy",
+    "floor",
+    "abort",
+    "surface",
+    "redishhealth",
+    "fixtures",
+    "integrity",
+    "roster",
+    "ledger",
+    "desk",
+    "docs",
+    "sealed",
+    "cutover",
+    "master",
+    "replica",
+    "lag",
+    "addr",
+    "name"
+  ]
+}

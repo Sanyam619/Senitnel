@@ -1,0 +1,11 @@
+#!/bin/bash
+# Inspect the packed placement image header without unpacking rows.
+set -euo pipefail
+sv="${SD_VAR:-/var/lib/ceph/ops}"
+img="$sv/crushmap.bin"
+[[ -f "$img" ]] || { echo "no image at $img"; exit 1; }
+magic=$(head -c 7 "$img")
+bytes=$(wc -c <"$img" | tr -d ' ')
+echo "image: $img"
+echo "magic: $magic"
+echo "bytes: $bytes"

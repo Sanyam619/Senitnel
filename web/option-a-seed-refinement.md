@@ -40,7 +40,7 @@ Attach this bundle (`chatgpt-task-authoring-playbook.md`, `implementation-collap
 
 Then say:
 
-> Run **Option A** from `option-a-seed-refinement.md` in **step2a-bank mode** against the attached bulk-ideas file. The final target is **150 Step-2a-ready seeds**. Repair or replace weak seeds instead of collapsing to a tiny shortlist. Keep the four Opus-weak categories balanced, keep Topology distinct within category, and return one downloadable `.md` file.
+> Run **Option A** from `option-a-seed-refinement.md` in **step2a-bank mode** against the attached bulk-ideas file. The final target is **150 Step-2a-ready seeds**. Repair or replace weak seeds instead of collapsing to a tiny shortlist. Keep the three open categories (`games`, `machine-learning`, `system-administration`) balanced, keep Topology distinct within category, and return one downloadable `.md` file.
 
 If you want a different final bank size, replace `150` with your target.
 
@@ -133,7 +133,7 @@ Each seed ends in one of three buckets:
 
 ### D. Category-balance rule
 
-Keep the final bank broadly balanced across the four Opus-weak categories unless the user asked for a different domain profile.
+Keep the final bank broadly balanced across the three open categories (`games`, `machine-learning`, `system-administration`) unless the user asked for a different domain profile within that open set. Reject or redesign any seed that requires a blocked category.
 
 If one category saturates early, replenish from a narrower subsystem inside that category before backfilling from another category. If backfill is still necessary, say so in the summary.
 
@@ -212,13 +212,10 @@ Screened against: `implementation-collapse-audit.md`, `chatgpt-task-authoring-pl
 #### 2. `<title>`
 ...
 
-### Category: `security`
+### Category: `games`
 ...
 
-### Category: `debugging`
-...
-
-### Category: `scientific-computing`
+### Category: `machine-learning`
 ...
 ````
 
@@ -254,7 +251,7 @@ If the user does **not** say `finalist mode`, stay in `step2a-bank` mode.
 
 Use this exact wording as a safe default:
 
-> Run **Option A** from `option-a-seed-refinement.md` in **step2a-bank mode** against the attached bulk-ideas file. The final target is **150 Step-2a-ready seeds**. Repair or replace weak seeds instead of collapsing to a tiny shortlist. Keep the four Opus-weak categories balanced, keep Topology distinct within category, and return one downloadable `.md` file.
+> Run **Option A** from `option-a-seed-refinement.md` in **step2a-bank mode** against the attached bulk-ideas file. The final target is **150 Step-2a-ready seeds**. Repair or replace weak seeds instead of collapsing to a tiny shortlist. Keep the three open categories (`games`, `machine-learning`, `system-administration`) balanced, keep Topology distinct within category, and return one downloadable `.md` file.
 
 ---
 

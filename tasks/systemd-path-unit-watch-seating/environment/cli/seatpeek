@@ -1,0 +1,12 @@
+#!/bin/bash
+# Operator convenience view of the derived live tables.
+set -euo pipefail
+LIVE="${SYS_OPS:-/var/lib/systemd/ops}/live"
+for t in fold tip arm trig; do
+  echo "=== ${t}.tsv ==="
+  if [[ -f "$LIVE/${t}.tsv" ]]; then
+    cat "$LIVE/${t}.tsv"
+  else
+    echo "(empty)"
+  fi
+done

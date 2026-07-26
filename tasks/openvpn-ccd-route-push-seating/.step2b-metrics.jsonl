@@ -1,0 +1,4 @@
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "BF2CB592", "timestamp_ns": 1785062169311754000, "tool": "marker"}
+{"outcome": "WARN", "run_id": "BF2CB592", "timestamp_ns": 1785062169886114000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "BF2CB592", "timestamp_ns": 1785062170476420000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "BF2CB592", "timestamp_ns": 1785062170654160000, "tool": "marker"}

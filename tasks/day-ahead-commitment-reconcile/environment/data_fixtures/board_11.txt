@@ -1,0 +1,7 @@
+round_id: R11
+demand_mw: 190
+reserve_mw: 20
+units:
+unit A 55 10
+unit B 55 12
+unit C 55 14

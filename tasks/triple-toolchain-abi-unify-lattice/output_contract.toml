@@ -1,0 +1,32 @@
+user_visible_outputs = [
+  "/output/unify-report.json",
+  "/app/bin/unify_probe",
+  "/app/ops/matrix.toml",
+  "/app/config/strand_m.toml",
+]
+
+internal_harness_files = [
+  "/app/r8/build.rs",
+  "/app/c6/xv_w.cmake",
+  "/app/config/lane.d/",
+  "/app/ops/nx/pref_a.toml",
+  "/app/ops/nx/cut_n.toml",
+  "/app/ops/nx/fold_p.toml",
+  "/app/ops/nx/hook_q.toml",
+  "/app/ops/nx/rel_mask.toml",
+]
+
+[structured_outputs.unify_report]
+target = "/output/unify-report.json"
+format = "json"
+instruction_checks = [
+  "status",
+  "abi_stamp",
+  "pack_width",
+  "cells",
+  "rust",
+  "go",
+  "c",
+  "header",
+  "strand_m.toml",
+]

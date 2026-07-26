@@ -1,0 +1,12 @@
+[package]
+name = "bevel"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "bevel"
+path = "src/main.rs"
+
+[dependencies]
+bevel_core = { path = "../core" }
+bevel_sx = { path = "../sx" }

@@ -1,0 +1,17 @@
+{
+  "peer": "peer_a",
+  "routes": [
+    {
+      "prefix": "10.4.0.0/24",
+      "next_hop": "192.0.2.10",
+      "as_path": [
+        65100,
+        65000,
+        65050
+      ],
+      "local_pref": 250,
+      "med": 0,
+      "origin": "igp"
+    }
+  ]
+}

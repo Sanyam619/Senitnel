@@ -1,0 +1,16 @@
+# rust lane dependency pin matrix
+lane = "rust"
+health_bin = "/app/bin/lanehealth"
+sieve_bin = "/app/bin/sievectl"
+plugin_key = "pg-core@0.9.2"
+skim_plugin = "pg-core@0.9.0"
+archive_plugin = "pg-core@0.9.0"
+fallback_plugin = "pg-core@0.9.2"
+skim_prefer = true
+json_owner = "archive"
+optional_owner = "archive"
+cargo_plugin = "pg-core@0.9.0"
+reject_skim_archive = false
+allow_yanked_transitive = true
+pin_epoch = 12
+note = "compile-only surface for rust tree"

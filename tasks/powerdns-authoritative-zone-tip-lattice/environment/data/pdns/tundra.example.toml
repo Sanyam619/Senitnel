@@ -1,0 +1,4 @@
+name = "tundra.example"
+kind = "primary"
+ns = "ns1.tundra.example"
+contact = "hostmaster.tundra.example"

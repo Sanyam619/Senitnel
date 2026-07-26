@@ -1,0 +1,30 @@
+user_visible_outputs = [
+  "/output/moe-eval.json",
+  "/app/scripts/run_moe_eval.sh",
+  "/app/docs/moe_bands.md",
+  "/app/docs/desk_notes.md",
+  "/app/data/experts",
+  "/app/data/routers",
+  "/app/data/eval",
+  "/app/eng",
+  "/app/calib",
+  "/app/tools/moeprobe",
+]
+
+internal_harness_files = [
+  "/app/eng/target",
+  "/app/scripts/verify_fixtures.sh",
+  "/app/seat",
+  "/app/flag",
+  "/app/mix",
+  "/app/score",
+  "/app/gate",
+]
+
+[structured_outputs.moe_eval]
+target = "/output/moe-eval.json"
+format = "json"
+instruction_checks = [
+  "moe-eval.json",
+  "moe_bands.md",
+]

@@ -1,0 +1,7 @@
+round_id: 7
+to_move: black
+board:
+B..B
+.BW.
+....
+...B

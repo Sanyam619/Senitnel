@@ -1,0 +1,3 @@
+name = "gamma"
+tip = "10.20.1.31:6379"
+role = "master"

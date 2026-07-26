@@ -1,0 +1,192 @@
+{
+  "symbol_table": [
+    {
+      "path": "calib/trial_pref.toml",
+      "symbol": "evaluation.selection",
+      "kind": "config",
+      "signature": "selection = \"trial\" | \"serving\"",
+      "purpose": "Trial selection restores working seeds and applies the live-shadow high-card overlay."
+    },
+    {
+      "path": "calib/tip_bind.accept",
+      "symbol": "tip_bind.accept",
+      "kind": "config",
+      "signature": "trimmed tip id matching registry-resolved serving tip",
+      "purpose": "Stored calibration lineage must name the registry-resolved serving tip or rebuilds rematerialize seeds."
+    },
+    {
+      "path": "data/feature_registry/retired_tips.jsonl",
+      "symbol": "retired_tips",
+      "kind": "config",
+      "signature": "jsonl rows with tip field",
+      "purpose": "Tips listed here are excluded from serving tip resolution."
+    },
+    {
+      "path": "sx/build.rs",
+      "symbol": "registry_serving",
+      "kind": "build-script",
+      "signature": "fn registry_serving(journal: &Path, retired: &Path) -> String",
+      "purpose": "Restores op_v/delta_q/mark_w from seeds unless selection is serving and tip_bind.accept matches the resolved tip."
+    },
+    {
+      "path": "core/build.rs",
+      "symbol": "serving_pinned",
+      "kind": "build-script",
+      "signature": "fn serving_pinned(choice: &str, lineage: &str, chosen_tip: &str) -> bool",
+      "purpose": "Restores mesh.rs from seed unless the same coupled selection+lineage condition holds."
+    },
+    {
+      "path": "sx/src/op_v.rs",
+      "symbol": "op_v",
+      "kind": "function",
+      "signature": "pub fn op_v(rows: &[Row], root: &Path) -> String",
+      "purpose": "Selects online tip id from registry journal rows with retired tips under root."
+    },
+    {
+      "path": "sx/src/delta_q.rs",
+      "symbol": "delta_q",
+      "kind": "function",
+      "signature": "pub fn delta_q(a: f64, b: f64) -> f64",
+      "purpose": "Computes per-feature skew from offline and online means."
+    },
+    {
+      "path": "sx/src/mark_w.rs",
+      "symbol": "mark_w",
+      "kind": "function",
+      "signature": "pub fn mark_w(tip: &str) -> String",
+      "purpose": "Emits the source string written into each feature row."
+    },
+    {
+      "path": "core/src/mesh.rs",
+      "symbol": "mesh_k",
+      "kind": "function",
+      "signature": "pub fn mesh_k(on: &FeatMap, shadow: &FeatMap, sel: &str) -> FeatMap",
+      "purpose": "Runtime feature binding for slice scoring."
+    },
+    {
+      "path": "sx/src/desk.rs",
+      "symbol": "desk_tip",
+      "kind": "function",
+      "signature": "pub fn desk_tip(rows: &[bevel_core::base::Row], root: &Path) -> String",
+      "purpose": "Orchestration wrapper for evaluation calculations; not a flipping point."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "calib/trial_pref.toml",
+        "controls_tests": [
+          "test_entrypoint_republish_is_byte_identical",
+          "test_holdout_brier_rejects_shadow_high_card",
+          "test_source_is_durable_tip"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "sx/src/op_v.rs",
+        "controls_tests": [
+          "test_source_is_durable_tip",
+          "test_feature_skew_inside_published_bands",
+          "test_source_not_retired_or_live_tip"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "sx/src/delta_q.rs",
+        "controls_tests": [
+          "test_skew_is_online_minus_offline",
+          "test_feature_skew_inside_published_bands"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "sx/src/mark_w.rs",
+        "controls_tests": [
+          "test_source_is_durable_tip",
+          "test_source_not_retired_or_live_tip"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "core/src/mesh.rs",
+        "controls_tests": [
+          "test_holdout_brier_rejects_shadow_high_card",
+          "test_slice_metrics_inside_published_bands"
+        ]
+      },
+      {
+        "id": "F",
+        "path": "calib/tip_bind.accept",
+        "controls_tests": [
+          "test_source_is_durable_tip",
+          "test_holdout_brier_rejects_shadow_high_card",
+          "test_entrypoint_republish_is_byte_identical"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "core/src/braid.rs",
+      "kind": "helper",
+      "rhymes_with": "mesh_k",
+      "non_fix_purpose": "Trace batching helper unused by graded emit."
+    },
+    {
+      "path": "sx/src/dial.rs",
+      "kind": "helper",
+      "rhymes_with": "delta_q",
+      "non_fix_purpose": "Trace stride reader for trace_pref.toml."
+    },
+    {
+      "path": "calib/trace_pref.toml",
+      "kind": "config",
+      "rhymes_with": "trial_pref.toml",
+      "non_fix_purpose": "Trace stride decoy config."
+    },
+    {
+      "path": "data/online/tip_g9.json",
+      "kind": "fixture",
+      "rhymes_with": "tip_g7.json",
+      "non_fix_purpose": "Retired durable tip decoy with out-of-band f_zip."
+    },
+    {
+      "path": "data/fixtures/surface_ok.json",
+      "kind": "fixture",
+      "rhymes_with": "feature-eval.json",
+      "non_fix_purpose": "Stale surface sweep read by the display probe."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "feature",
+    "skew",
+    "offline",
+    "online",
+    "durable",
+    "shadow",
+    "store",
+    "tip",
+    "auc",
+    "brier",
+    "calibration",
+    "source",
+    "slice",
+    "mean",
+    "band",
+    "eval",
+    "serving",
+    "health",
+    "report",
+    "schema",
+    "schema_tag",
+    "features",
+    "slices",
+    "calibration_ok",
+    "offline_mean",
+    "online_mean",
+    "rematerialize"
+  ]
+}

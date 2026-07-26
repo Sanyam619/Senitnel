@@ -1,0 +1,11 @@
+[package]
+name = "pref-eval"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[[bin]]
+name = "pref-eval"
+path = "src/main.rs"
+
+[dependencies]

@@ -1,0 +1,10 @@
+id=b5
+recorded=0
+old_type=i32
+new_type=i32
+old_arity=1
+new_arity=1
+old_bounds=256
+new_bounds=256
+old_table=0
+new_table=0

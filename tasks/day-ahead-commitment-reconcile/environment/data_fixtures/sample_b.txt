@@ -1,0 +1,4 @@
+# Desk history samples
+R10 smp=20
+R12 smp=18
+note: lowest SMP among reserve-feasible lines; then max headroom.

@@ -1,0 +1,7 @@
+SAGA sg-harbor-1 TX h-211
+STEP allocate APPLIED undo-allocate
+STEP notify APPLIED undo-notify
+SAGA sg-harbor-2 TX h-212
+STEP gate APPLIED undo-gate
+STEP docs COMPENSATED undo-docs
+STEP notify APPLIED undo-notify

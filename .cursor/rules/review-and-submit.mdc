@@ -123,8 +123,9 @@ alwaysApply: false
 
 - We are NO LONGER accepting new **multi-container** tasks (`is_multi_container = true` or any `environment/docker-compose.yaml` declaring multiple services).
 - We are NO LONGER accepting new **UI building** tasks (subcategory `ui_building` or use of the UI test template).
+- **Open categories only for new tasks:** `games`, `machine-learning`, `system-administration`. All other historical categories are blocked — see `task-type-taxonomy.md`.
 - In-progress tasks of these types may be completed; they will not be rejected solely for type. Reviewers should prioritize moving in-progress instances to submission before the block goes live.
-- New starts in either category are blocked. If a candidate idea would naturally land as multi-container or UI building, the right move is REJECT with a redesign note (or, in Step 2a, reject before drafting).
+- New starts under a blocked type or blocked category are disallowed. If a candidate idea would naturally land as multi-container, UI building, or a blocked category, the right move is REJECT with a redesign note (or, in Step 2a, reject before drafting).
 
 ## 9. Rubric (milestone tasks) (HIGH)
 
@@ -186,7 +187,7 @@ alwaysApply: false
 - Milestone task: `number_of_milestones` does not equal the number of `[[steps]]` blocks; top-level `[agent]` / `[verifier]` blocks present; `[[steps]].name` does not match the `steps/<name>/` folder
 - Harbor-framework-only fields used (`schema_version`, `[task]`, `min_reward`, `[steps.healthcheck]`, `[steps.verifier.env]`, `artifacts`, `multi_step_reward_strategy`, `workdir/setup.sh`)
 - Author identifiers replaced with real names/emails instead of anonymous placeholders (`"your-name"` / `"your-email"` / `"anonymous"`)
-- New task is multi-container or UI building (no longer accepted)
+- New task is multi-container, UI building, or a blocked category (no longer accepted; open categories only: `games`, `machine-learning`, `system-administration`)
 
 ---
 
@@ -224,7 +225,7 @@ Verify: `instruction.md`, `task.toml`, `environment/`, `solution/`, and `tests/`
 
 ## Review-Loop Discipline
 
-The review loop must stay cheap. Oracle + NOP preflight run **once** in Step 2b (see `workflow-prompts.md`), not once per iteration. The GPT-5.2 quality check (`harbor tasks check`) and `verifier_health.py` are both **opt-in diagnostics** (Step 3a-Q and Step 3a-V respectively). Skip them for routine tasks.
+The review loop must stay cheap. Oracle + NOP preflight run **once** in Step 2b (see `workflow-prompts.md`), not once per iteration. The GPT-5.6 quality check (`harbor tasks check`) and `verifier_health.py` are both **opt-in diagnostics** (Step 3a-Q and Step 3a-V respectively). Skip them for routine tasks.
 
 **When to reach for `verifier_health.py`** (otherwise skip it):
 
@@ -235,7 +236,7 @@ The review loop must stay cheap. Oracle + NOP preflight run **once** in Step 2b 
 
 **When to reach for the quality check** (otherwise skip it):
 
-- A reviewer asked for the GPT-5.2 rubric audit.
+- A reviewer asked for the GPT-5.6 rubric audit.
 - You want to pressure-test instruction/test wording against an LLM judge before final review.
 
 Iteration helpers (when a diagnostic IS running):
@@ -318,7 +319,7 @@ These must be resolved before any form of approval:
 1. **`verifier_health.py` WAS RUN AND does not show a behavioral partial-oracle failure** → this condition applies only when Step 3a-V was invoked. If every partial fix still passes, or the only failures are compile-only breakage, the verifier does not prove it discriminates between partial and complete fixes. Fix the tests or the ablation strategy. Tasks where `verifier_health.py` was not run (routine path, `--skip-verifier-health`) are not blocked by this rule.
 2. **Discoverability signals found but not eliminated** → `(void)` casts next to zero overrides, `// BUG:` comments, compile flags, hardcoded zeros where fields should be — these must be fixed, not noted.
 3. **`collapse_check.py` FAIL** → at least one mechanical collapse signal is fatal. Fix the flagged issue (rewrite the instruction symptoms-only for RC6, enlarge or restructure the oracle for RC7, rename files, restructure oracle, add output validation to tests, etc.) before any form of approval.
-4. **Quality check was run AND a `task-defect` entry remains** → this condition applies only when Step 3a-Q was invoked. Every `❌ fail` from `harbor tasks check ... -m openai/gpt-5.2` must be classified via `quality_check_adjudicate.py`. Findings classified `task-defect` are blocking and must be repaired before any form of approval. Findings classified `convention-conflict` (the checker's remedy contradicts a rule enforced by `run_static_checks.py`, `collapse_check.py`, or the canonical templates in `task-creation.mdc`) or `unsupported` (the finding cites behavior/files/fields that do not exist in the task) are waivable only when the adjudication entry carries the required evidence — `enforcing_rule.file`+`line` for conventions, `negative_lookup.command`+`expected_stdout` for unsupported. The adjudication artifact `/tmp/<task-name>-quality-check-adjudication.json` is required input to `approve_task.py` when the quality check was run; regenerate it by running `python3 quality_check_adjudicate.py --task-dir tasks/<task-name> --qc-output /tmp/<task-name>-qc.json` after every `harbor tasks check` capture. Never over-specify `instruction.md` or restructure tests purely to pacify a hallucinated finding — adjudicate it instead. Tasks where the quality check was not run are not blocked by this rule.
+4. **Quality check was run AND a `task-defect` entry remains** → this condition applies only when Step 3a-Q was invoked. Every `❌ fail` from `harbor tasks check ... -m openai/gpt-5.6` must be classified via `quality_check_adjudicate.py`. Findings classified `task-defect` are blocking and must be repaired before any form of approval. Findings classified `convention-conflict` (the checker's remedy contradicts a rule enforced by `run_static_checks.py`, `collapse_check.py`, or the canonical templates in `task-creation.mdc`) or `unsupported` (the finding cites behavior/files/fields that do not exist in the task) are waivable only when the adjudication entry carries the required evidence — `enforcing_rule.file`+`line` for conventions, `negative_lookup.command`+`expected_stdout` for unsupported. The adjudication artifact `/tmp/<task-name>-quality-check-adjudication.json` is required input to `approve_task.py` when the quality check was run; regenerate it by running `python3 quality_check_adjudicate.py --task-dir tasks/<task-name> --qc-output /tmp/<task-name>-qc.json` after every `harbor tasks check` capture. Never over-specify `instruction.md` or restructure tests purely to pacify a hallucinated finding — adjudicate it instead. Tasks where the quality check was not run are not blocked by this rule.
 5. **Environment file count below 20** → the task is `minimal`, which is blocked on the default Edition 2 path. Add substantive environment files or redesign the task before any form of approval.
 
 ---

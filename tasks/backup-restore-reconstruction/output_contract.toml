@@ -1,0 +1,24 @@
+user_visible_outputs = [
+  "/output/reconciliation.json",
+  "/output/restored/",
+  "/output/meta/run.stamp",
+]
+internal_harness_files = [
+  "/app/packaging/fleetpeek.sha256",
+  "/app/packaging/episodes.sha256",
+  "/usr/lib/fleet/bin/fleetctl",
+  "/var/lib/fleet/ops/journal.jsonl",
+  "/etc/fleet/reconcile.d/",
+]
+
+[structured_outputs.reconciliation]
+target = "/output/reconciliation.json"
+format = "json"
+instruction_checks = [
+  "episodes",
+  "roster_final",
+  "borrow_peer",
+  "payload_digest",
+  "fragment_digest",
+  "decision",
+]

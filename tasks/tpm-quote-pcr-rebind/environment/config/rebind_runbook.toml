@@ -1,0 +1,7 @@
+# operator notes for publish lane
+tooling = ["fwreplay", "sealmake", "floorcheck", "benchcheck", "logscan"]
+matrix = "/opt/rly/config/matrix.yaml"
+trace_root = "/data/traces"
+blob_root = "/data/blobs"
+bundle_out = "/output/attestation-bundle.json"
+verdict_out = "/output/gate-verdict.json"

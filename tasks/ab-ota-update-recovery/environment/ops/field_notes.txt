@@ -1,0 +1,1 @@
+Images are flat sector arrays. slotstat reports counters only; use bootsim after recovery.

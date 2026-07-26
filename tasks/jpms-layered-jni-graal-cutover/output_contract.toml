@@ -1,0 +1,22 @@
+user_visible_outputs = [
+  "/output/pack-report.json",
+  "/app/bin/packctl",
+  "/app/ops/matrix.toml",
+  "/app/link/pack-notes.toml",
+]
+internal_harness_files = [
+  "/app/tools/packctl",
+]
+
+[structured_outputs.pack_report]
+target = "/output/pack-report.json"
+format = "json"
+instruction_checks = [
+  "probe_engine",
+  "packctl-1",
+  "modes",
+  "status",
+  "spi_bound",
+  "jni_bridge",
+  "reflect_kept",
+]

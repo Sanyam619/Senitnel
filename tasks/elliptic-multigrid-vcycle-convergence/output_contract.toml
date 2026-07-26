@@ -1,0 +1,39 @@
+user_visible_outputs = [
+  "/app/output/convergence.json",
+  "/app/output/traces/s_iso.trace",
+  "/app/output/traces/s_aniso.trace",
+  "/app/output/traces/s_jump.trace",
+  "/app/output/traces/s_corner.trace",
+  "/app/output/traces/s_mixed.trace",
+  "/app/output/fields/s_iso.f64",
+  "/app/output/fields/s_aniso.f64",
+  "/app/output/fields/s_jump.f64",
+  "/app/output/fields/s_corner.f64",
+  "/app/output/fields/s_mixed.f64",
+  "/app/scripts/run_solve.sh",
+  "/app/data/policy/budgets.table",
+  "/app/include/solver_config.h",
+]
+
+internal_harness_files = [
+  "/app/data/scenarios/s_iso.desc",
+  "/app/data/scenarios/s_aniso.desc",
+  "/app/data/scenarios/s_jump.desc",
+  "/app/data/scenarios/s_corner.desc",
+  "/app/data/scenarios/s_mixed.desc",
+  "/app/docs/README.md",
+  "/app/docs/architecture.md",
+]
+
+[structured_outputs.convergence_report]
+target = "/app/output/convergence.json"
+format = "json"
+instruction_checks = [
+  "solver_tag",
+  "scenarios",
+  "all_within_budget",
+  "label",
+  "iterations",
+  "residual",
+  "budget",
+]

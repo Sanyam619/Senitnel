@@ -18,7 +18,7 @@ Step 2b:          Cursor   → Draft files + mechanical gates + ORACLE 1X SANITY
                              Any check that fires forces re-entry at the cheapest unchecked point,
                              so expensive oracle time is never wasted on a collapse-failing task.
                              Do NOT run oracle 10x here — that's Step 4's job.
-Step 3a (opt-in): Cursor   → Diagnostics for REVISIONS only — GPT-5.2 quality check (3a-Q)
+Step 3a (opt-in): Cursor   → Diagnostics for REVISIONS only — GPT-5.6 quality check (3a-Q)
                              and/or verifier_health.py (3a-V). Completely optional for new tasks.
 Step 3b:          Cursor   → LLM-LEVEL REVIEW ONLY (paper, no oracle runs). Three sub-steps:
                                1. Structural review against @review-and-submit.mdc
@@ -478,7 +478,7 @@ Both `harbor tasks check` (quality check) and `verifier_health.py` are **complet
 - Platform agent trials reported 0/10 while Step 2b's oracle + NOP look healthy → 3a-V (verifier_health).
 - A specific test looks chain-dependent, order-sensitive, or potentially flaky → 3a-V.
 - A reviewer asked for partial-oracle ablation evidence → 3a-V.
-- A reviewer asked for a GPT-5.2 rubric audit, or post-upload feedback points at instruction/test wording → 3a-Q.
+- A reviewer asked for a GPT-5.6 rubric audit, or post-upload feedback points at instruction/test wording → 3a-Q.
 - Step 4's 10x oracle stress showed intermittent failures → 3a-V with `--include-repeat-oracle`.
 
 3a-Q and 3a-V are independent. Run 3a-Q alone, 3a-V alone, or both. Skip both entirely for routine new tasks.
@@ -490,7 +490,7 @@ Both `harbor tasks check` (quality check) and `verifier_health.py` are **complet
 
 **After running a Step 3a sub-step:** rerun Step 2b's mechanical gates on any files that changed (static → collapse → 1x oracle + NOP — not 10x), then go to Step 3b (review) and Step 4 (10x + package + approve). Attach the artifact(s) to `approve_task.py` in Step 4 — see the Step 4 flag table.
 
-### 3a-Q. Quality check (GPT-5.2 rubric audit) — OPT-IN, REVISIONS
+### 3a-Q. Quality check (GPT-5.6 rubric audit) — OPT-IN, REVISIONS
 
 Run when a reviewer requested it or you want to pressure-test the instruction/test wording against an LLM judge.
 

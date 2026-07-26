@@ -1,0 +1,8 @@
+[Unit]
+Description=Flush outbound spool
+
+[Path]
+PathExists=/var/spool/outbound
+
+[Install]
+WantedBy=multi-user.target

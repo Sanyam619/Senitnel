@@ -1,0 +1,10 @@
+Q|q01|www.example.test|140
+Q|q02|www.example.test|170
+Q|q03|stale.example.test|170
+Q|q04|api.example.test|151
+Q|q05|lab.example.test|245
+Q|q06|lab.example.test|265
+Q|q07|cold.archive.example.test|299
+Q|q08|cold.archive.example.test|300
+Q|q09|orphan.archive.example.test|330
+Q|q10|missing.example.test|180

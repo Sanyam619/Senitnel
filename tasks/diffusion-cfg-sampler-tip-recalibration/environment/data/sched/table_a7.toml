@@ -1,0 +1,12 @@
+# Durable CFG / sampler schedule keyed by tip generation.
+[cfg]
+"3" = 7.260000
+"4" = 7.380000
+"6" = 7.500000
+"8" = 7.140000
+
+[sampler]
+"3" = "dpmpp_2m"
+"4" = "dpmpp_2m"
+"6" = "dpmpp_2m"
+"8" = "heun"

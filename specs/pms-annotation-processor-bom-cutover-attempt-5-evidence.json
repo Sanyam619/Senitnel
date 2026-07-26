@@ -1,0 +1,18 @@
+{
+  "note": "HARD companion-mesh attestation redesign after Maven JPMS TRIVIAL and capsule three-stub TRIVIAL. Differentiated edge-lane-class WAL/authority lattice (mesh-attestation / reject-ledger / seal_break / surfskim). Construction manifest omitted intentionally: shipped symbols are domain-coupled like edge-lane (CR1/CR2 WARN legacy parity); opaque rename would be a separate originality pass.",
+  "redesign": {
+    "category": "security",
+    "primary_language": "rust",
+    "outputs": [
+      "/output/mesh-attestation.json",
+      "/output/reject-ledger.json"
+    ],
+    "hardness": [
+      "surface\u2260authority",
+      "keyed integrity",
+      "replay",
+      "hold-vs-revoke presence",
+      "reject ledger"
+    ]
+  }
+}

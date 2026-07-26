@@ -1,0 +1,2 @@
+{"epoch": 1, "lab": "cinder", "tag": "admit", "ts": 100}
+{"epoch": 5, "tag": "seal", "ts": 500, "volume_id": "vol-gamma"}

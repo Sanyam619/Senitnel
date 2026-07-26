@@ -1,0 +1,3 @@
+# Fleet-local overlay used during A/B kernel trials.
+selected_kernel = cubic_spline
+source = fleet_trial

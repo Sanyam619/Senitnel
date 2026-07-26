@@ -1,0 +1,9 @@
+{
+  "id": "t_alpha",
+  "seq": 1,
+  "stratum": "s0",
+  "base": 0.72,
+  "peak": 0.80,
+  "durable_hit": 0.15,
+  "overflow_hit": -0.20
+}

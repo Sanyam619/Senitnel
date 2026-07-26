@@ -1,0 +1,32 @@
+user_visible_outputs = [
+  "/output/uplift-eval.json",
+  "/app/scripts/run_uplift_eval.sh",
+  "/app/docs/uplift_bands.md",
+  "/app/docs/desk_notes.md",
+  "/app/data/outcomes",
+  "/app/data/treat",
+  "/app/data/feat",
+  "/app/data/estimators",
+  "/app/eng",
+  "/app/calib",
+  "/app/tools/upliftprobe",
+]
+
+internal_harness_files = [
+  "/app/eng/target",
+  "/app/scripts/verify_fixtures.sh",
+  "/app/seat",
+  "/app/flag",
+  "/app/mix",
+  "/app/score",
+  "/app/gate",
+]
+
+[structured_outputs.uplift_eval]
+target = "/output/uplift-eval.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "slices",
+  "eval_ok",
+]

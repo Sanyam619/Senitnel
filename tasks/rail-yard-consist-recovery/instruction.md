@@ -1,0 +1,7 @@
+Movement journals under `/app/data/movements/` and event payloads under `/app/data/events/` disagree after a partial yard replay. Aggregating place/pull operations into a consist track map at the promoted head drops the tank that should sit on the arrival track, leaves a ghost id on the departure spur, omits the hopper on the storage track, and fails the audit digest against `/app/ops/scripts/consist_lab.py`. Car registry rows under `/app/data/cars/` were not part of the incident — do not hand-edit them.
+
+The promoted movement head is the maximum `seq` across all `/app/data/movements/tier_*.jsonl` journals. A partial-window probe reading, a shallow tier head, or clearing a pin to zero is not that head. Operator end-state for the consist export pipeline — including how `journal_pin`, `seq_floor`, `replay_gate`, `tier_reducer`, and runtime `active_seq` must relate to the promoted head — is in `/app/ops/runbooks/yard_usage.md`.
+
+Recovery is operational only: edit operator tables under `/app/config/l7/` and runtime state under `/app/data/state/`, then run `/app/bin/yardctl` and `/app/bin/lane`. Do not modify the shipped reporting tools under `/app/bin/`.
+
+Write `/output/consist-report.json` using `/app/bin/yardctl report --out /output/consist-report.json`. The report includes integer `replay_seq`, a `tracks` object mapping each visible track id to ordered car ids, and hex string `audit_digest`. Values agree with `/app/ops/scripts/consist_lab.py` at the promoted movement head. `/app/bin/lane probe` prints the same integer as `replay_seq`.

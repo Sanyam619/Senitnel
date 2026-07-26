@@ -1,0 +1,90 @@
+{
+  "hardness_axes": [
+    {"id": "discover", "name": "Discover", "verdict": "PASS", "reasoning": "Solver must discover sealed-max minus retired tip resolution, soft-win beta scaling, and rematerialize gate from materials."},
+    {"id": "synthesize", "name": "Synthesize", "verdict": "PASS", "reasoning": "Win-rate × KL × beta tip × tip_epoch × calib bind must agree; prefprobe win-only is insufficient."},
+    {"id": "diagnose", "name": "Diagnose", "verdict": "PASS", "reasoning": "Instruction is symptoms-only; no named broken helpers."},
+    {"id": "coupling", "name": "Navigate coupling", "verdict": "PASS", "reasoning": "Trial selection rematerializes all five seating surfaces until serving + matching tip_bind."},
+    {"id": "beyond_training", "name": "Reason beyond training", "verdict": "PASS", "reasoning": "Preference KL seating with journal tip vs live high-beta bait is not a textbook one-pass recipe."}
+  ],
+  "anti_trivialization_checks": [
+    {"id": "19", "name": "Discovery budget", "verdict": "PASS", "reasoning": "≥3 discoveries: tip resolve, soft-win beta, rematerialize gate, KL vs prefprobe."},
+    {"id": "21", "name": "Topology distribution", "verdict": "PASS", "reasoning": "Five seating loci plus calib gate; no single location greens the suite."}
+  ],
+  "rubric_axes": [
+    {"id": "verifiable", "name": "Verifiable", "verdict": "PASS", "reasoning": "Deterministic JSON report + rebuild tests."},
+    {"id": "well_specified", "name": "Well-specified", "verdict": "PASS", "reasoning": "Bands doc + schema outcomes."},
+    {"id": "solvable", "name": "Solvable", "verdict": "PASS", "reasoning": "Oracle seats tip+scoring in <100 LOC substantive edits."},
+    {"id": "difficult", "name": "Difficult", "verdict": "PASS", "reasoning": "Coupled SoftHSM-class rematerialize + novel tip inject."},
+    {"id": "interesting", "name": "Interesting", "verdict": "PASS", "reasoning": "RLHF preference eval under KL ceilings."},
+    {"id": "outcome_verified", "name": "Outcome-verified", "verdict": "PASS", "reasoning": "Grades published metrics, not process."}
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Expert can verify bands, tip fields, rebuild, idempotence from instruction + docs."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "Durable tip is sealed-max minus retired (not live high-beta).",
+      "planned_location": "data/tips/tip_journal.jsonl + retired_tips.jsonl + seat/knit_b.rs",
+      "why_instruction_must_not_reveal": "Naming sealed-max recipe collapses tip seating to transcription."
+    },
+    {
+      "discovery": "win_rate is soft sigmoid(beta·margin), not hard wins.",
+      "planned_location": "mix/ward_d.rs + prefs margins",
+      "why_instruction_must_not_reveal": "Publishing the sigmoid formula enables one-pass polarity flip."
+    },
+    {
+      "discovery": "Trial selection rematerializes seating until serving + tip_bind matches resolved tip.",
+      "planned_location": "eng/build.rs + calib/",
+      "why_instruction_must_not_reveal": "Pasteable bind template + checklist collapses SoftHSM harden."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Outcomes and paths only; no fix sites or algebra."
+  },
+  "attack_path": {
+    "summary": "Agent greps always-wrong stubs and polarity-flips without unlocking calib.",
+    "mitigation": "build.rs rematerializes all five surfaces until serving + matching bind."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Unlock calib + rewrite five seating bodies + rebuild.",
+    "why_not_trivial": "Must discover tip resolve, soft-win, KL, and survive rematerialize + novel tip inject."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "notes": "Local collapse WARN on RC2/GX3/GX6/GX7 justified; no FAIL."
+  },
+  "topology_enumeration": [
+    {
+      "name": "tip-first",
+      "locations": ["seat/knit_b.rs", "flag/xv_c.rs", "calib/tip_bind.accept"],
+      "why_insufficient_alone": "Correct tip without soft-win/KL/gate still fails bands and eval_ok."
+    },
+    {
+      "name": "scoring-first",
+      "locations": ["mix/ward_d.rs", "score/helm_e.rs", "gate/emit_f.rs"],
+      "why_insufficient_alone": "Scoring edits rematerialize under trial; tip fields still wrong."
+    },
+    {
+      "name": "bind-first",
+      "locations": ["calib/trial_pref.toml", "calib/tip_bind.accept", "eng/build.rs"],
+      "why_insufficient_alone": "Unlock alone leaves broken seeds' polarity bodies in place."
+    }
+  ],
+  "construction_manifest": {
+    "symbol_table": ["pick_t", "bit_z", "mix_w", "score_u", "gate_y"],
+    "code_forbidden_tokens": ["preference", "win_rate", "kl_to_ref", "beta_tip", "tip_epoch", "eval_ok", "ceiling", "sigmoid", "rematerialize", "serving"]
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": ["preference", "win-rate", "KL", "beta", "tip_epoch", "eval", "slice", "prefprobe", "journal", "ceiling"],
+    "renames_during_drafting": [
+      {"from": "resolve_tip", "to": "pick_t"},
+      {"from": "seat_beta", "to": "bit_z"},
+      {"from": "win_rate_fn", "to": "mix_w"},
+      {"from": "kl_fn", "to": "score_u"},
+      {"from": "eval_gate", "to": "gate_y"}
+    ],
+    "concentration_math": {"max_share": 0.30, "cap": 0.5}
+  }
+}

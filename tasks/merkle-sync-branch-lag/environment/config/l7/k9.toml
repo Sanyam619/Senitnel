@@ -1,0 +1,5 @@
+branch_cap = 2
+journal_pin = 2
+head_floor = 2
+sync_ready = false
+audit_stamp = "pending"

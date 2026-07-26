@@ -1,0 +1,972 @@
+{
+  "task_name": "keepalived-vrrp-split-brain-seating",
+  "attempt": 3,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 3,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 8,
+      "warns": 0,
+      "evidence_path": "specs/keepalived-vrrp-split-brain-seating-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [],
+        "anti_trivialization_checks": [],
+        "rubric_axes": [],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction alone explains correctness but not which competing surfaces are authoritative, how sealed batches are selected, how event retractions bind, or which rematerialization phase rewrites live state."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "Weight entries are folded in lexical file order with replace and delta records scoped by peer and VRID; a late abort sheet can shadow a correct live edit.",
+            "planned_location": "environment/plane/fold_h.sh plus realistic conf.d sheets and docs/weight-format.md",
+            "why_instruction_must_not_reveal": "Publishing the exact parser and ordering would turn the task into config transcription."
+          },
+          {
+            "discovery": "Only the latest complete sealed generation contributes durable peer tips and tie preference; live mirror rows and an incomplete later batch are decoys.",
+            "planned_location": "environment/state/choice_m.sh and seed/var/lib/keepalived/ops/prefer.jsonl",
+            "why_instruction_must_not_reveal": "Naming the selected batch would disclose the core authority resolution."
+          },
+          {
+            "discovery": "Transition retractions bind by event id inside committed journal batches, so a later retract can cancel one move without cancelling another VRID event.",
+            "planned_location": "environment/history/trace_p.sh and seed/var/lib/keepalived/ops/transitions.jsonl",
+            "why_instruction_must_not_reveal": "A row-by-row recipe would expose the answer table rather than require continuity reasoning."
+          },
+          {
+            "discovery": "The stale abort drop-in is replayed before every fold unless a generation-bound durable receipt matches, and deleting the live sheet is not a stable solution.",
+            "planned_location": "environment/guard/window_c.sh, seed abort package, and run_vrrp_seat.sh ordering",
+            "why_instruction_must_not_reveal": "The prompt should require re-entry stability without naming the control-plane gate."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "The draft names observable seating validity and structured output but no fix files, symbols, commands beyond the required entrypoint, or implementation recipe."
+        },
+        "attack_path": {
+          "summary": "A solver may try hand-written JSON, a direct Keepalived state edit, a priority-only winner, or a latest-row journal rule.",
+          "reasoning": "Re-entry deletes output, rematerialization overwrites naive state, multiple VRIDs require independent winners, and dynamic sealed/retracted scenarios reject shortcuts."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Coordinate five Bash components plus a generation-bound receipt and live conf.d state.",
+          "reasoning": "The smallest successful change must implement general fold semantics, durable generation selection, eligibility filtering, event-id transition continuity, and deterministic publication; none is sufficient alone."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "The editable frontier is distributed, oracle work is substantive, tests exercise dynamic scenarios, and prompt nouns do not map to fix-path symbols.",
+          "residual_hardness": "After seeing the tree, the solver still has to infer which batches are committed, reconcile independent VRIDs, distinguish held and below-floor peers, bind retractions to events, and stop a pre-fold rematerializer from restoring stale weights.",
+          "red_flags": [
+            "Close thematic neighbor to existing seating tasks; countered by event-id retractions, multi-VRID independent masters, complete-batch selection, and dynamic peer injection.",
+            "Structured output schema is necessarily public; no standalone schema-only test will receive a free scoring cell."
+          ]
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "keepalived",
+            "vrrp",
+            "split",
+            "brain",
+            "seat",
+            "virtual",
+            "IP",
+            "failover",
+            "desk",
+            "output",
+            "schema",
+            "tag",
+            "instances",
+            "array",
+            "name",
+            "vrid",
+            "state",
+            "priority",
+            "vip",
+            "generation",
+            "transitions",
+            "epoch",
+            "from",
+            "to",
+            "boolean",
+            "MASTER",
+            "peer",
+            "weight",
+            "configuration",
+            "durable",
+            "floor",
+            "hold",
+            "journal",
+            "event",
+            "retraction",
+            "health",
+            "fixtures",
+            "entrypoint",
+            "run",
+            "JSON"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "priority/fold.sh",
+              "renamed_to": "plane/fold_h.sh",
+              "reason": "Avoid instruction noun priority and use an opaque fix-path location."
+            },
+            {
+              "original": "election/select.sh",
+              "renamed_to": "state/choice_m.sh",
+              "reason": "Avoid exposing the election locus from the file tree."
+            },
+            {
+              "original": "journal/reduce.sh",
+              "renamed_to": "history/trace_p.sh",
+              "reason": "Avoid instruction noun journal on the fix path."
+            }
+          ],
+          "test_names_audited": [
+            "test_q3_topaz",
+            "test_n4_beryl",
+            "test_w7_quartz",
+            "test_v5_coral",
+            "test_p9_jade",
+            "test_h8_amber",
+            "test_c1_flint",
+            "test_r6_slate",
+            "test_u2_mica",
+            "test_m1_opal",
+            "test_k5_garnet",
+            "test_s8_zircon",
+            "test_t4_pearl",
+            "test_b6_cobalt",
+            "test_d4_jet",
+            "test_x7_agate"
+          ],
+          "concentration_math": {
+            "total_tests": 16,
+            "per_location": [
+              {
+                "location_id": "L1",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L2",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L3",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L4",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L5",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L6",
+                "test_count": 4,
+                "ratio": 0.25
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 15,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "L1",
+                "test_count": 3,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "L2",
+                "test_count": 3,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "L3",
+                "test_count": 3,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "L4",
+                "test_count": 3,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "L5",
+                "test_count": 3,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "L6",
+                "test_count": 4,
+                "ratio": 0.26666666666666666
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [
+        "hardness_axes is missing required ids: discover, synthesize, diagnose, navigate_coupling, reason_beyond_training.",
+        "hardness_axes contains unexpected ids: H1, H2, H3, H4, H5.",
+        "anti_trivialization_checks is missing required ids: disclosure_collapse, hidden_instance, single_artifact_repair, generalization, prompt_honesty, cheating_vs_difficulty, mechanical_fix_filter, localized_fix, oracle_locality, small_declarative_cluster, grep_collapse, pre_factored_helper, recipe_discount, security_aura_discount, orthogonal_checklist, harness_discount, one_pass_solvability, hard_only_gate, discovery_budget_test, instruction_specificity_test, topology_distribution_test.",
+        "anti_trivialization_checks contains unexpected ids: A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21.",
+        "rubric_axes is missing required ids: verifiable, well_specified, solvable, difficult, interesting, outcome_verified.",
+        "rubric_axes contains unexpected ids: R1, R2, R3, R4, R5, R6.",
+        "test name 'test_q3_topaz' contains forbidden instruction noun 'to'.",
+        "naming_pass.concentration_math disagrees with computed values: total_tests supplied=16 computed=15; location 'L1' ratio supplied=0.1875 computed=0.200000; location 'L2' ratio supplied=0.1875 computed=0.200000; location 'L3' ratio supplied=0.1875 computed=0.200000; location 'L4' ratio supplied=0.1875 computed=0.200000; location 'L5' ratio supplied=0.1875 computed=0.200000; location 'L6' ratio supplied=0.25 computed=0.266667"
+      ],
+      "blocking_failures": [
+        "hardness_axes is missing required ids: discover, synthesize, diagnose, navigate_coupling, reason_beyond_training.",
+        "hardness_axes contains unexpected ids: H1, H2, H3, H4, H5.",
+        "anti_trivialization_checks is missing required ids: disclosure_collapse, hidden_instance, single_artifact_repair, generalization, prompt_honesty, cheating_vs_difficulty, mechanical_fix_filter, localized_fix, oracle_locality, small_declarative_cluster, grep_collapse, pre_factored_helper, recipe_discount, security_aura_discount, orthogonal_checklist, harness_discount, one_pass_solvability, hard_only_gate, discovery_budget_test, instruction_specificity_test, topology_distribution_test.",
+        "anti_trivialization_checks contains unexpected ids: A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21.",
+        "rubric_axes is missing required ids: verifiable, well_specified, solvable, difficult, interesting, outcome_verified.",
+        "rubric_axes contains unexpected ids: R1, R2, R3, R4, R5, R6.",
+        "test name 'test_q3_topaz' contains forbidden instruction noun 'to'.",
+        "naming_pass.concentration_math disagrees with computed values: total_tests supplied=16 computed=15; location 'L1' ratio supplied=0.1875 computed=0.200000; location 'L2' ratio supplied=0.1875 computed=0.200000; location 'L3' ratio supplied=0.1875 computed=0.200000; location 'L4' ratio supplied=0.1875 computed=0.200000; location 'L5' ratio supplied=0.1875 computed=0.200000; location 'L6' ratio supplied=0.25 computed=0.266667"
+      ]
+    },
+    {
+      "attempt": 2,
+      "fails": 19,
+      "warns": 0,
+      "evidence_path": "specs/keepalived-vrrp-split-brain-seating-attempt-2-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "The solver must recover the conf.d fold grammar, sealed-generation selection, event-id retraction semantics, and rematerialization gate from live behavior and distributed Bash components."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Correct seating combines live Keepalived state, folded weights, durable preference order, generation floors, hold windows, and transition continuity."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "The public prompt states seating outcomes and the misleading surface-health observation without naming defective helpers or causes."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "A locally correct election is overwritten without the durable receipt, and correct transition continuity still fails unless generation and hold eligibility feed the same publisher."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "The challenge is a task-specific multi-VRID authority reconciliation with interleaved sealed batches and event retractions, not a stock Keepalived configuration recipe."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests include baseline and verifier-created peer and transition scenarios."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Opening one script cannot expose the sealed-batch selection, fold ordering, candidate eligibility, and publish invariants together."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "The planned dynamic re-entry matrix and distributed authority topology target hard rather than medium."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "All outputs and live-state invariants are deterministic and programmatically checked."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "The prompt defines the entrypoint, structured output, election validity, transition effect, fixture integrity, and determinism."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "An experienced Linux HA administrator can trace and reconcile the Bash control plane in a few hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "The solver must coordinate several authority layers and validate them across dynamic VRID scenarios."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Preventing VRRP split brain while preserving independent VIP masters is realistic operational work."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction alone explains correctness but not which competing surfaces are authoritative, how sealed batches are selected, how event retractions bind, or which rematerialization phase rewrites live state."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "Weight entries are folded in lexical file order with replace and delta records scoped by peer and VRID; a late abort sheet can shadow a correct live edit.",
+            "planned_location": "environment/plane/fold_h.sh plus realistic conf.d sheets and docs/weight-format.md",
+            "why_instruction_must_not_reveal": "Publishing the exact parser and ordering would turn the task into config transcription."
+          },
+          {
+            "discovery": "Only the latest complete sealed generation contributes durable peer tips and tie preference; live mirror rows and an incomplete later batch are decoys.",
+            "planned_location": "environment/state/choice_m.sh and seed/var/lib/keepalived/ops/prefer.jsonl",
+            "why_instruction_must_not_reveal": "Naming the selected batch would disclose the core authority resolution."
+          },
+          {
+            "discovery": "Transition retractions bind by event id inside committed journal batches, so a later retract can cancel one move without cancelling another VRID event.",
+            "planned_location": "environment/history/trace_p.sh and seed/var/lib/keepalived/ops/transitions.jsonl",
+            "why_instruction_must_not_reveal": "A row-by-row recipe would expose the answer table rather than require continuity reasoning."
+          },
+          {
+            "discovery": "The stale abort drop-in is replayed before every fold unless a generation-bound durable receipt matches, and deleting the live sheet is not a stable solution.",
+            "planned_location": "environment/guard/window_c.sh, seed abort package, and run_vrrp_seat.sh ordering",
+            "why_instruction_must_not_reveal": "The prompt should require re-entry stability without naming the control-plane gate."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "The draft names observable seating validity and structured output but no fix files, symbols, commands beyond the required entrypoint, or implementation recipe."
+        },
+        "attack_path": {
+          "summary": "A solver may try hand-written JSON, a direct Keepalived state edit, a priority-only winner, or a latest-row journal rule.",
+          "reasoning": "Re-entry deletes output, rematerialization overwrites naive state, multiple VRIDs require independent winners, and dynamic sealed/retracted scenarios reject shortcuts."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Coordinate five Bash components plus a generation-bound receipt and live conf.d state.",
+          "reasoning": "The smallest successful change must implement general fold semantics, durable generation selection, eligibility filtering, event-id transition continuity, and deterministic publication; none is sufficient alone."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "The editable frontier is distributed, oracle work is substantive, tests exercise dynamic scenarios, and prompt nouns do not map to fix-path symbols.",
+          "residual_hardness": "After seeing the tree, the solver still has to infer which batches are committed, reconcile independent VRIDs, distinguish held and below-floor peers, bind retractions to events, and stop a pre-fold rematerializer from restoring stale weights.",
+          "red_flags": [
+            "Close thematic neighbor to existing seating tasks; countered by event-id retractions, multi-VRID independent masters, complete-batch selection, and dynamic peer injection.",
+            "Structured output schema is necessarily public; no standalone schema-only test will receive a free scoring cell."
+          ]
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "keepalived",
+            "vrrp",
+            "split",
+            "brain",
+            "seat",
+            "virtual",
+            "IP",
+            "failover",
+            "desk",
+            "output",
+            "schema",
+            "tag",
+            "instances",
+            "array",
+            "name",
+            "vrid",
+            "state",
+            "priority",
+            "vip",
+            "generation",
+            "transitions",
+            "epoch",
+            "boolean",
+            "MASTER",
+            "peer",
+            "weight",
+            "configuration",
+            "durable",
+            "floor",
+            "hold",
+            "journal",
+            "event",
+            "retraction",
+            "health",
+            "fixtures",
+            "entrypoint",
+            "JSON"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "priority/fold.sh",
+              "renamed_to": "plane/fold_h.sh",
+              "reason": "Avoid instruction noun priority and use an opaque fix-path location."
+            },
+            {
+              "original": "election/select.sh",
+              "renamed_to": "state/choice_m.sh",
+              "reason": "Avoid exposing the election locus from the file tree."
+            },
+            {
+              "original": "journal/reduce.sh",
+              "renamed_to": "history/trace_p.sh",
+              "reason": "Avoid instruction noun journal on the fix path."
+            }
+          ],
+          "test_names_audited": [
+            "test_q3_topaz",
+            "test_n4_beryl",
+            "test_w7_quartz",
+            "test_v5_coral",
+            "test_p9_jade",
+            "test_h8_amber",
+            "test_c1_flint",
+            "test_r6_slate",
+            "test_u2_mica",
+            "test_m1_opal",
+            "test_k5_garnet",
+            "test_s8_zircon",
+            "test_t4_pearl",
+            "test_b6_cobalt",
+            "test_d4_jet",
+            "test_x7_agate"
+          ],
+          "concentration_math": {
+            "total_tests": 16,
+            "per_location": [
+              {
+                "location_id": "L1",
+                "test_count": 4,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "L2",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L3",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L4",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L5",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L6",
+                "test_count": 4,
+                "ratio": 0.25
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 16,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "L1",
+                "test_count": 4,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "L2",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L3",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L4",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L5",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L6",
+                "test_count": 4,
+                "ratio": 0.25
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [
+        "anti_trivialization_checks entry 'disclosure_collapse' must use name 'Disclosure-collapse', found 'Disclosure collapse'.",
+        "anti_trivialization_checks entry 'hidden_instance' must use name 'Hidden-instance', found 'Hidden instance'.",
+        "anti_trivialization_checks entry 'single_artifact_repair' must use name 'Single-artifact repair', found 'Single artifact repair'.",
+        "anti_trivialization_checks entry 'prompt_honesty' must use name 'Prompt-honesty', found 'Prompt honesty'.",
+        "anti_trivialization_checks entry 'cheating_vs_difficulty' must use name 'Cheating-vs-difficulty', found 'Cheating versus difficulty'.",
+        "anti_trivialization_checks entry 'mechanical_fix_filter' must use name 'Mechanical-fix filter', found 'Mechanical fix filter'.",
+        "anti_trivialization_checks entry 'localized_fix' must use name 'Localized-fix', found 'Localized fix'.",
+        "anti_trivialization_checks entry 'oracle_locality' must use name 'Oracle-locality', found 'Oracle locality'.",
+        "anti_trivialization_checks entry 'small_declarative_cluster' must use name 'Small declarative-cluster', found 'Small declarative cluster'.",
+        "anti_trivialization_checks entry 'grep_collapse' must use name 'Grep-collapse', found 'Grep collapse'.",
+        "anti_trivialization_checks entry 'pre_factored_helper' must use name 'Pre-factored-helper', found 'Pre-factored helper'.",
+        "anti_trivialization_checks entry 'recipe_discount' must use name 'Recipe-discount', found 'Recipe discount'.",
+        "anti_trivialization_checks entry 'security_aura_discount' must use name 'Security-aura discount', found 'Security aura discount'.",
+        "anti_trivialization_checks entry 'orthogonal_checklist' must use name 'Orthogonal-checklist', found 'Orthogonal checklist'.",
+        "anti_trivialization_checks entry 'harness_discount' must use name 'Harness-discount', found 'Harness discount'.",
+        "anti_trivialization_checks entry 'discovery_budget_test' must use name 'Discovery budget test', found 'Discovery budget'.",
+        "anti_trivialization_checks entry 'instruction_specificity_test' must use name 'Instruction specificity test', found 'Instruction specificity'.",
+        "anti_trivialization_checks entry 'topology_distribution_test' must use name 'Topology distribution test', found 'Topology distribution'.",
+        "rubric_axes entry 'outcome_verified' must use name 'Outcome-verified', found 'Outcome verified'."
+      ],
+      "blocking_failures": [
+        "anti_trivialization_checks entry 'disclosure_collapse' must use name 'Disclosure-collapse', found 'Disclosure collapse'.",
+        "anti_trivialization_checks entry 'hidden_instance' must use name 'Hidden-instance', found 'Hidden instance'.",
+        "anti_trivialization_checks entry 'single_artifact_repair' must use name 'Single-artifact repair', found 'Single artifact repair'.",
+        "anti_trivialization_checks entry 'prompt_honesty' must use name 'Prompt-honesty', found 'Prompt honesty'.",
+        "anti_trivialization_checks entry 'cheating_vs_difficulty' must use name 'Cheating-vs-difficulty', found 'Cheating versus difficulty'.",
+        "anti_trivialization_checks entry 'mechanical_fix_filter' must use name 'Mechanical-fix filter', found 'Mechanical fix filter'.",
+        "anti_trivialization_checks entry 'localized_fix' must use name 'Localized-fix', found 'Localized fix'.",
+        "anti_trivialization_checks entry 'oracle_locality' must use name 'Oracle-locality', found 'Oracle locality'.",
+        "anti_trivialization_checks entry 'small_declarative_cluster' must use name 'Small declarative-cluster', found 'Small declarative cluster'.",
+        "anti_trivialization_checks entry 'grep_collapse' must use name 'Grep-collapse', found 'Grep collapse'.",
+        "anti_trivialization_checks entry 'pre_factored_helper' must use name 'Pre-factored-helper', found 'Pre-factored helper'.",
+        "anti_trivialization_checks entry 'recipe_discount' must use name 'Recipe-discount', found 'Recipe discount'.",
+        "anti_trivialization_checks entry 'security_aura_discount' must use name 'Security-aura discount', found 'Security aura discount'.",
+        "anti_trivialization_checks entry 'orthogonal_checklist' must use name 'Orthogonal-checklist', found 'Orthogonal checklist'.",
+        "anti_trivialization_checks entry 'harness_discount' must use name 'Harness-discount', found 'Harness discount'.",
+        "anti_trivialization_checks entry 'discovery_budget_test' must use name 'Discovery budget test', found 'Discovery budget'.",
+        "anti_trivialization_checks entry 'instruction_specificity_test' must use name 'Instruction specificity test', found 'Instruction specificity'.",
+        "anti_trivialization_checks entry 'topology_distribution_test' must use name 'Topology distribution test', found 'Topology distribution'.",
+        "rubric_axes entry 'outcome_verified' must use name 'Outcome-verified', found 'Outcome verified'."
+      ]
+    },
+    {
+      "attempt": 3,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/keepalived-vrrp-split-brain-seating-attempt-3-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "The solver must recover the conf.d fold grammar, sealed-generation selection, event-id retraction semantics, and rematerialization gate from live behavior and distributed Bash components."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Correct seating combines live Keepalived state, folded weights, durable preference order, generation floors, hold windows, and transition continuity."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "The public prompt states seating outcomes and the misleading surface-health observation without naming defective helpers or causes."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "A locally correct election is overwritten without the durable receipt, and correct transition continuity still fails unless generation and hold eligibility feed the same publisher."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "The challenge is a task-specific multi-VRID authority reconciliation with interleaved sealed batches and event retractions, not a stock Keepalived configuration recipe."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Honest election outcomes do not reveal which live or durable surface wins each authority conflict."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Multiple VRIDs, peers, generations, holds, and journal batches must all work, including a novel injected scenario."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "No config-only or report-only edit can survive re-entry and satisfy all scenario families."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests include baseline and verifier-created peer and transition scenarios."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "The prompt defines valid MASTER seating and output semantics without identifying implementation loci."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Output deletion and fixture pins prevent bypasses but are not counted as the source of hardness."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Difficulty resides in authority reconciliation, not verifier setup."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Five distinct Bash roots participate and each controls a minority test subset."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "The oracle makes substantive coordinated changes to fold, election, continuity, rematerialization, and publication surfaces."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Changing the receipt or site policy alone leaves election and history cases incorrect."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Fix-path names are opaque and instruction nouns are excluded from their symbols and paths."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "No fix-path symbol names election, transition, priority, hold, generation, or seating."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Standard VRRP priority knowledge is insufficient to resolve the task-specific durable batch and retraction authorities."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "No security framing is used; the graded work is live system administration."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Eligibility alters the candidate set consumed by priority selection, while history can override an otherwise valid winner and rematerialization can undo the live fold."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "The single-container harness is simple and not treated as hardness."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Opening one script cannot expose the sealed-batch selection, fold ordering, candidate eligibility, and publish invariants together."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "The planned dynamic re-entry matrix and distributed authority topology target hard rather than medium."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Four nontrivial discoveries are committed below."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "The draft is symptoms-only and gives outcomes rather than causes or patch locations."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three candidate topologies each require at least three coordinated locations."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "All outputs and live-state invariants are deterministic and programmatically checked."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "The prompt defines the entrypoint, structured output, election validity, transition effect, fixture integrity, and determinism."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "An experienced Linux HA administrator can trace and reconcile the Bash control plane in a few hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "The solver must coordinate several authority layers and validate them across dynamic VRID scenarios."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Preventing VRRP split brain while preserving independent VIP masters is realistic operational work."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Tests grade live state and recomputed seating, not source shape or a prescribed implementation."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction alone explains correctness but not which competing surfaces are authoritative, how sealed batches are selected, how event retractions bind, or which rematerialization phase rewrites live state."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "Weight entries are folded in lexical file order with replace and delta records scoped by peer and VRID; a late abort sheet can shadow a correct live edit.",
+            "planned_location": "environment/plane/fold_h.sh plus realistic conf.d sheets and docs/weight-format.md",
+            "why_instruction_must_not_reveal": "Publishing the exact parser and ordering would turn the task into config transcription."
+          },
+          {
+            "discovery": "Only the latest complete sealed generation contributes durable peer tips and tie preference; live mirror rows and an incomplete later batch are decoys.",
+            "planned_location": "environment/state/choice_m.sh and seed/var/lib/keepalived/ops/prefer.jsonl",
+            "why_instruction_must_not_reveal": "Naming the selected batch would disclose the core authority resolution."
+          },
+          {
+            "discovery": "Transition retractions bind by event id inside committed journal batches, so a later retract can cancel one move without cancelling another VRID event.",
+            "planned_location": "environment/history/trace_p.sh and seed/var/lib/keepalived/ops/transitions.jsonl",
+            "why_instruction_must_not_reveal": "A row-by-row recipe would expose the answer table rather than require continuity reasoning."
+          },
+          {
+            "discovery": "The stale abort drop-in is replayed before every fold unless a generation-bound durable receipt matches, and deleting the live sheet is not a stable solution.",
+            "planned_location": "environment/guard/window_c.sh, seed abort package, and run_vrrp_seat.sh ordering",
+            "why_instruction_must_not_reveal": "The prompt should require re-entry stability without naming the control-plane gate."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "The draft names observable seating validity and structured output but no fix files, symbols, commands beyond the required entrypoint, or implementation recipe."
+        },
+        "attack_path": {
+          "summary": "A solver may try hand-written JSON, a direct Keepalived state edit, a priority-only winner, or a latest-row journal rule.",
+          "reasoning": "Re-entry deletes output, rematerialization overwrites naive state, multiple VRIDs require independent winners, and dynamic sealed/retracted scenarios reject shortcuts."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Coordinate five Bash components plus a generation-bound receipt and live conf.d state.",
+          "reasoning": "The smallest successful change must implement general fold semantics, durable generation selection, eligibility filtering, event-id transition continuity, and deterministic publication; none is sufficient alone."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "The editable frontier is distributed, oracle work is substantive, tests exercise dynamic scenarios, and prompt nouns do not map to fix-path symbols.",
+          "residual_hardness": "After seeing the tree, the solver still has to infer which batches are committed, reconcile independent VRIDs, distinguish held and below-floor peers, bind retractions to events, and stop a pre-fold rematerializer from restoring stale weights.",
+          "red_flags": [
+            "Close thematic neighbor to existing seating tasks; countered by event-id retractions, multi-VRID independent masters, complete-batch selection, and dynamic peer injection.",
+            "Structured output schema is necessarily public; no standalone schema-only test will receive a free scoring cell."
+          ]
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "keepalived",
+            "vrrp",
+            "split",
+            "brain",
+            "seat",
+            "virtual",
+            "IP",
+            "failover",
+            "desk",
+            "output",
+            "schema",
+            "tag",
+            "instances",
+            "array",
+            "name",
+            "vrid",
+            "state",
+            "priority",
+            "vip",
+            "generation",
+            "transitions",
+            "epoch",
+            "boolean",
+            "MASTER",
+            "peer",
+            "weight",
+            "configuration",
+            "durable",
+            "floor",
+            "hold",
+            "journal",
+            "event",
+            "retraction",
+            "health",
+            "fixtures",
+            "entrypoint",
+            "JSON"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "priority/fold.sh",
+              "renamed_to": "plane/fold_h.sh",
+              "reason": "Avoid instruction noun priority and use an opaque fix-path location."
+            },
+            {
+              "original": "election/select.sh",
+              "renamed_to": "state/choice_m.sh",
+              "reason": "Avoid exposing the election locus from the file tree."
+            },
+            {
+              "original": "journal/reduce.sh",
+              "renamed_to": "history/trace_p.sh",
+              "reason": "Avoid instruction noun journal on the fix path."
+            }
+          ],
+          "test_names_audited": [
+            "test_q3_topaz",
+            "test_n4_beryl",
+            "test_w7_quartz",
+            "test_v5_coral",
+            "test_p9_jade",
+            "test_h8_amber",
+            "test_c1_flint",
+            "test_r6_slate",
+            "test_u2_mica",
+            "test_m1_opal",
+            "test_k5_garnet",
+            "test_s8_zircon",
+            "test_t4_pearl",
+            "test_b6_cobalt",
+            "test_d4_jet",
+            "test_x7_agate"
+          ],
+          "concentration_math": {
+            "total_tests": 16,
+            "per_location": [
+              {
+                "location_id": "L1",
+                "test_count": 4,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "L2",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L3",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L4",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L5",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L6",
+                "test_count": 4,
+                "ratio": 0.25
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 16,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "L1",
+                "test_count": 4,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "L2",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L3",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L4",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L5",
+                "test_count": 3,
+                "ratio": 0.1875
+              },
+              {
+                "location_id": "L6",
+                "test_count": 4,
+                "ratio": 0.25
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

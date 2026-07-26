@@ -1,0 +1,22 @@
+user_visible_outputs = [
+  "/output/morris-card.json",
+  "/app/bin/judge.jar",
+]
+
+internal_harness_files = []
+
+[structured_outputs.morris_card]
+target = "/output/morris-card.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "rounds",
+  "board_id",
+  "status",
+  "key_point",
+  "mill_in",
+  "sequence",
+  "removals",
+  "refutations",
+  "coop_fork",
+]

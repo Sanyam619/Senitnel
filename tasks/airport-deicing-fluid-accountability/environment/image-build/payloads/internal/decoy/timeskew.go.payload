@@ -1,0 +1,6 @@
+package decoy
+
+// SkewLabel formats a minute offset for archived stand boards.
+func SkewLabel(base int) string {
+	return string(rune(base%26 + 65))
+}

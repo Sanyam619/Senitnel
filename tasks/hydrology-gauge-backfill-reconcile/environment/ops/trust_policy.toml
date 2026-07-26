@@ -1,0 +1,3 @@
+forbid_merged_stripe = 99
+require_revocation_ledger = true
+primary_channel = "events"

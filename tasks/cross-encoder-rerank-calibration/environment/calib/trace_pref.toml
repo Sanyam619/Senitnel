@@ -1,0 +1,4 @@
+# Trace dial for optional desk telemetry (not the evaluation bind).
+[trace]
+stride = 4
+flush = "line"

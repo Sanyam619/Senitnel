@@ -1,0 +1,13 @@
+puzzle_id: 8
+to_move: black
+target: 5,5
+board:
+.........
+.OOOOOOO.
+.O.....O.
+.O.....O.
+.O..O..O.
+.O.....O.
+.O.....O.
+.OOOOOOO.
+.........

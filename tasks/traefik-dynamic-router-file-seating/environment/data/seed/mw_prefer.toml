@@ -1,0 +1,8 @@
+attach.compress=true
+attach.authstrip=true
+attach.ratelimit=false
+attach.headers=true
+type.compress=compress
+type.authstrip=basicauth
+type.ratelimit=ratelimit
+type.headers=headers

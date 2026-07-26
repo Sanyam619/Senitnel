@@ -1,0 +1,9 @@
+# Evaluation selection for the graph desk.
+
+[evaluation]
+selection = "trial"
+refresh = "auto"
+
+[desk]
+owner = "eval-rotation"
+window = "weekly"

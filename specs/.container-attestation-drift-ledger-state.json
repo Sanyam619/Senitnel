@@ -1,0 +1,375 @@
+{
+  "task_name": "container-attestation-drift-ledger",
+  "attempt": 1,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 1,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/container-attestation-drift-ledger-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must recover platform-vs-index digest binding, attestation subject walk, and post-replay numeric epoch frontier from Rust/Go sources and fixtures \u2014 none of these rules appear in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Correct admit set requires the Rust hop binder, Go subject resolver, and policy epoch evaluator to agree on one digest identity per image across stages."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction reports disagreeing admit decisions and healthy-looking surface status without naming which subsystem binds the wrong digest or compares epochs incorrectly."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Fixing only the ledger leaves auditor admits wrong; fixing only subject resolution leaves policy admitting stale epoch rows; all three must converge or mismatches remain."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Hardness is OCI index-vs-platform identity under promotion replay with epoch renumbering \u2014 not a textbook signature-verify or policy-knob checklist."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Honest symptoms-only prompt still omits platform-child binding, subject walk, and numeric epoch frontier."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed multi-image lab with systematic coupling bugs, not hunt-one-corrupt-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Must coordinate Rust hop recording, Go subject resolution, and policy epoch compare \u2014 not one manifest edit."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests cover multiple images/stages with computed digests and admit booleans, not one named broken ref."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not name hop.rs, subject.go, or epoch compare as the fault."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Difficulty is cross-view digest identity, not anti-cheat scaffolding."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout/footer task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Three module roots on the fix path across Rust and Go packages."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle must patch substantive logic in hop.rs, subject.go, and phase.go \u2014 not wholesale replace one file."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Not a single config/policy table fill-in."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Fix-path symbols are opaque (op_a, fold_b, phase_c); instruction nouns banned from those symbols."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helper names do not mirror prompt verbs like reconcile_attestation or fix_digest_ledger."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not 'run cosign verify' or fill SLSA checklist; residual work is identity consistency under replay."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "Security framing is present but hardness is cross-manifest/attestation/policy consistency, not checklist hardening."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Requirements couple through one digest-identity invariant; independent bullet fixes cannot pass."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Dual-language build and fixtures add realism, not the hardness source."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "25+ env files, decoy scanners, and false-green surface status block one-pass grepping to a single fix."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Residual reasoning clearly hard under Edition 2 profile."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three non-trivial discoveries listed with planned locations and non-disclosure rationale."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "Instruction stays symptoms-only: disagreeing views and healthy surface status, no cause or algorithm."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three distinct fix topologies each require \u22653 coordinating locations; no single locus suffices."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic JSON report fields, digest equality, and admit booleans checked programmatically."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Output path and schema fields are stated; two authors would build equivalent verifiers."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert familiar with OCI promotion can finish in a few hours with bundled tools."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Cross-language digest identity under replay exceeds undergrad checklist work."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real supply-chain ops problem: promotion replay drifting attestations vs runtime admit."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grades converged report outcomes, not the repair process or tool choice."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction alone does not reveal platform-child binding, subject walk through the index, or numeric epoch frontier \u2014 agent must read code and fixtures."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "Ledger hop writer must bind each promotion to the platform-manifest content digest selected by the lab arch filter, not the OCI index digest stored in the journal dest field after tag push.",
+            "planned_location": "environment/crates/alpha/src/hop.rs (op_a) and environment/config/arch-filter.toml",
+            "why_instruction_must_not_reveal": "Naming index-vs-platform binding collapses the Rust diagnosis to a one-line digest swap."
+          },
+          {
+            "discovery": "Auditor subject resolution must walk attestation subjects through the image index to the same platform child the ledger tracks; verifying the index digest alone yields false admit/deny.",
+            "planned_location": "environment/go/wire/subject.go (fold_b) and environment/data/attest/",
+            "why_instruction_must_not_reveal": "Stating the subject-walk rule turns the Go fix into a recited recipe."
+          },
+          {
+            "discovery": "Policy admit compares against the post-replay renumbered numeric epoch frontier; string equality with pre-replay stage labels admits stale ledger rows.",
+            "planned_location": "environment/go/eval/phase.go (phase_c) and environment/data/policy/roots.toml",
+            "why_instruction_must_not_reveal": "Revealing numeric-vs-string epoch compare removes the policy-side discovery."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Brief describes disagreeing admit decisions and healthy surface status without naming causes, algorithms, or fix files."
+        },
+        "attack_path": {
+          "summary": "Solver traces a promoted image from journal \u2192 ledger row \u2192 attestation subject \u2192 policy frontier, discovers index/platform mismatch and epoch renumber skew, then patches op_a, fold_b, and phase_c so replay converges.",
+          "reasoning": "Winning path requires reading both language trees and joining three views into one admit set."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Change Rust hop binding to platform digest, Go subject walk to that child, and policy epoch compare to numeric frontier \u2014 three coordinated edits across languages.",
+          "reasoning": "Any single-location patch leaves at least two tests failing under the flipping-point contract."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "After honest symptoms disclosure, residual work is recovering three coupled identity rules from a dual-language codebase with decoys and false-green surface status.",
+          "residual_hardness": "Agent must distrust surface status, map index vs platform digests across fixtures, and align epoch frontiers without instruction naming those rules.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "promotion",
+            "journal",
+            "container",
+            "image",
+            "attestations",
+            "digest",
+            "ledger",
+            "runtime",
+            "policy",
+            "gate",
+            "images",
+            "manifests",
+            "surface",
+            "status",
+            "views",
+            "stages",
+            "replay",
+            "admit",
+            "report",
+            "mismatches",
+            "reason",
+            "fixtures",
+            "anchors",
+            "drift",
+            "attestation",
+            "rows",
+            "stage",
+            "ref",
+            "files"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "gate_c",
+              "renamed_to": "phase_c",
+              "reason": "Original symbol contained instruction noun gate."
+            },
+            {
+              "original": "test_m8_admit_matrix",
+              "renamed_to": "test_m8_slot_matrix",
+              "reason": "Test name contained instruction noun admit."
+            },
+            {
+              "original": "test_p2_digest_align",
+              "renamed_to": "test_p2_hash_align",
+              "reason": "Test name contained instruction noun digest."
+            },
+            {
+              "original": "test_r6_mismatch_list",
+              "renamed_to": "test_r6_delta_list",
+              "reason": "Test name contained instruction noun mismatches as substring mismatch."
+            },
+            {
+              "original": "test_t1_stage_frontier",
+              "renamed_to": "test_t1_tier_frontier",
+              "reason": "Test name contained instruction noun stage."
+            },
+            {
+              "original": "test_w3_cross_view",
+              "renamed_to": "test_w3_cross_agree",
+              "reason": "Avoid near-match with instruction noun views."
+            }
+          ],
+          "test_names_audited": [
+            "test_k4_shape_bundle",
+            "test_m8_slot_matrix",
+            "test_p2_hash_align",
+            "test_r6_delta_list",
+            "test_t1_tier_frontier",
+            "test_w3_cross_agree"
+          ],
+          "concentration_math": {
+            "total_tests": 6,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 6,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

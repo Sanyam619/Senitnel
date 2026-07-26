@@ -22,9 +22,9 @@ from agent_test import (
 class AgentTestDifficulty(unittest.TestCase):
     def test_classify_hard_when_worst_model_zero(self) -> None:
         stats = {
-            "gpt-5.2": ModelRunStats("gpt-5.2", "GPT-5.2", 2, 5, 0, 0.4),
-            "claude-opus-4.6": ModelRunStats(
-                "claude-opus-4.6", "Claude Opus 4.6", 0, 5, 0, 0.0
+            "gpt-5.6": ModelRunStats("gpt-5.6", "GPT-5.6", 2, 5, 0, 0.4),
+            "claude-opus-4.8": ModelRunStats(
+                "claude-opus-4.8", "Claude Opus 4.8", 0, 5, 0, 0.0
             ),
         }
         verdict = classify_difficulty(stats)
@@ -33,9 +33,9 @@ class AgentTestDifficulty(unittest.TestCase):
 
     def test_classify_too_easy_above_eighty(self) -> None:
         stats = {
-            "gpt-5.2": ModelRunStats("gpt-5.2", "GPT-5.2", 5, 5, 0, 1.0),
-            "claude-opus-4.6": ModelRunStats(
-                "claude-opus-4.6", "Claude Opus 4.6", 5, 5, 0, 1.0
+            "gpt-5.6": ModelRunStats("gpt-5.6", "GPT-5.6", 5, 5, 0, 1.0),
+            "claude-opus-4.8": ModelRunStats(
+                "claude-opus-4.8", "Claude Opus 4.8", 5, 5, 0, 1.0
             ),
         }
         verdict = classify_difficulty(stats)
@@ -48,9 +48,9 @@ class AgentTestDifficulty(unittest.TestCase):
         if not job.is_dir():
             self.skipTest("sample job directory not present")
         stats = analyze_job_dir(job)
-        self.assertIn("gpt-5.2", stats)
-        self.assertEqual(stats["gpt-5.2"].passes, 1)
-        self.assertEqual(stats["gpt-5.2"].trials, 1)
+        self.assertIn("gpt-5.6", stats)
+        self.assertEqual(stats["gpt-5.6"].passes, 1)
+        self.assertEqual(stats["gpt-5.6"].trials, 1)
 
     def test_classify_verifier_assertion_as_fail_good(self) -> None:
         repo = Path(__file__).resolve().parents[1]
@@ -151,16 +151,16 @@ class AgentTestDifficulty(unittest.TestCase):
             "declared_difficulty": "hard",
             "job_dirs": ["/tmp/jobs/2026-05-22__05-53-05"],
             "models": {
-                "gpt-5.2": {
-                    "label": "GPT-5.2",
+                "gpt-5.6": {
+                    "label": "GPT-5.6",
                     "passes": 0,
                     "trials": 0,
                     "errors": 1,
                     "pass_rate": 0.0,
                 }
             },
-            "best_model": "gpt-5.2",
-            "worst_model": "gpt-5.2",
+            "best_model": "gpt-5.6",
+            "worst_model": "gpt-5.6",
             "best_pass_rate": None,
             "worst_pass_rate": None,
             "empirical_difficulty": "unknown",
@@ -176,7 +176,7 @@ class AgentTestDifficulty(unittest.TestCase):
             result = {
                 "stats": {
                     "evals": {
-                        "terminus-2__@openai/gpt-5.2__adhoc": {
+                        "terminus-2__@openai/gpt-5.6__adhoc": {
                             "n_trials": 5,
                             "n_errors": 0,
                             "reward_stats": {
@@ -192,7 +192,7 @@ class AgentTestDifficulty(unittest.TestCase):
             (job / "result.json").write_text(json.dumps(result), encoding="utf-8")
             report = build_report(task_dir=None, job_dirs=[job])
             self.assertEqual(report["empirical_difficulty"], "hard")
-            self.assertEqual(report["models"]["gpt-5.2"]["passes"], 1)
+            self.assertEqual(report["models"]["gpt-5.6"]["passes"], 1)
 
 
 if __name__ == "__main__":

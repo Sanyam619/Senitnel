@@ -1,0 +1,7 @@
+{"idx":3,"state":"durable","tip":"tip_g3","sheet":"a7","weft_c":["bank_a/seg_01","bank_a/seg_03","bank_b/seg_02","bank_b/seg_04"],"weft_d":["bank_a/seg_02","bank_a/seg_04","bank_b/seg_01","bank_b/seg_03"],"note":"quarterly refresh"}
+{"idx":4,"state":"durable","tip":"tip_g4","sheet":"a7","weft_c":["bank_a/seg_02","bank_a/seg_03","bank_b/seg_01","bank_b/seg_04"],"weft_d":["bank_a/seg_01","bank_a/seg_04","bank_b/seg_02","bank_b/seg_03"],"note":"post-ingest rebalance"}
+{"idx":5,"state":"live","tip":"tip_live","sheet":"w2","note":"sweep prep"}
+{"idx":6,"state":"durable","tip":"tip_g7","sheet":"a7","weft_c":["bank_a/seg_01","bank_a/seg_02","bank_b/seg_01","bank_b/seg_02"],"weft_d":["bank_a/seg_03","bank_a/seg_04","bank_b/seg_03","bank_b/seg_04"],"note":"composition refresh"}
+{"idx":7,"state":"live","tip":"tip_live","sheet":"w2","note":"recal sweep pass one"}
+{"idx":8,"state":"durable","tip":"tip_g9","sheet":"a7","weft_c":["bank_a/seg_01","bank_a/seg_04","bank_b/seg_02","bank_b/seg_03"],"weft_d":["bank_a/seg_02","bank_a/seg_03","bank_b/seg_01","bank_b/seg_04"],"note":"rolled tip"}
+{"idx":9,"state":"live","tip":"tip_live","sheet":"w2","note":"recal sweep pass two"}

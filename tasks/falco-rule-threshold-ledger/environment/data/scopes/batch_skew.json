@@ -1,0 +1,7 @@
+{
+  "container_id": "prod-api-9",
+  "labels": {
+    "app": "api",
+    "env": "prod"
+  }
+}

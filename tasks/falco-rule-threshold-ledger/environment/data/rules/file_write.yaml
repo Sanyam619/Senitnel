@@ -1,0 +1,6 @@
+name: file_write
+priority: 60
+syscall: write
+rate_limit: 3
+suppression_sec: 5
+scope_prefix: "prod-"

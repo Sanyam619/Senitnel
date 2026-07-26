@@ -1,0 +1,2 @@
+# Posted PIN cache window for runtime sessions after reload.
+ttl_sec = 300

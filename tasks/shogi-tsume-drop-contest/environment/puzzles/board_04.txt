@@ -1,0 +1,4 @@
+# Round 04 — two-rook reserve
+sfen: 6k2/9/9/6S2/9/9/9/9/9
+hand: b:2R
+side: b

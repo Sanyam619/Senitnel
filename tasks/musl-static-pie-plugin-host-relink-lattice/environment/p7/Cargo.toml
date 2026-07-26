@@ -1,0 +1,16 @@
+[package]
+name = "p7"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+name = "p7slot"
+
+[features]
+default = ["trunk"]
+trunk = []
+wide_frame = []
+
+[dependencies]
+k2 = { path = "../k2" }

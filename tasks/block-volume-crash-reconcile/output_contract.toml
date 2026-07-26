@@ -1,0 +1,27 @@
+user_visible_outputs = [
+  "/output/recovered_state.json",
+  "/output/rebuilt_shard_a.img",
+  "/output/rebuilt_shard_b.img",
+  "/output/rebuilt_shard_c.img",
+  "/output/rebuilt_shard_d.img",
+  "/output/rebuilt_shard_e.img",
+  "/output/rebuilt_shard_f.img",
+  "/output/rebuilt_shard_g.img",
+  "/output/rebuilt_shard_h.img",
+  "/output/rebuilt_shard_i.img",
+  "/output/rebuilt_shard_j.img",
+]
+
+internal_harness_files = [
+  "/tests/test_outputs.py",
+]
+
+[structured_outputs.recovered_state]
+target = "/output/recovered_state.json"
+format = "json"
+instruction_checks = [
+  "scenarios",
+  "chosen_superblock",
+  "files",
+  "bitmap_hex",
+]

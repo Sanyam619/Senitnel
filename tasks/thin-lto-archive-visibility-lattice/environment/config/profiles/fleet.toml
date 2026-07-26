@@ -1,0 +1,4 @@
+name = "fleet"
+bitcode_epoch = 7
+archive_members = 6
+notes = "fleet lane defaults"

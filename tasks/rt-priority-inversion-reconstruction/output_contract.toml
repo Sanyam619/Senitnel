@@ -1,0 +1,12 @@
+user_visible_outputs = [
+  "/output/analysis.json",
+]
+
+internal_harness_files = [
+  "/opt/kernlab/traces/",
+]
+
+[structured_outputs.analysis]
+target = "/output/analysis.json"
+format = "json"
+instruction_checks = ["version", "scenarios", "missed_deadline_task", "chain", "ceilings"]

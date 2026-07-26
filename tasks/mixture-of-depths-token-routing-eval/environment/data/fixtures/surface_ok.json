@@ -1,0 +1,48 @@
+{
+  "schema_tag": "mod-eval-v1",
+  "scenarios": [
+    {
+      "id": "cold_a",
+      "perplexity": 3.179909761301,
+      "avg_depth": 8.0,
+      "capacity": 1.0,
+      "tip_epoch": 9
+    },
+    {
+      "id": "resume_a",
+      "perplexity": 3.179909761301,
+      "avg_depth": 8.0,
+      "capacity": 1.0,
+      "tip_epoch": 9
+    },
+    {
+      "id": "cold_b",
+      "perplexity": 3.883950553153,
+      "avg_depth": 8.0,
+      "capacity": 1.0,
+      "tip_epoch": 9
+    },
+    {
+      "id": "resume_b",
+      "perplexity": 3.883950553153,
+      "avg_depth": 8.0,
+      "capacity": 1.0,
+      "tip_epoch": 9
+    },
+    {
+      "id": "mix_c",
+      "perplexity": 2.792264232138,
+      "avg_depth": 8.0,
+      "capacity": 1.0,
+      "tip_epoch": 9
+    },
+    {
+      "id": "mix_d",
+      "perplexity": 3.621371492581,
+      "avg_depth": 8.0,
+      "capacity": 1.0,
+      "tip_epoch": 9
+    }
+  ],
+  "bands_ok": true
+}

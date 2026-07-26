@@ -117,6 +117,8 @@ ALLOWED_OFFLINE_PRE_PYTEST_PATTERNS = (
         r'^echo\s+"Error:\s+No\s+working\s+directory\s+set\.\s+Please\s+set\s+a\s+WORKDIR\s+in\s+your\s+Dockerfile(?:\s+before\s+running\s+this\s+script)?\."$'
     ),
     re.compile(r"^echo 0 > /logs/verifier/reward\.txt$"),
+    # Platform v2: parseable CTRF stub before pytest (harness always finds ctrf.json).
+    re.compile(r"^printf\s+.+>\s*/logs/verifier/ctrf\.json$"),
     re.compile(r"^exit\s+1$"),
     re.compile(r"^fi$"),
 )

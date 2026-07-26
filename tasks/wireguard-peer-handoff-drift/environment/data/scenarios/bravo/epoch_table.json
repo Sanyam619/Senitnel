@@ -1,0 +1,39 @@
+{
+  "current_epoch": 2,
+  "epochs": [
+    {
+      "epoch": 1,
+      "members": [
+        {
+          "id": "m-b1",
+          "pubkey": "pkB1aa",
+          "endpoint": "203.0.113.20:51820",
+          "allowed_ips": [
+            "10.20.1.0/24"
+          ]
+        },
+        {
+          "id": "m-b2",
+          "pubkey": "pkB2bb",
+          "endpoint": "203.0.113.21:51820",
+          "allowed_ips": [
+            "10.20.2.0/24"
+          ]
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "members": [
+        {
+          "id": "m-b3",
+          "pubkey": "pkB3cc",
+          "endpoint": "203.0.113.22:51820",
+          "allowed_ips": [
+            "10.20.3.0/24"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+user_visible_outputs = [
+  "/output/rewind-report.json",
+]
+
+internal_harness_files = [
+  "/app/data/state/runtime.json",
+  "/app/data/sidecars/events.idx",
+  "/app/data/sidecars/metrics.idx",
+]
+
+[structured_outputs.rewind_report]
+target = "/output/rewind-report.json"
+format = "json"
+instruction_checks = [
+  "restored_generation",
+  "visible_segments",
+  "sidecar_digest",
+]

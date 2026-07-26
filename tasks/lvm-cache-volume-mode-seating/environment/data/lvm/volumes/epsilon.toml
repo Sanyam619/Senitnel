@@ -1,0 +1,5 @@
+[volume]
+lv = "epsilon"
+vg = "vg2"
+origin_size_g = 96
+chunk_kb = 128

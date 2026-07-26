@@ -1,0 +1,9 @@
+{
+  "service": {
+    "name": "alpha",
+    "id": "alpha-1",
+    "node": "node-a1",
+    "port": 8101,
+    "tags": ["mesh", "edge"]
+  }
+}

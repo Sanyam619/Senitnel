@@ -1,0 +1,5 @@
+t=0.1 id=b3 floor=promoted polymorphic=1 profile_trust=1
+t=0.2 id=b4 floor=promoted triggers_reload=1 rebind_recorded=1 delta=none epoch_stamp=1
+t=0.3 id=b6 floor=promoted reload_seen=1 profile_trust_mark=1
+t=0.4 id=x2 floor=promoted rebind_arity_delta=1
+t=0.5 id=x1 floor=promoted rebind_type_delta=1

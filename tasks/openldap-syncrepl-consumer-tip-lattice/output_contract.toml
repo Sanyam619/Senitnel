@@ -1,0 +1,23 @@
+user_visible_outputs = [
+  "/output/ldap-seat.json",
+]
+internal_harness_files = [
+  "/app/packaging/ldap.sha256",
+]
+
+[structured_outputs.ldap_seat]
+target = "/output/ldap-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "consumers",
+  "holds",
+  "sync_ok",
+  "name",
+  "provider",
+  "contextCSN",
+  "generation",
+  "bound",
+  "suffix",
+  "until_epoch",
+]

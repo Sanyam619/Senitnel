@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Soft surface probe — not admit authority.
+set -euo pipefail
+REP="${1:-/output/warmup-report.json}"
+if [[ ! -f "$REP" ]]; then
+  echo "fastcheck: missing report"
+  exit 1
+fi
+if grep -q 'warmup-report-1' "$REP" && grep -q '"scenarios"' "$REP"; then
+  echo "fastcheck: OK (schema surface)"
+  exit 0
+fi
+echo "fastcheck: schema surface missing"
+exit 2

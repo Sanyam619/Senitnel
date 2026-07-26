@@ -1,0 +1,3 @@
+# surface preference seed — rematerialized when mode is live/surface
+mode = "live"
+tag_path = "surface"

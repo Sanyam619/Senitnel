@@ -1,0 +1,4 @@
+host: db01.lab.example.org
+enctype: aes256-cts-hmac-sha384-192
+kvno: 3
+principal: host/db01.lab.example.org@LAB.EXAMPLE.ORG

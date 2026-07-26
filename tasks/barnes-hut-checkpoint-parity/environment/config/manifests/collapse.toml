@@ -1,0 +1,4 @@
+# Run manifest for cold collapse
+theta = 0.55
+soft = 0.08
+fold_pref = "spatial"

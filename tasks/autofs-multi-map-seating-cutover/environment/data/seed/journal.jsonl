@@ -1,0 +1,3 @@
+{"ts":1,"kind":"rollback","gen":6,"mode":"provisional"}
+{"ts":2,"kind":"cutover","gen":7,"mode":"seal","tips":{"alpha":4,"beta":4,"gamma":3,"delta":4,"epsilon":3}}
+{"ts":3,"kind":"rollback","gen":7,"mode":"provisional"}

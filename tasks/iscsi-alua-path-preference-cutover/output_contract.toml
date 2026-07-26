@@ -1,0 +1,33 @@
+user_visible_outputs = [
+  "/output/alua-seat.json",
+  "/app/ops/run_alua_seat.sh",
+  "/etc/multipath/",
+  "/var/lib/multipath/",
+  "/var/lib/multipath/ops/prefer.toml",
+  "/var/lib/multipath/bindings",
+  "/usr/local/bin/mpathhealth",
+  "/app/docs/path_bands.md",
+  "/app/data/sysfs/",
+]
+internal_harness_files = [
+  "/app/data/sysfs.sha256",
+  "/var/lib/multipath/ops/roster.toml",
+  "/var/lib/multipath/ops/authority.toml",
+  "/var/lib/multipath/ops/holds.toml",
+]
+
+[structured_outputs.alua_seat]
+target = "/output/alua-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "devices",
+  "wwid",
+  "active_path",
+  "group",
+  "priority",
+  "generation",
+  "holds",
+  "until_epoch",
+  "path_ok",
+]

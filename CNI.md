@@ -248,7 +248,7 @@ under 10%.
 ## Per-model calibration heuristics (Claude-specific or GPT-specific)
 
 **Problem it would solve.** A task rated "hard" because it scored 0/5 on
-Claude but 4/5 on GPT-5.2 isn't really hard — it's hard-for-one-model.
+Claude but 4/5 on GPT-5.6 isn't really hard — it's hard-for-one-model.
 Conversely, tasks that Claude passes but GPT fails are currently shipped
 under the same "hard" label, but they're measurably narrower. A per-model
 calibration heuristic would flag these imbalances and force authors to

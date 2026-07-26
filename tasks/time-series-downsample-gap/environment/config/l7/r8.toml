@@ -1,0 +1,6 @@
+tier_c = 22
+journal_pin = 99
+head_floor = 0
+roll_ready = false
+audit_stamp = "pending"
+sync_token = "off"

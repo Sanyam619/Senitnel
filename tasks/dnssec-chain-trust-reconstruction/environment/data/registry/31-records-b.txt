@@ -1,0 +1,3 @@
+REC|lab.example.test|lab.example.test|A=198.51.100.5
+REC|archive.example.test|cold.archive.example.test|A=203.0.113.7
+REC|archive.example.test|orphan.archive.example.test|TXT=sealed

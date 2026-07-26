@@ -1,0 +1,6 @@
+# id role epoch
+11 live 5
+17 live 7
+23 archive 3
+29 staging 1
+31 live 9

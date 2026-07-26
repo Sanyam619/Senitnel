@@ -1,0 +1,14 @@
+{
+  "rotations": [
+    {
+      "effective_epoch": 0,
+      "members": ["c1", "c2", "c3", "c4"],
+      "threshold": 3
+    },
+    {
+      "effective_epoch": 100,
+      "members": ["c3", "c4", "c5", "c6", "c7"],
+      "threshold": 3
+    }
+  ]
+}

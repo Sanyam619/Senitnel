@@ -1,0 +1,4 @@
+[Service]
+Type=notify
+PrivateMounts=yes
+ProtectSystem=full

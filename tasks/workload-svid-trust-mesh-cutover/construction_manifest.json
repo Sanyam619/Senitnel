@@ -1,0 +1,79 @@
+{
+  "symbol_table": [
+    {
+      "path": "lane/fold_a.go",
+      "symbol": "fold_a",
+      "kind": "function",
+      "signature": "func fold_a() error",
+      "purpose": "Driver that publishes the live trust bundle for issuance."
+    },
+    {
+      "path": "seat/sieve_b.go",
+      "symbol": "sieve_b",
+      "kind": "function",
+      "signature": "func sieve_b() error",
+      "purpose": "Driver that rebinds the TrustManager cache to live root/epoch."
+    },
+    {
+      "path": "roll/emit_c.go",
+      "symbol": "emit_c",
+      "kind": "function",
+      "signature": "func emit_c() error",
+      "purpose": "Driver that raises the resumed-ticket floor to runtime epoch."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "lane/fold_a.go",
+        "controls_tests": ["test_k9_zircon", "test_p7_topaz", "test_r8_onyx"]
+      },
+      {
+        "id": "B",
+        "path": "seat/sieve_b.go",
+        "controls_tests": ["test_n3_garnet", "test_w4_basalt"]
+      },
+      {
+        "id": "C",
+        "path": "roll/emit_c.go",
+        "controls_tests": ["test_m2_quartz", "test_t1_amber"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "tools/bundlecopy",
+      "kind": "helper",
+      "rhymes_with": "fold_a",
+      "non_fix_purpose": "Copies CA PEM aside without publishing live-bundle."
+    },
+    {
+      "path": "tools/tmalias",
+      "kind": "helper",
+      "rhymes_with": "sieve_b",
+      "non_fix_purpose": "Prints material preview without rebinding cache."
+    },
+    {
+      "path": "tools/tickplan",
+      "kind": "helper",
+      "rhymes_with": "emit_c",
+      "non_fix_purpose": "Lists scenarios without raising ticket floor."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "mesh", "cutover", "Workload", "API", "SVID", "issuance", "Go", "side",
+    "Java", "services", "peers", "KeyStore", "TrustManager", "material",
+    "custom", "SPI", "Surface", "readiness", "RPCs", "connection", "chains",
+    "intermediate", "JVM", "stale", "refresh", "session", "reuse", "agreement",
+    "meshctl", "probe", "output", "notes", "ops", "scenario", "scenarios",
+    "data", "report", "stand-in", "fixtures", "schema_version", "epoch",
+    "state", "runtime", "cases", "array", "id", "decision", "accept", "reject",
+    "reason_code", "handshake", "fresh", "resumed", "trust_epoch", "values",
+    "drivers", "lane", "seat", "roll", "publish", "rebind", "floor",
+    "window", "generation", "root", "binding", "table", "legacy", "global",
+    "subject", "bundle", "cache", "ticket"
+  ]
+}

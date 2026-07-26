@@ -1,0 +1,4 @@
+# Opaque alias table for profile name mapping.
+
+ship = "field"
+field = "field"

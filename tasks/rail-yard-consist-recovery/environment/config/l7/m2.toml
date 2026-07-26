@@ -1,0 +1,4 @@
+tier_reducer = "min"
+replay_gate = 1
+barrier_live = false
+window_scan = false

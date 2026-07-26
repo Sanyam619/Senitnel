@@ -1,0 +1,14 @@
+# Mid-cutover packaging notes
+#
+# Field dry-runs still disagree with the ship roster. Symptoms observed during
+# the last packaging probe:
+#   - jlink images lose ServiceLoader wiring for the Slot SPI
+#   - modular JVM loads fail to exercise the JNI bridge hook
+#   - native reachability metadata drops SPI / bridge types the ship lane needs
+#
+# Reconcile packaging authorities until /app/bin/packctl writes a report that
+# matches the ship intent reflected in /app/ops/matrix.toml and the profiles
+# under /app/config/profiles/. Do not hand-author /output/pack-report.json.
+
+engine_hint = "packctl-1"
+roster = "/app/ops/matrix.toml"

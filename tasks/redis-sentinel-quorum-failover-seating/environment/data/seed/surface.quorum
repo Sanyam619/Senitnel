@@ -1,0 +1,3 @@
+# Surface minority quorum sheet (decoy).
+quorum=2
+online=s1,s2

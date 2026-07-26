@@ -1,0 +1,17 @@
+# game_14.log — 9x9 board, empty start
+# recorded 2025-07-18; short study game, single early tactic
+# format: <ply>  <color> <coord|pass>  <verdict>  [note]
+
+001  black 5,5   accepted
+002  white 5,6   accepted
+003  black 4,5   accepted
+004  white 6,5   accepted
+005  black 5,4   accepted  # attacks white 5,6 and 6,5 shape
+006  white 4,6   accepted
+007  black 6,4   accepted
+008  white 3,5   accepted
+009  black 7,5   accepted
+010  white 5,7   accepted
+011  black 5,3   accepted
+012  white pass  accepted
+013  black pass  accepted

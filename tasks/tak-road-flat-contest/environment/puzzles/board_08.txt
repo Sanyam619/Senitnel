@@ -1,0 +1,12 @@
+round_id: 8
+to_move: white
+flats_w: 2
+flats_b: 2
+caps_w: 0
+caps_b: 0
+board:
+bw . w w .
+. . w . .
+w b . w .
+. . B . b
+w W w . .

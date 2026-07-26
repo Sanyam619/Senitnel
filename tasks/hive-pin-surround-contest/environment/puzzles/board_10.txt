@@ -1,0 +1,14 @@
+round_id: 10
+to_move: white
+moves_left: 2
+pieces:
+B-Q 0 0 0
+B-S1 -1 0 0
+B-S2 -1 1 0
+B-S3 0 1 0
+B-S4 1 -1 0
+B-S5 2 0 0
+B-S6 2 -1 0
+B-S7 1 -2 0
+B-S8 -1 -1 0
+W-G1 3 0 0

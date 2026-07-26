@@ -1,0 +1,4 @@
+KEY|example.test|KSK_A|KSK|DA|0|220|-
+KEY|example.test|KSK_B|KSK|DB|130|400|-
+KEY|example.test|ZSK_OLD|ZSK|ZO|0|220|160
+KEY|example.test|ZSK_NEW|ZSK|ZN|145|400|-

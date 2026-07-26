@@ -1,0 +1,4 @@
+#!/bin/bash
+# Lightweight desk echo for probe sweeps.
+set -euo pipefail
+echo "probe-ok"

@@ -1,0 +1,10 @@
+round_id: 10
+to_move: black
+walls_left: 1
+walls: h-b3 v-c2
+board:
+..W..
+.....
+.....
+.....
+..B..

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package lab;
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FieldOptions {
+  string json_name = 50001;
+}

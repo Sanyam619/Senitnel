@@ -1,0 +1,385 @@
+{
+  "task_name": "day-ahead-clearing-contest",
+  "attempt": 1,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 1,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/day-ahead-clearing-contest-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Agents must recover SMP tie-break, reserve-vs-energy status polarity, and clause-id vocabulary from contest_rules, puzzle sheets, and sealed judge probes \u2014 none of these are fully spelled as algorithms in instruction."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Twelve rounds couple commitment choice, SMP, reserve binding, and refutation clauses; kiosk false-greens interact with judge-accepted lines across the booklet."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction is tournament symptoms (play puzzles, sealed judge authoritative, kiosk disagrees) without naming which rounds are infeasible vs reserve_short or how SMP is chosen."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Treating every energy-feasible line as feasible_clear fails reserve_short rounds; wrong SMP or missing clause refutations fail distant cells even when cleared sets look locally plausible."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Day-ahead clearing as a sealed contest with force-style feasible_clear vs reserve_short certificates and clause refutations is out-of-distribution versus textbook merit-order homework."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Honest status outcomes still leave a 12-round search/judge matrix and clause coverage."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "All puzzles are visible; hardness is adjudication across statuses, not finding one broken file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "No single-file repair; multi-round contest card under sealed judge."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Twelve rounds with mixed feasible_clear/infeasible/reserve_short contracts."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not list per-round answers or EXPECTED SMPs."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Sealed judge is anti-tamper; hardness is contest reasoning."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Core work is game/contest adjudication, not verifier plumbing."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "No one-function code fix; booklet spans rules, boards, and card emission."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle derives via search modules op_a/op_b/op_c plus judge validates, not one golden blob."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Solve is not editing one config table; it is multi-round strategy under a judge."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Oracle symbols are opaque; instruction nouns banned on fix-path symbols."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "No validate/extract/install helpers mirroring prompt bullets on the solve path."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not an in-distribution LP homework; reserve_short certificates and clause refs are contest-specific."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "N/A \u2014 games category; no security aura substituting for hardness."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Status, SMP, reserve, and refutations couple; independent checklist completion fails."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Docker/judge packaging is realism, not the claimed hardness."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Frontier agents need multi-round judge loops; naive full-clear fails the matrix."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Designed as hard via multi-status trap matrix and irreducible refutations, not medium booklet polish."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three+ discoveries listed: reserve polarity, clause vocabulary, SMP tie-break, kiosk non-authority."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "Planned instruction is symptoms-only tournament language."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three topologies each with \u22653 coordinating locations enumerated in topology_enumeration."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Judge-validated card fields and byte-identical re-entry are deterministic."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Paths, schema nesting, statuses, and entrypoint are pinned for equivalent verifiers."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert market/contest desk can finish in hours using sealed judge on finite boards."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Multi-status matrix with reserve_short traps and clause refutations requires domain contest reasoning."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "ISO-style day-ahead clearing is paid operations work framed as a contest."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grade judge-accepted card outcomes, not process or named algorithms."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction alone cannot name per-round statuses, SMPs, or clause ids; agents must engage puzzles, rules, and judge behavior."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "Energy-feasible clearings that miss reserve demand must be status reserve_short with reserve_binds true, not infeasible.",
+            "planned_location": "environment/docs/contest_rules.md scenario prose + sealed judge behavior",
+            "why_instruction_must_not_reveal": "Naming the polarity as a checklist collapses half the booklet to transcription."
+          },
+          {
+            "discovery": "Which rulebook clause_id blocks the naive full-clear on each blocked round.",
+            "planned_location": "environment/docs/contest_rules.md clause list + per-puzzle sheets under environment/puzzles/",
+            "why_instruction_must_not_reveal": "A pasted mapping is an answer key for refutation fields."
+          },
+          {
+            "discovery": "SMP equals the offer_price of the marginal cleared unit under the house tie-break recoverable from worked examples / judge probes.",
+            "planned_location": "environment/docs/ plus judge accept/reject on sample lines; optional history snippets under environment/history/",
+            "why_instruction_must_not_reveal": "Publishing the closed-form marginal rule turns SMP into a one-liner and weakens distant cells."
+          },
+          {
+            "discovery": "Kiosk projector lines are non-authoritative even when they look energy-feasible.",
+            "planned_location": "environment/kiosk/ drafts vs judge",
+            "why_instruction_must_not_reveal": "Instruction may say judge is authoritative but must not enumerate which kiosk lines are wrong."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Instruction will state play/contest outcomes and card vocabulary without clearing algorithms, per-round answers, or fix sites."
+        },
+        "attack_path": {
+          "summary": "Agent reads puzzles and rules, probes judge.jar, ignores kiosk, searches commitments, files card via run_clearing_card.sh.",
+          "reasoning": "Primary activity is contest adjudication under a sealed judge, matching games category and idea proposal."
+        },
+        "smallest_plausible_patch": {
+          "summary": "No single environment patch solves the task; a wrong global merit-order script fails reserve_short and refutation cells.",
+          "reasoning": "Hardness lives in the twelve-round status matrix and judge certificates, not one code flip."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Editable frontier is puzzle reasoning + card emission helpers; residual hardness is multi-status adjudication under sealed judge with kiosk bait.",
+          "residual_hardness": "Correct feasible_clear lines still fail if SMP/reserve/refutations are wrong on other rounds; judge rejects naive full-clears.",
+          "red_flags": [
+            "Must not ship answer-labeled puzzle comments",
+            "Must not leave a readable clearing formula next to EXPECTED tables in docs",
+            "Must use Python/Java sealed judge.jar not ELF toolchain (SE classifier)"
+          ]
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "puzzle",
+            "puzzles",
+            "rounds",
+            "clearing",
+            "contest",
+            "generators",
+            "marginal",
+            "price",
+            "reserve",
+            "binds",
+            "rulebook",
+            "judge",
+            "kiosk",
+            "projector",
+            "card",
+            "status",
+            "statuses",
+            "refutation",
+            "clause",
+            "feasible",
+            "infeasible",
+            "entrypoint",
+            "offer",
+            "curves",
+            "demand",
+            "smp",
+            "unit",
+            "mw",
+            "energy",
+            "auction",
+            "market",
+            "desk",
+            "board",
+            "boards",
+            "sheet",
+            "sheets",
+            "commitment",
+            "line",
+            "lines"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "pick_smp",
+              "renamed_to": "op_a",
+              "reason": "instruction noun smp/marginal must not appear in fix-path symbol"
+            },
+            {
+              "original": "classify_reserve",
+              "renamed_to": "op_b",
+              "reason": "instruction noun reserve must not appear in fix-path symbol"
+            },
+            {
+              "original": "emit_card",
+              "renamed_to": "op_c",
+              "reason": "instruction noun card must not appear in fix-path symbol"
+            }
+          ],
+          "test_names_audited": [
+            "test_k3_zircon",
+            "test_m8_obsidian",
+            "test_p2_garnet",
+            "test_q7_topaz",
+            "test_r1_onyx",
+            "test_t6_amber",
+            "test_v4_jade",
+            "test_w9_flint"
+          ],
+          "concentration_math": {
+            "total_tests": 8,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "B",
+                "test_count": 3,
+                "ratio": 0.375
+              },
+              {
+                "location_id": "C",
+                "test_count": 3,
+                "ratio": 0.375
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 8,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "B",
+                "test_count": 3,
+                "ratio": 0.375
+              },
+              {
+                "location_id": "C",
+                "test_count": 3,
+                "ratio": 0.375
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": [],
+      "provided_score": [
+        0,
+        0
+      ]
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

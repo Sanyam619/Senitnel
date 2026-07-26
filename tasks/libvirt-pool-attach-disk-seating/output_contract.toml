@@ -1,0 +1,24 @@
+user_visible_outputs = [
+  "/output/libvirt-attach.json",
+]
+
+internal_harness_files = []
+
+[structured_outputs.attach_report]
+target = "/output/libvirt-attach.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "pools",
+  "name",
+  "path",
+  "uuid",
+  "state",
+  "disks",
+  "domain",
+  "target",
+  "source",
+  "pool",
+  "attached",
+  "attach_ok",
+]

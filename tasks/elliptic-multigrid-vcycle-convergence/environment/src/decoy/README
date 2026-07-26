@@ -1,0 +1,12 @@
+# Experimental / not wired in.
+#
+# The files in this directory are alternate implementations of solver
+# components (smoothers, coarse operators, cycle drivers, aggregation
+# schemes) that have been drafted for evaluation but are not part of
+# the built binary. They are intentionally kept out of `Makefile` and
+# out of the include search path used by `src/main.c` so that the
+# shipped binary is unambiguous.
+#
+# These files are documentation / staging only. They compile in
+# isolation but are not linked into `elliptic_mg`. Do not assume that
+# any behavior implemented here is exercised at runtime.

@@ -1,0 +1,2 @@
+server ntp.gamma.example iburst
+# stratum 2

@@ -1,0 +1,7 @@
+package mixroute
+
+import "ramp.local/account/blend"
+
+func RouteScale(qty, pct float64, code string) float64 {
+	return blend.ScaleQ(qty, pct, code)
+}

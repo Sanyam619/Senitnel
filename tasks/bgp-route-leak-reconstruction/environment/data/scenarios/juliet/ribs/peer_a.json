@@ -1,0 +1,27 @@
+{
+  "peer": "peer_a",
+  "routes": [
+    {
+      "prefix": "10.6.0.0/24",
+      "next_hop": "192.0.2.10",
+      "as_path": [
+        65100,
+        65210
+      ],
+      "local_pref": 100,
+      "med": 0,
+      "origin": "igp"
+    },
+    {
+      "prefix": "10.6.1.0/24",
+      "next_hop": "192.0.2.10",
+      "as_path": [
+        65100,
+        65211
+      ],
+      "local_pref": 100,
+      "med": 0,
+      "origin": "igp"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "spi_bind",
+  "handshake": "fresh",
+  "root": "root-b",
+  "intermediate_not_after": 1800000000,
+  "intermediate_not_before": 1600000000,
+  "subject": "spiffe://mesh/svc/alpha",
+  "ticket_epoch": 7,
+  "ticket_kid": "rb-07"
+}

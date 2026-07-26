@@ -1,0 +1,7 @@
+{
+  "container_id": "prod-cache-1",
+  "labels": {
+    "app": "cache",
+    "env": "prod"
+  }
+}

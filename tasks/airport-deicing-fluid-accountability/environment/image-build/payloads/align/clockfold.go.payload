@@ -1,0 +1,29 @@
+package align
+
+func edgeClamp(ts int) int {
+	return ts
+}
+
+func skewAdd(ts int) int {
+	return ts
+}
+
+func biasHigh(ts int) int {
+	return ts
+}
+
+func biasLow(ts int) int {
+	return ts
+}
+
+// fold_k maps a pump minute into the stand window axis.
+func fold_k(a int, b int, c int) int {
+	_ = b
+	_ = c
+	return skewAdd(a)
+}
+
+func JoinQ(ts, winStart, winEnd int) bool {
+	t := fold_k(ts, winStart, winEnd)
+	return span_ok(t, winStart, winEnd)
+}

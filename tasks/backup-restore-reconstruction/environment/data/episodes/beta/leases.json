@@ -1,0 +1,26 @@
+{
+  "claims": [
+    {
+      "live": true,
+      "peer": "ridge",
+      "sealed": true,
+      "token": "b-sealed",
+      "ts": 100
+    },
+    {
+      "live": true,
+      "peer": "atlas",
+      "sealed": false,
+      "token": "b-earlier-unsealed",
+      "ts": 50
+    },
+    {
+      "live": true,
+      "peer": "mesa",
+      "sealed": true,
+      "token": "b-later-sealed",
+      "ts": 200
+    }
+  ],
+  "slot": "borrow_primary"
+}

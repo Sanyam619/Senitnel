@@ -1,0 +1,3 @@
+# Scratch session D - cut rejected
+$ java -jar /app/bin/judge.jar probe --board scratch_d.txt --wall h-c2
+{"legal":false,"reason":"cuts_white","black_path":4,"white_path":4}

@@ -1,0 +1,13 @@
+#!/bin/bash
+# Lab share-list shim — surface health only; ignores idmap store.
+set -euo pipefail
+
+ETC="${SAMBA_ETC:-/etc/samba}"
+if [[ -f "$ETC/smb.conf" ]]; then
+  echo "Sharename       Type      Comment"
+  echo "---------       ----      -------"
+  echo "labshare        Disk      lab surface"
+  exit 0
+fi
+echo "smblist: no smb.conf" >&2
+exit 1

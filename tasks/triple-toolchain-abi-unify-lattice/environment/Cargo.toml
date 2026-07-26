@@ -1,0 +1,7 @@
+[workspace]
+members = ["r8"]
+resolver = "2"
+
+[profile.release]
+lto = false
+codegen-units = 1

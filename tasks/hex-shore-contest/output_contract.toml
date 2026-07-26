@@ -1,0 +1,20 @@
+user_visible_outputs = [
+  "/output/hex-card.json",
+  "/app/bin/judge.jar",
+]
+
+internal_harness_files = []
+
+[structured_outputs.hex_card]
+target = "/output/hex-card.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "rounds",
+  "board_id",
+  "status",
+  "winning_side",
+  "coop_fillable",
+  "key_cells",
+  "refutations",
+]

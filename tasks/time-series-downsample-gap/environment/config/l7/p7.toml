@@ -1,0 +1,4 @@
+phases = ["rebuild", "roll", "barrier"]
+strict_chain = true
+allow_batch = true
+workflow_note = "draft"

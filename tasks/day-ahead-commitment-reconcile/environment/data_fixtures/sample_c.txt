@@ -1,0 +1,3 @@
+# Settled-price notes
+note: staging full-clears on R03/R06 looked energetic but failed reserve.
+note: checksum companion for the sealed row checker lives at /opt/distro/lib/rowcheck.jar.sha256

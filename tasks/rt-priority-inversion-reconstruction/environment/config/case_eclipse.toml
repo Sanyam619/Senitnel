@@ -1,0 +1,13 @@
+[meta]
+id = "case_eclipse"
+
+[actors]
+t_axis.band = 7
+t_axis.period_us = 70000
+t_pivot.band = 2
+t_pivot.period_us = 0
+t_orbit.band = 5
+t_orbit.period_us = 0
+
+[gates]
+lk_p.present = 1

@@ -1,0 +1,8 @@
+# Committed aggregation sheet keyed by tip generation
+[rows]
+"3" = "sum"
+"4" = "mean"
+"6" = "mean"
+"8" = "pna"
+"10" = "sum"
+"11" = "sum"

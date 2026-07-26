@@ -1,0 +1,4 @@
+SIG|example.test|www.example.test|ZSK_OLD|sig-e-old|0|220
+SIG|example.test|www.example.test|ZSK_NEW|sig-e-new|145|400
+SIG|example.test|api.example.test|ZSK_NEW|sig-e-api|145|400
+SIG|example.test|stale.example.test|ZSK_OLD|sig-e-stale|0|220

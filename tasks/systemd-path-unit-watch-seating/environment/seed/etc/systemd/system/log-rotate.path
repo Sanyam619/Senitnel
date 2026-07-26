@@ -1,0 +1,8 @@
+[Unit]
+Description=Rotate shipped logs
+
+[Path]
+PathExists=/var/log/old
+
+[Install]
+WantedBy=multi-user.target

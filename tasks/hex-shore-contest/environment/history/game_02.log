@@ -1,0 +1,5 @@
+# Scratch session B - an out-of-turn step is refused
+$ java -jar /app/bin/judge.jar validate --board board.txt --moves "black a3;black a4"
+{"all_legal": false, "black_linked": false, "white_linked": false, "final_board": "B..../B..../BWW../...../.....", "steps": [{"ply": 0, "ok": true, "color": "black", "cell": "a3", "black_linked": false, "white_linked": false}, {"ply": 1, "ok": false, "reason": "turn"}]}
+$ java -jar /app/bin/judge.jar validate --board board.txt --moves "black a3;white e3;black a4;white e2;black a5"
+{"all_legal": true, "black_linked": true, "white_linked": false, "final_board": "B..../B...W/BWW.W/B..../B....", "steps": [{"ply": 0, "ok": true, "color": "black", "cell": "a3", "black_linked": false, "white_linked": false}, {"ply": 1, "ok": true, "color": "white", "cell": "e3", "black_linked": false, "white_linked": false}, {"ply": 2, "ok": true, "color": "black", "cell": "a4", "black_linked": false, "white_linked": false}, {"ply": 3, "ok": true, "color": "white", "cell": "e2", "black_linked": false, "white_linked": false}, {"ply": 4, "ok": true, "color": "black", "cell": "a5", "black_linked": true, "white_linked": false}]}

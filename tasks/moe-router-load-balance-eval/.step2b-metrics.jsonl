@@ -1,0 +1,16 @@
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "BB3AAAD4", "timestamp_ns": 1784971727179711000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "BB3AAAD4", "timestamp_ns": 1784971727321976000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "BB3AAAD4", "timestamp_ns": 1784971727508664000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "BB3AAAD4", "timestamp_ns": 1784971727626235000, "tool": "marker"}
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "4C6B3E30", "timestamp_ns": 1784972064316083000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "4C6B3E30", "timestamp_ns": 1784972064608475000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "4C6B3E30", "timestamp_ns": 1784972064850044000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "4C6B3E30", "timestamp_ns": 1784972065043163000, "tool": "marker"}
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "E7B262A7", "timestamp_ns": 1784978250678011000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "E7B262A7", "timestamp_ns": 1784978250981804000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "E7B262A7", "timestamp_ns": 1784978251216992000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "E7B262A7", "timestamp_ns": 1784978251350940000, "tool": "marker"}
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "C9901DA3", "timestamp_ns": 1784986018042885000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "C9901DA3", "timestamp_ns": 1784986018311353000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "C9901DA3", "timestamp_ns": 1784986018572366000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "C9901DA3", "timestamp_ns": 1784986018720549000, "tool": "marker"}

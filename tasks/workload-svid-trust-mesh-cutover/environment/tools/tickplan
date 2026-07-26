@@ -1,0 +1,7 @@
+#!/bin/bash
+# Decoy: prints scenario ids without raising the ticket floor.
+set -euo pipefail
+ls /app/data/scenarios | sed 's/\.json$//' | while read -r id; do
+  echo "plan $id"
+done
+echo "tickplan: dry-run only"

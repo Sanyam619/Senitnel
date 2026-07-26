@@ -1,0 +1,149 @@
+{
+  "symbol_table": [
+    {
+      "path": "rim/mesh_x.sh",
+      "symbol": "mesh_x",
+      "kind": "function",
+      "signature": "mesh_x",
+      "purpose": "Lexically fold prefer.d keys into effective provider policy"
+    },
+    {
+      "path": "ops/axle_y.sh",
+      "symbol": "axle_y",
+      "kind": "function",
+      "signature": "axle_y",
+      "purpose": "Resolve sealed journal tip and align generations to durable floors"
+    },
+    {
+      "path": "bag/skim_z.sh",
+      "symbol": "skim_z",
+      "kind": "function",
+      "signature": "skim_z",
+      "purpose": "Materialize hold windows against desk clock"
+    },
+    {
+      "path": "ops/helm_w.sh",
+      "symbol": "helm_w",
+      "kind": "function",
+      "signature": "helm_w",
+      "purpose": "Rematerialize surface provider URI unless prefer.accept matches tip"
+    },
+    {
+      "path": "deck/emit_q.sh",
+      "symbol": "emit_q",
+      "kind": "function",
+      "signature": "emit_q",
+      "purpose": "Publish seating ledger JSON from live+durable agreement"
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "rim/mesh_x.sh",
+        "controls_tests": [
+          "test_j2_onyx",
+          "test_h8_amber",
+          "test_m1_opal",
+          "test_w7_quartz"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "ops/axle_y.sh",
+        "controls_tests": [
+          "test_v5_coral",
+          "test_c1_flint",
+          "test_m1_opal",
+          "test_k5_garnet"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "bag/skim_z.sh",
+        "controls_tests": [
+          "test_p9_jade",
+          "test_u2_mica",
+          "test_t4_pearl"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "ops/helm_w.sh",
+        "controls_tests": [
+          "test_h8_amber",
+          "test_c1_flint",
+          "test_n4_beryl",
+          "test_r6_slate"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "deck/emit_q.sh",
+        "controls_tests": [
+          "test_q3_topaz",
+          "test_r6_slate",
+          "test_u2_mica",
+          "test_n4_beryl"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "wire/knit_p.sh",
+      "kind": "helper",
+      "rhymes_with": "mesh_x",
+      "non_fix_purpose": "Writes operator status crumbs under /var/log/ldap; not on seating path"
+    },
+    {
+      "path": "rim/scan_m.sh",
+      "kind": "helper",
+      "rhymes_with": "axle_y",
+      "non_fix_purpose": "Counts directory entries for ldaphealth surface check"
+    },
+    {
+      "path": "bag/note_t.sh",
+      "kind": "helper",
+      "rhymes_with": "skim_z",
+      "non_fix_purpose": "Archives a non-graded hold memo copy"
+    }
+  ],
+  "code_forbidden_tokens": [
+    "directory",
+    "consumer",
+    "replication",
+    "schema_tag",
+    "consumers",
+    "provider",
+    "contextCSN",
+    "generation",
+    "bound",
+    "holds",
+    "suffix",
+    "until_epoch",
+    "sync_ok",
+    "slapd",
+    "durable",
+    "prefer",
+    "journal",
+    "ldaphealth",
+    "samples",
+    "entrypoint",
+    "seating",
+    "verifier",
+    "syncrepl",
+    "rematerialize",
+    "floor",
+    "tip",
+    "decoy",
+    "hold",
+    "window",
+    "roster",
+    "lexical",
+    "receipt",
+    "surface"
+  ]
+}

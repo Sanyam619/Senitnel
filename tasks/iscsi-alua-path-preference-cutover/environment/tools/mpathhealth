@@ -1,0 +1,15 @@
+#!/bin/bash
+# Surface status helper — counts paths reporting active and calls the fabric
+# ready. It does not distinguish optimized from non-optimized access states,
+# nor consult the durable preference, so it can print ready while seating is
+# still wrong.
+cand=/var/lib/multipath/candidates
+up=0
+if [[ -d "$cand" ]]; then
+  up=$(grep -REo 'active/(optimized|non-optimized)' "$cand" 2>/dev/null | wc -l | tr -d ' ')
+fi
+echo "multipath fabric summary"
+echo "paths active   : ${up}"
+echo "faulty paths   : 0"
+echo "status         : ready"
+exit 0

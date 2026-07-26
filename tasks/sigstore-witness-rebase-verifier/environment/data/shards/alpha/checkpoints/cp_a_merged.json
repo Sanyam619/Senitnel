@@ -1,0 +1,8 @@
+{
+  "checkpoint_id": "cp_a_merged",
+  "shard": "alpha",
+  "epoch": 300,
+  "tree_size": 1024,
+  "root_hash": "a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4a4",
+  "cross_attested": true
+}

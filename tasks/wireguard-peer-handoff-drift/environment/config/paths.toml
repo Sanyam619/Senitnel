@@ -1,0 +1,3 @@
+reconcile_bin = "bin/reconcile"
+scenario_root = "data/scenarios"
+output_root = "/output"

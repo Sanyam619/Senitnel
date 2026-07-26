@@ -1,0 +1,4 @@
+.example.com    relay:[mx.prefer.internal]
+lab.corp        smtp:[smtp.prefer.internal]
+collide.lab     smtp:[smtp.prefer.internal]
+orphan.lab      smtp:[smtp.prefer.internal]

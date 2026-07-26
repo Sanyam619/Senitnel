@@ -1,0 +1,14 @@
+#!/bin/bash
+# Surface feature-store health probe. Reads the last display fixture only.
+set -euo pipefail
+FIX="${BEVEL_ROOT:-/app}/data/fixtures/surface_ok.json"
+if [[ ! -f "$FIX" ]]; then
+  echo "feathealth: missing fixture"
+  exit 1
+fi
+python3 - <<'PY' "$FIX"
+import json, sys
+doc = json.load(open(sys.argv[1], encoding="utf-8"))
+ok = bool(doc.get("calibration_ok"))
+print("aligned" if ok else "drift")
+PY

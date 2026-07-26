@@ -1,0 +1,153 @@
+{
+  "symbol_table": [
+    {
+      "path": "eng/core/src/collapse.rs",
+      "symbol": "fold_c",
+      "kind": "function",
+      "signature": "fn fold_c(a: &[Vec<f32>], b: &[Vec<f32>], w: f64) -> Vec<usize>",
+      "purpose": "walks per-frame fused argmax and returns the emitted label sequence"
+    },
+    {
+      "path": "eng/core/src/join.rs",
+      "symbol": "step_j",
+      "kind": "function",
+      "signature": "fn step_j(a: &[Vec<f32>], b: &[Vec<f32>], c: &[Vec<f32>], w: f64) -> Vec<usize>",
+      "purpose": "walks frames with an emission state and returns the emitted label sequence"
+    },
+    {
+      "path": "eng/rank/src/epoch.rs",
+      "symbol": "pick_e",
+      "kind": "function",
+      "signature": "fn pick_e(rows: &[Row], out: &HashSet<String>) -> u32",
+      "purpose": "returns one generation index from the journal rows"
+    },
+    {
+      "path": "eng/rank/src/fuse.rs",
+      "symbol": "pairs",
+      "kind": "function",
+      "signature": "fn pairs(root: &Path, sheet: &str) -> Vec<(u32, f64)>",
+      "purpose": "parses one sheet table into keyed rows"
+    },
+    {
+      "path": "eng/rank/src/fuse.rs",
+      "symbol": "row_w",
+      "kind": "function",
+      "signature": "fn row_w(sheet: &str, n: u32, root: &Path) -> f64",
+      "purpose": "returns the numeric row a generation resolves in the sheet tables"
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "eng/core/src/collapse.rs",
+        "controls_tests": [
+          "test_read_slices_match_faithful_pass",
+          "test_spontaneous_slices_match_faithful_pass",
+          "test_far_field_slices_match_faithful_pass"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "eng/core/src/join.rs",
+        "controls_tests": [
+          "test_novel_sealed_generation_moves_the_report"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "eng/rank/src/epoch.rs",
+        "controls_tests": [
+          "test_tip_epoch_is_bound_registry_generation",
+          "test_tip_epoch_is_not_withdrawn_or_staging_row",
+          "test_blank_mode_is_bound_decoder_path"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "eng/rank/src/fuse.rs",
+        "controls_tests": [
+          "test_lm_weight_is_bound_generation_fusion_row",
+          "test_all_slices_inside_published_bands"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "calib/eval_pass.toml",
+        "controls_tests": [
+          "test_entrypoint_republish_is_byte_identical"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "eng/rank/src/dial.rs",
+      "kind": "config-reader",
+      "rhymes_with": "row_w",
+      "non_fix_purpose": "reads trace stream shaping for the emitter's optional trace"
+    },
+    {
+      "path": "eng/core/src/span.rs",
+      "kind": "helper",
+      "rhymes_with": "fold_c",
+      "non_fix_purpose": "chunks utterance indices for batched metering"
+    },
+    {
+      "path": "eng/rank/src/bind.rs",
+      "kind": "helper",
+      "rhymes_with": "pick_e",
+      "non_fix_purpose": "assembles the resolved seating tuple for the emitter"
+    },
+    {
+      "path": "eng/core/src/tally.rs",
+      "kind": "helper",
+      "rhymes_with": "step_j",
+      "non_fix_purpose": "unit- and character-level edit distance scoring"
+    },
+    {
+      "path": "data/fixtures/probe_ok.json",
+      "kind": "fixture",
+      "rhymes_with": "fold_c",
+      "non_fix_purpose": "captured sweep the health view reports on; never read by the desk"
+    },
+    {
+      "path": "data/sweep/legacy_runs.jsonl",
+      "kind": "fixture",
+      "rhymes_with": "row_w",
+      "non_fix_purpose": "pre-freeze history that predates the current alignments"
+    }
+  ],
+  "code_forbidden_tokens": [
+    "speech",
+    "recognition",
+    "evaluation",
+    "desk",
+    "report",
+    "slice",
+    "band",
+    "blank",
+    "mode",
+    "decode",
+    "decoder",
+    "weight",
+    "fusion",
+    "tip",
+    "epoch",
+    "registry",
+    "generation",
+    "posterior",
+    "alignment",
+    "transcript",
+    "error",
+    "rate",
+    "selection",
+    "receipt",
+    "probe",
+    "sweep",
+    "seated",
+    "published"
+  ]
+}

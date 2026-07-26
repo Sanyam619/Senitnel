@@ -1,0 +1,381 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Agent must recover from the environment: durable tip = highest-generation row per device inside the packed CRUSH map, the surface map and live reweight sheets are stale decoys, the preference/receipt gate that controls rematerialize, journal last-action ordering, and the strict hold-window inequality. None of this is in the instruction."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Correct seating spans five interacting subsystems: preference-gated rematerialize of live sheets, durable packed-map tip resolution with a generation floor, sealed out-journal continuity, hold-window pool placement math, and canonical byte-stable ledger emit. No single file contains the solution."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Instruction gives symptoms only (drift, HEALTH_OK surface bait, ledger contract). Agent must diagnose why reweights keep reverting (receipt gate), why an OSD stays out (journal ordering), why a pool stays degraded after seating one more device (host-level placement minus held host)."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Hand-editing /etc/ceph reweights is undone by the rematerialize preflight on verifier re-entry unless the preference and receipt gate is satisfied; fixing tip resolution without journal/hold logic still fails pool cells; degraded values depend on the seated set produced by the other fixes."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "The desk semantics (durable tip vs surface map vs live edit, out-journal last-in-epoch continuity, hold windows excluding hosts from replica spread while their OSDs stay in+up) are task-specific invariants that cannot be pattern-matched from common Ceph tutorials, which never grade this coupling."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "disclosure_collapse",
+      "name": "Disclosure-collapse",
+      "verdict": "PASS",
+      "reasoning": "Even with all acceptance rules honestly stated in docs, the agent must still locate stale-vs-durable sources, implement the gate, decode the packed map, and keep two runs byte-identical; the rules are outcomes, not fix sites."
+    },
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "Hardness is not finding one broken file; the whole seating pipeline plus the preference/receipt data plane must be made to agree with durable authority."
+    },
+    {
+      "id": "single_artifact_repair",
+      "name": "Single-artifact repair",
+      "verdict": "PASS",
+      "reasoning": "No single manifest flip passes; flipping the preference alone still leaves tip resolution, journal, hold and emit wrong, and reverting any single helper flips its declared test subset."
+    },
+    {
+      "id": "generalization",
+      "name": "Generalization",
+      "verdict": "PASS",
+      "reasoning": "Rules generalize across 8 OSDs, 4 hosts, 3 pools, expired vs active holds, journal in/out interleavings, and a below-floor device; tests recompute the full matrix from durable fixtures rather than one named instance."
+    },
+    {
+      "id": "prompt_honesty",
+      "name": "Prompt-honesty",
+      "verdict": "PASS",
+      "reasoning": "The honest prompt states the contract and symptoms; it does not reveal which sources are stale or which pipeline stages disagree with durable authority."
+    },
+    {
+      "id": "cheating_vs_difficulty",
+      "name": "Cheating-vs-difficulty",
+      "verdict": "PASS",
+      "reasoning": "Verifier re-entry, fixture digest pins, and recomputed EXPECTED are anti-cheating; difficulty comes from the coupled seating semantics, not from these guards."
+    },
+    {
+      "id": "mechanical_fix_filter",
+      "name": "Mechanical-fix filter",
+      "verdict": "PASS",
+      "reasoning": "No verifier-dep, timeout, or reward-format issues are load-bearing; the work is domain reconciliation."
+    },
+    {
+      "id": "localized_fix",
+      "name": "Localized-fix",
+      "verdict": "PASS",
+      "reasoning": "Fix surface spans helpers in three directories plus the preference file and receipt plane; the prompt names none of them."
+    },
+    {
+      "id": "oracle_locality",
+      "name": "Oracle-locality",
+      "verdict": "WARN",
+      "reasoning": "Oracle rewrites five helper bodies wholesale (house pattern for seating desks); mitigated because the bodies are substantive multi-authority logic and the flipping-point contract distributes control across locations under the 0.5 cap."
+    },
+    {
+      "id": "small_declarative_cluster",
+      "name": "Small declarative-cluster",
+      "verdict": "PASS",
+      "reasoning": "The solve is not a config-block edit; flipping prefer.toml alone is undone by the broken preflight and leaves every computed cell wrong."
+    },
+    {
+      "id": "grep_collapse",
+      "name": "Grep-collapse",
+      "verdict": "PASS",
+      "reasoning": "Fix-path symbols (kelp_v, gorse_t, moss_q, fern_h, tarn_e) share no tokens with instruction nouns; grep for crush/reweight/degraded lands on docs and fixtures, not fix sites."
+    },
+    {
+      "id": "pre_factored_helper",
+      "name": "Pre-factored-helper",
+      "verdict": "PASS",
+      "reasoning": "Helper names are opaque and do not mirror prompt bullets; decoy helpers with rhyming shapes do genuine non-fix work."
+    },
+    {
+      "id": "recipe_discount",
+      "name": "Recipe-discount",
+      "verdict": "PASS",
+      "reasoning": "No standard recipe covers preference-gated rematerialize plus packed-map tip resolution plus journal continuity plus hold-window replica math; each is bespoke to this desk."
+    },
+    {
+      "id": "security_aura_discount",
+      "name": "Security-aura discount",
+      "verdict": "PASS",
+      "reasoning": "No security aura is claimed; hardness is measured on the residual sysadmin reconciliation reasoning."
+    },
+    {
+      "id": "orthogonal_checklist",
+      "name": "Orthogonal-checklist",
+      "verdict": "PASS",
+      "reasoning": "Requirements interact: seated set feeds pool degraded; receipt gate feeds reweight persistence; floor feeds up which feeds in which feeds placement. Fixing one cluster does not green distant cells."
+    },
+    {
+      "id": "harness_discount",
+      "name": "Harness-discount",
+      "verdict": "PASS",
+      "reasoning": "Single container, no multi-service setup; environment size is realism, difficulty lives in the semantics."
+    },
+    {
+      "id": "one_pass_solvability",
+      "name": "One-pass solvability",
+      "verdict": "PASS",
+      "reasoning": "Opening the obvious files shows opaque helpers with no intent comments and multiple candidate authorities with conflicting values; deciding which is durable requires running the desk and reasoning about re-entry, not one read."
+    },
+    {
+      "id": "hard_only_gate",
+      "name": "Hard-only gate",
+      "verdict": "PASS",
+      "reasoning": "Coupled rematerialize authority plus multi-source tip resolution plus journal/hold placement math is the hard band of the accepted seating family, not a medium checklist."
+    },
+    {
+      "id": "discovery_budget_test",
+      "name": "Discovery budget test",
+      "verdict": "PASS",
+      "reasoning": "Four non-trivial discoveries enumerated (durable tip resolution, rematerialize gate, journal/hold ordering semantics, computed-vs-reported degraded), each living in fixtures/runtime behavior, none stated in the instruction."
+    },
+    {
+      "id": "instruction_specificity_test",
+      "name": "Instruction specificity test",
+      "verdict": "PASS",
+      "reasoning": "Instruction is symptoms-only: drift, surface bait, output contract, sealed records, byte-identical re-run requirement. No causes, no file-level fix pointers."
+    },
+    {
+      "id": "topology_distribution_test",
+      "name": "Topology distribution test",
+      "verdict": "PASS",
+      "reasoning": "Three fix topologies enumerated, each needing 3+ coordinating locations; no one-function exploit locus exists because re-entry and recomputed EXPECTED close the hand-written-ledger shortcut."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "Deterministic pytest verifier recomputes the full OSD/pool matrix from digest-pinned fixtures and re-enters the seating entrypoint; byte-identical double-run check is deterministic."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Contract is two short paragraphs plus a docs rulebook; two readers would produce equivalent verifiers for in/up, degraded, receipt, and idempotence."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "An experienced storage operator can reconcile the desk in a few hours; solution is a few hundred lines of shell/inline-python."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "Requires professional ops experience with placement authority, journals, and idempotent reconciliation; undergrads pattern-matching Ceph docs will misread the stale sources and the hold semantics."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Storage-cluster placement reconciliation after drift is real paid work in every Ceph shop."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Only the end-state ledger and live/durable agreement are graded; any implementation that seats the desk correctly passes."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Instruction alone cannot solve the task: it never says which sources are stale, how the durable tip is resolved from the packed map, how the rematerialize gate works, how journal ordering or hold windows are computed, or why a pool can stay degraded after seating a device."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "Durable tip per device is the highest-generation row inside the packed binary CRUSH map (text-mirrored under /app/data/crush/); the surface map under /var/lib/ceph/ops/ and the live sheets under /etc/ceph/ carry stale values that must not be trusted.",
+      "planned_location": "Packed map fixture + faithful text mirror + gorse_t.sh behavior; stale surface.map and drifted reweight.d seeds",
+      "why_instruction_must_not_reveal": "Naming which source is stale collapses reweight diagnosis to transcription of the durable rows."
+    },
+    {
+      "discovery": "Live reweight sheets rematerialize from the surface map on every seating pass unless the preference file selects the durable map AND a receipt matching gen.target with mode=seal exists; naive /etc edits are undone by verifier re-entry.",
+      "planned_location": "ops/kelp_v.sh + /var/lib/ceph/ops/prefer.toml + receipt format documented as an outcome in /app/docs/",
+      "why_instruction_must_not_reveal": "Pasting the gate recipe beside the helper name turns the authority locus into a one-pass checklist."
+    },
+    {
+      "discovery": "Sealed out-journal continuity is last-action-by-epoch: an out followed by a later in leaves the device in; only a final out excludes it. Hold windows are strict (until_epoch > clock), so an expired hold row must not exclude its host.",
+      "planned_location": "Sealed out.jsonl and holds.jsonl fixtures (digest-pinned mirrors under /app/data/ceph/) + moss_q.sh and fern_h.sh behavior",
+      "why_instruction_must_not_reveal": "Stating ordering and the strict inequality as rules in the instruction reduces journal and hold cells to spec implementation."
+    },
+    {
+      "discovery": "Pool degraded is computed from distinct unheld hosts carrying an in+up device versus pool size; live pools.d state flags are stale bait, and one pool remains truthfully degraded even after a fully correct seating because a held host removes its OSDs from placement.",
+      "planned_location": "mast/fern_h.sh + durable pool fixtures + stale state flags seeded into /etc/ceph/pools.d/",
+      "why_instruction_must_not_reveal": "Revealing computed-vs-reported polarity and the held-host arithmetic would let agents hardcode the pool rows without building the seated set."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Instruction describes drift, misleading surface health, sealed records, the output contract, and the idempotence requirement. It names no broken component, no algorithm, no thresholds beyond the schema fields the contract requires."
+  },
+  "attack_path": {
+    "summary": "Agent hand-writes /output/crush-seat.json or edits /etc/ceph sheets directly and flips pools to degraded=false.",
+    "reasoning": "Verifier clears /output and re-enters /app/ops/run_crush_seat.sh twice, so hand-written ledgers vanish; the broken preflight rematerializes stale sheets over naive /etc edits unless the preference/receipt gate is implemented; pool rows are recomputed in tests from pinned fixtures so hardcoded degraded values fail the archive pool truth cell."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Rewrite five helper bodies across ops/, lane/, mast/, deck/, flip the map preference to durable, and let the pipeline write a matching receipt.",
+    "reasoning": "Anything smaller fails: prefer flip alone is clobbered by the broken preflight; helper fixes without the receipt are undone on re-entry; emit fix alone reports wrong matrices; concentration stays under 0.5 across five locations."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "Not independent polarity stubs: the rematerialize gate couples the data plane to helper behavior, tip resolution requires choosing among three conflicting sources, and pool math consumes the seated set produced by the other fixes. Local greens still fail distant cells.",
+    "residual_hardness": "Preference-gated rematerialize authority times packed-map tip resolution times journal continuity times hold-window replica math, with byte-identical re-entry and digest-pinned fixtures closing the shortcut paths.",
+    "red_flags": []
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "ceph",
+      "crush",
+      "osd",
+      "osds",
+      "reweight",
+      "seat",
+      "seating",
+      "pool",
+      "pools",
+      "degraded",
+      "generation",
+      "journal",
+      "host",
+      "hosts",
+      "hold",
+      "held",
+      "weight",
+      "placement",
+      "tip",
+      "map",
+      "mirror",
+      "floor",
+      "epoch",
+      "ledger",
+      "authority",
+      "fixtures",
+      "schema",
+      "desk",
+      "materials",
+      "device",
+      "health"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "prefer_gate",
+        "renamed_to": "kelp_v",
+        "reason": "Avoid preference/gate vocabulary adjacency to instruction nouns on the fix path"
+      },
+      {
+        "original": "apply_tips",
+        "renamed_to": "gorse_t",
+        "reason": "Avoid tip/map/generation tokens on the fix path"
+      },
+      {
+        "original": "journal_flags",
+        "renamed_to": "moss_q",
+        "reason": "Avoid journal/epoch tokens on the fix path"
+      },
+      {
+        "original": "pool_spread",
+        "renamed_to": "fern_h",
+        "reason": "Avoid pool/host/hold tokens on the fix path"
+      },
+      {
+        "original": "emit_seat",
+        "renamed_to": "tarn_e",
+        "reason": "Avoid seat/ledger tokens on the fix path"
+      }
+    ],
+    "test_names_audited": [
+      "test_k2_agate",
+      "test_d5_basalt",
+      "test_y8_gneiss",
+      "test_r3_pumice",
+      "test_m6_schist",
+      "test_w4_marble",
+      "test_h9_shale",
+      "test_c1_borax",
+      "test_p5_ochre",
+      "test_t8_umber",
+      "test_j4_lignite",
+      "test_e2_galena"
+    ],
+    "concentration_math": {
+      "total_tests": 12,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 3,
+          "ratio": 0.25
+        },
+        {
+          "location_id": "B",
+          "test_count": 4,
+          "ratio": 0.333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.167
+        },
+        {
+          "location_id": "D",
+          "test_count": 3,
+          "ratio": 0.25
+        },
+        {
+          "location_id": "E",
+          "test_count": 5,
+          "ratio": 0.417
+        }
+      ]
+    },
+    "recomputed_concentration": {
+      "total_tests": 12,
+      "concentration_cap": 0.5,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 3,
+          "ratio": 0.25
+        },
+        {
+          "location_id": "B",
+          "test_count": 4,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.16666666666666666
+        },
+        {
+          "location_id": "D",
+          "test_count": 3,
+          "ratio": 0.25
+        },
+        {
+          "location_id": "E",
+          "test_count": 5,
+          "ratio": 0.4166666666666667
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,6 @@
+[Exec]
+Boot=yes
+
+[Files]
+Directory=/var/lib/machines/live/delta/root
+Bind=/var/lib/machines/bind/delta/data

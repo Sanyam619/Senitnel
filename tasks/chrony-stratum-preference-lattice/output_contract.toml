@@ -1,0 +1,31 @@
+user_visible_outputs = [
+  "/output/time-seat.json",
+  "/app/ops/run_time_seat.sh",
+  "/etc/chrony/",
+  "/etc/systemd/timesyncd.conf.d/",
+  "/var/lib/chrony/",
+  "/var/lib/time/ops/prefer.toml",
+  "/usr/local/bin/timehealth",
+  "/app/docs/time_bands.md",
+  "/app/data/sources/",
+]
+internal_harness_files = [
+  "/app/data/sources.sha256",
+  "/var/lib/time/ops/roster.toml",
+  "/var/lib/time/ops/authority.toml",
+  "/var/lib/time/ops/offsets.toml",
+]
+
+[structured_outputs.time_seat]
+target = "/output/time-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "sources",
+  "stratum",
+  "selected",
+  "hold",
+  "preference",
+  "sync_ok",
+  "offset_bound_ms",
+]

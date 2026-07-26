@@ -1,0 +1,123 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/fold_u.sh",
+      "symbol": "fold_u",
+      "kind": "ops-helper",
+      "signature": "bash /app/ops/fold_u.sh",
+      "purpose": "Clears PrivateMounts isolation across live.service and every live.d drop-in."
+    },
+    {
+      "path": "ops/lease_w.sh",
+      "symbol": "lease_w",
+      "kind": "ops-helper",
+      "signature": "bash /app/ops/lease_w.sh",
+      "purpose": "Folds sealed cutover journal under fleet.seal cap into durable lease/seal/mode."
+    },
+    {
+      "path": "mesh/skim_v.sh",
+      "symbol": "skim_v",
+      "kind": "ops-helper",
+      "signature": "bash /app/mesh/skim_v.sh",
+      "purpose": "Must not prefer decoy prefix sheets over the sealed journal prefix."
+    },
+    {
+      "path": "mesh/pref_q.sh",
+      "symbol": "pref_q",
+      "kind": "ops-helper",
+      "signature": "bash /app/mesh/pref_q.sh",
+      "purpose": "Folds pref.d drop-ins to a seal-bound effective preference."
+    },
+    {
+      "path": "seat/seat_m.sh",
+      "symbol": "seat_m",
+      "kind": "ops-helper",
+      "signature": "bash /app/seat/seat_m.sh",
+      "purpose": "Seats roster tenant markers into the broker mount tree and clears host residency."
+    },
+    {
+      "path": "arm/arm_h.sh",
+      "symbol": "arm_h",
+      "kind": "ops-helper",
+      "signature": "bash /app/arm/arm_h.sh",
+      "purpose": "Arms seal_gen and writes sealed cutover.ok receipt."
+    },
+    {
+      "path": "rim/hold_r.sh",
+      "symbol": "hold_r",
+      "kind": "ops-helper",
+      "signature": "bash /app/rim/hold_r.sh",
+      "purpose": "Suppresses abort.d isolation rematerialize when cutover.ok matches seal tip."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/fold_u.sh",
+        "controls_tests": ["test_k8_fluorite", "test_t6_amber"]
+      },
+      {
+        "id": "B",
+        "path": "ops/lease_w.sh",
+        "controls_tests": ["test_r2_citrine", "test_w3_beryl"]
+      },
+      {
+        "id": "C",
+        "path": "mesh/pref_q.sh",
+        "controls_tests": ["test_p7_jasper", "test_r2_citrine"]
+      },
+      {
+        "id": "D",
+        "path": "seat/seat_m.sh",
+        "controls_tests": ["test_n4_quartz", "test_v4_jade"]
+      },
+      {
+        "id": "E",
+        "path": "arm/arm_h.sh",
+        "controls_tests": ["test_k8_fluorite", "test_w3_beryl"]
+      },
+      {
+        "id": "F",
+        "path": "rim/hold_r.sh",
+        "controls_tests": ["test_k8_fluorite", "test_v4_jade"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "ops/check_surface.sh",
+      "kind": "helper",
+      "rhymes_with": "run_cutover",
+      "non_fix_purpose": "Surface health via healthctl; greens while durable plane and seating remain wrong."
+    },
+    {
+      "path": "etc/ingest/harbor.toml",
+      "kind": "config",
+      "rhymes_with": "fleet.seal",
+      "non_fix_purpose": "Harbor diagnostic epoch/prefix preferred by broken lease helper and preflight rematerialize."
+    },
+    {
+      "path": "etc/ingest/fleet.toml",
+      "kind": "config",
+      "rhymes_with": "act.wal",
+      "non_fix_purpose": "Drifted profile sheet (epoch 9 / drift) that matches beyond-seal WAL tip."
+    },
+    {
+      "path": "data/ingest/decoys/prefix.legacy",
+      "kind": "fixture",
+      "rhymes_with": "journal/prefix",
+      "non_fix_purpose": "Legacy prefix sheet copied by broken skim over sealed journal prefix."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "surface", "health", "ingest", "broker", "lab", "lease", "rollover", "jobs", "registered", "buffers",
+    "PrivateMounts", "tenant", "trees", "preflight", "sealed", "journal", "config", "profiles",
+    "authoritative", "durable", "map", "cutover", "fixed-buffer", "registrations", "mount", "namespace",
+    "epoch", "seating", "registry", "fixtures", "seed", "output", "version", "tenants", "array",
+    "row", "buf_slot", "mount_ns", "lease_epoch", "buf_fresh", "preflight_stable", "booleans", "integer",
+    "string", "on-disk", "slot", "id", "host", "activation", "roster", "harbor", "fleet"
+  ]
+}

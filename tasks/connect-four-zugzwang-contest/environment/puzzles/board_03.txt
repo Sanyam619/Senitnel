@@ -1,0 +1,9 @@
+board_id: 03
+to_move: yellow
+board:
+.......
+.......
+.......
+R.Y.R.Y
+YRYRYR.
+RYRYRY.

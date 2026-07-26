@@ -1,0 +1,8 @@
+{"tag":"admit","gen":7,"name":"north"}
+{"tag":"admit","gen":7,"name":"east"}
+{"tag":"admit","gen":7,"name":"south"}
+{"tag":"admit","gen":7,"name":"west"}
+{"tag":"admit","gen":7,"name":"core"}
+{"tag":"revoke","gen":7,"name":"south"}
+{"tag":"admit","gen":9,"name":"core"}
+{"tag":"seal","gen":7}

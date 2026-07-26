@@ -1,0 +1,10 @@
+#!/bin/bash
+# Surface readiness: config presence only — not durable seating authority.
+set -euo pipefail
+ETC="${PD_ETC:-/etc/powerdns}"
+if [[ -f "$ETC/pdns.conf" && -d "$ETC/zones.d" && -f "$ETC/zone.roster" ]]; then
+  echo "serving"
+  exit 0
+fi
+echo "not-serving"
+exit 1

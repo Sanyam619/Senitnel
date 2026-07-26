@@ -115,20 +115,19 @@ Important:
 - prefer single-container unless the task clearly needs docker-compose or multiple services
 - default to a non-milestone task unless the screenshot or user explicitly calls for milestones
 
-### Opus-weakness-aware domain preference
+### Open categories only (new submissions)
 
-Terminal-Bench 2.0 published results (April 2026) show frontier chat models (Claude Opus 4.6/4.7, GPT-5.x, Gemini 3.x) within ~4 points of each other at 74-78%. The TB paper's error analysis shows failures are ~50% execution-class (disobeying spec, wrong source of truth, destructive step repetition, wrong format/place), ~25% coherence-class (context loss over long workflows), ~25% verification-class (shallow self-checks). Domain knowledge is rarely the bottleneck; the bottleneck is execution discipline over long horizons.
+**Only three categories accept new tasks:** `games`, `machine-learning`, and `system-administration`. All other historical categories (`security`, `scientific-computing`, `debugging`, `software-engineering`, `data-processing`, `build-and-dependency-management`) are **blocked**. See `task-type-taxonomy.md`.
 
-This bundle therefore defaults to generating ideas in the **four categories most likely to exploit those failure modes**:
+This bundle therefore defaults to generating ideas in those **three open categories**, preferring framings that exploit execution-class failure modes:
 
 1. `system-administration` — kernel interfaces, namespaces, cgroups, systemd, live-system state, multiple plausible sources of truth
-2. `security` — authority splits, revocation lag, capability confusion, enclave/TEE state (RC6 discipline required when protocol surface is named)
-3. `debugging` — with a systems substrate only (ABI ordering, concurrency, binary-level evidence, distributed state reconciliation)
-4. `scientific-computing` — numerical pipelines with silent intermediate state, checkpoint/resume, parallel reduction ordering, solver coupling
+2. `games` — exploration/state reasoning under tournament or puzzle contracts (not SE/forensics costume)
+3. `machine-learning` — checkpoint/resume, data-pipeline coupling, evaluation invariants under config drift
 
-The five remaining accepted categories (`software-engineering`, `data-processing`, `machine-learning`, `games`, `build-and-dependency-management`) are **not removed** — they remain valid Terminal-Bench 3.0 categories and a genuinely hard task in them is still acceptable. But they play to Opus's native strengths (SWE-Bench Verified ~80%, schema reasoning, algorithms with named pedigree, well-known ecosystems) and tasks drafted there usually collapse into training-distribution solves. If a candidate in an Opus-strong category is to be generated, it must carry an explicit per-idea `Opus-strong justification` naming which execution-class failure mode it exploits. If the justification reduces to "this is a hard topic" or "this uses a complex tool," reject.
+If a seed naturally wants a blocked category (e.g. security admit lattice, SPH numerics), **redesign** the primary activity into an open category or reject the idea. Do not declare a blocked `task.toml` category hoping the classifier will agree.
 
-Use `bulk-idea-generation.md`'s default **Opus-weak sweep mode** unless the user explicitly asks for extended nine-sweep mode.
+Use `bulk-idea-generation.md`'s default **open-category sweep mode** unless the user explicitly asks otherwise.
 
 ## Phase -1: Mandatory Idea Search Before Phase 0
 
@@ -161,8 +160,8 @@ For every candidate considered in Phase -1:
 - **reject build-from-scratch on blank canvas** — without an existing codebase to understand, debug, and navigate, the agent works in its ideal mode. Hard tasks need existing systems with real coupling.
 - **reject in-distribution recipes** — HMAC verification, JSON schema validation, Monte Carlo CI, sliding windows, policy checkers, Merkle trees — these have thousands of implementations in training data.
 - **verify all 5 hardness axes:** the task must require the agent to (1) discover info not in the instruction, (2) synthesize across interacting systems, (3) diagnose from symptoms not causes, (4) navigate coupling, (5) reason beyond training distribution. If any axis fails, the idea is not hard.
-- **prefer the four Opus-weak categories** (`system-administration`, `security`, `debugging` with systems substrate, `scientific-computing`) per Bundle Defaults above. If the seed naturally lives in an Opus-strong category, keep it only if you can identify which execution-class failure mode it exploits.
-- **prefer candidates that exploit execution-class failure modes**: wrong source of truth, destructive step repetition, long-horizon coherence, wrong format-or-place, verifier-bypass bait, multi-phase state threading, not-waiting for long-running processes, terminal-state corruption, edge-case inputs the obvious test misses. These are the TB 2.0 paper's evidenced failure modes. Map each surfaced candidate against the trajectory-level taxonomy (Execution ~50% / Coherence ~25% / Verification ~25%) and the four named-hard domain clusters (Complex System Builds, Long-Horizon Coherence, Robust Verification, Adversarial & Creative Reasoning). See `bulk-idea-generation.md`'s "Empirical evidence basis" section for the full taxonomy, per-category attack surface, and the 16-20% hard-band resolution-rate calibration target.
+- **prefer an open category** (`system-administration`, `games`, `machine-learning`) per Bundle Defaults above. If the seed naturally wants a blocked category, redesign or reject — do not declare blocked metadata.
+- **prefer candidates that exploit execution-class failure modes**: wrong source of truth, destructive step repetition, long-horizon coherence, wrong format-or-place, verifier-bypass bait, multi-phase state threading, not-waiting for long-running processes, terminal-state corruption, edge-case inputs the obvious test misses. These are the TB 2.0 paper's evidenced failure modes. Map each surfaced candidate against the trajectory-level taxonomy (Execution ~50% / Coherence ~25% / Verification ~25%) and the named-hard domain clusters. See `bulk-idea-generation.md`'s "Empirical evidence basis" section for the full taxonomy, per-category attack surface, and the 16-20% hard-band resolution-rate calibration target.
 - in default bank mode, return the requested Step-2a-ready bank size; only narrow to a tiny shortlist if the user explicitly asks for finalist mode
 - surface for each survivor:
   - a short title

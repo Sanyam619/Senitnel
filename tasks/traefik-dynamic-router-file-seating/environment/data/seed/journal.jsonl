@@ -1,0 +1,16 @@
+{"tag":"tip","tip":"tip_live","name":"alpha","rule":"Host(`alpha.live`)","service":"svc-live","generation":99,"kind":"live"}
+{"tag":"tip","tip":"tip_live","name":"beta","rule":"Host(`beta.live`)","service":"svc-live","generation":99,"kind":"live"}
+{"tag":"tip","tip":"tip_live","name":"gamma","rule":"Host(`gamma.live`)","service":"svc-live","generation":99,"kind":"live"}
+{"tag":"tip","tip":"tip_live","name":"delta","rule":"Host(`delta.live`)","service":"svc-live","generation":99,"kind":"live"}
+{"tag":"tip","tip":"tip_live","name":"epsilon","rule":"Host(`epsilon.live`)","service":"svc-live","generation":99,"kind":"live"}
+{"tag":"tip","tip":"tip_g9","name":"alpha","rule":"Host(`alpha.old`)","service":"svc-old","generation":12,"kind":"durable"}
+{"tag":"tip","tip":"tip_g9","name":"beta","rule":"Host(`beta.old`)","service":"svc-old","generation":12,"kind":"durable"}
+{"tag":"tip","tip":"tip_g9","name":"gamma","rule":"Host(`gamma.old`)","service":"svc-old","generation":12,"kind":"durable"}
+{"tag":"tip","tip":"tip_g9","name":"delta","rule":"Host(`delta.old`)","service":"svc-old","generation":12,"kind":"durable"}
+{"tag":"tip","tip":"tip_g9","name":"epsilon","rule":"Host(`epsilon.old`)","service":"svc-old","generation":12,"kind":"durable"}
+{"tag":"tip","tip":"tip_g7","name":"alpha","rule":"Host(`alpha.lab`)","service":"svc-alpha","generation":7,"kind":"durable"}
+{"tag":"tip","tip":"tip_g7","name":"beta","rule":"Host(`beta.lab`)","service":"svc-beta","generation":7,"kind":"durable"}
+{"tag":"tip","tip":"tip_g7","name":"gamma","rule":"Host(`gamma.lab`)","service":"svc-gamma","generation":7,"kind":"durable"}
+{"tag":"tip","tip":"tip_g7","name":"delta","rule":"Host(`delta.lab`)","service":"svc-delta","generation":7,"kind":"durable"}
+{"tag":"tip","tip":"tip_g7","name":"epsilon","rule":"Host(`epsilon.lab`)","service":"svc-epsilon","generation":7,"kind":"durable"}
+{"tag":"seal","gen":"7"}

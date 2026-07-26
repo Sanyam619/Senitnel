@@ -1,0 +1,129 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/axle_k.sh",
+      "symbol": "axle_k",
+      "kind": "function",
+      "signature": "axle_k",
+      "purpose": "Resolve tip generations and eligibility against durable floors and sealed journal tips"
+    },
+    {
+      "path": "rim/mesh_p.sh",
+      "symbol": "mesh_p",
+      "kind": "function",
+      "signature": "mesh_p",
+      "purpose": "Fold machines.target.wants drop-ins last-wins into effective policy"
+    },
+    {
+      "path": "bag/knit_v.sh",
+      "symbol": "knit_v",
+      "kind": "function",
+      "signature": "knit_v",
+      "purpose": "Same-inode attach Bind paths onto sealed volume objects"
+    },
+    {
+      "path": "ops/helm_w.sh",
+      "symbol": "helm_w",
+      "kind": "function",
+      "signature": "helm_w",
+      "purpose": "Abort rematerialize gated by matching cutover receipt"
+    },
+    {
+      "path": "deck/emit_q.sh",
+      "symbol": "emit_q",
+      "kind": "function",
+      "signature": "emit_q",
+      "purpose": "Emit seating ledger with durable roots, bind lists, ports, seat_ok"
+    },
+    {
+      "path": "bag/skim_z.sh",
+      "symbol": "skim_z",
+      "kind": "function",
+      "signature": "skim_z",
+      "purpose": "Publish durable port rows into state for ledger emit"
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/axle_k.sh",
+        "controls_tests": ["test_v5_coral", "test_m1_opal", "test_r6_slate"]
+      },
+      {
+        "id": "B",
+        "path": "bag/knit_v.sh",
+        "controls_tests": ["test_b3_zircon", "test_m1_opal"]
+      },
+      {
+        "id": "C",
+        "path": "rim/mesh_p.sh",
+        "controls_tests": ["test_j2_onyx", "test_h8_amber"]
+      },
+      {
+        "id": "D",
+        "path": "ops/helm_w.sh",
+        "controls_tests": ["test_h8_amber", "test_c1_flint"]
+      },
+      {
+        "id": "E",
+        "path": "deck/emit_q.sh",
+        "controls_tests": ["test_q3_topaz", "test_u2_mica", "test_p8_garnet"]
+      },
+      {
+        "id": "F",
+        "path": "bag/skim_z.sh",
+        "controls_tests": ["test_p8_garnet"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "wire/note_t.sh",
+      "kind": "helper",
+      "rhymes_with": "emit_q",
+      "non_fix_purpose": "Writes a surface status stamp under /var/run/machines; not graded"
+    },
+    {
+      "path": "cli/seatctl",
+      "kind": "helper",
+      "rhymes_with": "knit_v",
+      "non_fix_purpose": "Prints unit inventory for operators; not authority"
+    },
+    {
+      "path": "cli/machinectl-health",
+      "kind": "helper",
+      "rhymes_with": "axle_k",
+      "non_fix_purpose": "Process-presence surface OK bait"
+    }
+  ],
+  "code_forbidden_tokens": [
+    "machine",
+    "machines",
+    "bind",
+    "seating",
+    "seat",
+    "root",
+    "tip",
+    "generation",
+    "floor",
+    "active",
+    "port",
+    "ports",
+    "nspawn",
+    "inode",
+    "attach",
+    "durable",
+    "shadow",
+    "abort",
+    "cutover",
+    "prefer",
+    "journal",
+    "roster",
+    "volume",
+    "schema",
+    "health"
+  ]
+}

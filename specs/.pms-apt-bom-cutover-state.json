@@ -1,0 +1,375 @@
+{
+  "task_name": "pms-apt-bom-cutover",
+  "attempt": 1,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 1,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/pms-apt-bom-cutover-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must recover BOM property mediation for APT/vendor jars, processor emit package/tag mismatch in expand_gate_b, and ModuleLayer classpath-vs-module-path wiring in emit_sheet_c \u2014 none named in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Ship/field modular outcomes require BOM alignment, annotation-processor generation, and JPMS ModuleLayer packaging to agree across the reactor."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction reports classpath-green modules, missing generated classes in jars, and ModuleLayer resolution failure without naming BOM keys, processor omit logic, or layer path mistakes."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Fixing BOM alone still emits wrong package; fixing processor alone leaves dual automatic modules and broken layer boot; fixing launcher alone leaves empty jars."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Hardness is BOM \u00d7 APT \u00d7 JPMS layer coupling across a reactor, not a single Maven conflict or textbook module-info edit."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only cutover brief omits fix sites and BOM property names."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed reactor topology with coupled cuts, not hunt-one-broken-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Requires BOM, processor, and ModuleLayer coordination."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests cover ship pack, field layer, generated jar content, and roster polarity."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not name probe_slot_a, expand_gate_b, or emit_sheet_c."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Offline Maven cache is harness, not hardness."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout-only task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Fix spans BOM root, processor module, and runtime module."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle edits BOM pom, processor Java, and layer bootstrap Java."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Not one pom knob; probe+processor+layer interact."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Opaque symbols; instruction nouns banned on fix path."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helpers named probe_slot_a/expand_gate_b/emit_sheet_c, not validate/fix/reconcile."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a textbook single-dependency version bump."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "N/A build-and-dependency-management category."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Ship/field/classpath outcomes couple through shared BOM and processor output."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Docker/Maven offline cache is realism only."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Classpath-green false acceptance plus three interacting gates blocks one-pass."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Clearly hard BOM\u00d7APT\u00d7JPMS cutover."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three non-trivial discoveries committed in discovery_budget."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "symptoms-only level."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three topologies each with \u22653 coordinating locations."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic Maven package, jar class membership, ModuleLayer boot, and JSON roster checks."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Ship/field/classpath packaging outcomes unambiguous."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert Java build engineer solvable in hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "BOM mediation + APT + JPMS layer beyond undergrad labs."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real mid-cutover Maven reactor work after JDK/BOM bump."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grades package success, jar contents, layer boot, and roster \u2014 not process."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Cannot learn BOM property keys, processor omit/package logic, or ModuleLayer path wiring from instruction.md alone."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "stack-bom still sets hx.release=legacy and pulls both vendor automatic-module jars, so mediation conflicts with the ship-only wire.alpha requirement",
+            "planned_location": "stack-bom/pom.xml and vendor Automatic-Module-Name jars",
+            "why_instruction_must_not_reveal": "Naming the BOM property and dual-jar pin collapses the cutover to a one-file pom edit."
+          },
+          {
+            "discovery": "expand_gate_b still omits the ship binding when probe_slot_a returns omit, and emits into com.hx.legacy instead of the ops-documented package/tag",
+            "planned_location": "p7 processor ExpandGateB + ProbeSlotA",
+            "why_instruction_must_not_reveal": "Naming the omit predicate and package becomes a string-replace recipe."
+          },
+          {
+            "discovery": "emit_sheet_c still boots a classpath LayerController that cannot resolve modular requires and marks ship-only automatic modules active on the field profile",
+            "planned_location": "r8 EmitSheetC and module-info requires",
+            "why_instruction_must_not_reveal": "Pointing at classpath-vs-module-path removes JPMS packaging coupling."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Cutover symptoms only; no named fix sites, BOM keys, or algorithms."
+        },
+        "attack_path": {
+          "summary": "Read ops/link notes, diagnose BOM mediation vs APT omit vs ModuleLayer path drift, reconcile all three, package reactor, emit ship/field rosters.",
+          "reasoning": "Winning path spans stack-bom, p7 processor, and r8 layer bootstrap."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Must align BOM release/vendor pins, fix probe omit + processor emit package/tag, and boot ModuleLayer on module path with correct roster polarity.",
+          "reasoning": "One-file patch cannot satisfy reactor package, generated class in jar, and ship/field layer roster tests together."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Resists single-pom and classpath-green shortcuts.",
+          "residual_hardness": "Three-way BOM/APT/JPMS coupling plus false-green classpath compile remains after tree is visible.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "multi-module",
+            "reactor",
+            "cutover",
+            "bom",
+            "jdk",
+            "module",
+            "path",
+            "classpath",
+            "compile",
+            "packaging",
+            "modular",
+            "runtime",
+            "jars",
+            "processor",
+            "generated",
+            "classes",
+            "downstream",
+            "modulelayer",
+            "launcher",
+            "ops",
+            "notes",
+            "ship",
+            "field",
+            "roster",
+            "package",
+            "active",
+            "inactive",
+            "automatic",
+            "binding",
+            "core",
+            "modules",
+            "status",
+            "name",
+            "version"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "bom/",
+              "renamed_to": "stack-bom/",
+              "reason": "Directory named bom matched instruction noun bom."
+            },
+            {
+              "original": "processor/",
+              "renamed_to": "p7/",
+              "reason": "Path token matched instruction noun processor."
+            },
+            {
+              "original": "runtime/",
+              "renamed_to": "r8/",
+              "reason": "Path token matched instruction noun runtime."
+            },
+            {
+              "original": "emit_roster_c",
+              "renamed_to": "emit_sheet_c",
+              "reason": "Symbol should not contain instruction noun roster."
+            },
+            {
+              "original": "test_q2_generated_in_jar",
+              "renamed_to": "test_q2_primary_hook_both",
+              "reason": "Avoid generated/jar instruction nouns in test name."
+            }
+          ],
+          "test_names_audited": [
+            "test_k4_dual_lane_ok",
+            "test_m8_alt_lane_ok",
+            "test_q2_primary_hook_both",
+            "test_t6_alt_hook_solo",
+            "test_w1_baseline_gap",
+            "test_n9_sym_presence"
+          ],
+          "concentration_math": {
+            "total_tests": 6,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.333333
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 6,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

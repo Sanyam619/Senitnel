@@ -1,0 +1,16 @@
+board_id: 04
+to_move: red
+floor: 9
+budget: 3
+blue_stock: 0
+hand: FFFF,FFFF
+tiles:
+b2:FFFF#:0
+a1:FFFF:0
+b1:FFFF:0
+c1:FFFF:0
+a2:FFFF:0
+c2:FFFF:0
+a3:FFFF:0
+meeples:
+b2:R:cloister:C

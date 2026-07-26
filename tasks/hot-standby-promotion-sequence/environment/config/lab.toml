@@ -1,0 +1,16 @@
+[paths]
+upstream_db = "/data/primary/source.db"
+replica_db = "/data/standby/replica.db"
+live_db = "/data/standby/live.db"
+trace_json = "/data/standby/elevation_audit.json"
+seed_tree = "/data/fixtures/snapshot"
+
+[wal]
+tail_pad_bytes = 128
+
+[registry]
+vlogscan = "/opt/lab/bin/vlogscan"
+shmbind = "/opt/lab/bin/shmbind"
+sqlexport = "/opt/lab/bin/sqlexport"
+pairwatch = "/opt/lab/bin/pairwatch"
+logpack = "/opt/lab/bin/logpack"

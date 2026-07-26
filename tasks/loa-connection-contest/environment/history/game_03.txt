@@ -1,0 +1,11 @@
+# Scratch session C - two ways a travel distance is turned away
+$ java -jar /app/bin/judge.jar view --board board.txt
+{"round_id": 93, "size": 5, "to_move": "black", "black_connected": false, "white_connected": false, "black_components": 3, "white_components": 2, "board": "B.W.B/...../.W.../...../.B..."}
+$ java -jar /app/bin/judge.jar probe --board board.txt --side black --move a1-a3
+{"legal": false, "connects": false, "black_connected": false, "white_connected": false, "black_components": 3, "white_components": 2, "board": "B.W.B/...../.W.../...../.B..."}
+$ java -jar /app/bin/judge.jar probe --board board.txt --side black --move a1-d1
+{"legal": false, "connects": false, "black_connected": false, "white_connected": false, "black_components": 3, "white_components": 2, "board": "B.W.B/...../.W.../...../.B..."}
+$ java -jar /app/bin/judge.jar probe --board board.txt --side black --move b5-b3
+{"legal": true, "connects": false, "black_connected": false, "white_connected": true, "black_components": 3, "white_components": 1, "board": "B.W.B/...../.B.../...../....."}
+$ java -jar /app/bin/judge.jar validate --board board.txt --moves "black a1-a2;black e1-c1;black c1-c2;black b5-b3"
+{"all_legal": true, "black_connected": true, "white_connected": false, "black_components": 1, "white_components": 0, "final_board": "...../B.B../.B.../...../.....", "steps": [{"ply": 0, "ok": true, "side": "black", "move": "a1-a2", "black_connected": false, "white_connected": false, "black_components": 3, "white_components": 2}, {"ply": 1, "ok": true, "side": "black", "move": "e1-c1", "black_connected": false, "white_connected": true, "black_components": 3, "white_components": 1}, {"ply": 2, "ok": true, "side": "black", "move": "c1-c2", "black_connected": false, "white_connected": true, "black_components": 3, "white_components": 1}, {"ply": 3, "ok": true, "side": "black", "move": "b5-b3", "black_connected": true, "white_connected": false, "black_components": 1, "white_components": 0}]}

@@ -1,0 +1,56 @@
+{
+  "schema_tag": "rerank-eval-v1",
+  "source": "surfscan-dash",
+  "swept": "rotation-w29",
+  "slices": [
+    {
+      "id": "cold_a",
+      "ndcg_at_10": 0.929600,
+      "mrr": 0.543900,
+      "temperature": 0.125000,
+      "fusion": "linear",
+      "tip_epoch": 6
+    },
+    {
+      "id": "resume_a",
+      "ndcg_at_10": 0.929600,
+      "mrr": 0.543900,
+      "temperature": 0.125000,
+      "fusion": "linear",
+      "tip_epoch": 6
+    },
+    {
+      "id": "cold_b",
+      "ndcg_at_10": 0.924100,
+      "mrr": 0.502800,
+      "temperature": 0.125000,
+      "fusion": "linear",
+      "tip_epoch": 6
+    },
+    {
+      "id": "resume_b",
+      "ndcg_at_10": 0.924100,
+      "mrr": 0.502800,
+      "temperature": 0.125000,
+      "fusion": "linear",
+      "tip_epoch": 6
+    },
+    {
+      "id": "mix_c",
+      "ndcg_at_10": 0.832900,
+      "mrr": 0.526100,
+      "temperature": 0.125000,
+      "fusion": "linear",
+      "tip_epoch": 6
+    },
+    {
+      "id": "mix_d",
+      "ndcg_at_10": 0.846400,
+      "mrr": 0.491700,
+      "temperature": 0.125000,
+      "fusion": "linear",
+      "tip_epoch": 6
+    }
+  ],
+  "eval_ok": true
+}

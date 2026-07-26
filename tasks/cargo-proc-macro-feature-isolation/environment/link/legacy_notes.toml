@@ -1,0 +1,6 @@
+# Historical single-artifact layout retained for reference docs.
+
+[mono]
+soname = "libflux_mono.so.0"
+pc_name = "flux_mono.pc"
+note = "pre-split combined artifact"

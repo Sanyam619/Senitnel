@@ -1,0 +1,360 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Solver must probe soft-token state and Java providers to learn which slot the host actually binds after restore, how PIN login state survives reload relative to session handles, and that findscan only counts objects \u2014 none of the binding rules are in instruction.md."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Correct authorization couples slot selection, session reuse/PIN freshness, and cert object identity across disagreeing authorities after adversarial reload fixtures."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Instruction reports signing/verify still completing, offline scans green, wrong-slot binding, and outlived PIN contexts \u2014 not which authority is stale or which rebind surface is incomplete."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Rebinding the provider slot without flushing PIN-cached sessions, or anchoring certs by label alone while handles stay on the archive lane, leaves findscan green while runtime authorization fails hard tests."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "Soft-token multi-slot session lineage vs login state vs handle stability after rotation/restore is outside textbook Java KeyStore or single-slot PKCS#11 recipes."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "disclosure_collapse",
+      "name": "Disclosure-collapse",
+      "verdict": "PASS",
+      "reasoning": "Symptoms-only brief omits bind order, PIN TTL policy, and cert re-anchor rules; disclosing checked behaviors still leaves multi-authority coupling."
+    },
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "Fixed multi-slot lab with named restore fixtures, not hunt-one-corrupted-file."
+    },
+    {
+      "id": "single_artifact_repair",
+      "name": "Single-artifact repair",
+      "verdict": "PASS",
+      "reasoning": "No single keystore edit fixes slot bind, PIN session policy, and cert lineage together."
+    },
+    {
+      "id": "generalization",
+      "name": "Generalization",
+      "verdict": "PASS",
+      "reasoning": "Hard tests cover live-slot authorization, PIN freshness after reload, cert identity, stale-handle rejection, and adversarial restore \u2014 not one instance."
+    },
+    {
+      "id": "prompt_honesty",
+      "name": "Prompt-honesty",
+      "verdict": "PASS",
+      "reasoning": "Honest prompt does not name op_a/op_b/op_c or the findscan false-green nature."
+    },
+    {
+      "id": "cheating_vs_difficulty",
+      "name": "Cheating-vs-difficulty",
+      "verdict": "PASS",
+      "reasoning": "Difficulty is authority coupling across slot/session/cert, not anti-cheat."
+    },
+    {
+      "id": "mechanical_fix_filter",
+      "name": "Mechanical-fix filter",
+      "verdict": "PASS",
+      "reasoning": "Not a deps/timeout/reward-footer task."
+    },
+    {
+      "id": "localized_fix",
+      "name": "Localized-fix",
+      "verdict": "PASS",
+      "reasoning": "Cutover spans wire/, hold/, and stamp/ module roots."
+    },
+    {
+      "id": "oracle_locality",
+      "name": "Oracle-locality",
+      "verdict": "PASS",
+      "reasoning": "Oracle completes three opaque Java loci plus emit path; not wholesale one-file replace."
+    },
+    {
+      "id": "small_declarative_cluster",
+      "name": "Small declarative-cluster",
+      "verdict": "PASS",
+      "reasoning": "Not a tiny policy table flip."
+    },
+    {
+      "id": "grep_collapse",
+      "name": "Grep-collapse",
+      "verdict": "PASS",
+      "reasoning": "Fix symbols are opaque (op_a, op_b, op_c); instruction nouns banned on fix path."
+    },
+    {
+      "id": "pre_factored_helper",
+      "name": "Pre-factored-helper",
+      "verdict": "PASS",
+      "reasoning": "Helpers are not named rebind_slot, flush_pin, or fix_cert."
+    },
+    {
+      "id": "recipe_discount",
+      "name": "Recipe-discount",
+      "verdict": "PASS",
+      "reasoning": "Not a standard KeyStore.load or single C_Login cookbook."
+    },
+    {
+      "id": "security_aura_discount",
+      "name": "Security-aura discount",
+      "verdict": "PASS",
+      "reasoning": "Residual reasoning is disagreeing PKCS#11 authorities and freshness after restore, not crypto nouns alone."
+    },
+    {
+      "id": "orthogonal_checklist",
+      "name": "Orthogonal-checklist",
+      "verdict": "PASS",
+      "reasoning": "Slot bind, PIN session policy, and cert identity trade off; each partial completion fails another gate."
+    },
+    {
+      "id": "harness_discount",
+      "name": "Harness-discount",
+      "verdict": "PASS",
+      "reasoning": "Single-container soft-token realism only."
+    },
+    {
+      "id": "one_pass_solvability",
+      "name": "One-pass solvability",
+      "verdict": "PASS",
+      "reasoning": "findscan green plus label-pick and cache-keep decoys mislead one-pass grepping."
+    },
+    {
+      "id": "hard_only_gate",
+      "name": "Hard-only gate",
+      "verdict": "PASS",
+      "reasoning": "Coupled slot \u00d7 session/PIN \u00d7 cert lineage under adversarial reload clears hard-only."
+    },
+    {
+      "id": "discovery_budget_test",
+      "name": "Discovery budget test",
+      "verdict": "PASS",
+      "reasoning": "Three named discoveries in discovery_budget."
+    },
+    {
+      "id": "instruction_specificity_test",
+      "name": "Instruction specificity test",
+      "verdict": "PASS",
+      "reasoning": "symptoms-only."
+    },
+    {
+      "id": "topology_distribution_test",
+      "name": "Topology distribution test",
+      "verdict": "PASS",
+      "reasoning": "Three topologies enumerated with \u22653 locations each."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "Deterministic JSON and runtime authorization assertions."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Output path and field names stated; crypto authorization outcomes observable."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "Expert can finish the Java rebind cutover in a few hours from soft-token state and CLIs."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "Multi-slot soft-token session lineage vs login vs handle stability under restore."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Real HSM/soft-token rotation and restore work pays for this rebind."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Grades authorization outcomes and ledger fields, not process."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Instruction alone does not give which slot is live after restore, PIN TTL rules, or cert handle vs label rules; solver must engage soft-token state and Java modules."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "After restore, duplicate key labels exist on archive and live slots; the provider currently binds the archive slot id while findscan still counts objects on both.",
+      "planned_location": "environment/wire/OpA.java, environment/cmd/findscan, environment/data/token/",
+      "why_instruction_must_not_reveal": "Naming the archive-vs-live bind and that findscan is count-only collapses diagnose and discoverability."
+    },
+    {
+      "discovery": "PIN-cached login state outlives the posted ttl_sec across simulated fork/reload unless op_b refreshes session lineage independently of object handles.",
+      "planned_location": "environment/hold/OpB.java and environment/data/token/sessions/",
+      "why_instruction_must_not_reveal": "Stating flush-before-reuse order turns the task into a recipe checklist."
+    },
+    {
+      "discovery": "Cert identity must re-anchor by label on the live slot after handle reclaim; stale handles remain findable via offline scan but must fail handle_valid authorization.",
+      "planned_location": "environment/stamp/OpC.java and environment/lib/HandleMap.java",
+      "why_instruction_must_not_reveal": "Telling solvers handle vs label split removes the coupling that makes partial fixes fail."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Reports completing crypto calls, green offline scans, wrong-slot binding, outlived PIN contexts; omits algorithms, order, and fix loci."
+  },
+  "attack_path": {
+    "summary": "Probe soft-token state \u2192 complete op_a live-slot provider bind \u2192 op_b PIN/session freshness across reload \u2192 op_c cert re-anchor + emit session-rebind.json \u2192 run auth verifier.",
+    "reasoning": "Partial completion leaves findscan green while hard authorization tests fail."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Implement/complete three opaque Java cutover methods across wire/hold/stamp plus emit path; not a one-line keystore flip.",
+    "reasoning": "Distributed loci required by flipping_point_contract; oracle \u226530 substantive LOC."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "Distributed across three roots, opaque symbols, false-green findscan, decoy label-pick and cache-keep helpers, no answer fixtures.",
+    "residual_hardness": "Solver must recover slot\u00d7session\u00d7cert coupling after adversarial restore from runtime truth, not prompt nouns.",
+    "red_flags": []
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "Java",
+      "host",
+      "software",
+      "PKCS",
+      "module",
+      "slots",
+      "slot",
+      "token",
+      "key",
+      "rotation",
+      "restore",
+      "drills",
+      "signing",
+      "verify",
+      "calls",
+      "offline",
+      "object",
+      "scan",
+      "live",
+      "crypto",
+      "work",
+      "wrong",
+      "PIN",
+      "cached",
+      "sessions",
+      "session",
+      "policy",
+      "findscan",
+      "matching",
+      "counts",
+      "auth",
+      "stub",
+      "fixtures",
+      "seed",
+      "output",
+      "version",
+      "array",
+      "role",
+      "archive",
+      "provider_bound",
+      "pin_fresh",
+      "ttl_sec",
+      "certs",
+      "cert",
+      "label",
+      "handle_valid",
+      "runtime",
+      "authorization",
+      "identity",
+      "presence",
+      "rebind"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "bind_live_slot",
+        "renamed_to": "op_a",
+        "reason": "Avoided slot/live nouns in fix-path symbol."
+      },
+      {
+        "original": "refresh_pin_session",
+        "renamed_to": "op_b",
+        "reason": "Avoided PIN/session nouns."
+      },
+      {
+        "original": "anchor_cert_identity",
+        "renamed_to": "op_c",
+        "reason": "Avoided cert/identity telegraphing."
+      }
+    ],
+    "test_names_audited": [
+      "test_w4_cobal",
+      "test_n7_quartz",
+      "test_h2_jade",
+      "test_v9_felsic",
+      "test_s5_basalt",
+      "test_m1_rhyolite"
+    ],
+    "concentration_math": {
+      "total_tests": 6,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    },
+    "recomputed_concentration": {
+      "total_tests": 6,
+      "concentration_cap": 0.5,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    }
+  }
+}

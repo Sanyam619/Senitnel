@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = ["m4", "d7", "p2", "k9", "r1"]
+
+[workspace.package]
+edition = "2021"
+version = "0.3.0"
+license = "MIT"

@@ -1,0 +1,15 @@
+<domain type='kvm'>
+  <name>ghost</name>
+  <memory unit='MiB'>256</memory>
+  <vcpu>1</vcpu>
+  <os>
+    <type arch='x86_64' machine='pc'>hvm</type>
+  </os>
+  <devices>
+    <disk type='volume' device='disk'>
+      <driver name='qemu' type='raw'/>
+      <source pool='omega' uuid='eeee9999-0000-4000-8000-0000000000e9' volume='ghost.img'/>
+      <target dev='vda' bus='virtio'/>
+    </disk>
+  </devices>
+</domain>

@@ -1,0 +1,10 @@
+# desk log 02 - reading the table dialect on sheet 02
+# these are illustrative turns, not a solved round.
+
+$ java -jar /app/bin/judge.jar view --board /app/puzzles/board_02.txt
+{"board_id":"02","rows":4,"cols":4,"track":9,"floor":2,"red_start":5,"blue_start":2,"patches":5}
+
+$ java -jar /app/bin/judge.jar validate --board /app/puzzles/board_02.txt \
+    --line 'red take P1 @ r0c0;blue advance'
+{"all_legal":true,"steps":2,"red_first_patch":"P1","red_time":1,"blue_time":2,"red_buttons":1,"red_score":-23,"floor":2,"floor_met":false,"terminal":false,"blue_advances_only":true}
+

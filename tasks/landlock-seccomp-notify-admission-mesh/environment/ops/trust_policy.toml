@@ -1,0 +1,8 @@
+# Deep admission policy (surface probes ignore this sheet).
+[trust]
+authority = "durable"
+verification = "keyed"
+replay_protection = "monotonic"
+
+[weave]
+strand = 61

@@ -1,0 +1,23 @@
+package model
+
+type LedgerRow struct {
+	CraftID string  `json:"aircraft_id"`
+	NodeID  string  `json:"pad_id"`
+	Qty     float64 `json:"gallons_applied"`
+	Code    string  `json:"fluid_code"`
+	Seq     int     `json:"seq"`
+}
+
+type TankRow struct {
+	NodeID      string  `json:"tank_id"`
+	Captured    float64 `json:"gallons_captured"`
+	Headroom    float64 `json:"headroom_gal"`
+	WithinPermit bool    `json:"within_permit"`
+}
+
+type UtilRow struct {
+	UnitID     string
+	Active     int
+	Pumped      float64
+	Efficiency float64
+}

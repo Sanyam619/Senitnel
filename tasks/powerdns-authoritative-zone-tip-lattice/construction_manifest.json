@@ -1,0 +1,121 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/crib_j.sh",
+      "symbol": "crib_j",
+      "kind": "function",
+      "signature": "crib_j()",
+      "purpose": "receipt-gated abort package copy into live pdns.d"
+    },
+    {
+      "path": "ops/lath_p.sh",
+      "symbol": "lath_p",
+      "kind": "function",
+      "signature": "lath_p()",
+      "purpose": "sealed zone journal tip resolve, gen.live, tip bind, site-standard install, cutover receipt"
+    },
+    {
+      "path": "rig/vane_t.sh",
+      "symbol": "vane_t",
+      "kind": "function",
+      "signature": "vane_t()",
+      "purpose": "lexical pdns.d option fold with abort set union"
+    },
+    {
+      "path": "rig/gaff_s.sh",
+      "symbol": "gaff_s",
+      "kind": "function",
+      "signature": "gaff_s()",
+      "purpose": "backing store selection from registry minus retirement ledger"
+    },
+    {
+      "path": "span/moor_w.sh",
+      "symbol": "moor_w",
+      "kind": "function",
+      "signature": "moor_w()",
+      "purpose": "zone sheet materialization, publish matrix, record hold application"
+    },
+    {
+      "path": "wire/keel_x.sh",
+      "symbol": "keel_x",
+      "kind": "function",
+      "signature": "keel_x()",
+      "purpose": "preference-and-bind-gated surface rematerialize"
+    },
+    {
+      "path": "deck/flue_d.sh",
+      "symbol": "flue_d",
+      "kind": "function",
+      "signature": "flue_d()",
+      "purpose": "emit pdns-seat.json with self-audit seat_ok"
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/crib_j.sh",
+        "controls_tests": ["test_g6_umber", "test_h3_onyx"]
+      },
+      {
+        "id": "B",
+        "path": "ops/lath_p.sh",
+        "controls_tests": [
+          "test_k4_basalt",
+          "test_p9_beryl",
+          "test_t4_amber",
+          "test_h3_onyx"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "rig/gaff_s.sh",
+        "controls_tests": ["test_r8_garnet"]
+      },
+      {
+        "id": "D",
+        "path": "span/moor_w.sh",
+        "controls_tests": [
+          "test_m1_jasper",
+          "test_v6_topaz",
+          "test_a4_apex",
+          "test_n3_opal"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "wire/keel_x.sh",
+        "controls_tests": ["test_w5_quartz", "test_s1_pyrite"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "rig/scan_y.sh",
+      "kind": "helper",
+      "rhymes_with": "gaff_s",
+      "non_fix_purpose": "lists pdns.d filenames only"
+    },
+    {
+      "path": "bag/note_g.sh",
+      "kind": "helper",
+      "rhymes_with": "moor_w",
+      "non_fix_purpose": "appends operator note to log"
+    },
+    {
+      "path": "wire/lace_n.sh",
+      "kind": "helper",
+      "rhymes_with": "keel_x",
+      "non_fix_purpose": "touches probe.stamp"
+    }
+  ],
+  "code_forbidden_tokens": [
+    "powerdns", "zone", "serial", "backend", "tip", "lattice", "journal",
+    "fold", "generation", "floor", "record", "honor", "hold", "publish",
+    "durable", "live", "surface", "prefer", "preference", "store", "retire",
+    "seat", "abort", "cutover", "rematerialize", "roster", "fixture",
+    "schema", "health", "apex", "receipt", "bind"
+  ]
+}

@@ -1,0 +1,42 @@
+# UI submission rubric — wasm-jit-tierup-reconstruction
+# Paste into platform rubric field. Not shipped in submission zip.
+#
+# Three blocks — one per broken merge function.
+# Each block: positive checks (sum 10–40) + at least one negative penalty.
+# Allowed scores: +1, +2, +3, +5, -1, -2, -3, -5 (never +/-4).
+
+# ---------------------------------------------------------------
+# Block 1 — op_alpha (probe -> persistent-profile merge)
+# positive sum = 12
+# ---------------------------------------------------------------
+Agent reads /app/docs/report-schema.md before editing merge functions, +2
+Agent reads /app/src/hotpath/op_alpha.c and identifies that epoch_stamp is left at zero, +3
+Agent edits /app/src/hotpath/op_alpha.c to set slot.epoch_stamp = row.registry_epoch_now, +3
+Agent edits /app/src/hotpath/op_alpha.c so slot.trustworthy is cleared when reload_seen_during_probe is true, +2
+Agent rebuilds the engine with make and observes the b4 (benign_epoch_bumped) row change outcome after the fix, +2
+Agent hardcodes /app/data/manifest/registry.sig epoch as a literal in op_alpha.c instead of reading row.registry_epoch_now, -3
+Agent edits /app/tests/ or /app/data/scenarios/ to force b-scenarios to pass, -5
+
+# ---------------------------------------------------------------
+# Block 2 — op_gamma (reload -> import-binding signature detection)
+# positive sum = 11
+# ---------------------------------------------------------------
+Agent reads /app/src/wasi/op_gamma.c and identifies that change_kind_* and signature_changed are pinned at zero, +3
+Agent edits /app/src/wasi/op_gamma.c to compare each old/new field (type, arity, bounds, table) and set the matching change_kind_* flags, +3
+Agent edits /app/src/wasi/op_gamma.c to set signature_changed and clear cache_valid whenever any dimension changed, +3
+Agent rebuilds and confirms x1–x4 (bypass_blocked) rows now flip from promoted to held, +2
+Agent skips one or more of the four import dimensions (e.g. only diffs type but not arity/bounds/table) in op_gamma.c, -3
+Agent leaves cache_valid = 1 even when signature_changed = 1 in op_gamma.c, -2
+
+# ---------------------------------------------------------------
+# Block 3 — op_beta (gating + guard installation)
+# positive sum = 15
+# ---------------------------------------------------------------
+Agent reads /app/src/optimizer/op_beta.c and identifies that no epoch/trust/import gates run before promotion, +3
+Agent adds an epoch_skew gate (prof_epoch_stamp != current_epoch) in op_beta.c, +2
+Agent adds an untrustworthy gate (!x->trustworthy) in op_beta.c, +2
+Agent adds an import_signature_changed gate in op_beta.c, +2
+Agent installs all four guards (type, arity, bounds, table) on any bypass_blocked hold in op_beta.c, +3
+Agent runs /app/scripts/run-engine.sh (not the bin directly) and confirms /output/warmup-report.json is produced and stable across two runs, +3
+Agent permits host_call_permitted = true on any x1–x4 (bypass_blocked) row, -5
+Agent installs only the single guard matching the changed dimension on a bypass_blocked hold instead of all four, -3

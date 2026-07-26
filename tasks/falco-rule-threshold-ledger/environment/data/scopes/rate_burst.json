@@ -1,0 +1,7 @@
+{
+  "container_id": "prod-db-1",
+  "labels": {
+    "app": "db",
+    "env": "prod"
+  }
+}

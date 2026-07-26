@@ -1,0 +1,4 @@
+name = "quarry.example"
+kind = "primary"
+ns = "ns1.quarry.example"
+contact = "hostmaster.quarry.example"

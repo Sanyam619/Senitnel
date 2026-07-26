@@ -1,0 +1,6 @@
+revision prune-topology-1
+eps 1e-05
+classes 5
+block block0 16 12 64
+block block1 16 16 32
+block block2 12 16 16

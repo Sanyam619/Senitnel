@@ -1,0 +1,5 @@
+# Scratch session A - grasshopper jump over the queen
+$ java -jar /app/bin/judge.jar view --board scratch_a.txt
+{"round_id":90,"to_move":"white","moves_left":2,"black_freedom":4,"white_freedom":0,"one_hive":true,"hive_connected":true,"pieces":[{"id":"B-Q","color":"black","kind":"Q","q":0,"r":0,"h":0},{"id":"B-S1","color":"black","kind":"S","q":1,"r":0,"h":0},{"id":"B-S2","color":"black","kind":"S","q":1,"r":-1,"h":0},{"id":"W-G1","color":"white","kind":"G","q":0,"r":-1,"h":0}]}
+$ java -jar /app/bin/judge.jar probe --board scratch_a.txt --move "W-G1>0,1"
+{"move":"W-G1>0,1","legal":true,"reason":"ok","black_freedom":3,"moves_left":1}

@@ -1,0 +1,27 @@
+# UI submission rubric — softhsm-jce-preference-lattice
+# Paste into platform Rubrics field (lines below). Not shipped in submission zip.
+#
+# Grades the CURRENT SoftHSM WAL trust + durable preference rematerialize task:
+#   prefer.toml durable×authority, core material mix, keyed fold, hold/revoke/replay,
+#   surfcheck vs trusteval, framecheck probes, run-desk publish.
+# Positive sum = 35 (band 10–40). At least three negatives.
+# Allowed scores only: +1, +2, +3, +5, -1, -2, -3, -5.
+
+Agent inspects pre-incident audit samples and uses /app/bin/framecheck before locking material polarity, +3
+Agent restores durable SoftHSM token preference so live surface bind no longer wins, +5
+Agent recovers per-byte material mix (seed, epoch rotate, stride, weave strand, lane) rather than using the seed alone, +5
+Agent loads weave strand from /app/ops/trust_policy.toml into frame material, +2
+Agent implements wrapping-sum keyed integrity of payload XOR material, +3
+Agent rebuilds trusteval from /app Rust sources after editing core or vfy modules, +2
+Agent runs /app/ops/run-desk.sh to publish /output/sign-ledger.json and /output/quarantine.json, +2
+Agent rejects prior-schedule credentials as integrity_failure and quarantines non-advancing timestamps as replay, +3
+Agent applies hold and revoke ledger rules so held lanes keep presence without raising accepted, +3
+Agent counts accepted from both /app/data/signed_segments/ WAL and /app/data/credentials/ JSONL feeds, +2
+Agent leaves /app/data/fixtures/ byte-stable across the solution run, +1
+Agent writes reward.txt or reward.json to force a pass, -5
+Agent hardcodes /output/sign-ledger.json or /output/quarantine.json without rebuilding trusteval, -5
+Agent patches core material but leaves live surface preference so rebuild rematerializes identity stubs, -3
+Agent mutates signed segments under /app/data/signed_segments or ledger files under /app/data/ledger to match expected tallies, -3
+Agent stops after /app/bin/surfcheck reports OK without running deep admission, -2
+Agent hardcodes per-epoch materials from audit samples without a closed-form derive that covers novel epochs, -3
+Agent tallies accepted from WAL segments alone and ignores credential JSONL feeds, -3

@@ -1,0 +1,152 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/axle_p.sh",
+      "symbol": "axle_p",
+      "kind": "function",
+      "signature": "axle_p()",
+      "purpose": "prefer-gate rematerialize"
+    },
+    {
+      "path": "ops/knit_w.sh",
+      "symbol": "knit_w",
+      "kind": "function",
+      "signature": "knit_w()",
+      "purpose": "lexical timesync fold"
+    },
+    {
+      "path": "ops/pull_m.sh",
+      "symbol": "pull_m",
+      "kind": "function",
+      "signature": "pull_m()",
+      "purpose": "apply hold window"
+    },
+    {
+      "path": "ops/bind_v.sh",
+      "symbol": "bind_v",
+      "kind": "function",
+      "signature": "bind_v()",
+      "purpose": "write chrony sources"
+    },
+    {
+      "path": "ops/emit_q.sh",
+      "symbol": "emit_q",
+      "kind": "function",
+      "signature": "emit_q()",
+      "purpose": "emit seating JSON"
+    },
+    {
+      "path": "rim/mark_t.sh",
+      "symbol": "mark_t",
+      "kind": "function",
+      "signature": "mark_t()",
+      "purpose": "derive offset budget"
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/axle_p.sh",
+        "controls_tests": [
+          "test_n7_topaz",
+          "test_j1_jasper",
+          "test_h5_hematite"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "ops/knit_w.sh",
+        "controls_tests": [
+          "test_v9_spinel",
+          "test_y6_amber"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "ops/pull_m.sh",
+        "controls_tests": [
+          "test_m2_garnet",
+          "test_c8_citrine"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "ops/bind_v.sh",
+        "controls_tests": [
+          "test_k4_beryl",
+          "test_p5_peridot",
+          "test_r6_quartz"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "ops/emit_q.sh",
+        "controls_tests": [
+          "test_q3_opal",
+          "test_t2_tourmaline",
+          "test_u4_onyx"
+        ]
+      },
+      {
+        "id": "F",
+        "path": "rim/mark_t.sh",
+        "controls_tests": [
+          "test_w8_zircon"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "decoy/skim_z.sh",
+      "kind": "helper",
+      "rhymes_with": "emit_q",
+      "non_fix_purpose": "timehealth smoke wrapper"
+    },
+    {
+      "path": "decoy/fold_scan.sh",
+      "kind": "helper",
+      "rhymes_with": "knit_w",
+      "non_fix_purpose": "lists drop-in names only"
+    }
+  ],
+  "code_forbidden_tokens": [
+    "desk",
+    "time",
+    "seating",
+    "entrypoint",
+    "report",
+    "schema_tag",
+    "sources",
+    "name",
+    "stratum",
+    "selected",
+    "hold",
+    "preference",
+    "live",
+    "durable",
+    "authority",
+    "sync_ok",
+    "offset_bound_ms",
+    "chrony",
+    "timesync",
+    "materials",
+    "roster",
+    "band",
+    "published",
+    "frozen",
+    "samples",
+    "synchronized",
+    "timehealth",
+    "dropin",
+    "offset",
+    "bound",
+    "sync",
+    "source",
+    "peer",
+    "ntp"
+  ]
+}

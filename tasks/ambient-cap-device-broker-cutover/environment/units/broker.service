@@ -1,0 +1,15 @@
+[Unit]
+Description=Device broker cutover unit
+After=local-fs.target
+
+[Service]
+Type=simple
+ActiveState=active
+ExecStart=/opt/broker/bin/brokerd
+PrivateDevices=yes
+DeviceAllow=char-dev-alpha rwm
+DeviceAllow=char-dev-beta rwm
+DeviceAllow=char-dev-gamma rwm
+AmbientCapabilities=CAP_NET_ADMIN CAP_SYS_ADMIN
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_SYS_ADMIN
+User=broker

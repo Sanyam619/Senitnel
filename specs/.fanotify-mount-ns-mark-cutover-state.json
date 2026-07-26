@@ -1,0 +1,758 @@
+{
+  "task_name": "fanotify-mount-ns-mark-cutover",
+  "attempt": 2,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 2,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 1,
+      "warns": 0,
+      "evidence_path": "specs/fanotify-mount-ns-mark-cutover-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must inspect nsprobe ledgers and unit fragments to learn which mount ns owns each mark, that bind paths need filesystem marks not inode marks, and that PrivateMounts blocks inheritance across reopen \u2014 none of that ordering is in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Cutover couples simulated mount trees, fanotify mark ledgers (ns + kind), remount inheritance after restart, unit PrivateMounts, and a concurrent writer race harness."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction only reports active unit status, wrong-ns marks, missed inherited mounts on reopen, and writer races \u2014 not which attach/reopen/fold step is incomplete."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Attaching inode marks on host, leaving PrivateMounts=yes, or racing writers before seating+reopen leaves topsurf green while broker-ns truth stays wrong."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Fanotify mark lifetime across mount-ns bind topology plus FAN_MARK_FILESYSTEM vs inode after pivot is outside generic fanotify recipe tutorials."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only brief omits attach order, mark kind choice, and unit fold rules."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed lab topology with three named watch paths, not hunt-one-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Mark attach, remount reopen, unit fold, race clean, and ledger emit must all succeed."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests assert per-path mark_ns, mark_kind, inherited_ok, race_stable, and unit PrivateMounts \u2014 not one knob."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not name bind_slot_a, cycle_slot_b, or emit_rollup_c."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Difficulty is mount-ns mark coupling, not anti-cheat."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Fix spans ring/, gate/, and roll/ roots."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle is a CLI chain that exercises three libraries; not wholesale file replace of golden answers."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Not a single manifest flip."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Fix symbols are opaque (bind_slot_a, cycle_slot_b, emit_rollup_c)."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helper names do not mirror prompt bullets like mark_attach or fix_inherit."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a textbook fanotify hello-world; simulated topology has False green topsurf."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "Not a security task; residual hardness is ops mark topology."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Attach kind, reopen inheritance, and PrivateMounts fold trade off; wrong order fails distant tests."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Docker is packaging only; hardness is live ledger reconciliation."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Frontier model must probe nsprobe and discover filesystem-vs-inode after bind before a working CLI chain."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Clearly hard via coupled mount-ns mark lifetime, not medium checklist."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three+ discoveries listed in discovery_budget: mark ns ownership, filesystem vs inode after bind, PrivateMounts vs inheritance."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only: wrong ns, missed inherited mounts, writer races \u2014 no fix sites."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three topologies enumerated each with \u22653 coordinating locations."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic JSON ledger and on-disk mark trees."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Output path and field names named; two implementers converge on same verifier."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert ops engineer solves via CLI chain in a few hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Requires mount-ns + fanotify mark expertise beyond undergrad projects."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real file-event broker cutover under nested mounts."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Tests grade ledger outcomes and live unit state, not process."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction alone does not encode attach kind, remount reopen sequence, or PrivateMounts fold; solver must engage lab CLIs and state."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "Marks must live under the broker mount-ns tree after bind seating; host-ns mark count keeps topsurf green while broker view stays empty.",
+            "planned_location": "environment/cmd/nsprobe/main.c and /data/lab/marks/{host,broker}/ plus identity/mnt_ns",
+            "why_instruction_must_not_reveal": "Naming host-vs-broker mark directories collapses the seating discovery."
+          },
+          {
+            "discovery": "After pivot/bind, watched paths need filesystem marks; inode marks miss inherited bind children and fail mark_kind checks.",
+            "planned_location": "environment/ring/apply_ring_a.c ledger writes and nsprobe kind field",
+            "why_instruction_must_not_reveal": "Naming FAN_MARK_FILESYSTEM vs inode as the fix collapses kind diagnosis."
+          },
+          {
+            "discovery": "PrivateMounts=yes blocks reopen inheritance; fold to no before remount cycle, else inherited_ok stays false.",
+            "planned_location": "environment/units/broker.service live fragment and environment/roll/emit_roll_c.c fold mode",
+            "why_instruction_must_not_reveal": "Naming the unit knob and fold order turns the task into policy transcription."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Describes active unit, wrong-ns marks, missed inherited mounts, writer races \u2014 no algorithms, CLI flags, or fix sites."
+        },
+        "attack_path": {
+          "summary": "Greedy agent trusts topsurf OK, patches host inode marks, and emits a ledger without seating or reopen.",
+          "reasoning": "topsurf only checks ActiveState plus any mark files; legacy_bind decoy writes inode/host marks that keep topsurf green while all six hard tests fail."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Rewrite three opaque C bodies then fold unit, attach, reopen, race, emit via CLIs.",
+          "reasoning": "No single-file edit passes; ring/gate/roll each control a disjoint test pair under the flipping contract."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Distributed fix across three roots, opaque symbols, false-green topsurf, decoys that rhyme with fix path.",
+          "residual_hardness": "Solver still must discover filesystem-vs-inode after bind and PrivateMounts vs remount inheritance from live state.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "cutover",
+            "file-event",
+            "broker",
+            "lab",
+            "unit",
+            "status",
+            "local",
+            "scanner",
+            "write",
+            "events",
+            "marks",
+            "mount",
+            "namespace",
+            "pivot",
+            "bind",
+            "handoff",
+            "reopen",
+            "restart",
+            "inherited",
+            "mounts",
+            "concurrent",
+            "writers",
+            "race",
+            "mark",
+            "add",
+            "remove",
+            "tree",
+            "helpers",
+            "notes",
+            "config",
+            "sources",
+            "fragments",
+            "fixtures",
+            "watch-seed",
+            "output",
+            "version",
+            "watches",
+            "array",
+            "row",
+            "path",
+            "mark_ns",
+            "mark_kind",
+            "inherited_ok",
+            "race_stable",
+            "filesystem",
+            "PrivateMounts",
+            "inheritance",
+            "nested"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "mark_attach",
+              "renamed_to": "apply_ring_a",
+              "reason": "mark/attach nouns collide with instruction tokens"
+            },
+            {
+              "original": "bind_slot_a",
+              "renamed_to": "apply_ring_a",
+              "reason": "bind is an instruction noun substring"
+            },
+            {
+              "original": "inherit_reopen",
+              "renamed_to": "cycle_gate_b",
+              "reason": "inherit/reopen nouns collide with instruction tokens"
+            },
+            {
+              "original": "test_mark_ns_broker",
+              "renamed_to": "test_v4_quartz",
+              "reason": "test name must not embed instruction nouns"
+            }
+          ],
+          "test_names_audited": [
+            "test_v4_quartz",
+            "test_w9_jasper",
+            "test_x2_citrine",
+            "test_k6_fluorite",
+            "test_y5_beryl",
+            "test_z1_spinel"
+          ],
+          "concentration_math": {
+            "total_tests": 6,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.333
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 6,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [
+        "naming_pass.concentration_math disagrees with computed values: location 'A' ratio supplied=0.333 computed=0.333333; location 'B' ratio supplied=0.333 computed=0.333333; location 'C' ratio supplied=0.333 computed=0.333333"
+      ],
+      "blocking_failures": [
+        "naming_pass.concentration_math disagrees with computed values: location 'A' ratio supplied=0.333 computed=0.333333; location 'B' ratio supplied=0.333 computed=0.333333; location 'C' ratio supplied=0.333 computed=0.333333"
+      ]
+    },
+    {
+      "attempt": 2,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/fanotify-mount-ns-mark-cutover-attempt-2-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must inspect nsprobe ledgers and unit fragments to learn which mount ns owns each mark, that bind paths need filesystem marks not inode marks, and that PrivateMounts blocks inheritance across reopen \u2014 none of that ordering is in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Cutover couples simulated mount trees, fanotify mark ledgers (ns + kind), remount inheritance after restart, unit PrivateMounts, and a concurrent writer race harness."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction only reports active unit status, wrong-ns marks, missed inherited mounts on reopen, and writer races \u2014 not which attach/reopen/fold step is incomplete."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Attaching inode marks on host, leaving PrivateMounts=yes, or racing writers before seating+reopen leaves topsurf green while broker-ns truth stays wrong."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Fanotify mark lifetime across mount-ns bind topology plus FAN_MARK_FILESYSTEM vs inode after pivot is outside generic fanotify recipe tutorials."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only brief omits attach order, mark kind choice, and unit fold rules."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed lab topology with three named watch paths, not hunt-one-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Mark attach, remount reopen, unit fold, race clean, and ledger emit must all succeed."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests assert per-path mark_ns, mark_kind, inherited_ok, race_stable, and unit PrivateMounts \u2014 not one knob."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not name bind_slot_a, cycle_slot_b, or emit_rollup_c."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Difficulty is mount-ns mark coupling, not anti-cheat."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Fix spans ring/, gate/, and roll/ roots."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle is a CLI chain that exercises three libraries; not wholesale file replace of golden answers."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Not a single manifest flip."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Fix symbols are opaque (bind_slot_a, cycle_slot_b, emit_rollup_c)."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helper names do not mirror prompt bullets like mark_attach or fix_inherit."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a textbook fanotify hello-world; simulated topology has False green topsurf."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "Not a security task; residual hardness is ops mark topology."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Attach kind, reopen inheritance, and PrivateMounts fold trade off; wrong order fails distant tests."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Docker is packaging only; hardness is live ledger reconciliation."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Frontier model must probe nsprobe and discover filesystem-vs-inode after bind before a working CLI chain."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Clearly hard via coupled mount-ns mark lifetime, not medium checklist."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three+ discoveries listed in discovery_budget: mark ns ownership, filesystem vs inode after bind, PrivateMounts vs inheritance."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only: wrong ns, missed inherited mounts, writer races \u2014 no fix sites."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three topologies enumerated each with \u22653 coordinating locations."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic JSON ledger and on-disk mark trees."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Output path and field names named; two implementers converge on same verifier."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert ops engineer solves via CLI chain in a few hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Requires mount-ns + fanotify mark expertise beyond undergrad projects."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real file-event broker cutover under nested mounts."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Tests grade ledger outcomes and live unit state, not process."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction alone does not encode attach kind, remount reopen sequence, or PrivateMounts fold; solver must engage lab CLIs and state."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "Marks must live under the broker mount-ns tree after bind seating; host-ns mark count keeps topsurf green while broker view stays empty.",
+            "planned_location": "environment/cmd/nsprobe/main.c and /data/lab/marks/{host,broker}/ plus identity/mnt_ns",
+            "why_instruction_must_not_reveal": "Naming host-vs-broker mark directories collapses the seating discovery."
+          },
+          {
+            "discovery": "After pivot/bind, watched paths need filesystem marks; inode marks miss inherited bind children and fail mark_kind checks.",
+            "planned_location": "environment/ring/apply_ring_a.c ledger writes and nsprobe kind field",
+            "why_instruction_must_not_reveal": "Naming FAN_MARK_FILESYSTEM vs inode as the fix collapses kind diagnosis."
+          },
+          {
+            "discovery": "PrivateMounts=yes blocks reopen inheritance; fold to no before remount cycle, else inherited_ok stays false.",
+            "planned_location": "environment/units/broker.service live fragment and environment/roll/emit_roll_c.c fold mode",
+            "why_instruction_must_not_reveal": "Naming the unit knob and fold order turns the task into policy transcription."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Describes active unit, wrong-ns marks, missed inherited mounts, writer races \u2014 no algorithms, CLI flags, or fix sites."
+        },
+        "attack_path": {
+          "summary": "Greedy agent trusts topsurf OK, patches host inode marks, and emits a ledger without seating or reopen.",
+          "reasoning": "topsurf only checks ActiveState plus any mark files; legacy_bind decoy writes inode/host marks that keep topsurf green while all six hard tests fail."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Rewrite three opaque C bodies then fold unit, attach, reopen, race, emit via CLIs.",
+          "reasoning": "No single-file edit passes; ring/gate/roll each control a disjoint test pair under the flipping contract."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Distributed fix across three roots, opaque symbols, false-green topsurf, decoys that rhyme with fix path.",
+          "residual_hardness": "Solver still must discover filesystem-vs-inode after bind and PrivateMounts vs remount inheritance from live state.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "cutover",
+            "file-event",
+            "broker",
+            "lab",
+            "unit",
+            "status",
+            "local",
+            "scanner",
+            "write",
+            "events",
+            "marks",
+            "mount",
+            "namespace",
+            "pivot",
+            "bind",
+            "handoff",
+            "reopen",
+            "restart",
+            "inherited",
+            "mounts",
+            "concurrent",
+            "writers",
+            "race",
+            "mark",
+            "add",
+            "remove",
+            "tree",
+            "helpers",
+            "notes",
+            "config",
+            "sources",
+            "fragments",
+            "fixtures",
+            "watch-seed",
+            "output",
+            "version",
+            "watches",
+            "array",
+            "row",
+            "path",
+            "mark_ns",
+            "mark_kind",
+            "inherited_ok",
+            "race_stable",
+            "filesystem",
+            "PrivateMounts",
+            "inheritance",
+            "nested"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "mark_attach",
+              "renamed_to": "apply_ring_a",
+              "reason": "mark/attach nouns collide with instruction tokens"
+            },
+            {
+              "original": "bind_slot_a",
+              "renamed_to": "apply_ring_a",
+              "reason": "bind is an instruction noun substring"
+            },
+            {
+              "original": "inherit_reopen",
+              "renamed_to": "cycle_gate_b",
+              "reason": "inherit/reopen nouns collide with instruction tokens"
+            },
+            {
+              "original": "test_mark_ns_broker",
+              "renamed_to": "test_v4_quartz",
+              "reason": "test name must not embed instruction nouns"
+            }
+          ],
+          "test_names_audited": [
+            "test_v4_quartz",
+            "test_w9_jasper",
+            "test_x2_citrine",
+            "test_k6_fluorite",
+            "test_y5_beryl",
+            "test_z1_spinel"
+          ],
+          "concentration_math": {
+            "total_tests": 6,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 6,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

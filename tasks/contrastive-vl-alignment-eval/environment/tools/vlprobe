@@ -1,0 +1,22 @@
+#!/bin/bash
+# Train-set overlap surface probe. Scores caption/image train overlap on the
+# surface fixture only; does not exercise held-out contrastive VL seating.
+# A green result here is not authority for /output/vl-eval.json.
+set -euo pipefail
+
+FIX="${PRISM_ROOT:-/app}/data/fixtures/surface_ok.json"
+if [[ ! -f "$FIX" ]]; then
+  echo "vlprobe: missing surface fixture"
+  exit 1
+fi
+
+python3 - <<'PY'
+import json
+from pathlib import Path
+import os
+root = Path(os.environ.get("PRISM_ROOT", "/app"))
+doc = json.loads((root / "data/fixtures/surface_ok.json").read_text())
+ok = doc.get("eval_ok") is True and doc.get("schema_tag") == "vl-eval-v1"
+print("overlap: aligned" if ok else "overlap: drift")
+raise SystemExit(0 if ok else 1)
+PY

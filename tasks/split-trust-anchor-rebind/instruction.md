@@ -1,0 +1,5 @@
+The edge stack under `/app` was brought back from `/app/data/restore/`. Some peers complete admission when they should be refused. Some previously allowed peers fail on capability blob refresh. `/app/bin/surfcheck` shows TLS OK. Refresh-window refusals of previously cached-ok material that is current-revoked carry reason_code `stale_cache`. Current revocation outside that window carries `revoked`.
+
+Produce `/output/admit-ledger.json` for the peer matrix under `/app/data/scenarios/` covering case ids k9, m2, n4, p7, q3, t1, and w2. The ledger needs schema_version `edge-admit-1`, a cases array, and reload_epoch equal to the `epoch` value in `/app/data/state/runtime.json`. Each cases row needs id, decision (`accept` or `reject`), and reason_code. Running `/app/scripts/edge-reload.sh` and then `/app/scripts/run-admit.sh` again must keep the same decisions and the same reload_epoch. The runtime epoch in `/app/data/state/runtime.json` must also stay put across that reload.
+
+Leave `/app/bin/surfcheck` and `/app/data/scenarios/` in place. Rebuild C sources with `make`, then run `/app/scripts/run-admit.sh`.

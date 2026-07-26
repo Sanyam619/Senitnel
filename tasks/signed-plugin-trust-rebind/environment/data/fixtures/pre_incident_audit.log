@@ -1,0 +1,54 @@
+# Pre-incident capture dump — five frames from a working verifier.
+# Seed and check recorded; material schedule not exported.
+# Integrity check byte is a keyed fold of payload bytes under epoch-and-lane material.
+
+## sample_1 (epoch 10)
+frame_hex=a501000a001474733d3830303b686f6c643d303b7461673d61318c
+epoch=10
+lane_id=0x01
+payload=ts=800;hold=0;tag=a1
+integrity=0x8c
+seed_hex=c3a7f1b8
+check=0x8c
+verdict=ok
+
+## sample_2 (epoch 20)
+frame_hex=a5010014001574733d313530303b686f6c643d303b7461673d62311e
+epoch=20
+lane_id=0x01
+payload=ts=1500;hold=0;tag=b1
+integrity=0x1e
+seed_hex=c3a7f1b8
+check=0x1e
+verdict=ok
+
+## sample_3 (epoch 20)
+frame_hex=a5020014001574733d313230303b686f6c643d303b7461673d623312
+epoch=20
+lane_id=0x02
+payload=ts=1200;hold=0;tag=b3
+integrity=0x12
+seed_hex=c3a7f1b8
+check=0x12
+verdict=ok
+
+## sample_4 (epoch 40)
+frame_hex=a5030028001574733d313030303b686f6c643d303b7461673d6431a5
+epoch=40
+lane_id=0x03
+payload=ts=1000;hold=0;tag=d1
+integrity=0xa5
+seed_hex=c3a7f1b8
+check=0xa5
+verdict=ok
+
+## sample_5 (epoch 50)
+frame_hex=a5030032001474733d3830303b686f6c643d303b7461673d653170
+epoch=50
+lane_id=0x03
+payload=ts=800;hold=0;tag=e1
+integrity=0x70
+seed_hex=c3a7f1b8
+check=0x70
+verdict=ok
+

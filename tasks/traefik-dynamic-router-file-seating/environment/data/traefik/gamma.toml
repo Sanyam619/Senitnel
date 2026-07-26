@@ -1,0 +1,2 @@
+rule = "Host(`gamma.lab`)"
+service = "svc-gamma"

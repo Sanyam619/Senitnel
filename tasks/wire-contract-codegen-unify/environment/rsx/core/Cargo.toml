@@ -1,0 +1,10 @@
+[package]
+name = "core"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[package.metadata.codegen]
+plugin = "pg-core@0.9.0"

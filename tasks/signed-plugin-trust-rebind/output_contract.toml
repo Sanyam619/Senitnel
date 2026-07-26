@@ -1,0 +1,33 @@
+user_visible_outputs = [
+  "/output/plugin-ledger.json",
+  "/output/quarantine.json",
+  "/app/bin/jarcheck",
+  "/app/bin/framecheck",
+  "/app/ops/run-admit.sh",
+  "/app/data/fixtures/",
+]
+
+internal_harness_files = []
+
+[structured_outputs.attestation]
+target = "/output/plugin-ledger.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "backends",
+  "epochs",
+  "active",
+  "inactive",
+  "accepted",
+]
+
+[structured_outputs.quarantine]
+target = "/output/quarantine.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "rejected",
+  "integrity_failure",
+  "replay",
+  "revoked",
+]

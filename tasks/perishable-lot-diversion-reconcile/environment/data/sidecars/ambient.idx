@@ -1,0 +1,6 @@
+{
+  "lane": "ambient",
+  "bound_batch": 43,
+  "lots": ["AMBER-10", "BASALT-20", "COPPER-30"],
+  "digest": "stale"
+}

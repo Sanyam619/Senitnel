@@ -1,0 +1,12 @@
+[package]
+name = "sph_a"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+sph_core = { path = "../sph_core" }
+sph_kernels = { path = "../sph_kernels" }
+
+[lib]
+path = "src/lib.rs"

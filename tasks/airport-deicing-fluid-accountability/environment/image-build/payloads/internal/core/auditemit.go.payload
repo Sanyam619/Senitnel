@@ -1,0 +1,15 @@
+package core
+
+import (
+	"path/filepath"
+
+	"ramp.local/account/internal/ingest/assayfeed"
+	"ramp.local/account/internal/ingest/pulsefeed"
+	"ramp.local/account/internal/ingest/standboard"
+	csvio "ramp.local/account/internal/io"
+)
+
+func writeUtilAudit(outDir string, pulses []pulsefeed.Row, stands []standboard.Row, assays []assayfeed.Row) error {
+	util := rank_u(pulses, stands, assays)
+	return csvio.WriteUtil(filepath.Join(outDir, "truck_utilization_audit.tsv"), util)
+}

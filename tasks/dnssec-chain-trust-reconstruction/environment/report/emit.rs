@@ -1,0 +1,5 @@
+use crate::{clock::sieve::fold_c,core::phase::phase_a,model::{CaseData,Outcome}};
+fn esc(s:&str)->String{s.replace('\\',"\\\\").replace('"',"\\\"")}
+fn pack_a(rows:&[Outcome])->String{let mut out=String::from("[\n"); for (i,r) in rows.iter().enumerate(){if i>0{out.push_str(",\n")} out.push_str(&format!("  {{\"id\":\"{}\",\"name\":\"{}\",\"instant\":{},\"status\":\"{}\",\"chain\":[{}],\"reason\":\"{}\"}}",esc(&r.id),esc(&r.name),r.instant,esc(&r.status),r.chain.iter().map(|v|format!("\"{}\"",esc(v))).collect::<Vec<_>>().join(","),esc(&r.reason)))} out.push_str("\n]\n"); out}
+fn pack_b(ids:&[String])->String{format!("{{\"queries\":[{}]}}\n",ids.iter().map(|v|format!("\"{}\"",esc(v))).collect::<Vec<_>>().join(","))}
+pub fn emit_d(data:&CaseData)->(String,String){let mut rows=Vec::new(); let replayed=Vec::new(); for q in &data.queries{let mut row=Outcome{id:q.id.clone(),name:q.name.clone(),instant:q.instant,status:"invalid".into(),chain:Vec::new(),reason:"no_path".into()}; for m in phase_a(data,q){if let Some(c)=fold_c(data,q,&m){row.status="valid".into(); row.chain=c; row.reason=m.label; break}} rows.push(row)} (pack_a(&rows),pack_b(&replayed))}

@@ -1,0 +1,9 @@
+{
+  "service": {
+    "name": "eta",
+    "id": "eta-1",
+    "node": "node-g7",
+    "port": 8107,
+    "tags": ["mesh", "edge"]
+  }
+}

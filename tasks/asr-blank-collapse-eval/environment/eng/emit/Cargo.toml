@@ -1,0 +1,12 @@
+[package]
+name = "asr_emit"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "asreval"
+path = "src/main.rs"
+
+[dependencies]
+asr_core = { path = "../core" }
+asr_rank = { path = "../rank" }

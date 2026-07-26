@@ -1,0 +1,2 @@
+server ntp.delta.example iburst
+# stratum 1

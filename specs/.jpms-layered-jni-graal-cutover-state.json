@@ -1,0 +1,388 @@
+{
+  "task_name": "jpms-layered-jni-graal-cutover",
+  "attempt": 1,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 1,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/jpms-layered-jni-graal-cutover-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must recover that knit_a omits the SPI module from the jlink/ModuleLayer root set, that fold_b relocates JNI-visible bridge classes the native FindClass path still names under the pre-relocation package, and that sieve_c emits reachability metadata missing SPI and reflective JNI upcall types \u2014 none of these are stated in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Agreement across JVM modular, jlink, and native launch modes requires the module-graph recipe, shade relocation policy, and Graal-style reachability metadata to form one packaging lattice with the JNI shared library."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction reports launch-mode disagreement and packaging dry-run coherence without naming module-root omission, shade/JNI name skew, or reachability omissions."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Fixing only the jlink root set still leaves native reflect_kept incomplete and JVM JNI FindClass failing under relocation; fixing only shade still leaves jlink SPI unbound and native metadata sparse; fixing only reachability still leaves jlink and JVM JNI modes red."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Hardness is JPMS layered image + shade relocation + Graal reachability coupled to JNI packaging, not a single module-info tweak or APT/BOM recipe (distinct from the sister APT cutover)."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only cutover brief omits module-root sets, relocation prefixes, and reachability entry lists."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed multi-unit packaging topology with a three-mode launch matrix \u2014 not hunt-one-broken-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Requires layer recipe, shade policy, and reachability emission to coordinate."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests cover JVM, jlink, and native modes plus spi_bound, jni_bridge, and reflect_kept outcomes."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not name knit_a, fold_b, or sieve_c."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Offline JDK/gcc packaging toolchain is harness realism, not hardness."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout-only task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Fix spans three distinct pack roots (k9 layer recipe, p7 shade, m2 reachability)."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle edits knit_a, fold_b, sieve_c bodies across three files with substantive logic."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Not one config block; module-graph, shade, and reachability interact nonlinearly across launch modes."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Opaque symbols; instruction nouns banned on fix-path symbols and test names."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helpers named knit_a/fold_b/sieve_c, not validate/fix/reachability_reconcile."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a textbook single-module-info or single reflect-config edit; three packaging authorities must agree with JNI."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "N/A build category."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "JVM/jlink/native outcomes couple through shared SPI, shade, and reachability lattices."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Docker/JDK/C toolchain is realism only."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Mode-disagreement traps plus three interacting loci block one-pass."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Clearly hard JPMS+JNI+Graal packaging lattice cutover."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three non-trivial discoveries committed in discovery_budget."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "symptoms-only level."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three topologies each with >=3 coordinating locations."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic javac/jlink/JNI builds and JSON launch-mode checks."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Pack report contract for status/spi_bound/jni_bridge/reflect_kept is unambiguous."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert Java/JNI packaging engineer solvable in a few hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Layered JPMS + shade + Graal reachability + JNI beyond undergrad labs."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real mid-cutover native/jlink packaging work paid engineers do."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grades multi-mode pack report fields, not process."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Cannot learn omitted SPI jlink roots, shade relocation of JNI-visible types, or sparse reachability entries from instruction.md alone."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "knit_a still emits a jlink/ModuleLayer root set that includes the app and api units but omits the SPI provider unit (and does not bind services), so jlink launch boots while ServiceLoader leaves spi_bound false",
+            "planned_location": "pack/k9/src/main/java/io/helix/kz/knit_a.java",
+            "why_instruction_must_not_reveal": "Naming the omitted module root collapses jlink work to a one-line add-modules edit."
+          },
+          {
+            "discovery": "fold_b relocates io.helix.bridge.* into io.helix.internal.bridge.* while the JNI shared library still FindClass-es io/helix/bridge/NativeHook, so JVM jni_bridge fails after shade even when modular compiles look fine",
+            "planned_location": "pack/p7/src/main/java/io/helix/qx/fold_b.java",
+            "why_instruction_must_not_reveal": "Naming the relocation prefix and JNI class turns the shade locus into a string-replace recipe."
+          },
+          {
+            "discovery": "sieve_c writes native reachability metadata that keeps only the boot entry type and omits the SPI provider plus NativeHook reflective/JNI entries the native probe requires for reflect_kept and native status",
+            "planned_location": "pack/m2/src/main/java/io/helix/ry/sieve_c.java",
+            "why_instruction_must_not_reveal": "Listing the missing reachability entries removes the Graal-metadata discovery the task tests."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Cutover symptoms only (launch-mode disagreement, dry-run coherence); no named fix sites or algorithms."
+        },
+        "attack_path": {
+          "summary": "Read ops matrix and link notes, diagnose layer roots / shade / reachability drift, reconcile packaging, rebuild native .so, run packctl.",
+          "reasoning": "Winning path spans knit_a, fold_b, sieve_c, and the packctl probe graph."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Must include SPI in jlink roots with service binding, exclude JNI-visible bridge types from shade relocation (or align FindClass), and emit full SPI+JNI reachability metadata.",
+          "reasoning": "One-file patch cannot satisfy jlink spi_bound, JVM jni_bridge, and native reflect_kept tests together."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Resists single-module-info and single reflect-config shortcuts; dry-run-green traps remain.",
+          "residual_hardness": "Three-way module-graph/shade/reachability coupling plus JNI name skew remains after the tree is visible.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "Java",
+            "control",
+            "plane",
+            "cutover",
+            "layered",
+            "module",
+            "runtime",
+            "images",
+            "native",
+            "packaging",
+            "JNI",
+            "shared",
+            "library",
+            "Modular",
+            "JVM",
+            "launches",
+            "dry-runs",
+            "packctl",
+            "pack-report",
+            "jlink",
+            "launch",
+            "modes",
+            "ship",
+            "roster",
+            "matrix",
+            "notes",
+            "module-graph",
+            "shade",
+            "relocation",
+            "bridge",
+            "classes",
+            "reachability",
+            "metadata",
+            "agreement",
+            "status",
+            "spi_bound",
+            "jni_bridge",
+            "reflect_kept",
+            "report",
+            "probe",
+            "stand-in",
+            "ops",
+            "link",
+            "pack-notes",
+            "tools",
+            "output",
+            "Graal"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "resolve_layer_roots",
+              "renamed_to": "knit_a",
+              "reason": "Symbol echoed instruction nouns layered/module."
+            },
+            {
+              "original": "apply_shade_relocation",
+              "renamed_to": "fold_b",
+              "reason": "Symbol echoed instruction nouns shade/relocation."
+            },
+            {
+              "original": "emit_reachability",
+              "renamed_to": "sieve_c",
+              "reason": "Symbol echoed instruction noun reachability."
+            },
+            {
+              "original": "test_jlink_spi_ok",
+              "renamed_to": "test_m8_w_ok",
+              "reason": "jlink/spi collided with instruction nouns."
+            },
+            {
+              "original": "modules/",
+              "renamed_to": "unit/",
+              "reason": "Path token matched instruction noun module."
+            }
+          ],
+          "test_names_audited": [
+            "test_k4_v_ok",
+            "test_m8_w_ok",
+            "test_q2_x_ok",
+            "test_t6_y_ok",
+            "test_w1_z_ok",
+            "test_n9_u_ok"
+          ],
+          "concentration_math": {
+            "total_tests": 6,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.333333
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 6,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

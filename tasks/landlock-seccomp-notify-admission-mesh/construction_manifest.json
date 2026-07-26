@@ -1,0 +1,157 @@
+{
+  "symbol_table": [
+    {
+      "path": "qx/internal/seat_k.go",
+      "symbol": "SeatMode",
+      "kind": "var",
+      "signature": "var SeatMode string",
+      "purpose": "Durable vs live seating mode once host preference binds durable authority."
+    },
+    {
+      "path": "rz/mat_q.c",
+      "symbol": "mat_q",
+      "kind": "function",
+      "signature": "void mat_q(const unsigned char *seed, size_t n, unsigned epoch, unsigned lane, unsigned strand, unsigned char *out)",
+      "purpose": "Opaque notify material derivation for integrity gate."
+    },
+    {
+      "path": "rz/knit_m.c",
+      "symbol": "knit_m",
+      "kind": "function",
+      "signature": "int knit_m(const unsigned char *payload, size_t n, const unsigned char *material, size_t mlen, unsigned expect)",
+      "purpose": "Notify integrity fold over payload times material."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/prefer.toml",
+        "controls_tests": [
+          "test_r1_zircon",
+          "test_z2_fluorite",
+          "test_y4_opal",
+          "test_c3_durable_tip_journal"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "qx/internal/seat_k.go",
+        "controls_tests": [
+          "test_y4_opal",
+          "test_k3_garnet",
+          "test_m8_obsidian",
+          "test_z2_fluorite"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "qx/internal/band_k.go",
+        "controls_tests": [
+          "test_q7_amber",
+          "test_w9_coral",
+          "test_y4_opal"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "data/roots/durable.map",
+        "controls_tests": [
+          "test_r1_zircon",
+          "test_c3_durable_tip_journal",
+          "test_v5_spinel",
+          "test_k3_garnet"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "rz/mat_q.c",
+        "controls_tests": [
+          "test_u2_quartz",
+          "test_x2_beryl",
+          "test_a1_framecheck",
+          "test_z2_fluorite"
+        ]
+      },
+      {
+        "id": "F",
+        "path": "rz/knit_m.c",
+        "controls_tests": [
+          "test_u2_quartz",
+          "test_x2_beryl",
+          "test_a1_framecheck",
+          "test_t6_jade"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "qx/internal/skim_fold.go",
+      "kind": "helper",
+      "rhymes_with": "fold_a",
+      "non_fix_purpose": "Lexical path presence skim used by surfcheck; ignores durable maps."
+    },
+    {
+      "path": "rz/skim_sieve.c",
+      "kind": "helper",
+      "rhymes_with": "sieve_b",
+      "non_fix_purpose": "Surface notify always-allow helper for probe path; not host authority."
+    },
+    {
+      "path": "data/surface/allow.list",
+      "kind": "fixture",
+      "rhymes_with": "SeatAllow",
+      "non_fix_purpose": "Wide surface allow bait rematerialized by broken refresh; not sealed allow strand."
+    },
+    {
+      "path": "data/surface/stubs_mat_q.c",
+      "kind": "fixture",
+      "rhymes_with": "mat_q",
+      "non_fix_purpose": "Surface notify material stub reapplied by prefer-apply until durable preference."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "job",
+    "broker",
+    "filesystem",
+    "access",
+    "rules",
+    "syscall",
+    "notify",
+    "mesh",
+    "refresh",
+    "jobs",
+    "surface",
+    "probe",
+    "host",
+    "quarantine",
+    "ledger",
+    "path",
+    "identity",
+    "descriptor",
+    "inheritance",
+    "deny",
+    "reload",
+    "epochs",
+    "scenarios",
+    "decision",
+    "accept",
+    "reason_code",
+    "reload_epoch",
+    "runtime",
+    "path_drift",
+    "fd_stale",
+    "notify_skew",
+    "epoch_revoke",
+    "ok_admit",
+    "admission",
+    "authority",
+    "landlock",
+    "seccomp",
+    "seating",
+    "gatecheck"
+  ]
+}

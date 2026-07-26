@@ -1,0 +1,11 @@
+#!/bin/bash
+# autofshealth — surface probe only.
+set -euo pipefail
+
+/app/rim/scan_m.sh
+if [[ -d /etc/auto.master.d ]] && [[ -s /etc/autofs/roster.list ]]; then
+  echo "OK"
+  exit 0
+fi
+echo "FAIL"
+exit 1

@@ -1,0 +1,9 @@
+package settle
+
+func Headroom(capQty, baseQty, captured float64) float64 {
+	return capQty - baseQty - captured
+}
+
+func Within(capQty, baseQty, captured float64) bool {
+	return captured <= capQty-baseQty
+}

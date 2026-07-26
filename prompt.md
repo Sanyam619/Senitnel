@@ -34,14 +34,14 @@ make sure task align with these files docker environment.mdc dockerfile and imag
 
 ---
 
-⁠Infrastructure failures (tmux crashes): 2–3 of the GPT-5.2 runs failed due to tmux not running or crashing. This is typically caused by missing tmux and/or asciinema in your Dockerfile. Make sure both are installed:
+⁠Infrastructure failures (tmux crashes): 2–3 of the GPT-5.6 runs failed due to tmux not running or crashing. This is typically caused by missing tmux and/or asciinema in your Dockerfile. Make sure both are installed:
 dockerfile
 RUN apt-get update \
 && apt-get install -y --no-install-recommends tmux asciinema \
 && rm -rf /var/lib/apt/lists/\*
-⁠GPT-5.2 scored 0%: Because most of its runs were infrastructure failures (not genuine task failures), the system can't confirm solvability from that model's perspective.
+⁠GPT-5.6 scored 0%: Because most of its runs were infrastructure failures (not genuine task failures), the system can't confirm solvability from that model's perspective.
 
-Fix the tmux/asciinema installation in your Dockerfile so GPT-5.2 runs don't crash on infrastructure, and the solvability check should pass on resubmission.
+Fix the tmux/asciinema installation in your Dockerfile so GPT-5.6 runs don't crash on infrastructure, and the solvability check should pass on resubmission.
 
 ---
 
@@ -61,4 +61,4 @@ Kindly consider that you don't expose any hint or implementation plan for The ag
 
 # review
 
-This task was previously evaluated using GPT-5.2 and Opus 4.6, and it met the required difficulty standards at that time. However, with the updated evaluation process now using GPT-5.5 and Opus 4.8, the task is being classified as trivial. Could you please increase its complexity and difficulty while ensuring it continues to satisfy all checklist requirements and quality guidelines
+This task was previously evaluated using GPT-5.2 and Opus 4.6, and it met the required difficulty standards at that time. However, with the updated evaluation process now using GPT-5.6 and Opus 4.8, the task is being classified as trivial. Could you please increase its complexity and difficulty while ensuring it continues to satisfy all checklist requirements and quality guidelines

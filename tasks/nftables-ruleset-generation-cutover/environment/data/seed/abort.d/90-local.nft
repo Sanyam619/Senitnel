@@ -1,0 +1,12 @@
+table inet filter {
+	chain input {
+		type filter hook input priority 0; policy accept;
+	}
+}
+
+table inet abort_lab {
+	chain input {
+		type filter hook input priority 10; policy accept;
+		accept
+	}
+}

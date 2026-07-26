@@ -1,0 +1,6 @@
+round_id: R09
+demand_mw: 95
+reserve_mw: 75
+units:
+unit A 60 13
+unit B 60 17

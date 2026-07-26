@@ -1,0 +1,12 @@
+# Durable logit-scale / negative-pool schedule keyed by tip generation.
+[temperature]
+"3" = 0.121000
+"4" = 0.123000
+"6" = 0.125000
+"8" = 0.119000
+
+[pool]
+"3" = "hardmine"
+"4" = "hardmine"
+"6" = "hardmine"
+"8" = "inbatch"

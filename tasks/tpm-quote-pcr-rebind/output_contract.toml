@@ -1,0 +1,28 @@
+user_visible_outputs = [
+  "/output/attestation-bundle.json",
+  "/output/gate-verdict.json",
+]
+
+internal_harness_files = [
+  "/data/rly/chip-state.json",
+]
+
+[structured_outputs.attestation_bundle]
+target = "/output/attestation-bundle.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "blobs",
+  "registers",
+  "envelope",
+  "trace_sha256",
+]
+
+[structured_outputs.gate_verdict]
+target = "/output/gate-verdict.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "lane",
+  "result",
+]

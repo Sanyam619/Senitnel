@@ -1,0 +1,4 @@
+# shared postfix base
+compatibility_level = 3.6
+mail_owner = postfix
+setgid_group = postdrop

@@ -1,0 +1,8 @@
+Ramp winter cutover — operator scratch (9 Feb)
+- rollback runner left linked for drill-week reversions
+- ramp.conf.cutover.bak still overrides FIXTURE_ROOT and RAMP_OUT_ROOT during wrapper startup
+- RUNNER_LINK should resolve to the active runner, not the stale rollback binary
+- unit file under systemd/ still points at the rehearsal EnvironmentFile
+- archive feed pointer predates the repacked shift bundle
+- site.toml must be readable from the batch working directory
+- health probe only proves a runner path exists, not that it is the active build

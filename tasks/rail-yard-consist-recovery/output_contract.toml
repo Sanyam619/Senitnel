@@ -1,0 +1,24 @@
+user_visible_outputs = [
+  "/output/consist-report.json",
+  "/app/bin/lane",
+  "/app/bin/yardctl",
+]
+
+internal_harness_files = [
+  "/app/ops/scripts/yard_lib.py",
+  "/app/ops/tools",
+]
+
+[structured_outputs.consist_report]
+target = "/output/consist-report.json"
+format = "json"
+instruction_checks = [
+  "replay_seq",
+  "tracks",
+  "audit_digest",
+  "journal_pin",
+  "seq_floor",
+  "replay_gate",
+  "tier_reducer",
+  "active_seq",
+]

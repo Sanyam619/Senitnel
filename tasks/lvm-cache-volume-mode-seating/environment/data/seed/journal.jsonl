@@ -1,0 +1,4 @@
+{"ts":1,"kind":"cutover","gen":7,"mode":"seal","tips":{"alpha":6,"beta":6,"gamma":7,"delta":6,"epsilon":7,"zeta":6},"modes":{"alpha":"writeback","beta":"writethrough","gamma":"writeback","delta":"passthrough","epsilon":"writethrough","zeta":"writeback"}}
+{"ts":2,"kind":"cutover","gen":9,"mode":"seal","tips":{"alpha":12,"beta":8,"gamma":15,"delta":14,"epsilon":11,"zeta":20},"modes":{"alpha":"writethrough","beta":"writeback","gamma":"passthrough","delta":"writethrough","epsilon":"writeback","zeta":"writethrough"}}
+{"ts":3,"kind":"rollback","gen":9,"mode":"provisional"}
+{"ts":4,"kind":"cutover","gen":9,"mode":"provisional","tips":{"alpha":4,"beta":4,"gamma":4,"delta":4,"epsilon":4,"zeta":4},"modes":{"alpha":"writeback","beta":"writeback","gamma":"writeback","delta":"writeback","epsilon":"writeback","zeta":"writeback"}}

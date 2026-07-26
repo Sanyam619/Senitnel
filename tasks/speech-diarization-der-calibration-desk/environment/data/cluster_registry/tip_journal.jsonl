@@ -1,0 +1,7 @@
+{"tip": "tip_m3", "epoch": 2, "sealed": true, "clustering": "nme"}
+{"tip": "tip_m7", "epoch": 4, "sealed": true, "clustering": "ahc"}
+{"tip": "tip_m5", "epoch": 3, "sealed": true, "clustering": "nme"}
+{"tip": "tip_m9", "epoch": 6, "sealed": true, "clustering": "spectral"}
+{"tip": "tip_live", "epoch": 9, "sealed": false, "clustering": "spectral"}
+{"tip": "tip_m7", "epoch": 4, "sealed": true, "clustering": "ahc"}
+{"tip": "tip_m2", "epoch": 1, "sealed": true, "clustering": "nme"}

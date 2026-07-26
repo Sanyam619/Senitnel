@@ -1,0 +1,8 @@
+{"epoch": 4, "tip": "tip_g4", "state": "sealed", "kind": "grouped", "grid": "grid_g4.txt", "bank": "bank_g4.txt"}
+{"epoch": 12, "tip": "tip_live", "state": "live", "kind": "per_channel", "grid": "grid_live.txt", "bank": "bank_live.txt"}
+{"epoch": 7, "tip": "tip_g7", "state": "sealed", "kind": "grouped", "grid": "grid_g7.txt", "bank": "bank_g7.txt"}
+{"epoch": 2, "tip": "tip_g2", "state": "staged", "kind": "grouped", "grid": "grid_g2.txt", "bank": "bank_g2.txt"}
+{"epoch": 9, "tip": "tip_g9", "state": "sealed", "kind": "grouped", "grid": "grid_g9.txt", "bank": "bank_g9.txt"}
+{"epoch": 6, "tip": "tip_g6", "state": "sealed", "kind": "grouped", "grid": "grid_g6.txt", "bank": "bank_g6.txt"}
+{"epoch": 11, "tip": "tip_g11", "state": "sealed", "kind": "per_channel", "grid": "grid_g11.txt", "bank": "bank_g11.txt"}
+{"epoch": 5, "tip": "tip_g5", "state": "staged", "kind": "grouped", "grid": "grid_g5.txt", "bank": "bank_g5.txt"}

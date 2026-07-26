@@ -1,0 +1,3 @@
+name = "quay"
+queue_dir = "/var/spool/postfix-quay"
+host = "127.0.0.15"

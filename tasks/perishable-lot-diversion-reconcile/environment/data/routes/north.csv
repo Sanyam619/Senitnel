@@ -1,0 +1,5 @@
+batch,lane,lot,destination,ts,temp_max
+40,cold,CEDAR-31,BOS,480,4
+41,cold,GLEN-17,ALB,500,5
+42,cold,IRIS-09,BUF,530,5
+43,cold,WREN-88,ALB,540,6

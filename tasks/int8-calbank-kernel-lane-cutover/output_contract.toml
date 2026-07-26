@@ -1,0 +1,24 @@
+user_visible_outputs = [
+  "/output/eval-ledger.json",
+  "/app/eval/run_eval.sh",
+  "/app/data/banks/",
+  "/app/data/fixtures/",
+  "/app/data/checkpoints/",
+  "/app/data/checkpoints/resume_pack.json",
+  "/app/data/checkpoints/rebase.stamp",
+  "/app/docs/calibration_notes.md",
+]
+
+internal_harness_files = [
+  "/app/scripts/build_all.sh",
+  "/app/eval/run_surface.sh",
+]
+
+[structured_outputs.eval_ledger]
+target = "/output/eval-ledger.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "bank_epoch",
+  "scenarios",
+]

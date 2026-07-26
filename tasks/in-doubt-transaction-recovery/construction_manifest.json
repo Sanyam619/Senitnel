@@ -1,0 +1,131 @@
+{
+  "symbol_table": [
+    {
+      "path": "k7/k7.py",
+      "symbol": "pull",
+      "kind": "function",
+      "signature": "def pull(root: Path) -> dict",
+      "purpose": "Ingests drill exports into a work bundle."
+    },
+    {
+      "path": "m3/m3.py",
+      "symbol": "gather",
+      "kind": "function",
+      "signature": "def gather(payload: dict) -> dict",
+      "purpose": "Flattens member journal fragments per transfer."
+    },
+    {
+      "path": "r9/r9.py",
+      "symbol": "pick",
+      "kind": "function",
+      "signature": "def pick(coord, fragments, mode, member_count)",
+      "purpose": "Selects COMMIT or ABORT for one transfer."
+    },
+    {
+      "path": "r9/r9.py",
+      "symbol": "weave",
+      "kind": "function",
+      "signature": "def weave(payload: dict) -> dict",
+      "purpose": "Builds decision maps for every drill."
+    },
+    {
+      "path": "w2/w2.py",
+      "symbol": "arrange",
+      "kind": "function",
+      "signature": "def arrange(payload: dict) -> dict",
+      "purpose": "Builds saga cleanup lists for every drill."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "k7/k7.py",
+        "controls_tests": [
+          "test_delta_divergent_members_abort",
+          "test_synthetic_scenario_replays_inputs"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "m3/m3.py",
+        "controls_tests": [
+          "test_north_member_completion_survives_gap",
+          "test_north_completed_move_stays_committed"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "r9/r9.py",
+        "controls_tests": [
+          "test_harbor_full_prepared_set",
+          "test_harbor_partial_prepared_set",
+          "test_delta_repeated_prepared_is_not_quorum",
+          "test_delta_ghost_transfer_from_saga_plan",
+          "test_pa_mode_rejects_full_prepared_set"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "w2/w2.py",
+        "controls_tests": [
+          "test_abort_cleanups_are_reverse_and_filtered",
+          "test_commit_cleanups_are_empty",
+          "test_vault_inflight_saga_needs_cleanup"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "environment/src/main/java/com/acme/ops/engine/A1.java",
+      "kind": "helper",
+      "rhymes_with": "weave",
+      "non_fix_purpose": "Legacy Java reducer left in tree; console no longer calls it."
+    },
+    {
+      "path": "environment/src/main/java/com/acme/ops/engine/B2.java",
+      "kind": "helper",
+      "rhymes_with": "pick",
+      "non_fix_purpose": "Legacy Java chooser left in tree; console no longer calls it."
+    },
+    {
+      "path": "environment/src/main/java/com/acme/ops/engine/D4.java",
+      "kind": "helper",
+      "rhymes_with": "arrange",
+      "non_fix_purpose": "Legacy Java cleanup converter left in tree; console no longer calls it."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "console",
+    "crash",
+    "drill",
+    "durable",
+    "work",
+    "scenario",
+    "directories",
+    "output",
+    "decisions",
+    "compensations",
+    "json",
+    "distributed",
+    "records",
+    "saga",
+    "clean",
+    "plan",
+    "schema",
+    "object",
+    "transactions",
+    "decision",
+    "commit",
+    "abort",
+    "actions",
+    "repair",
+    "member",
+    "coordinator",
+    "journal",
+    "mode"
+  ]
+}

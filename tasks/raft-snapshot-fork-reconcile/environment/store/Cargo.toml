@@ -1,0 +1,33 @@
+[workspace]
+members = ["manifest", "wal", "index", "ops", "ctl"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1.0.95"
+clap = { version = "4.5.28", features = ["derive"] }
+hex = "0.4.3"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.138"
+sha2 = "0.10.8"
+toml = "0.8.19"
+
+[package]
+name = "store"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+manifest = { path = "manifest" }
+index = { path = "index" }
+wal = { path = "wal" }

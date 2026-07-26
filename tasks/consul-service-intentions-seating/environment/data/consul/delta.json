@@ -1,0 +1,9 @@
+{
+  "service": {
+    "name": "delta",
+    "id": "delta-1",
+    "node": "node-d4",
+    "port": 8104,
+    "tags": ["mesh"]
+  }
+}

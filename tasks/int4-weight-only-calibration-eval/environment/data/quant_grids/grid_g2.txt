@@ -1,0 +1,4 @@
+tip tip_g2
+epoch 2
+kind grouped
+group 2

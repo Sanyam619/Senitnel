@@ -1,0 +1,5 @@
+[volume]
+lv = "beta"
+vg = "vg0"
+origin_size_g = 180
+chunk_kb = 256

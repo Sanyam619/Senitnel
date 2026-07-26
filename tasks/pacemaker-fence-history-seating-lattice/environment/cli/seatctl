@@ -1,0 +1,133 @@
+#!/bin/bash
+# seatctl — correct publisher from prepared state.
+set -euo pipefail
+
+OUT="${SEAT_OUT:-/output/crm-seat.json}"
+NODE_ROSTER="${NODE_ROSTER:-/var/lib/pacemaker/nodes.roster}"
+RES_ROSTER="${RES_ROSTER:-/var/lib/pacemaker/resources.roster}"
+ROOT="${PCM_ROOT:-/var/lib/pacemaker}"
+STATE="$ROOT/state"
+RES_D="$ROOT/resources"
+EFF="${EFF_POLICY:-/etc/pacemaker/effective.conf}"
+OPS="${CLUSTER_OPS:-/var/lib/cluster/ops}"
+
+mkdir -p "$(dirname "$OUT")"
+
+python3 - "$OUT" "$NODE_ROSTER" "$RES_ROSTER" "$STATE" "$RES_D" "$EFF" "$OPS" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+out, node_roster, res_roster, state, res_d, eff, ops = map(Path, sys.argv[1:])
+
+stick = 0
+if eff.exists():
+    for line in eff.read_text().splitlines():
+        line = line.strip()
+        if line.startswith("default_stickiness="):
+            stick = int(line.split("=", 1)[1])
+
+site_stick = 0
+site = Path("/app/config/site_standard.conf")
+if site.exists():
+    for line in site.read_text().splitlines():
+        line = line.strip()
+        if line.startswith("default_stickiness="):
+            site_stick = int(line.split("=", 1)[1])
+
+# Unretracted fences from fences.tsv (target\tepoch)
+unretract: dict[str, int] = {}
+fences_tsv = state / "fences.tsv"
+if fences_tsv.exists():
+    for line in fences_tsv.read_text().splitlines():
+        parts = line.split("\t")
+        if len(parts) >= 2:
+            unretract[parts[0]] = int(parts[1])
+
+nodes = []
+online_map: dict[str, bool] = {}
+gen_map: dict[str, int] = {}
+ok = True
+for ln in node_roster.read_text().splitlines():
+    name = ln.strip()
+    if not name or name.startswith("#"):
+        continue
+    gen_p = state / f"pub_{name}.gen"
+    gen = int(gen_p.read_text().strip()) if gen_p.exists() else 0
+    on_p = state / f"online_{name}"
+    online = on_p.read_text().strip() == "1" if on_p.exists() else False
+    nodes.append({"name": name, "online": online, "generation": gen})
+    online_map[name] = online
+    gen_map[name] = gen
+
+resources = []
+for ln in res_roster.read_text().splitlines():
+    rid = ln.strip()
+    if not rid or rid.startswith("#"):
+        continue
+    home = "node_a"
+    start_epoch = 0
+    sheet = res_d / f"{rid}.toml"
+    if sheet.exists():
+        for line in sheet.read_text().splitlines():
+            line = line.strip()
+            if line.startswith("home="):
+                home = line.split("=", 1)[1].strip()
+            elif line.startswith("start_epoch="):
+                start_epoch = int(line.split("=", 1)[1].strip())
+    role = "Stopped"
+    if (
+        online_map.get(home, False)
+        and stick > 0
+        and (home not in unretract or unretract[home] <= start_epoch)
+    ):
+        role = "Started"
+    resources.append(
+        {"id": rid, "node": home, "role": role, "stickiness": stick}
+    )
+
+fences = [
+    {"target": t, "epoch": e, "status": "fenced"}
+    for t, e in sorted(unretract.items(), key=lambda x: (x[0], x[1]))
+]
+
+# seat_ok: nodes online bits match state; resources roles match gate; fences match tsv
+for n in nodes:
+    name = n["name"]
+    expect_on = (state / f"online_{name}").read_text().strip() == "1" if (state / f"online_{name}").exists() else False
+    expect_gen = int((state / f"pub_{name}.gen").read_text().strip()) if (state / f"pub_{name}.gen").exists() else 0
+    if n["online"] != expect_on or n["generation"] != expect_gen:
+        ok = False
+
+for r in resources:
+    home = r["node"]
+    # recompute expected role
+    start_epoch = 0
+    sheet = res_d / f"{r['id']}.toml"
+    if sheet.exists():
+        for line in sheet.read_text().splitlines():
+            if line.startswith("start_epoch="):
+                start_epoch = int(line.split("=", 1)[1].strip())
+    expect = "Stopped"
+    if (
+        online_map.get(home, False)
+        and r["stickiness"] == stick
+        and stick > 0
+        and (home not in unretract or unretract[home] <= start_epoch)
+    ):
+        expect = "Started"
+    if r["role"] != expect or r["stickiness"] != stick:
+        ok = False
+
+if stick <= 0 or stick != site_stick:
+    ok = False
+
+doc = {
+    "schema_tag": "crm-seat-v1",
+    "nodes": nodes,
+    "resources": resources,
+    "fences": fences,
+    "seat_ok": ok,
+}
+out.write_text(json.dumps(doc, indent=2, sort_keys=False) + "\n")
+PY

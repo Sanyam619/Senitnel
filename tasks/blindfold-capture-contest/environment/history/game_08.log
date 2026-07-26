@@ -1,0 +1,7 @@
+# session theta
+001  white b2b3  accepted  silent
+002  black c7c6  accepted  silent
+003  white c1a3  accepted  silent
+004  black d8a5  accepted  silent
+005  white a3e7  accepted  taken:e7
+006  black a5e5  rejected  void

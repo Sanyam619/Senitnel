@@ -1,0 +1,2 @@
+tool = "wiretap"
+manifest = "/opt/wiretap/data/manifest.json"

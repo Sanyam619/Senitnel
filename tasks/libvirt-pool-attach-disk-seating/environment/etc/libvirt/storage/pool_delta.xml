@@ -1,0 +1,15 @@
+<pool type='dir'>
+  <name>delta</name>
+  <uuid>dddd4444-0000-4000-8000-0000000000d4</uuid>
+  <capacity unit='bytes'>0</capacity>
+  <allocation unit='bytes'>0</allocation>
+  <available unit='bytes'>0</available>
+  <target>
+    <path>/srv/surface/delta</path>
+    <permissions>
+      <mode>0711</mode>
+      <owner>0</owner>
+      <group>0</group>
+    </permissions>
+  </target>
+</pool>

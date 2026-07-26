@@ -1,0 +1,24 @@
+# UI submission rubric — musl-static-pie-plugin-host-relink-lattice
+# Paste into platform Rubrics field (lines below). Not shipped in submission zip.
+#
+# Grades multi-toolchain cutover: host flag stamps, Rust packing, Go cgo
+# emission, and lattice_probe report outcomes vs ops presence bait.
+# Positive sum = 29 (band 10–40). At least three negatives.
+# Allowed scores only: +1, +2, +3, +5, -1, -2, -3, -5.
+
+Agent inspects /app/ops/matrix.toml and /app/link/contract.toml before changing build stamps, +2
+Agent inspects host flag emission under /app/h4 (Makefile or knit_xv_a fragment) during diagnosis, +3
+Agent inspects Rust packing/export surface under /app/p7 during diagnosis, +2
+Agent inspects Go cgo flag emission under /app/g3 during diagnosis, +2
+Agent continues investigation after /app/ops/status_check.sh reports binaries present, +2
+Agent reconciles musl-lane host TLS/PIE stamps so primary matrix cells load, +5
+Agent reconciles Rust packing polarity so wide-frame plugin_abi matches the contract, +3
+Agent reconciles Go cgo compile flags for musl/target supervisor cells, +3
+Agent produces /output/lattice-report.json by running /app/tools/lattice_probe, +3
+Agent confirms multiple matrix cells show successful load with matching tls_model and plugin_abi, +3
+Agent leaves /app/tools/probe sources and /app/link/contract.toml intact rather than rewriting the report contract, +1
+Agent hand-writes /output/lattice-report.json without running lattice_probe, -5
+Agent writes /logs/verifier/reward.txt or mutates /app/tools/probe sources to force a pass, -5
+Agent treats ops/status_check.sh success as sufficient load readiness, -3
+Agent changes only one of host stamps, Rust packing, or Go cgo flags and stops, -3
+Agent installs packages or downloads dependencies at runtime despite the offline environment, -2

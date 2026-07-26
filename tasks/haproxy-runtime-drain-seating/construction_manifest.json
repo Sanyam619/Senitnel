@@ -1,0 +1,22 @@
+{
+  "symbol_table": [
+    {"path": "rim/mesh_k.sh", "symbol": "mesh_k"},
+    {"path": "ops/axle_n.sh", "symbol": "axle_n"},
+    {"path": "bag/skim_p.sh", "symbol": "skim_p"},
+    {"path": "ops/helm_r.sh", "symbol": "helm_r"},
+    {"path": "wire/sock_v.sh", "symbol": "sock_v"},
+    {"path": "deck/emit_m.sh", "symbol": "emit_m"}
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {"id": "A", "path": "rim/mesh_k.sh", "controls_tests": ["test_j2_onyx", "test_h8_amber", "test_m1_opal", "test_w7_quartz", "test_d6_obsidian"]},
+      {"id": "B", "path": "ops/axle_n.sh", "controls_tests": ["test_v5_coral", "test_c1_flint", "test_m1_opal"]},
+      {"id": "C", "path": "bag/skim_p.sh", "controls_tests": ["test_p9_jade", "test_u2_mica", "test_t4_pearl"]},
+      {"id": "D", "path": "ops/helm_r.sh", "controls_tests": ["test_h8_amber", "test_c1_flint", "test_n4_beryl"]},
+      {"id": "E", "path": "wire/sock_v.sh", "controls_tests": ["test_r6_slate", "test_u2_mica", "test_m1_opal", "test_d6_obsidian"]},
+      {"id": "F", "path": "deck/emit_m.sh", "controls_tests": ["test_q3_topaz", "test_r6_slate", "test_n4_beryl", "test_u2_mica", "test_s8_garnet", "test_d6_obsidian"]}
+    ],
+    "concentration_cap": 0.5
+  },
+  "code_forbidden_tokens": ["proxy", "seat", "backend", "backends", "drain", "drained", "weight", "generation", "socket", "fold", "conf", "lease", "haproxy", "runtime", "schema", "applied", "receipt", "cutover", "abort", "floor", "floors", "roster", "server", "servers"]
+}

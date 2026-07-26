@@ -1,0 +1,6 @@
+{"id": "s1", "op": "hold", "epoch": 3}
+{"id": "s2", "op": "hold", "epoch": 2}
+{"id": "s2", "op": "release", "epoch": 4}
+{"id": "s3", "op": "hold", "epoch": 7}
+{"id": "s1", "op": "release", "epoch": 8}
+{"id": "s0", "op": "hold", "epoch": 11}

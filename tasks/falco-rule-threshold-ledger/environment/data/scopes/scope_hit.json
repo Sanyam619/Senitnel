@@ -1,0 +1,7 @@
+{
+  "container_id": "prod-worker-3",
+  "labels": {
+    "app": "worker",
+    "env": "prod"
+  }
+}

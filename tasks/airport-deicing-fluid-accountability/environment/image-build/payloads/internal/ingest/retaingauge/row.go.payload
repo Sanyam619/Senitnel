@@ -1,0 +1,7 @@
+package retaingauge
+
+type Row struct {
+	NodeID  string
+	CapQty  float64
+	BaseQty float64
+}

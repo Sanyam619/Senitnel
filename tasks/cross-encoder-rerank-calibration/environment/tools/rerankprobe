@@ -1,0 +1,22 @@
+#!/bin/bash
+# First-stage retrieval surface probe. Scores BM25-style first-stage pools
+# only; does not exercise the cross-encoder rerank seating. A green result
+# here is not authority for /output/rerank-eval.json.
+set -euo pipefail
+
+FIX="${BEVEL_ROOT:-/app}/data/fixtures/surface_ok.json"
+if [[ ! -f "$FIX" ]]; then
+  echo "rerankprobe: missing surface fixture"
+  exit 1
+fi
+
+python3 - <<'PY'
+import json
+from pathlib import Path
+import os
+root = Path(os.environ.get("BEVEL_ROOT", "/app"))
+doc = json.loads((root / "data/fixtures/surface_ok.json").read_text())
+ok = doc.get("eval_ok") is True and doc.get("schema_tag") == "rerank-eval-v1"
+print("first-stage: pass" if ok else "first-stage: fail")
+raise SystemExit(0 if ok else 1)
+PY

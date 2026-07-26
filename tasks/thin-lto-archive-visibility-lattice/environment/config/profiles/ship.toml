@@ -1,0 +1,4 @@
+name = "ship"
+bitcode_epoch = 3
+archive_members = 4
+notes = "ship lane defaults"

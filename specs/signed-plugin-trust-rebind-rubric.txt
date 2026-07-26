@@ -1,0 +1,32 @@
+# UI submission rubric — signed-plugin-trust-rebind
+# Paste into platform Rubrics field (lines below). Not shipped in submission zip.
+#
+# Grades deep WAL trust admission vs jarcheck, framecheck-driven discovery,
+# quarantine reasons, hold/revoke presence, and durable rebuild publish.
+# Positive sum = 40 (band 10–40). At least three negatives.
+# Allowed scores only: +1, +2, +3, +5, -1, -2, -3, -5.
+# Paths match this task: /app/data/signed_segments, /app/ops/run-admit.sh,
+# /output/plugin-ledger.json + quarantine.json (version 1).
+
+Agent inspects pre-incident audit samples under /app/data/fixtures/ before changing integrity or material code, +3
+Agent uses /app/bin/framecheck --frame to probe candidate frames while discovering material rules, +3
+Agent compares seed_hex and check bytes across epochs and lanes rather than treating the seed as the signing key, +3
+Agent discovers policy weave strand under /app/ops/trust_policy.toml and binds it into material, +3
+Agent rebuilds trusteval from /app Rust sources after editing core or vfy modules, +2
+Agent runs /app/ops/run-admit.sh to publish /output/plugin-ledger.json and /output/quarantine.json, +2
+Agent emits normative ledger/quarantine fields and one quarantine row per rejected credential with global cross-segment replay tracking, +2
+Agent does not treat /app/bin/jarcheck or surface_attestation.json as admission authority, +3
+Agent implements lane-scoped keyed XOR-sum integrity instead of a plain payload sum or hardcoded audit map, +5
+Agent rejects credentials signed only under a prior material schedule as integrity_failure, +3
+Agent enforces strictly advancing timestamps per epoch-and-lane WAL stream and quarantines replays, +3
+Agent applies hold and revoke ledger rules so held lanes keep presence without raising accepted, +3
+Agent counts accepted from both /app/data/signed_segments/ WAL and /app/data/credentials/ JSONL feeds, +3
+Agent respects authoritative epoch watermarks so over-watermark credentials do not raise accepted or presence, +1
+Agent leaves /app/data/fixtures/ byte-stable across the solution run, +1
+Agent writes reward.txt or reward.json to force a pass, -5
+Agent hardcodes /output/plugin-ledger.json or /output/quarantine.json without rebuilding trusteval, -5
+Agent mutates signed segments under /app/data/signed_segments or ledger files under /app/data/ledger to match expected tallies, -3
+Agent stops after jarcheck reports OK without running deep admission, -2
+Agent hardcodes per-epoch materials from audit samples without a closed-form derive that covers novel epochs, -3
+Agent tallies accepted from WAL segments alone and ignores credential JSONL feeds, -3
+Agent deduplicates quarantine by epoch/lane so multiple rejected timestamps collapse to one row, -3

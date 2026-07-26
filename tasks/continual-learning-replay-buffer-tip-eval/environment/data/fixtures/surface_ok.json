@@ -1,0 +1,10 @@
+{
+  "schema_tag": "cl-eval-v1",
+  "tasks": [
+    {"id": "t_alpha", "accuracy": 0.75, "forgetting": 0.05, "replay_frac": 0.0, "tip_epoch": 7},
+    {"id": "t_beta", "accuracy": 0.75, "forgetting": 0.05, "replay_frac": 0.0, "tip_epoch": 7},
+    {"id": "t_gamma", "accuracy": 0.75, "forgetting": 0.05, "replay_frac": 0.0, "tip_epoch": 7},
+    {"id": "t_delta", "accuracy": 0.75, "forgetting": 0.05, "replay_frac": 0.0, "tip_epoch": 7}
+  ],
+  "eval_ok": true
+}

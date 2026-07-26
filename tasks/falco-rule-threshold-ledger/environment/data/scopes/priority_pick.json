@@ -1,0 +1,7 @@
+{
+  "container_id": "prod-web-2",
+  "labels": {
+    "app": "web",
+    "env": "prod"
+  }
+}

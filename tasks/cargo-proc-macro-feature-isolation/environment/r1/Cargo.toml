@@ -1,0 +1,18 @@
+[package]
+name = "r1"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+name = "flux_macro"
+crate-type = ["cdylib", "rlib"]
+path = "src/lib.rs"
+
+[features]
+default = []
+lane_x = ["m4/lane_x"]
+lane_y = ["m4/lane_y"]
+
+[dependencies]
+m4 = { path = "../m4" }
+p2 = { path = "../p2" }

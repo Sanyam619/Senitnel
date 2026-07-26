@@ -1,0 +1,5 @@
+{"alias":"/data/alias/m2/blob","canon":"/data/vault/m2/blob"}
+{"alias":"/data/alias/w2/blob","canon":"/data/vault/w2/blob"}
+{"alias":"/data/alias/k9/blob","canon":"/data/outside/k9/blob"}
+{"alias":"/data/alias/v5/blob","via":"/data/bridge/v5/blob"}
+{"alias":"/data/bridge/v5/blob","canon":"/data/vault/v5/blob"}

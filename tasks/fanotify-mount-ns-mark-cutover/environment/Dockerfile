@@ -1,0 +1,61 @@
+# syntax=docker/dockerfile:1
+
+FROM public.ecr.aws/docker/library/gcc:13-bookworm@sha256:930f2ebe239275fa67226654cb79273ea34eee672ae61c8a39f689c37fb7ac5c
+
+LABEL org.opencontainers.image.source="terminal-bench-3"
+LABEL org.opencontainers.image.title="fanotify-mount-ns-mark-cutover"
+LABEL org.opencontainers.image.version="2.0.0"
+LABEL org.opencontainers.image.licenses="MIT"
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        asciinema=2.2.0-1 \
+        tmux=3.3a-3 \
+        ca-certificates=20230311+deb12u1 \
+        python3=3.11.2-1+b1 \
+        python3-pip=23.0.1+dfsg-1 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN install -d -m 1777 /tmp \
+    && install -d -m 0777 /tmp/.config /tmp/.config/asciinema \
+    && test -x /usr/bin/tmux \
+    && test -x /usr/bin/asciinema
+
+ENV HOME=/tmp
+ENV TMUX_TMPDIR=/tmp
+ENV TERM=xterm-256color
+ENV XDG_CONFIG_HOME=/tmp/.config
+
+RUN pip3 install --no-cache-dir --break-system-packages \
+    pytest==8.4.1 \
+    pytest-json-ctrf==0.3.5
+
+RUN mkdir -p /opt/fev/bin /opt/fev/units /opt/fev/config /output /data /app
+
+WORKDIR /app
+
+COPY Makefile /app/Makefile
+COPY include/ /app/include/
+COPY lib/ /app/lib/
+COPY ring/ /app/ring/
+COPY gate/ /app/gate/
+COPY roll/ /app/roll/
+COPY cmd/ /app/cmd/
+
+RUN make \
+    && install -m 0755 /app/bin/topsurf /app/bin/nsprobe /app/bin/ringapply \
+        /app/bin/gatecycle /app/bin/racepulse /app/bin/ledgerout \
+        /app/bin/unseat /app/bin/remark \
+        /opt/fev/bin/ \
+    && rm -rf /app/bin
+
+COPY units/ /app/units/
+COPY config/ /app/config/
+COPY --chmod=755 scripts/ /opt/fev/scripts/
+COPY --chmod=755 data/build_fixtures.sh /tmp/build_fixtures.sh
+
+RUN /tmp/build_fixtures.sh \
+    && rm /tmp/build_fixtures.sh \
+    && chmod +x /opt/fev/scripts/*.sh
+
+WORKDIR /app

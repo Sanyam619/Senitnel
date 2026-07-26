@@ -1,0 +1,15 @@
+<pool type='dir'>
+  <name>gamma</name>
+  <uuid>cccc3333-0000-4000-8000-0000000000c3</uuid>
+  <capacity unit='bytes'>0</capacity>
+  <allocation unit='bytes'>0</allocation>
+  <available unit='bytes'>0</available>
+  <target>
+    <path>/srv/surface/gamma</path>
+    <permissions>
+      <mode>0711</mode>
+      <owner>0</owner>
+      <group>0</group>
+    </permissions>
+  </target>
+</pool>

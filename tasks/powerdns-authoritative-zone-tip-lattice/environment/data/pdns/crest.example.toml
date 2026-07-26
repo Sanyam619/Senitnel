@@ -1,0 +1,4 @@
+name = "crest.example"
+kind = "primary"
+ns = "ns1.crest.example"
+contact = "hostmaster.crest.example"

@@ -1,0 +1,31 @@
+user_visible_outputs = [
+  "/output/path-seat.json",
+  "/etc/systemd/system/",
+  "/run/systemd/watch-seat/armed.map",
+  "/var/lib/systemd/ops/",
+  "/app/ops/run_path_seat.sh",
+  "/app/publisher/pathseat",
+  "/app/docs/",
+  "/app/data/pathunits/",
+]
+
+internal_harness_files = [
+  "/app/packaging/pathunits.sha256",
+]
+
+[structured_outputs.path_seat]
+target = "/output/path-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "paths",
+  "triggers",
+  "seat_ok",
+  "unit",
+  "path_exists",
+  "path_changed",
+  "generation",
+  "armed",
+  "last_epoch",
+  "honored",
+]

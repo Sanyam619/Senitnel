@@ -1,0 +1,3 @@
+use crate::{io::wire::feed_line,model::CaseData}; use std::{fs,path::{Path,PathBuf}};
+fn files(dir:&Path)->Result<Vec<PathBuf>,String>{let mut v=Vec::new(); for e in fs::read_dir(dir).map_err(|e|e.to_string())?{let e=e.map_err(|e|e.to_string())?; if e.file_type().map_err(|e|e.to_string())?.is_file(){v.push(e.path())}} v.sort(); Ok(v)}
+pub fn load_all(reg:&Path,queries:&Path)->Result<CaseData,String>{let mut d=CaseData::default(); for p in files(reg)?{for line in fs::read_to_string(&p).map_err(|e|e.to_string())?.lines(){feed_line(&mut d,line)?}} for line in fs::read_to_string(queries).map_err(|e|e.to_string())?.lines(){feed_line(&mut d,line)?} d.queries.sort_by(|a,b|a.id.cmp(&b.id)); Ok(d)}

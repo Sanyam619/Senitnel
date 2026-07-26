@@ -2,7 +2,7 @@
 """
 Frontier-agent difficulty calibration for Terminal-Bench tasks.
 
-Runs GPT-5.2 and Claude Opus 4.6 via Snorkel STB (stb harbor run), then
+Runs GPT-5.6 and Claude Opus 4.8 via Snorkel STB (stb harbor run), then
 reports pass rates and difficulty bands from job artifacts under jobs/.
 
 Prerequisites:
@@ -12,7 +12,7 @@ Prerequisites:
 
 Examples:
   ./agent_test.py run tasks/my-task
-  ./agent_test.py run tasks/my-task --runs 5 --models gpt-5.2
+  ./agent_test.py run tasks/my-task --runs 5 --models gpt-5.6
   ./agent_test.py report jobs/2026-05-20__05-13-51
   ./agent_test.py report --latest --task my-task
   ./agent_test.py trial jobs/2026-05-20__05-13-51/sustained-churn-footprint__xnKe3YE
@@ -34,15 +34,15 @@ from typing import Any
 
 # Harbor / STB model flags (see platform agent-testing guide).
 MODELS: dict[str, dict[str, str]] = {
-    "gpt-5.2": {
-        "label": "GPT-5.2",
-        "harbor_flag": "@openai/gpt-5.2",
-        "match": r"gpt-5\.2",
+    "gpt-5.6": {
+        "label": "GPT-5.6 Sol",
+        "harbor_flag": "@openai/gpt-5.6",
+        "match": r"gpt-5\.6",
     },
-    "claude-opus-4.6": {
-        "label": "Claude Opus 4.6",
-        "harbor_flag": "@anthropic/claude-opus-4-6",
-        "match": r"claude-opus-4-6",
+    "claude-opus-4.8": {
+        "label": "Claude Opus 4.8",
+        "harbor_flag": "@anthropic/claude-opus-4-8",
+        "match": r"claude-opus-4-8",
     },
 }
 
@@ -746,7 +746,7 @@ def print_report(report: dict[str, Any]) -> None:
     if not models:
         print("  (no model trials found)")
     else:
-        for mid in ("gpt-5.2", "claude-opus-4.6"):
+        for mid in ("gpt-5.6", "claude-opus-4.8"):
             if mid not in models:
                 continue
             m = models[mid]
@@ -954,7 +954,7 @@ def _report_job_dirs_error(
     if explicit_dirs:
         return (
             "No frontier-model trials found in the provided job directories. "
-            "agent_test only summarizes GPT-5.2 / Claude Opus runs "
+            "agent_test only summarizes GPT-5.6 / Claude Opus runs "
             "(not oracle or NOP Step 2b jobs)."
         )
     task_hint = f" for task {task_name!r}" if task_name else ""

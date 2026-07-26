@@ -1,0 +1,21 @@
+# Authoritative per-cell expectations for lattice_probe outcomes.
+
+[cells.alpha]
+tls_model = "global-dynamic"
+plugin_abi = "v1"
+
+[cells.beta]
+tls_model = "global-dynamic"
+plugin_abi = "v2"
+
+[cells.gamma]
+tls_model = "global-dynamic"
+plugin_abi = "v1"
+
+[cells.delta]
+tls_model = "global-dynamic"
+plugin_abi = "v1"
+
+[cells.epsilon]
+tls_model = "initial-exec"
+plugin_abi = "v1"

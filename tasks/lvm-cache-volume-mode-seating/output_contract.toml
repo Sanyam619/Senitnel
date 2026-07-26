@@ -1,0 +1,24 @@
+user_visible_outputs = [
+  "/output/lvmcache-seat.json",
+]
+internal_harness_files = [
+  "/app/packaging/lvm.sha256",
+]
+
+[structured_outputs.lvmcache_seat]
+target = "/output/lvmcache-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "volumes",
+  "holds",
+  "seat_ok",
+  "name",
+  "vg",
+  "mode",
+  "cachepool",
+  "generation",
+  "attached",
+  "lv",
+  "until_epoch",
+]

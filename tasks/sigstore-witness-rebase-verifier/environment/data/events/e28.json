@@ -1,0 +1,28 @@
+{
+  "event_id": "e28",
+  "entry_shard": "alpha",
+  "entry_index": 260,
+  "witnessed_checkpoint_ref": {
+    "shard": "alpha",
+    "checkpoint_id": "cp_a_post"
+  },
+  "attestations": [
+    {
+      "signing_epoch": 135,
+      "cosigner_sigs": [
+        {
+          "cosigner_id": "c3",
+          "sig": "sig-e28-c3"
+        },
+        {
+          "cosigner_id": "c4",
+          "sig": "sig-e28-c4"
+        },
+        {
+          "cosigner_id": "c5",
+          "sig": "sig-e28-c5"
+        }
+      ]
+    }
+  ]
+}

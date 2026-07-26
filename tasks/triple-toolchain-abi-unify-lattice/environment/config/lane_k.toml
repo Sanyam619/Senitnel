@@ -1,0 +1,8 @@
+[alias]
+ship = "ship"
+fleet = "field"
+field = "field"
+
+[notes]
+resolver = "lane_k"
+draft_lane = "field"

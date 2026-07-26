@@ -1,0 +1,32 @@
+user_visible_outputs = [
+  "/output/consul-seat.json",
+  "/etc/consul.d/",
+  "/etc/consul.d/runtime/catalog.map",
+  "/var/lib/consul/ops/",
+  "/app/ops/run_consul_seat.sh",
+  "/app/publisher/consulseat",
+  "/app/docs/",
+  "/app/data/consul/",
+]
+
+internal_harness_files = [
+  "/app/packaging/consul.sha256",
+]
+
+[structured_outputs.consul_seat]
+target = "/output/consul-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "services",
+  "intentions",
+  "seat_ok",
+  "name",
+  "node",
+  "generation",
+  "registered",
+  "source",
+  "destination",
+  "action",
+  "honored",
+]

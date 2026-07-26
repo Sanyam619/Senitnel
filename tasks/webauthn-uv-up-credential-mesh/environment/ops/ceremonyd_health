@@ -1,0 +1,4 @@
+#!/bin/bash
+# ceremonyd_health — surface health probe (not deep admission authority).
+set -euo pipefail
+exec /app/bin/jarcheck "$@"

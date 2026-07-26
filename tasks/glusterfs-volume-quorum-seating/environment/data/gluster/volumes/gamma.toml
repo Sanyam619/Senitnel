@@ -1,0 +1,4 @@
+[volume]
+name = "gamma"
+replica = 3
+transport = "tcp"

@@ -1,0 +1,367 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Solver must inspect registry yank/mirror fixtures and per-language resolvers to learn which plugin pin owns binary tags versus json_key and that a yanked transitive can still win via mirror."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Go pin path, Rust prost/build.rs path, and Java Maven plugin BOM must converge with shared IDL and registry fixtures on one wire ABI."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Instruction only reports per-language green health checks and cross-language wire disagreement \u2014 not which pin or mirror winner is wrong."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Aligning one language or only binary tags leaves distant json_key, digest, and round-trip invariants failing while lanehealth stays green."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "Not Go-MVS-only or Java-BOM-only \u2014 three codegen pipelines must converge under yank/mirror pressure on one wire ABI."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "disclosure_collapse",
+      "name": "Disclosure-collapse",
+      "verdict": "PASS",
+      "reasoning": "Symptoms-only brief omits plugin ownership split and mirror yank-winner rule."
+    },
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "Fixed monorepo with three language roots, not hunt-one-file."
+    },
+    {
+      "id": "single_artifact_repair",
+      "name": "Single-artifact repair",
+      "verdict": "PASS",
+      "reasoning": "Go, Rust, and Java resolvers must all emit agreeing layouts."
+    },
+    {
+      "id": "generalization",
+      "name": "Generalization",
+      "verdict": "PASS",
+      "reasoning": "Tests cover tags, oneof, optional, json_key, digest, and round-trips."
+    },
+    {
+      "id": "prompt_honesty",
+      "name": "Prompt-honesty",
+      "verdict": "PASS",
+      "reasoning": "Honest prompt does not name FoldA, sieve_b, or EmitC."
+    },
+    {
+      "id": "cheating_vs_difficulty",
+      "name": "Cheating-vs-difficulty",
+      "verdict": "PASS",
+      "reasoning": "Difficulty is cross-lang wire ABI under yank/mirror, not anti-cheat."
+    },
+    {
+      "id": "mechanical_fix_filter",
+      "name": "Mechanical-fix filter",
+      "verdict": "PASS",
+      "reasoning": "Not a deps/timeout task."
+    },
+    {
+      "id": "localized_fix",
+      "name": "Localized-fix",
+      "verdict": "PASS",
+      "reasoning": "Fix spans gox/, rsx/, and jvx/ roots."
+    },
+    {
+      "id": "oracle_locality",
+      "name": "Oracle-locality",
+      "verdict": "PASS",
+      "reasoning": "Oracle edits three language resolver bodies plus rebuild glue; not wholesale one-file replace."
+    },
+    {
+      "id": "small_declarative_cluster",
+      "name": "Small declarative-cluster",
+      "verdict": "PASS",
+      "reasoning": "Not a single manifest flip."
+    },
+    {
+      "id": "grep_collapse",
+      "name": "Grep-collapse",
+      "verdict": "PASS",
+      "reasoning": "Fix symbols are opaque FoldA, sieve_b, EmitC."
+    },
+    {
+      "id": "pre_factored_helper",
+      "name": "Pre-factored-helper",
+      "verdict": "PASS",
+      "reasoning": "Helpers do not mirror unify_wire or fix_codegen prompt nouns."
+    },
+    {
+      "id": "recipe_discount",
+      "name": "Recipe-discount",
+      "verdict": "PASS",
+      "reasoning": "Not a textbook single-BOM or single-go.mod MVS recipe."
+    },
+    {
+      "id": "security_aura_discount",
+      "name": "Security-aura discount",
+      "verdict": "PASS",
+      "reasoning": "Category is build-and-dependency-management."
+    },
+    {
+      "id": "orthogonal_checklist",
+      "name": "Orthogonal-checklist",
+      "verdict": "PASS",
+      "reasoning": "Binary vs JSON ownership and mirror yank winners couple across languages."
+    },
+    {
+      "id": "harness_discount",
+      "name": "Harness-discount",
+      "verdict": "PASS",
+      "reasoning": "Docker is single-container realism only."
+    },
+    {
+      "id": "one_pass_solvability",
+      "name": "One-pass solvability",
+      "verdict": "PASS",
+      "reasoning": "lanehealth green plus decoy skim_* helpers mislead one-pass grepping."
+    },
+    {
+      "id": "hard_only_gate",
+      "name": "Hard-only gate",
+      "verdict": "PASS",
+      "reasoning": "Three codegen pipelines under yank/mirror with dual binary/JSON ownership clears hard-only."
+    },
+    {
+      "id": "discovery_budget_test",
+      "name": "Discovery budget test",
+      "verdict": "PASS",
+      "reasoning": "Three named discoveries in discovery_budget."
+    },
+    {
+      "id": "instruction_specificity_test",
+      "name": "Instruction specificity test",
+      "verdict": "PASS",
+      "reasoning": "symptoms-only."
+    },
+    {
+      "id": "topology_distribution_test",
+      "name": "Topology distribution test",
+      "verdict": "PASS",
+      "reasoning": "Three topologies enumerated with >=3 locations each."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "Deterministic JSON layouts, digests, and probe status."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Output path and field names stated; outcomes observable."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "Expert can unify pins across three language roots in a few hours."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "Cross-lang codegen ABI under yank/mirror and dual binary/JSON ownership."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Real monorepo wire-contract cutovers pay for this build work."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Grades layouts and probes, not process."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Instruction alone does not identify plugin ownership split, mirror yank winners, or that lanehealth is shallow; solver must engage gox/rsx/jvx and registry fixtures."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "A yanked transitive codegen plugin still resolves as the effective owner of binary field tags for one language via the mirror overlay, even when that language's direct pin looks correct.",
+      "planned_location": "environment/data/registry/mirror_index.jsonl and environment/gox/internal/k3/fold_a.go",
+      "why_instruction_must_not_reveal": "Naming the yanked-transitive-wins-via-mirror rule collapses diagnose into a one-line pin fix."
+    },
+    {
+      "discovery": "Binary wire tags and JSON name options are owned by different plugin pins across languages; aligning only the binary path leaves JSON round-trips and json_key rows divergent.",
+      "planned_location": "environment/rsx/core/src/sieve_b.rs and environment/jvx/src/main/java/org/lab/p7/EmitC.java",
+      "why_instruction_must_not_reveal": "Stating the dual-path ownership turns the task into a checklist of two knobs."
+    },
+    {
+      "discovery": "lanehealth only compiles each language alone and never compares cross-language layouts; xlink is the only probe that surfaces ABI disagreement.",
+      "planned_location": "environment/gox/cmd/lanehealth/main.go and environment/xlink/cmd/xlink/main.go",
+      "why_instruction_must_not_reveal": "Calling lanehealth false-green removes the discoverability tax that makes per-language green builds misleading."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Reports per-language green health checks and cross-lang wire disagreement; omits algorithms, plugin versions, and fix loci."
+  },
+  "attack_path": {
+    "summary": "Inspect registry yank/mirror \u2192 compare xlink layouts \u2192 align FoldA/sieve_b/EmitC ownership rules \u2192 rebuild \u2192 xlink report.",
+    "reasoning": "Fixing one language or only binary tags leaves lanehealth green while hard tests fail."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Rewrite three opaque resolver bodies across Go/Rust/Java to honor the same non-yanked mirror authority for tags, oneof, optional presence, and json_key; rebuild and emit report.",
+    "reasoning": "Build-graph unification across three roots; no service business-logic debug."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "Distributed across three language roots, opaque symbols, false-green lanehealth, decoy skim helpers, no answer fixtures.",
+    "residual_hardness": "Solver must recover dual-path ownership and yanked-transitive mirror winners from registry and runtime probes, not prompt nouns.",
+    "red_flags": []
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "monorepo",
+      "stubs",
+      "IDL",
+      "Go",
+      "Rust",
+      "Java",
+      "build",
+      "pipelines",
+      "registry",
+      "yank",
+      "mirror",
+      "pin",
+      "language",
+      "health",
+      "check",
+      "integration",
+      "binaries",
+      "wire",
+      "field",
+      "numbers",
+      "oneof",
+      "arms",
+      "optional",
+      "presence",
+      "JSON",
+      "names",
+      "stub",
+      "sets",
+      "codegen",
+      "graphs",
+      "contract",
+      "verifier",
+      "integrity",
+      "ledger",
+      "bytes",
+      "output",
+      "schema_version",
+      "contract_digest",
+      "layout",
+      "arrays",
+      "go_rows",
+      "rust_rows",
+      "java_rows",
+      "slot",
+      "tag",
+      "kind",
+      "json_key",
+      "entries",
+      "Binary",
+      "round-trip",
+      "probes",
+      "status",
+      "lane",
+      "tool",
+      "lanehealth",
+      "unification",
+      "xlink",
+      "report"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "unify_wire",
+        "renamed_to": "FoldA",
+        "reason": "Avoided wire/unify nouns on fix path."
+      },
+      {
+        "original": "fix_optional",
+        "renamed_to": "sieve_b",
+        "reason": "Avoided optional/presence nouns."
+      },
+      {
+        "original": "emit_digest",
+        "renamed_to": "EmitC",
+        "reason": "Avoided digest/report telegraphing."
+      }
+    ],
+    "test_names_audited": [
+      "test_k3_zircon",
+      "test_m8_obsidian",
+      "test_p2_garnet",
+      "test_q7_topaz",
+      "test_r1_onyx",
+      "test_t6_amber"
+    ],
+    "concentration_math": {
+      "total_tests": 6,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.333333
+        }
+      ]
+    },
+    "recomputed_concentration": {
+      "total_tests": 6,
+      "concentration_cap": 0.5,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+Incremental sync against `/app/data/leaves/` serves leaf digests that disagree with the promoted journal head. The checkpoint reader and sync report bind different branch generations. A leaf that should appear at the promoted head is missing from the sync report leaf map. Aggregate root checks fail against `/app/ops/scripts/digest_lab.py` expectations for that head.
+
+Edit operator tables under `/app/config/l7/`, Go sources under `/app/lane/`, and Rust sources under `/app/tree/`. Operator tables must not cap the active branch below the promoted journal head. Rebuild `/app/bin/lane` and `/app/bin/syncctl` after code changes. Do not hand-edit files under `/app/data/leaves/`.
+
+Write `/output/sync-report.json` using `syncctl report --out /output/sync-report.json`. The report includes integer `branch_gen`, hex string `root_digest`, and a `leaves` object mapping each visible leaf id to its hex digest. Digests agree with `/app/ops/scripts/digest_lab.py` expectations for the active branch. `lane head` prints the same generation as `branch_gen`.

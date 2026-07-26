@@ -19,6 +19,7 @@ except ModuleNotFoundError:  # pragma: no cover
     tomllib = None
 
 
+# Historical Edition 2 category enum (still recognized for in-repo tasks).
 ALLOWED_CATEGORIES = {
     "build-and-dependency-management",
     "data-processing",
@@ -30,6 +31,15 @@ ALLOWED_CATEGORIES = {
     "software-engineering",
     "system-administration",
 }
+
+# Only these accept new submissions; see task-type-taxonomy.md.
+OPEN_CATEGORIES = {
+    "games",
+    "machine-learning",
+    "system-administration",
+}
+
+BLOCKED_CATEGORIES = ALLOWED_CATEGORIES - OPEN_CATEGORIES
 
 ALLOWED_SUBCATEGORIES = {
     "api_integration",
@@ -143,6 +153,9 @@ ALLOWED_OFFLINE_PRE_PYTEST_PATTERNS = (
         r'^echo\s+"Error:\s+No\s+working\s+directory\s+set\.\s+Please\s+set\s+a\s+WORKDIR\s+in\s+your\s+Dockerfile(?:\s+before\s+running\s+this\s+script)?\."$'
     ),
     re.compile(r"^echo 0 > /logs/verifier/reward\.txt$"),
+    # Platform v2: write a parseable CTRF stub before pytest so harness
+    # always finds /logs/verifier/ctrf.json even if pytest aborts early.
+    re.compile(r"^printf\s+.+>\s*/logs/verifier/ctrf\.json$"),
     re.compile(r"^exit\s+1$"),
     re.compile(r"^fi$"),
 )
@@ -1070,6 +1083,12 @@ def check_task_toml(task_dir: Path, task_data: dict, reporter: Reporter) -> None
     category = get_task_field(task_data, "category")
     if category not in ALLOWED_CATEGORIES:
         reporter.fail(f"category must be one of the repo Edition 2 categories, found {category!r}")
+    elif category in BLOCKED_CATEGORIES:
+        reporter.warn(
+            f"category {category!r} is blocked for new submissions; open categories are "
+            f"{sorted(OPEN_CATEGORIES)}. Redesign into an open category before starting a new task "
+            "(see task-type-taxonomy.md)."
+        )
 
     tags = get_task_field(task_data, "tags")
     if not isinstance(tags, list) or not all(isinstance(tag, str) and tag.strip() for tag in tags):

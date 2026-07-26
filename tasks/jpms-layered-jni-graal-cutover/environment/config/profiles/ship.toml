@@ -1,0 +1,4 @@
+profile = "ship"
+bind_services = true
+shade_bridge = false
+spi_tag = "slot-v2"

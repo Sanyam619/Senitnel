@@ -1,0 +1,30 @@
+[nuclide]
+soname = "libnuclide.so.2"
+symbol_versions = ["NEXUS_1", "NEXUS_2", "NEXUS_1B"]
+
+[nuclide.cells.alpha]
+required_versions = ["NEXUS_1", "NEXUS_2"]
+required_symbols = ["nx_trunk_open", "nx_facet_a_open"]
+
+[nuclide.cells.beta]
+required_versions = ["NEXUS_1", "NEXUS_1B"]
+required_symbols = ["nx_trunk_open", "nx_facet_b_open"]
+forbidden_symbols = ["nx_facet_a_open"]
+
+[nuclide.cells.gamma]
+required_versions = ["NEXUS_1"]
+required_symbols = ["nx_trunk_open"]
+
+[cascade]
+soname = "libcascade.so.1"
+symbol_versions = ["CASCADE_1", "CASCADE_1C"]
+
+[cascade.cells.delta]
+required_versions = ["CASCADE_1", "CASCADE_1C"]
+required_symbols = ["cx_trunk_open", "cx_facet_c_open"]
+forbidden_symbols = ["nx_trunk_open", "nx_facet_a_open"]
+
+[cascade.cells.epsilon]
+required_versions = ["CASCADE_1", "CASCADE_1C"]
+required_symbols = ["cx_trunk_open", "cx_facet_c_open"]
+forbidden_symbols = ["nx_facet_a_open"]

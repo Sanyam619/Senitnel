@@ -1,0 +1,9 @@
+[lab]
+scenario_root = "data/scenarios"
+report_name = "handoff_report.json"
+
+[cutover]
+epoch_authority = "manifest"
+roster_source = "epoch_table"
+staging_mode = "replace"
+allow_cidr_reuse = true

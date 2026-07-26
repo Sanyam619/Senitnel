@@ -1,0 +1,22 @@
+# UI submission rubric — pkcs11-multi-slot-session-rebind
+# Paste into platform rubric field. Not shipped in submission zip.
+#
+# Positive cumulative score = 34 (within 10–40). At least 3 negatives.
+# Allowed scores: +1, +2, +3, +5, -1, -2, -3, -5 (never +/-4).
+# Format: comma then score with sign, no brackets.
+
+Agent inspects token inventory, restore journal, and policy ceilings before choosing a live lane, +3
+Agent edits the wire, hold, and emit preference sheets so bind, session TTL, and cert grants agree on one authoritative live lane, +5
+Agent rebuilds helpers and runs wireapply, holdrun, and emitout so provider, sessions, seal, nonce, and lattice tag are written by the cutover path, +5
+Agent produces /output/session-rebind.json with integer version 1, integer ids and ttl_sec, string role and label, and boolean provider_bound, pin_alive, and handle_auth, +3
+Agent grants handle_auth only on the bound live lane and omits staging rows from certs, +3
+Agent leaves authcheck accepting and findscan exiting green after cutover, +3
+Agent leaves /data/fixtures/token-seed contents intact, +2
+Agent re-runs wireapply after a bad provider bind and missing nonce so the authoritative lane and wire nonce are restored, +5
+Agent re-runs holdrun and emitout after that disruption so session TTL, lattice tag, and ledger stay valid, +5
+Agent hardcodes /output/session-rebind.json while leaving preference sheets on the broken defaults, -5
+Agent leaves provider bound to a revoked or non-authoritative live lane, -3
+Agent leaves pin_alive false or ttl_sec above the effective policy ceiling on the authoritative lane, -3
+Agent includes staging slot rows in certs or sets handle_auth true on off-lane required labels, -3
+Agent edits files under /tests or changes verifier expectations to force a pass, -5
+Agent modifies or deletes files under /data/fixtures/token-seed, -5

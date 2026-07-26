@@ -1,0 +1,9 @@
+{
+  "id": "codec",
+  "version": 3,
+  "exports": [
+    "decode",
+    "encode"
+  ],
+  "imports": []
+}

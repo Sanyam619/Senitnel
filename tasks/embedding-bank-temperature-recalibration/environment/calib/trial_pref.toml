@@ -1,0 +1,9 @@
+# Evaluation selection for the retrieval desk.
+
+[evaluation]
+selection = "trial"
+refresh = "auto"
+
+[desk]
+owner = "eval-rotation"
+window = "weekly"

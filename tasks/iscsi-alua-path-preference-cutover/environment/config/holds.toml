@@ -1,0 +1,5 @@
+# hold window — named maps must not be seated until their epoch lapses
+held = ["mpathe"]
+
+[until]
+mpathe = 20260801

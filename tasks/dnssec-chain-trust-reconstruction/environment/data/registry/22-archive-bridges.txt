@@ -1,0 +1,2 @@
+BRIDGE|archive.example.test|AZSK_A|AKSK_A|0|450
+BRIDGE|archive.example.test|AZSK_B|AKSK_B|300|500

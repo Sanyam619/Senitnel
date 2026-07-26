@@ -1,0 +1,409 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Solver must recover SoftHSM JNI pack/mode selection, revoke-window polarity, and durable-vs-live keystore generation binding from native headers, preference sheets, and sealed-gate reject behavior \u2014 none of those couplings are stated in instruction.md."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Admit couples C SoftHSM bridge pack tags, Java revoke/window policy, durable keystore root binding, and a sealed expected lattice fingerprint that disagrees with surfcheck."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Instruction only reports surface greening while the sealed host rejects live sign/verify across generations \u2014 not which authority (pack, window, root, seal) is mis-bound."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Fixing only pack selection still fails stale/revoked polarity; fixing only window still fails root_skew across reload; forging ledger JSON without tool-correct prefs fails sealed gate and re-invoked sign/hold/emit."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "JCE preference lattice under SoftHSM JNI with opaque sealed expected fingerprint and false-green surfcheck is outside textbook provider-order or PKCS#11 slot-rebind recipes."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "disclosure_collapse",
+      "name": "Disclosure-collapse",
+      "verdict": "PASS",
+      "reasoning": "Symptoms-only brief omits pack precedence, window polarity, durable-root rule, and sealed digest composition."
+    },
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "Fixed multi-case desk matrix, not hunt-one-file."
+    },
+    {
+      "id": "single_artifact_repair",
+      "name": "Single-artifact repair",
+      "verdict": "PASS",
+      "reasoning": "Native pack, revoke window, and durable root must all agree under the sealed gate."
+    },
+    {
+      "id": "generalization",
+      "name": "Generalization",
+      "verdict": "PASS",
+      "reasoning": "Six hard cases spanning wrong_pack, root_skew, stale_slot, revoked, reload hold, and surfcheck bait."
+    },
+    {
+      "id": "prompt_honesty",
+      "name": "Prompt-honesty",
+      "verdict": "PASS",
+      "reasoning": "Honest prompt does not name knit_xv, op_b, or op_c."
+    },
+    {
+      "id": "cheating_vs_difficulty",
+      "name": "Cheating-vs-difficulty",
+      "verdict": "PASS",
+      "reasoning": "Difficulty is multi-authority lattice reconstruction, not anti-cheat alone."
+    },
+    {
+      "id": "mechanical_fix_filter",
+      "name": "Mechanical-fix filter",
+      "verdict": "PASS",
+      "reasoning": "Not a deps/timeout task."
+    },
+    {
+      "id": "localized_fix",
+      "name": "Localized-fix",
+      "verdict": "PASS",
+      "reasoning": "Three fix loci across native C and two Java packages; sealed gate blocks self-consistent forgery."
+    },
+    {
+      "id": "oracle_locality",
+      "name": "Oracle-locality",
+      "verdict": "PASS",
+      "reasoning": "Oracle rewrites three decision bodies plus preference alignment and rebuilds JNI/Java."
+    },
+    {
+      "id": "small_declarative_cluster",
+      "name": "Small declarative-cluster",
+      "verdict": "PASS",
+      "reasoning": "Solve is not a tiny TOML/JSON transcription; behavioral sign path and sealed fingerprint required."
+    },
+    {
+      "id": "grep_collapse",
+      "name": "Grep-collapse",
+      "verdict": "PASS",
+      "reasoning": "Opaque knit_xv/op_b/op_c; instruction nouns banned from fix-path symbols."
+    },
+    {
+      "id": "pre_factored_helper",
+      "name": "Pre-factored-helper",
+      "verdict": "PASS",
+      "reasoning": "No helpers named validate/admit/revoke mirroring prompt bullets."
+    },
+    {
+      "id": "recipe_discount",
+      "name": "Recipe-discount",
+      "verdict": "PASS",
+      "reasoning": "Not a standard JCE provider-list or SoftHSM init recipe."
+    },
+    {
+      "id": "security_aura_discount",
+      "name": "Security-aura discount",
+      "verdict": "PASS",
+      "reasoning": "Residual work is preference\u00d7revoke\u00d7root under sealed fingerprint; SoftHSM nouns alone do not pass tests."
+    },
+    {
+      "id": "orthogonal_checklist",
+      "name": "Orthogonal-checklist",
+      "verdict": "PASS",
+      "reasoning": "Authorities interact: pack greens that ignore window/root still fail distant cases."
+    },
+    {
+      "id": "harness_discount",
+      "name": "Harness-discount",
+      "verdict": "PASS",
+      "reasoning": "Docker/JNI are realism; hardness is lattice coupling."
+    },
+    {
+      "id": "one_pass_solvability",
+      "name": "One-pass solvability",
+      "verdict": "PASS",
+      "reasoning": "Frontier needs runtime sealed-gate rejects plus multi-case matrix; not one-file polarity flip."
+    },
+    {
+      "id": "hard_only_gate",
+      "name": "Hard-only gate",
+      "verdict": "PASS",
+      "reasoning": "Clearly hard: sealed expected digest, JNI SoftHSM bridge, three coupled authorities, re-invoked paths."
+    },
+    {
+      "id": "discovery_budget_test",
+      "name": "Discovery budget test",
+      "verdict": "PASS",
+      "reasoning": "Three discoveries listed in discovery_budget."
+    },
+    {
+      "id": "instruction_specificity_test",
+      "name": "Instruction specificity test",
+      "verdict": "PASS",
+      "reasoning": "symptoms-only level."
+    },
+    {
+      "id": "topology_distribution_test",
+      "name": "Topology distribution test",
+      "verdict": "PASS",
+      "reasoning": "Three topologies enumerated each with \u22653 coordinating locations."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "Deterministic JSON ledger + re-invoked desk scripts + sealed gate outcomes."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Public contract names ledger schema, reason vocabulary, reload hold, and prohibited paths."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "Expert can reconstruct lattice from SoftHSM bridge, prefs, and sealed rejects in a few hours."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "Requires professional crypto-provider/HSM cutover experience beyond undergrad JCE tutorials."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Real signing-desk SoftHSM/JCE preference cutover work."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Grades admit/reject outcomes and reload durability, not process."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Instruction alone does not give pack precedence, window polarity, durable-root rule, or sealed digest; solver must engage codebase and sealed-gate behavior."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "surfcheck greens on a leaf token digest while the sealed host gate requires SoftHSM pack rank + mode tag from the JNI bridge to match the baked expected lattice fingerprint.",
+      "planned_location": "environment/native/knit_xv.c, environment/scripts/surfcheck, sealed /opt/desk/lib/gate.jar",
+      "why_instruction_must_not_reveal": "Naming pack/mode as the surface-vs-host split collapses diagnose to a checklist."
+    },
+    {
+      "discovery": "Revoke marks inside the freshness window must emit stale_slot; marks outside the window emit revoked \u2014 polarity is not documented and cases carry no answer-shaped stale/revoked flags.",
+      "planned_location": "environment/nest/OpB.java and environment/data/revoke/",
+      "why_instruction_must_not_reveal": "Stating window polarity turns reason_code selection into transcription."
+    },
+    {
+      "discovery": "Durable keystore generation under data/roots/disk must bind sessions; live.bundle is a decoy that looks current but fails across desk-reload.",
+      "planned_location": "environment/forge/OpC.java and environment/data/roots/",
+      "why_instruction_must_not_reveal": "Naming durable-over-live removes the root_skew discovery tax."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Reports surface greening vs sealed host reject across generations; omits algorithms, fix loci, and precedence recipes."
+  },
+  "attack_path": {
+    "summary": "Run surfcheck vs sealed desk \u2192 inspect SoftHSM JNI pack/mode \u2192 recover revoke window polarity \u2192 bind durable keystore gen \u2192 rebuild admit path \u2192 emit ledger that survives desk-reload.",
+    "reasoning": "Partial patches green local probes while distant cases and sealed fingerprint still fail."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Oracle rewrites knit_xv, op_b, and op_c with real lattice logic (\u226580 LOC substantive), rebuilds JNI/Java, runs desk emit.",
+    "reasoning": "Not a flag flip or SealExpect forgery; three opaque decision bodies plus sealed fingerprint alignment."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "Distributed across native C + two Java packages; opaque symbols; sealed expected fingerprint (not self-consistent); surfcheck false-green; EXPECTED only in tests; no SealExpect calculator.",
+    "residual_hardness": "Solver must reconstruct SoftHSM/JCE preference\u00d7revoke\u00d7durable-root under sealed fingerprint from behavior, not prompt nouns.",
+    "red_flags": []
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "signing",
+      "desk",
+      "SoftHSM",
+      "JCE",
+      "provider-pack",
+      "cutover",
+      "surface",
+      "probes",
+      "tokens",
+      "sealed",
+      "host",
+      "gate",
+      "verify",
+      "generations",
+      "provider",
+      "order",
+      "mode",
+      "bits",
+      "keystore",
+      "generation",
+      "binding",
+      "revoke",
+      "windows",
+      "root",
+      "sessions",
+      "admits",
+      "ledger",
+      "cases",
+      "schema_version",
+      "jce-desk-1",
+      "rows",
+      "decision",
+      "accept",
+      "reject",
+      "reason_code",
+      "bind_epoch",
+      "epoch",
+      "runtime",
+      "decisions",
+      "desk-reload",
+      "run-desk",
+      "vocabulary",
+      "pack",
+      "refusals",
+      "wrong_pack",
+      "mismatches",
+      "durable",
+      "live",
+      "roots",
+      "root_skew",
+      "in-window",
+      "revoked",
+      "prior-generation",
+      "material",
+      "stale_slot",
+      "revocation",
+      "window",
+      "admit",
+      "ok_bound",
+      "authority",
+      "surfcheck",
+      "outputs",
+      "rebuild",
+      "path",
+      "stand-ins",
+      "sign",
+      "key",
+      "case"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "select_provider",
+        "renamed_to": "knit_xv",
+        "reason": "Avoided provider/pack nouns in fix-path symbol."
+      },
+      {
+        "original": "check_revoke_window",
+        "renamed_to": "op_b",
+        "reason": "Avoided revoke/window nouns."
+      },
+      {
+        "original": "bind_keystore_root",
+        "renamed_to": "op_c",
+        "reason": "Avoided keystore/root nouns."
+      }
+    ],
+    "test_names_audited": [
+      "test_q3_mica",
+      "test_w7_slate",
+      "test_n2_basalt",
+      "test_k4_flint",
+      "test_p9_shale",
+      "test_r6_chert"
+    ],
+    "concentration_math": {
+      "total_tests": 6,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    },
+    "recomputed_concentration": {
+      "total_tests": 6,
+      "concentration_cap": 0.5,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    }
+  },
+  "topology_enumeration": [
+    {
+      "id": "T1",
+      "summary": "Native SoftHSM pack/mode selection \u00d7 Java revoke window \u00d7 durable keystore root under sealed fingerprint.",
+      "locations": [
+        "native/knit_xv.c::knit_xv",
+        "nest/OpB.java::op_b",
+        "forge/OpC.java::op_c"
+      ],
+      "why_no_single_location_suffices": "Pack-only greens still fail stale/revoked and root_skew reload; window-only still fails wrong_pack; root-only still fails sealed pack fingerprint cases."
+    },
+    {
+      "id": "T2",
+      "summary": "Preference sheet realignment \u00d7 behavioral signhold re-entry \u00d7 gate classpath sealing.",
+      "locations": [
+        "flux/PrefA.java",
+        "cmd/signhold/Main.java",
+        "gate sealed jar classpath order"
+      ],
+      "why_no_single_location_suffices": "Editing prefs without decision logic fails reason codes; forging JSON without signhold fails re-invoke tests; moving gate without lattice correctness still rejects."
+    },
+    {
+      "id": "T3",
+      "summary": "Token header pack tags \u00d7 revoke marks/window \u00d7 disk vs live root bundles.",
+      "locations": [
+        "data/token headers via JNI",
+        "data/revoke/window.toml + marks",
+        "data/roots/disk vs live"
+      ],
+      "why_no_single_location_suffices": "Token-only edits leave policy/root wrong; revoke-only leaves pack/root wrong; root-only leaves pack/window wrong under sealed expect."
+    }
+  ]
+}

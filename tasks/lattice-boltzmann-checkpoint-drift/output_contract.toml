@@ -1,0 +1,32 @@
+user_visible_outputs = [
+  "/output/campaign-report.json",
+  "/app/scripts/run_campaign.sh",
+  "/app/docs/report-schema.md",
+  "/app/data/cases/",
+]
+
+internal_harness_files = [
+  "/app/scripts/inspect_snap.sh",
+  "/app/bin/campaign",
+  "/app/internal/buildmeta/const.go",
+]
+
+[structured_outputs.campaign_report]
+target = "/output/campaign-report.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "cases",
+  "parity",
+  "label",
+  "workers",
+  "mode",
+  "mean_rho",
+  "mom_x",
+  "mom_y",
+  "ke",
+  "mass",
+  "stable",
+  "cold_resume_max_rel",
+  "worker_spread_max_rel",
+]

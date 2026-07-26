@@ -1,0 +1,22 @@
+user_visible_outputs = [
+  "/output/recalibration-report.json",
+  "/app/scripts/run_eval.sh",
+  "/app/docs/protocol.md",
+  "/app/docs/metrics.md",
+  "/app/data/config",
+  "/app/data/slices",
+  "/app/data/nonspec",
+  "/app/eng",
+]
+
+internal_harness_files = [
+  "/app/eng/target",
+]
+
+[structured_outputs.recalibration_report]
+target = "/output/recalibration-report.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "recalibration-report.json",
+]

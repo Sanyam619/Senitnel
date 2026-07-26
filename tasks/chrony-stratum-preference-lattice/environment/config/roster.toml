@@ -1,0 +1,2 @@
+# durable roster — seating considers these names
+members = ["pool-alpha", "pool-beta", "pool-gamma", "pool-epsilon"]

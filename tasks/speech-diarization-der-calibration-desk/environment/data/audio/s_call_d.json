@@ -1,0 +1,31 @@
+{
+  "id": "s_call_d",
+  "seq": 4,
+  "speakers_ref": 5,
+  "der_ahc_e5": 0.125,
+  "jer_ahc_e5": 0.161,
+  "der_ahc_e8": 0.183,
+  "jer_ahc_e8": 0.231,
+  "der_ahc_e10": 0.088,
+  "jer_ahc_e10": 0.118,
+  "der_spectral_e5": 0.214,
+  "jer_spectral_e5": 0.268,
+  "der_spectral_e11": 0.247,
+  "jer_spectral_e11": 0.302,
+  "der_nme_e5": 0.174,
+  "jer_nme_e5": 0.219,
+  "der_oracle": 0.052,
+  "jer_oracle": 0.071,
+  "der_obs": 0.272,
+  "jer_obs": 0.341,
+  "emb": [
+    0.4,
+    0.5,
+    0.6000000000000001,
+    0.7000000000000001,
+    0.8,
+    0.9,
+    1.0,
+    1.1
+  ]
+}

@@ -1,0 +1,9 @@
+#!/bin/bash
+# Surface readiness: master drop-in presence only — not durable seating authority.
+set -euo pipefail
+if [[ -f /etc/postfix/master.d/90-local.cf ]] && [[ -f /etc/postfix/roster.list ]]; then
+  echo "mail-ready"
+  exit 0
+fi
+echo "mail-down"
+exit 1

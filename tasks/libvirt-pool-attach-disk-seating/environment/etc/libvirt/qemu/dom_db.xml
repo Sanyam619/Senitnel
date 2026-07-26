@@ -1,0 +1,15 @@
+<domain type='kvm'>
+  <name>db</name>
+  <memory unit='MiB'>2048</memory>
+  <vcpu>2</vcpu>
+  <os>
+    <type arch='x86_64' machine='pc'>hvm</type>
+  </os>
+  <devices>
+    <disk type='volume' device='disk'>
+      <driver name='qemu' type='raw'/>
+      <source pool='beta' uuid='bbbb2222-0000-4000-8000-0000000000b2' volume='data.img'/>
+      <target dev='vda' bus='virtio'/>
+    </disk>
+  </devices>
+</domain>

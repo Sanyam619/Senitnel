@@ -1,0 +1,9 @@
+Live forward-proxy cache seating under `/etc/squid/`, `/etc/squid/conf.d/`, `/var/lib/squid/`, and `/var/run/squid/` drifted from durable peer authority. Surface `/usr/local/bin/squidhealth` may print ready while deep seating has drifted. Frozen fixtures under `/app/data/squid/` are integrity-pinned; do not rewrite them. Operator seating starts at `/app/ops/run_squid_seat.sh`.
+
+Produce `/output/squid-seat.json`. Normative acceptance rules live in `/app/docs/seating_contract.md` and `/app/docs/layout.md` (prefer tips, preference mode, tip bind, peer journal revoke rows, generation floors, conf.d ACL fold, tip state records, and cutover receipts).
+
+Preference must settle on durable or authority materials. Live or surface preference keeps surface tip and peer-sheet materials in play across seating rematerialize. Tip bind acceptance must match `gen.target`. Applied tip verdicts are recorded under `/var/lib/squid/state/tip_<name>.type` and `tip_<name>.weight` beside `tip_<name>.gen`.
+
+Abort-window residue under `/var/lib/squid/ops/abort.d/` rematerializes into live conf.d on every seating pass unless a matching durable receipt already exists at `/var/lib/squid/state/cutover.ok`. A matching receipt skips rematerialize; it does not mean delete the live drop-in. On the same successful seating pass, after any abort rematerialize, live `/etc/squid/conf.d/90-local.cfg` must still end with site-standard tokens from `/app/config/site_standard.conf` (not abort residue such as `prefer_abort`), and seating must write `/var/lib/squid/state/cutover.ok` as plain `key=value` lines with `gen` equal to `gen.target` and `mode=seal`. The abort package under `abort.d/` stays forensic. Two seating runs must leave byte-identical `/output/squid-seat.json`.
+
+Ledger vocabulary: schema_tag, peers, name, host, type, weight, generation, selected, acls, matched, seat_ok.

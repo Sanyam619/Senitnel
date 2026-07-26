@@ -1,0 +1,14 @@
+http:
+  middlewares:
+    compress:
+      type: compress
+      attached: true
+    authstrip:
+      type: basicauth
+      attached: true
+    ratelimit:
+      type: ratelimit
+      attached: true
+    headers:
+      type: headers
+      attached: true

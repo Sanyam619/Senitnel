@@ -1,0 +1,3 @@
+queue_directory = /var/spool/postfix-beacon-decoy
+transport_maps = hash:/etc/postfix/maps/nexthop.live
+myhostname = beacon.live.local

@@ -1,0 +1,362 @@
+{
+  "hardness_axes": [
+    {
+      "id": "1",
+      "name": "discover",
+      "verdict": "PASS",
+      "reasoning": "tip resolve and schedule hop"
+    },
+    {
+      "id": "2",
+      "name": "synthesize",
+      "verdict": "PASS",
+      "reasoning": "calib x tip x depth x resume"
+    },
+    {
+      "id": "3",
+      "name": "diagnose",
+      "verdict": "PASS",
+      "reasoning": "symptoms only"
+    },
+    {
+      "id": "4",
+      "name": "coupling",
+      "verdict": "PASS",
+      "reasoning": "rematerialize"
+    },
+    {
+      "id": "5",
+      "name": "beyond",
+      "verdict": "PASS",
+      "reasoning": "MoD capacity seating"
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "1",
+      "name": "disclosure",
+      "verdict": "PASS",
+      "reasoning": "ok"
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "1",
+      "name": "verifiable",
+      "verdict": "PASS",
+      "reasoning": "ok"
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "symptoms"
+  },
+  "discovery_budget": [
+    {
+      "discovery": "sealed-max minus retired tip",
+      "planned_location": "data/routers/tip_journal.jsonl",
+      "why_instruction_must_not_reveal": "recipe collapse"
+    },
+    {
+      "discovery": "top-k avg_depth from schedule",
+      "planned_location": "data/routers/depth_schedule.json",
+      "why_instruction_must_not_reveal": "formula collapse"
+    },
+    {
+      "discovery": "resume must not use live capacity",
+      "planned_location": "score/helm_e.rs",
+      "why_instruction_must_not_reveal": "fix site"
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "outcomes"
+  },
+  "attack_path": {
+    "summary": "grep stubs",
+    "detail": "rematerialize undoes"
+  },
+  "smallest_plausible_patch": {
+    "summary": "five bodies + calib",
+    "detail": "coupled"
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "softhsm"
+  },
+  "topology_enumeration": [
+    {
+      "name": "t1",
+      "locations": [
+        "seat/knit_b.rs",
+        "flag/xv_c.rs",
+        "mix/ward_d.rs"
+      ],
+      "why_no_single_location_suffices": "tip alone leaves depth"
+    },
+    {
+      "name": "t2",
+      "locations": [
+        "score/helm_e.rs",
+        "flag/xv_c.rs",
+        "gate/emit_f.rs"
+      ],
+      "why_no_single_location_suffices": "ppl alone leaves depth"
+    },
+    {
+      "name": "t3",
+      "locations": [
+        "seat/knit_b.rs",
+        "score/helm_e.rs",
+        "mix/ward_d.rs"
+      ],
+      "why_no_single_location_suffices": "all three metric axes"
+    }
+  ],
+  "construction_manifest": {
+    "symbol_table": [
+      {
+        "path": "seat/knit_b.rs",
+        "symbol": "pick_t",
+        "kind": "function",
+        "signature": "pub fn pick_t(a: &str, b: &str, c: &str) -> TipPick",
+        "purpose": "select tip row from journal materials"
+      },
+      {
+        "path": "flag/xv_c.rs",
+        "symbol": "bit_z",
+        "kind": "function",
+        "signature": "pub fn bit_z(a: f64, b: f64, c: &str) -> f64",
+        "purpose": "emit seated capacity scalar"
+      },
+      {
+        "path": "mix/ward_d.rs",
+        "symbol": "mix_w",
+        "kind": "function",
+        "signature": "pub fn mix_w(scores: &[f64], cap: f64, shallow: f64, deep: f64) -> f64",
+        "purpose": "produce avg_depth from token scores and capacity"
+      },
+      {
+        "path": "score/helm_e.rs",
+        "symbol": "score_u",
+        "kind": "function",
+        "signature": "pub fn score_u(base_nll: f64, cap: f64, mode: &str, live_cap: f64) -> f64",
+        "purpose": "produce perplexity; resume must not reload live capacity"
+      },
+      {
+        "path": "gate/emit_f.rs",
+        "symbol": "gate_y",
+        "kind": "function",
+        "signature": "pub fn gate_y(depths: &[f64], ppls: &[f64], caps: &[f64], rows_ok: bool) -> bool",
+        "purpose": "combine row health into bands_ok"
+      }
+    ],
+    "flipping_point_contract": {
+      "locations": [
+        {
+          "id": "A",
+          "path": "seat/knit_b.rs",
+          "controls_tests": [
+            "test_c1_biotite",
+            "test_d9_epidote",
+            "test_l7_dunite"
+          ]
+        },
+        {
+          "id": "B",
+          "path": "flag/xv_c.rs",
+          "controls_tests": [
+            "test_d9_epidote",
+            "test_m2_andesite"
+          ]
+        },
+        {
+          "id": "C",
+          "path": "mix/ward_d.rs",
+          "controls_tests": [
+            "test_e2_scoria",
+            "test_g8_feldspar",
+            "test_i6_marl",
+            "test_n8_basalt"
+          ]
+        },
+        {
+          "id": "D",
+          "path": "score/helm_e.rs",
+          "controls_tests": [
+            "test_f5_dolomite",
+            "test_g8_feldspar"
+          ]
+        },
+        {
+          "id": "E",
+          "path": "gate/emit_f.rs",
+          "controls_tests": [
+            "test_g8_feldspar"
+          ]
+        }
+      ],
+      "no_single_location_flips_majority": true,
+      "concentration_cap": 0.5
+    },
+    "decoy_manifest": [
+      {
+        "path": "eng/src/decoy_p.rs",
+        "kind": "helper",
+        "rhymes_with": "mix_w",
+        "non_fix_purpose": "weighted roll summary discarded by main"
+      },
+      {
+        "path": "eng/src/decoy_q.rs",
+        "kind": "helper",
+        "rhymes_with": "score_u",
+        "non_fix_purpose": "EWMA history summary discarded by main"
+      },
+      {
+        "path": "calib/trace_pref.toml",
+        "kind": "config-reader",
+        "rhymes_with": "trial_pref",
+        "non_fix_purpose": "unused surface prefer decoy"
+      },
+      {
+        "path": "data/ledger/schedule_mirror.json",
+        "kind": "config-reader",
+        "rhymes_with": "depth_schedule",
+        "non_fix_purpose": "stale depth schedule bait"
+      },
+      {
+        "path": "data/routers/live.toml",
+        "kind": "config-reader",
+        "rhymes_with": "durable tip",
+        "non_fix_purpose": "full-depth capacity decoy"
+      }
+    ],
+    "code_forbidden_tokens": [
+      "mixture",
+      "depths",
+      "token",
+      "routing",
+      "eval",
+      "perplexity",
+      "avg_depth",
+      "capacity",
+      "tip_epoch",
+      "band",
+      "schema",
+      "scenario",
+      "checkpoint",
+      "resume",
+      "cold",
+      "router",
+      "journal",
+      "durable",
+      "live",
+      "surface",
+      "rebuild",
+      "engine",
+      "report",
+      "sealed",
+      "retired",
+      "serving",
+      "selection",
+      "depth",
+      "schedule",
+      "fixture"
+    ]
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "mixture",
+      "depths",
+      "token",
+      "routing",
+      "eval",
+      "perplexity",
+      "avg_depth",
+      "capacity",
+      "tip_epoch",
+      "band",
+      "schema",
+      "scenario",
+      "checkpoint",
+      "resume",
+      "cold",
+      "router",
+      "journal",
+      "durable",
+      "live",
+      "surface",
+      "rebuild",
+      "engine",
+      "report",
+      "sealed",
+      "retired",
+      "serving",
+      "selection",
+      "depth",
+      "schedule",
+      "fixture"
+    ],
+    "code_forbidden_tokens": [
+      "mixture",
+      "depths",
+      "token",
+      "routing",
+      "eval",
+      "perplexity",
+      "avg_depth",
+      "capacity",
+      "tip_epoch",
+      "band",
+      "schema",
+      "scenario",
+      "checkpoint",
+      "resume",
+      "cold",
+      "router",
+      "journal",
+      "durable",
+      "live",
+      "surface",
+      "rebuild",
+      "engine",
+      "report",
+      "sealed",
+      "retired",
+      "serving",
+      "selection",
+      "depth",
+      "schedule",
+      "fixture"
+    ],
+    "renames_during_drafting": [
+      {
+        "from": "resolve_tip",
+        "to": "pick_t"
+      }
+    ],
+    "test_names_audited": [
+      "test_a3_garnet",
+      "test_b7_zircon",
+      "test_c1_biotite",
+      "test_d9_epidote",
+      "test_e2_scoria",
+      "test_f5_dolomite",
+      "test_g8_feldspar",
+      "test_i6_marl",
+      "test_h4_gneiss",
+      "test_j0_schist",
+      "test_k3_pumice",
+      "test_l7_dunite",
+      "test_m2_andesite",
+      "test_n8_basalt"
+    ],
+    "concentration_math": {
+      "A": 0.21,
+      "B": 0.14,
+      "C": 0.28,
+      "D": 0.14,
+      "E": 0.07
+    }
+  }
+}

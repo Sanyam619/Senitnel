@@ -1,0 +1,368 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Solver must recover shadow APT package emission, degraded/classpath sentinel in resolve_plane_b, and slot_c_key selecting w0 plus p3 runtime \u2014 none are in instruction.md."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Ship report requires APT emit package, ModuleLayer probe fields, and BOM-mediated wire/processor path to agree as one reactor."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Instruction reports omitted APT classes and non-ok modular report without naming emit_slot_a, sentinel, or slot_c_key."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Fixing APT alone leaves degraded lane and wrong wire/APT flags; fixing probe alone leaves shadow schemas; fixing BOM alone leaves sentinel and shadow emit."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "Hardness is BOM x APT x JPMS layer packaging coupling, not a single Maven conflict flip."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "disclosure_collapse",
+      "name": "Disclosure-collapse",
+      "verdict": "PASS",
+      "reasoning": "Symptoms-only cutover brief omits gate sites."
+    },
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "Fixed reactor topology, not hunt-one-broken-file."
+    },
+    {
+      "id": "single_artifact_repair",
+      "name": "Single-artifact repair",
+      "verdict": "PASS",
+      "reasoning": "Requires processor, probe, and parent POM coordination."
+    },
+    {
+      "id": "generalization",
+      "name": "Generalization",
+      "verdict": "PASS",
+      "reasoning": "Tests cover jar content, lane, status, wire module, APT absence, emitted list."
+    },
+    {
+      "id": "prompt_honesty",
+      "name": "Prompt-honesty",
+      "verdict": "PASS",
+      "reasoning": "Honest prompt does not name faulty symbols."
+    },
+    {
+      "id": "cheating_vs_difficulty",
+      "name": "Cheating-vs-difficulty",
+      "verdict": "PASS",
+      "reasoning": "Offline m2 cache is harness, not hardness."
+    },
+    {
+      "id": "mechanical_fix_filter",
+      "name": "Mechanical-fix filter",
+      "verdict": "PASS",
+      "reasoning": "Not a deps/timeout-only task."
+    },
+    {
+      "id": "localized_fix",
+      "name": "Localized-fix",
+      "verdict": "PASS",
+      "reasoning": "Fix spans three distinct roots."
+    },
+    {
+      "id": "oracle_locality",
+      "name": "Oracle-locality",
+      "verdict": "PASS",
+      "reasoning": "Oracle edits multiple modules and the parent POM."
+    },
+    {
+      "id": "small_declarative_cluster",
+      "name": "Small declarative-cluster",
+      "verdict": "PASS",
+      "reasoning": "Not one config block; APT+probe+BOM interact."
+    },
+    {
+      "id": "grep_collapse",
+      "name": "Grep-collapse",
+      "verdict": "PASS",
+      "reasoning": "Opaque symbols; instruction nouns banned on fix path."
+    },
+    {
+      "id": "pre_factored_helper",
+      "name": "Pre-factored-helper",
+      "verdict": "PASS",
+      "reasoning": "Helpers named ScanLegacy/ProbeLegacy, not validate/fix."
+    },
+    {
+      "id": "recipe_discount",
+      "name": "Recipe-discount",
+      "verdict": "PASS",
+      "reasoning": "Not a textbook single-manifest version bump."
+    },
+    {
+      "id": "security_aura_discount",
+      "name": "Security-aura discount",
+      "verdict": "PASS",
+      "reasoning": "N/A build category."
+    },
+    {
+      "id": "orthogonal_checklist",
+      "name": "Orthogonal-checklist",
+      "verdict": "PASS",
+      "reasoning": "Report fields couple through shared reactor cutover."
+    },
+    {
+      "id": "harness_discount",
+      "name": "Harness-discount",
+      "verdict": "PASS",
+      "reasoning": "Docker/Maven offline is realism only."
+    },
+    {
+      "id": "one_pass_solvability",
+      "name": "One-pass solvability",
+      "verdict": "PASS",
+      "reasoning": "Three interacting cutover remnants block one-pass."
+    },
+    {
+      "id": "hard_only_gate",
+      "name": "Hard-only gate",
+      "verdict": "PASS",
+      "reasoning": "Clearly hard BOM x APT x JPMS cutover."
+    },
+    {
+      "id": "discovery_budget_test",
+      "name": "Discovery budget test",
+      "verdict": "PASS",
+      "reasoning": "Three non-trivial discoveries committed in discovery_budget."
+    },
+    {
+      "id": "instruction_specificity_test",
+      "name": "Instruction specificity test",
+      "verdict": "PASS",
+      "reasoning": "symptoms-only level."
+    },
+    {
+      "id": "topology_distribution_test",
+      "name": "Topology distribution test",
+      "verdict": "PASS",
+      "reasoning": "Three topologies each with >=3 coordinating locations."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "Deterministic Maven builds and JSON checks."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Ship report contract unambiguous."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "Expert Java/Maven engineer solvable in hours."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "BOM x APT x JPMS beyond undergrad labs."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Real mid-cutover reactor work."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Grades jars and report, not process."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Cannot learn shadow emit package, degraded sentinel, or slot_c_key from instruction.md alone."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "emit_slot_a writes schema companions into io.kestrel.shadow instead of io.kestrel.model",
+      "planned_location": "p3/src/main/java/io/kestrel/apt/emit_slot_a.java",
+      "why_instruction_must_not_reveal": "Naming the shadow package collapses APT work to a string replace."
+    },
+    {
+      "discovery": "resolve_plane_b stamps lane=classpath and status=degraded after forming a ModuleLayer",
+      "planned_location": "t9/src/main/java/io/kestrel/boot/resolve_plane_b.java",
+      "why_instruction_must_not_reveal": "Naming the sentinel collapses modular-lane work to flipping two literals."
+    },
+    {
+      "discovery": "root POM slot_c_key selects w0 and pulls p3 onto t9 runtime module path",
+      "planned_location": "environment/pom.xml and t9 dependency declarations",
+      "why_instruction_must_not_reveal": "Naming the property and artifacts turns BOM cutover into a checklist."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Cutover symptoms only; no named fix sites or algorithms."
+  },
+  "attack_path": {
+    "summary": "Read ops/link notes, diagnose APT emit package, layer probe sentinel, and BOM wire/processor path, reconcile, package, run layerctl.",
+    "reasoning": "Winning path spans processor, boot probe, and parent POM."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Must retarget APT emit package, clear probe sentinel to modular/ok, and rewire slot_c_key plus drop p3 runtime.",
+    "reasoning": "One-file patch cannot satisfy jar, lane/status, and wire/APT tests together."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "Resists single-POM and classpath-green shortcuts.",
+    "residual_hardness": "Three-way APT/layer/BOM coupling plus false-green classpath diagnostics remains after tree is visible.",
+    "red_flags": []
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "PMS",
+      "tree",
+      "cutover",
+      "platform",
+      "catalog",
+      "JPMS",
+      "layout",
+      "reactor",
+      "build",
+      "gaps",
+      "units",
+      "archives",
+      "APT",
+      "classes",
+      "layerctl",
+      "modular",
+      "runtime",
+      "classpath",
+      "checks",
+      "alignment",
+      "isolation",
+      "module-path",
+      "packaging",
+      "package",
+      "model",
+      "archive",
+      "output",
+      "layer-report",
+      "status",
+      "ship",
+      "matrix",
+      "ops",
+      "notes",
+      "link",
+      "module-notes",
+      "wire",
+      "module",
+      "name",
+      "absence",
+      "layer",
+      "emitted",
+      "class",
+      "names",
+      "annotation",
+      "processor",
+      "BOM",
+      "jars"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "wire.impl",
+        "renamed_to": "slot_c_key",
+        "reason": "Property matched instruction noun wire."
+      },
+      {
+        "original": "EmitSlotA",
+        "renamed_to": "emit_slot_a",
+        "reason": "Opaque fix-path symbol per construction manifest."
+      },
+      {
+        "original": "ResolvePlaneB",
+        "renamed_to": "resolve_plane_b",
+        "reason": "Opaque fix-path symbol per construction manifest."
+      }
+    ],
+    "test_names_audited": [
+      "test_k4_v_ok",
+      "test_m8_w_ok",
+      "test_q2_x_ok",
+      "test_t6_y_ok",
+      "test_w1_z_ok",
+      "test_n9_u_ok"
+    ],
+    "concentration_math": {
+      "total_tests": 6,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.333333
+        },
+        {
+          "location_id": "B",
+          "test_count": 2,
+          "ratio": 0.333333
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.333333
+        }
+      ]
+    }
+  },
+  "topology_enumeration": [
+    {
+      "id": "T1",
+      "summary": "APT-first emit retarget",
+      "locations": [
+        "p3/src/main/java/io/kestrel/apt/emit_slot_a.java",
+        "q7/pom.xml",
+        "link/module-notes.toml"
+      ],
+      "why_no_single_location_suffices": "Correct emit package alone leaves degraded lane and wrong wire/APT runtime flags."
+    },
+    {
+      "id": "T2",
+      "summary": "Probe-first modular lane",
+      "locations": [
+        "t9/src/main/java/io/kestrel/boot/resolve_plane_b.java",
+        "bin/layerctl",
+        "t9/src/main/java/io/kestrel/boot/Main.java"
+      ],
+      "why_no_single_location_suffices": "Probe-only fix leaves shadow schemas and BOM selecting w0/p3."
+    },
+    {
+      "id": "T3",
+      "summary": "BOM-first wire and APT path",
+      "locations": [
+        "pom.xml",
+        "t9/pom.xml",
+        "w1/src/main/java/module-info.java"
+      ],
+      "why_no_single_location_suffices": "BOM-only fix leaves shadow emit and classpath sentinel."
+    }
+  ],
+  "note": "[CM stripped pms-annotation-processor-bom-cutover-attempt-1-evidence.json: domain-named Rust lattice; CR1 opaque-rename deferred; edge-lane-class WARN parity]"
+}

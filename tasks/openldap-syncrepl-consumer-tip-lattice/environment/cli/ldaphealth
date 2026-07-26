@@ -1,0 +1,10 @@
+#!/bin/bash
+# ldaphealth — surface probe only (entry counts).
+set -euo pipefail
+
+if /app/rim/scan_m.sh; then
+  echo "in-sync"
+  exit 0
+fi
+echo "drift"
+exit 1

@@ -1,0 +1,20 @@
+# game_3.log — 9x9 board, empty start
+# recorded 2025-01-08; tournament round 2
+# format: <ply>  <color> <coord|pass>  <verdict>  [reason]  [# note]
+
+001  black 3,4    accepted  # 4-4 approach
+002  white 3,5    accepted
+003  black 4,3    accepted
+004  white 4,6    accepted
+005  black 5,4    accepted
+006  white 5,5    accepted
+007  black 1,1    accepted  # distant tempo
+008  white 4,4    accepted  # white slots into the pocket, one liberty at 4,5
+009  black 4,5    accepted  # captures white 4,4 stone
+010  white 4,4    rejected   superko:recreates_board_from_ply_008
+011  white 6,6    accepted  # tries a different local shape
+012  black 6,5    accepted
+013  white 7,7    accepted
+014  black 2,2    accepted
+015  white pass   accepted
+016  black pass   accepted

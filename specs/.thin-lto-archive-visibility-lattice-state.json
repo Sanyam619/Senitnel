@@ -1,0 +1,431 @@
+{
+  "task_name": "thin-lto-archive-visibility-lattice",
+  "attempt": 2,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 2,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 14,
+      "warns": 0,
+      "evidence_path": "specs/thin-lto-archive-visibility-lattice-attempt-1-evidence.json",
+      "evidence": {},
+      "evidence_errors": [
+        "Schema validation failed at $.naming_pass.concentration_math: 'per_location' is a required property",
+        "Schema validation failed at $.naming_pass.concentration_math: Additional properties are not allowed ('A', 'B', 'C', 'D', 'cap' were unexpected)",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[0]: 'original' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[0]: 'renamed_to' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[0]: Additional properties are not allowed ('from', 'to' were unexpected)",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[1]: 'original' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[1]: 'renamed_to' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[1]: Additional properties are not allowed ('from', 'to' were unexpected)",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[2]: 'original' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[2]: 'renamed_to' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[2]: Additional properties are not allowed ('from', 'to' were unexpected)",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[3]: 'original' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[3]: 'renamed_to' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[3]: Additional properties are not allowed ('from', 'to' were unexpected)"
+      ],
+      "blocking_failures": [
+        "Schema validation failed at $.naming_pass.concentration_math: 'per_location' is a required property",
+        "Schema validation failed at $.naming_pass.concentration_math: Additional properties are not allowed ('A', 'B', 'C', 'D', 'cap' were unexpected)",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[0]: 'original' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[0]: 'renamed_to' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[0]: Additional properties are not allowed ('from', 'to' were unexpected)",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[1]: 'original' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[1]: 'renamed_to' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[1]: Additional properties are not allowed ('from', 'to' were unexpected)",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[2]: 'original' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[2]: 'renamed_to' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[2]: Additional properties are not allowed ('from', 'to' were unexpected)",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[3]: 'original' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[3]: 'renamed_to' is a required property",
+        "Schema validation failed at $.naming_pass.renames_during_drafting[3]: Additional properties are not allowed ('from', 'to' were unexpected)"
+      ]
+    },
+    {
+      "attempt": 2,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/thin-lto-archive-visibility-lattice-attempt-2-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must recover that lane_k1 always resolves the live profile path to ship for fleet cells, that knit_v4 drops the strand_a visibility bit on ship-only cells, that emit_q3 hardcodes bitcode_epoch 3 whenever strand_b is set, and that pack_w8 mirrors that broken ship member count for cgo archive packing \u2014 none of which appear in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Lattice success requires profile authority, Rust thin-LTO bitcode epoch / visibility forwarding, generated C visibility map emission, and Go cgo archive membership packing to agree as one lattice across matrix cells."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction reports locally-coherent digests and distant lattice failures without naming profile path resolution, visibility-bit polarity, epoch hardcoding, or membership mirroring."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Fixing the visibility map alone still leaves cgo membership disagreeing; fixing packing alone still fails when profile authority returns ship epochs for fleet cells; fixing authority alone still fails ship-only digest bits and strand_b epoch hardcodes."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Hardness is thin-LTO bitcode epoch \u00d7 exported-symbol visibility \u00d7 multi-archive membership under profile authority (Rust staticlib + Go cgo + C .a), not a single Cargo lto flip or makefile polarity recipe."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only lattice brief omits profile path picker, digest-bit polarity, epoch hardcodes, and membership mirroring."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed multi-cell matrix topology \u2014 not hunt-one-broken-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Requires auth path, Rust forward, visibility forge, and packing/cgo to coordinate."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests cover ship-only, fleet dual-feature, fleet strand_b release, and ship/fleet membership cells."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not name knit_v4, lane_k1, emit_q3, or pack_w8."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Offline rust/go/cmake toolchains are harness realism, not hardness."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout-only task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Fix spans four distinct roots (r7/src/knit.rs, g5/auth.go, vis/emit_q3.c, g5/pack.go)."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle edits digest forward, profile authority, visibility forge, and packing/cgo emission."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Not one config block; authority/forward/visibility/packing interact nonlinearly across cells."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Opaque symbols; instruction nouns banned on fix-path symbols and test names."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helpers use opaque knit/lane/emit/pack names, not validate/fix/unify checklists."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a textbook -flto=thin everywhere recipe; forcing thin globally breaks ship archive membership."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "Category is build-and-dependency-management; no security aura."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Four coupled insight clusters with tradeoffs across matrix cells."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Docker multi-toolchain is realism; hardness is lattice coupling."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Locally-green mutual agreement on wrong epoch traps one-pass force-thin patches."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Clearly hard via four-locus profile\u00d7epoch\u00d7visibility\u00d7membership coupling."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Four non-trivial discoveries listed in discovery_budget."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "symptoms-only level with profile-declared epoch outcomes named for sufficiency."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three distinct fix topologies each with \u22653 coordinating locations."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic probe JSON with verifier-owned EXPECTED epochs/digests/members."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Two engineers reading the brief would grade the same lattice-report outcomes."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert can reconcile four loci in a few hours; oracle is bounded."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Requires multi-toolchain build-graph reasoning under profile authority, not undergrad makefile flips."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real thin-LTO / visibility / archive membership cutover work fleets pay for."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grades probe report outcomes, not process or named fix sites."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Cannot learn ship-vs-fleet path resolution, strand_a digest-bit drop, or strand_b epoch/membership hardcodes from instruction.md alone."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "lane_k1 always returns the ship profile path, so fleet cells inherit ship bitcode_epoch=3 and miss fleet-owned live configuration",
+            "planned_location": "g5/auth.go",
+            "why_instruction_must_not_reveal": "Naming the profile path picker collapses to a one-line string rewrite."
+          },
+          {
+            "discovery": "knit_v4 drops the strand_a visibility bit on ship-only (non-strand_b) cells, so alpha digests disagree across language archives",
+            "planned_location": "r7/src/knit.rs",
+            "why_instruction_must_not_reveal": "Naming the digest-bit polarity becomes a single boolean flip recipe."
+          },
+          {
+            "discovery": "emit_q3 hardcodes bitcode_epoch 3 whenever strand_b is set instead of honoring the live profile epoch (7 for fleet)",
+            "planned_location": "vis/emit_q3.c",
+            "why_instruction_must_not_reveal": "Pointing at the visibility forge removes the header/packing coupling the task tests."
+          },
+          {
+            "discovery": "pack_w8 emits cgo archive membership 4 under strand_b, matching the broken ship epoch so both look locally green until the forge is corrected; forcing thin-LTO everywhere still breaks ship packing",
+            "planned_location": "g5/pack.go",
+            "why_instruction_must_not_reveal": "Naming the packing mirror removes the locally-green distant-fail trap."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Cutover symptoms only (locally-coherent digests, distant lattice failures); profile-declared epochs named for sufficiency; no named fix sites."
+        },
+        "attack_path": {
+          "summary": "Read ops matrix and profiles, diagnose authority/forward/visibility/packing drift across Rust/Go/C, reconcile, rebuild cells, run lattice_probe.",
+          "reasoning": "Winning path spans profile authority, Rust digest/epoch forward, visibility forge, and cgo archive packing."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Must restore live profile path selection, strand_a digest forwarding on ship-only cells, profile-honoring visibility epochs, and matching cgo archive membership.",
+          "reasoning": "One-file patch cannot satisfy ship-only, fleet dual-feature, and strand_b packing tests together."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Resists single-toolchain stamp greening and readable-probe answer keys; observation-only runner with verifier-owned EXPECTED; surface link-ok is bait.",
+          "residual_hardness": "Four-way authority/forward/visibility/packing coupling plus locally-green distant-fail traps remain after the tree is visible.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "fleet",
+            "product",
+            "static",
+            "archive",
+            "Rust",
+            "staticlib",
+            "Go",
+            "cgo",
+            "layout",
+            "cell",
+            "matrix",
+            "profile",
+            "cutover",
+            "observation",
+            "digests",
+            "language",
+            "surface",
+            "thin-LTO",
+            "bitcode",
+            "epoch",
+            "exported-symbol",
+            "visibility",
+            "link-ok",
+            "success",
+            "lattice",
+            "outcome",
+            "report",
+            "probe",
+            "status",
+            "bitcode_epoch",
+            "vis_digest",
+            "archive_members",
+            "ship",
+            "feature",
+            "packing",
+            "membership",
+            "archives"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "resolve_profile",
+              "renamed_to": "lane_k1",
+              "reason": "Symbol echoed instruction noun profile."
+            },
+            {
+              "original": "vis_forward",
+              "renamed_to": "knit_v4",
+              "reason": "Symbol echoed instruction nouns visibility/digest."
+            },
+            {
+              "original": "write_visibility_map",
+              "renamed_to": "emit_q3",
+              "reason": "Symbol echoed instruction noun visibility."
+            },
+            {
+              "original": "archive_pack",
+              "renamed_to": "pack_w8",
+              "reason": "Symbol echoed instruction nouns archive/packing."
+            }
+          ],
+          "test_names_audited": [
+            "test_k3_tier_alpha_ok",
+            "test_w9_tier_beta_ok",
+            "test_m4_mark_alpha",
+            "test_z2_mark_beta",
+            "test_t6_span_gamma",
+            "test_n8_span_delta",
+            "test_y1_tri_agree_beta",
+            "test_f5_reentry_gamma",
+            "test_p7_quota_alpha",
+            "test_h2_quota_beta"
+          ],
+          "concentration_math": {
+            "total_tests": 10,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "D",
+                "test_count": 4,
+                "ratio": 0.4
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 10,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.2
+              },
+              {
+                "location_id": "D",
+                "test_count": 4,
+                "ratio": 0.4
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

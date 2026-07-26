@@ -1,0 +1,14 @@
+user_visible_outputs = [
+  "/output/build-matrix.json",
+  "/app/bin/matrixci",
+]
+
+internal_harness_files = []
+
+[structured_outputs.build_matrix]
+target = "/output/build-matrix.json"
+format = "json"
+instruction_checks = [
+  "toolchains",
+  "status",
+]

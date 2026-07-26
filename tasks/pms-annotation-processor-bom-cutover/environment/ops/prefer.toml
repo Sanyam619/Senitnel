@@ -1,0 +1,8 @@
+# Attestation authority-source preference.
+#
+# The build-time authority guard rematerializes the attestation sources from
+# the surface baseline until deep recovery commits a durable-authority
+# preference here. While `source` stays on the surface snapshot, source-level
+# repairs to the evaluator are reverted on every rebuild.
+[authority]
+source = "surface"

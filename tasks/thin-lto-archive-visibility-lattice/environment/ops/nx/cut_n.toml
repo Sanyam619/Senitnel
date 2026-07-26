@@ -1,0 +1,6 @@
+soname_hint = "libr7.so"
+cutover = "pending"
+epoch = 1
+epoch_floor = 3
+hold_token = "draft"
+roster = "ship,field"

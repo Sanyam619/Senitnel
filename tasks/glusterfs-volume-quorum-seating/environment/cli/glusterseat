@@ -1,0 +1,152 @@
+#!/bin/bash
+# glusterseat — publish the seating ledger from prepared desk state.
+set -euo pipefail
+
+OUT="${SEAT_OUT:-/output/gluster-seat.json}"
+ROSTER="${ROSTER:-/etc/glusterfs/roster.list}"
+ROOT="${GLUSTER_ROOT:-/var/lib/glusterd}"
+STATE="$ROOT/state"
+OPS="$ROOT/ops"
+EFF="${EFF_POLICY:-/etc/glusterfs/effective.conf}"
+BRICK_D="${BRICK_D:-/etc/glusterfs/bricks.d}"
+
+mkdir -p "$(dirname "$OUT")"
+
+python3 - "$OUT" "$ROSTER" "$STATE" "$OPS" "$EFF" "$BRICK_D" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+out, roster, state, ops, eff, brick_d = map(Path, sys.argv[1:])
+
+
+def pairs(path):
+    data = {}
+    if not path.exists():
+        return data
+    for line in path.read_text().splitlines():
+        line = line.split("#", 1)[0].strip()
+        if not line or "=" not in line:
+            continue
+        a, b = line.split("=", 1)
+        data[a.strip()] = b.strip().strip('"')
+    return data
+
+
+def scalar(path, default=""):
+    if not path.exists():
+        return default
+    return path.read_text().strip()
+
+
+def brick_list(path):
+    if not path.exists():
+        return []
+    return [
+        ln.strip()
+        for ln in path.read_text().splitlines()
+        if ln.strip() and not ln.strip().startswith("#")
+    ]
+
+
+names = [
+    ln.strip()
+    for ln in roster.read_text().splitlines()
+    if ln.strip() and not ln.strip().startswith("#")
+]
+
+policy = pairs(eff)
+guard = policy.get("abort", "none")
+plane = pairs(ops / "prefer.toml").get("plane", "")
+receipt = pairs(ops / "state" / "apply.ok")
+target = scalar(state / "gen.target")
+clock = int(scalar(state / "clock.epoch", "0") or 0)
+
+# Open held brick paths from holds.tsv + hold_block flags.
+held_open = set()
+tsv = state / "holds.tsv"
+hold_agree = True
+if tsv.exists():
+    for line in tsv.read_text().splitlines():
+        parts = line.split("\t")
+        if len(parts) >= 3:
+            hid, bpath, until_s = parts[0], parts[1], parts[2]
+            try:
+                until = int(until_s)
+            except ValueError:
+                until = 0
+            blocked = scalar(state / f"hold_block_{hid}") == "1"
+            if blocked != (until > clock):
+                hold_agree = False
+            if until > clock:
+                held_open.add(bpath)
+
+agree = (
+    plane == "durable"
+    and receipt.get("gen") == target
+    and receipt.get("mode") == "seal"
+    and scalar(state / "gen.live") == target
+    and hold_agree
+)
+
+heals = []
+htsv = state / "heals.tsv"
+heal_map = {}
+if htsv.exists():
+    for line in htsv.read_text().splitlines():
+        parts = line.split("\t")
+        if len(parts) >= 2:
+            heal_map[parts[0]] = int(parts[1])
+
+rows = []
+for name in names:
+    durable = brick_list(state / f"tip_bricks_{name}")
+    live = brick_list(brick_d / f"{name}.bricks")
+    try:
+        qwant = int(scalar(state / f"tip_quorum_{name}", "0") or 0)
+    except ValueError:
+        qwant = 0
+    try:
+        gen = int(scalar(state / f"pub_{name}.gen", "0") or 0)
+    except ValueError:
+        gen = 0
+    ready = scalar(state / f"elig_{name}") == "1"
+    qok = scalar(state / f"quorum_{name}") == "1"
+    set_ok = sorted(live) == sorted(durable) and len(durable) > 0
+    held_in = [b for b in durable if b in held_open]
+    pending = int(heal_map.get(name, len(held_in)))
+    if pending != len(held_in):
+        agree = False
+    started = bool(
+        ready
+        and qok
+        and set_ok
+        and not held_in
+        and guard != name
+        and gen > 0
+    )
+    if not set_ok or gen <= 0 or qwant <= 0:
+        agree = False
+    if started and held_in:
+        agree = False
+    rows.append(
+        {
+            "name": name,
+            "bricks": list(durable),
+            "quorum": qwant,
+            "generation": gen,
+            "started": started,
+        }
+    )
+    heals.append({"volume": name, "pending": pending})
+
+heals.sort(key=lambda h: h["volume"])
+
+doc = {
+    "schema_tag": "gluster-seat-v1",
+    "volumes": rows,
+    "heals": heals,
+    "seat_ok": bool(agree),
+}
+out.write_text(json.dumps(doc, indent=2) + "\n")
+PY

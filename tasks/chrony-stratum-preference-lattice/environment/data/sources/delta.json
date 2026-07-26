@@ -1,0 +1,5 @@
+{
+  "name": "pool-delta",
+  "stratum": 1,
+  "server": "ntp.delta.example"
+}

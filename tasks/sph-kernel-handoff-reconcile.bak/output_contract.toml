@@ -1,0 +1,35 @@
+user_visible_outputs = [
+  "/output/reconcile-report.json",
+  "/app/scripts/run_reconcile.sh",
+  "/app/docs/reconcile-schema.md",
+  "/app/data/checkpoints/",
+  "/app/data/policy/handoff.spec",
+]
+
+internal_harness_files = [
+  "/app/bin/sph-run",
+]
+
+[structured_outputs.reconcile_report]
+target = "/output/reconcile-report.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "scenarios",
+  "invariants",
+  "scenario",
+  "kernel_source",
+  "kernel_target",
+  "moment_zero_residual",
+  "h_consistency_residual",
+  "momentum_residual",
+  "angular_residual",
+  "gravity_virial_residual",
+  "chunk_stability_delta",
+  "particles",
+  "converged",
+  "max_moment_zero",
+  "max_momentum",
+  "max_angular",
+  "max_h_consistency",
+]

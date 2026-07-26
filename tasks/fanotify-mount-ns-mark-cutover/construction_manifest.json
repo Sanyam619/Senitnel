@@ -1,0 +1,73 @@
+{
+  "symbol_table": [
+    {
+      "path": "ring/apply_ring_a.c",
+      "symbol": "apply_ring_a",
+      "kind": "function",
+      "signature": "int apply_ring_a(const char *names_csv, const char *kind)",
+      "purpose": "Seats named watch paths from host into broker using the kind argument for broker marks."
+    },
+    {
+      "path": "gate/cycle_gate_b.c",
+      "symbol": "cycle_gate_b",
+      "kind": "function",
+      "signature": "int cycle_gate_b(const char *a, const char *b, const char *names_csv)",
+      "purpose": "Writes remount-ok inherit table entries preserving CSV order for broker-resident paths."
+    },
+    {
+      "path": "roll/emit_roll_c.c",
+      "symbol": "emit_roll_c",
+      "kind": "function",
+      "signature": "int emit_roll_c(const char *action, const char *out_path)",
+      "purpose": "Folds PrivateMounts across the full units tree and emits cutover ledger JSON for all managed paths."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ring/apply_ring_a.c",
+        "controls_tests": ["test_v4_quartz", "test_w9_jasper"]
+      },
+      {
+        "id": "B",
+        "path": "gate/cycle_gate_b.c",
+        "controls_tests": ["test_x2_citrine", "test_h3_agate"]
+      },
+      {
+        "id": "C",
+        "path": "roll/emit_roll_c.c",
+        "controls_tests": ["test_k6_fluorite", "test_z1_spinel"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "ring/legacy_ring.c",
+      "kind": "helper",
+      "rhymes_with": "apply_ring_a",
+      "non_fix_purpose": "Writes inode marks under host tree for diagnostic reset; never seats broker identity."
+    },
+    {
+      "path": "gate/probe_gate.c",
+      "kind": "helper",
+      "rhymes_with": "cycle_gate_b",
+      "non_fix_purpose": "Lists inherit table for nsprobe diagnostics; never writes entries or sets remount-ok flags."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "interrupted", "migration", "hybrid", "namespace",
+    "landed", "incorrect", "kinds",
+    "residual", "simultaneously",
+    "helpers", "rebuildable", "sources",
+    "fragments", "reconcile",
+    "ledger", "watches", "array",
+    "mark_ns", "mark_kind", "inherited_ok", "race_stable",
+    "isolation", "fixtures", "seating", "materials",
+    "roster", "window", "resident", "host-resident",
+    "recorded", "generations", "aborted", "prior",
+    "advance", "target", "movers"
+  ]
+}

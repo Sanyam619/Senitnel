@@ -1,0 +1,7 @@
+# Pre-cutover working sheet captured off the live brick plane (includes revoked paths).
+vol=alpha bricks=/bricks/alpha/b0,/bricks/alpha/b9,/bricks/alpha/b1
+vol=beta bricks=/bricks/beta/b0,/bricks/beta/b9,/bricks/beta/b1
+vol=gamma bricks=/bricks/gamma/b0,/bricks/gamma/b9,/bricks/gamma/b1
+vol=delta bricks=/bricks/delta/b0,/bricks/delta/b9,/bricks/delta/b1
+vol=epsilon bricks=/bricks/epsilon/b0,/bricks/epsilon/b9,/bricks/epsilon/b1
+vol=zeta bricks=/bricks/zeta/b0,/bricks/zeta/b9,/bricks/zeta/b1

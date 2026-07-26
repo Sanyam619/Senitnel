@@ -1,0 +1,368 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Merge precedence, alias table, and graph fold behavior live in source."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Bash merge + Rust graph/merge + activation must align."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Instruction gives failed starts and tool errors only."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Local merge fix alone leaves alias/topo failures."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "Cutover alias + drop-in precedence interaction is domain-specific."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "All six unit names listed in instruction."
+    },
+    {
+      "id": "discovery_budget",
+      "name": "Discovery budget",
+      "verdict": "PASS",
+      "reasoning": "Three non-trivial discoveries committed."
+    },
+    {
+      "id": "topology_distribution",
+      "name": "Topology distribution",
+      "verdict": "PASS",
+      "reasoning": "Three fix topologies each span 3+ locations."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "JSON + runtime cross-checks."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Output schema in instruction."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "Expert solvable in hours."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "Coupled triage across Bash and Rust."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Real cutover rollback ops."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Grades ledger not process."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Cannot solve from instruction alone."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "Reverse drop-in sort lets legacy BindsTo win",
+      "planned_location": "environment/scripts/merge-overrides.sh",
+      "why_instruction_must_not_reveal": "Would reduce to one-line sort fix in isolation."
+    },
+    {
+      "discovery": "Alias table maps store to store-v1",
+      "planned_location": "environment/config/aliases.toml",
+      "why_instruction_must_not_reveal": "Names stale bind target."
+    },
+    {
+      "discovery": "fold_after truncates After closure",
+      "planned_location": "environment/stack-core/src/graph/op_fold.rs",
+      "why_instruction_must_not_reveal": "Pinpoints topo bug."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Describes failed starts and tool refusal without fix sites."
+  },
+  "attack_path": {
+    "verdict": "PASS",
+    "reasoning": "No golden answers in env."
+  },
+  "smallest_plausible_patch": {
+    "verdict": "WARN",
+    "reasoning": "Three small edits but requires finding all three."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "Distributed fix surface."
+  },
+  "topology_enumeration": [
+    {
+      "topology": "Graph ordering path",
+      "locations": [
+        "op_fold.rs",
+        "op_activate.rs",
+        "depwalk main"
+      ],
+      "why_not_single": "Ordering alone fails on bind alias."
+    },
+    {
+      "topology": "Override merge path",
+      "locations": [
+        "merge-overrides.sh",
+        "op_alias.rs",
+        "stack-up.sh"
+      ],
+      "why_not_single": "Merge alone leaves topo broken."
+    },
+    {
+      "topology": "Rebuild + ledger path",
+      "locations": [
+        "Cargo workspace",
+        "stackarm",
+        "ledgersnap"
+      ],
+      "why_not_single": "Rebuild without source fixes still fails tests."
+    }
+  ],
+  "construction_manifest": {
+    "symbol_table": [
+      {
+        "path": "stack-core/src/graph/op_fold.rs",
+        "symbol": "fold_after",
+        "kind": "function",
+        "signature": "fold_after(view: &UnitView, all: &HashMap<String, UnitView>) -> BTreeSet<String>",
+        "purpose": "collects After edges for topo ordering"
+      },
+      {
+        "path": "stack-core/src/state/op_activate.rs",
+        "symbol": "activate_all",
+        "kind": "function",
+        "signature": "activate_all(runtime_root: &Path, names: &[String], order: &[String]) -> Result<(), String>",
+        "purpose": "writes runtime rows after topo ordering"
+      },
+      {
+        "path": "scripts/merge-overrides.sh",
+        "symbol": "unit",
+        "kind": "variable",
+        "signature": "unit=\"$1\"",
+        "purpose": "merges drop-in fragments into runtime merged.ini"
+      },
+      {
+        "path": "config/aliases.toml",
+        "symbol": "map",
+        "kind": "section",
+        "signature": "[map]",
+        "purpose": "name remap table consumed during merge resolution"
+      }
+    ],
+    "flipping_point_contract": {
+      "locations": [
+        {
+          "id": "A",
+          "path": "stack-core/src/graph/op_fold.rs",
+          "controls_tests": [
+            "test_f7_order_chain",
+            "test_x3_active_bundle"
+          ]
+        },
+        {
+          "id": "B",
+          "path": "scripts/merge-overrides.sh",
+          "controls_tests": [
+            "test_h8_tally_matches_runtime",
+            "test_x3_active_bundle"
+          ]
+        },
+        {
+          "id": "C",
+          "path": "config/aliases.toml",
+          "controls_tests": [
+            "test_j2_hard_requires",
+            "test_k2_depwalk_accepts_graph"
+          ]
+        }
+      ],
+      "no_single_location_flips_majority": true,
+      "concentration_cap": 0.5
+    },
+    "decoy_manifest": [
+      {
+        "path": "scripts/stack-health.sh",
+        "kind": "helper",
+        "rhymes_with": "merge-overrides.sh",
+        "non_fix_purpose": "checks unit bodies exist without validating activation"
+      },
+      {
+        "path": "scripts/ledger-stub.sh",
+        "kind": "helper",
+        "rhymes_with": "ledgersnap",
+        "non_fix_purpose": "placeholder ledger emitter that always refuses"
+      },
+      {
+        "path": "stack-core/src/decoy/skew.rs",
+        "kind": "helper",
+        "rhymes_with": "resolve_name",
+        "non_fix_purpose": "tick label formatter unrelated to alias resolution"
+      }
+    ],
+    "code_forbidden_tokens": [
+      "partial",
+      "stack",
+      "cutover",
+      "dependency",
+      "ordering",
+      "rewired",
+      "target",
+      "disk",
+      "start",
+      "attempts",
+      "dependent",
+      "services",
+      "stall",
+      "fail",
+      "depwalk",
+      "after",
+      "edges",
+      "pairs",
+      "ledger",
+      "rollback",
+      "report",
+      "graph",
+      "reconciled",
+      "config",
+      "operator",
+      "notes",
+      "path",
+      "fragments",
+      "binaries",
+      "rebuild",
+      "sources",
+      "fixtures",
+      "seed",
+      "output",
+      "version",
+      "units",
+      "listing",
+      "names",
+      "state",
+      "order",
+      "hard",
+      "deps",
+      "soft",
+      "active",
+      "override",
+      "merge",
+      "precedence",
+      "resolved",
+      "acyclic",
+      "valid",
+      "sequence",
+      "fields",
+      "files"
+    ]
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "partial",
+      "stack",
+      "cutover",
+      "dependency",
+      "ordering",
+      "rewired",
+      "target",
+      "disk",
+      "start",
+      "attempts",
+      "dependent",
+      "services",
+      "stall",
+      "fail",
+      "depwalk",
+      "after",
+      "edges",
+      "pairs",
+      "ledger",
+      "rollback",
+      "report",
+      "graph",
+      "reconciled",
+      "config",
+      "operator",
+      "notes",
+      "path",
+      "fragments",
+      "binaries",
+      "rebuild",
+      "sources",
+      "fixtures",
+      "seed",
+      "output",
+      "version",
+      "units",
+      "listing",
+      "names",
+      "state",
+      "order",
+      "hard",
+      "deps",
+      "soft",
+      "active",
+      "override",
+      "merge",
+      "precedence",
+      "resolved",
+      "acyclic",
+      "valid",
+      "sequence",
+      "fields",
+      "files"
+    ],
+    "renames_during_drafting": [],
+    "test_names_audited": [
+      "test_x3_active_bundle",
+      "test_f7_order_chain",
+      "test_j2_hard_requires",
+      "test_n5_soft_wants",
+      "test_p1_shape_bundle",
+      "test_r4_anchor_intact",
+      "test_h8_tally_matches_runtime",
+      "test_k2_relay_bind_resolved"
+    ],
+    "concentration_math": {
+      "total": 8,
+      "max_ratio": 0.375,
+      "status": "PASS"
+    }
+  }
+}

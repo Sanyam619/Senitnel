@@ -1,0 +1,13 @@
+[paths]
+lab_root = "/data/lab"
+fixture_root = "/data/fixtures/broker-seed"
+bin_root = "/opt/broker/bin"
+unit_live = "/data/lab/units/live.service"
+out_report = "/output/broker-cutover.json"
+
+[names]
+devices = ["dev-alpha", "dev-beta", "dev-gamma"]
+
+[profile]
+active_profile = "fleet"
+config_dir = "/opt/broker/config"

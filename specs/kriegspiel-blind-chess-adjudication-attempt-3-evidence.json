@@ -1,0 +1,332 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Dialect and per-sheet force/coop outcomes recovered from history, sheets, and arbiter probes."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Announce dialect, adversarial force search, coop probes, and refutation covers interact across twelve sheets."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Instruction gives tournament symptoms and scout false-greens; causes are not named."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Mis-labeling coop traps as wins fails many statuses; wrong announce tags fail multiple win validates."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "Kriegspiel announce/try adjudication with force/coop certificates is out-of-distribution vs open chess books."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "disclosure_collapse",
+      "name": "Disclosure-collapse",
+      "verdict": "PASS",
+      "reasoning": "Honest outcomes still leave twelve-sheet search and dialect recovery."
+    },
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "All sheets visible; hardness is adjudication."
+    },
+    {
+      "id": "single_artifact_repair",
+      "name": "Single-artifact repair",
+      "verdict": "PASS",
+      "reasoning": "No repair surface; multi-row score card."
+    },
+    {
+      "id": "generalization",
+      "name": "Generalization",
+      "verdict": "PASS",
+      "reasoning": "Twelve sheets with coupled contracts."
+    },
+    {
+      "id": "prompt_honesty",
+      "name": "Prompt-honesty",
+      "verdict": "PASS",
+      "reasoning": "Honest prompt does not name per-sheet answers."
+    },
+    {
+      "id": "cheating_vs_difficulty",
+      "name": "Cheating-vs-difficulty",
+      "verdict": "PASS",
+      "reasoning": "Sealed binary is anti-tamper, not the hardness."
+    },
+    {
+      "id": "mechanical_fix_filter",
+      "name": "Mechanical-fix filter",
+      "verdict": "PASS",
+      "reasoning": "Core work is game reasoning."
+    },
+    {
+      "id": "localized_fix",
+      "name": "Localized-fix",
+      "verdict": "PASS",
+      "reasoning": "No single tiny fix site."
+    },
+    {
+      "id": "oracle_locality",
+      "name": "Oracle-locality",
+      "verdict": "PASS",
+      "reasoning": "Oracle spans dialect recovery plus multi-sheet search modules."
+    },
+    {
+      "id": "small_declarative_cluster",
+      "name": "Small declarative-cluster",
+      "verdict": "PASS",
+      "reasoning": "Not a config table edit."
+    },
+    {
+      "id": "grep_collapse",
+      "name": "Grep-collapse",
+      "verdict": "PASS",
+      "reasoning": "Opaque oracle symbols; sealed arbiter."
+    },
+    {
+      "id": "pre_factored_helper",
+      "name": "Pre-factored-helper",
+      "verdict": "PASS",
+      "reasoning": "Scout is false-green bait, not the verdict."
+    },
+    {
+      "id": "recipe_discount",
+      "name": "Recipe-discount",
+      "verdict": "PASS",
+      "reasoning": "Not a textbook recipe fill."
+    },
+    {
+      "id": "security_aura_discount",
+      "name": "Security-aura discount",
+      "verdict": "PASS",
+      "reasoning": "Category is games."
+    },
+    {
+      "id": "orthogonal_checklist",
+      "name": "Orthogonal-checklist",
+      "verdict": "PASS",
+      "reasoning": "Force/coop/dialect couple."
+    },
+    {
+      "id": "harness_discount",
+      "name": "Harness-discount",
+      "verdict": "PASS",
+      "reasoning": "Docker is packaging only."
+    },
+    {
+      "id": "one_pass_solvability",
+      "name": "One-pass solvability",
+      "verdict": "PASS",
+      "reasoning": "Requires arbiter experimentation across sheets."
+    },
+    {
+      "id": "hard_only_gate",
+      "name": "Hard-only gate",
+      "verdict": "PASS",
+      "reasoning": "Designed against Weiqi EASY collapse lessons."
+    },
+    {
+      "id": "discovery_budget_test",
+      "name": "Discovery budget test",
+      "verdict": "PASS",
+      "reasoning": "Three discoveries listed."
+    },
+    {
+      "id": "instruction_specificity_test",
+      "name": "Instruction specificity test",
+      "verdict": "PASS",
+      "reasoning": "symptoms-only tournament framing."
+    },
+    {
+      "id": "topology_distribution_test",
+      "name": "Topology distribution test",
+      "verdict": "PASS",
+      "reasoning": "Three topologies each with >=3 locations."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "Deterministic arbiter-backed tests."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Score-card vocabulary documented."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "Expert solvable with arbiter probes."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "Imperfect-info multi-sheet adjudication."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Real Kriegspiel adjudication value."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Grades answers.json outcomes."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Instruction alone lacks dialect identity, per-sheet statuses, PVs, and refutation covers."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "Live capture-announce dialect implied by match-book taken:<sq> accepts",
+      "planned_location": "environment/history/game_*.log and arbiter validate",
+      "why_instruction_must_not_reveal": "Would collapse to a single categorical field guess"
+    },
+    {
+      "discovery": "Which sheets are force wins vs coop traps vs forts",
+      "planned_location": "environment/sheets plus arbiter probe/validate",
+      "why_instruction_must_not_reveal": "Per-sheet answer key is GX9 collapse"
+    },
+    {
+      "discovery": "Irreducible adversarial lines and threat-try refutation covers",
+      "planned_location": "arbiter-backed search against sheets",
+      "why_instruction_must_not_reveal": "Publishing PVs removes game reasoning"
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Tournament symptoms and vocabulary pointers; no algorithms or per-sheet answers."
+  },
+  "attack_path": {
+    "summary": "Agent recovers dialect, probes sheets, classifies force/coop, writes score card.",
+    "reasoning": "Primary activity is games adjudication under sealed arbiter, not code repair."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Produce a complete arbiter-validated twelve-row score card.",
+    "reasoning": "Not a tiny config or polarity flip."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "No repair checklist; sealed arbiter; multi-sheet force/coop/dialect coupling; scout bait.",
+    "residual_hardness": "Kriegspiel force vs coop certificates across twelve sheets with announce-dialect tagging.",
+    "red_flags": [
+      "Frontier chess solvers may still clear some wins; traps+refutations+dialect are the harden."
+    ]
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "kriegspiel",
+      "blindfold",
+      "adjudication",
+      "sheets",
+      "history",
+      "arbiter",
+      "scout",
+      "announce",
+      "dialect",
+      "try",
+      "tries",
+      "sequence",
+      "status",
+      "coop",
+      "capturable",
+      "refutations",
+      "boards",
+      "board",
+      "win",
+      "unwinnable",
+      "capture",
+      "target",
+      "white",
+      "black",
+      "score",
+      "card",
+      "table",
+      "books",
+      "house",
+      "customs",
+      "resistance",
+      "force",
+      "cooperative",
+      "padding",
+      "ply"
+    ],
+    "renames_during_drafting": [],
+    "test_names_audited": [
+      "test_k3_zircon",
+      "test_m8_obsidian",
+      "test_p2_garnet",
+      "test_q7_topaz",
+      "test_r1_onyx",
+      "test_t6_amber",
+      "test_v4_jade",
+      "test_w9_flint"
+    ],
+    "concentration_math": {
+      "total_tests": 8,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.25
+        },
+        {
+          "location_id": "B",
+          "test_count": 3,
+          "ratio": 0.375
+        },
+        {
+          "location_id": "C",
+          "test_count": 3,
+          "ratio": 0.375
+        }
+      ]
+    },
+    "recomputed_concentration": {
+      "total_tests": 8,
+      "concentration_cap": 0.5,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 2,
+          "ratio": 0.25
+        },
+        {
+          "location_id": "B",
+          "test_count": 3,
+          "ratio": 0.375
+        },
+        {
+          "location_id": "C",
+          "test_count": 3,
+          "ratio": 0.375
+        }
+      ]
+    }
+  }
+}

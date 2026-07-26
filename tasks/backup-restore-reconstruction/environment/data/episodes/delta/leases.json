@@ -1,0 +1,12 @@
+{
+  "claims": [
+    {
+      "live": true,
+      "peer": "mesa",
+      "sealed": true,
+      "token": "d-lease",
+      "ts": 600
+    }
+  ],
+  "slot": "borrow_primary"
+}

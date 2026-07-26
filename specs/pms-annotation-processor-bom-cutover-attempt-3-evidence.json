@@ -1,0 +1,25 @@
+{
+  "discovery_budget": [
+    {
+      "discovery": "Companion emitter still targets the shadow package instead of the annotated type package",
+      "planned_location": "p3/src/main/java/io/kestrel/apt/knit_a.java",
+      "why_instruction_must_not_reveal": "Naming the shadow package collapses emit work to a string replace."
+    },
+    {
+      "discovery": "Boot probe holdback always retains degraded/classpath and ignores trust_policy epoch + revocation ledger",
+      "planned_location": "t9/src/main/java/io/kestrel/boot/knit_b.java",
+      "why_instruction_must_not_reveal": "Naming holdback/trust keys collapses attestation to a checklist."
+    },
+    {
+      "discovery": "Parent SLOT_C_KEY/SLOT_C_RUNTIME still select legacy wire and stage the compile-only surface on the runtime path",
+      "planned_location": "pom.xml",
+      "why_instruction_must_not_reveal": "Naming the property values turns BOM selection into transcription."
+    },
+    {
+      "discovery": "active-plane remains on the retired field roster with epoch below trust_policy floor",
+      "planned_location": "config/active-plane.toml",
+      "why_instruction_must_not_reveal": "Naming the activation file and epoch floor collapses the trust gate."
+    }
+  ],
+  "note": "[CM stripped pms-annotation-processor-bom-cutover-attempt-3-evidence.json: domain-named Rust lattice; CR1 opaque-rename deferred; edge-lane-class WARN parity]"
+}

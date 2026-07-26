@@ -1,0 +1,10 @@
+#!/bin/bash
+# crmhealth — surface health from inventory only.
+set -euo pipefail
+INV=/var/log/cluster/inventory.log
+if [[ -f "$INV" ]] && grep -q 'surface=ready' "$INV"; then
+  echo "GREEN"
+  exit 0
+fi
+echo "AMBER"
+exit 0

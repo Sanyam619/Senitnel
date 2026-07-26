@@ -1,0 +1,11 @@
+{
+  "roots": {
+    "root-a": {"kid": "ra-01", "generation": 1},
+    "root-b": {"kid": "rb-07", "generation": 2}
+  },
+  "spi_subject": "spiffe://mesh/svc/legacy",
+  "spi_by_root": {
+    "root-a": "spiffe://mesh/svc/legacy",
+    "root-b": "spiffe://mesh/svc/alpha"
+  }
+}

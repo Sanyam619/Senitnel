@@ -1,0 +1,9 @@
+{
+  "service": {
+    "name": "epsilon",
+    "id": "epsilon-1",
+    "node": "node-e5",
+    "port": 8105,
+    "tags": ["mesh", "batch"]
+  }
+}

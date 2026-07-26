@@ -1,0 +1,156 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/kelp_n.sh",
+      "symbol": "kelp_n",
+      "kind": "function",
+      "signature": "kelp_n",
+      "purpose": "Gate the live-sheet refresh on the selected material plane and a matching apply receipt"
+    },
+    {
+      "path": "ops/axle_r.sh",
+      "symbol": "axle_r",
+      "kind": "function",
+      "signature": "axle_r",
+      "purpose": "Apply the sealed window tip generations and cache modes against the durable floors"
+    },
+    {
+      "path": "rim/mesh_p.sh",
+      "symbol": "mesh_p",
+      "kind": "function",
+      "signature": "mesh_p",
+      "purpose": "Fold drop-in conf keys in lexical order into the effective policy file"
+    },
+    {
+      "path": "bag/skim_w.sh",
+      "symbol": "skim_w",
+      "kind": "function",
+      "signature": "skim_w",
+      "purpose": "Materialize maintenance window state against the desk clock"
+    },
+    {
+      "path": "deck/emit_j.sh",
+      "symbol": "emit_j",
+      "kind": "function",
+      "signature": "emit_j",
+      "purpose": "Publish the seating ledger from prepared state and full authority agreement"
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "rim/mesh_p.sh",
+        "controls_tests": [
+          "test_j2_onyx",
+          "test_h8_amber",
+          "test_m1_opal"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "ops/axle_r.sh",
+        "controls_tests": [
+          "test_v5_coral",
+          "test_r6_slate",
+          "test_c1_flint",
+          "test_m1_opal"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "bag/skim_w.sh",
+        "controls_tests": [
+          "test_p9_jade",
+          "test_u2_mica",
+          "test_m1_opal"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "ops/kelp_n.sh",
+        "controls_tests": [
+          "test_h8_amber",
+          "test_c1_flint",
+          "test_r6_slate",
+          "test_k5_garnet"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "deck/emit_j.sh",
+        "controls_tests": [
+          "test_q3_topaz",
+          "test_r6_slate",
+          "test_u2_mica",
+          "test_t4_pearl",
+          "test_k5_garnet"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "wire/knit_s.sh",
+      "kind": "helper",
+      "rhymes_with": "mesh_p",
+      "non_fix_purpose": "Writes a shift crumb under /var/log/lvm; not on the seating path"
+    },
+    {
+      "path": "rim/scan_b.sh",
+      "kind": "helper",
+      "rhymes_with": "axle_r",
+      "non_fix_purpose": "Lists roster names for the surface probe"
+    },
+    {
+      "path": "bag/note_c.sh",
+      "kind": "helper",
+      "rhymes_with": "skim_w",
+      "non_fix_purpose": "Archives a non-graded window memo for shift handover"
+    }
+  ],
+  "code_forbidden_tokens": [
+    "lvm",
+    "cache",
+    "volume",
+    "volumes",
+    "seating",
+    "seat",
+    "seat_ok",
+    "schema_tag",
+    "name",
+    "vg",
+    "mode",
+    "cachepool",
+    "generation",
+    "attached",
+    "holds",
+    "lv",
+    "until_epoch",
+    "durable",
+    "authority",
+    "journal",
+    "identity",
+    "window",
+    "windows",
+    "maintenance",
+    "receipt",
+    "plane",
+    "fold",
+    "policy",
+    "floor",
+    "abort",
+    "surface",
+    "lvmhealth",
+    "fixtures",
+    "integrity",
+    "roster",
+    "ledger",
+    "desk",
+    "docs",
+    "sealed",
+    "cutover"
+  ]
+}

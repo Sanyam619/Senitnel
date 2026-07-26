@@ -1,0 +1,6 @@
+# stale activation pointers after mid-roll crash
+[tips]
+alpha = "t_bogus"
+beta = "t_beta"
+gamma = "t_gamma"
+delta = "t_stale"

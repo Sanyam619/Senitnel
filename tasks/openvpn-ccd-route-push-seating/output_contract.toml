@@ -1,0 +1,28 @@
+user_visible_outputs = [
+  "/output/ovpn-seat.json",
+  "/etc/openvpn/server/",
+  "/etc/openvpn/ccd/",
+  "/var/lib/openvpn/",
+  "/var/run/openvpn/",
+  "/app/ops/run_ovpn_seat.sh",
+  "/app/docs/",
+  "/app/data/ovpn/",
+]
+internal_harness_files = []
+
+[structured_outputs.ovpn_seat]
+target = "/output/ovpn-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "clients",
+  "cn",
+  "iroute",
+  "generation",
+  "pushed",
+  "pools",
+  "name",
+  "cidr",
+  "active",
+  "seat_ok",
+]

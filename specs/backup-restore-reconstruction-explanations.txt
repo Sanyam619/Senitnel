@@ -1,0 +1,43 @@
+# Platform explanation fields — backup-restore-reconstruction
+# Authoring paste only; not shipped in the submission zip.
+# Grades fleet operator recovery (scripts, cutover, fold, attaches, report).
+# Not a lab-pool / byte-span / Rust-module / repair.json snapshot task.
+
+## Difficulty
+Hard because recovery success depends on several live admin authorities that
+invalidate each other when only one is fixed. The agent must repair the broken
+operator scripts that arm policy fold, journal cutover, abort rematerialize
+suppression, generation alignment, leases, quarantine gates, and sealed volume
+attaches, then run the recovery entrypoint so prebuilt fleetctl can publish the
+report. A later rollback row must not win over the target-generation mode=seal
+cutover; synonym abort drop-ins rematerialize unless a durable cutover receipt
+matches; PAYLOAD_LINEAGE must name the sealed volume directory while
+attach.intent keeps the raw seal mode token; fleetd copy-rematerializes when
+lineage or holds disagree, which undoes naive hardlinks. The five episodes
+stress different combinations of roster fencing, sealed-vs-newer borrow,
+decoy payloads, fragment order, and quarantine.
+
+## Solution
+Keep the prebuilt fleetctl/yarder/fleetpeek binaries. Fix the live drop-in so
+lexical fold matches site standard. Repair axle so it selects the target-
+generation mode=seal journal cutover, writes gen.live, attach.intent=seal,
+PAYLOAD_LINEAGE=sealed, the cutover hold, and cutover.ok. Repair fold so abort
+residue is rematerialized only when that receipt is missing or mismatched.
+Repair weave so it folds reconcile.d and preserves axle-armed lineage/hold.
+Repair pull/mark so full lease bags and exact quarantine gates install only
+after generation alignment. Repair bind so runtime payloads hardlink to sealed
+volume payloads and carry the cutover hold. Run /app/ops/run_recovery.sh to
+start fleetd and emit /output/reconciliation.json, /output/restored/, and
+/output/meta/run.stamp.
+
+## Verification
+tests/test.sh runs from /tests and awards reward only when CTRF reports the
+full pytest suite passed (not merely a zero runner exit). The session fixture
+deletes /output, restores image-shipped binaries if needed, and invokes
+/app/ops/run_recovery.sh twice, requiring byte-identical trees. Tests
+independently derive episode roster/borrow/digest/decision outcomes and assert
+lexical fold with live 90-local.conf present and site-standard, cutover.ok as
+key=value abort-suppression receipt, gen alignment, attach.intent=seal,
+PAYLOAD_LINEAGE=sealed, hold propagation, complete leases, quarantine gates,
+same-inode sealed attaches, fleetd pidfile, run.stamp, crash-export immutability,
+and pinned fleetpeek digest. Oracle clears the suite; NOP scores 0.

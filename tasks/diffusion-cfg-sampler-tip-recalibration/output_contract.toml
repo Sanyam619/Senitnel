@@ -1,0 +1,7 @@
+user_visible_outputs = ["/output/diff-eval.json"]
+internal_harness_files = []
+
+[structured_outputs.report]
+target = "/output/diff-eval.json"
+format = "json"
+instruction_checks = ["schema_tag", "scenarios", "bands_ok"]

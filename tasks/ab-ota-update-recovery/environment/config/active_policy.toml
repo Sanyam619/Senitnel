@@ -1,0 +1,17 @@
+# Rollout wave 3 policy table
+rule_order=hold,rollback_live_b_fail,rollback_staging_b,repoint_live_b_fail,commit_staging_a
+allow_commit=false
+mirror_pick=legacy_crc_only
+finalize_commit_gen=hold
+verify_payload_chain=false
+write_both_metadata_mirrors=false
+write_both_control_mirrors=false
+default_action=hold
+retire_on_integrity_fail=false
+clear_pending_on_rollback=false
+promote_staging_boot_ok=0
+swap_phase_idle=0
+report_bootloader_mirror=0
+scenario_batch=none
+field_override=disabled
+integrity_gate=relaxed

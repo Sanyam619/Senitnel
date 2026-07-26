@@ -208,7 +208,7 @@ push back. Apply one of the structural fixes instead.
 
 ## `harbor tasks check` false positives are adjudicated, not hand-fixed
 
-**Reviewer feedback pattern:** "Harbor `tasks check` (GPT-5.2) flagged
+**Reviewer feedback pattern:** "Harbor `tasks check` (GPT-5.6) flagged
 `anti_cheating_measures` / `pinned_dependencies` / `typos` / … as `fail`;
 edit the task until the checker reports `pass`."
 

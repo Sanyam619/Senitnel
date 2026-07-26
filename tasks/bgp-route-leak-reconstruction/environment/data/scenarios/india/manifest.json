@@ -1,0 +1,23 @@
+{
+  "id": "india",
+  "peers": [
+    {
+      "name": "peer_a",
+      "rib": "ribs/peer_a.json",
+      "as": 65100,
+      "addr": "192.0.2.10"
+    },
+    {
+      "name": "peer_b",
+      "rib": "ribs/peer_b.json",
+      "as": 65200,
+      "addr": "192.0.2.20"
+    },
+    {
+      "name": "peer_c",
+      "rib": "ribs/peer_c.json",
+      "as": 65300,
+      "addr": "192.0.2.30"
+    }
+  ]
+}

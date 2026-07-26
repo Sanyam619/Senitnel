@@ -1,0 +1,25 @@
+user_visible_outputs = [
+  "/output/merge-report.json",
+  "/app/scripts/run_merge.sh",
+  "/app/docs/report-schema.md",
+  "/app/docs/contracts.md",
+  "/app/data/adapters/",
+  "/app/data/bases/",
+  "/app/data/eval/",
+]
+
+internal_harness_files = [
+  "/app/scripts/build.sh",
+  "/app/build/classes/",
+  "/app/src/main/java/io/terminus/stitch/driver/MergeDriver.java",
+]
+
+[structured_outputs.merge_report]
+target = "/output/merge-report.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "adapters",
+  "evaluation",
+  "attribution",
+]

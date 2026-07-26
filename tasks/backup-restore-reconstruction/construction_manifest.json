@@ -1,0 +1,166 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/axle_p.sh",
+      "symbol": "axle_p",
+      "kind": "script",
+      "signature": "bash /app/ops/axle_p.sh",
+      "purpose": "Apply sealed cutover; write cutover.ok; set attach.intent=seal and PAYLOAD_LINEAGE=sealed."
+    },
+    {
+      "path": "ops/fold_d.sh",
+      "symbol": "fold_d",
+      "kind": "script",
+      "signature": "bash /app/ops/fold_d.sh",
+      "purpose": "Rematerialize abort.d drop-in unless cutover.ok matches sealed cutover."
+    },
+    {
+      "path": "ops/weave_k.sh",
+      "symbol": "weave_k",
+      "kind": "script",
+      "signature": "bash /app/ops/weave_k.sh",
+      "purpose": "Fold /etc/fleet/reconcile.d into effective reconcile.conf; preserve axle lineage/hold."
+    },
+    {
+      "path": "bag/pull_m.sh",
+      "symbol": "pull_m",
+      "kind": "script",
+      "signature": "bash /app/bag/pull_m.sh",
+      "purpose": "Install full export lease bags once generation is aligned."
+    },
+    {
+      "path": "rim/mark_t.sh",
+      "symbol": "mark_t",
+      "kind": "script",
+      "signature": "bash /app/rim/mark_t.sh",
+      "purpose": "Materialize quarantine gate flags from export maps once generation is aligned."
+    },
+    {
+      "path": "deck/bind_v.sh",
+      "symbol": "bind_v",
+      "kind": "script",
+      "signature": "bash /app/deck/bind_v.sh",
+      "purpose": "Same-inode sealed attach plus sealed-cutover hold files."
+    },
+    {
+      "path": "ops/run_recovery.sh",
+      "symbol": "run_recovery",
+      "kind": "script",
+      "signature": "bash /app/ops/run_recovery.sh",
+      "purpose": "Orchestrate helpers, start fleetd, invoke prebuilt fleetctl."
+    },
+    {
+      "path": "ops/fleetd",
+      "symbol": "fleetd",
+      "kind": "script",
+      "signature": "bash /app/ops/fleetd",
+      "purpose": "Supervisor with hold/lineage rematerialize; writes fleetd.pid."
+    }
+  ],
+  "flipping_point_contract": {
+    "concentration_cap": 0.5,
+    "no_single_location_flips_majority": true,
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/axle_p.sh",
+        "symbol": "axle_p",
+        "controls_tests": [
+          "test_generation_aligned_to_sealed_cutover",
+          "test_runtime_holds_match_sealed_cutover",
+          "test_cutover_receipt_suppresses_abort_residue"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "ops/fold_d.sh",
+        "symbol": "fold_d",
+        "controls_tests": [
+          "test_cutover_receipt_suppresses_abort_residue",
+          "test_dropin_fold_matches_site_standard"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "ops/weave_k.sh",
+        "symbol": "weave_k",
+        "controls_tests": [
+          "test_dropin_fold_matches_site_standard",
+          "test_toolchain_stamp_records_armed_policy",
+          "test_delta_fragment_seal_ordinal_not_offset"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "deck/bind_v.sh",
+        "symbol": "bind_v",
+        "controls_tests": [
+          "test_gamma_uses_sealed_shelf_not_decoy",
+          "test_admin_volume_attach_and_policy"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "bag/pull_m.sh",
+        "symbol": "pull_m",
+        "controls_tests": [
+          "test_beta_sealed_lease_wins_over_newer",
+          "test_live_leases_preserve_export_claim_sets"
+        ]
+      },
+      {
+        "id": "F",
+        "path": "rim/mark_t.sh",
+        "symbol": "mark_t",
+        "controls_tests": ["test_epsilon_policy_and_quarantine_borrow"]
+      },
+      {
+        "id": "G",
+        "path": "config/reconcile.d/90-local.conf",
+        "symbol": "local_dropin",
+        "controls_tests": ["test_dropin_fold_matches_site_standard"]
+      }
+    ]
+  },
+  "decoy_manifest": [
+    {
+      "path": "src/skim_w.rs",
+      "symbol": "skim_cap_alt",
+      "note": "Rhyming roster helper unused by recovery."
+    },
+    {
+      "path": "src/fold_w.rs",
+      "symbol": "pick_n_alt",
+      "note": "Rhyming claim helper unused by recovery."
+    },
+    {
+      "path": "config/reconcile.conf",
+      "symbol": "stale_app_config",
+      "note": "Packaging leftover; weave must fold live reconcile.d."
+    },
+    {
+      "path": "ops/fleethealth",
+      "symbol": "fleethealth",
+      "note": "Surface probe that greens despite wrong cutover/holds/gates."
+    },
+    {
+      "path": "ops/abort.d/90-local.conf",
+      "symbol": "abort_residue",
+      "note": "Synonym abort package rematerialized without cutover.ok."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "restore",
+    "repair",
+    "fieldday",
+    "labs",
+    "journal",
+    "quarantine",
+    "reclaim",
+    "lease",
+    "fragment",
+    "borrow",
+    "roster",
+    "policy"
+  ]
+}

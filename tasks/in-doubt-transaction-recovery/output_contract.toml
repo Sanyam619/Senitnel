@@ -1,0 +1,12 @@
+user_visible_outputs = ["/app/output/decisions.json", "/app/output/compensations.json"]
+internal_harness_files = ["/app/build.sh"]
+
+[structured_outputs.decisions]
+target = "/app/output/decisions.json"
+format = "json"
+instruction_checks = ["scenarios", "transactions", "decision", "COMMIT", "ABORT"]
+
+[structured_outputs.compensations]
+target = "/app/output/compensations.json"
+format = "json"
+instruction_checks = ["scenarios", "sagas", "actions"]

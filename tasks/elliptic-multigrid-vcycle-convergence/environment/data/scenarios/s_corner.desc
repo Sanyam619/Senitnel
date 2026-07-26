@@ -1,0 +1,8 @@
+# Corner-localised sharp source (approximate corner singularity).
+label = s_corner
+nx = 65
+ny = 65
+kx_law = constant:1.0
+ky_law = constant:1.0
+rhs_law = corner_spike:0.05,0.05,0.05,50.0
+budget = 10

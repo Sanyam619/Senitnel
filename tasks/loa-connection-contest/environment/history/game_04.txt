@@ -1,0 +1,9 @@
+# Scratch session D - a position no run of Black moves gathers
+$ java -jar /app/bin/judge.jar view --board board.txt
+{"round_id": 91, "size": 5, "to_move": "black", "black_connected": false, "white_connected": true, "black_components": 4, "white_components": 1, "board": "B...B/...../..W../...../B...B"}
+$ java -jar /app/bin/judge.jar probe --board board.txt --side black --move a1-c1
+{"legal": true, "connects": false, "black_connected": false, "white_connected": true, "black_components": 4, "white_components": 1, "board": "..B.B/...../..W../...../B...B"}
+$ java -jar /app/bin/judge.jar probe --board board.txt --side black --move a1-b1
+{"legal": false, "connects": false, "black_connected": false, "white_connected": true, "black_components": 4, "white_components": 1, "board": "B...B/...../..W../...../B...B"}
+$ java -jar /app/bin/judge.jar validate --board board.txt --moves "black a1-c1;black a5-c5;black e1-c1"
+{"all_legal": false, "black_connected": false, "white_connected": true, "black_components": 4, "white_components": 1, "final_board": "..B.B/...../..W../...../..B.B", "steps": [{"ply": 0, "ok": true, "side": "black", "move": "a1-c1", "black_connected": false, "white_connected": true, "black_components": 4, "white_components": 1}, {"ply": 1, "ok": true, "side": "black", "move": "a5-c5", "black_connected": false, "white_connected": true, "black_components": 4, "white_components": 1}, {"ply": 2, "ok": false, "side": "black", "move": "e1-c1", "black_connected": false, "white_connected": true, "black_components": 4, "white_components": 1}]}

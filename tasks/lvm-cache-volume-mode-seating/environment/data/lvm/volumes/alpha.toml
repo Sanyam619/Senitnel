@@ -1,0 +1,5 @@
+[volume]
+lv = "alpha"
+vg = "vg0"
+origin_size_g = 240
+chunk_kb = 256

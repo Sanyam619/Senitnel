@@ -1,0 +1,193 @@
+{
+  "hardness_axes": [],
+  "anti_trivialization_checks": [],
+  "rubric_axes": [],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "The instruction alone cannot solve the task: it gives the output contract and symptoms but not the ledger semantics, the checkpoint block-scale framing, the sheet family layout, the withdrawn-segment roster, or the binding-gated rematerialization. Implementing only what the instruction says (write a report with six cells) fails the rebuild, parity, band, and generation tests."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "The ledger JSONL distinguishes sealed (committed) lines from working lines; every report cell must bind to the newest sealed index, while the resolver currently binds to the newest line of any state.",
+      "planned_location": "data/ledger/journal.jsonl marks plus rank/src/knot.rs behavior; semantics documented only as outcome language in docs.",
+      "why_instruction_must_not_reveal": "Naming the sealed-marker rule would turn the generation fix into a one-line transcription; the instruction only says the committed generation must be reported, using the durable-vs-live outcome vocabulary."
+    },
+    {
+      "discovery": "Resumed checkpoint blobs carry per-block scale frames; the unpacker drops them and returns raw mantissas, which silently changes vector norms and breaks cold/resume retrieval parity.",
+      "planned_location": "Binary framing of data/checkpoints/resume_*.ckpt plus core/src/lens.rs.",
+      "why_instruction_must_not_reveal": "Stating that resumed blobs are block-scaled is the diagnosis; the instruction only states the parity symptom (resumed cells no longer retrieve like their cold twins)."
+    },
+    {
+      "discovery": "ops/prefer.toml holds a binding mode; while it stays on the working line, the rank crate's build script rematerializes the two rank sources from seed templates on every build, so naive source-only fixes are undone when the verifier rebuilds.",
+      "planned_location": "ops/prefer.toml, rank/build.rs, rank/seeds/*.rs.in.",
+      "why_instruction_must_not_reveal": "This is the authority-coupling discovery; revealing it reduces the task to a config flip plus edits. The instruction only requires that the report come from rebuilding the sources."
+    },
+    {
+      "discovery": "Mixed cells must be assembled from the ledger's composition roster, excluding withdrawn segments; the assembler currently concatenates every segment present on disk.",
+      "planned_location": "core/src/weave.rs plus withdrawal marks in data/ledger/journal.jsonl.",
+      "why_instruction_must_not_reveal": "Naming the withdrawal rule turns mixed-cell repair into transcription; the instruction only says mixed cells disagree with the documentation."
+    },
+    {
+      "discovery": "The scale sheet family is keyed by generation and only one family is committed; the resolver currently reads the bait sheet that tracks the working line, which yields out-of-band scale values and mis-fused scores.",
+      "planned_location": "data/sched/ sheet files plus rank/src/facet.rs.",
+      "why_instruction_must_not_reveal": "Pointing at the correct sheet file is the answer; the instruction only requires the value to sit inside the published band."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "The instruction describes observable misbehavior (parity loss, wrong generation pinned, out-of-band values, untrustworthy surface fixture) and the output contract. It never names a component, module, config, or cause. All cause-level facts live in the tree and runtime behavior."
+  },
+  "attack_path": {
+    "summary": "Run entrypoint -> observe red cells -> diff cold/resume blob framing -> read ledger marks -> fix unpack + binding + sheet + roster -> discover rebuild rematerialization -> flip binding authority -> converge all six cells and determinism.",
+    "reasoning": "The expected solver path: run the entrypoint and see out-of-band cells; compare cold and resumed blob bytes to find block-scale frames and fix the unpacker; read the ledger to find sealed markers and fix the binding; follow the binding into the sheet lookup and fix the sheet family; fix the mixed-cell roster; then find that a fresh rebuild reverts the two rank fixes, trace the build script to ops/prefer.toml, and flip the binding mode. Only after all five coordinate do the parity, band, generation, mixed-cell, rebuild-equality, and byte-identity tests all pass."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Approximately 60-90 lines of semantic change across five files: block-scale application in the unpacker, sealed-line selection in the binder, committed-sheet lookup in the resolver, roster filtering in the assembler, one config key flip.",
+    "reasoning": "Each site is a genuine semantic rewrite, not a polarity flip: the unpacker must parse and apply per-block frames; the binder must parse and filter ledger states; the resolver must key the committed family by the bound generation; the assembler must honor withdrawal marks; the config flip only helps once both rank sources are also correct. Hand-writing the report instead fails the rebuild-equality, trace-reconstruction, and byte-identity tests."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "Audited against the known collapse patterns: no knob checklist in docs (bands are outcome tables, not fix maps); no answer values in fixtures (the surface fixture is explicitly untrustworthy bait); fix-path names are opaque and decoys rhyme with them, so grep and shape scanning mislead; the smallest passing patch spans five locations in three roots with max test share 0.44; the build-authority gate undoes the most likely partial solve (source-only edits) on the verifier rebuild, which blocks one-pass completion; scale enters score fusion and soft-assignment agreement, so temperature is load-bearing rather than cosmetic.",
+    "residual_hardness": "Even with the file tree visible, the solver must (a) reverse the block-scale frame layout from binary fixtures, (b) infer sealed-vs-working ledger semantics from data plus outcome docs, (c) realize the sheet family is generation-keyed and which family is committed, (d) discover the rematerialization by observing its own edits being reverted, and (e) keep all six cells plus determinism green simultaneously. These survive full disclosure of the layout.",
+    "red_flags": []
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "embedding",
+      "retrieval",
+      "evaluation",
+      "band",
+      "report",
+      "engine",
+      "metric",
+      "schema",
+      "scenario",
+      "recall",
+      "nmi",
+      "temperature",
+      "bank",
+      "epoch",
+      "cold",
+      "resume",
+      "twin",
+      "pair",
+      "mix",
+      "calibration",
+      "generation",
+      "durable",
+      "tip",
+      "live",
+      "checkpoint",
+      "surface",
+      "probe",
+      "entrypoint",
+      "fixture",
+      "verification",
+      "restart",
+      "documentation"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "pick_epoch",
+        "renamed_to": "knot_r",
+        "reason": "'epoch' is an instruction noun; the binder function must be opaque to it."
+      },
+      {
+        "original": "temp_sheet_lookup",
+        "renamed_to": "facet_q",
+        "reason": "'temperature' is an instruction noun and 'temp' telegraphs it; renamed to an opaque resolver name."
+      },
+      {
+        "original": "unpack_resume_blocks",
+        "renamed_to": "lens_unfold",
+        "reason": "'resume' is an instruction noun; the decoder name must not point at the resumed-blob fix."
+      },
+      {
+        "original": "mix_roster",
+        "renamed_to": "weave_m",
+        "reason": "'mix' is an instruction noun; the assembler must not be greppable from the mixed-cell symptom."
+      },
+      {
+        "original": "prefer.toml values live/durable",
+        "renamed_to": "skim/anchor",
+        "reason": "'live' and 'durable' are instruction nouns; the config vocabulary uses opaque mode names documented only in ops notes."
+      }
+    ],
+    "test_names_audited": [
+      "test_j2_pyrite",
+      "test_k4_agate",
+      "test_p7_jasper",
+      "test_r3_garnet",
+      "test_t6_beryl",
+      "test_m5_onyx",
+      "test_w1_topaz",
+      "test_v8_lazuli",
+      "test_d9_quartz",
+      "test_e2_opal",
+      "test_h3_zircon",
+      "test_g6_flint",
+      "test_s4_coral"
+    ],
+    "concentration_math": {
+      "total_tests": 9,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 4,
+          "ratio": 0.4444444444444444
+        },
+        {
+          "location_id": "B",
+          "test_count": 4,
+          "ratio": 0.4444444444444444
+        },
+        {
+          "location_id": "C",
+          "test_count": 3,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "D",
+          "test_count": 4,
+          "ratio": 0.4444444444444444
+        },
+        {
+          "location_id": "E",
+          "test_count": 3,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    },
+    "recomputed_concentration": {
+      "total_tests": 9,
+      "concentration_cap": 0.5,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 4,
+          "ratio": 0.4444444444444444
+        },
+        {
+          "location_id": "B",
+          "test_count": 4,
+          "ratio": 0.4444444444444444
+        },
+        {
+          "location_id": "C",
+          "test_count": 3,
+          "ratio": 0.3333333333333333
+        },
+        {
+          "location_id": "D",
+          "test_count": 4,
+          "ratio": 0.4444444444444444
+        },
+        {
+          "location_id": "E",
+          "test_count": 3,
+          "ratio": 0.3333333333333333
+        }
+      ]
+    }
+  }
+}

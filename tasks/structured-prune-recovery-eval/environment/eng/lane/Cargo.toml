@@ -1,0 +1,12 @@
+[package]
+name = "prune_lane"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+prune_core = { path = "../core" }
+prune_meld = { path = "../meld" }

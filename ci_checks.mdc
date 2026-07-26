@@ -8,14 +8,14 @@ Running Agents Locally
 bash
 
 Copy
-# Using GPT-5.2 (recommended - matches CI)
-harbor run -a terminus-2 -m openai/@openai/gpt-5.2 -p <task-folder>
+# Using GPT-5.6 (recommended - matches CI)
+harbor run -a terminus-2 -m openai/@openai/gpt-5.6 -p <task-folder>
 For a pre-submission static pass, run:
 
 bash
 
 Copy
-harbor tasks check <task-folder> -m openai/@openai/gpt-5.2
+harbor tasks check <task-folder> -m openai/@openai/gpt-5.6
 Structural Checks
 Some checks can report structural errors even if the related rule normally warns. For example, missing environment/, missing environment/Dockerfile, missing tests/test.sh, or malformed task.toml can surface as errors because the checker cannot safely inspect the task.
 

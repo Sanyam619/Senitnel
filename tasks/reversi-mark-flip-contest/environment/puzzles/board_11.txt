@@ -1,0 +1,12 @@
+board_id: 11
+to_move: black
+mark: g2
+board:
+W.B...W.
+.W.BBWW.
+..BBBBBW
+.B.BWBB.
+..BBBWWW
+..WWWWW.
+....WWWW
+......BW

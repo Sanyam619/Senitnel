@@ -1,0 +1,20 @@
+# game_15.log — 9x9 board, empty start
+# recorded 2025-06-18; club ladder, evening session
+# format: <ply>  <color> <coord|pass>  <verdict>  [reason]  [# note]
+
+001  black 4,4    accepted
+002  white 4,5    accepted
+003  black 5,4    accepted
+004  white 5,6    accepted
+005  black 6,5    accepted
+006  white 3,5    accepted
+007  black 1,9    accepted
+008  white 5,5    accepted
+009  black pass   accepted
+010  white pass   accepted
+011  black 3,6    accepted
+012  white 5,5    rejected   superko:recreates_board_from_ply_009
+013  white 8,2    accepted
+014  black 8,3    accepted
+015  white pass   accepted
+016  black pass   accepted

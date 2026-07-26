@@ -1,0 +1,3 @@
+# Desk pin for VL evaluation rotation (non-authoritative display).
+desk = "vl-contrastive"
+schema = "vl-eval-v1"

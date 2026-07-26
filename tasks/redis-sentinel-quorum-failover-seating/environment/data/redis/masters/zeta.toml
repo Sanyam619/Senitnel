@@ -1,0 +1,3 @@
+name = "zeta"
+tip = "10.20.1.61:6379"
+role = "master"

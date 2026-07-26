@@ -1,0 +1,2 @@
+server ntp.epsilon.example iburst
+# stratum 3

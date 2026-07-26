@@ -1,0 +1,3 @@
+id = "beta"
+lane = "alt"
+features = ["trunk", "facet_b"]

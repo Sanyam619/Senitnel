@@ -1,0 +1,4 @@
+# Round 05 — interposed defenders and a late silver drop
+sfen: 9/7ns/7kS/8R/9/9/9/9/9
+hand: b:RS
+side: b

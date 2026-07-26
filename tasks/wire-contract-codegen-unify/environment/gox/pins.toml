@@ -1,0 +1,17 @@
+# go lane dependency pin matrix
+lane = "go"
+health_bin = "/app/bin/lanehealth"
+fold_bin = "/app/bin/foldctl"
+plugin_key = "pg-core@0.9.2"
+mirror_plugin = "pg-core@0.9.1"
+archive_plugin = "pg-core@0.9.0"
+fallback_plugin = "pg-core@0.9.2"
+mirror_prefer = true
+honor_yanks = false
+tag_owner = "mirror"
+oneof_owner = "mirror"
+gomod_plugin = "pg-core@0.9.1"
+reject_mirror_preferred = false
+allow_yanked_transitive = true
+pin_epoch = 12
+note = "compile-only surface for go tree"

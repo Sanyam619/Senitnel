@@ -1,0 +1,9 @@
+name = "pack_4"
+ranks = 4
+overlap = 1
+segments = [
+  { rank = 0, lo = 0, hi = 128 },
+  { rank = 1, lo = 128, hi = 256 },
+  { rank = 2, lo = 256, hi = 384 },
+  { rank = 3, lo = 384, hi = 512 },
+]

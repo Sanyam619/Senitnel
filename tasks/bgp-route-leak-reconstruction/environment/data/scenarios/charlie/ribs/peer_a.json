@@ -1,0 +1,39 @@
+{
+  "peer": "peer_a",
+  "routes": [
+    {
+      "prefix": "10.3.0.0/24",
+      "next_hop": "192.0.2.10",
+      "as_path": [
+        65100,
+        65000,
+        65040
+      ],
+      "local_pref": 200,
+      "med": 0,
+      "origin": "igp"
+    },
+    {
+      "prefix": "10.3.1.0/24",
+      "next_hop": "192.0.2.10",
+      "as_path": [
+        65100,
+        65041
+      ],
+      "local_pref": 100,
+      "med": 0,
+      "origin": "igp"
+    },
+    {
+      "prefix": "10.3.2.0/24",
+      "next_hop": "192.0.2.10",
+      "as_path": [
+        65100,
+        65042
+      ],
+      "local_pref": 150,
+      "med": 0,
+      "origin": "igp"
+    }
+  ]
+}

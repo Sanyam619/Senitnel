@@ -1,0 +1,33 @@
+user_visible_outputs = [
+  "/data/standby/live.db",
+  "/data/standby/elevation_audit.json",
+  "/data/primary/source.db",
+  "/data/standby/replica.db",
+  "/data/fixtures/snapshot/source.db",
+  "/opt/lab/scripts/standby-readonly.sh",
+]
+
+internal_harness_files = [
+  "/data/standby/replica.db-wal",
+  "/data/standby/replica.db-shm",
+  "/data/primary/source.db-wal",
+  "/opt/lab/bin/vlogscan",
+  "/opt/lab/bin/shmbind",
+  "/opt/lab/bin/sqlexport",
+  "/opt/lab/bin/pairwatch",
+  "/opt/lab/bin/logpack",
+  "/opt/lab/config/lab.toml",
+  "/opt/lab/libexec/promote/bind.sh",
+  "/opt/lab/scripts/elevate-standby.sh",
+  "/opt/lab/scripts/mkstandalone-wrapper.sh",
+]
+
+[structured_outputs.elevation_trace]
+target = "/data/standby/elevation_audit.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "steps",
+  "tool",
+  "action",
+]

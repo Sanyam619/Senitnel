@@ -1,0 +1,9 @@
+{
+  "service": {
+    "name": "gamma",
+    "id": "gamma-1",
+    "node": "node-c3",
+    "port": 8103,
+    "tags": ["mesh", "batch"]
+  }
+}

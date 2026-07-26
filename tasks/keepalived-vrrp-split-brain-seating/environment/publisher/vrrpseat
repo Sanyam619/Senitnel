@@ -1,0 +1,173 @@
+#!/bin/bash
+set -euo pipefail
+
+OPS="${KV_OPS:-/var/lib/keepalived/ops}"
+PEER_D="${PEER_D:-/app/data/vrrp}"
+EXTRA_D="${EXTRA_D:-/var/lib/keepalived/ops/extra}"
+REPORT="${KV_REPORT:-/output/vrrp-seat.json}"
+LIVE="${OPS}/live"
+ETC_RT="${KV_ETC:-/etc/keepalived}/runtime"
+
+mkdir -p "$(dirname "$REPORT")" "$ETC_RT" "$LIVE"
+
+declare -A peer_vrid=() peer_vip=() peer_base=()
+declare -A prio=() tip=() rank=() elig=()
+declare -A winner=() veto=() win_key=()
+
+shopt -s nullglob
+for root in "$PEER_D" "$EXTRA_D"; do
+  [[ -d "$root" ]] || continue
+  for f in "$root"/*.conf; do
+    id=""; vrid=""; vip=""; base="0"
+    while IFS= read -r line || [[ -n "${line:-}" ]]; do
+      line="${line%%#*}"
+      line="$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+      [[ -z "$line" || "$line" != *=* ]] && continue
+      k="${line%%=*}"; v="${line#*=}"
+      case "$k" in
+        id) id="$v" ;;
+        vrid) vrid="$v" ;;
+        vip) vip="$v" ;;
+        base) base="$v" ;;
+      esac
+    done <"$f"
+    [[ -n "$id" ]] || continue
+    peer_vrid["$id"]="$vrid"
+    peer_vip["$id"]="$vip"
+    peer_base["$id"]="$base"
+  done
+done
+shopt -u nullglob
+
+if [[ -f "$LIVE/prio.tsv" ]]; then
+  while IFS=$'\t' read -r name a _rest || [[ -n "${name:-}" ]]; do
+    [[ -z "${name:-}" ]] && continue
+    prio["$name"]="$a"
+  done <"$LIVE/prio.tsv"
+fi
+
+if [[ -f "$LIVE/cand.tsv" ]]; then
+  while IFS=$'\t' read -r name tipv rankv _rest || [[ -n "${name:-}" ]]; do
+    [[ -z "${name:-}" ]] && continue
+    tip["$name"]="$tipv"
+    rank["$name"]="$rankv"
+  done <"$LIVE/cand.tsv"
+fi
+
+if [[ -f "$LIVE/elig.tsv" ]]; then
+  while IFS=$'\t' read -r name eflag _rest || [[ -n "${name:-}" ]]; do
+    [[ -z "${name:-}" ]] && continue
+    elig["$name"]="$eflag"
+  done <"$LIVE/elig.tsv"
+fi
+
+moves_tmp="$(mktemp)"
+: >"$moves_tmp"
+if [[ -f "$LIVE/moves.tsv" ]]; then
+  while IFS=$'\t' read -r vrid epoch frm to eid || [[ -n "${vrid:-}" ]]; do
+    [[ -z "${vrid:-}" ]] && continue
+    printf '%s\t%s\t%s\t%s\t%s\n' "$vrid" "$epoch" "$frm" "$to" "$eid" >>"$moves_tmp"
+    if [[ "$frm" == "MASTER" ]]; then
+      veto["$vrid"]=1
+    fi
+  done <"$LIVE/moves.tsv"
+fi
+
+for name in "${!peer_vrid[@]}"; do
+  vrid="${peer_vrid[$name]}"
+  [[ -n "${veto[$vrid]:-}" ]] && continue
+  [[ "${elig[$name]:-0}" == "1" ]] || continue
+  pr="${prio[$name]:-${peer_base[$name]:-0}}"
+  rk="${rank[$name]:-0}"
+  key=$((pr * 100000 + rk))
+  if [[ -z "${winner[$vrid]:-}" ]] || [[ "$key" -gt "${win_key[$vrid]:-0}" ]]; then
+    winner["$vrid"]="$name"
+    win_key["$vrid"]="$key"
+  fi
+done
+
+inst_tmp="$(mktemp)"
+: >"$inst_tmp"
+for name in $(printf '%s\n' "${!peer_vrid[@]}" | LC_ALL=C sort); do
+  vrid="${peer_vrid[$name]}"
+  state="BACKUP"
+  if [[ "${winner[$vrid]:-}" == "$name" ]]; then
+    state="MASTER"
+  fi
+  jq -nc \
+    --arg name "$name" \
+    --argjson vrid "$vrid" \
+    --arg state "$state" \
+    --argjson priority "${prio[$name]:-${peer_base[$name]:-0}}" \
+    --arg vip "${peer_vip[$name]}" \
+    --argjson generation "${tip[$name]:-0}" \
+    '{name:$name,vrid:$vrid,state:$state,priority:$priority,vip:$vip,generation:$generation}' \
+    >>"$inst_tmp"
+done
+
+trans_tmp="$(mktemp)"
+: >"$trans_tmp"
+if [[ -s "$moves_tmp" ]]; then
+  sort -t$'\t' -k1,1n -k2,2n -k5,5 "$moves_tmp" | while IFS=$'\t' read -r vrid epoch frm to eid; do
+    jq -nc \
+      --argjson vrid "$vrid" \
+      --argjson epoch "$epoch" \
+      --arg from "$frm" \
+      --arg to "$to" \
+      '{vrid:$vrid,epoch:$epoch,from:$from,to:$to}' \
+      >>"$trans_tmp"
+  done
+fi
+
+seat_ok=true
+declare -A master_count=()
+while IFS= read -r line; do
+  [[ -z "$line" ]] && continue
+  state="$(jq -r '.state' <<<"$line")"
+  vrid="$(jq -r '.vrid' <<<"$line")"
+  name="$(jq -r '.name' <<<"$line")"
+  if [[ "$state" == "MASTER" ]]; then
+    master_count["$vrid"]=$(( ${master_count[$vrid]:-0} + 1 ))
+    if [[ "${winner[$vrid]:-}" != "$name" ]]; then
+      seat_ok=false
+    fi
+  fi
+done <"$inst_tmp"
+
+for vrid in "${!master_count[@]}"; do
+  if [[ "${master_count[$vrid]}" -ne 1 ]]; then
+    seat_ok=false
+  fi
+done
+for vrid in "${!veto[@]}"; do
+  if [[ "${master_count[$vrid]:-0}" -ne 0 ]]; then
+    seat_ok=false
+  fi
+done
+for vrid in "${!winner[@]}"; do
+  [[ -n "${veto[$vrid]:-}" ]] && continue
+  if [[ "${master_count[$vrid]:-0}" -ne 1 ]]; then
+    seat_ok=false
+  fi
+done
+
+seat_json=false
+[[ "$seat_ok" == "true" ]] && seat_json=true
+
+jq -nc \
+  --slurpfile inst "$inst_tmp" \
+  --slurpfile trans "$trans_tmp" \
+  --argjson seat_ok "$seat_json" \
+  '{schema_tag:"vrrp-seat-v1",instances:$inst,transitions:$trans,seat_ok:$seat_ok}' \
+  >"$REPORT"
+
+{
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
+    state="$(jq -r '.state' <<<"$line")"
+    [[ "$state" == "MASTER" ]] || continue
+    printf '%s=%s\n' "$(jq -r '.vip' <<<"$line")" "$(jq -r '.name' <<<"$line")"
+  done <"$inst_tmp"
+} | LC_ALL=C sort >"$ETC_RT/advert.map"
+
+rm -f "$inst_tmp" "$trans_tmp" "$moves_tmp"

@@ -17,7 +17,7 @@ The output of this file is a single markdown document you save as a downloadable
 
 Use this flow unless you have a strong reason to do something narrower.
 
-- **Prompt 1 — Option B**: generate a **goal-sized** seed bank in the four Opus-weak categories.
+- **Prompt 1 — Option B**: generate a **goal-sized** seed bank in the three open categories (`games`, `machine-learning`, `system-administration`).
 - **Prompt 2 — Option A**: turn that seed bank into the **final Step-2a-ready bank** at the requested size.
 
 The two-prompt default is optimized for **bank yield**, not for producing a tiny finalist list.
@@ -30,15 +30,17 @@ Attach this bundle (`chatgpt-task-authoring-playbook.md`, `implementation-collap
 
 Then say:
 
-> Run **Option B** from `bulk-idea-generation.md` in **goal-sized opus-weak mode**. The final target after Option A is **150 Step-2a-ready seeds**. Use the four Opus-weak categories, keep the bank category-balanced, keep topology families distinct within category, and return one downloadable `.md` seed-bank file.
+> Run **Option B** from `bulk-idea-generation.md` in **goal-sized open-category mode**. The final target after Option A is **150 Step-2a-ready seeds**. Use only the three open categories (`games`, `machine-learning`, `system-administration`), keep the bank category-balanced, keep topology families distinct within category, and return one downloadable `.md` seed-bank file.
 
 If you want a different final bank size, replace `150` with your target.
 
 ---
 
-## Why the default is the four Opus-weak categories
+## Why the default is the three open categories
 
-Current frontier chat models are usually not limited by broad domain familiarity. They fail more often on:
+**Only** `games`, `machine-learning`, and `system-administration` accept new submissions (see `task-type-taxonomy.md`). Historical categories such as `security`, `debugging`, `scientific-computing`, `software-engineering`, `data-processing`, and `build-and-dependency-management` are blocked.
+
+Within the open set, prefer ideas that exploit execution-class failure modes:
 
 - **wrong source of truth**
 - **destructive-if-repeated phases**
@@ -48,14 +50,13 @@ Current frontier chat models are usually not limited by broad domain familiarity
 - **hidden-state / low-observability debugging**
 - **edge-case inputs the obvious test misses**
 
-That makes these four categories the default bank generator surface:
+Default bank surface:
 
 1. `system-administration`
-2. `security`
-3. `debugging` (**systems substrate only**)
-4. `scientific-computing`
+2. `games`
+3. `machine-learning`
 
-Only use the full nine-category sweep when you can name the **specific execution/coherence/verification failure mode** that keeps an Opus-strong category hard.
+Do not invent seeds that require declaring a blocked category.
 
 ---
 
@@ -70,32 +71,21 @@ Prefer ideas built around:
 - destructive administrative phases that are unsafe to repeat
 - misleading status tools that validate only counts, bootability, or surface health
 
-### `security`
+### `games`
 
 Prefer ideas built around:
-- authority splits and capability confusion
-- revocation / freshness / lineage drift across restore or reload
-- split decode / split policy authorities
-- binary or protocol predicates recovered from behavior rather than named standards
-- verifier-bypass bait where the local checker validates the wrong invariant
+- exploration and state reasoning under a tournament or puzzle contract
+- multi-fixture matrices where partial understanding fails distant cells
+- false-green surface bait beside a real graded authority
+- outcomes documented as scenarios (not fix recipes or answer-key tallies)
 
-### `debugging`
-
-Only use debugging ideas with a real systems substrate:
-- ABI / layout / binary / loader / rebuild coupling
-- asynchronous processes and wait discipline
-- replay / rollback / restore / catchup workflows
-- causal chains where an early state choice becomes self-hiding later
-- low-observability evidence such as `strace`, `readelf`, `/proc`, `dmesg`, pcaps, raw state files, or hex dumps
-
-### `scientific-computing`
+### `machine-learning`
 
 Prefer ideas built around:
-- checkpoint / resume semantics
-- conflicting numerical-policy authorities
-- reduction ordering / FP non-associativity
-- solver / cache / operator reuse under changed geometry or policy
-- plausible-but-wrong outputs where stability alone is a misleading check
+- checkpoint / resume and training-loop coupling
+- data-pipeline drift that breaks evaluation invariants
+- config / seed / split authorities that disagree
+- plausible-but-wrong metrics where a local scoreboard greens early
 
 ---
 
@@ -120,19 +110,19 @@ The strongest seeds usually combine one primary lever with one or two reinforcin
 
 ## Goal-sized mode semantics
 
-In **goal-sized opus-weak mode**:
+In **goal-sized open-category mode**:
 
 - Do **not** use a fixed quota like 25-per-category.
 - Size the bank to the **requested final output after Option A**.
 - Default to **150 final Step-2a-ready seeds** if the user does not specify a target.
-- Generate a **category-balanced** bank across the four Opus-weak categories.
+- Generate a **category-balanced** bank across the three open categories.
 - Prefer **narrower subsystem framings** over filler if a category starts repeating itself.
 - Keep **Topology** distinct within each category.
 - Surface mostly **bank-ready** seeds, with a limited minority of **repairable** seeds.
 
 ### Category balance rule
 
-Aim for broad balance across the four default categories. Do not let one category dominate unless you explicitly note that another category saturated and had to be backfilled.
+Aim for broad balance across the three open categories. Do not let one category dominate unless you explicitly note that another category saturated and had to be backfilled.
 
 ### Status rule
 
@@ -195,25 +185,26 @@ The point is not to hide the entire domain. The point is to avoid turning the dr
 
 ## Optional modes
 
-### Extended nine-category mode
+### Extended / blocked-category mode
 
-Use only when the user explicitly wants the full 9-category sweep **and** gives a one-sentence reason naming the failure class that keeps the extra categories hard.
-
-Example:
-
-> Run **Option B** from `bulk-idea-generation.md` in **goal-sized extended mode**. The final target after Option A is **150 Step-2a-ready seeds**. Include the Opus-strong categories only when each seed names the execution/coherence/verification failure mode that keeps it hard.
+**Do not use for new submissions.** Historical categories outside
+`games` / `machine-learning` / `system-administration` are blocked
+(`task-type-taxonomy.md`). If a user asks for a blocked-category bank,
+reject and redesign into an open category instead of inventing seeds that
+cannot ship.
 
 ### Narrow-domain mode
 
-Use when the user already knows the subsystem families they want.
+Use when the user already knows the subsystem families they want **within
+the three open categories**.
 
 Example:
 
-> Run **Option B** from `bulk-idea-generation.md` in **goal-sized narrow-domain mode**. The final target after Option A is **150 Step-2a-ready seeds**. Use these domains: `lsm storage engines`, `wasm runtimes`, `netcode rollback`, `checkpointed PDE solvers`.
+> Run **Option B** from `bulk-idea-generation.md` in **goal-sized narrow-domain mode**. The final target after Option A is **150 Step-2a-ready seeds**. Use these domains under open categories only: `systemd lease cutover`, `weiqi capture contests`, `checkpointed training resume`.
 
 ### Fast mode
 
-Fast mode is allowed, but it is not the default. If used, the bank must still remain topology-distinct and category-balanced. Use fast mode only when the user explicitly prioritizes speed over bank quality.
+Fast mode is allowed, but it is not the default. If used, the bank must still remain topology-distinct and category-balanced across the three open categories. Use fast mode only when the user explicitly prioritizes speed over bank quality.
 
 ---
 
@@ -227,10 +218,10 @@ The output must be a single markdown document using this exact structure.
 Generated by Option B. This file is the input to Option A.
 
 Generator metadata:
-- Mode: `<goal-sized-opus-weak | goal-sized-extended | goal-sized-narrow-domain | fast>`
+- Mode: `<goal-sized-open-category | goal-sized-narrow-domain | fast>`
 - Final target after Option A: `<e.g. 150>`
 - Total seeds in this file: `<count>`
-- Categories/domains: `<comma-separated list>`
+- Categories/domains: `<comma-separated list from games, machine-learning, system-administration>`
 - Self-screened: `<yes | no>`
 
 ---
@@ -284,7 +275,7 @@ Generator metadata:
 
 Use this exact wording as a safe default:
 
-> Run **Option B** from `bulk-idea-generation.md` in **goal-sized opus-weak mode**. The final target after Option A is **150 Step-2a-ready seeds**. Use the four Opus-weak categories, keep the bank balanced, keep Topology distinct within category, keep most seeds `bank-ready`, and return one downloadable `.md` seed-bank file.
+> Run **Option B** from `bulk-idea-generation.md` in **goal-sized open-category mode**. The final target after Option A is **150 Step-2a-ready seeds**. Use only the three open categories, keep the bank balanced, keep Topology distinct within category, keep most seeds `bank-ready`, and return one downloadable `.md` seed-bank file.
 
 ---
 

@@ -1,0 +1,142 @@
+{
+  "symbol_table": [
+    {
+      "path": "vault/op_a.c",
+      "symbol": "merge_row_a",
+      "kind": "function",
+      "signature": "int merge_row_a(const struct row_a *x, struct slot_a *y)",
+      "purpose": "Binds on-disk trust material generation to the active runtime counter."
+    },
+    {
+      "path": "pinset/op_b.c",
+      "symbol": "merge_row_b",
+      "kind": "function",
+      "signature": "int merge_row_b(const struct row_b *x, struct slot_b *y)",
+      "purpose": "Scores runtime pin material against subject lineage bytes."
+    },
+    {
+      "path": "capdec/op_c.c",
+      "symbol": "merge_row_c",
+      "kind": "function",
+      "signature": "int merge_row_c(const struct row_c *x, struct slot_c *y)",
+      "purpose": "Chooses between cached decode and fresh revocation bytes."
+    },
+    {
+      "path": "ops/apply_snap.c",
+      "symbol": "apply_snap",
+      "kind": "function",
+      "signature": "int apply_snap(void)",
+      "purpose": "Applies restore snapshot markers without rebinding the live runtime counter."
+    },
+    {
+      "path": "gate/assemble_y.c",
+      "symbol": "assemble_y",
+      "kind": "function",
+      "signature": "int assemble_y(const struct case_in *in, struct case_out *out)",
+      "purpose": "Combines slot outcomes into decision and reason_code rows."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "vault/op_a.c",
+        "controls_tests": [
+          "test_emit_json_contract",
+          "test_q3_gen_skew",
+          "test_r8_hold_same",
+          "test_w2_dual_fail"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "pinset/op_b.c",
+        "controls_tests": [
+          "test_p7_skew_hot",
+          "test_t1_rank_mix",
+          "test_m2_slot_allow"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "capdec/op_c.c",
+        "controls_tests": [
+          "test_k9_slot_deny",
+          "test_n4_stale_window"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "ops/apply_snap.c",
+        "controls_tests": [
+          "test_r8_hold_same"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "gate/assemble_y.c",
+        "controls_tests": [
+          "test_k9_slot_deny",
+          "test_n4_stale_window",
+          "test_w2_dual_fail"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "vault/scan_roots.c",
+      "kind": "helper",
+      "rhymes_with": "merge_row_a",
+      "non_fix_purpose": "Read-only inventory of trust root labels for surfcheck diagnostics."
+    },
+    {
+      "path": "pinset/probe_hot.c",
+      "kind": "helper",
+      "rhymes_with": "merge_row_b",
+      "non_fix_purpose": "Hot-path pin probe used by health tooling, not admission scoring."
+    },
+    {
+      "path": "capdec/cache_view.c",
+      "kind": "helper",
+      "rhymes_with": "merge_row_c",
+      "non_fix_purpose": "Dumps cached decode views for operators; does not choose freshness."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "edge",
+    "gateway",
+    "restore",
+    "peers",
+    "handshake",
+    "service",
+    "capability",
+    "blob",
+    "surfcheck",
+    "TLS",
+    "admission",
+    "outcomes",
+    "matrix",
+    "scenarios",
+    "ledger",
+    "schema_version",
+    "cases",
+    "reload_epoch",
+    "integer",
+    "epoch",
+    "decision",
+    "accept",
+    "reject",
+    "reason_code",
+    "files",
+    "sources",
+    "scripts",
+    "path",
+    "peer",
+    "admit",
+    "field",
+    "ids"
+  ]
+}

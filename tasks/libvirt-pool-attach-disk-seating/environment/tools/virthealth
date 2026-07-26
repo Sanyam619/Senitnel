@@ -1,0 +1,12 @@
+#!/bin/bash
+# Surface health probe: reports pool/domain definition presence only.
+set -euo pipefail
+
+STORAGE_DIR="${STORAGE_DIR:-/etc/libvirt/storage}"
+QEMU_DIR="${QEMU_DIR:-/etc/libvirt/qemu}"
+
+pools=$(find "$STORAGE_DIR" -maxdepth 1 -name 'pool_*.xml' 2>/dev/null | wc -l | tr -d ' ')
+doms=$(find "$QEMU_DIR" -maxdepth 1 -name '*.xml' 2>/dev/null | wc -l | tr -d ' ')
+
+echo "virthealth: pools=${pools} domains=${doms} status=OK"
+exit 0

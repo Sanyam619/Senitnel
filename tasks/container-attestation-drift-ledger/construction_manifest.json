@@ -1,0 +1,67 @@
+{
+  "symbol_table": [
+    {
+      "path": "crates/alpha/src/hop.rs",
+      "symbol": "op_a",
+      "kind": "function",
+      "signature": "pub fn op_a(a: &HopIn, b: &ArchSel) -> OutA",
+      "purpose": "Computes the content digest recorded for one promotion hop."
+    },
+    {
+      "path": "go/wire/subject.go",
+      "symbol": "fold_b",
+      "kind": "function",
+      "signature": "func fold_b(a string, b string) (string, error)",
+      "purpose": "Resolves an attestation subject string to the tracked content digest."
+    },
+    {
+      "path": "go/eval/phase.go",
+      "symbol": "phase_c",
+      "kind": "function",
+      "signature": "func phase_c(a string, b int64) (bool, error)",
+      "purpose": "Returns whether a candidate clears the active frontier check."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "crates/alpha/src/hop.rs",
+        "controls_tests": ["test_p2_hash_align", "test_w3_cross_agree"]
+      },
+      {
+        "id": "B",
+        "path": "go/wire/subject.go",
+        "controls_tests": ["test_m8_slot_matrix", "test_r6_delta_list"]
+      },
+      {
+        "id": "C",
+        "path": "go/eval/phase.go",
+        "controls_tests": ["test_t1_tier_frontier", "test_k4_shape_bundle"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "crates/alpha/src/scan.rs",
+      "kind": "helper",
+      "rhymes_with": "op_a",
+      "non_fix_purpose": "Counts journal lines for surface status; does not bind hop digests."
+    },
+    {
+      "path": "go/wire/probe.go",
+      "kind": "helper",
+      "rhymes_with": "fold_b",
+      "non_fix_purpose": "Dumps attestation header fields for diagnostics; does not resolve subjects."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "promotion", "journal", "container", "image", "attestations", "digest",
+    "ledger", "runtime", "policy", "gate", "images", "manifests", "surface",
+    "status", "views", "stages", "replay", "admit", "report", "mismatches",
+    "reason", "fixtures", "anchors", "drift", "attestation", "rows", "stage",
+    "ref", "files"
+  ]
+}

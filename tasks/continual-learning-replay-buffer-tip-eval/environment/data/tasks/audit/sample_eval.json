@@ -1,0 +1,8 @@
+{
+  "id": "t_audit",
+  "note": "archived scoring from a healthy evaluation pass",
+  "base": 0.71,
+  "peak": 0.79,
+  "durable_hit": 0.11,
+  "computed_accuracy": 0.754
+}

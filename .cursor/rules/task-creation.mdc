@@ -109,7 +109,7 @@ Ask for ALL missing required fields BEFORE writing code:
 1. **Task Idea**: What problem should the agent solve?
 2. **Programming Language**: What language(s)? (Avoid Python unless justified — Python tasks must be hard.)
 3. **Difficulty Level**: hard only for the default Edition 2 path
-4. **Category**: system-administration | build-and-dependency-management | data-processing | games | software-engineering | machine-learning | debugging | security | scientific-computing
+4. **Category** (open only): `games` | `machine-learning` | `system-administration` — all other historical categories are blocked for new submissions; see `task-type-taxonomy.md`
 5. **Task Name**: kebab-case (e.g., `distributed-trace-analysis`)
 
 Optional: `subcategories`, `number_of_milestones`.
@@ -352,8 +352,8 @@ version = "2.0"
 author_name = "anonymous"
 author_email = "anonymous"
 difficulty = "hard"
-category = "security"        # one of the 9 accepted values
-tags = ["ssh", "hardening", "chroot"]  # 3-6 descriptive values
+category = "system-administration"  # open only: games | machine-learning | system-administration
+tags = ["systemd", "leases", "dropin-policy"]  # 3-6 descriptive values
 languages = ["bash"]
 codebase_size = "small"      # Count files under environment/ EXCLUDING Dockerfile and docker-compose. minimal (0-19) is a blocking failure on the default Edition 2 path. small (20-200). large (200+). This is a realism floor, not hardness evidence; stay comfortably above it with genuine task components, not filler.
 number_of_milestones = 0     # 0 for non-milestone tasks
@@ -389,12 +389,12 @@ version = "2.0"
 author_name = "your-name"
 author_email = "your-email"
 difficulty = "hard"
-category = "software-engineering"
+category = "games"
 subcategories = []
 # Total milestone count — must match the number of [[steps]] blocks below
 number_of_milestones = 2
-codebase_size = "minimal"
-languages = ["python", "bash"]
+codebase_size = "small"
+languages = ["bash"]
 tags = ["..."]
 expert_time_estimate_min = 60
 junior_time_estimate_min = 120

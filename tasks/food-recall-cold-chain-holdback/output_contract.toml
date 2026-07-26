@@ -1,0 +1,24 @@
+user_visible_outputs = [
+  "/data/out/<day>/holdback_ledger.jsonl",
+  "/data/out/<day>/release_auth_audit.json",
+  "/data/out/<day>/affected_units.tsv",
+]
+
+internal_harness_files = [
+  "/data/fixtures/days/",
+]
+
+[structured_outputs.holdback_ledger]
+target = "/data/out/<day>/holdback_ledger.jsonl"
+format = "jsonl"
+instruction_checks = ["unit_id", "state", "reason_code", "source_day"]
+
+[structured_outputs.release_auth_audit]
+target = "/data/out/<day>/release_auth_audit.json"
+format = "json"
+instruction_checks = ["version", "entries"]
+
+[structured_outputs.affected_units]
+target = "/data/out/<day>/affected_units.tsv"
+format = "tsv"
+instruction_checks = ["unit_id", "store_id", "exposure_class", "qty_cases"]

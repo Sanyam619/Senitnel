@@ -1,0 +1,80 @@
+package core
+
+import (
+	"os"
+	"path/filepath"
+
+	"ramp.local/account/internal/ingest/assayfeed"
+	"ramp.local/account/internal/ingest/cellband"
+	"ramp.local/account/internal/ingest/pulsefeed"
+	"ramp.local/account/internal/ingest/retaingauge"
+	"ramp.local/account/internal/ingest/slotboard"
+	"ramp.local/account/internal/ingest/standboard"
+	csvio "ramp.local/account/internal/io"
+	"ramp.local/account/internal/model"
+)
+
+func outRoot() string {
+	if v := os.Getenv("RAMP_OUT_ROOT"); v != "" {
+		return v
+	}
+	return "/data/out"
+}
+
+func RunShift(shift, root string) error {
+	inDir := filepath.Join(root, "shifts", shift)
+	outDir := filepath.Join(outRoot(), shift)
+	pulses, err := pulsefeed.Load(inDir)
+	if err != nil {
+		return err
+	}
+	stands, err := standboard.Load(inDir)
+	if err != nil {
+		return err
+	}
+	assays, err := assayfeed.Load(inDir)
+	if err != nil {
+		return err
+	}
+	cells, err := cellband.Load(inDir)
+	if err != nil {
+		return err
+	}
+	_, err = slotboard.Load(inDir)
+	if err != nil {
+		return err
+	}
+	gauges, err := retaingauge.Load(inDir)
+	if err != nil {
+		return err
+	}
+
+	var ledger []model.LedgerRow
+	seq := 1
+	var totalApplied float64
+	for _, s := range stands {
+		qty := ledgerForStand(s, pulses, assays)
+		totalApplied += qty
+		ledger = append(ledger, model.LedgerRow{
+			CraftID: s.CraftID,
+			NodeID:  s.NodeID,
+			Qty:     qty,
+			Code:    s.Code,
+			Seq:     seq,
+		})
+		seq++
+	}
+
+	tanks := complianceTanks(totalApplied, cells.DivertQty, gauges)
+
+	if err := csvio.WriteLedger(filepath.Join(outDir, "fluid_ledger.jsonl"), ledger); err != nil {
+		return err
+	}
+	if err := csvio.WriteCompliance(filepath.Join(outDir, "runoff_compliance.json"), tanks); err != nil {
+		return err
+	}
+	if err := writeUtilAudit(outDir, pulses, stands, assays); err != nil {
+		return err
+	}
+	return nil
+}

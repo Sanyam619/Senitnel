@@ -1,0 +1,28 @@
+user_visible_outputs = [
+  "/output/postfix-seat.json",
+  "/etc/postfix/",
+  "/etc/postfix/master.d/",
+  "/var/lib/postfix/",
+  "/var/run/postfix/",
+  "/app/ops/run_postfix_seat.sh",
+  "/app/docs/",
+  "/app/data/postfix/",
+]
+internal_harness_files = []
+
+[structured_outputs.postfix_seat]
+target = "/output/postfix-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "instances",
+  "name",
+  "queue_dir",
+  "generation",
+  "active",
+  "transports",
+  "pattern",
+  "nexthop",
+  "honored",
+  "seat_ok",
+]

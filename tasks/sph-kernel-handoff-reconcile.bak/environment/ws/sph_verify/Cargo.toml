@@ -1,0 +1,16 @@
+[package]
+name = "sph_verify"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sph_core = { path = "../sph_core" }
+sph_kernels = { path = "../sph_kernels" }
+sph_a = { path = "../sph_a" }
+sph_d = { path = "../sph_d" }
+sph_b = { path = "../sph_b" }
+sph_c = { path = "../sph_c" }
+
+[[bin]]
+name = "sph-verify"
+path = "src/main.rs"

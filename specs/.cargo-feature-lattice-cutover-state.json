@@ -1,0 +1,363 @@
+{
+  "task_name": "cargo-feature-lattice-cutover",
+  "attempt": 1,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 1,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/cargo-feature-lattice-cutover-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must recover omit-cfg mutex in build.rs, legacy_uart macro tokens, and hook_legacy_only rustflags from the workspace \u2014 none are in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Ship/field matrices require Cargo features, build.rs cfg, proc-macro registration, and .cargo config to agree as one lattice."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction reports green default builds and incomplete matrices without naming mutex, macro tokens, or rustflags."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Clearing the mutex without fixing config still blocks field; fixing macros alone leaves ship compile_error and omitted hook tags."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Hardness is a multi-crate feature lattice with proc-macro and cfg coupling, not a single Cargo.toml flip or WASM linker recipe."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only cutover brief omits gate sites."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed workspace topology, not hunt-one-broken-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Requires build.rs, macro, config, and feature table coordination."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests cover ship, field, and default lanes plus hook tags."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not name faulty symbols."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Offline cargo cache is harness, not hardness."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout-only task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Fix spans three distinct roots."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle edits multiple manifests and code loci."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Not one config block; probe+macro+cfg interact."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Opaque symbols; instruction nouns banned on fix path."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helpers named probe_slot_a/expand_gate_b, not validate/fix."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a textbook single-manifest feature enable."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "N/A build category."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Ship/field/default outcomes couple through shared lattice."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Docker/rust offline is realism only."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Default-green trap plus three interacting gates blocks one-pass."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Clearly hard feature-lattice cutover."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three non-trivial discoveries committed in discovery_budget."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "symptoms-only level."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three topologies each with \u22653 coordinating locations."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic cargo builds and JSON/string checks."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Ship/field/default contracts unambiguous."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert Cargo engineer solvable in hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Lattice+macro+cfg beyond undergrad labs."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real mid-cutover workspace work."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grades builds and roster, not process."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Cannot learn omit-cfg, legacy_uart, or hook_legacy_only from instruction.md alone."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "probe_slot_a emits omit-cfg when mqtt is enabled, compile_error when lora co-requested",
+            "planned_location": "p7/build.rs and p7/src/main.rs compile gates",
+            "why_instruction_must_not_reveal": "Naming the mutex probe collapses ship matrix to deleting one cfg emit."
+          },
+          {
+            "discovery": "expand_gate_b uses legacy_uart token and marks mqtt/lora active on default features",
+            "planned_location": "g4/src/lib.rs",
+            "why_instruction_must_not_reveal": "Naming the token mismatch becomes a string-replace recipe."
+          },
+          {
+            "discovery": ".cargo/config.toml injects hook_legacy_only cfg blocking field and stripping ship hook tags",
+            "planned_location": ".cargo/config.toml and backend tag modules",
+            "why_instruction_must_not_reveal": "Pointing at rustflags removes cfg/lattice coupling."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Cutover symptoms only; no named fix sites or algorithms."
+        },
+        "attack_path": {
+          "summary": "Read ops matrix, diagnose mutex/macro/config drift, reconcile features and gates, build ship/field, emit roster.",
+          "reasoning": "Winning path spans build.rs, proc-macro, cargo config, and feature tables."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Must clear omit-cfg, fix macro tokens/default arms, clear hook_legacy_only, and align ship/field features.",
+          "reasoning": "One-file patch cannot satisfy ship compile, field compile, and roster/tag tests together."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Resists single-manifest and default-green shortcuts.",
+          "residual_hardness": "Three-way feature/cfg/macro coupling plus false-green default remains after tree is visible.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "agent",
+            "cutover",
+            "feature",
+            "crate",
+            "lattice",
+            "edition",
+            "bump",
+            "default-features",
+            "build",
+            "ship",
+            "field",
+            "matrix",
+            "binary",
+            "backend",
+            "profile",
+            "ops",
+            "notes",
+            "linker",
+            "material",
+            "fixtures",
+            "state",
+            "pulse-agent",
+            "roster",
+            "caps",
+            "subcommand",
+            "mqtt",
+            "lora",
+            "uart",
+            "pair",
+            "active",
+            "inactive",
+            "backends"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "agent/",
+              "renamed_to": "p7/",
+              "reason": "Path token matched instruction noun agent."
+            },
+            {
+              "original": "macros/",
+              "renamed_to": "g4/",
+              "reason": "Distinct opaque root for CR2."
+            },
+            {
+              "original": "test_q2_primary_hook_pair",
+              "renamed_to": "test_q2_primary_hook_both",
+              "reason": "pair is instruction noun."
+            }
+          ],
+          "test_names_audited": [
+            "test_k4_dual_lane_ok",
+            "test_m8_alt_lane_ok",
+            "test_q2_primary_hook_both",
+            "test_t6_alt_hook_solo",
+            "test_w1_baseline_gap",
+            "test_n9_sym_presence"
+          ],
+          "concentration_math": {
+            "total_tests": 6,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.333333
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 6,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

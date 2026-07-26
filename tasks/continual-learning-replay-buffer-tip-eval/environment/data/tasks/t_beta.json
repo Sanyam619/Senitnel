@@ -1,0 +1,9 @@
+{
+  "id": "t_beta",
+  "seq": 2,
+  "stratum": "s1",
+  "base": 0.70,
+  "peak": 0.76,
+  "durable_hit": 0.12,
+  "overflow_hit": -0.18
+}

@@ -1,0 +1,6 @@
+# Channel registry generation this workspace is bound to.
+# Written by whoever last moved the desk; read on every workspace rebuild.
+desk_pass = rehearsal
+bound_tip = tip_live
+bound_epoch = 11
+kept_channels = 38

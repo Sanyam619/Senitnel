@@ -1,0 +1,128 @@
+{
+  "symbol_table": [
+    {
+      "path": "m4/build.rs",
+      "symbol": "bind_k",
+      "kind": "function",
+      "signature": "fn bind_k(out: &PathBuf) -> std::io::Result<()>",
+      "purpose": "Emits the lane bind constants consumed by the expand path."
+    },
+    {
+      "path": "d7/build.rs",
+      "symbol": "fold_hdr",
+      "kind": "function",
+      "signature": "fn fold_hdr(out: &Path) -> std::io::Result<()>",
+      "purpose": "Writes the tag-family header consumed by stamp_b."
+    },
+    {
+      "path": "d7/build.rs",
+      "symbol": "emit_c",
+      "kind": "function",
+      "signature": "fn emit_c(profile: &str, root: &Path) -> std::io::Result<()>",
+      "purpose": "Writes pkg-config text for the active profile into the install tree."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "m4/build.rs",
+        "controls_tests": [
+          "test_feature_cell_symbols",
+          "test_report_surface",
+          "test_all_cells_ok"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "r1/Cargo.toml",
+        "controls_tests": [
+          "test_feature_cell_symbols",
+          "test_all_cells_ok"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "d7/Cargo.toml",
+        "controls_tests": [
+          "test_all_cells_ok",
+          "test_dual_load_disjoint"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "d7/build.rs",
+        "controls_tests": [
+          "test_dual_load_disjoint",
+          "test_pc_names",
+          "test_release_pc_path",
+          "test_probe_reentry"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "config/z9.toml",
+        "controls_tests": [
+          "test_release_pc_path",
+          "test_pc_names"
+        ]
+      },
+      {
+        "id": "F",
+        "path": "ops/nx/w7.toml",
+        "controls_tests": [
+          "test_pc_names",
+          "test_no_handwritten_bypass"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "environment/k9/src/preview.rs",
+      "kind": "helper",
+      "rhymes_with": "bind_k",
+      "non_fix_purpose": "Optional dry-run preview; not on the host matrix path."
+    },
+    {
+      "path": "environment/d7/src/map_legacy.rs",
+      "kind": "helper",
+      "rhymes_with": "fold_hdr",
+      "non_fix_purpose": "Maps legacy mono tag strings for docs examples."
+    },
+    {
+      "path": "environment/link/legacy_notes.toml",
+      "kind": "config-reader",
+      "rhymes_with": "emit_c",
+      "non_fix_purpose": "Historical notes; emission reads link/legacy.toml instead."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "workspace",
+    "proc",
+    "macro",
+    "cdylib",
+    "feature",
+    "features",
+    "profile",
+    "matrix",
+    "host",
+    "symbol",
+    "version",
+    "tag",
+    "collision",
+    "pkg-config",
+    "probe",
+    "artifact",
+    "dual",
+    "split",
+    "export",
+    "transitive",
+    "release",
+    "debug",
+    "status",
+    "cell"
+  ]
+}

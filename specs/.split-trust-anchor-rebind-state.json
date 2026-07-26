@@ -1,0 +1,369 @@
+{
+  "task_name": "split-trust-anchor-rebind",
+  "attempt": 1,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 1,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/split-trust-anchor-rebind-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must recover conflict precedence across trust-store generation, pin lineage scoring, and revocation-vs-cache decode from code and data \u2014 none of these rules appear in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Correct admission requires coordinating vault generation bind, pinset lineage score, and capdec freshness choice as one authority pipeline."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Public brief reports wrong accept/reject after restore and refresh with TLS OK surface health, without naming which authority is wrong."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Fixing only the trust store passes static TLS health while still accepting revoked or wrong-lineage peers; pin-only or cache-only patches flip complementary scenario subsets."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Split decode/policy authorities with restore lineage drift and verifier-bypass health bait are outside textbook TLS min-version or single-knob hardening recipes."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only instruction plus ledger schema does not disclose precedence, freshness, or generation binding rules."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "All scenarios share one split-authority defect class; not a hunt for one corrupt file among many."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Patching only trust bundle, only pin file, or only revocation list cannot satisfy deny, allow, skew, and reload-hold tests together."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Eight scenario ids with distinct conflict shapes validate the authority class, not one hard-coded instance."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "An honest symptoms-only prompt leaves precedence and freshness as discoveries."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Expected decisions are embedded in verifier code; anti-tamper supports real authority reasoning."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Difficulty is cross-authority coordination, not timeout or reward footer formatting."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Flipping-point contract distributes control across vault, pinset, and capdec roots."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle rewrites three opaque merge functions across three directories; no single-file wholesale replacement."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Fix is procedural authority reconciliation in C, not filling one policy manifest."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Instruction nouns are banned from fix-path symbols; code uses opaque merge_row_a/b/c."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Decoy scan_roots, probe_hot, and cache_view perform genuine non-fix work and do not mirror prompt bullets."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a TLS min-version or jail checklist; local trust-store edits pass surfcheck while failing revocation and lineage scenarios."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "Residual hardness is split-authority conflict and restore lineage drift, not security nouns alone."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Generation bind, pin lineage, and revocation freshness are coupled with tradeoffs across scenarios."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "C build and Docker packaging add realism but are not the core challenge."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Agent must read vault, pinset, and capdec modules plus restore/replay path before a one-shot fix can succeed."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "All five hardness axes satisfied; task is clearly hard not medium."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three non-trivial discoveries enumerated: generation bind, pin lineage score, revocation-over-cache precedence."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "Instruction is symptoms-only with output contract; no cause-revealing authority names or fix recipes."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three distinct topologies each require coordination across at least three locations with no single-file exploit."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic per-case decision and reason_code checks plus reload stability on fixed fixtures."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Public contract and admit-schema doc yield equivalent verifier interpretations."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Security engineer familiar with mTLS gateways can reconcile the three authorities in a few hours on this codebase scale."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Requires professional split-trust reasoning beyond undergrad TLS configuration labs."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Post-restore authority drift on edge gateways is paid production security work."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grades admission ledger decisions and reload stability, not prescribed edit sites."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction names wrong admission symptoms, TLS OK bait, and ledger artifacts only; precedence and freshness require deep codebase engagement."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "On-disk trust material must bind to the active runtime epoch from state, not the restore snapshot generation.",
+            "planned_location": "environment/src/vault/op_a.c and environment/data/state/runtime.json",
+            "why_instruction_must_not_reveal": "Naming the generation bind collapses diagnosis to swapping one store file."
+          },
+          {
+            "discovery": "Runtime pin material must score subject lineage bytes; mismatch forces reject even when the trust store path looks healthy.",
+            "planned_location": "environment/src/pinset/op_b.c coupled to environment/data/pins/active.set",
+            "why_instruction_must_not_reveal": "Stating pin-over-store precedence turns the task into policy-knob transcription."
+          },
+          {
+            "discovery": "Fresh revocation bytes beat cached capability decode on refresh windows.",
+            "planned_location": "environment/src/capdec/op_c.c coupled to environment/data/revocations/",
+            "why_instruction_must_not_reveal": "Revealing cache-vs-revocation precedence enables a one-branch patch without authority reasoning."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Instruction describes observable wrong accept/reject after restore/refresh and required ledger JSON without naming broken modules, precedence rules, or algorithms."
+        },
+        "attack_path": {
+          "summary": "Agent traces admission through vault, pinset, and capdec roots, rejects surfcheck bait, and coordinates generation bind with lineage and freshness.",
+          "reasoning": "Local trust-store edits keep TLS OK while revoked and wrong-lineage cases still pass; decoy scanners and cache viewers mislead naive greps."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Rewrite merge_row_a/b/c bodies across vault, pinset, and capdec so generation, lineage, and freshness agree under conflict.",
+          "reasoning": "Roughly 60-120 lines across three C modules plus admit driver invocation; no single-location edit passes all eight tests."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Distributed authority coupling resists grep-collapse and checklist hardening; reload-hold and conflict-rank tests block partial fixes.",
+          "residual_hardness": "Agent must build a mental model of three disagreeing authorities and reject TLS-OK bait while recovering precedence from code.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "edge",
+            "gateway",
+            "restore",
+            "peers",
+            "handshake",
+            "service",
+            "capability",
+            "blob",
+            "surfcheck",
+            "TLS",
+            "admission",
+            "outcomes",
+            "matrix",
+            "scenarios",
+            "ledger",
+            "schema_version",
+            "cases",
+            "reload_epoch",
+            "integer",
+            "epoch",
+            "decision",
+            "accept",
+            "reject",
+            "reason_code",
+            "files",
+            "sources",
+            "scripts",
+            "path",
+            "peer",
+            "admit",
+            "field",
+            "ids"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "bind_trust_epoch",
+              "renamed_to": "merge_row_a",
+              "reason": "Original overlapped forbidden nouns trust and epoch."
+            },
+            {
+              "original": "score_pin_lineage",
+              "renamed_to": "merge_row_b",
+              "reason": "Original overlapped forbidden noun pin."
+            },
+            {
+              "original": "pick_revocation_fresh",
+              "renamed_to": "merge_row_c",
+              "reason": "Original overlapped forbidden noun revocation."
+            }
+          ],
+          "test_names_audited": [
+            "test_emit_json_contract",
+            "test_k9_slot_deny",
+            "test_m2_slot_allow",
+            "test_n4_stale_window",
+            "test_p7_skew_hot",
+            "test_q3_gen_skew",
+            "test_r8_hold_same",
+            "test_t1_rank_mix"
+          ],
+          "concentration_math": {
+            "total_tests": 8,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 3,
+                "ratio": 0.375
+              },
+              {
+                "location_id": "B",
+                "test_count": 3,
+                "ratio": 0.375
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.25
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 8,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 3,
+                "ratio": 0.375
+              },
+              {
+                "location_id": "B",
+                "test_count": 3,
+                "ratio": 0.375
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.25
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": [],
+      "provided_score": [
+        0,
+        0
+      ]
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

@@ -1,0 +1,4 @@
+# Opaque emission policy sheet.
+
+mode = "open"
+prefer = "archive"

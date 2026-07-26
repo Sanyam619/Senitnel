@@ -1,0 +1,7 @@
+# crash tip-map snapshot (restored by knit preflight each cutover)
+[parents]
+alpha = "pu-bogus"
+beta = "pu-beta"
+gamma = "pu-gamma"
+delta = "pu-stale"
+omega = "pu-omega"

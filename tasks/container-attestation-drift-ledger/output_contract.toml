@@ -1,0 +1,14 @@
+user_visible_outputs = [
+  "/output/drift-report.json",
+]
+
+internal_harness_files = []
+
+[structured_outputs.drift_report]
+target = "/output/drift-report.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "images",
+  "mismatches",
+]

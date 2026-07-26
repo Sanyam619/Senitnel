@@ -1,0 +1,5 @@
+# Ship launch roster for the packaging cutover.
+modes = ["jvm", "jlink", "native"]
+probe = "/app/bin/packctl"
+report = "/output/pack-report.json"
+notes = "/app/link/pack-notes.toml"

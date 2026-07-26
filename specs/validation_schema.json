@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "hardness_axes",
+    "anti_trivialization_checks",
+    "rubric_axes",
+    "instruction_completeness_test",
+    "discovery_budget",
+    "instruction_specificity",
+    "attack_path",
+    "smallest_plausible_patch",
+    "collapse_audit",
+    "topology_enumeration",
+    "construction_manifest",
+    "naming_pass"
+  ],
+  "properties": {
+    "hardness_axes": { "$ref": "#/$defs/verdictList" },
+    "anti_trivialization_checks": { "$ref": "#/$defs/verdictList" },
+    "rubric_axes": { "$ref": "#/$defs/verdictList" },
+    "instruction_completeness_test": { "$ref": "#/$defs/verdictBlock" },
+    "discovery_budget": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "$ref": "#/$defs/discoveryBudgetItem" }
+    },
+    "instruction_specificity": { "$ref": "#/$defs/instructionSpecificity" },
+    "attack_path": { "$ref": "#/$defs/analysisBlock" },
+    "smallest_plausible_patch": { "$ref": "#/$defs/analysisBlock" },
+    "collapse_audit": { "$ref": "#/$defs/collapseAudit" },
+    "topology_enumeration": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "$ref": "#/$defs/topologyEntry" }
+    },
+    "construction_manifest": { "$ref": "#/$defs/constructionManifest" },
+    "naming_pass": { "$ref": "#/$defs/namingPass" }
+  },
+  "$defs": {
+    "verdictEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "verdict", "reasoning"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "verdict": { "enum": ["PASS", "WARN", "FAIL"] },
+        "reasoning": { "type": "string", "minLength": 1 }
+      }
+    },
+    "verdictList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/verdictEntry" }
+    },
+    "verdictBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict", "reasoning"],
+      "properties": {
+        "verdict": { "enum": ["PASS", "WARN", "FAIL"] },
+        "reasoning": { "type": "string", "minLength": 1 }
+      }
+    },
+    "discoveryBudgetItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["discovery", "planned_location", "why_instruction_must_not_reveal"],
+      "properties": {
+        "discovery": { "type": "string", "minLength": 1 },
+        "planned_location": { "type": "string", "minLength": 1 },
+        "why_instruction_must_not_reveal": { "type": "string", "minLength": 1 }
+      }
+    },
+    "instructionSpecificity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "reasoning"],
+      "properties": {
+        "level": {
+          "enum": ["spec-complete", "cause-revealing", "symptoms-only"]
+        },
+        "reasoning": { "type": "string", "minLength": 1 }
+      }
+    },
+    "analysisBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "reasoning"],
+      "properties": {
+        "summary": { "type": "string", "minLength": 1 },
+        "reasoning": { "type": "string", "minLength": 1 }
+      }
+    },
+    "collapseAudit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verdict", "reasoning", "residual_hardness", "red_flags"],
+      "properties": {
+        "verdict": { "enum": ["PASS", "WARN", "FAIL"] },
+        "reasoning": { "type": "string", "minLength": 1 },
+        "residual_hardness": { "type": "string", "minLength": 1 },
+        "red_flags": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "topologyEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "summary", "locations", "why_no_single_location_suffices"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "summary": { "type": "string", "minLength": 1 },
+        "locations": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "why_no_single_location_suffices": { "type": "string", "minLength": 1 }
+      }
+    },
+    "symbolTableEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "symbol", "kind", "signature", "purpose"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "symbol": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["function", "class", "constant"] },
+        "signature": { "type": "string", "minLength": 1 },
+        "purpose": { "type": "string", "minLength": 1 }
+      }
+    },
+    "flippingLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "path", "controls_tests"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "path": { "type": "string", "minLength": 1 },
+        "controls_tests": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "decoyEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "kind", "rhymes_with", "non_fix_purpose"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "minLength": 1 },
+        "rhymes_with": { "type": "string", "minLength": 1 },
+        "non_fix_purpose": { "type": "string", "minLength": 1 }
+      }
+    },
+    "constructionManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "symbol_table",
+        "flipping_point_contract",
+        "decoy_manifest",
+        "code_forbidden_tokens"
+      ],
+      "properties": {
+        "symbol_table": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "$ref": "#/$defs/symbolTableEntry" }
+        },
+        "flipping_point_contract": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "locations",
+            "no_single_location_flips_majority",
+            "concentration_cap"
+          ],
+          "properties": {
+            "locations": {
+              "type": "array",
+              "minItems": 3,
+              "items": { "$ref": "#/$defs/flippingLocation" }
+            },
+            "no_single_location_flips_majority": { "type": "boolean" },
+            "concentration_cap": { "type": "number", "maximum": 0.5 }
+          }
+        },
+        "decoy_manifest": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/decoyEntry" }
+        },
+        "code_forbidden_tokens": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "concentrationLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["location_id", "test_count", "ratio"],
+      "properties": {
+        "location_id": { "type": "string", "minLength": 1 },
+        "test_count": { "type": "integer", "minimum": 0 },
+        "ratio": { "type": "number", "minimum": 0 }
+      }
+    },
+    "namingPass": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "instruction_nouns_extracted",
+        "renames_during_drafting",
+        "test_names_audited",
+        "concentration_math"
+      ],
+      "properties": {
+        "instruction_nouns_extracted": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "renames_during_drafting": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["original", "renamed_to", "reason"],
+            "properties": {
+              "original": { "type": "string" },
+              "renamed_to": { "type": "string" },
+              "reason": { "type": "string" }
+            }
+          }
+        },
+        "test_names_audited": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "concentration_math": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["total_tests", "per_location"],
+          "properties": {
+            "total_tests": { "type": "integer", "minimum": 1 },
+            "per_location": {
+              "type": "array",
+              "minItems": 3,
+              "items": { "$ref": "#/$defs/concentrationLocation" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

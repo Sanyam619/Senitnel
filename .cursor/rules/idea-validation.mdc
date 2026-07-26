@@ -14,6 +14,7 @@ Reject ideas that would land as either of the following before drafting any spec
 
 - **Multi-container** tasks (anything that would set `is_multi_container = true` or ship `environment/docker-compose.yaml` with multiple services).
 - **UI building** tasks (anything that would slot under subcategory `ui_building` or rely on a UI test harness).
+- **Blocked categories** — new tasks may only use `games`, `machine-learning`, or `system-administration`. Reject (or redesign into an open category) any idea whose primary activity only fits `security`, `scientific-computing`, `debugging`, `software-engineering`, `data-processing`, or `build-and-dependency-management`. See `task-type-taxonomy.md`.
 
 In-progress tasks of these types may be completed and submitted; new starts are disallowed. If a candidate idea would naturally land here, REJECT with a redesign note rather than producing a GO spec.
 

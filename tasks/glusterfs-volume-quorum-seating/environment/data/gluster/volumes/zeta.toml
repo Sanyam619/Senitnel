@@ -1,0 +1,4 @@
+[volume]
+name = "zeta"
+replica = 3
+transport = "tcp"

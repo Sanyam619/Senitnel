@@ -1,0 +1,9 @@
+board_id: 01
+blue_inv: V3,1
+yellow_inv: V3
+board:
+.XX.Y
+X.XYX
+...XX
+X.Y..
+BX...

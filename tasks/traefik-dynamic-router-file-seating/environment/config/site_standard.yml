@@ -1,0 +1,4 @@
+tip_policy=durable_authority
+bind_order=journal_then_floor
+mw_source=prefer_sheet
+abort_token=site_standard

@@ -1,0 +1,43 @@
+user_visible_outputs = [
+  "/output/lattice-report.json",
+  "/app/tools/lattice_probe",
+  "/app/tools/probe/main.go",
+  "/app/tools/probe/go.mod",
+  "/app/ops/matrix.toml",
+  "/app/link/contract.toml",
+  "/app/link/cgo_policy.toml",
+]
+
+internal_harness_files = [
+  "/app/h4/mk/knit_xv_a.mk",
+  "/app/.cargo/config.toml",
+  "/app/config/rust/cargo_config.toml",
+  "/app/p7/src/slot.rs",
+  "/app/p7/Cargo.toml",
+  "/app/k2/Cargo.toml",
+  "/app/k2/src/lib.rs",
+  "/app/config/profiles/target.toml",
+  "/app/config/profiles/builder.toml",
+  "/app/g3/emit_xv.go",
+  "/app/g3/main.go",
+  "/app/tools/probe/main.go",
+  "/app/tools/lattice_probe",
+  "/app/ops/matrix.toml",
+  "/app/link/contract.toml",
+  "/app/link/cgo_policy.toml",
+]
+
+[structured_outputs.lattice_report]
+target = "/output/lattice-report.json"
+format = "json"
+instruction_checks = [
+  "status",
+  "plugin_abi",
+  "tls_model",
+  "flags",
+  "alpha",
+  "epsilon",
+  "musl-gcc",
+  "-fPIE",
+  "-pie",
+]

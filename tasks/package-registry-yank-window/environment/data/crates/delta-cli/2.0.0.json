@@ -1,0 +1,12 @@
+{
+  "name": "delta-cli",
+  "vers": "2.0.0",
+  "gen": 3,
+  "deps": [
+    {
+      "crate": "gamma-api",
+      "version": "0.9.1"
+    }
+  ],
+  "cksum": "f41b8846e8f6d10d"
+}

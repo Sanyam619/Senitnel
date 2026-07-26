@@ -1,0 +1,4 @@
+batch,lane,lot,destination,ts,temp_max
+12,ambient,AMBER-10,DEN,410,21
+13,ambient,BASALT-20,DEN,420,22
+14,ambient,COPPER-30,OMA,430,23

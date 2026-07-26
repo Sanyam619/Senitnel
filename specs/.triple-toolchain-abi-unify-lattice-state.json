@@ -1,0 +1,391 @@
+{
+  "task_name": "triple-toolchain-abi-unify-lattice",
+  "attempt": 1,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 1,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/triple-toolchain-abi-unify-lattice-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must recover that lane_m2 still resolves the live profile path to ship for fleet cells, that op_q7 drops the facet_x stamp bit on ship-only cells, that hdr_n3 hardcodes pack width 8 whenever facet_y is set, and that cg_p9 mirrors that broken width for cgo/OBJECT packing \u2014 none of which appear in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Unify success requires profile authority, Rust feature/stamp forwarding, generated C ABI header emission, and Go cgo/CMake OBJECT packing to agree as one lattice across matrix cells."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction reports locally-green stamps and distant unification failures without naming profile path resolution, stamp-bit polarity, or pack-width hardcoding."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Fixing the header alone still leaves cgo/OBJECT packing disagreeing; fixing packing alone still fails when profile authority returns ship pack widths for fleet cells; fixing authority alone still fails ship-only stamp bits and facet_y hardcodes."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Hardness is triple-toolchain C ABI unification under profile authority (Rust cdylib + Go cgo + CMake OBJECT), not a single Cargo feature flip or makefile polarity recipe."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Symptoms-only cutover brief omits profile path picker, stamp-bit polarity, and pack-width hardcodes."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed multi-cell matrix topology \u2014 not hunt-one-broken-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Requires auth path, Rust forward, header forge, and packing/cgo to coordinate."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Tests cover ship-only, fleet dual-feature, fleet facet_y release, and ship+facet_y cells."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Honest prompt does not name op_q7, lane_m2, hdr_n3, or cg_p9."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Offline rust/go/cmake toolchains are harness realism, not hardness."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout-only task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Fix spans four distinct roots (r8/src/fwd.rs, g4/auth.go, gen/hdr_n3.c, g4/pack.go)."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle edits stamp forward, profile authority, header forge, and packing/cgo emission."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Not one config block; authority/forward/header/packing interact nonlinearly across cells."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Opaque symbols; instruction nouns banned on fix-path symbols and test names."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helpers named op_q7/lane_m2/hdr_n3/cg_p9, not unify/validate/fix_abi."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a textbook single-manifest feature enable; triple-toolchain ABI lattice under profiles."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "N/A build category."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Ship/fleet/release outcomes couple through shared stamp and pack-width lattice."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Docker/rust/go/cmake toolchain is realism only."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "Locally-green stamp traps plus four interacting loci block one-pass."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Clearly hard triple-toolchain C ABI unification lattice."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Four non-trivial discoveries committed in discovery_budget."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "symptoms-only level."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three topologies each with \u22653 coordinating locations."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic cargo/cgo/cmake builds and JSON status/stamp/pack_width checks."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Matrix cells must unify with status ok and agreeing abi_stamp/pack_width across surfaces."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert multi-toolchain FFI build engineer solvable in a few hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Profile-conditional triple-toolchain ABI lattice beyond undergrad labs."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real plugin host ABI unification work paid engineers do."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grades unify-report outcomes, not process or build recipes."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Cannot learn ship-vs-fleet path resolution, facet_x stamp-bit drop, or facet_y pack-width hardcodes from instruction.md alone."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "lane_m2 always returns the ship profile path, so fleet cells inherit ship pack_width=8 and miss fleet-owned live configuration",
+            "planned_location": "g4/auth.go",
+            "why_instruction_must_not_reveal": "Naming the profile path picker collapses to a one-line string rewrite."
+          },
+          {
+            "discovery": "op_q7 drops the facet_x stamp bit on ship-only (non-facet_y) cells, so alpha stamps disagree across language surfaces",
+            "planned_location": "r8/src/fwd.rs",
+            "why_instruction_must_not_reveal": "Naming the stamp-bit polarity becomes a single boolean flip recipe."
+          },
+          {
+            "discovery": "hdr_n3 hardcodes pack_width 8 whenever facet_y is set instead of honoring the live profile pack width (4 for fleet)",
+            "planned_location": "gen/hdr_n3.c",
+            "why_instruction_must_not_reveal": "Pointing at the header forge removes the header/packing coupling the task tests."
+          },
+          {
+            "discovery": "cg_p9 emits cgo/OBJECT packing width 8 under facet_y, matching the broken header so both look locally green until the header is corrected",
+            "planned_location": "g4/pack.go",
+            "why_instruction_must_not_reveal": "Naming the packing mirror removes the locally-green distant-fail trap."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Cutover symptoms only (locally-green stamps, distant unification failures); no named fix sites or algorithms."
+        },
+        "attack_path": {
+          "summary": "Read ops matrix and profiles, diagnose authority/forward/header/packing drift across Rust/Go/CMake, reconcile, rebuild cells, run unify_probe.",
+          "reasoning": "Winning path spans profile authority, Rust stamp forward, header forge, and cgo/OBJECT packing."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Must restore live profile path selection, facet_x stamp forwarding on ship-only cells, profile-honoring header pack widths, and matching cgo/OBJECT packing.",
+          "reasoning": "One-file patch cannot satisfy ship-only, fleet dual-feature, and facet_y packing tests together."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Resists single-toolchain stamp greening and readable-probe answer keys; observation-only runner with verifier-owned EXPECTED.",
+          "residual_hardness": "Four-way authority/forward/header/packing coupling plus locally-green distant-fail traps remain after the tree is visible.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "plugin",
+            "host",
+            "shared",
+            "ABI",
+            "header",
+            "language",
+            "surfaces",
+            "matrix",
+            "cell",
+            "Rust",
+            "cdylib",
+            "Go",
+            "cgo",
+            "archive",
+            "CMake",
+            "OBJECT",
+            "libraries",
+            "profile",
+            "cutover",
+            "toolchain",
+            "stamp",
+            "unification",
+            "generated",
+            "packing",
+            "feature",
+            "sets",
+            "configuration",
+            "lattice",
+            "coherence",
+            "unify",
+            "outcome",
+            "report",
+            "probe",
+            "status",
+            "abi_stamp",
+            "pack_width",
+            "ops",
+            "cells"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "resolve_profile",
+              "renamed_to": "lane_m2",
+              "reason": "Symbol echoed instruction noun profile."
+            },
+            {
+              "original": "emit_header",
+              "renamed_to": "hdr_n3",
+              "reason": "Symbol echoed instruction nouns header/generated."
+            },
+            {
+              "original": "pack_width_for",
+              "renamed_to": "cg_p9",
+              "reason": "Symbol echoed instruction noun packing/pack_width."
+            },
+            {
+              "original": "feature_stamp",
+              "renamed_to": "op_q7",
+              "reason": "Symbol echoed instruction nouns feature/stamp."
+            }
+          ],
+          "test_names_audited": [
+            "test_k3_tier_alpha_ok",
+            "test_w9_tier_beta_ok",
+            "test_m4_mark_alpha",
+            "test_z2_mark_beta",
+            "test_t6_span_gamma",
+            "test_n8_span_delta",
+            "test_y1_tri_agree_beta",
+            "test_f5_reentry_gamma"
+          ],
+          "concentration_math": {
+            "total_tests": 8,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "D",
+                "test_count": 2,
+                "ratio": 0.25
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 8,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 2,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "B",
+                "test_count": 2,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "C",
+                "test_count": 2,
+                "ratio": 0.25
+              },
+              {
+                "location_id": "D",
+                "test_count": 2,
+                "ratio": 0.25
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

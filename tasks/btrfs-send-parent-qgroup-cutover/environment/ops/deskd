@@ -1,0 +1,79 @@
+#!/bin/bash
+# deskd — attach supervisor. Refresh uses copy only.
+set -euo pipefail
+
+ROOT="${BTRFS_ROOT:-/var/lib/btrfs}"
+ENV_FILE="${BTRFS_DESKD_ENV:-/etc/btrfs/deskd.env}"
+ROSTER="${LANE_ROSTER:-/etc/btrfs/lane.roster}"
+PIDFILE=/var/run/btrfs/deskd.pid
+LOG=/var/log/btrfs/deskd.log
+
+mkdir -p /var/run/btrfs /var/log/btrfs "$ROOT/attach" "$ROOT/meta"
+
+if [[ -f "$ENV_FILE" ]]; then
+  set -a
+  # shellcheck disable=SC1090
+  source "$ENV_FILE"
+  set +a
+fi
+
+vol_root="${BTRFS_VOLUME_ROOT:-$ROOT/volumes}"
+attach_root="${BTRFS_ATTACH_ROOT:-$ROOT/attach}"
+lineage="${PAYLOAD_LINEAGE:-decoy}"
+hold_need="${HOLD_TOKEN:-lab-tmp}"
+
+rematerialize_lane() {
+  local lane="$1"
+  local src dst holdf need_refresh
+  src="$vol_root/$lane/$lineage/payload.bin"
+  if [[ ! -f "$src" ]]; then
+    src="$vol_root/$lane/decoy/payload.bin"
+  fi
+  if [[ ! -f "$src" ]]; then
+    src="$vol_root/$lane/sealed/payload.bin"
+  fi
+  dst="$attach_root/${lane}.bin"
+  holdf="$attach_root/.hold.$lane"
+  need_refresh=0
+  if [[ ! -f "$dst" ]]; then
+    need_refresh=1
+  elif [[ ! -f "$holdf" ]]; then
+    need_refresh=1
+  elif [[ "$(cat "$holdf" 2>/dev/null || true)" != "$hold_need" ]]; then
+    need_refresh=1
+  elif [[ "$lineage" == "sealed" && -f "$vol_root/$lane/sealed/payload.bin" ]]; then
+    if [[ "$(stat -c '%i' "$dst")" != "$(stat -c '%i' "$vol_root/$lane/sealed/payload.bin")" ]]; then
+      need_refresh=1
+    fi
+  elif [[ "$lineage" != "sealed" ]]; then
+    need_refresh=1
+  fi
+  if [[ "$need_refresh" -eq 1 ]]; then
+    rm -f "$dst"
+    rm -rf "$attach_root/$lane"
+    cp -f "$src" "$dst"
+    printf '%s\n' "$hold_need" >"$holdf"
+    echo "deskd: rematerialized $lane lineage=$lineage" >>"$LOG" 2>/dev/null || true
+  fi
+}
+
+if [[ "${1:-}" == "stop" ]]; then
+  if [[ -f "$PIDFILE" ]]; then
+    old=$(cat "$PIDFILE" || true)
+    if [[ -n "${old:-}" ]] && kill -0 "$old" 2>/dev/null; then
+      kill "$old" 2>/dev/null || true
+    fi
+    rm -f "$PIDFILE"
+  fi
+  exit 0
+fi
+
+while IFS= read -r lane || [[ -n "$lane" ]]; do
+  lane="${lane%%#*}"
+  lane="$(echo "$lane" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+  [[ -z "$lane" ]] && continue
+  rematerialize_lane "$lane"
+done <"$ROSTER"
+
+printf '%s\n' "$$" >"$PIDFILE"
+date -u +%Y-%m-%dT%H:%M:%SZ >/var/run/btrfs/deskd.heartbeat

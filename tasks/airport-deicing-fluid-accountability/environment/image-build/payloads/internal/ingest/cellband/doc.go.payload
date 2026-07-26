@@ -1,0 +1,2 @@
+// Package cellband reads weather diversion metadata for a shift.
+package cellband

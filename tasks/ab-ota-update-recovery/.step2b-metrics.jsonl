@@ -1,0 +1,4 @@
+{"outcome": "t_first_check_task_invocation_ns", "run_id": "05EDC42A", "timestamp_ns": 1783147905233797000, "tool": "marker"}
+{"outcome": "PASS", "run_id": "05EDC42A", "timestamp_ns": 1783147905388796000, "tool": "run_static_checks"}
+{"outcome": "PASS", "run_id": "05EDC42A", "timestamp_ns": 1783147905670336000, "tool": "collapse_check"}
+{"outcome": "t_first_step2b_pass_ns", "run_id": "05EDC42A", "timestamp_ns": 1783147905786905000, "tool": "marker"}

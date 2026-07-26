@@ -1,0 +1,4 @@
+profile_id = "fleet"
+contact_model = "gap_rc"
+reduction_order = "compensated"
+dt_policy = "fixed"

@@ -1,0 +1,12 @@
+board_id: 02
+to_move: sensei
+mate_budget: 3
+sensei_cards: Rabbit,Cobra
+pupil_cards: Goose,Rooster
+sideboard: Eel
+board:
+sp...
+.....
+..S..
+....P
+.....

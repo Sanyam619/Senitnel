@@ -1,0 +1,6 @@
+scenario cold_a slice_a.txt cold.ckpt
+scenario resume_a slice_a.txt resume.ckpt
+scenario cold_b slice_b.txt cold.ckpt
+scenario resume_b slice_b.txt resume.ckpt
+scenario mix_c slice_c.txt cold.ckpt
+scenario mix_d slice_d.txt resume.ckpt

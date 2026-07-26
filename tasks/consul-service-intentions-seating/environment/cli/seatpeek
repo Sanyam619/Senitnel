@@ -1,0 +1,22 @@
+#!/bin/bash
+# Operator display over the live work tables.
+set -euo pipefail
+W="${WORK_D:-/var/lib/consul/ops/live}"
+for t in bind tip reg acts cmt; do
+  echo "=== $t ==="
+  if [[ -s "$W/$t.tsv" ]]; then
+    cat "$W/$t.tsv"
+  else
+    echo "(empty)"
+  fi
+done
+echo "=== state ==="
+for s in generation.target generation.live cutover.ok; do
+  printf '%s: ' "$s"
+  if [[ -f "/var/lib/consul/ops/state/$s" ]]; then
+    tr '\n' ' ' <"/var/lib/consul/ops/state/$s"
+    echo
+  else
+    echo "(missing)"
+  fi
+done

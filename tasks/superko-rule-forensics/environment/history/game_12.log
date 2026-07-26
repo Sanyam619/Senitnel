@@ -1,0 +1,16 @@
+# game_12.log — 9x9 board, empty start
+# recorded 2025-06-22; short opening exchange, resigned early
+# format: <ply>  <color> <coord|pass>  <verdict>  [note]
+
+001  black 4,4   accepted
+002  white 6,6   accepted
+003  black 6,4   accepted
+004  white 4,6   accepted
+005  black 5,5   accepted  # centre push
+006  white 5,4   accepted
+007  black 5,6   accepted
+008  white 4,5   accepted
+009  black 6,5   accepted
+010  white 3,5   accepted
+011  black pass  accepted  # position judged untenable, ends the exchange
+012  white pass  accepted

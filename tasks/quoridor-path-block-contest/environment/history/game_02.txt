@@ -1,0 +1,3 @@
+# Scratch session B - wall then pawn step
+$ java -jar /app/bin/judge.jar validate --board scratch_b.txt --moves "wall:h-a2;pawn:b4"
+{"all_legal":true,"steps":[{"ply":0,"ok":true,"kind":"wall","move":"h-a2","black_path":4,"white_path":5},{"ply":1,"ok":true,"kind":"pawn","move":"b4","black_path":4,"white_path":4}],"black_path":4,"white_path":4,"black":"e1","white":"b4","walls":["h-a2"],"board":"...../.W.../...../...../....B"}

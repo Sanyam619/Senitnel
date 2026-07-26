@@ -1,0 +1,33 @@
+# CSP disposition policy (reference contract for ledger and audit outputs)
+
+[[precedence]]
+order = ["SNAP_HOLD", "LOT_RECALL", "STERILE_GAP", "CLEAR"]
+
+[reason_codes.SNAP_HOLD]
+state = "HOLD"
+summary = "Tray id is listed on the quarantine snapshot held_trays for the case."
+
+[reason_codes.LOT_RECALL]
+state = "HOLD"
+summary = "An implant lot recall notice is active for the tray outbound scan zone."
+notice_zone = "notice.zone_id equals latest outbound scan zone_id for the tray"
+notice_timing = "notice.effective_ts is at or before the OR case_start_epoch"
+
+[reason_codes.STERILE_GAP]
+state = "HOLD"
+summary = "Latest outbound scan timestamp is outside the autoclave cycle window for its zone."
+
+[reason_codes.CLEAR]
+state = "RELEASE"
+summary = "No higher-precedence block applies."
+
+[set_inheritance]
+enabled = true
+summary = "When set_catalog maps child_tray to parent_tray, a parent LOT_RECALL block applies to the child on the same case."
+
+[audit]
+blocked_field = "trays_blocked"
+cleared_field = "trays_cleared"
+exposure_field = "exposure_class"
+exposure_source = "recall_class on the matching lot notice row"
+rerun_stable = "Repeated runs on a case must not change quarantine_ledger.jsonl or recall_audit.tsv bytes."

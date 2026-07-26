@@ -1,0 +1,14 @@
+scenario = sod_shock_tube
+layout = sod
+source_kernel = cubic_spline
+n_particles = 240
+seed = 101
+dims = 1
+eta = 1.2
+gamma = 1.6666666666666667
+self_gravitating = false
+band_moment_zero = 0.6
+band_h_consistency = 1e-2
+band_momentum = 1e-6
+band_angular = 1e-6
+band_chunk_stability = 1e-12

@@ -1,0 +1,4 @@
+# Round 03 — rook exchange into a narrow file
+sfen: 9/8k/8n/7R1/8R/9/9/9/9
+hand: b:RL
+side: b

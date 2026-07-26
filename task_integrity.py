@@ -31,7 +31,15 @@ CHECKSUM_FILE_NAME = ".step2b-checksum"
 EXCLUDED_DOTFILES = (".step2b-checksum", ".step2b-metrics.jsonl")
 
 # Dotfile paths that ship in the submission zip (generic dotfile rules skip them).
-PACKAGED_DOTFILE_PATHS = frozenset({"environment/.dockerignore"})
+PACKAGED_DOTFILE_PATHS = frozenset(
+    {
+        "environment/.dockerignore",
+        # Cargo workspace config is a real Dockerfile COPY source; Daytona
+        # fails if the zip omits it. Keep allowlisted so source/zip parity
+        # and step2b checksums track the same file the archive ships.
+        "environment/.cargo/config.toml",
+    }
+)
 
 
 def _is_dotfile_part(part: str) -> bool:

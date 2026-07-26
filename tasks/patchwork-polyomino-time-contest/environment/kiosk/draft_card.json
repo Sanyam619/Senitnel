@@ -1,0 +1,125 @@
+{
+  "rounds": [
+    {
+      "board_id": "01",
+      "buttons": 2,
+      "coop_fill": true,
+      "patch_id": "P1",
+      "refutations": [],
+      "sequence": [
+        "red take P1 @ r0c2"
+      ],
+      "status": "win",
+      "time_cost": 1
+    },
+    {
+      "board_id": "02",
+      "buttons": 2,
+      "coop_fill": true,
+      "patch_id": "P1",
+      "refutations": [],
+      "sequence": [
+        "red take P1 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 1
+    },
+    {
+      "board_id": "03",
+      "buttons": 2,
+      "coop_fill": true,
+      "patch_id": "P1",
+      "refutations": [],
+      "sequence": [
+        "red take P1 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 3
+    },
+    {
+      "board_id": "04",
+      "buttons": 2,
+      "coop_fill": true,
+      "patch_id": "P2",
+      "refutations": [],
+      "sequence": [
+        "red take P2 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 3
+    },
+    {
+      "board_id": "05",
+      "buttons": 3,
+      "coop_fill": true,
+      "patch_id": "P1",
+      "refutations": [],
+      "sequence": [
+        "red take P1 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 1
+    },
+    {
+      "board_id": "06",
+      "buttons": 1,
+      "coop_fill": true,
+      "patch_id": "P1",
+      "refutations": [],
+      "sequence": [
+        "red take P1 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 2
+    },
+    {
+      "board_id": "07",
+      "buttons": 3,
+      "coop_fill": true,
+      "patch_id": "P1",
+      "refutations": [],
+      "sequence": [
+        "red take P1 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 3
+    },
+    {
+      "board_id": "08",
+      "buttons": 1,
+      "coop_fill": true,
+      "patch_id": "P1",
+      "refutations": [],
+      "sequence": [
+        "red take P1 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 4
+    },
+    {
+      "board_id": "09",
+      "buttons": 2,
+      "coop_fill": true,
+      "patch_id": "P3",
+      "refutations": [],
+      "sequence": [
+        "red take P3 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 3
+    },
+    {
+      "board_id": "10",
+      "buttons": 2,
+      "coop_fill": true,
+      "patch_id": "P1",
+      "refutations": [],
+      "sequence": [
+        "red take P1 @ r0c0"
+      ],
+      "status": "win",
+      "time_cost": 2
+    }
+  ],
+  "schema_tag": "patchwork-time-v1"
+}

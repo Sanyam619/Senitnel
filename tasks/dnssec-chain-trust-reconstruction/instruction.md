@@ -1,0 +1,5 @@
+The analyzer in `/app` was written for a signed naming catalog captured during a credential rollover. It currently produces convincing answers on quiet snapshots, but mixed-window captures drift: a few lookups are accepted even though the proof material they lean on was no longer usable at that wall-clock instant.
+
+Repair the Rust project so running it over /app/data/queries.tsv writes `/app/output/validation.json` and `/app/output/replayed.json`. The validation file is a JSON array, one object per query, carrying its identity, lookup name, capture instant, status, chosen chain, and reason. A successful status includes the concrete chain of authorities and credentials chosen for that instant. An unsuccessful status has an empty chain and a short reason. The replay report is a JSON object whose queries list contains the ids whose only convincing proof route depends on material that had already been withdrawn.
+
+Do not make the result depend on file-system iteration order or on the current machine time. The same inputs should always produce the same two files.

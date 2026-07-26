@@ -1,0 +1,27 @@
+user_visible_outputs = [
+  "/output/crm-seat.json",
+]
+internal_harness_files = [
+  "/app/packaging/cluster.sha256",
+]
+
+[structured_outputs.crm_seat]
+target = "/output/crm-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "nodes",
+  "resources",
+  "fences",
+  "seat_ok",
+  "name",
+  "online",
+  "generation",
+  "id",
+  "node",
+  "role",
+  "stickiness",
+  "target",
+  "epoch",
+  "status",
+]

@@ -1,0 +1,214 @@
+{
+  "symbol_table": [
+    {
+      "path": "r8/build.rs",
+      "symbol": "gate_ok",
+      "kind": "function",
+      "signature": "fn gate_ok() -> bool",
+      "purpose": "Compound cutover gate (sealed × epoch floor × journal hold token)."
+    },
+    {
+      "path": "r8/build.rs",
+      "symbol": "knit_w",
+      "kind": "function",
+      "signature": "fn knit_w() -> String",
+      "purpose": "Selects PACK_WIDTH from pref_a prefer vs legacy archive_pack after graph sync."
+    },
+    {
+      "path": "r8/build.rs",
+      "symbol": "promote_nx_live",
+      "kind": "function",
+      "signature": "fn promote_nx_live()",
+      "purpose": "Copies optional ops/nx promote sheets into live config when gate passes."
+    },
+    {
+      "path": "g4/gate.go",
+      "symbol": "ensureGate",
+      "kind": "function",
+      "signature": "func ensureGate()",
+      "purpose": "Shared rematerialize/promote entry for resolve/wire/width/stamp."
+    },
+    {
+      "path": "g4/gate.go",
+      "symbol": "promoteNxLive",
+      "kind": "function",
+      "signature": "func promoteNxLive()",
+      "purpose": "Go-side promote of nx sheets into live config."
+    },
+    {
+      "path": "g4/auth.go",
+      "symbol": "foldLaneAliases",
+      "kind": "function",
+      "signature": "func foldLaneAliases() map[string]string",
+      "purpose": "Drop-in fold of config/lane.d under fold_p overlay."
+    },
+    {
+      "path": "c6/xv_w.cmake",
+      "symbol": "_XV_MODE",
+      "kind": "cmake",
+      "signature": "set(_XV_MODE ...)",
+      "purpose": "Hook-driven packing mode selected from hook_q.toml."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/nx/cut_n.toml",
+        "controls_tests": [
+          "test_v3_gate_reentry",
+          "test_f5_reentry_gamma"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "config/lane.d/50-draft.toml",
+        "controls_tests": [
+          "test_w9_tier_beta",
+          "test_p7_width_split"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "config/strand_m.toml",
+        "controls_tests": [
+          "test_z2_mark_beta",
+          "test_e4_epsilon_ship",
+          "test_q2_facet_split"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "ops/nx/pref_a.toml",
+        "controls_tests": [
+          "test_t6_span_gamma",
+          "test_n8_span_delta"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "ops/nx/hook_q.toml",
+        "controls_tests": [
+          "test_y1_tri_agree_beta",
+          "test_n8_span_delta"
+        ]
+      },
+      {
+        "id": "F",
+        "path": "ops/nx/rel_mask.toml",
+        "controls_tests": [
+          "test_h8_release_facet",
+          "test_e4_epsilon_ship"
+        ]
+      },
+      {
+        "id": "G",
+        "path": "config/profiles/fleet.toml",
+        "controls_tests": [
+          "test_w9_tier_beta",
+          "test_v3_gate_reentry"
+        ]
+      },
+      {
+        "id": "H",
+        "path": "r8/build.rs",
+        "controls_tests": [
+          "test_m4_mark_alpha",
+          "test_w9_tier_beta"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "config/lane_k.toml",
+      "kind": "config",
+      "rhymes_with": "fold",
+      "non_fix_purpose": "Legacy aggregate alias sheet; live authority is lane.d + fold_p."
+    },
+    {
+      "path": "r8/src/map_legacy.rs",
+      "kind": "helper",
+      "rhymes_with": "knit_w",
+      "non_fix_purpose": "Pretty-prints historical stamp fragments for ops docs; not invoked by release cdylib builds."
+    },
+    {
+      "path": "g4/preview.go",
+      "kind": "helper",
+      "rhymes_with": "alias",
+      "non_fix_purpose": "Lists profile filenames for status_check.sh; does not resolve the live path."
+    },
+    {
+      "path": "gen/preview_hdr.c",
+      "kind": "helper",
+      "rhymes_with": "hook",
+      "non_fix_purpose": "Emits a human-readable dump of header macros for ops; unused by unify_probe."
+    },
+    {
+      "path": "config/profiles/field.toml",
+      "kind": "config",
+      "rhymes_with": "fold",
+      "non_fix_purpose": "Draft profile with pack_width 16; bait when draft overlay still folds fleet→field."
+    },
+    {
+      "path": "link/legacy.toml",
+      "kind": "config",
+      "rhymes_with": "prefer",
+      "non_fix_purpose": "Archive archaeology notes; still read when prefer=archive or hook mode=archive."
+    },
+    {
+      "path": "link/lane_seed.toml",
+      "kind": "config",
+      "rhymes_with": "fold",
+      "non_fix_purpose": "Permanently wrong seed used to rematerialize 50-draft until gate passes."
+    },
+    {
+      "path": "host/CMakeLists.txt",
+      "kind": "cmake",
+      "rhymes_with": "hook",
+      "non_fix_purpose": "Host executable glue; packing policy lives in c6/xv_w.cmake via hook_q."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "plugin",
+    "host",
+    "shared",
+    "ABI",
+    "header",
+    "language",
+    "surfaces",
+    "matrix",
+    "cell",
+    "Rust",
+    "cdylib",
+    "Go",
+    "cgo",
+    "archive",
+    "CMake",
+    "OBJECT",
+    "libraries",
+    "profile",
+    "cutover",
+    "toolchain",
+    "stamp",
+    "unification",
+    "generated",
+    "packing",
+    "feature",
+    "sets",
+    "configuration",
+    "lattice",
+    "coherence",
+    "unify",
+    "outcome",
+    "report",
+    "probe",
+    "status",
+    "abi_stamp",
+    "pack_width",
+    "ops",
+    "cells"
+  ]
+}

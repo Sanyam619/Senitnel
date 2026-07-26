@@ -1,0 +1,11 @@
+board_id: board_07
+to_move: first
+budget: 2
+heights:
+0 0 0 0 0
+0 0 3 0 0
+0 0 2 0 0
+0 1 0 0 0
+0 0 0 0 0
+first: b2 a5
+second: e1 d5

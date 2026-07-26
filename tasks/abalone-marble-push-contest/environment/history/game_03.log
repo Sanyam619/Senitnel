@@ -1,0 +1,2 @@
+# Dialect sample — side-step then inline.
+black a3b3>a4;white e5>d4;black b3c3>d3

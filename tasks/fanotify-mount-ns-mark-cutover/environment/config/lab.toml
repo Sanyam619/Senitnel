@@ -1,0 +1,12 @@
+[lab]
+root = "/data/lab"
+helpers = "/opt/fev/bin"
+units = "/opt/fev/units"
+
+[paths]
+alpha = "path-alpha"
+beta = "path-beta"
+gamma = "path-gamma"
+delta = "path-delta"
+epsilon = "path-epsilon"
+zeta = "path-zeta"

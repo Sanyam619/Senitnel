@@ -1,0 +1,63 @@
+{
+  "symbol_table": [
+    {
+      "path": "pkg/phase/relay.go",
+      "symbol": "step_phase_a",
+      "kind": "function",
+      "signature": "func step_phase_a(root string, gates []string) error",
+      "purpose": "Writes delegated brake tokens into a parent subtree gate file."
+    },
+    {
+      "path": "pkg/relay/move.go",
+      "symbol": "wire_node_b",
+      "kind": "function",
+      "signature": "func wire_node_b(legacy string, target string, brakes map[string]string) error",
+      "purpose": "Detaches legacy shadows and wires limit lines on the unified node."
+    },
+    {
+      "path": "internal/acct/rollup.go",
+      "symbol": "emit_ledger_c",
+      "kind": "function",
+      "signature": "func emit_ledger_c(out string, names []string) error",
+      "purpose": "Aggregates per-name brake and peak tallies into the output JSON object."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "pkg/phase/relay.go",
+        "controls_tests": ["test_x3_shape_bundle", "test_f7_brake_hits"]
+      },
+      {
+        "id": "B",
+        "path": "pkg/relay/move.go",
+        "controls_tests": ["test_j2_peak_log", "test_p1_shadow_gone"]
+      },
+      {
+        "id": "C",
+        "path": "internal/acct/rollup.go",
+        "controls_tests": ["test_n5_unit_ledger", "test_r4_anchor_intact"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "pkg/phase/legacy_relay.go",
+      "kind": "helper",
+      "rhymes_with": "step_phase_a",
+      "non_fix_purpose": "Deprecated leaf-only gate writer used by diagnostic scripts, not the cutover path."
+    },
+    {
+      "path": "pkg/relay/probe_node.go",
+      "kind": "helper",
+      "rhymes_with": "wire_node_b",
+      "non_fix_purpose": "Read-only legacy attachment dumper for nodescope; does not detach or wire limits."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "container", "host", "migration", "systemd", "health", "throttling", "memory", "scope", "hierarchy", "controller", "cutover", "accounting", "fixture", "workload", "unified", "delegation", "report", "stress", "event", "migrated", "legacy", "limit", "tree", "surface", "job", "pressure", "notification", "seed", "resource", "check", "partial", "zero", "stub", "attach", "root", "layout", "produce", "cgroup", "v2", "v1", "io", "throttle", "high-water", "systemd-cgtop"
+  ]
+}

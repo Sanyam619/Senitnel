@@ -1,0 +1,10 @@
+batch_floor = 43
+ledger_pin = 40
+bind_ready = false
+cold_cursor = 43
+replay_epoch = 9001
+north_gate = 43
+south_gate = 43
+ambient_guard = 14
+lane_epoch = 0
+bind_attempt = 0

@@ -1,0 +1,12 @@
+[package]
+name = "btrfs_lab"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "bops"
+path = "src/bops.rs"
+
+[[bin]]
+name = "healthb"
+path = "src/healthb.rs"

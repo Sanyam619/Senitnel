@@ -1,0 +1,26 @@
+# Platform explanation fields — edge-lane-lattice-rollup
+# Authoring paste only; not shipped in the submission zip.
+
+## What the agent must do
+Restore deep fleet trust attestation under `/app` so `/output/trust-attestation.json`
+and `/output/quarantine.json` match a fresh `trusteval` rebuild. Load-bearing work is
+Ed25519 verification against epoch-derived authority material (key domain + seed) with
+signed messages that bind epoch and lane identity, plus quarantine classification for
+failed signatures, ascending-timestamp replays on the interleaved JSONL∪WAL stream, and
+ledger revocations. Credential JSONL feeds under `/app/data/credentials/` are deep inputs.
+Watermark inclusivity, credential/WAL timestamp interleave, and hold/revoke co-presence
+couple the policy lattice.
+
+## Why this is not surface triage
+`/app/bin/surfpoke` and `/app/data/fixtures/surface_attestation.json` are compromised
+bait. Correct work disagrees with that surface on accepted tallies.
+
+## Anti-cheating / verification notes
+- Tests `cargo build -p trusteval --release` and run `trusteval attest` fresh; outputs
+  cannot be faked without a correct rebuild.
+- Dynamic `seg_97` / `seg_98` / `seg_99` injection proves the verification path is live.
+- Fixture immutability and surface divergence are checked.
+- Tests and solution stay out of the image; `Cargo.lock` plus offline cargo pin the build.
+- Quarantine expectations are derived from the rebuilt oracle quarantine, not answer-key
+  tuples copied from the instruction.
+- Oracle 3/3, NOP 0; no reward hacking.

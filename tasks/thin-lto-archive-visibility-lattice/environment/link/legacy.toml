@@ -1,0 +1,4 @@
+mode = "legacy"
+archive_epoch = 3
+archive_members = 4
+notes = "pre-cutover link sheet"

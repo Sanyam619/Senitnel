@@ -1,0 +1,20 @@
+# game_7.log — 9x9 board, empty start
+# recorded 2025-04-18; teaching game, no ko contests
+# format: <ply>  <color> <coord|pass>  <verdict>  [note]
+
+001  black 5,5   accepted  # tengen opening
+002  white 3,3   accepted  # corner
+003  black 7,7   accepted
+004  white 7,3   accepted
+005  black 3,7   accepted
+006  white 5,3   accepted
+007  black 5,7   accepted
+008  white 4,4   accepted
+009  black 6,6   accepted
+010  white 4,7   accepted
+011  black 6,3   accepted
+012  white 3,5   accepted
+013  black 7,5   accepted
+014  white 3,6   accepted
+015  black pass  accepted
+016  white pass  accepted

@@ -1,0 +1,18 @@
+user_visible_outputs = [
+  "/output/diversion-report.json",
+]
+
+internal_harness_files = [
+  "/app/data/state/runtime.json",
+  "/app/data/sidecars/cold.idx",
+  "/app/data/sidecars/ambient.idx",
+]
+
+[structured_outputs.diversion_report]
+target = "/output/diversion-report.json"
+format = "json"
+instruction_checks = [
+  "restored_batch",
+  "visible_lots",
+  "sidecar_digest",
+]

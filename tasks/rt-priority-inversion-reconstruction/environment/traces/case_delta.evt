@@ -1,0 +1,15 @@
+# klb evt v1
+JOB 0 t_siren START
+TSW 300 t_siren t_moor
+LCK 600 t_moor lk_d ACQ
+JOB 700 t_moor START
+TSW 10000 t_moor t_tide
+JOB 11000 t_tide START
+WUP 14000 t_tide t_siren
+LCK 16000 t_siren lk_d WAIT
+TMR 120000 t_siren job0 EXP 120000
+TSW 121000 t_tide t_siren
+LCK 121500 t_siren lk_d ACQ
+JOB 121600 t_siren START
+JOB 135000 t_siren END
+LCK 135100 t_siren lk_d REL

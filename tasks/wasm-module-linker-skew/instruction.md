@@ -1,0 +1,5 @@
+Partial compile artifacts remain under `/app/data/modules/`, yet `linkctl report` and `gatectl epoch` disagree with `/app/ops/scripts/graph_lab.py` at the promoted manifest head. The link report omits filter even though codec, host, and filter should all appear in the graph at that head.
+
+Edit operator tables under `/app/config/l7/`, Go sources under `/app/gate/`, and Rust sources under `/app/wasm/`. Do not cap the link epoch below the promoted manifest head. Rebuild `/app/bin/gatectl` and `/app/bin/linkctl` after code changes. Do not hand-edit files under `/app/data/modules/`; `slots.sha256` there is the integrity ledger for inputs.
+
+Write `/output/link-report.json` using `linkctl report --out /output/link-report.json`. The report includes integer `epoch`, hex string `graph_digest`, a `modules` object mapping each visible module id to `{version, digest}`, and an `imports` list binding host imports to dependency slots. Values agree with `/app/ops/scripts/graph_lab.py` for the active epoch. `gatectl epoch` prints the same integer as `epoch`.

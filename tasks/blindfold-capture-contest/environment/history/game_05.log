@@ -1,0 +1,6 @@
+# session epsilon
+001  black b1c3  accepted  silent
+002  white g8f6  accepted  silent
+003  black c3d5  accepted  silent
+004  white f6d5  accepted  taken:d5
+005  black e2e4  accepted  silent

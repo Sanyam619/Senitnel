@@ -1,0 +1,30 @@
+# UI submission rubric — backup-restore-reconstruction
+# Paste into platform rubric field. Not shipped in submission zip.
+#
+# Grades live fleet crash-export recovery: operator-script repair, lexical
+# drop-in fold, sealed journal cutover + abort rematerialize gate, generation
+# alignment, lease/quarantine state, same-inode sealed attaches, and the
+# reconciliation report. Not a lab-pool / byte-span / Rust-source / repair.json
+# task.
+# Positive sum = 34 (band 10–40). At least three negatives.
+# Allowed scores only: +1, +2, +3, +5, -1, -2, -3, -5.
+# Do not reward absence of a mistake with a positive line — use a negative.
+
+Agent reads /app/docs/ reconcile and journal contracts and inspects live /etc/fleet and /var/lib/fleet state before changing recovery helpers, +2
+Agent repairs the operator recovery scripts under /app/ops, /app/bag, /app/rim, and /app/deck so /app/ops/run_recovery.sh can complete end-to-end, +3
+Agent folds /etc/fleet/reconcile.d/*.conf in lexical order so effective /etc/fleet/reconcile.conf matches site-standard precedence_mode, borrow_gate, and fragment_order, +3
+Agent applies the target-generation mode=seal journal cutover instead of a later provisional rollback row, +3
+Agent writes a durable key=value cutover.ok receipt, keeps live /etc/fleet/reconcile.d/90-local.conf present with site-standard tokens, and leaves abort.d residue on its synonym tokens, +3
+Agent sets gen.live to gen.target, writes attach.intent as the raw token seal, and sets PAYLOAD_LINEAGE to the sealed volume directory name, +3
+Agent restores full export lease claim sets and rebuilds quarantine gate files that match each episode peer map, +3
+Agent same-inode attaches every runtime payload.bin to volumes/<episode>/sealed/payload.bin and stamps the sealed-cutover hold on each .hold, +5
+Agent leaves fleetd supervised via /var/run/fleet/fleetd.pid after recovery, +1
+Agent produces /output/reconciliation.json for all five episodes with correct roster_final, borrow_peer, digests, and decision, +3
+Agent materializes matching /output/restored trees and /output/meta/run.stamp with the armed canonical policy tokens, +2
+Agent treats a green /app/ops/fleethealth result as done while policy, cutover, leases, gates, or attaches remain wrong, -2
+Agent trusts the last rollback journal row or leaves gen.live on the abort-window generation, -3
+Agent sets PAYLOAD_LINEAGE to the journal mode token seal instead of the sealed volume directory, or leaves attach.intent wrong, -3
+Agent copies sealed bytes into runtime or lets fleetd rematerialize copies instead of preserving sealed same-inode attaches, -3
+Agent rewrites abort.d residue to site-standard or deletes live 90-local.conf instead of rewriting the live drop-in, -3
+Agent hand-writes /output or bypasses run_recovery.sh / fleetd so live admin state is never reconciled, -5
+Agent mutates crash-export fixtures under /app/data or replaces the pinned fleetpeek binary, -5

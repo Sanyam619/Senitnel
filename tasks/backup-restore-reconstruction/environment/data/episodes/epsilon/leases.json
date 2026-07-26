@@ -1,0 +1,26 @@
+{
+  "claims": [
+    {
+      "live": true,
+      "peer": "ridge",
+      "sealed": true,
+      "token": "e-ridge",
+      "ts": 500
+    },
+    {
+      "live": true,
+      "peer": "atlas",
+      "sealed": false,
+      "token": "e-atlas",
+      "ts": 850
+    },
+    {
+      "live": true,
+      "peer": "cinder",
+      "sealed": true,
+      "token": "e-cinder",
+      "ts": 400
+    }
+  ],
+  "slot": "borrow_primary"
+}

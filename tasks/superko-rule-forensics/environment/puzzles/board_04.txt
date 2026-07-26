@@ -1,0 +1,13 @@
+puzzle_id: 4
+to_move: black
+target: 5,4
+board:
+.........
+..XXXXX..
+..XO..X..
+..XO.OX..
+..XO.OX..
+..XO.OX..
+..XO..X..
+..XXXXX..
+.........

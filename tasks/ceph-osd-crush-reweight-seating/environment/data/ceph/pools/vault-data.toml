@@ -1,0 +1,3 @@
+name = "vault-data"
+size = 2
+pg_num = 64

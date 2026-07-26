@@ -1,0 +1,15 @@
+scenario = poly_star
+layout = poly
+source_kernel = cubic_spline
+n_particles = 240
+seed = 404
+dims = 3
+eta = 1.2
+gamma = 1.6666666666666667
+self_gravitating = true
+band_moment_zero = 0.6
+band_h_consistency = 1e-2
+band_momentum = 1e-6
+band_angular = 1e-6
+band_gravity_virial = 5e-2
+band_chunk_stability = 1e-12

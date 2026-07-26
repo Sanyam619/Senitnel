@@ -1,0 +1,10 @@
+#!/bin/bash
+# ipahealth — surface probe only (entry counts).
+set -euo pipefail
+
+if /app/cli/probe_e.sh; then
+  echo "joined"
+  exit 0
+fi
+echo "unenrolled"
+exit 1

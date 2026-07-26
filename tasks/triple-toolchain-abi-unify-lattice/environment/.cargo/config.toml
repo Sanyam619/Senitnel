@@ -1,0 +1,6 @@
+# Offline / locked builds; no network at solve time.
+[net]
+offline = true
+
+[build]
+target-dir = "/app/target"

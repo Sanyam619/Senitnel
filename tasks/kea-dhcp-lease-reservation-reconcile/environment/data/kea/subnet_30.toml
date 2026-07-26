@@ -1,0 +1,4 @@
+id = 30
+durable_pool = "10.30.30.0/24"
+live_pool = "192.168.30.0/24"
+floor = 7

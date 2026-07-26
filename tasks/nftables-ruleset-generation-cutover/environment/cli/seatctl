@@ -1,0 +1,158 @@
+#!/bin/bash
+# seatctl — publish seating ledger from prepared durable+live agreement.
+set -euo pipefail
+
+OUT="${SEAT_OUT:-/output/nft-seat.json}"
+ROOT="${NFT_ROOT:-/var/lib/nft}"
+ROSTER="${ROSTER:-/etc/nft/roster.list}"
+FOLD="$ROOT/ops/fold.nft"
+APPLIED="$ROOT/ops/applied.nft"
+KERNEL="$ROOT/ops/kernel.nft"
+PREFER="$ROOT/ops/prefer.conf"
+STATE="$ROOT/state"
+JOURNAL="$ROOT/ops/journal.jsonl"
+FLOOR_D="$ROOT/floors"
+
+mkdir -p "$(dirname "$OUT")"
+
+python3 - "$OUT" "$ROSTER" "$FOLD" "$APPLIED" "$KERNEL" "$PREFER" "$STATE" "$JOURNAL" "$FLOOR_D" <<'PY'
+import json
+import re
+import sys
+from pathlib import Path
+
+out, roster, fold, applied, kernel, prefer, state, journal, floor_d = map(Path, sys.argv[1:])
+
+def normalize(text: str) -> str:
+    lines = []
+    for line in text.splitlines():
+        line = line.split("#", 1)[0].rstrip()
+        if not line.strip():
+            continue
+        lines.append(" ".join(line.split()))
+    return "\n".join(lines) + ("\n" if lines else "")
+
+def load_prefer(path: Path) -> dict[str, str]:
+    d = {}
+    if not path.exists():
+        return d
+    for line in path.read_text().splitlines():
+        line = line.split("#", 1)[0].strip()
+        if not line or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        d[k.strip()] = v.strip()
+    return d
+
+def sealed_tips(journal: Path, target: int) -> dict[str, int]:
+    tips = {}
+    if not journal.exists():
+        return tips
+    for line in journal.read_text().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        row = json.loads(line)
+        if row.get("kind") == "cutover" and int(row.get("gen", -1)) == target and row.get("mode") == "seal":
+            tips = {k: int(v) for k, v in row.get("tips", {}).items()}
+    return tips
+
+def count_rules(text: str) -> int:
+    n = 0
+    for line in text.splitlines():
+        s = line.split("#", 1)[0].strip()
+        if not s or s in ("{", "}"):
+            continue
+        if s.startswith(("table ", "chain ")):
+            continue
+        if s.startswith("type ") or "policy " in s and s.startswith("type"):
+            continue
+        if re.match(r"^type\s+\S+\s+hook\s+", s):
+            continue
+        n += 1
+    return n
+
+def parse_chains(text: str) -> list[dict]:
+    chains = []
+    cur_table = None
+    cur_chain = None
+    for raw in text.splitlines():
+        line = raw.split("#", 1)[0].rstrip()
+        s = line.strip()
+        if not s:
+            continue
+        m = re.match(r"^table\s+(\S+)\s+(\S+)\s*\{?", s)
+        if m:
+            cur_table = m.group(2)
+            continue
+        m = re.match(r"^chain\s+(\S+)\s*\{?", s)
+        if m:
+            cur_chain = m.group(1)
+            continue
+        m = re.match(
+            r"^type\s+(\S+)\s+hook\s+(\S+)\s+priority\s+(-?\d+)\s*;\s*policy\s+(\S+)\s*;",
+            s,
+        )
+        if m and cur_table and cur_chain:
+            chains.append(
+                {
+                    "table": cur_table,
+                    "name": cur_chain,
+                    "policy": m.group(4).rstrip(";"),
+                    "hook": m.group(2),
+                    "priority": int(m.group(3)),
+                }
+            )
+            cur_chain = cur_chain  # keep
+    return chains
+
+FAM = {"filter": "inet", "nat": "ip", "mangle": "ip", "raw": "ip"}
+names = [
+    ln.strip()
+    for ln in roster.read_text().splitlines()
+    if ln.strip() and not ln.strip().startswith("#")
+]
+target = int((state / "gen.target").read_text().strip())
+tips = sealed_tips(journal, target)
+pref = load_prefer(prefer)
+fold_text = fold.read_text() if fold.exists() else ""
+applied_text = applied.read_text() if applied.exists() else ""
+kernel_text = kernel.read_text() if kernel.exists() else ""
+ok = (
+    bool(fold_text.strip())
+    and normalize(fold_text) == normalize(applied_text)
+    and normalize(fold_text) == normalize(kernel_text)
+)
+if "abort_lab" in fold_text:
+    ok = False
+live_gen_p = state / "gen.live"
+if not live_gen_p.exists() or live_gen_p.read_text().strip() != str(target):
+    ok = False
+
+tables = []
+for name in names:
+    tip = int(tips.get(name, 0))
+    floor_p = floor_d / f"{name}.floor"
+    floor = int(floor_p.read_text().strip()) if floor_p.exists() else 0
+    tables.append({"family": FAM[name], "name": name, "generation": tip})
+    if tip < floor and name in fold_text:
+        ok = False
+
+chains = parse_chains(fold_text)
+for c in chains:
+    fam = FAM.get(c["table"], "")
+    key = f"{fam}/{c['table']}/{c['name']}"
+    if key in pref and pref[key] != c["policy"]:
+        ok = False
+
+# Count from the loaded ruleset dump so additive applies inflate the tally.
+rules_applied = count_rules(applied_text if applied_text.strip() else fold_text)
+doc = {
+    "schema_tag": "nft-seat-v1",
+    "tables": tables,
+    "chains": chains,
+    "rules_applied": rules_applied,
+    "seat_ok": ok,
+}
+out.write_text(json.dumps(doc, indent=2) + "\n")
+PY

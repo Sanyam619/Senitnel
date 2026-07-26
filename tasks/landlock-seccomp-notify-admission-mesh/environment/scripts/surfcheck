@@ -1,0 +1,16 @@
+#!/bin/bash
+# Surface probe: lexical skim only — not host admission authority.
+set -euo pipefail
+ROOT="${APP_ROOT:-/app}"
+for f in "$ROOT"/data/scenarios/*.json; do
+  id=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['id'])" "$f")
+  req=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1]))['req'])" "$f")
+  bit=$("$ROOT/bin/nhelper" surface 1 open pass | tr -d '\n')
+  # skim via meshctl surface for the req token
+  line=$("$ROOT/bin/meshctl" surface "$req" | awk '{print $2}')
+  if [ "$line" = "OK" ] && [ "$bit" = "1" ]; then
+    echo "$id OK"
+  else
+    echo "$id FAIL"
+  fi
+done

@@ -1,0 +1,4 @@
+# Maps matrix feature names to FACET_X / FACET_Y enable bits for the build.
+[enable]
+facet_x = true
+facet_y = false

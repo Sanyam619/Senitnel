@@ -1,0 +1,7 @@
+round_id: R07
+demand_mw: 160
+reserve_mw: 5
+units:
+unit A 40 7
+unit B 40 9
+unit C 40 11

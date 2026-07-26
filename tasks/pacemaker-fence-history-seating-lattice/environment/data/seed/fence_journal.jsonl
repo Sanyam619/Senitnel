@@ -1,0 +1,7 @@
+{"target":"node_b","epoch":20,"status":"fenced"}
+{"target":"node_b","epoch":25,"status":"retract"}
+{"target":"node_b","epoch":40,"status":"fenced"}
+{"target":"node_c","epoch":15,"status":"fenced"}
+{"target":"node_c","epoch":22,"status":"retract"}
+{"target":"node_a","epoch":5,"status":"fenced"}
+{"target":"node_a","epoch":8,"status":"retract"}

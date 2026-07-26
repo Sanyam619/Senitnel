@@ -1,0 +1,4 @@
+KEY|lab.example.test|LKSK_A|KSK|LA|0|280|-
+KEY|lab.example.test|LKSK_B|KSK|LB|235|500|-
+KEY|lab.example.test|LZSK_A|ZSK|LZA|0|280|255
+KEY|lab.example.test|LZSK_B|ZSK|LZB|260|500|-

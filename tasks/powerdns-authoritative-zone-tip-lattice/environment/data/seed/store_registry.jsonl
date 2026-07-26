@@ -1,0 +1,4 @@
+{"tag":"bind","epoch":3,"store":"bind"}
+{"tag":"bind","epoch":5,"store":"lmdb"}
+{"tag":"bind","epoch":8,"store":"gsqlite3"}
+{"tag":"seal","epoch":8}

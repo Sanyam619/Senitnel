@@ -1,0 +1,6 @@
+# Durable-authority bind acceptance.
+#
+# The guard only stands down once this receipt names the durable authority
+# class that the trust policy selects. A stale surface binding leaves the
+# rematerialize guard active.
+bind = surface-leaf

@@ -1,0 +1,22 @@
+user_visible_outputs = [
+  "/output/recovery.json",
+  "/output/fixed_case_alpha.img",
+  "/output/fixed_case_beta.img",
+  "/output/fixed_case_gamma.img",
+  "/output/fixed_case_delta.img",
+]
+
+internal_harness_files = [
+  "/tests/test_outputs.py",
+]
+
+[structured_outputs.recovery]
+target = "/output/recovery.json"
+format = "json"
+instruction_checks = [
+  "scenarios",
+  "live_slot",
+  "action",
+  "bootable_slots",
+  "bootloader_hex",
+]

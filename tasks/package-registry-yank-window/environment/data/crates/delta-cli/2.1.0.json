@@ -1,0 +1,12 @@
+{
+  "name": "delta-cli",
+  "vers": "2.1.0",
+  "gen": 4,
+  "deps": [
+    {
+      "crate": "beta-util",
+      "version": "1.2.0"
+    }
+  ],
+  "cksum": "f7bc485c717b614d"
+}

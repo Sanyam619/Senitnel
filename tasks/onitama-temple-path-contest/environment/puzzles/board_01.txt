@@ -1,0 +1,12 @@
+board_id: 01
+to_move: sensei
+mate_budget: 2
+sensei_cards: Crab,Goose
+pupil_cards: Mantis,Tiger
+sideboard: Monkey
+board:
+s....
+.....
+.....
+..S..
+p...P

@@ -1,0 +1,10 @@
+#!/bin/bash
+# redishhealth — surface probe only.
+set -euo pipefail
+
+if /app/rim/moss_b.sh; then
+  echo "MASTER-OK"
+  exit 0
+fi
+echo "FAIL"
+exit 1

@@ -1,0 +1,21 @@
+user_visible_outputs = [
+  "/output/loa-card.json",
+  "/app/bin/judge.jar",
+]
+
+internal_harness_files = []
+
+[structured_outputs.loa_card]
+target = "/output/loa-card.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "rounds",
+  "board_id",
+  "status",
+  "key_move",
+  "components",
+  "sequence",
+  "refutations",
+  "coop_connect",
+]

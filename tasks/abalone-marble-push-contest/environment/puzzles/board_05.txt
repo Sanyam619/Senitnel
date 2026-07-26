@@ -1,0 +1,8 @@
+board_id: 05
+to_move: black
+board:
+  .WB
+ BB..
+...W.
+ B..B
+  W..

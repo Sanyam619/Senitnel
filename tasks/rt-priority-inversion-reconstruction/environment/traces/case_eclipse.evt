@@ -1,0 +1,16 @@
+# klb evt v1
+JOB 0 t_axis START
+TSW 800 t_axis t_pivot
+LCK 900 t_pivot lk_p ACQ
+LCK 85000 t_pivot lk_p REL
+JOB 1000 t_pivot START
+TSW 11000 t_pivot t_orbit
+JOB 12000 t_orbit START
+WUP 14000 t_orbit t_axis
+LCK 17000 t_axis lk_p WAIT
+TMR 70000 t_axis job0 EXP 70000
+TSW 72000 t_orbit t_axis
+LCK 72500 t_axis lk_p ACQ
+JOB 73000 t_axis START
+JOB 80000 t_axis END
+LCK 80100 t_axis lk_p REL

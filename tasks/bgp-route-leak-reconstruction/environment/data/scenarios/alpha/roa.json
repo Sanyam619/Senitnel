@@ -1,0 +1,32 @@
+{
+  "entries": [
+    {
+      "prefix": "10.1.0.0/24",
+      "max_length": 2,
+      "origin_asn": 65010,
+      "serial": 10,
+      "state": "valid"
+    },
+    {
+      "prefix": "10.1.1.0/24",
+      "max_length": 3,
+      "origin_asn": 65010,
+      "serial": 11,
+      "state": "valid"
+    },
+    {
+      "prefix": "10.1.2.0/24",
+      "max_length": 2,
+      "origin_asn": 65011,
+      "serial": 12,
+      "state": "valid"
+    },
+    {
+      "prefix": "10.1.3.0/24",
+      "max_length": 2,
+      "origin_asn": 65012,
+      "serial": 13,
+      "state": "valid"
+    }
+  ]
+}

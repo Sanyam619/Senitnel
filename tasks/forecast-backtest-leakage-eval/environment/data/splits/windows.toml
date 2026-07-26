@@ -1,0 +1,25 @@
+[[window]]
+id = "w_alpha"
+train_end = 48
+period = 7
+
+[[window]]
+id = "w_beta"
+train_end = 48
+period = 7
+
+[[window]]
+id = "w_gamma"
+train_end = 54
+period = 7
+
+[[window]]
+id = "w_delta"
+train_end = 45
+period = 5
+
+[[window]]
+id = "w_epsilon"
+train_end = 52
+period = 7
+

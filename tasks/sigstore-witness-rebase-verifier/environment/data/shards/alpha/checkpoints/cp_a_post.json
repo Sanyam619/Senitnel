@@ -1,0 +1,8 @@
+{
+  "checkpoint_id": "cp_a_post",
+  "shard": "alpha",
+  "epoch": 200,
+  "tree_size": 512,
+  "root_hash": "a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3a3",
+  "cross_attested": false
+}

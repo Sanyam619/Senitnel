@@ -1,0 +1,42 @@
+user_visible_outputs = [
+  "/output/warmup-report.json",
+  "/app/scripts/run-engine.sh",
+  "/app/scripts/show-coredump.sh",
+  "/app/bin/fastcheck",
+  "/app/bin/warmup",
+  "/app/data/scenarios/",
+  "/app/data/authority/",
+  "/app/data/manifest/registry.sig",
+  "/app/docs/report-schema.md",
+  "/app/docs/authority-notes.md",
+  "/app/data/coredump/partial.json",
+]
+
+internal_harness_files = [
+  "/app/docs/architecture.md",
+  "/app/data/logs/warmup.log",
+  "/app/data/state/runtime.json",
+  "/app/include/common.h",
+  "/app/include/tier_a.h",
+  "/app/include/tier_b.h",
+  "/app/include/tier_c.h",
+  "/app/include/host.h",
+  "/app/src/host/main.c",
+  "/app/src/host/io.c",
+  "/app/src/host/report.c",
+  "/app/src/tier_a/op_alpha.c",
+  "/app/src/tier_b/op_beta.c",
+  "/app/src/tier_c/op_gamma.c",
+]
+
+[structured_outputs.warmup_report]
+target = "/output/warmup-report.json"
+format = "json"
+instruction_checks = [
+  "schema_version",
+  "warmup-report-1",
+  "registry_epoch",
+  "scenarios",
+  "report-schema.md",
+  "authority-notes.md",
+]

@@ -1,0 +1,5 @@
+{
+  "name": "pool-beta",
+  "stratum": 4,
+  "server": "ntp.beta.example"
+}

@@ -1,0 +1,54 @@
+{
+  "symbol_table": [
+    {"path": "internal/cfg/load.go", "symbol": "SkewN", "kind": "function", "signature": "func SkewN() int", "purpose": "reads skew offset from site config"},
+    {"path": "internal/cfg/load.go", "symbol": "StrideV", "kind": "function", "signature": "func StrideV() int", "purpose": "reads rollup stride from site config"},
+    {"path": "anchor/clockfold.go", "symbol": "fold_t", "kind": "function", "signature": "func fold_t(a int, b int, c int) int", "purpose": "epoch fold before window join"},
+    {"path": "anchor/clockfold.go", "symbol": "JoinP", "kind": "function", "signature": "func JoinP(ts, cycleStart, cycleEnd int) bool", "purpose": "membership in cycle window"},
+    {"path": "propagate/normcurve.go", "symbol": "curve_l", "kind": "function", "signature": "func curve_l(a float64, b int, class string) float64", "purpose": "notice weight curve"},
+    {"path": "propagate/normcurve.go", "symbol": "signal_l", "kind": "function", "signature": "func signal_l(effectiveTS, caseStart int, class string) bool", "purpose": "notice active gate"},
+    {"path": "propagate/zonefold.go", "symbol": "normZone", "kind": "function", "signature": "func normZone(z string) string", "purpose": "zone id normalization"},
+    {"path": "gate/drainmux.go", "symbol": "mux_h", "kind": "function", "signature": "func mux_h(a float64, b float64, c float64) (float64, float64)", "purpose": "lane pressure split"},
+    {"path": "gate/drainmux.go", "symbol": "mux_q", "kind": "function", "signature": "func mux_q(flag_a bool, flag_b bool) (bool, bool)", "purpose": "twin-lane mux entry"},
+    {"path": "gate/holdpick.go", "symbol": "ApplyQ", "kind": "function", "signature": "func ApplyQ(trayZone string, caseStart int, lots []lotnotice.Row, latchWide bool) bool", "purpose": "zone hold pick"},
+    {"path": "internal/broker/walkgate.go", "symbol": "EnableWalk", "kind": "function", "signature": "func EnableWalk() bool", "purpose": "set-walk feature gate"},
+    {"path": "internal/core/wiresets.go", "symbol": "WireSets", "kind": "function", "signature": "func WireSets(sets []setcatalog.Row) map[string]string", "purpose": "parent-child wiring table"},
+    {"path": "internal/core/linkgate.go", "symbol": "link_q", "kind": "function", "signature": "func link_q(parent string, caseStart int, scans []scanfeed.Row, lots []lotnotice.Row, cycles []cycleboard.Row) bool", "purpose": "parent edge walk"},
+    {"path": "internal/core/rollup.go", "symbol": "rollup_v", "kind": "function", "signature": "func rollup_v(orRows []ormanifest.Row, blocked, cleared map[string]int, lots []lotnotice.Row) []model.AuditRow", "purpose": "per-lot audit rollup"}
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {"id": "G", "path": "internal/cfg/load.go", "controls_tests": ["test_v03_cycle_window_tray"]},
+      {"id": "A", "path": "anchor/clockfold.go", "controls_tests": ["test_v03_cycle_window_tray"]},
+      {"id": "B", "path": "propagate/normcurve.go", "controls_tests": ["test_v01_post_notice_tray", "test_v12_notice_timing_tray"]},
+      {"id": "H", "path": "propagate/zonefold.go", "controls_tests": ["test_v01_post_notice_tray", "test_v02_zone_clear_tray", "test_v10_dual_tray_case"]},
+      {"id": "I", "path": "internal/broker/walkgate.go", "controls_tests": ["test_v04_split_set_tray"]},
+      {"id": "F", "path": "internal/core/linkgate.go", "controls_tests": ["test_v04_split_set_tray"]},
+      {"id": "E", "path": "internal/core/wiresets.go", "controls_tests": ["test_v04_split_set_tray"]},
+      {"id": "C", "path": "gate/drainmux.go", "controls_tests": ["test_v02_zone_clear_tray", "test_v10_dual_tray_case"]},
+      {"id": "D", "path": "internal/core/rollup.go", "controls_tests": ["test_v06_audit_blocked_count", "test_v05_rerun_stable"]}
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {"path": "internal/decoy/rangefold.go", "kind": "helper", "rhymes_with": "fold_t", "non_fix_purpose": "display span labels"},
+    {"path": "internal/decoy/propagateproxy.go", "kind": "helper", "rhymes_with": "curve_l", "non_fix_purpose": "archived proxy table"},
+    {"path": "internal/decoy/muxshadow.go", "kind": "helper", "rhymes_with": "mux_q", "non_fix_purpose": "shadow mux for dashboards"},
+    {"path": "propagate/curvepick.go", "kind": "helper", "rhymes_with": "curve_l", "non_fix_purpose": "unused curve picker"},
+    {"path": "anchor/biaschain.go", "kind": "helper", "rhymes_with": "fold_t", "non_fix_purpose": "bias chain for reports"},
+    {"path": "internal/shadow/zonealias.go", "kind": "helper", "rhymes_with": "normZone", "non_fix_purpose": "zone alias table"},
+    {"path": "internal/shadow/rollupproxy.go", "kind": "helper", "rhymes_with": "rollup_v", "non_fix_purpose": "dashboard rollup proxy"},
+    {"path": "internal/shadow/walkstub.go", "kind": "helper", "rhymes_with": "EnableWalk", "non_fix_purpose": "walk stub for reports"}
+  ],
+  "code_forbidden_tokens": [
+    "central", "sterile", "processing", "batch", "scripts", "case", "root", "fixtures",
+    "tray", "scan", "feeds", "autoclave", "cycle", "boards", "implant", "lot", "notices",
+    "operating", "room", "manifests", "quarantine", "snapshots", "ledger", "disposition",
+    "recall", "audit", "workflow", "update", "trays", "recalled", "lots", "releasable",
+    "cases", "notice", "timestamp", "clean", "unaffected", "blocked", "events", "cleared",
+    "completed", "load", "closed", "child", "parent", "split", "set", "reruns", "inflate",
+    "counts", "rebuild", "unchanged", "names", "state", "reason", "source", "seq", "version",
+    "exposure", "class", "hold", "release", "clear", "gap", "signoff", "deploy", "qa",
+    "production", "project", "signoff", "untouched"
+  ]
+}

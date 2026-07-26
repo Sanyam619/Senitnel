@@ -1,0 +1,11 @@
+Lab Samba idmap seating drifted. Live trees under /etc/samba/ and /var/lib/samba/ disagree with sealed authority. Host markers under /var/lib/samba/volumes/*/host/ and torn leases under /var/run/samba/ may remain. Surface /app/bin/smblist can report OK; /app/bin/wbinfo may disagree with /etc/samba/idmap.roster.
+
+Start at /app/ops/run_idmapseat.sh. Graded outcomes and layout live under /app/docs/. Prebuilt binders and observation runners live under /app/bin/ (restore copies under /usr/lib/samba/bin/). Durable recovery must survive re-invocation of the stock seat and reload entrypoints (hand-gutted entrypoints that skip prep rematerialize do not count).
+
+Produce /output/idmap-cutover.json with status ok, backend, seal_gen equal to /etc/samba/desk.seal, and principals (name, sid, uid, gid, range) for every roster row. Publish matching mappings in /var/lib/samba/idmap.tdb. Only roster principals may appear. Decoy ranges in conf must not appear in the report or tdb.
+
+Opaque tip and ops streams /var/lib/samba/journal/tips.bin and /var/lib/samba/ops/journal.bin are the graded journal authority (plaintext *.jsonl beside them are not). Preference drop-ins under /etc/samba/pref.d/ must fold to equality-inclusive with /var/lib/samba/meta/pref.armed equal to desk.seal. Successful seating also leaves tip.ok, cut.arm, and gen.live equal to desk.seal; cutover.ok present; attach.intent the raw token seal; and PAYLOAD_LINEAGE=sealed in /etc/samba/deskd.env. Flat attach seats /var/lib/samba/attach/<name>.bin must same-inode hardlink to sealed shelves under /var/lib/samba/origins/. Host markers and torn leases must be absent.
+
+Crash-snapshot invariant: /var/lib/samba/meta/backends.crash.toml stays a frozen stale crash record; live backends.toml differs from it; the crash decoy backend must not remain as the live folded kn.
+
+Keep /etc/samba/smb.conf.d/40-legacy.conf present. /var/lib/samba/journal/legacy.prefer is the reload hammer, not the live fragment: after a successful cutover and /app/ops/run_reload.sh, the live 40-legacy.conf content must differ from legacy.prefer. Two seat runs and one reload leave the same report and tdb. Share-list OK alone is not credit. Hand-written report or tdb fails re-entry. Leave /app/data/fixtures/ unchanged. Single-container lab only (no external AD).

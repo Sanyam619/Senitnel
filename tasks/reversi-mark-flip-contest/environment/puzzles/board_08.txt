@@ -1,0 +1,12 @@
+board_id: 08
+to_move: black
+mark: a6
+board:
+..W...B.
+.WWW.BB.
+WWW.BB..
+.WBBBW..
+..BBWWWW
+.BBWBWB.
+..B..BW.
+..B...BW

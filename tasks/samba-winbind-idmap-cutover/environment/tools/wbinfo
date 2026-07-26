@@ -1,0 +1,42 @@
+#!/bin/bash
+# Lab wbinfo shim — reads live store under /var/lib/samba.
+set -euo pipefail
+
+TDB="${IDMAP_TDB:-/var/lib/samba/idmap.tdb}"
+ROSTER="${IDMAP_ROSTER:-/etc/samba/idmap.roster}"
+
+lookup_sid() {
+  local name="$1"
+  while read -r nm sid lo hi uid; do
+    [[ "$nm" == "$name" ]] || continue
+    echo "$sid"
+    return 0
+  done < <(awk 'NF>=5 && $1 !~ /^#/ {print}' "$ROSTER")
+  return 1
+}
+
+lookup_uid() {
+  local sid="$1"
+  while read -r s u g; do
+    [[ "$s" == "$sid" ]] || continue
+    echo "$u"
+    return 0
+  done < <(awk 'NF>=3 && $1 !~ /^#/ {print}' "$TDB")
+  return 1
+}
+
+case "${1:-}" in
+  -n)
+    lookup_sid "${2:?}"
+    ;;
+  -S)
+    lookup_uid "${2:?}"
+    ;;
+  -i)
+    echo "lab-wbinfo"
+    ;;
+  *)
+    echo "usage: wbinfo -n NAME | -S SID" >&2
+    exit 2
+    ;;
+esac

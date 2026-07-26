@@ -1,0 +1,10 @@
+table 6 — white b2|flips:2 accepted
+table 6 — black a2|flips:2 accepted
+table 6 — white a1|flips:2+corner accepted
+table 6 — black d3|flips:2 accepted
+table 6 — white b8|flips:1 accepted
+table 6 — black g5|flips:2 accepted
+table 6 — white e3|flips:3 accepted
+table 6 — black a4|flips:1 accepted
+table 6 — white c1|flips:1 accepted
+table 6 — reject black f5|flips:4 when the table counted flips:3

@@ -1,0 +1,4 @@
+# kiosk draft — projector favorite for R03
+round_id: R03
+note: clear every unit at full capacity; stamp feasible_clear; smp 20
+line: A:70,B:70

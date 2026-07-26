@@ -1,0 +1,6 @@
+package decoy
+
+// LaneHint returns a display hint for twin-lane routing tables.
+func LaneHint(total, divert float64) float64 {
+	return total - divert
+}

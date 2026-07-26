@@ -397,7 +397,7 @@ This document is a historical reference for Terminus task creation, evaluation, 
 
 * **Oracle MUST pass; NOP MUST fail.**  
 * **No 100% Pass Rate:** Tasks where frontier models score 100% will be rejected as too trivial.  
-* **Empirical Evaluation:** Difficulty is based on the *better* performing model (GPT-5.2 or Claude Opus 4.6). Run 5 attempts per model (10 total) before claiming a difficulty level.
+* **Empirical Evaluation:** Difficulty is based on the *better* performing model (GPT-5.6 or Claude Opus 4.8). Run 5 attempts per model (10 total) before claiming a difficulty level.
 
 ### **C. Diversity and Dataset-Balance Rules**
 
@@ -410,7 +410,7 @@ This document is a historical reference for Terminus task creation, evaluation, 
 
 * Use `harbor tasks start-env -p <task-folder> -e docker -a -i` for local interactive building.  
 * Use `harbor run -p <task-folder> -a oracle` to verify the oracle.  
-* Use `harbor tasks check <task-folder> -m "openai/gpt-5.2"` for the repo-local quality check.  
+* Use `harbor tasks check <task-folder> -m "openai/gpt-5.6"` for the repo-local quality check.  
 * See `commands.md` at the repo root for the full, up-to-date CLI reference.
 
 ### **E. Automated Checks (CI, Behavior Validation, and Agent Review)**

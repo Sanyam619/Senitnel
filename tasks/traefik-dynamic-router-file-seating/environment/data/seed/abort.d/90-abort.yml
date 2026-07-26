@@ -1,0 +1,9 @@
+tip_policy=prefer_abort
+bind_order=abort_first
+mw_source=live_chain
+abort_token=revoke_all
+revoke.alpha=true
+revoke.beta=true
+revoke.gamma=true
+revoke.delta=true
+revoke.epsilon=true

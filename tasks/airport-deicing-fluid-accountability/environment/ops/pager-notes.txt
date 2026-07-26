@@ -1,0 +1,4 @@
+Pager notes — 9 Feb
+Night desk flipped the runner link for a rollback drill and never flipped it back.
+Rehearsal EnvironmentFile remains referenced from the unit and the wrapper.
+Staging output root shows fresh files; live /data/out does not.

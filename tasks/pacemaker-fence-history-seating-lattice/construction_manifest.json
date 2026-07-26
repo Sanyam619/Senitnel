@@ -1,0 +1,27 @@
+{
+  "symbol_table": [
+    {"path": "rim/mesh_k.sh", "symbol": "mesh_k", "kind": "function", "signature": "mesh_k", "purpose": "Lexically fold cib.d drop-in keys into effective CIB policy"},
+    {"path": "ops/axle_n.sh", "symbol": "axle_n", "kind": "function", "signature": "axle_n", "purpose": "Apply sealed prefer tips so node generations/online match durable"},
+    {"path": "bag/skim_p.sh", "symbol": "skim_p", "kind": "function", "signature": "skim_p", "purpose": "Materialize unretracted fence set from sealed fence journal"},
+    {"path": "ops/helm_r.sh", "symbol": "helm_r", "kind": "function", "signature": "helm_r", "purpose": "Rematerialize abort residue unless durable receipt matches"},
+    {"path": "deck/emit_v.sh", "symbol": "emit_v", "kind": "function", "signature": "emit_v", "purpose": "Publish seating ledger JSON from live+durable agreement"}
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {"id": "A", "path": "rim/mesh_k.sh", "controls_tests": ["test_j2_onyx", "test_r6_slate", "test_w7_quartz"]},
+      {"id": "B", "path": "ops/axle_n.sh", "controls_tests": ["test_v5_coral", "test_m1_opal", "test_c1_flint"]},
+      {"id": "C", "path": "bag/skim_p.sh", "controls_tests": ["test_p9_jade", "test_u2_mica", "test_k5_garnet"]},
+      {"id": "D", "path": "ops/helm_r.sh", "controls_tests": ["test_h8_amber", "test_c1_flint", "test_n4_beryl"]},
+      {"id": "E", "path": "deck/emit_v.sh", "controls_tests": ["test_q3_topaz", "test_r6_slate", "test_s8_zircon", "test_t4_pearl"]}
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {"path": "wire/knit_q.sh", "kind": "decoy_helper", "rhymes_with": "axle_n", "non_fix_purpose": "Seeds runtime lock dirs only"},
+    {"path": "rim/scan_t.sh", "kind": "decoy_helper", "rhymes_with": "mesh_k", "non_fix_purpose": "Writes surface inventory for crmhealth"},
+    {"path": "bag/note_u.sh", "kind": "decoy_helper", "rhymes_with": "skim_p", "non_fix_purpose": "Copies operator memo"},
+    {"path": "cli/crmhealth", "kind": "surface_bait", "rhymes_with": "seatctl", "non_fix_purpose": "Prints GREEN without fence/generation checks"}
+  ],
+  "code_forbidden_tokens": ["seat", "fence", "stickiness", "generation", "online", "crm", "pacemaker", "corosync", "journal", "retract", "started", "cib", "abort", "cutover"]
+}

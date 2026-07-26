@@ -1,0 +1,12 @@
+board_id: 12
+to_move: sensei
+mate_budget: 2
+sensei_cards: Monkey,Crab
+pupil_cards: Elephant,Tiger
+sideboard: Ox
+board:
+S...s
+.....
+.....
+.....
+p...P

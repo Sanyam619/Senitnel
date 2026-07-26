@@ -1,0 +1,25 @@
+{
+  "entries": [
+    {
+      "prefix": "10.5.0.0/22",
+      "max_length": 2,
+      "origin_asn": 65150,
+      "serial": 410,
+      "state": "valid"
+    },
+    {
+      "prefix": "10.5.0.0/24",
+      "max_length": 2,
+      "origin_asn": 65150,
+      "serial": 412,
+      "state": "valid"
+    },
+    {
+      "prefix": "10.5.1.0/24",
+      "max_length": 3,
+      "origin_asn": 65150,
+      "serial": 411,
+      "state": "valid"
+    }
+  ]
+}

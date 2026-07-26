@@ -1,0 +1,68 @@
+{
+  "symbol_table": [
+    {
+      "path": "lane/apply_lane_a.c",
+      "symbol": "apply_lane_a",
+      "kind": "function",
+      "signature": "int apply_lane_a(const char *a, const char *b)",
+      "purpose": "Writes ambient and effective cap lines for the nested enter from bounding."
+    },
+    {
+      "path": "seat/seat_slot_b.c",
+      "symbol": "seat_slot_b",
+      "kind": "function",
+      "signature": "int seat_slot_b(const char *a, const char *b, const char *c)",
+      "purpose": "Moves char nodes into broker mount tree and clears host stale markers."
+    },
+    {
+      "path": "roll/emit_rollup_c.c",
+      "symbol": "emit_rollup_c",
+      "kind": "function",
+      "signature": "int emit_rollup_c(const char *a, const char *b)",
+      "purpose": "Folds PrivateDevices on live unit and drop-in, then writes broker-cutover.json."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "lane/apply_lane_a.c",
+        "controls_tests": ["test_k3_zircon", "test_q7_topaz"]
+      },
+      {
+        "id": "B",
+        "path": "seat/seat_slot_b.c",
+        "controls_tests": ["test_m8_obsidian", "test_p2_garnet"]
+      },
+      {
+        "id": "C",
+        "path": "roll/emit_rollup_c.c",
+        "controls_tests": ["test_r1_onyx", "test_t6_amber"]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "lane/legacy_lane.c",
+      "kind": "helper",
+      "rhymes_with": "apply_lane_a",
+      "non_fix_purpose": "Privileged full-set writer used by diagnostic scripts; does not preserve ambient across enter."
+    },
+    {
+      "path": "seat/probe_node.c",
+      "kind": "helper",
+      "rhymes_with": "seat_slot_b",
+      "non_fix_purpose": "Host-tree listing helper for nsprobe diagnostics; never moves nodes."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "cutover", "device", "broker", "lab", "unit", "status", "host", "char", "nodes",
+    "process", "mount", "namespace", "ambient", "capabilities", "nested", "handoff",
+    "concurrent", "open", "replay", "stale", "view", "tree", "helpers", "notes",
+    "config", "fragments", "fixtures", "seed", "output", "version", "devices",
+    "array", "row", "name", "mount_ns", "ambient_set", "bounding_set", "stale_cleared",
+    "bits", "race", "PrivateDevices", "DeviceAllow", "list"
+  ]
+}

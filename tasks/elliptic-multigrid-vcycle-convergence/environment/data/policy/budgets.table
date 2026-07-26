@@ -1,0 +1,11 @@
+# Per-scenario outer V-cycle iteration budgets (upper bound on the
+# number of V-cycles required to reach the residual target defined in
+# include/solver_config.h). One row per scenario, columns are
+# whitespace-separated.
+#
+# label       budget
+s_iso         7
+s_aniso       7
+s_jump        11
+s_corner      10
+s_mixed       8

@@ -1,0 +1,6 @@
+# Legacy single-artifact packing notes.
+# Emission rematerializes archive prefer until cutover is sealed.
+
+pc_name = "flux_mono.pc"
+archive_pack = 8
+prefer = "archive"

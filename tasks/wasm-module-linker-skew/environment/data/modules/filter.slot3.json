@@ -1,0 +1,8 @@
+{
+  "id": "filter",
+  "version": 3,
+  "exports": [
+    "apply"
+  ],
+  "imports": []
+}

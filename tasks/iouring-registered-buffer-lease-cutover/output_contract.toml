@@ -1,0 +1,19 @@
+user_visible_outputs = [
+  "/output/lease-cutover.json",
+]
+
+internal_harness_files = []
+
+[structured_outputs.lease_cutover]
+target = "/output/lease-cutover.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "tenants",
+  "tenant",
+  "buf_slot",
+  "mount_ns",
+  "lease_epoch",
+  "buf_fresh",
+  "preflight_stable",
+]

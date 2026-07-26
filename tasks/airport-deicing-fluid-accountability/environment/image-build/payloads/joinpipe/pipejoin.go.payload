@@ -1,0 +1,13 @@
+package joinpipe
+
+import (
+	"ramp.local/account/align"
+)
+
+func ts_fold_q(ts int) int {
+	return ts
+}
+
+func PipeJoin(ts, winStart, winEnd int) bool {
+	return align.JoinQ(ts_fold_q(ts), winStart, winEnd)
+}

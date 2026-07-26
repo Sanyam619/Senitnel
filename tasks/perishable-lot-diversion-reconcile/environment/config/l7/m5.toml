@@ -1,0 +1,8 @@
+hold_enabled = false
+quarantine_mode = "dry"
+hold_gate = 0
+lane_guard = 43
+release_guard = 43
+sensor_mode = "passive"
+lot_floor = 0
+lot_ceiling = 0

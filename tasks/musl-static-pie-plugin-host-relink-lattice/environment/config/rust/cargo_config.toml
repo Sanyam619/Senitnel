@@ -1,0 +1,4 @@
+# Workspace rustflags applied to every member crate build.
+# Seeded into /.cargo/config.toml at image build (Cargo reads the dot path).
+[build]
+rustflags = ["--cfg", "xv_legacy_pack"]

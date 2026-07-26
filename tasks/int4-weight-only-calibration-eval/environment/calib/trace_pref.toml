@@ -1,0 +1,10 @@
+# Tracing preferences for the calibration desk. Read by the capture tooling,
+# not by the evaluation pass.
+[trace]
+keep_activation_histograms = false
+histogram_bins = 128
+sample_stride = 4
+
+[capture]
+revision = "cal-rev3"
+note = "rev2 captures folded the probe shard into every bank; rev3 does not"

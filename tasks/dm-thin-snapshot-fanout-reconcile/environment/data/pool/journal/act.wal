@@ -1,0 +1,7 @@
+# gen|seq|drill|tip|origin|kind|epoch|floor
+1|5|omega|t_omega|o_omega|cow|20|10
+1|10|alpha|t_alpha|o_alpha|cow|20|10
+1|20|beta|t_beta|o_beta|live|5|10
+1|30|gamma|t_gamma|o_gamma|live|4|10
+1|40|delta|t_delta|o_delta|cow|10|10
+2|50|alpha|t_bogus|o_alpha|cow|20|10

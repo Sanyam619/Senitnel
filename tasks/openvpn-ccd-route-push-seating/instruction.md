@@ -1,0 +1,9 @@
+Live OpenVPN client-config-dir seating under `/etc/openvpn/server/`, `/etc/openvpn/ccd/`, `/var/lib/openvpn/`, and `/var/run/openvpn/` drifted from durable route authority. Surface `/usr/local/bin/ovpnhealth` may print connected with deep seating wrong. Frozen fixtures under `/app/data/ovpn/` are integrity-pinned; do not rewrite them. Operator seating starts at `/app/ops/run_ovpn_seat.sh`.
+
+Produce `/output/ovpn-seat.json`. Normative acceptance rules live in `/app/docs/seating_contract.md` and `/app/docs/layout.md` (prefer tips, preference mode, tip bind, client journal revoke rows, generation floors, overlapping pool selection, tip iroute state records, and cutover receipts).
+
+Preference must settle on durable or authority materials. Live or surface preference keeps surface tip and CCD materials in play across seating rematerialize. Tip bind acceptance must match `gen.target`. Applied tip verdicts are recorded under `/var/lib/openvpn/state/tip_<cn>.iroute` beside `tip_<cn>.gen`.
+
+Abort-window residue under `/var/lib/openvpn/ops/abort.d/` rematerializes into live server conf.d on every seating pass without a matching durable receipt at `/var/lib/openvpn/state/cutover.ok`. A matching receipt skips rematerialize; it does not mean delete the live drop-in. On the same successful seating pass, following any abort rematerialize, live `/etc/openvpn/server/conf.d/90-local.conf` must still end with site-standard tokens from `/app/config/site_standard.conf` (not abort residue such as `prefer_abort`), and seating must write `/var/lib/openvpn/state/cutover.ok` as plain `key=value` lines with `gen` equal to `gen.target` and `mode=seal`. The abort package under `abort.d/` stays forensic. Two seating runs must leave byte-identical `/output/ovpn-seat.json`.
+
+Ledger vocabulary: schema_tag, clients, cn, iroute, generation, pushed, pools, name, cidr, active, seat_ok.

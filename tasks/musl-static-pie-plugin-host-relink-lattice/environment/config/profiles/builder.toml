@@ -1,0 +1,12 @@
+# Glibc builder profile (often green while musl target is not).
+lane = "glibc"
+
+[host]
+cc = "gcc"
+tls_model = "initial-exec"
+pie = false
+
+[cgo]
+cc = "gcc"
+include = "/usr/include"
+pic = false

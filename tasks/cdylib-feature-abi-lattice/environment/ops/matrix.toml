@@ -1,0 +1,49 @@
+# Host matrix after dual crate-type cutover.
+# Each cell declares a library target, feature set, profile, and host.
+
+[[cells]]
+id = "alpha"
+lib = "nuclide"
+crate = "q3"
+features = ["trunk", "facet_a"]
+profile = "dev"
+host = "alpha"
+expect_versions = ["NEXUS_1", "NEXUS_2"]
+
+[[cells]]
+id = "beta"
+lib = "nuclide"
+crate = "q3"
+features = ["trunk", "facet_b"]
+profile = "dev"
+host = "beta"
+expect_versions = ["NEXUS_1", "NEXUS_1B"]
+
+[[cells]]
+id = "gamma"
+lib = "nuclide"
+crate = "q3"
+features = ["trunk"]
+profile = "release"
+host = "gamma"
+expect_versions = ["NEXUS_1"]
+use_pkg_config = true
+
+[[cells]]
+id = "delta"
+lib = "cascade"
+crate = "q5"
+features = ["trunk", "facet_c"]
+profile = "dev"
+host = "delta"
+expect_versions = ["CASCADE_1", "CASCADE_1C"]
+
+[[cells]]
+id = "epsilon"
+lib = "dual"
+crate = "q3+q5"
+features = ["trunk", "facet_a", "facet_c"]
+profile = "dev"
+host = "epsilon"
+expect_nuclide_versions = ["NEXUS_1", "NEXUS_2"]
+expect_cascade_versions = ["CASCADE_1", "CASCADE_1C"]

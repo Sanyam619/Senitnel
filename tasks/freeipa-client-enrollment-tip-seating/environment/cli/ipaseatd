@@ -1,0 +1,93 @@
+#!/bin/bash
+# ipaseatd — publisher from prepared client state.
+set -euo pipefail
+
+OUT="${SEAT_OUT:-/output/ipa-seat.json}"
+HOSTS="${HOSTS:-/etc/ipa/hosts.list}"
+SERVICES="${SERVICES:-/etc/ipa/services.list}"
+ROOT="${IPA_ROOT:-/var/lib/ipa}"
+STATE="$ROOT/state"
+EFF="${EFF_POLICY:-/etc/ipa/effective.conf}"
+
+mkdir -p "$(dirname "$OUT")"
+
+python3 - "$OUT" "$HOSTS" "$SERVICES" "$STATE" "$EFF" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+out, hosts, services, state, eff = map(Path, sys.argv[1:])
+
+names = []
+for ln in hosts.read_text().splitlines():
+    ln = ln.strip()
+    if not ln or ln.startswith("#"):
+        continue
+    names.append(ln.split("\t")[0])
+
+realm = ""
+if eff.exists():
+    for line in eff.read_text().splitlines():
+        line = line.strip()
+        if line.startswith("realm="):
+            realm = line.split("=", 1)[1]
+
+realm_ok = bool(realm) and "SURFACE-DECOY" not in realm
+
+hosts_rows = []
+enrolled = {}
+ok = True
+for name in names:
+    gen_p = state / f"pub_{name}.gen"
+    gen = int(gen_p.read_text().strip()) if gen_p.exists() else 0
+    fpr_p = state / f"pub_{name}.fpr"
+    fpr = fpr_p.read_text().strip() if fpr_p.exists() else ""
+    tip_p = state / f"tip_{name}.fpr"
+    tip = tip_p.read_text().strip() if tip_p.exists() else ""
+    elig = (state / f"elig_{name}").exists() and (state / f"elig_{name}").read_text().strip() == "1"
+    blocked = (state / f"abort_block_{name}").exists() and (state / f"abort_block_{name}").read_text().strip() == "1"
+    fpr_match = bool(fpr) and fpr == tip
+    is_enrolled = bool(elig and not blocked and fpr_match and realm_ok)
+    enrolled[name] = is_enrolled
+    if not fpr_match or not realm_ok:
+        if is_enrolled:
+            ok = False
+    hosts_rows.append(
+        {
+            "name": name,
+            "realm": realm,
+            "keytab": fpr,
+            "generation": gen,
+            "enrolled": is_enrolled,
+        }
+    )
+
+for row in hosts_rows:
+    name = row["name"]
+    elig = (state / f"elig_{name}").exists() and (state / f"elig_{name}").read_text().strip() == "1"
+    blocked = (state / f"abort_block_{name}").exists() and (state / f"abort_block_{name}").read_text().strip() == "1"
+    tip = (state / f"tip_{name}.fpr").read_text().strip() if (state / f"tip_{name}.fpr").exists() else ""
+    expect = bool(elig and not blocked and row["keytab"] and row["keytab"] == tip and realm_ok)
+    if row["enrolled"] != expect:
+        ok = False
+    if "SURFACE-DECOY" in row["realm"]:
+        ok = False
+
+svc_rows = []
+for ln in services.read_text().splitlines():
+    ln = ln.strip()
+    if not ln or ln.startswith("#"):
+        continue
+    parts = ln.split("\t")
+    principal = parts[0]
+    host = parts[1] if len(parts) > 1 else ""
+    svc_rows.append({"principal": principal, "bound": enrolled.get(host, False)})
+
+doc = {
+    "schema_tag": "ipa-seat-v1",
+    "hosts": hosts_rows,
+    "services": svc_rows,
+    "seat_ok": ok,
+}
+out.write_text(json.dumps(doc, indent=2) + "\n")
+PY

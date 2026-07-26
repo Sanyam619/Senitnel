@@ -1,0 +1,7 @@
+{
+  "peers": {
+    "atlas": false,
+    "cinder": false,
+    "ridge": true
+  }
+}

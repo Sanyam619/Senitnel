@@ -1,0 +1,3 @@
+mail_policy=prefer_relay
+bind_order=lexical
+transport_maps=hash:/var/lib/postfix/ops/maps/nexthop.prefer

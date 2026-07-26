@@ -1,0 +1,4 @@
+{
+  "prefix": "prod-",
+  "label_hint": "env=prod"
+}

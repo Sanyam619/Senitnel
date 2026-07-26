@@ -1,0 +1,16 @@
+{
+  "methods": [
+    {
+      "name": "ahc",
+      "column_prefix": "spectral"
+    },
+    {
+      "name": "spectral",
+      "column_prefix": "ahc"
+    },
+    {
+      "name": "nme",
+      "column_prefix": "oracle"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+package cellband
+
+import (
+	"encoding/json"
+	"os"
+	"path/filepath"
+)
+
+type Doc struct {
+	DivertQty float64 `json:"divert_qty"`
+	AltNode   string  `json:"alt_node"`
+}
+
+func Load(dir string) (Doc, error) {
+	b, err := os.ReadFile(filepath.Join(dir, "cell_band.json"))
+	if err != nil {
+		return Doc{}, err
+	}
+	var d Doc
+	return d, json.Unmarshal(b, &d)
+}

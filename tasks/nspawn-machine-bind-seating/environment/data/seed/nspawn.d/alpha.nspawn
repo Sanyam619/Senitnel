@@ -1,0 +1,6 @@
+[Exec]
+Boot=yes
+
+[Files]
+Directory=/var/lib/machines/live/alpha/root
+Bind=/var/lib/machines/bind/alpha/data

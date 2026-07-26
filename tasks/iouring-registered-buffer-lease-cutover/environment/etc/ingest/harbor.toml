@@ -1,0 +1,3 @@
+# Harbor diagnostic plane — live rollback defaults after failed cutover.
+epoch = 3
+slot_prefix = "legacy"

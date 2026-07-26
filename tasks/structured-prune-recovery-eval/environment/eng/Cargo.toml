@@ -1,0 +1,8 @@
+[workspace]
+resolver = "2"
+members = ["core", "meld", "lane", "emit"]
+
+[profile.release]
+opt-level = 2
+debug = false
+incremental = false

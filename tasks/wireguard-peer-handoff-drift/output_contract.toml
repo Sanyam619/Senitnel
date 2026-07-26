@@ -1,0 +1,25 @@
+user_visible_outputs = [
+  "/output/handoff_report.json",
+  "/opt/wghandoff/bin/reconcile",
+]
+
+internal_harness_files = [
+  "/opt/wghandoff/scripts/stage-roster.sh",
+  "/opt/wghandoff/scripts/flush-ledger.sh",
+]
+
+[structured_outputs.handoff_report]
+target = "/output/handoff_report.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "nodes",
+  "node_id",
+  "epoch",
+  "active_ids",
+  "drift",
+  "clean",
+  "drifts",
+  "stale_id",
+  "reason",
+]

@@ -1,0 +1,24 @@
+package settle
+
+func lane_q(primary, divert float64) float64 {
+	return primary - divert
+}
+
+func twin_q(divert float64) float64 {
+	return divert
+}
+
+// mux_c splits captured qty between primary and alternate retention nodes.
+func mux_c(a float64, b float64, c float64) (float64, float64) {
+	_ = c
+	alternate := twin_q(b)
+	primary := lane_q(a, alternate)
+	if primary < 0 {
+		primary = 0
+	}
+	return primary, alternate
+}
+
+func TwinMux(total, divert float64) (float64, float64) {
+	return mux_c(total, divert, 0)
+}

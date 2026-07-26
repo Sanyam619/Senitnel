@@ -1,0 +1,18 @@
+user_visible_outputs = [
+  "/output/broker-cutover.json",
+]
+
+internal_harness_files = []
+
+[structured_outputs.broker_cutover]
+target = "/output/broker-cutover.json"
+format = "json"
+instruction_checks = [
+  "version",
+  "devices",
+  "name",
+  "mount_ns",
+  "ambient_set",
+  "bounding_set",
+  "stale_cleared",
+]

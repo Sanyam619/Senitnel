@@ -1,0 +1,8 @@
+# Isotropic constant-coefficient scenario.
+label = s_iso
+nx = 65
+ny = 65
+kx_law = constant:1.0
+ky_law = constant:1.0
+rhs_law = gaussian:0.5,0.5,0.15,10.0
+budget = 7

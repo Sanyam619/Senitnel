@@ -1,0 +1,4 @@
+host: mail01.lab.example.org
+enctype: aes256-cts-hmac-sha384-192
+kvno: 4
+principal: host/mail01.lab.example.org@LAB.EXAMPLE.ORG

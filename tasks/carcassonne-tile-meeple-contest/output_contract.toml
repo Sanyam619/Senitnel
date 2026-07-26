@@ -1,0 +1,22 @@
+user_visible_outputs = [
+  "/app/answers.json",
+  "/app/bin/judge.jar",
+]
+
+internal_harness_files = []
+
+[structured_outputs.answers]
+target = "/app/answers.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "rounds",
+  "board_id",
+  "status",
+  "tile",
+  "meeple",
+  "score_delta",
+  "sequence",
+  "refutations",
+  "coop_claim",
+]

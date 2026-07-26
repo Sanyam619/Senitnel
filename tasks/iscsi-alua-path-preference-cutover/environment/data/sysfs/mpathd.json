@@ -1,0 +1,8 @@
+{
+  "alias": "mpathd",
+  "wwid": "36001405d9c2f5a8b1e30043",
+  "paths": [
+    {"dev": "sde", "group": 1, "alua": "active/optimized", "prio": 30, "generation": 7},
+    {"dev": "sdl", "group": 5, "alua": "active/optimized", "prio": 30, "generation": 9}
+  ]
+}

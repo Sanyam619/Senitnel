@@ -1,0 +1,88 @@
+#!/bin/bash
+# seatctl — correct publisher from prepared state (durable sources + activity rules).
+set -euo pipefail
+
+OUT="${SEAT_OUT:-/output/autofs-seat.json}"
+ROSTER="${ROSTER:-/etc/autofs/roster.list}"
+ROOT="${AUTO_ROOT:-/var/lib/autofs}"
+STATE="$ROOT/state"
+EFF="${EFF_POLICY:-/etc/autofs/effective.conf}"
+MAP_D="$ROOT/maps"
+
+mkdir -p "$(dirname "$OUT")"
+
+python3 - "$OUT" "$ROSTER" "$STATE" "$EFF" "$MAP_D" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+out, roster, state, eff, map_d = map(Path, sys.argv[1:])
+names = [
+    ln.strip()
+    for ln in roster.read_text().splitlines()
+    if ln.strip() and not ln.strip().startswith("#")
+]
+abort = "none"
+if eff.exists():
+    for line in eff.read_text().splitlines():
+        line = line.strip()
+        if line.startswith("abort="):
+            abort = line.split("=", 1)[1]
+
+holds = []
+holds_tsv = state / "holds.tsv"
+if holds_tsv.exists():
+    for line in holds_tsv.read_text().splitlines():
+        parts = line.split("\t")
+        if len(parts) >= 2:
+            holds.append({"key": parts[0], "until_epoch": int(parts[1])})
+holds.sort(key=lambda h: h["key"])
+
+maps = []
+ok = True
+for name in names:
+    gen_p = state / f"pub_{name}.gen"
+    gen = int(gen_p.read_text().strip()) if gen_p.exists() else 0
+    elig_p = state / f"elig_{name}"
+    elig = elig_p.read_text().strip() == "1" if elig_p.exists() else False
+    blocked = False
+    hb = state / f"hold_block_{name}"
+    if hb.exists() and hb.read_text().strip() == "1":
+        blocked = True
+    aborted = abort == name
+    active = bool(elig and not blocked and not aborted)
+    source = str(map_d / f"{name}.map")
+    # Cross-check durable file presence
+    if not (map_d / f"{name}.map").is_file():
+        ok = False
+        active = False
+    maps.append(
+        {
+            "name": name,
+            "mountpoint": f"/mnt/{name}",
+            "generation": gen,
+            "source": source,
+            "active": active,
+        }
+    )
+
+# seating_ok: every map's active bit matches recomputed eligibility from state files
+for m in maps:
+    name = m["name"]
+    elig = (state / f"elig_{name}").read_text().strip() == "1" if (state / f"elig_{name}").exists() else False
+    blocked = (state / f"hold_block_{name}").exists() and (state / f"hold_block_{name}").read_text().strip() == "1"
+    aborted = abort == name
+    expect = bool(elig and not blocked and not aborted)
+    if m["active"] != expect:
+        ok = False
+    if not m["source"].startswith(str(map_d)):
+        ok = False
+
+doc = {
+    "schema_tag": "autofs-seat-v1",
+    "maps": maps,
+    "holds": holds,
+    "seating_ok": ok,
+}
+out.write_text(json.dumps(doc, indent=2) + "\n")
+PY

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "rows": [
+    "case_nova",
+    "case_orbit",
+    "case_pulse",
+    "case_delta",
+    "case_eclipse",
+    "case_zenith"
+  ]
+}

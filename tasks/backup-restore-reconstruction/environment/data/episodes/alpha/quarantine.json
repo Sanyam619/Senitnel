@@ -1,0 +1,6 @@
+{
+  "peers": {
+    "beacon": false,
+    "ridge": false
+  }
+}

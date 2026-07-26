@@ -1,0 +1,12 @@
+# Durable temperature / fusion schedule keyed by tip generation.
+[temperature]
+"3" = 0.121000
+"4" = 0.123000
+"6" = 0.125000
+"8" = 0.119000
+
+[fusion]
+"3" = "rrf"
+"4" = "rrf"
+"6" = "rrf"
+"8" = "learned"

@@ -1,0 +1,10 @@
+table 7 — white b6|flips:2 accepted
+table 7 — black d7|flips:3 accepted
+table 7 — white b4|flips:2 accepted
+table 7 — black a7|flips:1 accepted
+table 7 — white g5|flips:1 accepted
+table 7 — black h4|flips:1 accepted
+table 7 — white f2|flips:3 accepted
+table 7 — black a3|flips:1 accepted
+table 7 — white c8|flips:3 accepted
+table 7 — reject white h8|flips:2 when the table counted flips:2+corner

@@ -1,0 +1,10 @@
+user_visible_outputs = ["/app/output/validation.json", "/app/output/replayed.json"]
+internal_harness_files = []
+[structured_outputs.validation]
+target = "/app/output/validation.json"
+format = "json"
+instruction_checks = ["id", "name", "instant", "status", "chain", "reason"]
+[structured_outputs.replayed]
+target = "/app/output/replayed.json"
+format = "json"
+instruction_checks = ["queries"]

@@ -1,0 +1,5 @@
+# live decoy floors (disagree with durable)
+filter=1
+nat=1
+mangle=1
+raw=1

@@ -1,0 +1,14 @@
+[package]
+name = "eng"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[[bin]]
+name = "spec-eval"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
+lto = false
+codegen-units = 16

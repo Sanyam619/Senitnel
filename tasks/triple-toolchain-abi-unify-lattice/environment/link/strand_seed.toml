@@ -1,0 +1,7 @@
+[enable]
+facet_x = true
+facet_y = false
+
+[notes]
+strand = "strand_m"
+source = "seed"

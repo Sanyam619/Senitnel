@@ -1,0 +1,2 @@
+{"host": "midas", "until_epoch": 40, "reason": "chassis swap"}
+{"host": "kronos", "until_epoch": 25, "reason": "kernel update"}

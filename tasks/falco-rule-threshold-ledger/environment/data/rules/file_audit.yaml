@@ -1,0 +1,6 @@
+name: file_audit
+priority: 60
+syscall: write
+rate_limit: 3
+suppression_sec: 30
+scope_prefix: "prod-"

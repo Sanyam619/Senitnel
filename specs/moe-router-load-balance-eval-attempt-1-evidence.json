@@ -1,0 +1,286 @@
+{
+  "task_name": "moe-router-load-balance-eval",
+  "attempt": 1,
+  "decision": "GO",
+  "construction_manifest": {
+    "symbol_table": [
+      {
+        "path": "seat/knit_b.rs",
+        "symbol": "pick_t",
+        "kind": "function",
+        "signature": "pub fn pick_t(a: &str, b: &str, c: &str) -> (f64, i64)",
+        "purpose": "resolve a scalar and generation index from journal/mirror/live sources"
+      },
+      {
+        "path": "flag/xv_c.rs",
+        "symbol": "bit_z",
+        "kind": "function",
+        "signature": "pub fn bit_z(a: &[String], b: &[(String, String, i64)], ids: &[String], g: i64) -> Vec<bool>",
+        "purpose": "map roster summary and epoch-carrying entries onto per-id boolean flags"
+      },
+      {
+        "path": "mix/ward_d.rs",
+        "symbol": "mix_w",
+        "kind": "function",
+        "signature": "pub fn mix_w(raw: &[f64], caps: &[f64], flags: &[bool], scale: f64) -> Vec<f64>",
+        "purpose": "turn raw scores, per-id scalars, and flags into a unit-mass weight vector"
+      },
+      {
+        "path": "score/helm_e.rs",
+        "symbol": "score_u",
+        "kind": "function",
+        "signature": "pub fn score_u(weights: &[f64], scale: f64) -> (f64, f64)",
+        "purpose": "derive two scalar metrics from a weight vector and scale"
+      },
+      {
+        "path": "gate/emit_f.rs",
+        "symbol": "gate_y",
+        "kind": "function",
+        "signature": "pub fn gate_y(shares: &[f64], flags: &[bool], rows_ok: bool) -> bool",
+        "purpose": "combine share/flag/row predicates into a single boolean"
+      },
+      {
+        "path": "eng/build.rs",
+        "symbol": "seated",
+        "kind": "build-script gate",
+        "signature": "fn seated(root: &Path) -> bool",
+        "purpose": "rematerialize seating surfaces from eng/seeds unless calib binding matches the resolved journal generation"
+      }
+    ],
+    "flipping_point_contract": {
+      "locations": [
+        {
+          "id": "A",
+          "path": "seat/knit_b.rs",
+          "controls_tests": [
+            "test_m9_jade",
+            "test_r6_onyx",
+            "test_j3_pyrite"
+          ]
+        },
+        {
+          "id": "B",
+          "path": "flag/xv_c.rs",
+          "controls_tests": [
+            "test_k2_topaz",
+            "test_w7_beryl",
+            "test_j3_pyrite"
+          ]
+        },
+        {
+          "id": "C",
+          "path": "mix/ward_d.rs",
+          "controls_tests": [
+            "test_w7_beryl",
+            "test_v5_mica",
+            "test_c8_coral"
+          ]
+        },
+        {
+          "id": "D",
+          "path": "score/helm_e.rs",
+          "controls_tests": [
+            "test_r6_onyx",
+            "test_p3_flint",
+            "test_y2_chert"
+          ]
+        },
+        {
+          "id": "E",
+          "path": "gate/emit_f.rs",
+          "controls_tests": [
+            "test_c8_coral",
+            "test_v5_mica"
+          ]
+        },
+        {
+          "id": "F",
+          "path": "calib/ (trial_pref.toml removal + tip_bind.accept)",
+          "controls_tests": [
+            "test_h1_slate"
+          ]
+        }
+      ],
+      "no_single_location_flips_majority": true,
+      "concentration_cap": 0.5
+    },
+    "decoy_manifest": [
+      {
+        "path": "eng/src/decoy_p.rs",
+        "kind": "helper",
+        "rhymes_with": "pick_t",
+        "non_fix_purpose": "formats capacity summaries for desk notes"
+      },
+      {
+        "path": "eng/src/decoy_q.rs",
+        "kind": "helper",
+        "rhymes_with": "mix_w",
+        "non_fix_purpose": "computes a decorative histogram string for logging"
+      },
+      {
+        "path": "data/routers/durable.toml",
+        "kind": "fixture",
+        "rhymes_with": "tip_journal.jsonl",
+        "non_fix_purpose": "stale mirror tip sheet; reading it yields an out-of-band temperature"
+      },
+      {
+        "path": "data/routers/hold.json",
+        "kind": "fixture",
+        "rhymes_with": "hold_ledger.jsonl",
+        "non_fix_purpose": "overstated roster summary; trusting it holds an expert the ledger window keeps active"
+      }
+    ],
+    "code_forbidden_tokens": [
+      "mixture",
+      "experts",
+      "inference",
+      "desk",
+      "schema",
+      "load",
+      "share",
+      "active",
+      "slices",
+      "perplexity",
+      "entropy",
+      "router",
+      "temp",
+      "eval",
+      "materials",
+      "routers",
+      "band",
+      "durable",
+      "tip",
+      "held",
+      "probe",
+      "balanced",
+      "reports",
+      "engine",
+      "softmax",
+      "renormal",
+      "hold",
+      "mask",
+      "temperature",
+      "logit",
+      "journal",
+      "capacity",
+      "trial",
+      "binding"
+    ]
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "mixture",
+      "experts",
+      "inference",
+      "desk",
+      "schema",
+      "load",
+      "share",
+      "active",
+      "slices",
+      "perplexity",
+      "entropy",
+      "router",
+      "temp",
+      "eval",
+      "materials",
+      "routers",
+      "band",
+      "durable",
+      "tip",
+      "held",
+      "probe",
+      "balanced",
+      "reports",
+      "engine",
+      "softmax",
+      "renormal",
+      "hold",
+      "mask",
+      "temperature",
+      "logit",
+      "journal",
+      "capacity",
+      "trial",
+      "binding",
+      "seeds"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "mask_z",
+        "renamed_to": "bit_z",
+        "reason": "avoid instruction noun mask"
+      },
+      {
+        "original": "root.accept",
+        "renamed_to": "tip_bind.accept",
+        "reason": "keep desk vocabulary ML-flavored, avoid ops-cutover aura"
+      }
+    ],
+    "test_names_audited": [
+      "test_g6_shale",
+      "test_n4_quartz",
+      "test_w7_beryl",
+      "test_k2_topaz",
+      "test_m9_jade",
+      "test_r6_onyx",
+      "test_p3_flint",
+      "test_c8_coral",
+      "test_v5_mica",
+      "test_h1_slate",
+      "test_u4_basalt",
+      "test_y2_chert",
+      "test_j3_pyrite"
+    ],
+    "concentration_math": {
+      "total_tests": 13,
+      "per_location": {
+        "A": 0.231,
+        "B": 0.231,
+        "C": 0.231,
+        "D": 0.231,
+        "E": 0.154,
+        "F": 0.077
+      },
+      "cap": 0.5,
+      "status": "PASS"
+    }
+  },
+  "hardness_axes": {},
+  "anti_trivialization_checks": {},
+  "rubric_axes": {},
+  "instruction_completeness_test": {},
+  "discovery_budget": [
+    {
+      "discovery": "durable tip resolves from the sealed-max journal entry, not the mirror or live sheets",
+      "planned_location": "data/routers/tip_journal.jsonl + knit_b.rs",
+      "why_instruction_must_not_reveal_it": "pasting the resolution rule beside the source paths collapses tip seating to transcription; docs state the outcome only"
+    },
+    {
+      "discovery": "holds and releases apply by epoch window against the resolved tip epoch; the flat roster overstates holds",
+      "planned_location": "data/routers/hold_ledger.jsonl + hold.json bait + xv_c.rs",
+      "why_instruction_must_not_reveal_it": "an enumerated held/active table would be an answer key; semantics are documented, membership must be computed"
+    },
+    {
+      "discovery": "expert capacity weights the routed distribution before post-hold renormalization",
+      "planned_location": "data/experts/*.json + data/eval/audit/seated_sample.json + ward_d.rs",
+      "why_instruction_must_not_reveal_it": "the blend formula must be reverse-derived from the archived healthy seating sample, not transcribed"
+    },
+    {
+      "discovery": "engine builds rematerialize the seating surfaces from eng/seeds until the calib trial preference is cleared and tip_bind.accept matches the journal-resolved tip",
+      "planned_location": "eng/build.rs + calib/",
+      "why_instruction_must_not_reveal_it": "instruction states surfaces refresh in trial mode; the binding rule and gate mechanics are discovered from desk notes and build behavior"
+    },
+    {
+      "discovery": "moeprobe uniform heuristic is non-authoritative for eval_ok",
+      "planned_location": "tools/moeprobe + emit_f",
+      "why_instruction_must_not_reveal_it": "hardcode eval_ok without coupling"
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only"
+  },
+  "attack_path": {},
+  "smallest_plausible_patch": {},
+  "collapse_audit": {}
+}

@@ -1,0 +1,24 @@
+# Pre-incident capture dump — two frames from a working integrity checker.
+# Transform not annotated; compare seed_hex vs material_hex across epochs.
+
+## sample_a (epoch 10 / mqtt / seg_01 first frame)
+frame_hex=a501000a001474733d3830303b686f6c643d303b7461673d6131ec
+epoch=10
+lane_id=0x01
+payload=ts=800;hold=0;tag=a1
+integrity=0xec
+seed_hex=c3a7f1b8
+material_hex=c9acf9b1
+check=0xec
+verdict=ok
+
+## sample_b (epoch 20 / mqtt / seg_04 first frame)
+frame_hex=a5010014001574733d313530303b686f6c643d303b7461673d6231d8
+epoch=20
+lane_id=0x01
+payload=ts=1500;hold=0;tag=b1
+integrity=0xd8
+seed_hex=c3a7f1b8
+material_hex=d7b2e7af
+check=0xd8
+verdict=ok

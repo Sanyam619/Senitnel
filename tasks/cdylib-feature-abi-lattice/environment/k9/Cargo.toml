@@ -1,0 +1,10 @@
+[package]
+name = "k9"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "meta_emit"
+path = "src/main.rs"
+
+[dependencies]

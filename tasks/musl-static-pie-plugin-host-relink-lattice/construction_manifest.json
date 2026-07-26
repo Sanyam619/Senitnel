@@ -1,0 +1,161 @@
+{
+  "symbol_table": [
+    {
+      "path": "h4/mk/knit_xv_a.mk",
+      "symbol": "knit_xv_a",
+      "kind": "function",
+      "signature": "knit_xv_a(profile, lane)",
+      "purpose": "Emits host CC/LD flag fragments from profile probes during the C host build."
+    },
+    {
+      "path": "config/rust/cargo_config.toml",
+      "symbol": "rustflags",
+      "kind": "config",
+      "signature": "build.rustflags",
+      "purpose": "Seed rustflags that Dockerfile materializes into .cargo/config.toml"
+    },
+    {
+      "path": "p7/src/slot.rs",
+      "symbol": "fold_slot_b",
+      "kind": "function",
+      "signature": "fn fold_slot_b(a: bool, b: bool) -> u32",
+      "purpose": "Selects which packing arm is compiled for the cdylib export surface."
+    },
+    {
+      "path": "p7/Cargo.toml",
+      "symbol": "wide_frame",
+      "kind": "feature",
+      "signature": "wide_frame = [\"k2/wide_layout\"]",
+      "purpose": "Forwards wide layout into the k2 dependency feature graph."
+    },
+    {
+      "path": "config/profiles/target.toml",
+      "symbol": "cgo",
+      "kind": "config",
+      "signature": "[cgo] cc/include/pic",
+      "purpose": "Authoritative cgo toolchain block for the target profile."
+    },
+    {
+      "path": "g3/emit_xv.go",
+      "symbol": "emit_xv_c",
+      "kind": "function",
+      "signature": "func emit_xv_c(a string, b string) error",
+      "purpose": "Writes CGO_CFLAGS/LDFLAGS from the active profile [cgo] section."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "h4/mk/knit_xv_a.mk",
+        "controls_tests": [
+          "test_k2_tier_alpha_pass",
+          "test_r8_mode_match",
+          "test_v6_host_flag_observe"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "config/rust/cargo_config.toml",
+        "controls_tests": [
+          "test_m5_tier_beta_pass",
+          "test_w3_frame_match"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "p7/Cargo.toml",
+        "controls_tests": [
+          "test_m5_tier_beta_pass",
+          "test_w3_frame_match"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "config/profiles/target.toml",
+        "controls_tests": [
+          "test_n4_opt_tier_pass",
+          "test_j7_supv_pass"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "g3/emit_xv.go",
+        "controls_tests": [
+          "test_n4_opt_tier_pass",
+          "test_j7_supv_pass",
+          "test_q1_builder_lane"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "h4/src/preview_ld.c",
+      "kind": "helper",
+      "rhymes_with": "knit_xv_a",
+      "non_fix_purpose": "Pretty-prints historical LD fragments for ops docs; not invoked by release host builds."
+    },
+    {
+      "path": "p7/src/map_legacy.rs",
+      "kind": "helper",
+      "rhymes_with": "fold_slot_b",
+      "non_fix_purpose": "Formats legacy packing notes for docs; not linked into the release cdylib."
+    },
+    {
+      "path": "g3/preview_cg.go",
+      "kind": "helper",
+      "rhymes_with": "emit_xv_c",
+      "non_fix_purpose": "Dry-run CGO flag printer for local docs; not consumed by lattice_probe."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "gateway",
+    "tree",
+    "cutover",
+    "musl",
+    "static-PIE",
+    "host",
+    "Rust",
+    "plugins",
+    "Go",
+    "cgo",
+    "supervisor",
+    "profile",
+    "matrix",
+    "cells",
+    "binaries",
+    "load",
+    "symbol",
+    "resolution",
+    "TLS",
+    "init",
+    "startup",
+    "glibc",
+    "builder",
+    "lane",
+    "target",
+    "Ops",
+    "status",
+    "scripts",
+    "disk",
+    "link",
+    "line",
+    "plugin",
+    "ABI",
+    "surface",
+    "compile",
+    "flags",
+    "agreement",
+    "PIE",
+    "constraints",
+    "lattice-report",
+    "lattice_probe",
+    "cell",
+    "plugin_abi",
+    "tls_model",
+    "contract"
+  ]
+}

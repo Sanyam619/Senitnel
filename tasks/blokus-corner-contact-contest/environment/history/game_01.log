@@ -1,0 +1,5 @@
+# prior open table — dialect sample only
+blue V3@b2,b3,c3
+yellow 2@d1,e1
+blue 1@c1
+# judge: all_legal=true filled=true

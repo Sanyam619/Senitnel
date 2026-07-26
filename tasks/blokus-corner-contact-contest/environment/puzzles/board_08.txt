@@ -1,0 +1,9 @@
+board_id: 08
+blue_inv: T4,1
+yellow_inv: 2,I3
+board:
+X..X.
+X..X.
+.Y...
+X.XX.
+B....

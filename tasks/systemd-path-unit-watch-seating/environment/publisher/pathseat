@@ -1,0 +1,150 @@
+#!/bin/bash
+set -euo pipefail
+
+OPS="${SYS_OPS:-/var/lib/systemd/ops}"
+META_D="${META_D:-/app/data/pathunits}"
+EXTRA_D="${EXTRA_D:-/var/lib/systemd/ops/extra}"
+REPORT="${SEAT_REPORT:-/output/path-seat.json}"
+LIVE="$OPS/live"
+RUNMAP="${ARMED_MAP:-/run/systemd/watch-seat/armed.map}"
+
+mkdir -p "$(dirname "$REPORT")" "$(dirname "$RUNMAP")" "$LIVE"
+
+declare -A meta_base=()
+units=()
+shopt -s nullglob
+for root in "$META_D" "$EXTRA_D"; do
+  [[ -d "$root" ]] || continue
+  for m in "$root"/*.meta; do
+    id=""; base=""
+    while IFS= read -r line || [[ -n "${line:-}" ]]; do
+      line="${line%%#*}"
+      line="$(echo "$line" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+      [[ "$line" != *=* ]] && continue
+      k="${line%%=*}"; v="${line#*=}"
+      case "$k" in
+        id) id="$v" ;;
+        base) base="$v" ;;
+      esac
+    done <"$m"
+    [[ -n "$id" ]] || continue
+    meta_base["$id"]="$base"
+    units+=("$id")
+  done
+done
+shopt -u nullglob
+
+declare -A f_ex=() f_ch=() f_dne=() f_seen=()
+if [[ -f "$LIVE/fold.tsv" ]]; then
+  while IFS=$'\t' read -r u ex ch dne || [[ -n "${u:-}" ]]; do
+    [[ -z "${u:-}" ]] && continue
+    [[ "$ex" == "-" ]] && ex=""
+    [[ "$ch" == "-" ]] && ch=""
+    [[ "$dne" == "-" ]] && dne=""
+    f_ex["$u"]="$ex"; f_ch["$u"]="$ch"; f_dne["$u"]="$dne"; f_seen["$u"]=1
+  done <"$LIVE/fold.tsv"
+fi
+
+declare -A t_ex=() t_ch=() t_tip=()
+if [[ -f "$LIVE/tip.tsv" ]]; then
+  while IFS=$'\t' read -r u ex ch tip || [[ -n "${u:-}" ]]; do
+    [[ -z "${u:-}" ]] && continue
+    [[ "$ex" == "-" ]] && ex=""
+    [[ "$ch" == "-" ]] && ch=""
+    t_ex["$u"]="$ex"; t_ch["$u"]="$ch"; t_tip["$u"]="$tip"
+  done <"$LIVE/tip.tsv"
+fi
+
+declare -A armed=()
+if [[ -f "$LIVE/arm.tsv" ]]; then
+  while IFS=$'\t' read -r u a || [[ -n "${u:-}" ]]; do
+    [[ -z "${u:-}" ]] && continue
+    armed["$u"]="$a"
+  done <"$LIVE/arm.tsv"
+fi
+
+declare -A tr_epoch=() tr_has=()
+if [[ -f "$LIVE/trig.tsv" ]]; then
+  while IFS=$'\t' read -r u ep hf || [[ -n "${u:-}" ]]; do
+    [[ -z "${u:-}" ]] && continue
+    tr_epoch["$u"]="$ep"; tr_has["$u"]="$hf"
+  done <"$LIVE/trig.tsv"
+fi
+
+read_int() {
+  local f="$1"
+  if [[ -f "$f" ]]; then
+    tr -d '[:space:]' <"$f"
+  else
+    printf '0'
+  fi
+}
+
+inst_tmp="$(mktemp)"; : >"$inst_tmp"
+seat_ok=true
+for u in $(printf '%s\n' "${units[@]}" | LC_ALL=C sort -u); do
+  ex="${f_ex[$u]:-${meta_base[$u]:-}}"
+  [[ -n "${f_seen[$u]:-}" ]] && ex="${f_ex[$u]}"
+  ch="${f_ch[$u]:-}"
+  gen="${t_tip[$u]:-0}"
+  [[ -n "${gen//[0-9-]/}" ]] && gen=0
+  a="${armed[$u]:-0}"
+  floor="$(read_int "$OPS/floors/$u.floor")"
+  wg="$(read_int "$OPS/watchgen/$u.gen")"
+  tip="${t_tip[$u]:-0}"
+  [[ -n "${tip//[0-9-]/}" ]] && tip=0
+  want=0
+  if [[ "$ex" == "${t_ex[$u]:-}" && "$ch" == "${t_ch[$u]:-}" \
+        && "$tip" -ge "$floor" && "$wg" -ge "$floor" \
+        && -z "${f_dne[$u]:-}" ]]; then
+    want=1
+  fi
+  [[ "$a" == "$want" ]] || seat_ok=false
+  armed_bool=false
+  [[ "$a" == "1" ]] && armed_bool=true
+  jq -nc \
+    --arg unit "$u" \
+    --arg pe "$ex" \
+    --arg pc "$ch" \
+    --argjson generation "$gen" \
+    --argjson armed "$armed_bool" \
+    '{unit:$unit,path_exists:$pe,path_changed:$pc,generation:$generation,armed:$armed}' \
+    >>"$inst_tmp"
+done
+
+trig_tmp="$(mktemp)"; : >"$trig_tmp"
+for u in $(printf '%s\n' "${!tr_has[@]}" | LC_ALL=C sort); do
+  [[ "${tr_has[$u]:-0}" == "1" ]] || continue
+  a="${armed[$u]:-0}"
+  honored=false
+  [[ "$a" == "1" ]] && honored=true
+  ep="${tr_epoch[$u]:-0}"
+  [[ -n "${ep//[0-9-]/}" ]] && ep=0
+  jq -nc \
+    --arg unit "$u" \
+    --argjson last_epoch "$ep" \
+    --argjson honored "$honored" \
+    '{unit:$unit,last_epoch:$last_epoch,honored:$honored}' \
+    >>"$trig_tmp"
+done
+
+seat_json=false
+[[ "$seat_ok" == "true" ]] && seat_json=true
+
+jq -nc \
+  --slurpfile paths "$inst_tmp" \
+  --slurpfile triggers "$trig_tmp" \
+  --argjson seat_ok "$seat_json" \
+  '{schema_tag:"path-seat-v1",paths:$paths,triggers:$triggers,seat_ok:$seat_ok}' \
+  >"$REPORT"
+
+{
+  while IFS= read -r line; do
+    [[ -z "$line" ]] && continue
+    a="$(jq -r '.armed' <<<"$line")"
+    [[ "$a" == "true" ]] || continue
+    printf '%s=%s\n' "$(jq -r '.unit' <<<"$line")" "$(jq -r '.path_exists' <<<"$line")"
+  done <"$inst_tmp"
+} | LC_ALL=C sort >"$RUNMAP"
+
+rm -f "$inst_tmp" "$trig_tmp"

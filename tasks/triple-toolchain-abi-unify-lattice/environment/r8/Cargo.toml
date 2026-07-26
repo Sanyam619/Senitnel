@@ -1,0 +1,13 @@
+[package]
+name = "r8"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+name = "r8"
+
+[features]
+default = []
+facet_x = []
+facet_y = []

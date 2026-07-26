@@ -1,0 +1,20 @@
+user_visible_outputs = [
+  "/app/answers.json",
+  "/app/bin/judge.jar",
+]
+
+internal_harness_files = []
+
+[structured_outputs.answers]
+target = "/app/answers.json"
+format = "json"
+instruction_checks = [
+  "rounds",
+  "board_id",
+  "status",
+  "key_square",
+  "road_len",
+  "sequence",
+  "refutations",
+  "coop_road",
+]

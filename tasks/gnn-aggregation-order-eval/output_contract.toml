@@ -1,0 +1,14 @@
+user_visible_outputs = [
+  "/output/gnn-eval.json",
+]
+
+internal_harness_files = []
+
+[structured_outputs.report]
+target = "/output/gnn-eval.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "scenarios",
+  "bands_ok",
+]

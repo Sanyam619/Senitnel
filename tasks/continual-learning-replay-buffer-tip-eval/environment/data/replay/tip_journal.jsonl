@@ -1,0 +1,8 @@
+{"tip": "tip_a1", "epoch": 1, "replay_frac": 0.20, "sealed": true}
+{"tip": "tip_live", "epoch": 3, "replay_frac": 0.55, "sealed": false}
+{"tip": "tip_g7", "epoch": 4, "replay_frac": 0.40, "sealed": true}
+{"tip": "tip_x2", "epoch": 5, "replay_frac": 0.45, "sealed": false}
+{"tip": "tip_g9", "epoch": 7, "replay_frac": 0.10, "sealed": true}
+{"tip": "tip_b3", "epoch": 2, "replay_frac": 0.30, "sealed": true}
+{"tip": "tip_live", "epoch": 9, "replay_frac": 0.65, "sealed": false}
+{"tip": "tip_c1", "epoch": 6, "replay_frac": 0.35, "sealed": false}

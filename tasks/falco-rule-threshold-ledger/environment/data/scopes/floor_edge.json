@@ -1,0 +1,7 @@
+{
+  "container_id": "prod-edge-1",
+  "labels": {
+    "app": "edge",
+    "env": "prod"
+  }
+}

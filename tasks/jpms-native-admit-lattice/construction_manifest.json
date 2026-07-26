@@ -1,0 +1,145 @@
+{
+  "symbol_table": [
+    {
+      "path": "native/knit_xv.c",
+      "symbol": "knit_xv",
+      "kind": "function",
+      "signature": "int knit_xv(const struct row_x *a, struct slot_x *b)",
+      "purpose": "Fill pack_ok and mode_tag for one JPMS bridge row."
+    },
+    {
+      "path": "nest/OpB.java",
+      "symbol": "op_b",
+      "kind": "function",
+      "signature": "static int op_b(RowY a, SlotY b)",
+      "purpose": "Fill policy code from marks and freshness bounds."
+    },
+    {
+      "path": "forge/OpC.java",
+      "symbol": "op_c",
+      "kind": "function",
+      "signature": "static int op_c(RowZ a, SlotZ b)",
+      "purpose": "Resolve whether durable hook generation lines up with the bound value."
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "native/knit_xv.c",
+        "controls_tests": [
+          "test_q3_mica",
+          "test_w7_slate"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "nest/OpB.java",
+        "controls_tests": [
+          "test_k4_flint",
+          "test_p9_shale"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "forge/OpC.java",
+        "controls_tests": [
+          "test_n2_basalt",
+          "test_r6_chert"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "environment/native/skim_xv.c",
+      "kind": "helper",
+      "rhymes_with": "knit_xv",
+      "non_fix_purpose": "Leaf token rolling digest used by surfcheck; ignores pack/mode authority."
+    },
+    {
+      "path": "environment/nest/SkimY.java",
+      "kind": "helper",
+      "rhymes_with": "op_b",
+      "non_fix_purpose": "Id-token surface probe for desk --surface; ignores marks/window."
+    },
+    {
+      "path": "environment/forge/SkimZ.java",
+      "kind": "helper",
+      "rhymes_with": "op_c",
+      "non_fix_purpose": "Warm-cache signature probe during emit; not durable-root authority."
+    }
+  ],
+  "code_forbidden_tokens": [
+    "signing",
+    "desk",
+    "JPMS",
+    "JNI",
+    "provider-pack",
+    "cutover",
+    "surface",
+    "probes",
+    "tokens",
+    "sealed",
+    "host",
+    "gate",
+    "verify",
+    "generations",
+    "provider",
+    "order",
+    "mode",
+    "bits",
+    "keystore",
+    "generation",
+    "binding",
+    "revoke",
+    "windows",
+    "root",
+    "sessions",
+    "admits",
+    "ledger",
+    "cases",
+    "schema_version",
+    "pack-admit-1",
+    "rows",
+    "decision",
+    "accept",
+    "reject",
+    "reason_code",
+    "bind_epoch",
+    "epoch",
+    "runtime",
+    "decisions",
+    "pack-reload",
+    "run-pack",
+    "vocabulary",
+    "pack",
+    "refusals",
+    "bad_layer",
+    "mismatches",
+    "durable",
+    "live",
+    "roots",
+    "hook_skew",
+    "in-window",
+    "revoked",
+    "prior-generation",
+    "material",
+    "stale_reflect",
+    "revocation",
+    "window",
+    "admit",
+    "ok_bound",
+    "authority",
+    "surfcheck",
+    "outputs",
+    "rebuild",
+    "path",
+    "stand-ins",
+    "sign",
+    "key",
+    "case"
+  ]
+}

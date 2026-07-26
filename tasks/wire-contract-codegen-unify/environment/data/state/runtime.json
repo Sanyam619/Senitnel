@@ -1,0 +1,6 @@
+{
+  "epoch": 7,
+  "lanes": ["go", "rust", "java"],
+  "plugin_root": "/app/data/registry",
+  "idl_root": "/app/idl"
+}

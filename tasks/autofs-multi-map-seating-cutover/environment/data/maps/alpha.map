@@ -1,0 +1,3 @@
+# alpha durable map fixture
+mountpoint=/mnt/alpha
+payload=alpha-shelf-v4

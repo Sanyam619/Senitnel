@@ -1,0 +1,21 @@
+user_visible_outputs = [
+  "/output/patchwork-card.json",
+  "/app/bin/judge.jar",
+]
+
+internal_harness_files = []
+
+[structured_outputs.card]
+target = "/output/patchwork-card.json"
+format = "json"
+instruction_checks = [
+  "rounds",
+  "board_id",
+  "status",
+  "patch_id",
+  "time_cost",
+  "buttons",
+  "sequence",
+  "refutations",
+  "coop_fill",
+]

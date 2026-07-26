@@ -1,0 +1,8 @@
+/output/analysis.json version 1
+
+scenarios.<manifest_id>.missed_deadline_task — actor id string
+scenarios.<manifest_id>.chain — array of exactly 3 actor id strings in fixed order:
+  [0] same actor as missed_deadline_task (waiter blocked at the expiry anchor instant)
+  [1] gate holder blocking index 0 at that anchor instant
+  [2] runnable actor on-CPU at that anchor instant
+scenarios.<manifest_id>.ceilings — map of gate id to integer band (exact waiter band per gate)

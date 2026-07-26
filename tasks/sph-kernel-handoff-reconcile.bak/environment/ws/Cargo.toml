@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = [
+    "sph_core",
+    "sph_kernels",
+    "sph_a",
+    "sph_d",
+    "sph_b",
+    "sph_c",
+    "sph_runner",
+    "sph_verify",
+]
+
+[profile.release]
+opt-level = 3
+debug = false
+lto = false
+codegen-units = 1

@@ -1,0 +1,368 @@
+{
+  "task_name": "dm-thin-snapshot-fanout-reconcile",
+  "attempt": 1,
+  "best_score": [
+    0,
+    0
+  ],
+  "best_attempt": 1,
+  "plateau_count": 0,
+  "candidates": [],
+  "history": [
+    {
+      "attempt": 1,
+      "fails": 0,
+      "warns": 0,
+      "evidence_path": "specs/dm-thin-snapshot-fanout-reconcile-attempt-1-evidence.json",
+      "evidence": {
+        "hardness_axes": [
+          {
+            "id": "discover",
+            "name": "Discover",
+            "verdict": "PASS",
+            "reasoning": "Solver must recover seal-capped journal replay, epoch-coupled tip/origin preference, and exclusive lease rules from code and runtime \u2014 none are stated in instruction.md."
+          },
+          {
+            "id": "synthesize",
+            "name": "Synthesize",
+            "verdict": "PASS",
+            "reasoning": "Correct fanout couples sealed journal fold, C ioctl preference, per-tip leases, and decoy shelves under concurrent materialize."
+          },
+          {
+            "id": "diagnose",
+            "name": "Diagnose",
+            "verdict": "PASS",
+            "reasoning": "Instruction reports wrong/empty payloads and possible OK surface checks \u2014 not which authority layer is stale."
+          },
+          {
+            "id": "navigate_coupling",
+            "name": "Navigate coupling",
+            "verdict": "PASS",
+            "reasoning": "Ledger-only tip edits are wiped by sealed preflight; stamp-matched decoys fail gamma; missing leases fail concurrent materialize."
+          },
+          {
+            "id": "reason_beyond_training",
+            "name": "Reason beyond training",
+            "verdict": "PASS",
+            "reasoning": "Simulated dm-thin snapshot fanout with seal/epoch/lease lattice is outside textbook LVM one-liners."
+          }
+        ],
+        "anti_trivialization_checks": [
+          {
+            "id": "disclosure_collapse",
+            "name": "Disclosure-collapse",
+            "verdict": "PASS",
+            "reasoning": "Honest symptoms-only prompt omits seal formula, epoch floor, and lease mechanics."
+          },
+          {
+            "id": "hidden_instance",
+            "name": "Hidden-instance",
+            "verdict": "PASS",
+            "reasoning": "Fixed multi-drill roster topology, not hunt-one-file."
+          },
+          {
+            "id": "single_artifact_repair",
+            "name": "Single-artifact repair",
+            "verdict": "PASS",
+            "reasoning": "Fold, ioctl preference, and leases must all be correct."
+          },
+          {
+            "id": "generalization",
+            "name": "Generalization",
+            "verdict": "PASS",
+            "reasoning": "Four drills exercise partial-roll tip, live epoch, decoy stamp, and report order."
+          },
+          {
+            "id": "prompt_honesty",
+            "name": "Prompt-honesty",
+            "verdict": "PASS",
+            "reasoning": "Prompt does not name phase_k, phase_m, or op_q."
+          },
+          {
+            "id": "cheating_vs_difficulty",
+            "name": "Cheating-vs-difficulty",
+            "verdict": "PASS",
+            "reasoning": "Difficulty is authority coupling, not anti-cheat."
+          },
+          {
+            "id": "mechanical_fix_filter",
+            "name": "Mechanical-fix filter",
+            "verdict": "PASS",
+            "reasoning": "Not a deps/timeout task."
+          },
+          {
+            "id": "localized_fix",
+            "name": "Localized-fix",
+            "verdict": "PASS",
+            "reasoning": "Fix spans fold/, hold/, and c/ioctl_a.c."
+          },
+          {
+            "id": "oracle_locality",
+            "name": "Oracle-locality",
+            "verdict": "PASS",
+            "reasoning": "Oracle rewrites three substantive loci then rebuilds; not wholesale replace of one file."
+          },
+          {
+            "id": "small_declarative_cluster",
+            "name": "Small declarative-cluster",
+            "verdict": "PASS",
+            "reasoning": "Ledger-only edits are undone by sealed preflight; binary authority must change."
+          },
+          {
+            "id": "grep_collapse",
+            "name": "Grep-collapse",
+            "verdict": "PASS",
+            "reasoning": "Opaque symbols phase_k, phase_m, op_q."
+          },
+          {
+            "id": "pre_factored_helper",
+            "name": "Pre-factored-helper",
+            "verdict": "PASS",
+            "reasoning": "Helpers do not mirror prompt nouns like fix_snapshot or reconcile_lease."
+          },
+          {
+            "id": "recipe_discount",
+            "name": "Recipe-discount",
+            "verdict": "PASS",
+            "reasoning": "Not a standard lvcreate/thin recipe fill-in."
+          },
+          {
+            "id": "security_aura_discount",
+            "name": "Security-aura discount",
+            "verdict": "PASS",
+            "reasoning": "Category is system-administration; storage reconcile is primary."
+          },
+          {
+            "id": "orthogonal_checklist",
+            "name": "Orthogonal-checklist",
+            "verdict": "PASS",
+            "reasoning": "Seal, epoch preference, and leases trade off; partial patches fail distant tests."
+          },
+          {
+            "id": "harness_discount",
+            "name": "Harness-discount",
+            "verdict": "PASS",
+            "reasoning": "Single-container fixtures are realism only."
+          },
+          {
+            "id": "one_pass_solvability",
+            "name": "One-pass solvability",
+            "verdict": "PASS",
+            "reasoning": "False-green dmhealth plus decoy stamps mislead one-pass grepping."
+          },
+          {
+            "id": "hard_only_gate",
+            "name": "Hard-only gate",
+            "verdict": "PASS",
+            "reasoning": "Coupled journal \u00d7 ioctl \u00d7 lease clears hard-only."
+          },
+          {
+            "id": "discovery_budget_test",
+            "name": "Discovery budget test",
+            "verdict": "PASS",
+            "reasoning": "Three named discoveries in discovery_budget."
+          },
+          {
+            "id": "instruction_specificity_test",
+            "name": "Instruction specificity test",
+            "verdict": "PASS",
+            "reasoning": "symptoms-only."
+          },
+          {
+            "id": "topology_distribution_test",
+            "name": "Topology distribution test",
+            "verdict": "PASS",
+            "reasoning": "Three topologies enumerated with \u22653 locations each."
+          }
+        ],
+        "rubric_axes": [
+          {
+            "id": "verifiable",
+            "name": "Verifiable",
+            "verdict": "PASS",
+            "reasoning": "Deterministic payload digests and JSON assertions."
+          },
+          {
+            "id": "well_specified",
+            "name": "Well-specified",
+            "verdict": "PASS",
+            "reasoning": "Output paths and report field names stated; outcomes observable."
+          },
+          {
+            "id": "solvable",
+            "name": "Solvable",
+            "verdict": "PASS",
+            "reasoning": "Expert can finish via matfan rebuild path in a few hours."
+          },
+          {
+            "id": "difficult",
+            "name": "Difficult",
+            "verdict": "PASS",
+            "reasoning": "Multi-authority thin-pool fanout under concurrent restore."
+          },
+          {
+            "id": "interesting",
+            "name": "Interesting",
+            "verdict": "PASS",
+            "reasoning": "Real appliance thin-snapshot fanout ops work."
+          },
+          {
+            "id": "outcome_verified",
+            "name": "Outcome-verified",
+            "verdict": "PASS",
+            "reasoning": "Grades payloads, report, leases \u2014 not process."
+          }
+        ],
+        "instruction_completeness_test": {
+          "verdict": "PASS",
+          "reasoning": "Instruction alone does not give seal-capped replay, epoch preference, or lease serialization; solver must engage codebase and runtime materialize."
+        },
+        "discovery_budget": [
+          {
+            "discovery": "Sealed journal lines apply only when generation \u2264 pool.seal; disagreeing meta tip pointers are wiped on every materialize preflight.",
+            "planned_location": "environment/internal/fold/fold.go (phase_k), environment/config/pool.seal, environment/data/pool/journal/act.wal",
+            "why_instruction_must_not_reveal": "Naming seal-capped journal precedence collapses the task to ledger transcription."
+          },
+          {
+            "discovery": "Tip vs origin byte selection uses epoch compare (tip epoch \u2265 floor \u2192 cow snap payload; else live origin); stamp-matching decoys never win when a sealed tip exists.",
+            "planned_location": "environment/c/ioctl_a.c (op_q) and snap meta epoch fields",
+            "why_instruction_must_not_reveal": "Publishing the epoch floor formula turns beta/gamma into one-pass preference flips."
+          },
+          {
+            "discovery": "Concurrent materialize requires exclusive per-tip leases; torn .part lease files indicate failed serialization.",
+            "planned_location": "environment/internal/hold/hold.go (phase_m)",
+            "why_instruction_must_not_reveal": "Stating flock/lease mechanics removes the race-diagnosis work."
+          }
+        ],
+        "instruction_specificity": {
+          "level": "symptoms-only",
+          "reasoning": "Reports wrong/empty payloads and possible OK surface checks; omits seal formula, epoch floor, and fix loci."
+        },
+        "attack_path": {
+          "summary": "Inspect journal vs meta disagreement \u2192 fix seal-capped fold wipe \u2192 fix C epoch preference \u2192 fix exclusive leases \u2192 rebuild matfan \u2192 materialize.",
+          "reasoning": "Partial patches leave decoy payloads, wrong order_index, or torn leases."
+        },
+        "smallest_plausible_patch": {
+          "summary": "Rewrite phase_k, phase_m, and op_q bodies (~120+ LOC), rebuild, run matfan.",
+          "reasoning": "Not config-only; three coupled loci across Go and C."
+        },
+        "collapse_audit": {
+          "verdict": "PASS",
+          "reasoning": "Distributed across three roots, opaque symbols, false-green surface tool, sealed authority undoes ledger-only edits, no answer fixtures in env.",
+          "residual_hardness": "Solver must recover seal \u00d7 epoch \u00d7 lease coupling while ignoring dmhealth and stamp-matched decoys.",
+          "red_flags": []
+        },
+        "naming_pass": {
+          "instruction_nouns_extracted": [
+            "lab",
+            "thin",
+            "pool",
+            "fans",
+            "snapshots",
+            "per-drill",
+            "volumes",
+            "crash",
+            "mid-roll",
+            "drills",
+            "payloads",
+            "fanout-report",
+            "surface",
+            "checks",
+            "roster",
+            "materialize",
+            "report",
+            "array",
+            "name",
+            "tip_id",
+            "origin_kind",
+            "order_index",
+            "live",
+            "cow",
+            "shelves",
+            "origins",
+            "lease",
+            "leases",
+            "tooling",
+            "sources",
+            "correct",
+            "coherent",
+            "matching",
+            "torn"
+          ],
+          "renames_during_drafting": [
+            {
+              "original": "replay_journal",
+              "renamed_to": "phase_k",
+              "reason": "Avoided journal/activation nouns on fix path."
+            },
+            {
+              "original": "take_lease",
+              "renamed_to": "phase_m",
+              "reason": "Avoided lease noun on fix path."
+            },
+            {
+              "original": "pick_origin",
+              "renamed_to": "op_q",
+              "reason": "Avoided origin/tip nouns on fix path."
+            }
+          ],
+          "test_names_audited": [
+            "test_k3_zircon",
+            "test_m8_obsidian",
+            "test_p2_garnet",
+            "test_q7_topaz",
+            "test_r1_onyx",
+            "test_t6_amber",
+            "test_v4_jade",
+            "test_w9_quartz",
+            "test_x2_flint"
+          ],
+          "concentration_math": {
+            "total_tests": 9,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 3,
+                "ratio": 0.333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 3,
+                "ratio": 0.333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 3,
+                "ratio": 0.333333
+              }
+            ]
+          },
+          "recomputed_concentration": {
+            "total_tests": 9,
+            "concentration_cap": 0.5,
+            "per_location": [
+              {
+                "location_id": "A",
+                "test_count": 3,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "B",
+                "test_count": 3,
+                "ratio": 0.3333333333333333
+              },
+              {
+                "location_id": "C",
+                "test_count": 3,
+                "ratio": 0.3333333333333333
+              }
+            ]
+          }
+        }
+      },
+      "evidence_errors": [],
+      "blocking_failures": []
+    }
+  ],
+  "schema_path": "specs/validation_schema.json"
+}

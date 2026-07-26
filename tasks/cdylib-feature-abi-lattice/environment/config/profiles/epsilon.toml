@@ -1,0 +1,3 @@
+id = "epsilon"
+lane = "dual"
+features = ["trunk", "facet_a", "facet_c"]

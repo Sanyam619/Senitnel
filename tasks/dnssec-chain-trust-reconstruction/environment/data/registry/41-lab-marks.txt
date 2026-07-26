@@ -1,0 +1,2 @@
+SIG|lab.example.test|lab.example.test|LZSK_A|sig-l-old|0|280
+SIG|lab.example.test|lab.example.test|LZSK_B|sig-l-new|260|500

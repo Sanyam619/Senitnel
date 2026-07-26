@@ -1,0 +1,358 @@
+{
+  "hardness_axes": [
+    {
+      "id": "discover",
+      "name": "Discover",
+      "verdict": "PASS",
+      "reasoning": "Solver must infer archived generation id, recovery stage order, and halo orientation convention from code and data \u2014 none appear in instruction.md."
+    },
+    {
+      "id": "synthesize",
+      "name": "Synthesize",
+      "verdict": "PASS",
+      "reasoning": "Fix spans ledger catalog, forge driver, mesh link tables, and couple halo fill as one coordinated recovery pipeline."
+    },
+    {
+      "id": "diagnose",
+      "name": "Diagnose",
+      "verdict": "PASS",
+      "reasoning": "Public brief reports face-layer drift with plausible interiors without naming broken module or phase."
+    },
+    {
+      "id": "navigate_coupling",
+      "name": "Navigate coupling",
+      "verdict": "PASS",
+      "reasoning": "Reordering one phase or binding wrong generation passes some scenarios while failing chain-dependent gamma test."
+    },
+    {
+      "id": "reason_beyond_training",
+      "name": "Reason beyond training",
+      "verdict": "PASS",
+      "reasoning": "Hierarchical AMR recovery after policy merge requires specialized numerical/topological reasoning beyond generic checkpoint resume."
+    }
+  ],
+  "anti_trivialization_checks": [
+    {
+      "id": "disclosure_collapse",
+      "name": "Disclosure-collapse",
+      "verdict": "PASS",
+      "reasoning": "Symptoms-only instruction plus output schema does not disclose generation binding or stage ordering."
+    },
+    {
+      "id": "hidden_instance",
+      "name": "Hidden-instance",
+      "verdict": "PASS",
+      "reasoning": "All fixtures share one recovery-path defect; not a hunt for one corrupt file among many."
+    },
+    {
+      "id": "single_artifact_repair",
+      "name": "Single-artifact repair",
+      "verdict": "PASS",
+      "reasoning": "Patching only policy table, only restart script, or only one C module cannot satisfy L2, mass, and depth tests together."
+    },
+    {
+      "id": "generalization",
+      "name": "Generalization",
+      "verdict": "PASS",
+      "reasoning": "Three scenarios with distinct refinement ladders validate the invariant class, not one hard-coded instance."
+    },
+    {
+      "id": "prompt_honesty",
+      "name": "Prompt-honesty",
+      "verdict": "PASS",
+      "reasoning": "An honest symptoms-only prompt leaves generation and ordering as discoveries."
+    },
+    {
+      "id": "cheating_vs_difficulty",
+      "name": "Cheating-vs-difficulty",
+      "verdict": "PASS",
+      "reasoning": "Verifier computes expected values in test code; anti-tamper supports real difficulty rather than substituting for it."
+    },
+    {
+      "id": "mechanical_fix_filter",
+      "name": "Mechanical-fix filter",
+      "verdict": "PASS",
+      "reasoning": "Difficulty is cross-module recovery coordination, not timeout or footer formatting."
+    },
+    {
+      "id": "localized_fix",
+      "name": "Localized-fix",
+      "verdict": "PASS",
+      "reasoning": "Flipping-point contract distributes control across forge, ledger, and mesh directories."
+    },
+    {
+      "id": "oracle_locality",
+      "name": "Oracle-locality",
+      "verdict": "PASS",
+      "reasoning": "Oracle coordinates three modules plus driver script; no single-file wholesale replacement."
+    },
+    {
+      "id": "small_declarative_cluster",
+      "name": "Small declarative-cluster",
+      "verdict": "PASS",
+      "reasoning": "Fix is procedural multi-phase coordination, not filling one policy manifest."
+    },
+    {
+      "id": "grep_collapse",
+      "name": "Grep-collapse",
+      "verdict": "PASS",
+      "reasoning": "Instruction nouns are banned from fix-path symbols; code uses opaque apply_seq_a, select_src_b, rebuild_map_c."
+    },
+    {
+      "id": "pre_factored_helper",
+      "name": "Pre-factored-helper",
+      "verdict": "PASS",
+      "reasoning": "Decoy catalog_scan and stencil_probe perform genuine diagnostics; they do not mirror fix-path names."
+    },
+    {
+      "id": "recipe_discount",
+      "name": "Recipe-discount",
+      "verdict": "PASS",
+      "reasoning": "Generic rerun-restart recipe fails without discovering generation id and stage mask ordering."
+    },
+    {
+      "id": "security_aura_discount",
+      "name": "Security-aura discount",
+      "verdict": "PASS",
+      "reasoning": "Hardness comes from numerical topology coupling, not security framing."
+    },
+    {
+      "id": "orthogonal_checklist",
+      "name": "Orthogonal-checklist",
+      "verdict": "PASS",
+      "reasoning": "Generation choice, stage order, and link refresh are coupled with tradeoffs across scenarios."
+    },
+    {
+      "id": "harness_discount",
+      "name": "Harness-discount",
+      "verdict": "PASS",
+      "reasoning": "C build and Docker packaging add realism but are not the core challenge."
+    },
+    {
+      "id": "one_pass_solvability",
+      "name": "One-pass solvability",
+      "verdict": "PASS",
+      "reasoning": "Agent must read driver, ledger, and mesh modules across roots before a one-shot fix can succeed."
+    },
+    {
+      "id": "hard_only_gate",
+      "name": "Hard-only gate",
+      "verdict": "PASS",
+      "reasoning": "All five hardness axes satisfied; task is clearly hard not medium."
+    },
+    {
+      "id": "discovery_budget_test",
+      "name": "Discovery budget test",
+      "verdict": "PASS",
+      "reasoning": "Three non-trivial discoveries enumerated: generation binding, stage order, halo orientation convention."
+    },
+    {
+      "id": "instruction_specificity_test",
+      "name": "Instruction specificity test",
+      "verdict": "PASS",
+      "reasoning": "Instruction is symptoms-only with output contract; no cause-revealing component names."
+    },
+    {
+      "id": "topology_distribution_test",
+      "name": "Topology distribution test",
+      "verdict": "PASS",
+      "reasoning": "Three distinct topologies each require coordination across at least three locations with no single-file exploit."
+    }
+  ],
+  "rubric_axes": [
+    {
+      "id": "verifiable",
+      "name": "Verifiable",
+      "verdict": "PASS",
+      "reasoning": "Deterministic L2, mass drift, depth, and schema checks on fixed fixtures."
+    },
+    {
+      "id": "well_specified",
+      "name": "Well-specified",
+      "verdict": "PASS",
+      "reasoning": "Public contract and summary-schema doc yield equivalent verifier interpretations."
+    },
+    {
+      "id": "solvable",
+      "name": "Solvable",
+      "verdict": "PASS",
+      "reasoning": "AMR-experienced human can complete recovery workflow in a few hours on this codebase scale."
+    },
+    {
+      "id": "difficult",
+      "name": "Difficult",
+      "verdict": "PASS",
+      "reasoning": "Requires professional AMR restart experience beyond undergrad coursework."
+    },
+    {
+      "id": "interesting",
+      "name": "Interesting",
+      "verdict": "PASS",
+      "reasoning": "Policy migration on archived hierarchical simulation state is paid production HPC work."
+    },
+    {
+      "id": "outcome_verified",
+      "name": "Outcome-verified",
+      "verdict": "PASS",
+      "reasoning": "Grades field norms and summary JSON, not prescribed CLI steps."
+    }
+  ],
+  "instruction_completeness_test": {
+    "verdict": "PASS",
+    "reasoning": "Instruction names drift symptoms and output artifacts only; generation binding, stage bitmask, and link conventions require deep codebase engagement."
+  },
+  "discovery_budget": [
+    {
+      "discovery": "Which archived generation id is canonical after the layout-directive merge (cycle 21 vs cycle 17 blob).",
+      "planned_location": "environment/src/ledger/epoch_pick.c and environment/data/policy_v2.table merge metadata",
+      "why_instruction_must_not_reveal": "Naming the generation collapses diagnosis to selecting one blob file."
+    },
+    {
+      "discovery": "Recovery stages must run layout reconciliation before neighbor link refresh before field attach.",
+      "planned_location": "environment/src/forge/recover_phase.c stage mask and environment/scripts/run_restart.sh",
+      "why_instruction_must_not_reveal": "Stating phase order turns the task into procedural transcription."
+    },
+    {
+      "discovery": "Cross-level halo fill uses a signed axis convention tied to link table orientation, not flux kernel parameters.",
+      "planned_location": "environment/src/mesh/link_refresh.c coupled to environment/src/couple/halo_fill.c",
+      "why_instruction_must_not_reveal": "Revealing orientation convention enables one-constant patch without topology reasoning."
+    }
+  ],
+  "instruction_specificity": {
+    "level": "symptoms-only",
+    "reasoning": "Instruction describes observable face-layer drift, plausible interiors, and required output JSON without naming broken modules, phases, or tables."
+  },
+  "attack_path": {
+    "summary": "Agent traces restart driver through ledger catalog and mesh link materialization to align generation, stage order, and neighbor maps.",
+    "reasoning": "Premature success on alpha masks gamma unless full pipeline invariants hold; decoy inspect tooling and default script mislead naive reruns."
+  },
+  "smallest_plausible_patch": {
+    "summary": "Coordinate generation selection, stage mask ordering, and link refresh across three C modules plus restart script invocation.",
+    "reasoning": "Roughly 40-80 lines across forge, ledger, and mesh roots; no single-location edit passes all eight tests."
+  },
+  "collapse_audit": {
+    "verdict": "PASS",
+    "reasoning": "Distributed recovery coupling resists grep-collapse and recipe replay; chain-dependent gamma test blocks partial fixes.",
+    "residual_hardness": "Agent must build mental model of multi-phase driver and reject authoritative-looking decoys while recovering signed halo conventions from code.",
+    "red_flags": []
+  },
+  "naming_pass": {
+    "instruction_nouns_extracted": [
+      "hydrodynamics",
+      "adaptive",
+      "refinement",
+      "checkpoints",
+      "hierarchical",
+      "blocks",
+      "cycle",
+      "archived",
+      "checkpoint",
+      "layout",
+      "restart",
+      "conserved",
+      "face",
+      "layer",
+      "norms",
+      "reference",
+      "baseline",
+      "interior",
+      "states",
+      "solver",
+      "kernels",
+      "recovery",
+      "scenarios",
+      "output",
+      "summary",
+      "block",
+      "counts",
+      "boundary",
+      "error",
+      "driver",
+      "snapshot",
+      "directive",
+      "magnitudes",
+      "traces",
+      "cells",
+      "fields",
+      "timesteps",
+      "policy",
+      "merge",
+      "topology",
+      "ghost",
+      "rebind",
+      "exchange",
+      "halo",
+      "neighbor",
+      "epoch",
+      "fixture"
+    ],
+    "renames_during_drafting": [
+      {
+        "original": "pick_epoch",
+        "renamed_to": "select_src_b",
+        "reason": "Original symbol overlapped forbidden noun epoch."
+      },
+      {
+        "original": "rebind_topology",
+        "renamed_to": "rebuild_map_c",
+        "reason": "Original symbol overlapped forbidden nouns rebind and topology."
+      },
+      {
+        "original": "run_recovery_stages",
+        "renamed_to": "apply_seq_a",
+        "reason": "Original symbol overlapped forbidden noun recovery."
+      }
+    ],
+    "test_names_audited": [
+      "test_emit_json_contract",
+      "test_slice_l2_alpha",
+      "test_slice_l2_beta",
+      "test_volume_sum_alpha",
+      "test_volume_sum_beta",
+      "test_depth_alpha",
+      "test_depth_beta",
+      "test_secondary_gamma"
+    ],
+    "concentration_math": {
+      "total_tests": 8,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 3,
+          "ratio": 0.375
+        },
+        {
+          "location_id": "B",
+          "test_count": 3,
+          "ratio": 0.375
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.25
+        }
+      ]
+    },
+    "recomputed_concentration": {
+      "total_tests": 8,
+      "concentration_cap": 0.5,
+      "per_location": [
+        {
+          "location_id": "A",
+          "test_count": 3,
+          "ratio": 0.375
+        },
+        {
+          "location_id": "B",
+          "test_count": 3,
+          "ratio": 0.375
+        },
+        {
+          "location_id": "C",
+          "test_count": 2,
+          "ratio": 0.25
+        }
+      ]
+    }
+  }
+}

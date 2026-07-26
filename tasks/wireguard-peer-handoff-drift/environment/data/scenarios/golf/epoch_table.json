@@ -1,0 +1,52 @@
+{
+  "current_epoch": 2,
+  "epochs": [
+    {
+      "epoch": 1,
+      "members": [
+        {
+          "id": "m-g1",
+          "pubkey": "pkG1aa",
+          "endpoint": "203.0.113.70:51820",
+          "allowed_ips": [
+            "10.70.1.0/24"
+          ]
+        }
+      ]
+    },
+    {
+      "epoch": 2,
+      "members": [
+        {
+          "id": "m-g2",
+          "pubkey": "pkG2bb",
+          "endpoint": "203.0.113.71:51820",
+          "allowed_ips": [
+            "10.70.2.0/24"
+          ]
+        }
+      ]
+    },
+    {
+      "epoch": 3,
+      "members": [
+        {
+          "id": "m-g3",
+          "pubkey": "pkG3cc",
+          "endpoint": "203.0.113.72:51820",
+          "allowed_ips": [
+            "10.70.1.0/24"
+          ]
+        },
+        {
+          "id": "m-g4",
+          "pubkey": "pkG4dd",
+          "endpoint": "203.0.113.73:51820",
+          "allowed_ips": [
+            "10.70.3.0/24"
+          ]
+        }
+      ]
+    }
+  ]
+}

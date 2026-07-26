@@ -1,0 +1,9 @@
+# Scratch session — trap-shaped block by flight.
+board_id: hist_04
+to_move: white
+moves_left: 2
+white:
+a7 d7 f4
+black:
+g1 a4 c5
+# After W:f4-g4, flying Black can answer B:c5-g7

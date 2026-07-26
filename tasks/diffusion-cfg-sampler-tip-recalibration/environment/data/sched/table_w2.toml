@@ -1,0 +1,18 @@
+# Live sweep CFG / sampler schedule (short teacher-forced sampler bait).
+[cfg]
+"3" = 2.940000
+"4" = 3.120000
+"5" = 3.300000
+"6" = 3.480000
+"7" = 3.660000
+"8" = 3.840000
+"9" = 4.020000
+
+[sampler]
+"3" = "euler_short"
+"4" = "euler_short"
+"5" = "euler_short"
+"6" = "euler_short"
+"7" = "euler_short"
+"8" = "euler_short"
+"9" = "euler_short"

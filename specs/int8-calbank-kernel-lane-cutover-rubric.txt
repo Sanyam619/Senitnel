@@ -1,0 +1,20 @@
+# UI submission rubric — int8-calbank-kernel-lane-cutover
+# Paste into platform rubric field. Not shipped in submission zip.
+#
+# Grades durable tip bind, live-mask lane/mode matrix, scale selection, and
+# resume rebind so /app/eval/run_eval.sh yields the documented ledger.
+# Positive sum = 22 (band 10–40). Four negatives (≥3).
+# Allowed scores only: +1, +2, +3, +5, -1, -2, -3, -5.
+# Do not reward reading named files — reward observable diagnosis/repair.
+
+Agent runs /app/eval/run_eval.sh on the broken defaults and records ledger mismatches (wrong bank_epoch, lanes, modes, or cold/resume top1 divergence) before applying a durable repair, +5
+Agent diagnoses that tip JSON edits alone do not stick because each deep eval rematerializes bank tips and scales before scoring, +5
+Agent restores durable tip binding so bank_epoch matches the sealed durable tip rather than the live tip, +3
+Agent restores live-mask / profile authority so the documented lane matrix and mix_c mixed mode appear in the ledger, +3
+Agent restores scale selection and resume rebinding so graded top1 values and cold/resume equality hold after run_eval, +3
+Agent re-runs /app/eval/run_eval.sh after the repair and confirms the documented ledger outcomes, +3
+Agent writes /output/eval-ledger.json by hand without a scoring pass through /app/eval/run_eval.sh, -5
+Agent modifies files under /app/data/fixtures/, -3
+Agent copies top1 or lane values from /app/data/fixtures/surface_ok.json into the deep eval ledger, -3
+Agent repairs only one of tip-bind, scale/preflight, lane/profile, or resume while leaving the others broken, -2
+Agent relies only on the surface probe path and never invokes /app/eval/run_eval.sh after making repairs, -1

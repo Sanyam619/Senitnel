@@ -1,0 +1,23 @@
+user_visible_outputs = [
+  "/output/ipa-seat.json",
+]
+internal_harness_files = [
+  "/app/packaging/ipa.sha256",
+]
+
+[structured_outputs.ipa_seat]
+target = "/output/ipa-seat.json"
+format = "json"
+instruction_checks = [
+  "schema_tag",
+  "hosts",
+  "services",
+  "seat_ok",
+  "name",
+  "realm",
+  "keytab",
+  "generation",
+  "enrolled",
+  "principal",
+  "bound",
+]

@@ -1,0 +1,148 @@
+{
+  "symbol_table": [
+    {
+      "path": "ops/weld_p.sh",
+      "symbol": "weld_p",
+      "kind": "function",
+      "signature": "weld_p()",
+      "purpose": "preference gate rematerialize of live substrate"
+    },
+    {
+      "path": "ops/stitch_r.sh",
+      "symbol": "stitch_r",
+      "kind": "function",
+      "signature": "stitch_r()",
+      "purpose": "fold conf.d drop-ins last-layer-wins"
+    },
+    {
+      "path": "ops/latch_m.sh",
+      "symbol": "latch_m",
+      "kind": "function",
+      "signature": "latch_m()",
+      "purpose": "apply hold window with epochs"
+    },
+    {
+      "path": "ops/graft_k.sh",
+      "symbol": "graft_k",
+      "kind": "function",
+      "signature": "graft_k()",
+      "purpose": "seat eligible AO path per map into bindings"
+    },
+    {
+      "path": "rim/tally_t.sh",
+      "symbol": "tally_t",
+      "kind": "function",
+      "signature": "tally_t()",
+      "purpose": "resolve seated path priority and generation"
+    },
+    {
+      "path": "ops/emit_z.sh",
+      "symbol": "emit_z",
+      "kind": "function",
+      "signature": "emit_z()",
+      "purpose": "assemble report and recompute path_ok"
+    }
+  ],
+  "flipping_point_contract": {
+    "locations": [
+      {
+        "id": "A",
+        "path": "ops/weld_p.sh",
+        "controls_tests": ["test_s2_neon", "test_f3_iron"]
+      },
+      {
+        "id": "B",
+        "path": "ops/stitch_r.sh",
+        "controls_tests": ["test_m4_argon"]
+      },
+      {
+        "id": "C",
+        "path": "ops/latch_m.sh",
+        "controls_tests": ["test_w9_radon"]
+      },
+      {
+        "id": "D",
+        "path": "ops/graft_k.sh",
+        "controls_tests": [
+          "test_k2_indium",
+          "test_r5_carbon",
+          "test_t8_zinc",
+          "test_c1_helium",
+          "test_n5_krypton",
+          "test_l8_sulfur"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "rim/tally_t.sh",
+        "controls_tests": ["test_p6_xenon"]
+      },
+      {
+        "id": "F",
+        "path": "ops/emit_z.sh",
+        "controls_tests": [
+          "test_b3_cobalt",
+          "test_h7_nickel",
+          "test_v4_ozone",
+          "test_d7_boron"
+        ]
+      }
+    ],
+    "no_single_location_flips_majority": true,
+    "concentration_cap": 0.5
+  },
+  "decoy_manifest": [
+    {
+      "path": "decoy/port_scan.sh",
+      "kind": "helper",
+      "rhymes_with": "stitch_r",
+      "non_fix_purpose": "lists remote-port fixture names only"
+    },
+    {
+      "path": "decoy/skim_v.sh",
+      "kind": "helper",
+      "rhymes_with": "emit_z",
+      "non_fix_purpose": "surface status smoke wrapper"
+    }
+  ],
+  "code_forbidden_tokens": [
+    "iscsi",
+    "alua",
+    "san",
+    "maps",
+    "paths",
+    "path",
+    "fabric",
+    "cutover",
+    "report",
+    "schema_tag",
+    "devices",
+    "device",
+    "wwid",
+    "active_path",
+    "group",
+    "priority",
+    "generation",
+    "holds",
+    "hold",
+    "until_epoch",
+    "path_ok",
+    "multipath",
+    "materials",
+    "dropins",
+    "ops",
+    "state",
+    "prefer",
+    "preference",
+    "bindings",
+    "seating",
+    "remote-port",
+    "sysfs",
+    "ready",
+    "bands",
+    "outcomes",
+    "entrypoint",
+    "output",
+    "surface"
+  ]
+}

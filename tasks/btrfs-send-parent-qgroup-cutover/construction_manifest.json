@@ -1,0 +1,115 @@
+{
+  "symbol_table": [
+    {
+      "path": "wire/knit_p.sh",
+      "symbol": "knit_p",
+      "kind": "script",
+      "signature": "bash",
+      "purpose": "Seal-capped roster WAL fold + tip-map rewrite"
+    },
+    {
+      "path": "rim/fold_q.sh",
+      "symbol": "fold_q",
+      "kind": "script",
+      "signature": "bash",
+      "purpose": "Lexical last-wins pref.d fold"
+    },
+    {
+      "path": "ops/axle_j.sh",
+      "symbol": "axle_j",
+      "kind": "script",
+      "signature": "bash",
+      "purpose": "Sealed ops-journal cutover for gen.target"
+    },
+    {
+      "path": "bag/slot_w.sh",
+      "symbol": "slot_w",
+      "kind": "script",
+      "signature": "bash",
+      "purpose": "Arm seal_gen.arm from pool.seal"
+    },
+    {
+      "path": "deck/hold_c.sh",
+      "symbol": "hold_c",
+      "kind": "script",
+      "signature": "bash",
+      "purpose": "Gen-gated lease/host scrub"
+    },
+    {
+      "path": "dock/link_v.sh",
+      "symbol": "link_v",
+      "kind": "script",
+      "signature": "bash",
+      "purpose": "Hardlink sealed shelves + desk holds"
+    }
+  ],
+  "flipping_point_contract": {
+    "concentration_cap": 0.5,
+    "no_single_location_flips_majority": true,
+    "locations": [
+      {
+        "id": "A",
+        "path": "wire/knit_p.sh",
+        "symbol": "knit_p",
+        "controls_tests": [
+          "test_k3_zircon",
+          "test_w9_quartz",
+          "test_n5_beryl",
+          "test_q7_topaz",
+          "test_j2_journal"
+        ]
+      },
+      {
+        "id": "B",
+        "path": "rim/fold_q.sh",
+        "symbol": "fold_q",
+        "controls_tests": [
+          "test_p2_garnet",
+          "test_m8_obsidian",
+          "test_y3_coral"
+        ]
+      },
+      {
+        "id": "C",
+        "path": "ops/axle_j.sh",
+        "symbol": "axle_j",
+        "controls_tests": [
+          "test_s4_jade",
+          "test_a1_desk",
+          "test_i8_flint",
+          "test_j2_journal"
+        ]
+      },
+      {
+        "id": "D",
+        "path": "bag/slot_w.sh",
+        "symbol": "slot_w",
+        "controls_tests": [
+          "test_s4_jade",
+          "test_k3_zircon"
+        ]
+      },
+      {
+        "id": "E",
+        "path": "deck/hold_c.sh",
+        "symbol": "hold_c",
+        "controls_tests": [
+          "test_h2_coral",
+          "test_r1_onyx",
+          "test_t6_amber"
+        ]
+      },
+      {
+        "id": "F",
+        "path": "dock/link_v.sh",
+        "symbol": "link_v",
+        "controls_tests": [
+          "test_i8_flint",
+          "test_a1_desk",
+          "test_x2_flint"
+        ]
+      }
+    ]
+  },
+  "notes": "Post-EASY harden 2026-07-22: bash ops across wire/rim/ops/bag/deck/dock + deskd rematerialize; sealed journal; gen gate; crash tip-map rematerialize."
+}

@@ -13,10 +13,10 @@ harbor run -p "tasks/<task-name>" -a oracle -k 10 -n 10
 # NOP (must score 0.0, no API key needed)
 harbor run -p "tasks/<task-name>" -a nop
 
-# Step 3a-Q (OPT-IN): GPT-5.2 quality check. Only run when a reviewer asked
+# Step 3a-Q (OPT-IN): GPT-5.6 quality check. Only run when a reviewer asked
 # for it or you want to pressure-test instruction/test wording.
 set -a && source .env && set +a
-harbor tasks check "tasks/<task-name>" -m "openai/gpt-5.2" -o /tmp/<task-name>-qc.json
+harbor tasks check "tasks/<task-name>" -m "openai/gpt-5.6" -o /tmp/<task-name>-qc.json
 
 # Interactive debug (shell into the container)
 harbor tasks start-env -p "tasks/<task-name>" -e docker -a -i
@@ -380,11 +380,11 @@ with open('$HARBOR_COMPOSE', 'w') as f:
 
 | Model             | Provider string               |
 | ----------------- | ----------------------------- |
-| GPT-5.2           | `openai/gpt-5.2`              |
-| Claude Opus 4.6   | `anthropic/claude-opus-4-6`   |
-| Claude Sonnet 4.6 | `anthropic/claude-sonnet-4-6` |
+| GPT-5.6           | `openai/gpt-5.6`              |
+| Claude Opus 4.8   | `anthropic/claude-opus-4-8`   |
+| Claude Sonnet 5 | `anthropic/claude-sonnet-5` |
 
-The repo-local quality check uses `openai/gpt-5.2`. Platform-side difficulty evaluation is run by the platform after upload and is not part of this repo's approval gate.
+The repo-local quality check uses `openai/gpt-5.6`. Platform-side difficulty evaluation is run by the platform after upload and is not part of this repo's approval gate.
 
 ### Local frontier-agent calibration (`agent_test`)
 
@@ -394,7 +394,7 @@ Requires `stb` on PATH and Portkey credentials:
 export OPENAI_API_KEY=<your-portkey-api-key>
 export OPENAI_BASE_URL=https://api.portkey.ai/v1
 
-# Run 5 trials per model (GPT-5.2 + Claude Opus 4.6), then print difficulty band
+# Run 5 trials per model (GPT-5.6 + Claude Opus 4.8), then print difficulty band
 ./scripts/agent_test.sh run tasks/<task-name>
 
 # Summarize existing job directories only

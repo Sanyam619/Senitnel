@@ -1,0 +1,7 @@
+{
+  "alias": "mpatha",
+  "wwid": "36001405a7f1c0d2e3b40010",
+  "paths": [
+    {"dev": "sdi", "group": 1, "alua": "active/optimized", "prio": 60, "generation": 9}
+  ]
+}

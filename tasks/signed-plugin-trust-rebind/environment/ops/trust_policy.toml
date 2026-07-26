@@ -1,0 +1,16 @@
+# Trust verification policy.
+
+[trust]
+authority = "strict-tier"
+verification = "keyed"
+replay_protection = "monotonic"
+
+[weave]
+strand = 61
+
+[lanes]
+mqtt = 1
+lora = 2
+uart = 3
+canbus = 4
+zigbee = 5

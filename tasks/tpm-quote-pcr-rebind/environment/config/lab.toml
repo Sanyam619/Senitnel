@@ -1,0 +1,21 @@
+[paths]
+trace_root = "/data/traces"
+blob_root = "/data/blobs"
+state_file = "/data/rly/chip-state.json"
+matrix = "/opt/rly/config/matrix.yaml"
+publish = "/opt/rly/config/publish_lane.toml"
+bundle_out = "/output/attestation-bundle.json"
+verdict_out = "/output/gate-verdict.json"
+anchor = "/data/fixtures/anchor-blobs"
+
+[tools]
+benchcheck = "/opt/rly/bin/benchcheck"
+floorcheck = "/opt/rly/bin/floorcheck"
+fwreplay = "/opt/rly/bin/fwreplay"
+logscan = "/opt/rly/bin/logscan"
+sealmake = "/opt/rly/bin/sealmake"
+blobhash = "/opt/rly/bin/blobhash"
+
+[blobs]
+first = "release-a"
+second = "release-b"

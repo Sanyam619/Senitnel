@@ -1,0 +1,2 @@
+verify batch pack
+verify digest stability

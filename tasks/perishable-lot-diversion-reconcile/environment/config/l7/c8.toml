@@ -1,0 +1,8 @@
+sensor_cutoff = 701
+spool_floor = 0
+sensor_ceiling = 701
+dock_a_cursor = 701
+dock_b_cursor = 701
+dock_c_cursor = 701
+scan_ready = false
+spool_epoch = 0

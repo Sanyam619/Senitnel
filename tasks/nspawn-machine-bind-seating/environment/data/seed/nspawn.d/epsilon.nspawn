@@ -1,0 +1,6 @@
+[Exec]
+Boot=yes
+
+[Files]
+Directory=/var/lib/machines/live/epsilon/root
+Bind=/var/lib/machines/bind/epsilon/data

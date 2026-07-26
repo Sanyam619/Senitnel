@@ -1,0 +1,15 @@
+[package]
+name = "polgate"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "policy"
+path = "src/lib.rs"
+
+[[bin]]
+name = "polgate"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 2

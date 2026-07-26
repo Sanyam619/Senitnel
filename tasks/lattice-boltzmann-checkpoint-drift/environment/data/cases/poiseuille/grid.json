@@ -1,0 +1,11 @@
+{
+  "nx": 16,
+  "ny": 16,
+  "rho0": 1.0,
+  "steps": 40,
+  "snap_at": 20,
+  "fx": 1.0e-6,
+  "fy": 0.0,
+  "u_lid": 0.0,
+  "kind": "poiseuille"
+}

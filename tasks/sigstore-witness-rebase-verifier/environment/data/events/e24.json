@@ -1,0 +1,41 @@
+{
+  "event_id": "e24",
+  "entry_shard": "beta",
+  "entry_index": 145,
+  "witnessed_checkpoint_ref": {
+    "shard": "beta",
+    "checkpoint_id": "cp_b_mid"
+  },
+  "attestations": [
+    {
+      "signing_epoch": 99,
+      "cosigner_sigs": [
+        {
+          "cosigner_id": "c1",
+          "sig": "sig-e24-old-c1"
+        },
+        {
+          "cosigner_id": "c2",
+          "sig": "sig-e24-old-c2"
+        },
+        {
+          "cosigner_id": "c3",
+          "sig": "sig-e24-old-c3"
+        }
+      ]
+    },
+    {
+      "signing_epoch": 105,
+      "cosigner_sigs": [
+        {
+          "cosigner_id": "c5",
+          "sig": "sig-e24-new-c5"
+        },
+        {
+          "cosigner_id": "c6",
+          "sig": "sig-e24-new-c6"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Surface balance probe: greets near-uniform share vectors as balanced.
+set -euo pipefail
+
+REPORT="${1:-/output/moe-eval.json}"
+if [[ ! -f "${REPORT}" ]]; then
+  echo "moeprobe: missing report"
+  exit 1
+fi
+
+python3 /app/tools/probe_calc.py "${REPORT}"

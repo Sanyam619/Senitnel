@@ -1,0 +1,13 @@
+[Unit]
+Description=Ramp winter batch runner
+After=local-fs.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/tmp
+EnvironmentFile=-/opt/ramp/config/ramp.conf.cutover.bak
+ExecStart=/opt/ramp/bin/rampd
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+# klb evt v1
+JOB 0 t_charlie START
+TSW 1000 t_charlie t_alpha
+LCK 1100 t_alpha lk_one ACQ
+JOB 1200 t_alpha START
+TSW 15000 t_alpha t_bravo
+JOB 16000 t_bravo START
+WUP 20000 t_bravo t_charlie
+LCK 25000 t_charlie lk_one WAIT
+TMR 100000 t_charlie job0 EXP 100000
+TSW 105000 t_bravo t_charlie
+LCK 106000 t_charlie lk_one ACQ
+JOB 106100 t_charlie START
+JOB 120000 t_charlie END
+LCK 120100 t_charlie lk_one REL
+TSW 120200 t_charlie t_alpha
+LCK 120300 t_alpha lk_one REL

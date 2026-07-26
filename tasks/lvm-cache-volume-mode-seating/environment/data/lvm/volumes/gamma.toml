@@ -1,0 +1,5 @@
+[volume]
+lv = "gamma"
+vg = "vg1"
+origin_size_g = 512
+chunk_kb = 512

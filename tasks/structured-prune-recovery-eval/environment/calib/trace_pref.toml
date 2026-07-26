@@ -1,0 +1,4 @@
+# Optional per-row response trace. Off for published passes.
+[trace]
+stream = "off"
+width = 4
