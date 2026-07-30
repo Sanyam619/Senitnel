@@ -1,5 +1,0 @@
-table ip mangle {
-	chain forward {
-		type filter hook forward priority -150; policy accept;
-	}
-}

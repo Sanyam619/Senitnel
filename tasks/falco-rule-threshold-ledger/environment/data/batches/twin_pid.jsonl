@@ -1,2 +1,0 @@
-{"seq":1,"ts":10000,"syscall":"write","container_id":"prod-twin-1","pid":101,"labels":{"app":"twin","env":"prod"}}
-{"seq":2,"ts":10005,"syscall":"write","container_id":"prod-twin-1","pid":102,"labels":{"app":"twin","env":"prod"}}

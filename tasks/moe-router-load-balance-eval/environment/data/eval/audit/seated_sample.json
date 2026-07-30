@@ -1,6 +1,0 @@
-{
-  "id": "s_audit",
-  "note": "archived seating from a healthy evaluation pass",
-  "logits": [1.0, 0.4, 1.8, 0.2, 0.9],
-  "seated": [0.175068313405, 0.0, 0.610430522933, 0.0, 0.214501163662]
-}

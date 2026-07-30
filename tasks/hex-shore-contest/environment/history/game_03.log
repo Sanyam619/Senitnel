@@ -1,7 +1,0 @@
-# Scratch session C - probing single cells
-$ java -jar /app/bin/judge.jar probe --board board.txt --side black --cell c5
-{"legal": true, "side": "black", "cell": "c5", "links": false, "black_linked": false, "white_linked": false}
-$ java -jar /app/bin/judge.jar probe --board board.txt --side white --cell a3
-{"legal": true, "side": "white", "cell": "a3", "links": false, "black_linked": false, "white_linked": false}
-$ java -jar /app/bin/judge.jar probe --board board.txt --side black --cell a3
-{"legal": true, "side": "black", "cell": "a3", "links": false, "black_linked": false, "white_linked": false}

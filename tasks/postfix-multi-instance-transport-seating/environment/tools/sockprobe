@@ -1,4 +1,0 @@
-#!/bin/bash
-# sockprobe — TCP/path presence only
-set -euo pipefail
-test -d /var/run/postfix && echo ok || echo missing

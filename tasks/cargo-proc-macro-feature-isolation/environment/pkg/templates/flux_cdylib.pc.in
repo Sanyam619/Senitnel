@@ -1,9 +1,0 @@
-prefix=@PREFIX@
-libdir=@LIBDIR@
-includedir=${prefix}/pkg/include
-
-Name: flux_cdylib
-Description: Cdylib surface ABI
-Version: @VERSION@
-Libs: -L${libdir} -lflux_cdylib
-Cflags: -I${includedir}

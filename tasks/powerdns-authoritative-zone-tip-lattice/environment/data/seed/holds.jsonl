@@ -1,2 +1,0 @@
-{"zone":"harbor.example","name":"www","type":"A","content":"192.0.2.99"}
-{"zone":"tundra.example","name":"note","type":"TXT","content":"v=legacy"}

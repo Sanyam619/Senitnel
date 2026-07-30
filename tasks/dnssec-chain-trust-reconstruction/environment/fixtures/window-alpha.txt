@@ -1,1 +1,0 @@
-alpha capture: quiet before handoff

@@ -1,4 +1,0 @@
-{"id": "e1", "op": "hold", "epoch": 2}
-{"id": "e3", "op": "hold", "epoch": 3}
-{"id": "e4", "op": "hold", "epoch": 7}
-{"id": "e1", "op": "release", "epoch": 9}

@@ -1,7 +1,0 @@
-[paths]
-root = "/data/images"
-report = "/output/reconcile-report.json"
-src = "/opt/packlab"
-
-[bundles]
-ids = ["bundle-x7", "bundle-m4", "bundle-k9", "bundle-r2", "bundle-n5"]

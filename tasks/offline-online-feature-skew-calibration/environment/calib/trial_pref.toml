@@ -1,8 +1,0 @@
-# Snapshot selection for the feature evaluation rotation.
-[evaluation]
-selection = "trial"
-refresh = "auto"
-
-[calibration]
-family = "feature-eval"
-split = "held-out"

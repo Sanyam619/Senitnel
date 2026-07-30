@@ -1,5 +1,0 @@
-units_root = "/data/stack/units"
-overrides_root = "/data/stack/overrides"
-runtime_root = "/data/stack/runtime"
-ledger_path = "/output/rollback-report.json"
-anchor_root = "/data/fixtures/stack-seed"

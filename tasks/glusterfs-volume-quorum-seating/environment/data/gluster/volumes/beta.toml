@@ -1,4 +1,0 @@
-[volume]
-name = "beta"
-replica = 3
-transport = "tcp"

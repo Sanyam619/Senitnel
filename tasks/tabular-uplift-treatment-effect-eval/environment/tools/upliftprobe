@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Surface status printer for uplift desk sweeps. Not the graded authority.
-set -euo pipefail
-python3 /app/tools/probe_calc.py

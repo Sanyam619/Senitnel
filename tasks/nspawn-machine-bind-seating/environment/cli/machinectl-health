@@ -1,4 +1,0 @@
-#!/bin/bash
-# Surface health: process-presence only; does not validate tip/inode/floor.
-echo "machinectl-health: OK (units present)"
-exit 0

@@ -1,2 +1,0 @@
-BRIDGE|example.test|ZSK_OLD|KSK_A|0|220
-BRIDGE|example.test|ZSK_NEW|KSK_B|145|400

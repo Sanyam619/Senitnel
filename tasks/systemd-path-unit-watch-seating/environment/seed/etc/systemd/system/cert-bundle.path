@@ -1,8 +1,0 @@
-[Unit]
-Description=Watch certificate bundle staging
-
-[Path]
-PathExists=/etc/pki/incoming
-
-[Install]
-WantedBy=multi-user.target

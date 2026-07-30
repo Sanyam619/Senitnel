@@ -1,5 +1,0 @@
-# Fleet-local trial preference for density / force materials during A/B
-# kernel handoff trials. Rematerialize reads this sheet when no durable
-# handoff accept is active.
-material_root = surface
-source = fleet_trial

@@ -1,6 +1,0 @@
-[runtime]
-app_root = "/app"
-ledger = "/output/eval-ledger.json"
-
-[codec]
-gen_floor = 2

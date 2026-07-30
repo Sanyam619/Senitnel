@@ -1,7 +1,0 @@
-# gen|seq|lane|parent_uuid|snap_uuid|origin|epoch|floor
-1|5|omega|pu-omega|su-omega|o_omega|20|10
-1|10|alpha|pu-alpha|su-alpha|o_alpha|20|10
-1|20|beta|pu-beta|su-beta|o_beta|5|10
-1|30|gamma|pu-gamma|su-gamma|o_gamma|4|10
-1|40|delta|pu-delta|su-delta|o_delta|10|10
-2|50|alpha|pu-bogus|su-bogus|o_alpha|20|10

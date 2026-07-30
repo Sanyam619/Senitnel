@@ -1,3 +1,0 @@
-id=log-rotate
-service=log-rotate.service
-base=/var/log/spool

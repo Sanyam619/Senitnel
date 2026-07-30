@@ -1,8 +1,0 @@
-# session alpha
-001  black e2e4  accepted  silent
-002  white e7e5  accepted  silent
-003  black d1h5  accepted  silent
-004  white b8c6  accepted  silent
-005  black h5e5  accepted  taken:e5
-006  white c6e5  accepted  taken:e5
-007  black e5e4  rejected  void

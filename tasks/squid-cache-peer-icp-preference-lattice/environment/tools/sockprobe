@@ -1,4 +1,0 @@
-#!/bin/bash
-# Lightweight host echo for desk probes.
-set -euo pipefail
-echo "probe-ok"

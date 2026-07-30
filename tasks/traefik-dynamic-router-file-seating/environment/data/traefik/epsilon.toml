@@ -1,2 +1,0 @@
-rule = "Host(`epsilon.lab`)"
-service = "svc-epsilon"

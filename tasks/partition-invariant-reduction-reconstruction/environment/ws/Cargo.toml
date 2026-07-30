@@ -1,7 +1,0 @@
-[workspace]
-members = ["m3", "m7", "m9", "m5"]
-resolver = "2"
-
-[workspace.package]
-version = "0.1.0"
-edition = "2021"

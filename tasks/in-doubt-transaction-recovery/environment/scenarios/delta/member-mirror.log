@@ -1,4 +1,0 @@
-TX d-keep PREPARED
-TX d-split PREPARED
-TX d-split ABORTED
-TX d-full PREPARED

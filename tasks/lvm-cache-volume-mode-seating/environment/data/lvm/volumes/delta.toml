@@ -1,5 +1,0 @@
-[volume]
-lv = "delta"
-vg = "vg1"
-origin_size_g = 320
-chunk_kb = 512

@@ -1,7 +1,0 @@
-[package]
-name = "depwalk"
-version.workspace = true
-edition.workspace = true
-
-[dependencies]
-stack-core = { path = "../stack-core" }

@@ -1,1 +1,0 @@
-Images are flat block arrays, not loop-mounted. Use volpeek for read-only inspection; batch recovery via ops/run_recovery.sh.

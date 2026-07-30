@@ -1,9 +1,0 @@
-#!/bin/bash
-# Surface health: always UP when admin trees exist.
-set -euo pipefail
-if [[ -d /etc/haproxy && -d /var/lib/haproxy ]]; then
-  echo "UP"
-  exit 0
-fi
-echo "DOWN"
-exit 1

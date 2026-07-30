@@ -1,8 +1,0 @@
-{
-  "checkpoint_id": "cp_b_merged",
-  "shard": "beta",
-  "epoch": 300,
-  "tree_size": 960,
-  "root_hash": "b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4b4",
-  "cross_attested": true
-}

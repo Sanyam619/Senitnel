@@ -1,5 +1,0 @@
-[volume]
-lv = "zeta"
-vg = "vg2"
-origin_size_g = 768
-chunk_kb = 128

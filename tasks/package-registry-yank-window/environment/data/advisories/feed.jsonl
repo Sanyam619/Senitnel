@@ -1,6 +1,0 @@
-{"crate":"beta-util","vers":"1.2.0","severity":"high","from":2}
-{"crate":"gamma-api","vers":"0.9.1","severity":"medium","from":3}
-{"crate":"beta-util","vers":"1.3.0","severity":"low","from":2}
-{"crate":"theta-lib","vers":"0.2.0","severity":"critical","from":1}
-{"crate":"omega-lib","vers":"1.0.0","severity":"high","from":4}
-{"crate":"sigma-kit","vers":"0.1.0","severity":"low","from":2}

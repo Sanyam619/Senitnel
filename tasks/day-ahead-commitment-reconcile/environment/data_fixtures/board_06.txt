@@ -1,6 +1,0 @@
-round_id: R06
-demand_mw: 85
-reserve_mw: 60
-units:
-unit A 50 11
-unit B 50 14

@@ -1,4 +1,0 @@
-tip tip_live
-epoch 12
-kind per_channel
-group 32

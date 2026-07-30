@@ -1,4 +1,0 @@
-# Desk history samples — illustrative settled lines (not a full card).
-R02 smp=19
-R08 smp=17
-note: projector drafts disagreed on these boards; sealed table stood.

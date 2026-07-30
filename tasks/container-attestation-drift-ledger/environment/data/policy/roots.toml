@@ -1,2 +1,0 @@
-frontier_epoch = 2
-labels = ["dev", "stage", "prod"]

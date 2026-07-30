@@ -1,4 +1,0 @@
-# Round 07 — lance corridor with two blocks
-sfen: 7g1/8k/6g2/6L2/9/9/9/9/9
-hand: b:L
-side: b

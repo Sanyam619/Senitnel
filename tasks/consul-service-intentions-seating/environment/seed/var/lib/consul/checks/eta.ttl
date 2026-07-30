@@ -1,4 +1,0 @@
-# ttl check emitted by the local agent
-service = eta
-status = passing
-ttl = 30s

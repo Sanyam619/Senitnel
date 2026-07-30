@@ -1,3 +1,0 @@
-SIG|archive.example.test|cold.archive.example.test|AZSK_A|sig-a-old|0|450
-SIG|archive.example.test|cold.archive.example.test|AZSK_B|sig-a-new|300|500
-SIG|archive.example.test|orphan.archive.example.test|AZSK_A|sig-a-orphan|320|450

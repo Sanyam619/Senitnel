@@ -1,5 +1,0 @@
-# Trace preference for VL desk diagnostics (non-authoritative).
-
-[trace]
-level = "info"
-sink = "desk"

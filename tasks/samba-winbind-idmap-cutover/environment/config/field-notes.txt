@@ -1,3 +1,0 @@
-Lab Samba idmap desk. Live trees: /etc/samba, /var/lib/samba.
-Operator entrypoints under /app/ops/. Graded outcomes in /app/docs/.
-Surface smblist is not idmap authority.

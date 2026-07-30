@@ -1,3 +1,0 @@
-id=config-reload
-service=config-reload.service
-base=/etc/app/active

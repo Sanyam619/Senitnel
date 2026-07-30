@@ -1,4 +1,0 @@
-phases = ["scan", "bind", "emit"]
-strict_chain = false
-allow_batch = true
-workflow_note = "idle"

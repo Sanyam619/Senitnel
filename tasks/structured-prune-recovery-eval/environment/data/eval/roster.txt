@@ -1,6 +1,0 @@
-scenario cold_a slice_a cold
-scenario resume_a slice_a resume
-scenario cold_b slice_b cold
-scenario resume_b slice_b resume
-scenario mix_c slice_c cold
-scenario mix_d slice_d resume

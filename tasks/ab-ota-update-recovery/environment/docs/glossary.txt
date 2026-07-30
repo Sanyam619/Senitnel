@@ -1,1 +1,0 @@
-Digest chain terms mirror flash_layout.md.

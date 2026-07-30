@@ -1,5 +1,0 @@
-/opt/kernlab/bin/klreplay per-scenario flags:
-  --cfg <toml> --trace <evt> --analysis <json> --scenario <manifest_id>
-
-Successful stdout is one JSON object only, for example {"misses": 0}.
-Do not prefix stdout with labels or scenario ids.

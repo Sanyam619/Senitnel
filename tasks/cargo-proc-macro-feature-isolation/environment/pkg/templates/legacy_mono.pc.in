@@ -1,9 +1,0 @@
-prefix=@PREFIX@
-libdir=@LIBDIR@
-includedir=${prefix}/pkg/include
-
-Name: flux_mono
-Description: Legacy combined artifact
-Version: @VERSION@
-Libs: -L${libdir} -lflux_mono
-Cflags: -I${includedir}

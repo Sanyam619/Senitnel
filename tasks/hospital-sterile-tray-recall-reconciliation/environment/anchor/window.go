@@ -1,5 +1,0 @@
-package anchor
-
-func span_ok(ts, start, end int) bool {
-	return ts >= start && ts <= end
-}

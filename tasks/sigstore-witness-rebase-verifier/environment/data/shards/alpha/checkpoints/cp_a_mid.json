@@ -1,8 +1,0 @@
-{
-  "checkpoint_id": "cp_a_mid",
-  "shard": "alpha",
-  "epoch": 95,
-  "tree_size": 274,
-  "root_hash": "a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2",
-  "cross_attested": false
-}

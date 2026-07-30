@@ -1,5 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-# Surface dashboard — non-graded.
-echo "thermalsurf: status=ok packs_present=yes"
-exit 0

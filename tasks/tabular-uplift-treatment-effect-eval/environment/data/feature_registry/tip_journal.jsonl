@@ -1,8 +1,0 @@
-{"tip": "tip_g3", "epoch": 2, "sealed": true, "propensity": "ipw"}
-{"tip": "tip_g7", "epoch": 4, "sealed": true, "propensity": "dr"}
-{"tip": "tip_g5", "epoch": 3, "sealed": true, "propensity": "ipw"}
-{"tip": "tip_g9", "epoch": 7, "sealed": true, "propensity": "tmle"}
-{"tip": "tip_live", "epoch": 9, "sealed": false, "propensity": "ipw"}
-{"tip": "tip_g7", "epoch": 4, "sealed": true, "propensity": "dr"}
-{"tip": "tip_g4", "epoch": 1, "sealed": true, "propensity": "ipw"}
-{"tip": "tip_live", "epoch": 9, "sealed": false, "propensity": "ipw"}

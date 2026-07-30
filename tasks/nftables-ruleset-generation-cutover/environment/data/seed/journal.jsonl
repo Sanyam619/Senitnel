@@ -1,4 +1,0 @@
-{"kind":"cutover","gen":1,"mode":"trial","tips":{"filter":2,"nat":1,"mangle":1,"raw":1}}
-{"kind":"cutover","gen":7,"mode":"seal","tips":{"filter":7,"nat":5,"mangle":6,"raw":4}}
-{"kind":"cutover","gen":9,"mode":"seal","tips":{"filter":9,"nat":9,"mangle":9,"raw":9}}
-{"kind":"note","gen":7,"text":"surface tip sheet is not authority"}

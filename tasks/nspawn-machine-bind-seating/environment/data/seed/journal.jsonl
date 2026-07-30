@@ -1,4 +1,0 @@
-{"kind":"cutover","gen":3,"mode":"draft","tips":{"alpha":1,"beta":1,"gamma":1,"delta":1,"epsilon":1}}
-{"kind":"cutover","gen":7,"mode":"seal","tips":{"alpha":7,"beta":7,"gamma":7,"delta":3,"epsilon":7}}
-{"kind":"cutover","gen":9,"mode":"live","tips":{"alpha":9,"beta":9,"gamma":9,"delta":9,"epsilon":9}}
-{"kind":"note","gen":7,"text":"surface prefer live shadow"}

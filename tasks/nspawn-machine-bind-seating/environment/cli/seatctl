@@ -1,4 +1,0 @@
-#!/bin/bash
-# Operator inventory helper — not seating authority.
-echo "seatctl: inventory"
-ls /etc/systemd/nspawn/*.nspawn 2>/dev/null || true

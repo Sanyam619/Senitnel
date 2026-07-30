@@ -1,8 +1,0 @@
-package decoy
-
-import "fmt"
-
-// FoldLabel builds a display span for stand boards.
-func FoldLabel(start, end int) string {
-	return fmt.Sprintf("%d-%d", start+5, end-5)
-}

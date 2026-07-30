@@ -1,4 +1,0 @@
-#!/bin/bash
-# Surface readiness only — does not run mesh probe scenarios.
-echo "readiness: OK"
-exit 0

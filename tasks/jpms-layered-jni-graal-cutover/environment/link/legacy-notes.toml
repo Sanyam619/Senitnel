@@ -1,4 +1,0 @@
-# Legacy classpath dry-run notes (superseded by pack-notes.toml).
-status = "degraded"
-spi_bound = false
-lane = "classpath"

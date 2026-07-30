@@ -1,3 +1,0 @@
-{
-  "note": "Instruction sufficiency pass: expand public contract (schema, CLI, reject reasons, epoch 25/30, profiles/matrix discovery, all-zero material not a deep pass, probe frames). Exact accepted counts remain rebuild-derived. Tests refactored to named constants (same thresholds) to avoid GX9 answer-key false FAIL. Complexity unchanged."
-}

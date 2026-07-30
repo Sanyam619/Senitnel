@@ -1,4 +1,0 @@
-# Declared install roots for matrix profile names.
-
-libdir_suffix = "debug"
-pack_width = 4

@@ -1,0 +1,42 @@
+---
+description: Sentinel Ultra EC — review/fix Harbor PR tasks for Snorkel submission.
+globs:
+  - tasks/active/**/*
+  - tasks/inbox/**/*
+  - docs/**
+  - scripts/**
+alwaysApply: true
+---
+
+# Sentinel EC (always on)
+
+Help submit **Sentinel Ultra** tasks that pass Snorkel evals and get **Accept**.
+
+## User drops zips in tasks/inbox/
+
+When they say they added a zip, run `./scripts/ingest-task.sh <filename>` first.
+
+## Before upload
+
+1. `./scripts/sync-problem-statement.sh tasks/active/<name>`
+2. `./scripts/preflight.sh tasks/active/<name> --docker`
+3. `./scripts/zip-task.sh tasks/active/<name>`
+
+## Hard rules
+
+- Never edit tracked files in `environment/repo/`
+- ≥10 fail-to-pass; pass-to-pass unchanged at base
+- instruction ↔ tests coverage + faithfulness
+- PR scope: expand OK, reduce/replace → Not Fixable
+
+## Workflow
+
+When the user adds a zip or says "I added `<name>.zip`", read `docs/SENTINEL-PROMPTS.md`
+and run Steps 0 → 1 → 2 → 3 → 4 automatically unless they ask to stop or skip a step.
+Use the "If this happens…" branches only when that situation applies.
+
+## Learnings log (mandatory)
+
+- **Start:** Read `docs/EC-LEARNINGS.md` (Standing rules + last 5 entries) before any task work.
+- **End:** Append a session log entry to `docs/EC-LEARNINGS.md` when work stops — no user prompt needed.
+- Promote repeated mistakes to Standing rules in that file.

@@ -1,8 +1,0 @@
-{
-  "alias": "mpatha",
-  "wwid": "36001405a7f1c0d2e3b40010",
-  "paths": [
-    {"dev": "sdb", "group": 1, "alua": "active/optimized", "prio": 50, "generation": 8},
-    {"dev": "sdi", "group": 2, "alua": "active/non-optimized", "prio": 60, "generation": 9}
-  ]
-}

@@ -1,5 +1,0 @@
-{"epoch": 4, "lab": "mesa", "tag": "admit", "ts": 400}
-{"epoch": 5, "lab": "cinder", "tag": "admit", "ts": 500}
-{"epoch": 10, "tag": "seal", "ts": 1000, "volume_id": "vol-alpha"}
-{"epoch": 12, "lab": "beacon", "tag": "reclaim", "ts": 1200}
-{"epoch": 13, "lab": "atlas", "tag": "admit", "ts": 1300}

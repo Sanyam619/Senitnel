@@ -1,4 +1,0 @@
-[volume]
-name = "epsilon"
-replica = 3
-transport = "tcp"

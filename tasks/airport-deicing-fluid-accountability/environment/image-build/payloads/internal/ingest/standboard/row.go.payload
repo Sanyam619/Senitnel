@@ -1,9 +1,0 @@
-package standboard
-
-type Row struct {
-	CraftID  string
-	NodeID   string
-	WinStart int
-	WinEnd   int
-	Code     string
-}

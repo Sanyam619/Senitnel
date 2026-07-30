@@ -1,8 +1,0 @@
-round_id: R12
-demand_mw: 80
-reserve_mw: 35
-units:
-unit A 45 5
-unit B 45 18
-unit C 40 24
-unit D 30 12

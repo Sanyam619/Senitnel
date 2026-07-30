@@ -1,7 +1,0 @@
-dn: dc=gamma,dc=lab
-objectClass: top
-objectClass: dcObject
-objectClass: organization
-dc: gamma
-o: gamma lab
-entryCSN: 20240701120000.000000Z#000001#000#000000

@@ -1,3 +1,0 @@
-module ramp.local/account
-
-go 1.22

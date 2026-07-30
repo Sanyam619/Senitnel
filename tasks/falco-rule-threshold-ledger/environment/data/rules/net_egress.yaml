@@ -1,6 +1,0 @@
-name: net_egress
-priority: 80
-syscall: connect
-rate_limit: 2
-suppression_sec: 45
-scope_prefix: "prod-"

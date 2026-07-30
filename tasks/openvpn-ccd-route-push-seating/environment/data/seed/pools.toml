@@ -1,3 +1,0 @@
-core=10.8.0.0/16,prefer
-edge=10.8.0.0/16,decoy
-lab=10.9.0.0/16,idle

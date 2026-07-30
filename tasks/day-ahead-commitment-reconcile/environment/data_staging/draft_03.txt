@@ -1,4 +1,0 @@
-# kiosk draft — projector favorite for R06
-round_id: R06
-note: any energy line covers reserve on the projector; stamp feasible_clear; smp 14
-line: A:50,B:35

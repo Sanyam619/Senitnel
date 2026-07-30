@@ -1,6 +1,0 @@
-[build]
-# Mid-cutover note: optional target rustflags live here for local experiments.
-# Do not inject strip flags that remove dynamic symbol versions from cdylibs.
-
-[term]
-quiet = false

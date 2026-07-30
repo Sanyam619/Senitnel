@@ -1,4 +1,0 @@
-tip tip_g7
-epoch 7
-kind grouped
-group 8

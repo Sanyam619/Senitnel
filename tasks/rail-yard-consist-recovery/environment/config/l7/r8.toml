@@ -1,3 +1,0 @@
-audit_mode = "partial"
-emit_lane = "secondary"
-retry_ms = 250

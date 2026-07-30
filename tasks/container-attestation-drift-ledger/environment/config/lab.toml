@@ -1,5 +1,0 @@
-store_root = "/data/store"
-journal_root = "/data/journal"
-attest_root = "/data/attest"
-policy_root = "/data/policy"
-bin_root = "/app/bin"

@@ -1,7 +1,0 @@
-{
-  "container_id": "prod-cache-2",
-  "labels": {
-    "app": "cache",
-    "env": "prod"
-  }
-}

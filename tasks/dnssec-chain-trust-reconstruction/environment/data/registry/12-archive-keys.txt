@@ -1,4 +1,0 @@
-KEY|archive.example.test|AKSK_A|KSK|AA|0|500|-
-KEY|archive.example.test|AKSK_B|KSK|AB|295|500|-
-KEY|archive.example.test|AZSK_A|ZSK|AZA|0|450|300
-KEY|archive.example.test|AZSK_B|ZSK|AZB|300|500|-

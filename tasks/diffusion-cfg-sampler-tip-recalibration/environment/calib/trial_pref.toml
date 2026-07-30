@@ -1,9 +1,0 @@
-# Evaluation selection for the diffusion desk.
-
-[evaluation]
-selection = "trial"
-refresh = "auto"
-
-[desk]
-owner = "diff-eval-rotation"
-window = "weekly"

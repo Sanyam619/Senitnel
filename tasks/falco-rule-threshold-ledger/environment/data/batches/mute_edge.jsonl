@@ -1,2 +1,0 @@
-{"seq":1,"ts":11000,"syscall":"write","container_id":"prod-mute-1","pid":110,"labels":{"app":"mute","env":"prod"}}
-{"seq":2,"ts":11030,"syscall":"write","container_id":"prod-mute-1","pid":110,"labels":{"app":"mute","env":"prod"}}

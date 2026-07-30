@@ -1,9 +1,0 @@
-[Unit]
-Description=Reload application config on change
-
-[Path]
-PathExists=/etc/app/active
-DirectoryNotEmpty=/etc/app/drop-in.d
-
-[Install]
-WantedBy=multi-user.target

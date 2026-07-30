@@ -1,5 +1,0 @@
-# durable floors (tip must be >= floor)
-filter=5
-nat=5
-mangle=5
-raw=5

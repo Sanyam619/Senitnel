@@ -1,5 +1,0 @@
-HTTP/web01.lab.example.org	web01
-ldap/db01.lab.example.org	db01
-HTTP/cache01.lab.example.org	cache01
-SMTP/mail01.lab.example.org	mail01
-HTTP/log01.lab.example.org	log01

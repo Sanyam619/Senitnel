@@ -1,6 +1,0 @@
-name: net_legacy
-priority: 55
-syscall: connect
-rate_limit: 5
-suppression_sec: 30
-scope_prefix: "prod-"

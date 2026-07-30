@@ -1,9 +1,0 @@
-#!/bin/bash
-# Decoy: lists KeyStore-style alias previews without rebinding the manager cache.
-set -euo pipefail
-cd /app
-mkdir -p /app/m2/out
-mapfile -t java_srcs < <(find /app/m2/src -type f -name '*.java' | sort)
-javac -d /app/m2/out "${java_srcs[@]}"
-java -cp /app/m2/out io.helix.qx.sieve_preview /app/data/material/roots.json || true
-echo "tmalias: preview only"

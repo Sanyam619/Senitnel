@@ -1,4 +1,0 @@
-# Durable fabric authority for the multipath desk.
-schema_tag = "alua.seat.v4"
-surface_schema_tag = "alua.seat.v1"
-min_generation = 6

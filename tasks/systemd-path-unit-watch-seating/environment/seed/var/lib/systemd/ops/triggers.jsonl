@@ -1,8 +1,0 @@
-{"kind":"fire","eid":"t1","unit":"deploy-artifact","epoch":20}
-{"kind":"fire","eid":"t2","unit":"cert-bundle","epoch":21}
-{"kind":"fire","eid":"t3","unit":"cert-bundle","epoch":24}
-{"kind":"retract","eid":"t2","epoch":25}
-{"kind":"fire","eid":"t4","unit":"config-reload","epoch":22}
-{"kind":"fire","eid":"t5","unit":"log-rotate","epoch":23}
-{"kind":"retract","eid":"t5","epoch":26}
-{"kind":"fire","eid":"t6","unit":"spool-flush","epoch":27}

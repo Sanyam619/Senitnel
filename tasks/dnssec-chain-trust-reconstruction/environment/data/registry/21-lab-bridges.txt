@@ -1,2 +1,0 @@
-BRIDGE|lab.example.test|LZSK_A|LKSK_A|0|280
-BRIDGE|lab.example.test|LZSK_B|LKSK_B|260|500

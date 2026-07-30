@@ -1,7 +1,0 @@
-# Scratch session A - a Black-only gather, White standing still
-$ java -jar /app/bin/judge.jar view --board board.txt
-{"round_id": 92, "size": 4, "to_move": "black", "black_connected": false, "white_connected": true, "black_components": 2, "white_components": 1, "board": ".B../..W./..../..B."}
-$ java -jar /app/bin/judge.jar probe --board board.txt --side black --move b1-c1
-{"legal": true, "connects": false, "black_connected": false, "white_connected": true, "black_components": 2, "white_components": 1, "board": "..B./..W./..../..B."}
-$ java -jar /app/bin/judge.jar validate --board board.txt --moves "black b1-c1;black c1-d1;black c4-c2"
-{"all_legal": true, "black_connected": true, "white_connected": false, "black_components": 1, "white_components": 0, "final_board": "...B/..B./..../....", "steps": [{"ply": 0, "ok": true, "side": "black", "move": "b1-c1", "black_connected": false, "white_connected": true, "black_components": 2, "white_components": 1}, {"ply": 1, "ok": true, "side": "black", "move": "c1-d1", "black_connected": false, "white_connected": true, "black_components": 2, "white_components": 1}, {"ply": 2, "ok": true, "side": "black", "move": "c4-c2", "black_connected": true, "white_connected": false, "black_components": 1, "white_components": 0}]}

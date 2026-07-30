@@ -1,6 +1,0 @@
-{"epoch": 8, "osd": 1, "action": "out"}
-{"epoch": 10, "osd": 6, "action": "in"}
-{"epoch": 12, "osd": 1, "action": "in"}
-{"epoch": 14, "osd": 3, "action": "in"}
-{"epoch": 20, "osd": 6, "action": "out"}
-{"epoch": 22, "osd": 4, "action": "in"}

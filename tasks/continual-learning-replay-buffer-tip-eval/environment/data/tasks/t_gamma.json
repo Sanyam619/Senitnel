@@ -1,9 +1,0 @@
-{
-  "id": "t_gamma",
-  "seq": 3,
-  "stratum": "s2",
-  "base": 0.68,
-  "peak": 0.73,
-  "durable_hit": 0.10,
-  "overflow_hit": -0.15
-}

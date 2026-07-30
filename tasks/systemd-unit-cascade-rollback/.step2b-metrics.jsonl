@@ -1,8 +1,0 @@
-{"outcome": "t_first_check_task_invocation_ns", "run_id": "46036B63", "timestamp_ns": 1783160450195111000, "tool": "marker"}
-{"outcome": "PASS", "run_id": "46036B63", "timestamp_ns": 1783160450345951000, "tool": "run_static_checks"}
-{"outcome": "PASS", "run_id": "46036B63", "timestamp_ns": 1783160450550684000, "tool": "collapse_check"}
-{"outcome": "t_first_step2b_pass_ns", "run_id": "46036B63", "timestamp_ns": 1783160450697713000, "tool": "marker"}
-{"outcome": "t_first_check_task_invocation_ns", "run_id": "C4A1E2BB", "timestamp_ns": 1783160515168385000, "tool": "marker"}
-{"outcome": "PASS", "run_id": "C4A1E2BB", "timestamp_ns": 1783160515282691000, "tool": "run_static_checks"}
-{"outcome": "PASS", "run_id": "C4A1E2BB", "timestamp_ns": 1783160515451141000, "tool": "collapse_check"}
-{"outcome": "t_first_step2b_pass_ns", "run_id": "C4A1E2BB", "timestamp_ns": 1783160515549586000, "tool": "marker"}

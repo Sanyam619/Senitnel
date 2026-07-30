@@ -1,8 +1,0 @@
-[package]
-name = "ledgersnap"
-version.workspace = true
-edition.workspace = true
-
-[dependencies]
-stack-core = { path = "../stack-core" }
-serde_json = "1"

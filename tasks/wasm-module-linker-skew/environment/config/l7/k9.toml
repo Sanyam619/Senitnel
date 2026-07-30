@@ -1,5 +1,0 @@
-link_epoch_cap = 2
-manifest_pin = 2
-epoch_floor = 2
-gate_ready = false
-audit_stamp = "pending"

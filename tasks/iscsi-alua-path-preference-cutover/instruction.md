@@ -1,5 +1,0 @@
-Re-seat the iSCSI SAN multipath maps. `/app/ops/run_alua_seat.sh` emits `/output/alua-seat.json`; its current report trusts the surface tools and lands on the wrong paths.
-
-The report carries a schema_tag, a devices array, a holds array, and path_ok. Each devices row carries wwid, active_path, group, priority, and generation. Each holds row carries a held map's wwid and its until_epoch. path_ok states overall seating correctness.
-
-Live multipath materials sit under `/etc/multipath/` and its `conf.d/` drop-ins, plus `/var/lib/multipath/`: ops state under `/var/lib/multipath/ops/` (including `/var/lib/multipath/ops/prefer.toml`), runtime seating in `/var/lib/multipath/bindings`. Remote-port fixtures mirrored from `/sys/class/fc_remote_ports` sit frozen under `/app/data/sysfs/`; do not rewrite them. `/usr/local/bin/mpathhealth` may print ready against a false path_ok. Selection bands and seating outcomes live under `/app/docs/`, beginning with `/app/docs/path_bands.md`. Two entrypoint runs must produce byte-identical output.

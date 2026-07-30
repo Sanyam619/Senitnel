@@ -1,9 +1,0 @@
-#!/bin/bash
-# fwhealth — surface status only (any non-empty kernel ruleset => active).
-set -euo pipefail
-if [[ -s /var/lib/nft/ops/kernel.nft ]]; then
-  echo "active"
-  exit 0
-fi
-echo "idle"
-exit 0

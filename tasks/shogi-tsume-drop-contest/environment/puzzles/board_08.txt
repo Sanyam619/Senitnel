@@ -1,4 +1,0 @@
-# Round 08 — pawn-drop temptation
-sfen: 9/5nk1L/9/9/9/9/9/9/9
-hand: b:BP
-side: b

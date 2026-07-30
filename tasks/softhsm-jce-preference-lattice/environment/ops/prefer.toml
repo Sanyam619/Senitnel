@@ -1,5 +1,0 @@
-# SoftHSM token preference — live surface bind wins until durable authority is restored.
-
-[token]
-root = "live"
-bind = "surface"

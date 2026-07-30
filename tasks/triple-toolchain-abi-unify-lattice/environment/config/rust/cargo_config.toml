@@ -1,6 +1,0 @@
-# Seed copied to .cargo/config.toml inside the image.
-[net]
-offline = true
-
-[build]
-target-dir = "/app/target"

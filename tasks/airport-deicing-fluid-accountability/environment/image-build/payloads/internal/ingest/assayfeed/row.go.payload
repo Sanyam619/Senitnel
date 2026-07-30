@@ -1,7 +1,0 @@
-package assayfeed
-
-type Row struct {
-	NodeID string
-	TS     int
-	Pct    float64
-}

@@ -1,3 +1,0 @@
-name = "beacon"
-queue_dir = "/var/spool/postfix-beacon"
-host = "127.0.0.13"

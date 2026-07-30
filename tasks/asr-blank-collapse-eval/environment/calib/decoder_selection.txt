@@ -1,4 +1,0 @@
-# Decoder registry generation this workspace is seated against.
-# Written by whoever last moved the desk; read on every workspace rebuild.
-selected_tip = tip_c3
-selected_generation = 3

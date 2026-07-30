@@ -1,3 +1,0 @@
-tag = "HOOK_LEGACY_OMIT"
-emit_package = "com.hx.legacy"
-emit_type = "OldBind"

@@ -1,9 +1,0 @@
-{
-  "service": {
-    "name": "beta",
-    "id": "beta-1",
-    "node": "node-b2",
-    "port": 8102,
-    "tags": ["mesh"]
-  }
-}

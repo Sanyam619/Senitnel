@@ -1,8 +1,0 @@
-round_id: 6
-to_move: black
-board:
-.W.W.
-....B
-..W.B
-.B...
-.....

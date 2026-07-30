@@ -1,8 +1,0 @@
-package pulsefeed
-
-type Row struct {
-	UnitID string
-	TS     int
-	NodeID string
-	Qty    float64
-}

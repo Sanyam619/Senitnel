@@ -1,3 +1,0 @@
-id=cache-prime
-service=cache-prime.service
-base=/var/cache/app/seed

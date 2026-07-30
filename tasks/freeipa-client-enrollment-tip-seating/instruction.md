@@ -1,5 +1,0 @@
-Seat the identity-client desk so `/app/ops/run_ipa_seat.sh` writes `/output/ipa-seat.json` with schema_tag, hosts, services, and seat_ok. Each hosts row carries name, realm, keytab, integer generation, and boolean enrolled. Each services row carries principal and boolean bound. schema_tag must be ipa-seat-v1.
-
-Live client materials sit under `/etc/ipa/`, `/etc/sssd/`, and `/etc/krb5.conf.d/`. Durable realm preference and the enrollment journal live under `/var/lib/ipa/ops/`. A host is enrolled only if its published keytab fingerprint equals the durable journal tip for that host, its generation is at or above the durable floor, the realm is the prefer-selected realm and not the surface decoy, and the SSSD domain fold leaves it active. A service is bound only if its host is enrolled. `/usr/local/bin/ipahealth` may report joined while seat_ok is false. Seating outcomes and activity rules are under `/app/docs/`.
-
-Frozen keytab samples under `/app/data/ipa/` must stay intact. Running the seating entrypoint twice must leave `/output/ipa-seat.json` byte-identical.

@@ -1,2 +1,0 @@
-{"seq":1,"ts":14000,"syscall":"write","container_id":"prod-tie-1","pid":140,"labels":{"app":"tie","env":"prod"}}
-{"seq":2,"ts":14010,"syscall":"write","container_id":"prod-tie-1","pid":140,"labels":{"app":"tie","env":"prod"}}

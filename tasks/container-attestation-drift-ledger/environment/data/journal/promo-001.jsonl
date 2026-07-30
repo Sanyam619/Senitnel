@@ -1,2 +1,0 @@
-{"ref": "lab/svc-a", "dest": "sha256:1a03c8861f6faf48d5ccfa37f89a23d6602f5f380c8be2291a9c67a5cbe9b071", "store_key": "img-a", "stage": "prod", "epoch": 3}
-{"ref": "lab/svc-b", "dest": "sha256:699a1c99cd0320fb50235e2cc5969a4ee3d8b8073ebf9ca0eda26215860011eb", "store_key": "img-b", "stage": "prod", "epoch": 3}

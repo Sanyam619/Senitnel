@@ -1,9 +1,0 @@
-prefix=@PREFIX@
-libdir=@LIBDIR@
-includedir=${prefix}/pkg/include
-
-Name: flux_macro
-Description: Macro surface ABI
-Version: @VERSION@
-Libs: -L${libdir} -lflux_macro
-Cflags: -I${includedir}

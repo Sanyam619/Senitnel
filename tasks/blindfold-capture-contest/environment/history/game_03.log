@@ -1,6 +1,0 @@
-# session gamma
-001  black g1f3  accepted  silent
-002  white e7e5  accepted  silent
-003  black f3e5  accepted  taken:e5
-004  white d8e7  accepted  silent
-005  black e5d7  rejected  void

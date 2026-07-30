@@ -1,6 +1,0 @@
-utt_01	dog dog ran far far on the dog ran on the
-utt_02	cat ran the red hat hat on on map on mat sat the cat
-utt_03	dog dog sat on the cat dog sat the sat on the
-utt_04	the hat sat sat on mat on on the top
-utt_05	cat cat the mat the the mat sat sat on mat sat on the
-utt_06	on mat on hat top on the red red car ran the

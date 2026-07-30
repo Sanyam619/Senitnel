@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# Surface probe: mean hard win rate only. Ignores KL and tip seating.
-set -euo pipefail
-DATA="${1:-/app/data}"
-python3 /app/tools/probe_calc.py "$DATA"

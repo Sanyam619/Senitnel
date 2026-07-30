@@ -1,5 +1,0 @@
-lane = "java"
-health_bin = "/app/bin/lanehealth"
-java_main = "org.lab.p7.LaneMain"
-pin_file = "/app/jvx/pins.toml"
-note = "compile-only surface for java tree"

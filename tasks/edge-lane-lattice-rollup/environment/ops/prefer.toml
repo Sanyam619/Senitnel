@@ -1,5 +1,0 @@
-# Fleet lane preference — live surface bind wins until durable authority is restored.
-
-[token]
-root = "live"
-bind = "surface"

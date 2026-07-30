@@ -1,3 +1,0 @@
-name = "ridge"
-queue_dir = "/var/spool/postfix-ridge"
-host = "127.0.0.12"

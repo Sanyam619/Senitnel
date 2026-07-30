@@ -1,8 +1,0 @@
-[package]
-name = "asr_core"
-version = "0.1.0"
-edition = "2021"
-build = "build.rs"
-
-[lib]
-path = "src/lib.rs"

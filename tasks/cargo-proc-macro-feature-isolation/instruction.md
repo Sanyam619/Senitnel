@@ -1,9 +1,0 @@
-The Cargo workspace under /app/ was split from a single shared artifact into a proc-macro surface and a cdylib. C hosts consume them through the feature-set and profile matrix in /app/ops/matrix.toml.
-
-The host matrix is broken. Feature-on hosts miss gated exports or get failing lane tokens. Feature-off hosts can still look fine. Dual-load sees colliding version-tag families across the two surfaces. Pkg-config still behaves like the pre-split mono layout. Release cells that go through pkg-config can land on the wrong install directory.
-
-Profiles under /app/config/profiles declare install directories used during build and pkg-config emission (ship maps to the release install root, field maps to the debug install root). Those roots are selected through profile and alias config in the workspace; they are not /app/ops/matrix.toml field values. Seeded matrix cells keep profile strings such as dev and release. Do not change /app/ops/matrix.toml in any way, and do not modify /app/bin/abi_probe. Repair workspace sources, manifests, and config so the stock probe against the stock matrix writes a green report. Produce /output/abi-matrix.json through /app/bin/abi_probe (not by hand). Every matrix cell must report status ok. Dual-load tag_families must be disjoint.
-
-Dual pkg-config files such as /app/pkg/flux_cdylib.release.pc and /app/pkg/flux_macro.debug.pc should describe both surfaces. The pre-split single-artifact pkg-config is not an authoritative layout under /app/pkg anymore. A still-present /app/pkg/flux_mono.pc leaves pkg-config hosts on the old mono layout. Dual flux_macro / flux_cdylib metadata alone does not clear that.
-
-The report must include schema_tag (string) and cells (array). Each cell object carries at least id, status, features, profile, artifact_kind, and version_tags (array of strings). The dual-load cell also reports tag_families (object mapping artifact id to its tag list); those families must be disjoint.

@@ -1,7 +1,0 @@
-# Trace stream shaping for the emit binary.
-[trace]
-stride = 8
-group = "cell"
-
-[desk]
-owner = "eval-rotation"

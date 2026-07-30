@@ -1,8 +1,0 @@
-seal_lanes = ["ambient", "cold"]
-strict_scan = true
-cold_sidecar_batch = 43
-ambient_sidecar_batch = 43
-seal_epoch = 0
-digest_ready = false
-audit_ready = false
-report_ready = false

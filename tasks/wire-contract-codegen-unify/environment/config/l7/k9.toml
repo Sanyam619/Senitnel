@@ -1,5 +1,0 @@
-lane = "go"
-health_bin = "/app/bin/lanehealth"
-fold_bin = "/app/bin/foldctl"
-pin_file = "/app/gox/pins.toml"
-note = "compile-only surface for go tree"

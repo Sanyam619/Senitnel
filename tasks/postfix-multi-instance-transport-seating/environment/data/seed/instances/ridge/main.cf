@@ -1,3 +1,0 @@
-queue_directory = /var/spool/postfix-ridge-decoy
-transport_maps = hash:/etc/postfix/maps/nexthop.live
-myhostname = ridge.live.local

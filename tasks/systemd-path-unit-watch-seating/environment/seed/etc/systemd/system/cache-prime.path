@@ -1,8 +1,0 @@
-[Unit]
-Description=Prime cache from seed drop
-
-[Path]
-PathExists=/var/cache/app/seed
-
-[Install]
-WantedBy=multi-user.target

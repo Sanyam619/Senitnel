@@ -1,3 +1,0 @@
-name = "mesa"
-queue_dir = "/var/spool/postfix-mesa"
-host = "127.0.0.11"

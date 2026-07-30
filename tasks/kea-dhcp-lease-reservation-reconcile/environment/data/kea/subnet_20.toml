@@ -1,4 +1,0 @@
-id = 20
-durable_pool = "10.20.20.0/24"
-live_pool = "192.168.20.0/24"
-floor = 6

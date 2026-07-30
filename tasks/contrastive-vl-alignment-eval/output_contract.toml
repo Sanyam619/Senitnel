@@ -1,7 +1,0 @@
-user_visible_outputs = ["/output/vl-eval.json"]
-internal_harness_files = []
-
-[structured_outputs.report]
-target = "/output/vl-eval.json"
-format = "json"
-instruction_checks = ["schema_tag", "slices", "eval_ok"]

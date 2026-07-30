@@ -1,4 +1,0 @@
-[volume]
-name = "delta"
-replica = 3
-transport = "tcp"

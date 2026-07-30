@@ -1,4 +1,0 @@
-{"outcome": "t_first_check_task_invocation_ns", "run_id": "E800D5E5", "timestamp_ns": 1785074999870665000, "tool": "marker"}
-{"outcome": "WARN", "run_id": "E800D5E5", "timestamp_ns": 1785075000073439000, "tool": "run_static_checks"}
-{"outcome": "PASS", "run_id": "E800D5E5", "timestamp_ns": 1785075000283856000, "tool": "collapse_check"}
-{"outcome": "t_first_step2b_pass_ns", "run_id": "E800D5E5", "timestamp_ns": 1785075000386209000, "tool": "marker"}

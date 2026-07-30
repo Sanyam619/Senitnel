@@ -1,9 +1,0 @@
-{
-  "service": {
-    "name": "theta",
-    "id": "theta-1",
-    "node": "node-h8",
-    "port": 8108,
-    "tags": ["mesh"]
-  }
-}

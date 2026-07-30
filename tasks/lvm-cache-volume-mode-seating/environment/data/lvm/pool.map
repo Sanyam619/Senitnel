@@ -1,7 +1,0 @@
-# Sealed cachepool identity map. One row per cached logical volume.
-alpha=pool-alpha-uu01
-beta=pool-beta-uu02
-gamma=pool-gamma-uu03
-delta=pool-delta-uu04
-epsilon=pool-epsilon-uu05
-zeta=pool-zeta-uu06

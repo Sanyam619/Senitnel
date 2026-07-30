@@ -1,3 +1,0 @@
-id=cert-bundle
-service=cert-bundle.service
-base=/etc/pki/incoming

@@ -1,6 +1,0 @@
-package slotboard
-
-type Row struct {
-	CraftID string
-	SlotMin int
-}

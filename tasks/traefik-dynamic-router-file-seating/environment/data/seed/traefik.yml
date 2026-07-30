@@ -1,7 +1,0 @@
-providers:
-  file:
-    directory: /etc/traefik/dynamic
-    watch: false
-entryPoints:
-  web:
-    address: ":80"

@@ -1,5 +1,0 @@
-# bank tip journal — last matching keys win when materializing active INT8 scales
-live_epoch=3
-durable_epoch=7
-durable_sealed=1
-active_scale=e3

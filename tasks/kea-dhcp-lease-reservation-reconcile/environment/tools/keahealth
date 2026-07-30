@@ -1,9 +1,0 @@
-#!/bin/bash
-# Surface health: always OK when admin trees exist.
-set -euo pipefail
-if [[ -d /etc/kea && -d /var/lib/kea ]]; then
-  echo "OK"
-  exit 0
-fi
-echo "DOWN"
-exit 1

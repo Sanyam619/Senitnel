@@ -1,4 +1,0 @@
-# kiosk draft — projector favorite for R04
-round_id: R04
-note: energy looks reachable if you ignore capacity sum; stamp feasible_clear; smp 20
-line: A:50,B:50,C:50

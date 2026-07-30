@@ -1,6 +1,0 @@
-table ip raw {
-	chain prerouting {
-		type filter hook prerouting priority -300; policy accept;
-		tcp dport 22 accept
-	}
-}

@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Surface probe: greets when a shallow lookahead-tolerant sweep looks fine.
-set -euo pipefail
-python3 /app/tools/probe_calc.py "$@"

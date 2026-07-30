@@ -1,6 +1,0 @@
-[Exec]
-Boot=yes
-
-[Files]
-Directory=/var/lib/machines/live/gamma/root
-Bind=/var/lib/machines/bind/gamma/data

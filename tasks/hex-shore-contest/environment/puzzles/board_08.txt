@@ -1,9 +1,0 @@
-round_id: 8
-to_move: black
-link_goal: top_bottom
-board:
-BBBBB
-..WWW
-.WWB.
-WW...
-....B

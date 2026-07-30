@@ -1,3 +1,0 @@
-REC|example.test|www.example.test|A=192.0.2.10
-REC|example.test|api.example.test|A=192.0.2.20
-REC|example.test|stale.example.test|TXT=hold

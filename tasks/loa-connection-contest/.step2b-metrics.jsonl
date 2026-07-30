@@ -1,9 +1,0 @@
-{"outcome": "dirty_flag", "run_id": "adhoc", "timestamp_ns": 1785063579659455000, "tool": "approve_task"}
-{"outcome": "t_first_check_task_invocation_ns", "run_id": "A83ECF9A", "timestamp_ns": 1785063583621152000, "tool": "marker"}
-{"outcome": "WARN", "run_id": "A83ECF9A", "timestamp_ns": 1785063583803707000, "tool": "run_static_checks"}
-{"outcome": "PASS", "run_id": "A83ECF9A", "timestamp_ns": 1785063584038009000, "tool": "collapse_check"}
-{"outcome": "t_first_step2b_pass_ns", "run_id": "A83ECF9A", "timestamp_ns": 1785063584147505000, "tool": "marker"}
-{"outcome": "t_first_check_task_invocation_ns", "run_id": "5B9B45F8", "timestamp_ns": 1785063992101131000, "tool": "marker"}
-{"outcome": "WARN", "run_id": "5B9B45F8", "timestamp_ns": 1785063992265182000, "tool": "run_static_checks"}
-{"outcome": "PASS", "run_id": "5B9B45F8", "timestamp_ns": 1785063992478576000, "tool": "collapse_check"}
-{"outcome": "t_first_step2b_pass_ns", "run_id": "5B9B45F8", "timestamp_ns": 1785063992581861000, "tool": "marker"}

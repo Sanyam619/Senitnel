@@ -1,8 +1,0 @@
-{"kind":"tip","name":"web01","fqdn":"web01.lab.example.org","fpr":"1a1a1a1a0001","gen":1,"tip_id":"tip_old"}
-{"kind":"tip","name":"db01","fqdn":"db01.lab.example.org","fpr":"1b1b1b1b0001","gen":1,"tip_id":"tip_old"}
-{"kind":"seal","gen":7,"mode":"seal","tip_id":"tip_g7","realm":"LAB.EXAMPLE.ORG","tips":{"web01":{"fpr":"9f2c4a7b1e0d","gen":4},"db01":{"fpr":"3a8e11c2d4f0","gen":3},"cache01":{"fpr":"77b0e5a91c33","gen":4},"mail01":{"fpr":"c41d0be2a5f7","gen":4},"log01":{"fpr":"5e6a2f0c8d19","gen":4}}}
-{"kind":"tip","name":"web01","fqdn":"web01.lab.example.org","fpr":"000000000live","gen":99,"tip_id":"tip_live"}
-{"kind":"tip","name":"db01","fqdn":"db01.lab.example.org","fpr":"000000000live","gen":99,"tip_id":"tip_live"}
-{"kind":"tip","name":"cache01","fqdn":"cache01.lab.example.org","fpr":"000000000live","gen":99,"tip_id":"tip_live"}
-{"kind":"tip","name":"mail01","fqdn":"mail01.lab.example.org","fpr":"000000000live","gen":99,"tip_id":"tip_live"}
-{"kind":"tip","name":"log01","fqdn":"log01.lab.example.org","fpr":"000000000live","gen":99,"tip_id":"tip_live"}

@@ -1,5 +1,0 @@
-{"tag": "batch", "gen": 5, "sealed": true, "complete": true, "rows": [{"cn": "flint", "iroute": "10.8.1.0/24"}, {"cn": "quartz", "iroute": "10.8.2.0/24"}]}
-{"tag": "batch", "gen": 8, "sealed": true, "complete": true, "rows": [{"cn": "flint", "iroute": "10.8.1.0/24"}, {"cn": "quartz", "iroute": "10.8.2.0/24"}, {"cn": "jasper", "iroute": "10.8.3.0/24"}, {"cn": "onyx", "iroute": "10.8.4.0/24"}, {"cn": "beryl", "iroute": "10.8.99.0/24"}, {"cn": "mica", "iroute": "10.8.6.0/24"}]}
-{"tag": "batch", "gen": 8, "sealed": true, "complete": true, "rows": [{"cn": "flint", "iroute": "10.8.1.0/24"}, {"cn": "quartz", "iroute": "10.8.2.0/24"}, {"cn": "jasper", "iroute": "10.8.3.0/24"}, {"cn": "onyx", "iroute": "10.8.4.0/24"}, {"cn": "beryl", "iroute": "10.8.5.0/24"}, {"cn": "mica", "iroute": "10.8.6.0/24"}]}
-{"tag": "batch", "gen": 10, "sealed": true, "complete": false, "rows": [{"cn": "flint", "iroute": "10.8.50.0/24"}, {"cn": "beryl", "iroute": "10.8.51.0/24"}]}
-{"tag": "seal", "gen": 8}

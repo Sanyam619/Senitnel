@@ -1,4 +1,0 @@
-# Round 10 — sealed fort
-sfen: 8k/9/7S1/9/9/9/9/9/9
-hand: b:NP
-side: b

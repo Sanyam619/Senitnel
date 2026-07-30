@@ -1,8 +1,0 @@
-[
-  {"id": "cold_a", "salt": 11, "mask": [0, 1, 0], "fallback": 0, "resume": false},
-  {"id": "resume_a", "salt": 11, "mask": [0, 1, 0], "fallback": 0, "resume": true},
-  {"id": "cold_b", "salt": 22, "mask": [1, 0, 0], "fallback": 0, "resume": false},
-  {"id": "resume_b", "salt": 22, "mask": [1, 0, 0], "fallback": 0, "resume": true},
-  {"id": "mix_c", "salt": 33, "mask": [0, 0, 0], "fallback": 2, "resume": false},
-  {"id": "mix_d", "salt": 44, "mask": [0, 1, 0], "fallback": 0, "resume": false}
-]

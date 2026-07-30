@@ -1,9 +1,0 @@
-board_id: 06
-to_move: yellow
-board:
-R....R.
-Y..R.Y.
-R..Y.Y.
-Y.YRYYR
-RRRYRRY
-YRRYYRY

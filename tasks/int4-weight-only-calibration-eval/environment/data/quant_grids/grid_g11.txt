@@ -1,4 +1,0 @@
-tip tip_g11
-epoch 11
-kind per_channel
-group 32

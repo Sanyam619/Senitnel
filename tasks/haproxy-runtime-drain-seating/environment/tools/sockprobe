@@ -1,9 +1,0 @@
-#!/bin/bash
-# Decoy observation: reports whether runtime.map exists.
-set -euo pipefail
-if [[ -f /var/run/haproxy/runtime.map ]]; then
-  echo "map-present"
-  exit 0
-fi
-echo "map-missing"
-exit 1

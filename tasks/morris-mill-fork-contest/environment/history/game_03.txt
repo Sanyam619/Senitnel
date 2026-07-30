@@ -1,9 +1,0 @@
-# Scratch session — removal from a non-mill man.
-board_id: hist_03
-to_move: white
-moves_left: 1
-white:
-c5 d5 e4
-black:
-a4 b4 g1
-# W:e4-e5 closes c5-d5-e5; remove g1 (not in a mill)

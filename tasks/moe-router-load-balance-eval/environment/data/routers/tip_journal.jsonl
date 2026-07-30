@@ -1,8 +1,0 @@
-{"tip": "tip_a1", "epoch": 1, "tip_temp": 0.8, "sealed": true}
-{"tip": "tip_live", "epoch": 3, "tip_temp": 1.5, "sealed": false}
-{"tip": "tip_g7", "epoch": 4, "tip_temp": 0.75, "sealed": true}
-{"tip": "tip_x2", "epoch": 5, "tip_temp": 0.85, "sealed": false}
-{"tip": "tip_g9", "epoch": 7, "tip_temp": 0.7, "sealed": true}
-{"tip": "tip_b3", "epoch": 2, "tip_temp": 0.95, "sealed": true}
-{"tip": "tip_live", "epoch": 9, "tip_temp": 2.0, "sealed": false}
-{"tip": "tip_c1", "epoch": 6, "tip_temp": 0.9, "sealed": false}

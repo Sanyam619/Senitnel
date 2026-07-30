@@ -1,8 +1,0 @@
-[Unit]
-Description=Watch deploy incoming directory
-
-[Path]
-PathExists=/run/deploy/placeholder
-
-[Install]
-WantedBy=multi-user.target

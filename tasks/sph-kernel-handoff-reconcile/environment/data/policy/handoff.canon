@@ -1,4 +1,0 @@
-# Canonical handoff selection (durable authority source).
-# The runner rematerializes from this sheet when policy_over_checkpoint holds.
-selected_kernel = wendland_c4
-authority = policy_over_checkpoint

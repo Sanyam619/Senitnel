@@ -1,6 +1,0 @@
-# durable offset budgets (ms) keyed by peer name
-pool-alpha = 12.5
-pool-beta = 20.0
-pool-gamma = 8.0
-pool-epsilon = 15.0
-pool-delta = 30.0

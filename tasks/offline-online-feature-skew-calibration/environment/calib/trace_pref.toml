@@ -1,4 +1,0 @@
-# Trace stride for the unused dial path.
-[trace]
-stride = 4
-channel = "eval"

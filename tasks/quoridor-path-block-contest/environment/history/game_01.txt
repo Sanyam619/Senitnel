@@ -1,5 +1,0 @@
-# Scratch session A - open corridor probe
-$ java -jar /app/bin/judge.jar view --board scratch_a.txt
-{"size":5,"to_move":"black","black":"c1","white":"c5","walls":[],"walls_left":2,"black_path":5,"white_path":5,"black_reachable":true,"white_reachable":true,"board":"..W../...../...../...../..B.."}
-$ java -jar /app/bin/judge.jar probe --board scratch_a.txt --wall h-b3
-{"legal":true,"reason":"ok","black_path":5,"white_path":5}

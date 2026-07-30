@@ -1,9 +1,0 @@
-board_id: 02
-to_move: red
-floor: 6
-budget: 3
-blue_stock: 1
-hand: FFCF*
-tiles:
-b2:CFFF:0
-meeples:

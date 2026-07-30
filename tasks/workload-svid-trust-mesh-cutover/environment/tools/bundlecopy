@@ -1,6 +1,0 @@
-#!/bin/bash
-# Decoy: copies CA side material without publishing live-bundle epoch/generation.
-set -euo pipefail
-mkdir -p /app/data/state/side
-cp -f /app/data/material/ca-side.pem /app/data/state/side/ca-side.pem
-echo "bundlecopy: wrote side CA copy"

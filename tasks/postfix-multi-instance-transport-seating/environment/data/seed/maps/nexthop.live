@@ -1,5 +1,0 @@
-.example.com    relay:[mx.live.decoy]
-lab.corp        smtp:[smtp.live.decoy]
-collide.lab     smtp:[smtp.live.decoy]
-orphan.lab      smtp:[smtp.live.decoy]
-extra.bait      smtp:[smtp.bait.internal]

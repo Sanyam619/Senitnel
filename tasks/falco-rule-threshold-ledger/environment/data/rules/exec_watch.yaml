@@ -1,6 +1,0 @@
-name: exec_watch
-priority: 70
-syscall: execve
-rate_limit: 5
-suppression_sec: 30
-scope_prefix: "prod-"

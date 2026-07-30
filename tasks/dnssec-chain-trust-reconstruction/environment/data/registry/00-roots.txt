@@ -1,6 +1,0 @@
-ROOT|example.test|KSK_A|DA|0|180
-ROOT|example.test|KSK_B|DB|150|400
-ROOT|lab.example.test|LKSK_A|LA|0|260
-ROOT|lab.example.test|LKSK_B|LB|240|500
-ROOT|archive.example.test|AKSK_A|AA|0|500
-ROOT|archive.example.test|AKSK_B|AB|300|500

@@ -1,7 +1,0 @@
-TX d-keep PREPARED
-TX d-split PREPARED
-TX d-split COMMITTED
-TX d-dup PREPARED
-TX d-dup PREPARED
-TX d-dup PREPARED
-TX d-full PREPARED

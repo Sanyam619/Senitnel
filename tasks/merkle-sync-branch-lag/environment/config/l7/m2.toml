@@ -1,4 +1,0 @@
-scan_tier = "b"
-replay_gate = 1
-barrier_live = false
-tomb_scan = false

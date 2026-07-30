@@ -1,2 +1,0 @@
-{"seq":1,"ts":12000,"syscall":"execve","container_id":"prod-plat-1","pid":120,"labels":{"app":"plat","env":"prod"}}
-{"seq":1,"ts":12001,"syscall":"execve","container_id":"prod-plat-1","pid":121,"labels":{"app":"plat","env":"prod"}}

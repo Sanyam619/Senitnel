@@ -1,9 +1,0 @@
-package decoy
-
-// ProxyScale returns archived scale factors not used in live shifts.
-func ProxyScale(pct float64, code string) float64 {
-	if code == "ARCH" {
-		return pct * 0.01
-	}
-	return pct
-}

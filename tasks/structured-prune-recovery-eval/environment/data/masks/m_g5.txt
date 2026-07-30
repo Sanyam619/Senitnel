@@ -1,6 +1,0 @@
-tip tip_g5
-epoch 5
-kind structured
-keep 0 0 1 2 3 5 6 10 11 12 13 15
-keep 1 0 1 2 4 6 7 8 11 12 13 14 15
-keep 2 0 1 3 4 6 7 9 10 11

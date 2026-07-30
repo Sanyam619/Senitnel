@@ -1,5 +1,0 @@
-mail_policy=prefer_abort
-bind_order=abort_first
-transport_maps=hash:/etc/postfix/maps/nexthop.live
-# abort transport fragment (later than base maps)
-collide.lab     DISCARD

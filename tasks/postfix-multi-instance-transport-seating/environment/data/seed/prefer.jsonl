@@ -1,5 +1,0 @@
-{"tag":"batch","gen":5,"sealed":true,"complete":true,"rows":[{"name":"mesa","queue_dir":"/var/spool/postfix-mesa-old"},{"name":"ridge","queue_dir":"/var/spool/postfix-ridge-old"}]}
-{"tag":"batch","gen":7,"sealed":true,"complete":true,"rows":[{"name":"mesa","queue_dir":"/var/spool/postfix-mesa-wrong"},{"name":"ridge","queue_dir":"/var/spool/postfix-ridge"},{"name":"beacon","queue_dir":"/var/spool/postfix-beacon"},{"name":"cinder","queue_dir":"/var/spool/postfix-cinder"},{"name":"quay","queue_dir":"/var/spool/postfix-quay"}]}
-{"tag":"batch","gen":7,"sealed":true,"complete":true,"rows":[{"name":"mesa","queue_dir":"/var/spool/postfix-mesa"},{"name":"ridge","queue_dir":"/var/spool/postfix-ridge"},{"name":"beacon","queue_dir":"/var/spool/postfix-beacon"},{"name":"cinder","queue_dir":"/var/spool/postfix-cinder"},{"name":"quay","queue_dir":"/var/spool/postfix-quay"}]}
-{"tag":"batch","gen":9,"sealed":true,"complete":false,"rows":[{"name":"mesa","queue_dir":"/var/spool/postfix-mesa-decoy"},{"name":"beacon","queue_dir":"/var/spool/postfix-beacon-decoy"}]}
-{"tag":"seal","gen":7}

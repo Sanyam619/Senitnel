@@ -1,3 +1,0 @@
-contact_model = "weld_face"
-reduction_order = "truncate"
-dt_policy = "fixed"

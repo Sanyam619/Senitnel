@@ -1,4 +1,0 @@
-profile = "field"
-bind_services = false
-shade_bridge = true
-spi_tag = "slot-v1"

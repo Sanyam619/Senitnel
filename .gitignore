@@ -1,36 +1,32 @@
-# Environment
-.env
-.env.*
+# Task zips and working copies (local only)
+tasks/inbox/*
+tasks/active/*
+tasks/out/*
+!tasks/inbox/.gitkeep
+!tasks/inbox/README.md
+!tasks/active/.gitkeep
+!tasks/out/.gitkeep
 
-tasks/
-specs/
-summary/
-jobs/
+# Legacy path (ignore if anything left over)
+workspace/
 
-# Validation working state
-specs/.*.json
-tasks/*/.step2b-checksum
-tasks/*/.step2b-metrics.jsonl
-
-# STB revision backups (local only)
-Task_Backups/
+# OS / editor
+.DS_Store
+__MACOSX/
+*.swp
+*~
 
 # Python
 __pycache__/
 *.pyc
-*.pyo
-.venv/
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+.venv/
+venv/
 
+# Node
+node_modules/
 
-# OS
-.DS_Store
-Thumbs.db
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# Local scratch
+.tmp-*/

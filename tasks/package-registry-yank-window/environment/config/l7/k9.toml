@@ -1,5 +1,0 @@
-bound_mode = "closed"
-honor_revokes = false
-adv_live_only = false
-adv_floor = "low"
-audit_stamp = "pending"

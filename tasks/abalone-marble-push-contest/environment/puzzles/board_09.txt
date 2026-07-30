@@ -1,8 +1,0 @@
-board_id: 09
-to_move: black
-board:
-  ...
- ....
-....W
- BB.W
-  W.B

@@ -1,7 +1,0 @@
-The cross-toolchain build graph under /app/ glues a C static archive, a Rust staticlib, and a Go cgo archive into each layout cell listed in /app/ops/matrix.toml. After the thin-LTO cutover window, bitcode epoch propagation, packing policy, lane aliases, and release feature retention drifted across the graph.
-
-Reconcile the build graph so every matrix cell produces a coherent lattice outcome. Write /output/lattice-report.json through /app/bin/lattice_probe (not by hand). Leave /app/bin/lattice_probe and /app/ops/matrix.toml unchanged. The report records per-cell status, bitcode_epoch, vis_digest, and archive_members.
-
-Build profiles under /app/config/profiles declare bitcode epochs and packing counts (ship 3/4, fleet 7/6, craft 5/5). For each cell, bitcode_epoch and archive_members must match that cell's declared profile, and vis_digest must match the cell's declared feature set together with that same profile epoch and packing count (fixtures under /app/data/fixtures). Agreement on another epoch or packing count alone is not a coherent lattice outcome. Desk journal materials under /app/data/fixtures record the hold mark for a sealed cutover; release cells must retain their declared feature strands once that cutover sticks.
-
-Coherent outcomes must come from durable materials under /app (sources and rebuilt helpers under /app/bin). Session-only PATH stand-ins outside /app do not survive grading.

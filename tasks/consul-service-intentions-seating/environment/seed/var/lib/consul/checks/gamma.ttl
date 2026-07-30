@@ -1,4 +1,0 @@
-# ttl check emitted by the local agent
-service = gamma
-status = passing
-ttl = 30s

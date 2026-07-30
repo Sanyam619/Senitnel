@@ -1,9 +1,0 @@
-board_id: 06
-blue_inv: V3,I3
-yellow_inv: 2,1
-board:
-XX...
-.....
-X.XX.
-.X...
-...XB

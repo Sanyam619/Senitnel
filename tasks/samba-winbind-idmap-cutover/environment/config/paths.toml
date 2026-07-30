@@ -1,5 +1,0 @@
-[paths]
-etc = "/etc/samba"
-var = "/var/lib/samba"
-report = "/output/idmap-cutover.json"
-ops = "/app/ops"

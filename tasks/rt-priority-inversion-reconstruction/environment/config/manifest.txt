@@ -1,6 +1,0 @@
-case_nova /opt/kernlab/config/case_nova.toml /opt/kernlab/traces/case_nova.evt
-case_orbit /opt/kernlab/config/case_orbit.toml /opt/kernlab/traces/case_orbit.evt
-case_pulse /opt/kernlab/config/case_pulse.toml /opt/kernlab/traces/case_pulse.evt
-case_delta /opt/kernlab/config/case_delta.toml /opt/kernlab/traces/case_delta.evt
-case_eclipse /opt/kernlab/config/case_eclipse.toml /opt/kernlab/traces/case_eclipse.evt
-case_zenith /opt/kernlab/config/case_zenith.toml /opt/kernlab/traces/case_zenith.evt

@@ -1,9 +1,0 @@
-{
-  "service": {
-    "name": "zeta",
-    "id": "zeta-1",
-    "node": "node-f6",
-    "port": 8106,
-    "tags": ["mesh"]
-  }
-}

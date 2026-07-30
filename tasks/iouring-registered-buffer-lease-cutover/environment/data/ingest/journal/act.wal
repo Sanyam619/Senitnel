@@ -1,7 +1,0 @@
-# gen|seq|epoch|prefix|mode — sealed cutover journal
-1|10|3|legacy|rollback
-2|20|5|mid|rollback
-3|30|7|fleet|seal
-4|40|7|fleet|seal
-5|50|9|drift|seal
-2|60|7|bait|seal

@@ -1,9 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-cd /app
-mkdir -p /app/m2/out
-mapfile -t java_srcs < <(find /app/m2/src -type f -name '*.java' | sort)
-javac -d /app/m2/out "${java_srcs[@]}"
-exec java -cp /app/m2/out io.helix.qx.TmRebind \
-  "${MESH_LIVE:-/app/data/state/live-bundle.json}" \
-  "${MESH_TM_CACHE:-/app/data/state/tm-cache.json}"

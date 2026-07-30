@@ -1,4 +1,0 @@
-name = "harbor.example"
-kind = "primary"
-ns = "ns1.harbor.example"
-contact = "hostmaster.harbor.example"

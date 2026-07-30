@@ -1,5 +1,0 @@
-token_root = "/data/token"
-config_root = "/opt/pk11/config"
-bin_root = "/opt/pk11/bin"
-fixture_seed = "/data/fixtures/token-seed"
-output = "/output/session-rebind.json"

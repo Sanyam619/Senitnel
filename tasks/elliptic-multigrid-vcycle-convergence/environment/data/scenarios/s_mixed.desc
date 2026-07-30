@@ -1,8 +1,0 @@
-# Mixed-difficulty scenario: anisotropy plus separated source pair.
-label = s_mixed
-nx = 65
-ny = 65
-kx_law = constant:2.0
-ky_law = constant:20.0
-rhs_law = two_bump:0.3,0.3,0.7,0.7,0.08,10.0
-budget = 8

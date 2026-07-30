@@ -1,6 +1,0 @@
-# session delta
-001  white e2e4  accepted  silent
-002  black c7c5  accepted  silent
-003  white d2d4  accepted  silent
-004  black c5d4  accepted  taken:d4
-005  white d1d4  accepted  taken:d4

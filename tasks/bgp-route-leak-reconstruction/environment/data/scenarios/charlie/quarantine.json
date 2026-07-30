@@ -1,9 +1,0 @@
-{
-  "holds": [
-    {
-      "prefix": "10.3.0.0/24",
-      "peer": "peer_a",
-      "reason": "stale_attestation"
-    }
-  ]
-}

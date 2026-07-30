@@ -1,7 +1,0 @@
-package capturelane
-
-import "ramp.local/account/settle"
-
-func TwinBookQ(total, divert float64) (float64, float64) {
-	return settle.TwinMux(total, divert)
-}

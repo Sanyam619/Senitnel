@@ -1,5 +1,0 @@
-min_active_epoch = 3
-revocation_mode = "journal"
-grace_period_sec = 3600
-max_concurrent_live = 4
-epoch_tiebreak = "claim_seq"

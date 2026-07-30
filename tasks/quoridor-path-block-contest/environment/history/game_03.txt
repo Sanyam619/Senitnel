@@ -1,3 +1,0 @@
-# Scratch session C - rejected crossing wall
-$ java -jar /app/bin/judge.jar probe --board scratch_c.txt --wall v-b2
-{"legal":false,"reason":"cross","black_path":6,"white_path":6}

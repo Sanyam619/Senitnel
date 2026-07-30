@@ -1,5 +1,0 @@
-# domain|target|pool|volume
-web|vda|alpha|root.img
-db|vda|beta|data.img
-cache|vda|gamma|cache.img
-edge|vda|delta|edge.img

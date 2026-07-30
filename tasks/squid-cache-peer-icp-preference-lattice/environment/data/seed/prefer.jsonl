@@ -1,5 +1,0 @@
-{"tag":"batch","gen":5,"sealed":true,"complete":true,"rows":[{"name":"north","type":"parent","weight":10},{"name":"east","type":"parent","weight":10}]}
-{"tag":"batch","gen":7,"sealed":true,"complete":true,"rows":[{"name":"north","type":"sibling","weight":40},{"name":"east","type":"parent","weight":60},{"name":"south","type":"parent","weight":50},{"name":"west","type":"parent","weight":90},{"name":"core","type":"parent","weight":200}]}
-{"tag":"batch","gen":7,"sealed":true,"complete":true,"rows":[{"name":"north","type":"parent","weight":100},{"name":"east","type":"parent","weight":80},{"name":"south","type":"parent","weight":50},{"name":"west","type":"sibling","weight":90},{"name":"core","type":"parent","weight":70}]}
-{"tag":"batch","gen":9,"sealed":true,"complete":false,"rows":[{"name":"core","type":"parent","weight":200},{"name":"north","type":"sibling","weight":1}]}
-{"tag":"seal","gen":7}

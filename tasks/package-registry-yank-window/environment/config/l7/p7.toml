@@ -1,2 +1,0 @@
-phases = ["resolve", "emit"]
-workflow_note = "idle"

@@ -1,5 +1,0 @@
-=== territory board_07 ===
-{"white_excl":0,"black_excl":0,"territory_delta":0,"enclosed":false,"floor":2}
-
-=== validate illegal colour order ===
-{"all_legal":false,"white_turns":0,"white_excl":0,"black_excl":0,"territory_delta":0,"enclosed":false,"steps":1}

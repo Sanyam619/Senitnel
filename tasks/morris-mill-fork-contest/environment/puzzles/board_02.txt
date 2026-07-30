@@ -1,7 +1,0 @@
-board_id: board_02
-to_move: white
-moves_left: 2
-white:
-a7 d7 f4 c3 b2 a1
-black:
-b6 f6 c5 e5 a4 d3 d1

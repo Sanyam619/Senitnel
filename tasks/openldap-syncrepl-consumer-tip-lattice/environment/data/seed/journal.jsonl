@@ -1,8 +1,0 @@
-{"kind":"tip","name":"alpha","suffix":"dc=alpha,dc=lab","csn":"20230101000000.000000Z#000001#000#000000","gen":1,"tip_id":"tip_old"}
-{"kind":"tip","name":"beta","suffix":"dc=beta,dc=lab","csn":"20230101000000.000000Z#000002#000#000000","gen":1,"tip_id":"tip_old"}
-{"kind":"seal","gen":7,"mode":"seal","tip_id":"tip_g7","provider":"ldap://provider-a.lab:389","tips":{"alpha":{"csn":"20240701120000.111111Z#00000a#000#000000","gen":4},"beta":{"csn":"20240701120000.222222Z#00000b#000#000000","gen":3},"gamma":{"csn":"20240701120000.333333Z#00000c#000#000000","gen":4},"delta":{"csn":"20240701120000.444444Z#00000d#000#000000","gen":4},"epsilon":{"csn":"20240701120000.555555Z#00000e#000#000000","gen":4}}}
-{"kind":"tip","name":"alpha","suffix":"dc=alpha,dc=lab","csn":"20990101000000.999999Z#00live#000#000000","gen":99,"tip_id":"tip_live"}
-{"kind":"tip","name":"beta","suffix":"dc=beta,dc=lab","csn":"20990101000000.999999Z#00live#000#000000","gen":99,"tip_id":"tip_live"}
-{"kind":"tip","name":"gamma","suffix":"dc=gamma,dc=lab","csn":"20990101000000.999999Z#00live#000#000000","gen":99,"tip_id":"tip_live"}
-{"kind":"tip","name":"delta","suffix":"dc=delta,dc=lab","csn":"20990101000000.999999Z#00live#000#000000","gen":99,"tip_id":"tip_live"}
-{"kind":"tip","name":"epsilon","suffix":"dc=epsilon,dc=lab","csn":"20990101000000.999999Z#00live#000#000000","gen":99,"tip_id":"tip_live"}

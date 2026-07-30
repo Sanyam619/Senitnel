@@ -1,3 +1,0 @@
-schema_tag = "time.seat.v3"
-surface_schema_tag = "time.seat.v1"
-primary_ntp = "ntp.alpha.example"

@@ -1,5 +1,0 @@
-Live cache-volume seating under /etc/lvm/ and /var/lib/lvm/ was captured mid-window and drifted from the durable volume authority. /usr/local/bin/lvmhealth keeps printing OK, but deep seating is wrong, and sheet edits made without settling the desk are gone again on the next pass.
-
-Bring the desk to a correct, durable end-state and produce /output/lvmcache-seat.json by running /app/ops/run_lvmcache_seat.sh. It carries schema_tag lvmcache-seat-v1, one volumes row per cached logical volume, the maintenance windows in holds, and seat_ok. Acceptance rules — volume standing against the durable authority and the sealed mode journal, cachepool identity, maintenance windows, the drop-in policy fold, and the receipt the state plane must carry — live under /app/docs/. Frozen fixtures under /app/data/lvm/ are integrity-pinned; do not rewrite them, and the sealed copies under /var/lib/lvm/ must keep matching them. Grading clears /output and re-runs the desk twice; the two reports must be byte-identical.
-
-Ledger vocabulary: schema_tag, volumes, name, vg, mode, cachepool, generation, attached, holds, lv, until_epoch, seat_ok.

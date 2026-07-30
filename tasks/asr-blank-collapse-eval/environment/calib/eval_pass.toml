@@ -1,6 +1,0 @@
-# Which pass the evaluation desk is running.
-#   rehearsal - warm-up sweeps, published numbers are not claimed
-#   scoring   - the pass whose numbers are published against the bands
-[evaluation]
-pass = "rehearsal"
-report = "bands"

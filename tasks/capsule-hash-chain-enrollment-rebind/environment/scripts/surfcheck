@@ -1,9 +1,0 @@
-#!/bin/bash
-# Shallow leaf-surface pass over the known records. Prints a per-record line
-# using the leaf skim only; this view is advisory and not an enroll authority.
-set -e
-for f in /app/data/capsules/cap_*.bin; do
-    id="$(basename "$f" .bin)"
-    verdict="$(/app/bin/framectl skim "$f")"
-    echo "$id $verdict"
-done

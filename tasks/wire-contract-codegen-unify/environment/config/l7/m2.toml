@@ -1,5 +1,0 @@
-lane = "rust"
-health_bin = "/app/bin/lanehealth"
-sieve_bin = "/app/bin/sievectl"
-pin_file = "/app/rsx/pins.toml"
-note = "compile-only surface for rust tree"

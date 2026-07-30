@@ -1,7 +1,0 @@
-# session zeta
-001  white f2f4  accepted  silent
-002  black e7e5  accepted  silent
-003  white f4e5  accepted  taken:e5
-004  black d8h4  accepted  check
-005  white g2g3  accepted  silent
-006  black e5f7  accepted  taken:f7+check

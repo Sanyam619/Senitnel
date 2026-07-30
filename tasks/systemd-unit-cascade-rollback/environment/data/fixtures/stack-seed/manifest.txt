@@ -1,1 +1,0 @@
-immutable anchor; checksums.sha256 lists pre-cutover unit bodies\n

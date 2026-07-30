@@ -1,7 +1,0 @@
-SAGA sg-north-1 TX n-002
-STEP reserve APPLIED undo-reserve
-STEP pick APPLIED undo-pick
-STEP ship PENDING undo-ship
-SAGA sg-north-2 TX n-004
-STEP reserve APPLIED undo-reserve
-STEP bill APPLIED undo-bill

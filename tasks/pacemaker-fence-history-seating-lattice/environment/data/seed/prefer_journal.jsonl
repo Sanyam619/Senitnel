@@ -1,3 +1,0 @@
-{"kind":"cutover","gen":3,"mode":"draft","tips":{"node_a":1,"node_b":1,"node_c":1}}
-{"kind":"cutover","gen":7,"mode":"seal","tips":{"node_a":7,"node_b":7,"node_c":7}}
-{"kind":"cutover","gen":9,"mode":"draft","tips":{"node_a":9,"node_b":2,"node_c":2}}

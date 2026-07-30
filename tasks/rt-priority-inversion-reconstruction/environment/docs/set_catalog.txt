@@ -1,1 +1,0 @@
-Per-case TOML encodes actor bands (higher integer = more urgent) and gate ids.

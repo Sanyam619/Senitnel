@@ -1,6 +1,0 @@
-{
-  "lane": "cold",
-  "bound_batch": 43,
-  "lots": ["CEDAR-31", "FERN-02", "GLEN-17", "HOLT-44", "IRIS-09", "NOVA-22", "WREN-88", "YARROW-70"],
-  "digest": "stale"
-}

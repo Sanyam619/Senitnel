@@ -1,7 +1,0 @@
-An interrupted migration left the file-event monitoring layer in a partially completed state. The namespace identity was switched but individual watch paths were not all handled correctly. Some paths landed in the wrong namespace, some have incorrect types for their annotations, and at least one path has residual entries in both namespace layers simultaneously.
-
-Config generations under /opt/fev/config/gens decide seating for the active generation recorded with lab identity. An aborted cutover can leave identity on a prior generation. Not every watch path moves with the broker identity.
-
-Operational helpers are in /opt/fev/bin. Rebuildable sources are under /app. Service fragments are at /opt/fev/units and the running service state is under /data/lab/units.
-
-Advance identity to the cutover target generation, then reconcile all watch paths to that generation's seating. Run the reopen pass for appropriately resident paths; the inherit table records each reopened path as name:remount-ok in the target generation's roster order among movers. Clear the race check and produce the cutover report to /output/mark-cutover.json (version 1, watches array with path, mark_ns, mark_kind, inherited_ok, race_stable). The report must list every roster path, including paths that remain host-resident: mark_ns and mark_kind must match final seating, and inherited_ok is true only for paths recorded in the inherit table. The service's mount isolation must not block propagation across the nested tree. Leave /data/fixtures/watch-seed alone.

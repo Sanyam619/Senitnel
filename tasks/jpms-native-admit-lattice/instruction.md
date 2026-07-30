@@ -1,5 +1,0 @@
-A local packaging admit desk under /app runs layered JPMS units with a JNI bridge after a module-pack cutover. Surface probes green tokens while the sealed host gate rejects live pack and launch across several module generations. Layer order, mode bits, hook generation binding, and revoke windows disagree on which root binds sessions and what admits.
-
-Produce /output/pack-admit.json covering every case under /app/data/cases/. The ledger needs schema_version pack-admit-1, a rows array with id, decision (accept or reject), and reason_code on each row, plus bind_epoch equal to the epoch value in /app/data/state/runtime.json. Running /app/scripts/pack-reload.sh and then /app/scripts/run-pack.sh again must keep the same decisions and the same bind_epoch. The runtime epoch in /app/data/state/runtime.json must also stay put across that reload. Use reason_code values from this set: bad_layer, hook_skew, stale_reflect, revoked, ok_bound. Surface OK is not host authority.
-
-Leave /app/bin/surfcheck, /app/scripts/run-pack.sh, and /app/data/cases/ in place and unmodified. Outputs must match a rebuild of the admit path under the sealed gate; hand-written stand-ins fail.

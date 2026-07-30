@@ -1,5 +1,0 @@
-Five crash-export episodes (alpha–epsilon) under `/app/data/episodes/` never finished restore. Surface `/app/ops/fleethealth` can look fine while live fleet state under `/etc/fleet/` and `/var/lib/fleet/` drifted during the abort: effective policy, ops journal cutover, abort-window drop-in rematerialize, generation stamps, lease bags, quarantine gates, and runtime volume attaches disagree with sealed authority.
-
-Recovery semantics and the post-crash report contract live under `/app/docs/` (including how the durable cutover receipt relates to live drop-ins). On-host operator tools live under `/app/ops/`, `/app/bag/`, `/app/rim/`, and `/app/deck/` (start from `/app/ops/run_recovery.sh`). Prebuilt binaries are under `/app/bin/` with restore copies under `/usr/lib/fleet/bin/` if needed.
-
-Write `/output/reconciliation.json` (episodes map with roster_final, borrow_peer, payload_digest, fragment_digest, decision), materialize `/output/restored/`, and leave a successful recovery stamp at `/output/meta/run.stamp`. Leave `/app/data/` and `/app/bin/fleetpeek` byte-identical to the packaging digests under `/app/packaging/`.

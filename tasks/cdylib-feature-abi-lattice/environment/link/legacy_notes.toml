@@ -1,3 +1,0 @@
-# Pre-cutover expectations retained for operators. Not authoritative.
-soname = "libnuclide.so.1"
-symbol_versions = ["NEXUS_1"]

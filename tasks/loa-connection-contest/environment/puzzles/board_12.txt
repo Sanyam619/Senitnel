@@ -1,7 +1,0 @@
-round_id: 12
-to_move: black
-board:
-.B..
-....
-WW..
-BW.B

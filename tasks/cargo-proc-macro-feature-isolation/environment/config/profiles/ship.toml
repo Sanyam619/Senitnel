@@ -1,5 +1,0 @@
-# Declared install roots for matrix profile names.
-# Matrix cells that request ship/field must resolve through these files.
-
-libdir_suffix = "release"
-pack_width = 8

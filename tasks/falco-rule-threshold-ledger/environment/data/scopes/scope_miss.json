@@ -1,7 +1,0 @@
-{
-  "container_id": "dev-worker-1",
-  "labels": {
-    "app": "worker",
-    "env": "dev"
-  }
-}

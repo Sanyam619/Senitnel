@@ -1,3 +1,0 @@
-id=spool-flush
-service=spool-flush.service
-base=/var/spool/outbound

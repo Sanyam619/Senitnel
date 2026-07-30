@@ -1,9 +1,0 @@
-#!/bin/bash
-# Operator display from mirror/view work sheets.
-set -euo pipefail
-M="${MIRROR_OUT:-/var/lib/keepalived/ops/work/mirror.txt}"
-V="${VIEW_OUT:-/var/lib/keepalived/ops/work/view.txt}"
-echo "=== mirror ==="
-[[ -f "$M" ]] && cat "$M" || echo "(empty)"
-echo "=== recent ==="
-[[ -f "$V" ]] && cat "$V" || echo "(empty)"

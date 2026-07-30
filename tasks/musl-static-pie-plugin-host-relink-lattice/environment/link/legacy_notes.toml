@@ -1,6 +1,0 @@
-# Pre-cutover expectations retained for operators. Not authoritative.
-
-[legacy]
-tls_model = "initial-exec"
-plugin_abi = "v0"
-note = "glibc builder lane historical defaults"

@@ -1,4 +1,0 @@
-tip tip_g6
-epoch 6
-kind grouped
-group 4

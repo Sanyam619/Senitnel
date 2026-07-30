@@ -1,9 +1,0 @@
-# Scratch session — flying dialect.
-board_id: hist_02
-to_move: white
-moves_left: 1
-white:
-a7 d7 b2
-black:
-a4 c5 e3
-# Flying close: W:b2-g7

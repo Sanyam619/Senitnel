@@ -1,8 +1,0 @@
-{"tip": "tip_g3", "epoch": 2, "sealed": true, "horizon": 2, "scaler": "train_only", "shift": 0.01}
-{"tip": "tip_g7", "epoch": 4, "sealed": true, "horizon": 3, "scaler": "train_only", "shift": 0.0}
-{"tip": "tip_g5", "epoch": 3, "sealed": true, "horizon": 3, "scaler": "train_only", "shift": 0.008}
-{"tip": "tip_g9", "epoch": 7, "sealed": true, "horizon": 5, "scaler": "global", "shift": -0.045}
-{"tip": "tip_live", "epoch": 9, "sealed": false, "horizon": 6, "scaler": "global", "shift": -0.06}
-{"tip": "tip_g7", "epoch": 4, "sealed": true, "horizon": 3, "scaler": "train_only", "shift": 0.0}
-{"tip": "tip_g4", "epoch": 1, "sealed": true, "horizon": 2, "scaler": "train_only", "shift": 0.012}
-{"tip": "tip_live", "epoch": 9, "sealed": false, "horizon": 6, "scaler": "global", "shift": -0.06}

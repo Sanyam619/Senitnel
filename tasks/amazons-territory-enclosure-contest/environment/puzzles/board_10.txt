@@ -1,8 +1,0 @@
-board_id: 10
-to_move: white
-board:
-XX.XB
-X.X.X
-X.X.X
-XXBXW
-.W.XX

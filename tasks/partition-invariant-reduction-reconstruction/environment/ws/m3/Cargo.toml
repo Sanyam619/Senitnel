@@ -1,7 +1,0 @@
-[package]
-name = "m3"
-version.workspace = true
-edition.workspace = true
-
-[dependencies]
-serde = { version = "1", features = ["derive"] }

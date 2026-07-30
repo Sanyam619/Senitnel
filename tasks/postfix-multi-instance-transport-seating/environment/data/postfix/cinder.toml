@@ -1,3 +1,0 @@
-name = "cinder"
-queue_dir = "/var/spool/postfix-cinder"
-host = "127.0.0.14"

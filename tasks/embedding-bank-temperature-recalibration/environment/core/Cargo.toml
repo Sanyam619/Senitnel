@@ -1,8 +1,0 @@
-[package]
-name = "bevel_core"
-version = "0.4.2"
-edition = "2021"
-build = "build.rs"
-
-[lib]
-path = "src/lib.rs"

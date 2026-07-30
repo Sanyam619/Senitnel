@@ -1,7 +1,0 @@
-[package]
-name = "trustwalk"
-version = "0.1.0"
-edition = "2021"
-[[bin]]
-name = "trustwalk"
-path = "src/main.rs"
