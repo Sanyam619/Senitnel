@@ -1,0 +1,59 @@
+Changelog
+
+Sentinel Ultra Contributor Guidelines
+
+JUL 27, 2026
+Added an FAQ entry on nonzero exit-code agent errors: after the usual troubleshooting (local Docker build, tests.patch applies to base, raising the agent timeout), removing the curl package install from environment/Dockerfile is the current workaround for a known Harbor edge-case bug affecting a small subset of tasks.
+Corrected the task.toml network guidance (reverses the earlier "remove network_mode/allowed_hosts" instruction): network_mode is a per-block field — set [environment] to "public", [agent] to "allowlist" with allowed_hosts = ["api.portkey.ai"], and [verifier] to "no-network". Updated the Harbor [environment]/[agent]/[verifier] reference and example task.toml, plus the Tasking Guide checks. Separately, remove network_mode = "none" from docker_compose.yaml if present.
+Corrected the environment build guidance: the Dockerfile may use the network at build time (tasks were never required to build offline). The run-time sandbox is still restricted — the solving agent reaches only the model gateway and the verifier runs airgapped. Reworded the "build offline" checklist item and Detailed Tasking step 3 to focus on reproducible builds (bake test dependencies into the image); the curl workaround is unchanged.
+JUL 25, 2026
+Added a "How to zip the task" note under Git — fixable in the repo: zip the flat contents of task/ (not runs/) with a tool that preserves directory entries (zip -r does; zip -rD and some GUI tools don't), since silently dropping the empty .git/refs/ that git gc leaves behind breaks the repo on the platform.
+JUL 23, 2026
+We've made an update to help unblock tasks affected by the difficulty check / timeout issues: the [agent] timeout_sec ceiling has been raised to 7200 (up from 3600). Please update your tasks to the new max value and resubmit.
+JUL 22, 2026
+Git issues are now fixable rather than mostly Not Fixable. Added a "Git — fixable in the repo" panel under What you can edit, with an issue → why → fix table and a pre-submission checklist: the shipped repo's HEAD is the source of truth, so ECs do git work inside environment/repo and re-zip — cleaning metadata (remotes, leaked branches/tags, reflog, oversized .git) and realigning task.toml to HEAD — but still never edit the repo's tracked source files. Slimmed the Environment panel to Dockerfile/build/resource issues, retitled Repo files → "Repo source files — never edit", and updated the Tasking Guide git-hygiene note and the FAQ to match.
+JUL 15, 2026
+Tasking Guide: renumbered the Submitter Form sections to be sequential — Section 3 · Run Evals (was Section 4) — and nested Quality Check — the agentic rubric-panel judge underneath it as a subsection. Section 1, Section 2, and Section 3 are now h3 headings (were h4) so they surface in the left-nav table of contents.
+Extended the left-nav table of contents to a third heading level (h4) nested under h3, so subsections like Quality Check show up indented under their parent section instead of only top-level headings appearing.
+JUL 13, 2026
+Quality Check is now the agentic rubric-panel judge (blocking). Two LLM judges (Claude Opus + GPT-5.5) score every submission against four rubrics (instruction, tests, oracle, packaging — 10 axes), with a third adjudicator settling disagreements. The verdict is driven by test coverage and test faithfulness: tasks scoring ≤ 3 on either axis return `NEEDS_REVISION`, and six patterns (silent skips, no CLI invocation, existence-only checks, agent-controlled coverage, fail-open tests, hidden requirements) fail outright. Added a test-writing Do/Don't checklist under Tasking Guide → Section 3 · Run Evals.
+Added a "Before You Upload" pre-submission hygiene checklist to the Tasking Guide (tests.patch applies to base, pre-existing regression tests untouched, offline Docker build, clean git history, no stray artifacts, task.toml sanity, full local dry run).
+Detailed Tasking Steps now direct ECs to test in Harbor locally — build the environment (`docker build environment/`) and run the oracle (`solve.sh` → tests → reward 1.0) — replacing the earlier "you are not building or running the image" guidance. Local oracle/NOP runs are now recommended (not optional) for Fixable tasks.
+JUL 3, 2026
+Reverted the solution patch file name back to `golden.patch` (it was briefly renamed to `solution.patch` on Jul 1). Updated across the task structure tree, Rewriting the Oracle, Harbor evaluation note, Tasking Guide step 4, and the Glossary. Added a note under the task structure tree telling ECs to rename `solution.patch` to `golden.patch` if they see it in a downloaded task.
+JUL 1, 2026
+Task difficulty: added guidance that an easy task is often overly prescriptive — remove context the agent should discover, and balance context so the task is passable but not instructional.
+What you can edit: converted the section into collapsible per-component panels (Instructions, Tests, Solution & oracle, Environment, Repo files), with example `config.json` and `test.sh` inside the Tests panel and the Fixable / Not-Fixable environment tables folded into the Environment panel.
+Verifiability: split into collapsible panels (alignment, 10+ fail-to-pass tests, outcome-based, regression, deterministic, oracle-independent, arbitrary naming) for easier scanning.
+Environment: added a reminder that `problem_statement.md` must be an exact copy of `instruction.md` until packaging automates it.
+Clarified local runs: Valid as-is submissions should run the oracle and NOP locally before submitting; for Fixable it's optional since the evals run on submission.
+Added an FAQ tab (now in the top nav) with starter questions: daily task limits, choosing Valid as-is / Fixable / Not Fixable, broken environments, running the oracle/NOP locally, and PR scope vs. adding complexity. Removed the FAQ shortcut from Quick Links.
+Sprinkled a few small Dr. Bubbles across the site for fun (Harbor, FAQ, Guidelines, Tasking Guide, Glossary).
+Renamed the solution patch to `solution.patch` (formerly `init_state.patch`) across the task structure, Rewriting the Oracle, and Glossary.
+`task.toml`: updated the metadata reference and example to the current structure — dropped the `[task]` and `[solution]` sections, the `docker_image`/`workdir` fields, and the pass@k fields; documented the resource/timeout limits (cpus, memory, storage, gpus, build/agent/verifier timeouts); and noted that `network_mode`/`allowed_hosts` should be removed. Added a step to check `task.toml` on every task.
+JUN 30, 2026
+Updated the task file layout to match the current client spec: `solution/` now holds `solve.sh` + `solution.patch`; `tests/` holds `test.sh`, `tests.patch`, `config.json`, and `grade.py` (fail-to-pass/pass-to-pass ids are declared in `config.json`); `environment/` adds `problem_statement.md`.
+Reworked the `task.toml` metadata reference to the current schema (`[task]`, `[environment]` with pinned `docker_image` and `no-network`, `[agent]`, `[verifier]`, `[solution]`, `[metadata]` with `category`, `difficulty_explanation`, and `pass_at_k_*`).
+Listed the exact git-hygiene criteria under the Dirty git history environment issue.
+Restructured the guide around its purpose: a lifecycle intro, a primed "Your Role" overview, a combined "PR Scope and Task Difficulty" section, and the core principles reorganized into four — Solvability, Clarity & No Leakage, Verifiability, and Authenticity.
+Added oracle expectations (match the canonical upstream fix; no unnecessary changes) and a new Glossary tab that cross-links each term to the section covering it.
+Tasking Guide: removed the outdated standalone "Issue categories" block (superseded by the Not Fixable branch, which now matches the platform form), fixed broken Google-Docs cross-references, and linked the "What makes this task difficult?" question to PR Scope and Task Difficulty.
+JUN 26, 2026
+Added Test Suite Requirements: every task must ship with at least 10 fail-to-pass tests (ideally 10–20). Tasks with fewer are Fixable — add tests covering stated or implied requirements during the rewrite.
+Synced the Tasking Guide submitter and reviewer walkthroughs with the latest platform form: added the ≥10 fail-to-pass test confirmation/issue items, a "what makes this task difficult?" question, and a free-text "how did you add to the PR?" field; replaced the Fix Validation checklist with the Static Checks / Difficulty / Oracle / Quality submission-feedback flow; added Dirty git history to the Not Fixable environment issues; and updated the reviewer error categories and 1–5 quality scale.
+Removed the Override Difficulty Evals section from the Run Evals walkthrough (the checkbox was removed from the platform).
+JUN 25, 2026
+Updated Fixable verdict criteria to include solution leakage and oracle/instruction misalignment as fixable issues
+Updated Not Fixable criteria to match the two platform categories: PR scope reduction and environment issues
+Submitter form walkthrough fully restructured to match current platform form: added Valid as-is compliance checklist, Fixable issue checklist and post-fix confirmation, Invalid/Not Fixable primary category selection, and timing questions; removed questions no longer in the form
+Reviewer form walkthrough updated to include the Accept confirmation checklist
+Added note that the Task Analysis question appears twice in the platform and both responses must match
+Upload format clarified: download contains `task/` + `runs/` folders; upload should be flat contents of `task/` only
+JUN 24, 2026
+Moved sections around: moved Verdict section, PR Scope rules, and Core Principles up; moved editable content and how-to-rewrite sections into one section; moved Harbor background info into appendix
+Moved some info in Verdict section and Core Principles section into tables
+Removed duplicate info (test alignment table, some info about oracle writing/PR expansion)
+Removed reference to 2-hour time limits
+Added guidance that task validity question will be required twice in the EC form
+Added new guidance for task uploads: upload should be flat contents of `task/` only — do not include `runs/` or the `task/` folder itself
+Added references to new AHT questions

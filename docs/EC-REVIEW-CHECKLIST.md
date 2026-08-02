@@ -19,7 +19,7 @@ Print or keep open while reviewing. Goal: **Accept** (quality score 4–5).
 
 ## Phase 3 — Tests (most rejections happen here)
 
-- [ ] Count fail-to-pass in `config.json` — **≥10**
+- [ ] Count fail-to-pass in `config.json` — **10–20** (platform rejects >20)
 - [ ] Map each instruction requirement → ≥1 test (coverage)
 - [ ] Map each test assertion → instruction or derivable name (faithfulness)
 - [ ] Regression test: reproduces original bug (fail pre-fix, pass post-fix)
@@ -35,7 +35,7 @@ Print or keep open while reviewing. Goal: **Accept** (quality score 4–5).
 - [ ] Matches source PR (+ documented expansion only)
 - [ ] Substantive: ~100+ lines, 2+ files
 - [ ] No unrelated refactors in patch
-- [ ] Local oracle → reward **1.0**
+- [ ] Local oracle → reward **1.0** (required for Valid-as-is; recommended for Fixable)
 
 ## Phase 5 — Environment & packaging
 
@@ -61,7 +61,7 @@ Print or keep open while reviewing. Goal: **Accept** (quality score 4–5).
 ./scripts/zip-task.sh tasks/active/<task>
 ```
 
-- [ ] Upload zip → run evals until all green
+- [ ] Upload zip → run evals until all green (see `PLATFORM-TRIAGE.md` for infra vs task failures)
 - [ ] Quality Check: test_coverage + test_faithfulness OK
 - [ ] Fill submission form using `templates/submission-notes.md`
 

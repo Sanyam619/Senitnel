@@ -12,9 +12,13 @@ Only **test_coverage** and **test_faithfulness** drive pass/fail.
 |---------|-----------|
 | **REMOVE** | Adjudicated score ≤2.0 on either test axis, OR essential auto-fail pattern |
 | **DISCUSS** | Any judge ≤2 on test axis, OR adjudicated ≤3.0 |
-| **OK** | Both test axes >3.0, no judge ≤2 |
+| **OK** | Both test axes **>3.0**, no judge ≤2 |
 
-**Practical bar:** both judges rate tests **4+** on coverage and faithfulness.
+**Platform pass bar:** both axes must land **above 3.0** — exactly 3.0 (or any judge at 2 or
+below) → needs revision.
+
+**EC safety margin (recommended, not platform threshold):** aim for both judges **4+** on
+coverage and faithfulness — don't ship borderline.
 
 ## The two test questions
 
@@ -67,7 +71,7 @@ If a judge scores ≤2 and cites one of these, task is removed outright:
 2. For each, find ≥1 test assertion (coverage)
 3. List every assertion in patched tests
 4. For each, find instruction grounding or derivable codebase name (faithfulness)
-5. Count f2p entries in `config.json` — need ≥10
+5. Count f2p entries in `config.json` — need **10–20** (platform rejects >20)
 6. Grep tests for `skip`, `pytest.importorskip`, bare `exists()`, `try:...except: pass`
 
 ```bash

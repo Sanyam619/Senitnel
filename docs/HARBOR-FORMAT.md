@@ -80,7 +80,7 @@ source                 = "https://github.com/org/repo/pull/1234"
 }
 ```
 
-**fail_to_pass** must have **≥10** entries.
+**fail_to_pass** must have **10–20** entries (platform static check rejects >20).
 
 ## test.sh pattern
 
@@ -118,4 +118,4 @@ git apply --check ../../tests/tests.patch   # verify
 - Pin base image tag (never `:latest`)
 - Install tmux, asciinema if Harbor needs them
 - Bake test dependencies into image
-- Known edge case: try removing `curl` if agent nonzero exit persists
+- Known edge case: try removing `curl` from Dockerfile if agent nonzero exit persists (see `PLATFORM-TRIAGE.md`)

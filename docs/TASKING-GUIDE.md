@@ -10,7 +10,7 @@
 6. `./scripts/sync-problem-statement.sh` after instruction edits
 7. `./scripts/preflight.sh` — fix all failures
 8. `./scripts/zip-task.sh` → upload flat zip (no `runs/`)
-9. Run platform evals → iterate until pass
+9. Run platform evals → iterate until pass (~5 min limit per eval batch)
 10. Check **Send to reviewer** → submit
 
 **Throughput:** max 2 tasks in "pending revision" at once.
@@ -40,7 +40,7 @@
 ### 5. Review tests
 - `tests/tests.patch` = fail-to-pass tests
 - `tests/config.json` = f2p / p2p lists + execution
-- Count f2p: need **≥10**
+- Count f2p: need **10–20** (platform static check rejects >20)
 - Every instruction requirement has a test
 - Every assertion maps to instruction
 - NOP locally → reward **0.0**
@@ -48,7 +48,21 @@
 ### 6. Review runs/ (reference only — do not upload)
 - Timeouts, systematic misinterpretation, instability
 
-### 7. Platform evals
+### 7. Full local dry run
+
+**Valid as-is (required):** oracle reward 1.0, NOP reward 0.0 — platform does not re-run
+difficulty evals on Valid-as-is.
+
+**Fixable (recommended):** same; saves an eval round-trip.
+
+```bash
+docker build -t task-env environment/
+# oracle: apply golden.patch via solution/solve.sh → tests → reward 1.0
+# NOP:    tests on unsolved repo → reward 0.0 (f2p fail, p2p pass)
+./scripts/preflight.sh tasks/active/<task> --docker --harbor   # if harbor CLI installed
+```
+
+### 8. Platform evals
 Static → Oracle → Difficulty → **Quality Check** (blocking)
 
 ## Before You Upload checklist
@@ -111,4 +125,9 @@ Confirm all requirement checkboxes before submit.
 | Needs Revision | Task still has fixable errors |
 | Reject | Max revisions reached |
 
-Target **submission quality score 4–5**.
+Target **submission quality score 4–5**. Full reviewer playbook: `docs/REVIEWER-GUIDE.md`.
+
+## Platform triage
+
+When evals fail or return blank feedback, read `docs/PLATFORM-TRIAGE.md` before rewriting the task.
+Use `stb submissions list` to check submission status.

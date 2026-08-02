@@ -25,14 +25,15 @@ mistakes to Standing rules.
 | `tasks/out/<name>.zip` | Upload to Snorkel |
 
 Always read first: `docs/EC-LEARNINGS.md` (standing rules), `AGENTS.md`, `docs/GUIDELINES.md`,
-`docs/EC-REVIEW-CHECKLIST.md`, `docs/QUALITY-CHECK.md`, `docs/HARBOR-FORMAT.md`, `docs/GIT-HYGIENE.md`.
+`docs/EC-REVIEW-CHECKLIST.md`, `docs/QUALITY-CHECK.md`, `docs/HARBOR-FORMAT.md`, `docs/GIT-HYGIENE.md`,
+`docs/PLATFORM-TRIAGE.md`, `docs/SKIP-GUIDE.md`.
 
 ---
 
 ## Hard rules (every step)
 
 1. Never edit tracked files in `environment/repo/` (git metadata only).
-2. ≥10 fail-to-pass tests in `tests/config.json`.
+2. **10–20** fail-to-pass tests in `tests/config.json` (platform rejects >20).
 3. pass-to-pass files unchanged at base — add tests only via `tests/tests.patch`.
 4. PR scope: expand OK; reduce/replace → **Not Fixable**.
 5. After any `instruction.md` edit: `./scripts/sync-problem-statement.sh tasks/active/<name>`.
@@ -60,7 +61,7 @@ Read the unpacked task under `tasks/active/` (and `tasks/active/<name>_runs/` if
 2. Whether `runs/` exists — one-line summary of agent failures/timeouts if so
 3. Sanity: `instruction.md`, `task.toml`, `environment/repo/.git`, `tests/config.json`,
    `tests/tests.patch`, `solution/golden.patch`, `environment/Dockerfile` all present?
-4. Fail-to-pass count from `config.json` (need ≥10)
+4. Fail-to-pass count from `config.json` (need **10–20**)
 5. Source PR URL from `task.toml` `[metadata].source`
 6. **Continue to Step 1** OR list blockers (corrupt zip, missing repo, patch won't apply)
 
@@ -83,20 +84,24 @@ Read the active task: `instruction.md`, `task.toml`, `environment/Dockerfile`, s
 
 If **Not Fixable**, cite the specific rule from `docs/GUIDELINES.md` and **stop**.
 
+If **skip** criteria in `docs/SKIP-GUIDE.md` match (e.g. Difficulty FAIL EASY with ~100% agent
+pass after QC/oracle OK), recommend skip with platform radio + copy-paste reason — **do not**
+continue to Step 2 unless user insists.
+
 ### PR anchor
 Source PR vs what instruction + `golden.patch` implement. Scope expansion present or needed?
 
 ### Four principles (pass/fail + one-line evidence each)
 1. Solvable
 2. Clarity & no leakage
-3. Verifiable (≥10 f2p, outcome-based, deterministic)
+3. Verifiable (**10–20** f2p, outcome-based, deterministic)
 4. Authentic (~100+ lines, 2+ files, real engineering ask)
 
 ### Issue list
 Numbered, file refs, tagged: `Instructions` | `Tests` | `Oracle` | `Dockerfile` | `Git` | `Metadata`
 
 ### Test inventory
-- f2p count vs minimum 10
+- f2p count vs **10–20** range
 - p2p count
 - skip / skipif / fail-open / exists-only / overreach patterns?
 
@@ -110,6 +115,7 @@ Common agent failure modes if `runs/` exists.
 - **Valid as-is** → skip Step 2, go to Step 3
 - **Fixable** → continue to Step 2
 - **Not Fixable** → stop
+- **Skip** → stop; give platform radio + reason from `docs/SKIP-GUIDE.md`
 
 ---
 
@@ -161,11 +167,20 @@ Fix everything needed for Snorkel **Accept**. Work in `tasks/active/<name>/`.
 ./scripts/sync-problem-statement.sh tasks/active/<name>
 ./scripts/preflight.sh tasks/active/<name> --docker
 ```
-Add `--harbor` if harbor CLI is available.
 
-### Part C — Oracle/NOP (if harbor ran)
-- Oracle reward = 1.0?
-- NOP reward = 0.0?
+**Valid as-is (required):** also run oracle + NOP locally — platform does not re-run difficulty
+evals on Valid-as-is. Use Harbor if installed:
+```bash
+./scripts/preflight.sh tasks/active/<name> --docker --harbor
+```
+If harbor CLI unavailable, run oracle/NOP manually per `docs/TASKING-GUIDE.md` before upload.
+
+**Fixable (recommended):** add `--harbor` when available; platform runs evals on submit but
+local run saves an eval round-trip.
+
+### Part C — Oracle/NOP
+- Oracle reward = **1.0**?
+- NOP reward = **0.0**?
 
 **Report:** `READY FOR UPLOAD` yes/no. If no, exact blockers with file refs.
 
@@ -205,7 +220,8 @@ Write copy-paste Snorkel platform form content (plain engineer tone). Use
 
 1. **Verdict** — Invalid/Not Fixable (pick same twice)
 2. **Issue checkboxes** — PR scope change/reduction and/or Environment Issues
-3. **Environment sub-issues** — if Environment checked: build failures / oracle timeout / external network
+3. **Environment sub-issues** — if Environment checked: build failures / oracle timeout /
+   external network / **dirty git history that can't be recovered** (rare — most git issues are fixable)
 4. **Why unfixable (required)** — detailed explanation with GUIDELINES citation and evidence
 5. **Optional upload note** — what to include if uploading investigation zip
 6. **What makes this task difficult?**
@@ -226,7 +242,8 @@ Write copy-paste Snorkel platform form content (plain engineer tone). Use
 
 Also print the internal pre-submit checklist (not pasted into form).
 
-Tell the user to upload `tasks/out/<name>.zip` to Snorkel and run evals.
+Tell the user to upload `tasks/out/<name>.zip` to Snorkel and run evals (~5 min platform
+limit per eval batch — iterate before checking Send to reviewer).
 
 Then **append a session log entry to `docs/EC-LEARNINGS.md`** (see template there).
 
@@ -255,7 +272,7 @@ Run sync-problem-statement. Re-check coverage/faithfulness. Continue Step 3.
 **When:** Step 1 or platform eval flags test gaps, overreach, skips, or fail-open patterns.
 
 Work on `tests/` only:
-- ≥10 f2p in `config.json`
+- **10–20** f2p in `config.json`
 - Every instruction requirement → ≥1 assertion
 - Every assertion → instruction or derivable name
 - Hard edge cases, not trivial exists/touch checks
@@ -281,7 +298,9 @@ Never edit tracked repo files directly. Continue Step 3.
 ### If platform eval fails after upload
 **When:** User pastes Snorkel eval / Quality Check output.
 
-For each failure:
+**First:** Read `docs/PLATFORM-TRIAGE.md` — classify infra vs task defect before editing.
+
+For each **task** failure:
 1. Quote exact failure message
 2. Root cause in task files (cite path)
 3. Minimal fix
@@ -293,16 +312,14 @@ Re-run preflight `--docker`. Re-zip (Step 4). Summarize re-upload steps.
 ---
 
 ### If form asks for difficulty / solution / verification blurbs
-**When:** Snorkel submission form needs the three explanation fields.
+**When:** Snorkel submission form includes free-text explanation fields (wording varies by form version).
 
-Read instruction, tests, solution. Write exactly:
+Read instruction, tests, solution. Write 2–3 lines each in informal engineer tone:
+- **Why this task is hard** — genuine complexity (exploration, edge cases, multi-file reasoning)
+- **Solution approach** — main idea of the fix (no file paths unless necessary)
+- **How tests verify** — outcome-based checks aligned with instruction
 
-**Difficulty Explanation** — must start with: `This task is hard because`
-**Solution Explanation** — overall approach, main idea
-**Verification Explanation** — must start with: `The tests checks`
-
-Each section 2–3 lines. Informal engineer tone. Based on what the task actually tests.
-No file names or code paths unless absolutely necessary.
+If the live form uses different field labels, match what you see on screen.
 
 ---
 
@@ -324,7 +341,9 @@ f2p count, upload-ready, zip path.
 | **"I added foo.zip"** | Steps 0 → 1 → 2 → 3 → 4 automatically |
 | Upload `tasks/out/foo.zip` | |
 | Run evals on Snorkel | |
-| Paste eval error | "If platform eval fails" branch |
+| Paste eval error | "If platform eval fails" branch + `docs/PLATFORM-TRIAGE.md` |
+| Eval says FAIL EASY / skip task | `docs/SKIP-GUIDE.md` — radio + reason text |
+| Check submission status | `stb submissions list` (see `PLATFORM-TRIAGE.md`) |
 | Need difficulty blurbs | "If form asks for difficulty" branch |
 
 **Optional overrides** (say any time):

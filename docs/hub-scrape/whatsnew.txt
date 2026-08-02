@@ -1,0 +1,29 @@
+What's New
+
+Latest updates to the Sentinel Ultra contributor guidelines
+
+📢 LATEST UPDATE
+Network fields in task.toml have changed
+
+Network access is now set per block — [environment] "public", [agent] "allowlist" with allowed_hosts, and [verifier] "no-network". Also remove network_mode = "none" from docker_compose.yaml if present.
+
+See the updated task.toml structure →
+Recent updates
+Jul 31, 2026
+Quality Check pass bar clarified. On coverage and faithfulness (scored 1–5), a task must land above 3 on both axes to pass — exactly 3 (or any single judge at 2 or below) sends it to needs-revision, and 2 or below is a hard fail. Don't ship borderline. Quality Check judge →
+Jul 31, 2026
+An eval failed with an infra error, or came back with blank feedback? A platform failure (Daytona/rate-limit errors, a one-off nonzero exit, "No evaluation information available") is not a task defect — don't mark the task Unfixable and don't burn a revision slot resubmitting blindly. Retry, and flag it with the UID if it persists. FAQ →
+Jul 30, 2026
+Linter rejects a task as "easy" after a difficulty downgrade? Known issue — don't hand-edit the task.toml pass-rate/difficulty fields to fight the linter. Flag it on Slack with the UID and the two conflicting values. FAQ →
+Jul 30, 2026
+Checking submission status. Use stb submissions list from the CLI — it's the source of truth if the GUI is lagging or a task flickers in and out. FAQ →
+Jul 27, 2026
+Builds can use the network at build time. Tasks were never required to build offline; the run-time sandbox stays restricted (agent reaches only the model gateway, verifier airgapped). Before You Upload →
+Jul 27, 2026
+Nonzero exit-code agent error? After the usual troubleshooting, try removing curl from your environment/Dockerfile — a known Harbor edge case. FAQ →
+Jul 23, 2026
+Agent timeout ceiling raised to 7200. The [agent] timeout_sec max is now 7200 (up from 3600) — update affected tasks and resubmit. Task Metadata →
+Jul 22, 2026
+Git issues are now fixable. Leaked history, a remote, a HEAD/base mismatch, a reflog, or an oversized .git no longer make a task Not Fixable — fix them in environment/repo and re-zip. Git — fixable in the repo →
+Jul 13, 2026
+Quality Check is now a blocking agentic judge. Two LLM judges score your task; a fail sends it to NEEDS_REVISION. Driven by test coverage and faithfulness. Quality Check judge →

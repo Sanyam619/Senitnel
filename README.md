@@ -45,6 +45,14 @@ See `docs/EC-REVIEW-CHECKLIST.md` and `docs/SENTINEL-PROMPTS.md`.
 |------|---------|
 | `docs/SENTINEL-PROMPTS.md` | **Agent playbook — user says "I added foo.zip"** |
 | `docs/EC-LEARNINGS.md` | **Standing rules + session log (agent reads/writes every time)** |
-| `docs/GUIDELINES.md` | Four principles, verdicts |
+| `docs/GUIDELINES.md` | Four principles, verdicts, environment/git rules |
+| `docs/TASKING-GUIDE.md` | Submission flow, before-upload checklist |
+| `docs/HARBOR-FORMAT.md` | Task layout, task.toml, config.json |
+| `docs/GIT-HYGIENE.md` | Git checks on `environment/repo/` |
 | `docs/QUALITY-CHECK.md` | What blocks platform evals |
+| `docs/PLATFORM-TRIAGE.md` | Infra vs task defects, CLI status, known issues |
+| `docs/REVIEWER-GUIDE.md` | Reviewer outcomes and quality score |
 | `docs/EC-REVIEW-CHECKLIST.md` | Review checklist |
+| `docs/SKIP-GUIDE.md` | When to skip + Snorkel skip reason templates |
+| `docs/hub-scrape/` | Static copy of official Sentinel Ultra Hub documentation |
+| `templates/submission-notes.md` | Snorkel form copy-paste templates |

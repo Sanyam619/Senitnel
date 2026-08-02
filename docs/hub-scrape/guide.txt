@@ -1,0 +1,198 @@
+Sentinel Ultra Contributor Guidelines
+
+LAST UPDATED: JULY 22, 2026
+
+Welcome to Sentinel Ultra
+Sentinel Ultra is Snorkel AI's initiative to build a high-quality dataset of Harbor-format software-engineering tasks, drawn from real open-source pull requests, commits, and issues. The dataset is used to train and evaluate frontier coding agents and models on realistic engineering work.
+
+Because of that purpose, the thing that matters most is that every task is correct, complete, and impossible to game — no errors, no gaps in coverage, and no way for an agent to pass without doing the real engineering work. Difficulty matters too, but the platform's evals help confirm a task clears the difficulty bar; your focus is on the errors and gaps that automated checks can't catch.
+
+How a task reaches you
+Each task starts from a real source (a PR, commit, or issue) and is packaged into the Harbor format. It then moves through:
+
+Authoring — the task is created from the source.
+Submission — an EC (you) reviews the task, decides whether it's valid, and fixes it if needed.
+Review — a second EC independently verifies the submission.
+Adjudication — a final pass resolves disagreements between submitter and reviewer.
+Delivery — accepted tasks are delivered to train and evaluate coding agents.
+
+These guidelines explain how to evaluate a task, identify issues, make corrections, and complete your submission successfully.
+
+If you are not familiar with the Harbor framework, review the Harbor documentation for terminology and layout. The Harbor Framework tab has important information on task structure and the task.toml fields you'll need to check on every task.
+
+Your Role as an Expert Contributor (EC)
+
+You will review Harbor tasks derived from real open-source pull requests and provide feedback through the Snorkel Experts platform. Each task asks an agent to navigate a codebase, understand the requirements, implement changes, and validate behavior through tests.
+
+Your role is to ensure tasks are solvable, clear, free of leakage, verifiable, and authentic — the five things the core principles below cover in depth:
+
+Solvable — completable from the instruction alone, by a competent engineer, within the task's limits.
+No arbitrary guesswork: every choice the tests require is stated or reasonably implied.
+Claims hold up: the instruction only references behavior, APIs, and files that actually exist in the repo.
+Clear — the instruction describes the problem and the expected behavior, not how to implement it.
+Not overly prescriptive (e.g. no "Where to look: [files]", no naming the exact functions to edit).
+Any required output format or schema is documented, not left to guesswork.
+Free of leakage — nothing in the task lets an agent shortcut the real work.
+No solution hints, PR links, or spoilers in the instruction or environment.
+No hidden test details exposed, and no way to pass by editing the tests.
+Verifiable — a sound, comprehensive test suite proves the behavior.
+At least 10 fail-to-pass tests, outcome-based (they run code and check real behavior).
+Includes a regression test, is deterministic, and doesn't depend on the solution.
+Authentic — a realistic, substantial engineering task.
+A plausible workflow (bug fix, feature, refactor), typically ~100+ lines across multiple files.
+Reads like real engineering communication, not a templated or AI-generated prompt.
+
+You're also responsible for keeping each task consistent with the scope of the source PR — you may expand on it to add complexity, but you may not reduce or replace it.
+
+Task verdicts
+
+When you receive a task in platform, you’ll give a verdict on which of the three states below the task falls into.
+
+VERDICT	WHEN IT APPLIES
+Valid as-is	Instruction, tests, and oracle all align with each other and with the source PR. No rewrite or edits are required.
+Fixable	The task has one or more of the issues below:
+
+• Instructions are overly prescriptive or expose verifier internals
+
+• Instruction reads as templated/AI-generated
+
+• Tests miss requirements stated in the instruction
+
+• Tests grade behavior that is not in the instruction, or rely on arbitrary names
+
+• Fewer than 10 fail-to-pass tests — add tests to reach at least 10 (ideally 10–20)
+
+• Task leaks solution information (e.g. PR URL in instruction, environment spoilers, test-gaming shortcuts)
+
+• Oracle does not implement the solution following the instructions
+
+• Overall task is too easy — but you can raise difficulty by adding to the PR scope
+
+• A specific, listed Dockerfile issue (see Environment section)
+
+• A git-hygiene issue in the shipped repo — leaked fix history, a remote, a HEAD/base-commit mismatch, reflog, an oversized .git (see Git section)
+Not Fixable	Either of:
+
+• PR scope needs to be changed or reduced — the only way to make the task valid is to reduce or replace the PR scope entirely
+
+• Environment Issues — the environment has issues ECs aren't allowed to fix (see Environment section)
+
+If Not Fixable, you’ll give the reasons in the submission form (see Part B).
+
+The four core principles
+
+Apply these to every task — together they determine the verdict. Two of them — Clarity & No Leakage and Verifiability — are two sides of the same goal: making a task impossible to reward-hack, so an agent has to do the real engineering work to pass.
+
+	PRINCIPLE	WHAT TO CHECK
+1	Solvability	A competent engineer can solve it from the instruction alone, within limits.
+2	Clarity & No Leakage	Describes the problem and behavior — not the implementation — and reveals nothing exploitable.
+3	Verifiability	A sound, comprehensive, outcome-based test suite that can't be gamed.
+4	Authenticity	A realistic, substantial engineering task that reads like real communication and matches the PR.
+1 Solvability
+
+A task is valid only if a competent engineer can solve it from the instruction alone — within the task's time and resource limits, and without guessing arbitrary implementation choices.
+
+No unsupported claims: the instruction must only reference behaviors, APIs, files, or repo structure that actually exist in the pinned repository. If it describes something that isn't there, the task isn't solvable as written.
+
+2 Clarity & No Leakage
+
+The instruction should give an engineer enough to solve the task without telling them how to implement it and without revealing the answer. This principle has two failure modes — over-prescription and leakage — and together they are how most reward-hacking sneaks in.
+
+Signs an instruction is overly prescriptive:
+Says "Where to look:" followed by a list of the relevant files.
+Names the exact hidden test, fixture, mock endpoint, cassette, or harness file used to grade the task.
+Explains how the verifier proves success instead of describing user- or API-visible behavior.
+Identifies exact internal functions, branches, comprehensions, or callbacks to edit when a behavioral description would do.
+Provides root-cause analysis that removes the need to inspect the code.
+Says "the tests reference this name" or "this file validates the fix."
+Copies exact assertion strings, state paths, or fixture values from tests — unless they're a genuine public/API contract.
+
+Document required output formats. If the task requires a specific output format, schema, or API response shape, state that format in the instruction (or a clearly referenced file in the environment). Describing the expected shape is necessary and is not leakage — leaving it to guesswork is what breaks solvability.
+
+No leakage
+
+Tasks must not leak the solution. Check for:
+
+PR leakage: PR URLs, titles, numbers, or commit SHAs in the instruction that let an agent scrape the fix.
+Environment spoilers: commit messages, comments, or docs in the base repo/Docker setup that describe the exact change.
+Test-modification gaming: loose test constraints that can be satisfied by editing the test files instead of the implementation.
+3 Verifiability
+
+Tests are the ground truth for a task. They must comprehensively and fairly verify the required behavior, and they must be impossible to game.
+
+When you run evals, an agentic rubric-panel judge now scores these two directions mechanically as test_coverage and test_faithfulness, and a failing verdict blocks submission. See Quality Check — the agentic rubric-panel judge in the Tasking Guide for the verdict logic, the six auto-fail patterns, and the test-writing checklist.
+
+Test ↔ instruction alignment
+At least 10 fail-to-pass tests
+Outcome-based tests
+Regression test required
+Deterministic and fast
+Independent of the oracle
+The arbitrary naming problem
+4 Authenticity
+
+A valid task looks like real engineering work and reads like real engineering communication.
+
+Substantial and agentic. The task must require genuine code exploration, multi-step reasoning, and real changes — not a one-line edit or a zero-shot generation. As a rule of thumb, the underlying fix is roughly 100+ lines across two or more files. A task solvable by a trivial edit, or that is really a contrived puzzle with no real-world analogue, is not authentic.
+
+Reads like a real engineering ask. A good instruction matches one natural persona:
+
+Casual/Slack-like — direct, assumes domain knowledge.
+Structured ticket — Summary / Steps to Reproduce / Expected Behavior.
+Technical memo — professional refactor/logic context.
+Prose/email — a peer or tech lead explaining context and impact.
+Acceptance criteria — bulleted "when X, the system should Y."
+
+Red flags: robotic phrasing ("The system shall…", "It is required that…"), tone that mismatches the persona, structure identical across many tasks, or writing that reads like code documentation rather than a task assignment.
+
+PR ↔ instruction alignment. The instruction must ask for the same change as the PR (bug X → describes bug X; feature Y → requests feature Y). If you expanded scope, it should still be the original PR plus your additions — not a different task.
+
+PR Scope and Task Difficulty
+Task difficulty
+
+Sentinel tasks train and evaluate frontier coding agents, so they have to be genuinely hard — an easy task gives no useful signal. By the time a task reaches you it has already passed our difficulty checks, so you don't need to judge difficulty from scratch (it's also why the difficulty evals don't re-run on tasks you mark Valid as-is).
+
+Clearing the difficulty bar doesn't mean a task is free of other issues, though — and fixing those issues can pull difficulty back below the benchmark. When that happens, the platform's evals send the task back to you to raise it again.
+
+Troubleshooting task difficulty
+
+First, check for over-prescriptive instructions. Often an instruction hands the agent context it should have discovered itself — the files to touch, the root cause, or a step-by-step approach. Remove anything the agent could reasonably find by exploring the codebase (and any solution-revealing names or paths, which are also leakage), and describe the behavior you expect instead of the how.
+
+Balancing context is the crux of this work: a task needs enough context to be solvable, but not so much that it becomes instructional.
+
+If trimming isn't enough, expand the PR scope. When the source PR simply isn't complex enough, add to its scope so the task is genuinely harder (see the rules below).
+
+Keep any added difficulty real. Good difficulty comes from the problem itself — complex debugging, root-cause analysis, a substantial feature, or hard domain/security work. It must not come from vague or underspecified requirements, or from stapling unrelated changes together; those make a task confusing, not difficult, and a reviewer will flag them.
+
+PR scope rules
+
+When you fix a task, you can change the instruction, tests, and oracle — but you cannot change what the task is about. The source PR anchors what the task is.
+
+You may:
+✅ Add to the scope of the PR to make the task harder.
+
+Example: Original PR adds a /health endpoint. You extend it so the endpoint also handles auto-restart on failure.
+Example: Original PR fixes a single edge case in a date parser. You extend it to handle three additional edge cases.
+
+You may not:
+
+❌ Reduce the scope of the PR to make it more concise
+❌ Replace the PR with a different feature or task type entirely
+
+Example: Original PR is a bug fix. You can't rewrite it as a feature add.
+Example: Original PR is a refactor of module X. You can't rewrite it as a refactor of module Y.
+
+If the only way to make a task solvable, difficult enough, or valid is to reduce or replace the PR scope, the task is Not Fixable.
+
+Why this matters: The task is anchored to a real PR via task.toml. If the task no longer resembles the PR, the link is misleading and the dataset loses its grounding in real-world engineering work.
+
+What you can edit in a task, and how
+
+You can edit the instruction, tests, and solution, make limited fixes to the Dockerfile, and clean up git issues in the shipped repo — but never edit the repo's tracked source files. Expand each component for how to edit it well.
+
+✅ Instructions — editable
+✅ Tests — editable
+✅ Solution & oracle — editable in two cases
+⚠️ Environment — limited fixes
+✅ Git — fixable in the repo
+❌ Repo source files — never edit

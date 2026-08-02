@@ -20,6 +20,9 @@ REQUIRED_FILES = [
     "tests/config.json",
 ]
 
+MIN_F2P = 10
+MAX_F2P = 20  # platform static check rejects >20
+
 STRAY_GLOBS = [
     "**/__pycache__",
     "**/*.pyc",
@@ -31,6 +34,10 @@ STRAY_GLOBS = [
     "**/.DS_Store",
     "**/.idea",
     "**/.vscode",
+    "**/*.swp",
+    "**/*~",
+    "**/*.orig",
+    "**/*.bak",
 ]
 
 TEST_AUTO_FAIL_PATTERNS = [
@@ -41,8 +48,6 @@ TEST_AUTO_FAIL_PATTERNS = [
     (r"except\s+Exception\s*:\s*\n\s*pass", "Fail-open: bare except pass"),
     (r"if\s+not\s+\w+\.exists\(\)\s*:\s*\n\s*return", "Fail-open: exists guard return"),
 ]
-
-MIN_F2P = 10
 
 
 class Result:
@@ -144,9 +149,11 @@ def check_config_json(task: Path, r: Result, strict: bool) -> None:
     if not f2p:
         r.fail("tests/config.json: fail_to_pass is empty")
     elif len(f2p) < MIN_F2P:
-        r.fail(f"tests/config.json: only {len(f2p)} fail_to_pass tests (need ≥{MIN_F2P})")
+        r.fail(f"tests/config.json: only {len(f2p)} fail_to_pass tests (need {MIN_F2P}–{MAX_F2P})")
+    elif len(f2p) > MAX_F2P:
+        r.fail(f"tests/config.json: {len(f2p)} fail_to_pass tests (platform static check max {MAX_F2P})")
     elif len(f2p) < 15 and strict:
-        r.warn(f"Only {len(f2p)} fail_to_pass — aim for 10–20")
+        r.warn(f"Only {len(f2p)} fail_to_pass — aim for {MIN_F2P}–{MAX_F2P}")
 
     if not p2p:
         r.warn("tests/config.json: pass_to_pass empty — regression guard recommended")

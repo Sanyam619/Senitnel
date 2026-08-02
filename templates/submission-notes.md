@@ -189,6 +189,7 @@ Check all that apply:
 - [ ] Image/Dependency Build Failures
 - [ ] Oracle timeout
 - [ ] External-network dependency at build/solve time
+- [ ] Dirty git history that can't be recovered (rare — most git issues are fixable per `GIT-HYGIENE.md`)
 
 ---
 
@@ -316,7 +317,7 @@ Optional context for reviewer — assumptions, edge cases, anything worth flaggi
 
 ## Internal checklist (NOT on platform — verify before Submit)
 
-- [ ] ≥10 fail-to-pass in config.json
+- [ ] 10–20 fail-to-pass in config.json (platform rejects >20)
 - [ ] Coverage + faithfulness both directions
 - [ ] problem_statement.md == instruction.md
 - [ ] tests.patch applies to base commit

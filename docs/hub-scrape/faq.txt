@@ -1,0 +1,85 @@
+FAQ
+
+Frequently asked questions
+
+Common questions about working on Sentinel Ultra. If your question isn't here, reach out to the team on the Slack channel.
+
+Is there a daily limit to how many tasks I can do?
+
+As of July 1, 2026, there's no daily cap on how many tasks you can complete. There is one throughput rule: you can have at most two tasks in the "pending revision" stage at once. While you're at that limit, the platform won't let you claim a new task until one of those clears — so keep your in-revision tasks moving.
+
+How do I decide between Valid as-is, Fixable, and Not Fixable?
+Valid as-is — the task already meets every requirement; no changes needed.
+Fixable — the task has issues in the instructions, tests, and/or oracle, but you can correct all of them yourself.
+Not Fixable — the only way to make the task valid would be to reduce or replace the PR scope, or the environment has issues you're not allowed to fix.
+
+See Task Verdicts and the four core principles in the Guidelines for the full criteria.
+
+A task won't build, or the environment looks broken — what do I do?
+
+Check the Environment panel in the Guidelines (What you can edit → Environment). It lists exactly which environment problems you're allowed to fix (e.g. a missing bash, an unpinned base image, missing tmux) versus the ones that make a task Not Fixable (e.g. tangled dependency/build failures or external-network dependencies). If it's on the fixable list, correct it; if not, mark the task Not Fixable and explain why.
+
+Git problems are fixable. Leaked fix history, a remote, a HEAD/base-commit mismatch, a reflog, or an oversized .git don't make a task Not Fixable — do the git work inside environment/repo, re-zip, and realign task.toml to HEAD if needed (the shipped repo is the source of truth). See the Git — fixable in the repo panel for the issue-by-issue fixes and a checklist. You still may not edit the repo's tracked source files.
+
+I'm getting a nonzero exit-code agent error — what should I try?
+
+First work through the usual troubleshooting: the Before You Upload checks (build the Dockerfile locally, confirm tests.patch applies to the base commit) and raise the [agent] timeout_sec if runs are timing out. Also confirm your task.toml network_mode is set correctly per block.
+
+If the task still fails with a nonzero exit-code agent error after that, try removing curl from the package installs in your environment/Dockerfile and rebuild. This is a known Harbor edge-case bug the team is working on fixing; for now, dropping the curl install is the simplest workaround, and it only affects a small subset of tasks. If removing curl doesn't resolve it — or the task genuinely needs curl — flag it to the team on the Slack channel with the task/submission UID.
+
+Which network_mode should my task.toml use?
+
+Network access is set per block — don't strip these fields (older guidance to remove network_mode/allowed_hosts is outdated):
+
+[environment] → "public"
+[agent] → "allowlist" with allowed_hosts = ["api.portkey.ai"]
+[verifier] → "no-network"
+
+Also, in docker_compose.yaml, remove network_mode = "none" entirely if present. A few tasks in certain programming languages may still hit edge cases — if you do, flag the details to the team on Slack. See the full example in Task Metadata. If your agent run is failing, also check the nonzero exit-code agent error FAQ.
+
+How should I set the agent timeout, and what if the task keeps timing out?
+
+The timeout is the maximum time the agent gets — set it generously rather than tight, since a low ceiling fails tasks that would otherwise pass.
+
+If the agent is timing out, raise [agent] timeout_sec — up to the maximum of 7200.
+If it still times out at 7200, open the runs/ logs to see where the agent is spending its time — it's often one slow step or a harness issue, not the task as a whole.
+If it genuinely can't finish within 7200, and the only way to make it fit would be reducing or replacing the PR scope (which isn't allowed), mark the task Not Fixable / Invalid and note where it was timing out.
+How do I check the status of a submission?
+
+Use the stb submissions list command to see the current status of your submissions from the CLI — it's the fastest way to check where a task is in the pipeline without waiting on the GUI. If a task appears to intermittently disappear and reappear in the GUI, stb submissions list is the source of truth for its actual state. If the CLI and the GUI disagree, or a submission is stuck, flag it to the team on the Slack channel with the submission UID.
+
+An eval failed with an infra/platform error, or came back with blank feedback — is my task broken?
+
+No — a platform failure is not a task defect. Errors like DaytonaRateLimitError, ApiRateLimitError, sandbox auth/connection errors, a one-off NonZeroAgentExitCode, or a run that comes back with blank feedback / "No evaluation information available" are infra issues on our side, not something wrong with your task. The tell is inconsistency: the same task passes on one run and errors on another, or only 1 of N agent runs fails while the rest are clean.
+
+What to do:
+
+Don't mark the task Not Fixable / Unfixable over it. Infra and platform failures never make a task Unfixable — that verdict is for genuine task defects only.
+Don't burn a revision slot resubmitting blindly. Blank feedback or a dropped result usually means the eval output didn't come through, not that your task failed. Re-running is fine, but don't rework a task that isn't actually broken.
+Retry later. Most of these clear on their own once the platform recovers.
+If it persists, flag it to the team on the Slack channel with the task/submission UID and the exact error. Include whether it's intermittent (passes sometimes) so we can tell an outage apart from a real defect.
+
+When in doubt, check the submission status — the CLI is the source of truth for where the task actually is.
+
+The linter rejects my task as "easy" after a difficulty downgrade — what do I do?
+
+This is a known issue the team is working through. If a task's measured difficulty comes back harder than its metadata, the fix is not to hand-edit the pass-rate/difficulty fields in task.toml to satisfy the reviewer, because the linter rejects tasks it reads as "easy" outright — so changing the metadata to match the measured difficulty and satisfying the linter can pull in opposite directions.
+
+Don't fight the linter by tweaking the metadata back and forth. If you hit this conflict, flag it to the team on the Slack channel with the task/submission UID and the two values that disagree (the linter's difficulty floor vs. the measured/updated metadata). This is a process/tooling gap, not something you can resolve on your own by editing the task.
+
+Do I need to run the oracle and NOP tests locally?
+
+It depends on your verdict:
+
+Valid as-is — yes. These tasks aren't re-run by the platform's difficulty evals, so run the oracle and NOP locally before submitting to confirm the task passes.
+Fixable — optional. The platform's evals run them when you submit, so a local run is just for your own confidence.
+What counts as "changing the PR scope" vs. "adding complexity"?
+
+You may add complexity — build on what the original PR already does. You may not change the scope — turn it into a different task or shrink it.
+
+Say the source PR adds CSV export to a reports page:
+
+✅ Adding complexity: make that same feature more capable or more robust — e.g. also let the user pick which columns to export, or handle edge cases the PR missed (empty results, commas and quotes inside cell values, very large exports).
+❌ Changing the scope: swap it for a different feature (PDF export instead of CSV), replace it with something unrelated, or strip it down to be simpler (export only the current page instead of the full dataset).
+
+Rule of thumb: if the task still clearly maps back to the original PR — just bigger or more thorough — that's adding complexity. If it no longer resembles the PR, or does less than the PR, you've changed the scope, which makes it Not Fixable. See PR scope rules in the Guidelines.

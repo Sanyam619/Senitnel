@@ -62,6 +62,7 @@ if [[ "$DO_HARBOR" -eq 1 ]]; then
     harbor run -p "$TASK_DIR" -a nop || { echo "FAIL  nop (expected 0.0)"; FAIL=1; }
   else
     echo "WARN  harbor CLI not installed — skip or install for local oracle/NOP"
+    echo "WARN  Valid-as-is requires oracle/NOP locally — see docs/TASKING-GUIDE.md"
   fi
 fi
 

@@ -1,6 +1,7 @@
 # Sentinel Guidelines (condensed)
 
-Official Snorkel Sentinel Ultra contributor rules — distilled for daily EC work.
+Official Snorkel Sentinel Ultra contributor rules — aligned with hub docs (Jul 2026).
+Full reference: `docs/hub-scrape/` (static copy of the official hub).
 
 ## Purpose
 
@@ -13,14 +14,14 @@ open-source PRs. Every task must be **correct, complete, and impossible to game*
 |---|-----------|-------|
 | 1 | **Solvable** | Competent engineer can solve from instruction alone; only references real repo artifacts |
 | 2 | **Clarity & no leakage** | Describes problem + behavior, not implementation; no PR URLs, spoilers, or test hints |
-| 3 | **Verifiable** | ≥10 outcome-based fail-to-pass tests; regression guard; deterministic; not gameable |
+| 3 | **Verifiable** | **10–20** outcome-based fail-to-pass tests; regression guard; deterministic; not gameable |
 | 4 | **Authentic** | Real engineering ask (~100+ lines, 2+ files); matches source PR scope |
 
 ## Verdicts
 
 ### Valid as-is
-Instruction, tests, and oracle align with source PR. **Run oracle + NOP locally** before
-submit — platform does not re-run difficulty on Valid as-is.
+Instruction, tests, and oracle align with source PR. **Run oracle + NOP locally before
+submit** — platform does not re-run difficulty evals on Valid as-is.
 
 ### Fixable
 Issues in instruction, tests, oracle, allowed Dockerfile fixes, or git hygiene — you can
@@ -29,15 +30,16 @@ fix all of them.
 Common fixable issues:
 - Over-prescriptive or templated instruction
 - Test gaps or grading undescribed behavior
-- Fewer than 10 fail-to-pass tests
+- Fewer than 10 fail-to-pass tests (add to reach **10–20**)
 - Solution leakage
 - Oracle doesn't match instruction
-- Fixable Dockerfile issues (missing bash/tmux, unpinned base image)
+- Fixable Dockerfile issues (see table below)
 - Git hygiene (see `GIT-HYGIENE.md`)
 
 ### Not Fixable
 - Only fix requires **reducing or replacing PR scope**
-- Environment issues ECs cannot fix (tangled toolchain, external deps at solve time)
+- Environment issues ECs cannot fix (see table below)
+- **Dirty git history that can't be recovered** — rare; most git issues are fixable
 
 ## PR scope rules
 
@@ -67,9 +69,12 @@ Common fixable issues:
 
 **Document required output formats** in instruction — that is not leakage.
 
+**Personas:** casual/Slack, structured ticket, technical memo, prose/email, or acceptance
+criteria — pick one and stay consistent.
+
 ## Test requirements
 
-- **≥10 fail-to-pass** (ideally 10–20)
+- **10–20 fail-to-pass** in `tests/config.json` (platform static check rejects >20)
 - Outcome-based: run code, check behavior — not diff structure or source keywords
 - At least one test reproduces the original failure (fails pre-patch, passes post-patch)
 - Deterministic: fixed seeds, no flaky/order-dependent behavior
@@ -79,25 +84,53 @@ Common fixable issues:
 ### Derivable names
 OK if: already in codebase, standard convention, or explicitly stated in instruction.
 
-## Fixable Dockerfile issues
+## Fixable Dockerfile / environment issues
 
-- Missing bash on Alpine → `apk add bash`
-- Missing tmux / asciinema (Harbor session)
-- Unpinned `:latest` base image
-- Resource limits too low
-- Bad shebang / CRLF / non-executable scripts
-- Missing `frozen-requirements.txt` when Dockerfile COPYs it
+| Issue | Fix |
+|-------|-----|
+| Alpine missing bash | `apk add --no-cache bash` (autocorrect: alpinebashautocorrect) |
+| Missing `environment/frozen-requirements.txt` when Dockerfile COPYs it | Generate file (autocorrect: frozenrequirementsautocorrect) |
+| `tmux` not installed | Harbor needs tmux for agent session — apt/apk install |
+| `asciinema` not installed | Required for terminal recording — install in image |
+| Unpinned `:latest` base image | Pin concrete tag |
+| Resource limits too low / OOM | Bump cpus/memory in `task.toml` within limits |
+| Bad shebang / CRLF / non-executable scripts | Fix in Dockerfile or scripts |
+| Build reproducibility | `apt-get update` before installs; bake test deps into image |
+
+Build **may** use network; **run-time** sandbox restricts agent to model gateway; verifier airgapped.
 
 ## Not fixable environment issues
 
-- Tangled apt/pip/cargo install failures
-- Oracle timeout (may try bumping timeout first)
-- Multi-GB model pulls or live external services at solve time
+| Issue | Why |
+|-------|-----|
+| Tangled apt/pip/cargo install failures | Cannot reliably fix without replacing toolchain |
+| External-network dependency at **solve** time | Agent cannot reach required live services |
+| Multi-GB model pulls or live external services | Not vendorable in allowed fixes |
+| Oracle timeout after max timeout bump | If only fix is reducing PR scope → Not Fixable |
+
+For oracle timeout: try raising `[agent]` / verifier timeouts within limits first.
+
+## Git — fixable in the repo
+
+Inside `environment/repo/` only (never edit tracked source):
+
+| Issue | Fix |
+|-------|-----|
+| HEAD ≠ `base_commit_sha` in task.toml | Realign repo to base; update task.toml to match HEAD |
+| Commits after base / leaked fix history | Reset to base commit |
+| Remotes, stray branches/tags | Remove |
+| Reflog present | Strip `.git/logs` |
+| `.git/` > 100 MB | `git gc`, remove bloat |
+| `filter.*` drivers | Remove from git config |
+
+Run `./scripts/git-hygiene.sh` before every zip.
 
 ## Difficulty
 
 Tasks should be genuinely hard. If fixing issues made it too easy, **expand PR scope**
 (not vague requirements or unrelated stapled changes). Platform difficulty evals catch this.
+
+If Difficulty FAIL EASY after QC/oracle OK → see `SKIP-GUIDE.md`.
 
 ## Network (task.toml)
 
@@ -109,4 +142,15 @@ Tasks should be genuinely hard. If fixing issues made it too easy, **expand PR s
 
 Remove `network_mode = "none"` from `docker_compose.yaml` if present.
 
-Build may use network; **run-time** agent reaches only model gateway; verifier airgapped.
+## Stray artifacts (packaging)
+
+Before zip, sweep task directory — any hit hard-caps packaging score at 1:
+
+```bash
+find . -name '__pycache__' -o -name '*.pyc' -o -name '.DS_Store' \
+  -o -name '.pytest_cache' -o -name '.mypy_cache' -o -name '.ruff_cache' \
+  -o -name '.venv' -o -name 'node_modules' -o -name '.idea' -o -name '.vscode' \
+  -o -name '*.swp' -o -name '*~' -o -name '*.orig' -o -name '*.bak'
+```
+
+Also: no solution material readable from agent paths in built image.

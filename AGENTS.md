@@ -15,10 +15,10 @@ When the user says they added a zip, run Step 0 from `docs/SENTINEL-PROMPTS.md`:
 
 1. Never edit tracked source in `environment/repo/` (git metadata only).
 2. PR scope: expand OK; never reduce or replace source PR.
-3. ≥10 fail-to-pass tests in `tests/config.json`.
+3. **10–20** fail-to-pass tests in `tests/config.json` (platform static check rejects >20).
 4. Never modify pass-to-pass files at base — add via `tests/tests.patch` only.
 5. After instruction edits: `./scripts/sync-problem-statement.sh tasks/active/<name>`.
-6. Before upload: `./scripts/preflight.sh tasks/active/<name> --docker`.
+6. Before upload: `./scripts/preflight.sh tasks/active/<name> --docker` (add `--harbor` for Valid-as-is).
 7. Zip: `./scripts/zip-task.sh tasks/active/<name>` → `tasks/out/<name>.zip`.
 8. Instruction = behavior + success criteria, not implementation plan.
 9. Tests ↔ instruction aligned both ways (Quality Check blocks gaps).
@@ -36,9 +36,13 @@ python3 scripts/validate_task.py tasks/active/<name>
 
 ## Read first
 
-- `docs/EC-LEARNINGS.md` — standing rules + session log (read at start; append at end of every session)
+- `docs/EC-LEARNINGS.md` — standing rules + session log (read at start; append at end)
 - `docs/SENTINEL-PROMPTS.md` — agent playbook (user says "I added foo.zip")
+- `docs/PLATFORM-TRIAGE.md` — infra vs task defects, eval triage
+- `docs/SKIP-GUIDE.md` — when to skip + copy-paste Snorkel skip reasons
 - `docs/QUALITY-CHECK.md` — blocking judge rules
 - `docs/EC-REVIEW-CHECKLIST.md` — review checklist
+- `docs/GUIDELINES.md`, `docs/HARBOR-FORMAT.md`, `docs/GIT-HYGIENE.md`
+- `docs/hub-scrape/` — static copy of official Sentinel Ultra Hub docs
 
 This repo is Sentinel-only — not TB3/TERMINUS authoring.

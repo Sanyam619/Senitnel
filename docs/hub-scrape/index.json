@@ -1,0 +1,55 @@
+{
+  "scrapedAt": "2026-08-02T16:10:22.786Z",
+  "email": "j26.0918.adl@airdawglabs.com",
+  "tabs": [
+    {
+      "id": "whatsnew",
+      "label": "What's New",
+      "file": "whatsnew.txt",
+      "chars": 2384
+    },
+    {
+      "id": "guide",
+      "label": "Guidelines",
+      "file": "guide.txt",
+      "chars": 13174
+    },
+    {
+      "id": "tasking",
+      "label": "Tasking Guide",
+      "file": "tasking.txt",
+      "chars": 35766
+    },
+    {
+      "id": "harbor",
+      "label": "The Harbor Framework",
+      "file": "harbor.txt",
+      "chars": 5928
+    },
+    {
+      "id": "glossary",
+      "label": "Glossary",
+      "file": "glossary.txt",
+      "chars": 3676
+    },
+    {
+      "id": "faq",
+      "label": "FAQ",
+      "file": "faq.txt",
+      "chars": 8093
+    },
+    {
+      "id": "quicklinks",
+      "label": "Quick Links",
+      "file": "quicklinks.txt",
+      "chars": 235
+    },
+    {
+      "id": "changelog",
+      "label": "Changelog",
+      "hashOnly": true,
+      "file": "changelog.txt",
+      "chars": 235
+    }
+  ]
+}
