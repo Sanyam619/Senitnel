@@ -19,15 +19,20 @@ When they say they added a zip, run `./scripts/ingest-task.sh <filename>` first.
 ## Before upload
 
 1. `./scripts/sync-problem-statement.sh tasks/active/<name>`
-2. `./scripts/preflight.sh tasks/active/<name> --docker`
+2. `./scripts/preflight.sh tasks/active/<name>` — clean, including oracle 1.0 / NOP 0.0
 3. `./scripts/zip-task.sh tasks/active/<name>`
 
 ## Hard rules
 
 - Never edit tracked files in `environment/repo/`
-- **10–20** fail-to-pass (platform static check rejects >20); pass-to-pass unchanged at base
+- **11–20** fail-to-pass; pass-to-pass unchanged at base
 - instruction ↔ tests coverage + faithfulness
 - PR scope: expand OK, reduce/replace → Not Fixable
+- `tests.patch` must not create files at paths an agent may also create
+- Revision budget is 2: eval runs are free, reviewer round-trips are not
+  (`docs/REVISION-BUDGET.md`)
+- A rule is decided in one file (see "Where a rule lives" in `AGENTS.md`); when a doc and a
+  check disagree, the check wins — edit the rule at its source, never only at a copy
 
 ## Workflow
 

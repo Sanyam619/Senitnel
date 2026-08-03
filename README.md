@@ -29,11 +29,28 @@ sentinel/                    ← this repo (rename the folder anytime)
 ## Manual commands (optional)
 
 ```bash
-./scripts/ingest-task.sh my-task.zip          # inbox → active
+./scripts/ingest-task.sh my-task.zip                    # inbox → active
 ./scripts/sync-problem-statement.sh tasks/active/my-task
-./scripts/preflight.sh tasks/active/my-task --docker
-./scripts/zip-task.sh tasks/active/my-task
+./scripts/preflight.sh tasks/active/my-task             # + docker build + oracle + NOP
+./scripts/preflight.sh tasks/active/my-task --rubric    # local rubric judge
+./scripts/zip-task.sh tasks/active/my-task              # gated: refuses a bad zip
 ```
+
+## Trusting the gate
+
+`preflight.sh` starts by testing itself. `scripts/selftest.py` builds a throwaway task and
+runs three suites over it in about 7 seconds:
+
+| Suite | Proves |
+|-------|--------|
+| `validator` | `validate_task.py` catches one defect per case, and *every* auto-REMOVE pattern it knows — Python, Go, JS/TS, gtest — is exercised by a case |
+| `shell` | `preflight.sh`, `zip-task.sh`, `git-hygiene.sh`, `sync-problem-statement.sh` and `ingest-task.sh` each reject what they claim to reject |
+| `docs` | `check-docs.py` notices a stale policy number and a dead file reference |
+
+Run one with `python3 scripts/selftest.py --suite shell`. If it fails, fix the tooling before
+reading its verdict on your task — a check that has quietly stopped firing is worse than no
+check, because you trust it. That is not hypothetical: an untested wrapper once reported
+`docker build failed` on four tasks whose environments all build fine.
 
 ## Before every upload
 
@@ -50,9 +67,11 @@ See `docs/EC-REVIEW-CHECKLIST.md` and `docs/SENTINEL-PROMPTS.md`.
 | `docs/HARBOR-FORMAT.md` | Task layout, task.toml, config.json |
 | `docs/GIT-HYGIENE.md` | Git checks on `environment/repo/` |
 | `docs/QUALITY-CHECK.md` | What blocks platform evals |
+| `docs/REVISION-BUDGET.md` | **How not to spend a revision — read before Send to reviewer** |
 | `docs/PLATFORM-TRIAGE.md` | Infra vs task defects, CLI status, known issues |
 | `docs/REVIEWER-GUIDE.md` | Reviewer outcomes and quality score |
 | `docs/EC-REVIEW-CHECKLIST.md` | Review checklist |
 | `docs/SKIP-GUIDE.md` | When to skip + Snorkel skip reason templates |
 | `docs/hub-scrape/` | Static copy of official Sentinel Ultra Hub documentation |
+| `docs/hub-scrape/guide-panels.txt` | The hub's collapsible panels (`scripts/fetch-hub-panels.py`) |
 | `templates/submission-notes.md` | Snorkel form copy-paste templates |

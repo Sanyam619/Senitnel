@@ -26,20 +26,24 @@ mistakes to Standing rules.
 
 Always read first: `docs/EC-LEARNINGS.md` (standing rules), `AGENTS.md`, `docs/GUIDELINES.md`,
 `docs/EC-REVIEW-CHECKLIST.md`, `docs/QUALITY-CHECK.md`, `docs/HARBOR-FORMAT.md`, `docs/GIT-HYGIENE.md`,
-`docs/PLATFORM-TRIAGE.md`, `docs/SKIP-GUIDE.md`.
+`docs/PLATFORM-TRIAGE.md`, `docs/REVISION-BUDGET.md`, `docs/SKIP-GUIDE.md`.
 
 ---
 
 ## Hard rules (every step)
 
 1. Never edit tracked files in `environment/repo/` (git metadata only).
-2. **10–20** fail-to-pass tests in `tests/config.json` (platform rejects >20).
+2. **11–20** fail-to-pass tests in `tests/config.json`.
 3. pass-to-pass files unchanged at base — add tests only via `tests/tests.patch`.
 4. PR scope: expand OK; reduce/replace → **Not Fixable**.
 5. After any `instruction.md` edit: `./scripts/sync-problem-statement.sh tasks/active/<name>`.
 6. Instruction = behavior + success criteria, not an implementation plan.
 7. Tests ↔ instruction aligned both ways (coverage + faithfulness).
-8. Before upload: preflight PASS, then zip.
+8. Before upload: preflight PASS **including oracle 1.0 / NOP 0.0**, then zip.
+9. Never place `tests.patch` files at paths an agent may create — use `eval_*` or a
+   verifier-only directory.
+10. Revision budget is 2. Eval runs are free; reviewer round-trips are not. Converge locally
+    first — see `docs/REVISION-BUDGET.md`.
 
 ---
 
@@ -61,7 +65,7 @@ Read the unpacked task under `tasks/active/` (and `tasks/active/<name>_runs/` if
 2. Whether `runs/` exists — one-line summary of agent failures/timeouts if so
 3. Sanity: `instruction.md`, `task.toml`, `environment/repo/.git`, `tests/config.json`,
    `tests/tests.patch`, `solution/golden.patch`, `environment/Dockerfile` all present?
-4. Fail-to-pass count from `config.json` (need **10–20**)
+4. Fail-to-pass count from `config.json` (need **11–20**)
 5. Source PR URL from `task.toml` `[metadata].source`
 6. **Continue to Step 1** OR list blockers (corrupt zip, missing repo, patch won't apply)
 
@@ -94,14 +98,14 @@ Source PR vs what instruction + `golden.patch` implement. Scope expansion presen
 ### Four principles (pass/fail + one-line evidence each)
 1. Solvable
 2. Clarity & no leakage
-3. Verifiable (**10–20** f2p, outcome-based, deterministic)
+3. Verifiable (**11–20** f2p, outcome-based, deterministic)
 4. Authentic (~100+ lines, 2+ files, real engineering ask)
 
 ### Issue list
 Numbered, file refs, tagged: `Instructions` | `Tests` | `Oracle` | `Dockerfile` | `Git` | `Metadata`
 
 ### Test inventory
-- f2p count vs **10–20** range
+- f2p count vs **11–20** range
 - p2p count
 - skip / skipif / fail-open / exists-only / overreach patterns?
 
@@ -165,22 +169,20 @@ Fix everything needed for Snorkel **Accept**. Work in `tasks/active/<name>/`.
 ### Part B — Scripts (fix and re-run until PASS)
 ```bash
 ./scripts/sync-problem-statement.sh tasks/active/<name>
-./scripts/preflight.sh tasks/active/<name> --docker
+./scripts/preflight.sh tasks/active/<name>            # structure, git, docker, oracle, NOP
+./scripts/preflight.sh tasks/active/<name> --rubric   # local rubric judge
 ```
 
-**Valid as-is (required):** also run oracle + NOP locally — platform does not re-run difficulty
-evals on Valid-as-is. Use Harbor if installed:
-```bash
-./scripts/preflight.sh tasks/active/<name> --docker --harbor
-```
-If harbor CLI unavailable, run oracle/NOP manually per `docs/TASKING-GUIDE.md` before upload.
-
-**Fixable (recommended):** add `--harbor` when available; platform runs evals on submit but
-local run saves an eval round-trip.
+Oracle and NOP run by default. Required for Valid-as-is (the platform never re-runs them);
+do it for Fixable too, because an oracle failure found after Send to reviewer costs a
+revision. Use `--fast` only for mid-edit iteration, never as the upload gate.
 
 ### Part C — Oracle/NOP
 - Oracle reward = **1.0**?
 - NOP reward = **0.0**?
+
+Every preflight WARN must be fixed or consciously accepted. If accepted, it goes in Comments
+for Reviewer — an unexplained warning is what a reviewer turns into a revision.
 
 **Report:** `READY FOR UPLOAD` yes/no. If no, exact blockers with file refs.
 
@@ -242,8 +244,10 @@ Write copy-paste Snorkel platform form content (plain engineer tone). Use
 
 Also print the internal pre-submit checklist (not pasted into form).
 
-Tell the user to upload `tasks/out/<name>.zip` to Snorkel and run evals (~5 min platform
-limit per eval batch — iterate before checking Send to reviewer).
+Tell the user to upload `tasks/out/<name>.zip` to Snorkel and run evals with **Send to
+reviewer unchecked** (~5 min platform limit per eval batch). Eval runs are free; reviewer
+round-trips are not — only check the box once every check is green
+(`docs/REVISION-BUDGET.md`).
 
 Then **append a session log entry to `docs/EC-LEARNINGS.md`** (see template there).
 
@@ -272,7 +276,7 @@ Run sync-problem-statement. Re-check coverage/faithfulness. Continue Step 3.
 **When:** Step 1 or platform eval flags test gaps, overreach, skips, or fail-open patterns.
 
 Work on `tests/` only:
-- **10–20** f2p in `config.json`
+- **11–20** f2p in `config.json`
 - Every instruction requirement → ≥1 assertion
 - Every assertion → instruction or derivable name
 - Hard edge cases, not trivial exists/touch checks

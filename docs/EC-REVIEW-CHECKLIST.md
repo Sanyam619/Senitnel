@@ -19,7 +19,9 @@ Print or keep open while reviewing. Goal: **Accept** (quality score 4–5).
 
 ## Phase 3 — Tests (most rejections happen here)
 
-- [ ] Count fail-to-pass in `config.json` — **10–20** (platform rejects >20)
+- [ ] Count fail-to-pass in `config.json` — **11–20**
+- [ ] Every f2p id is traceable into `tests.patch` (an unmatched id pins reward at 0)
+- [ ] `allow_extra_failures` is `false`
 - [ ] Map each instruction requirement → ≥1 test (coverage)
 - [ ] Map each test assertion → instruction or derivable name (faithfulness)
 - [ ] Regression test: reproduces original bug (fail pre-fix, pass post-fix)
@@ -40,7 +42,8 @@ Print or keep open while reviewing. Goal: **Accept** (quality score 4–5).
 ## Phase 5 — Environment & packaging
 
 - [ ] `task.toml` network blocks correct
-- [ ] `gpus = 0`; timeouts within limits
+- [ ] `gpus = 0`; cpus 2/4; memory 2048–16384; storage 5120–10240
+- [ ] `[agent] timeout_sec` at the 7200 ceiling; verifier ≤1800; build ≤1800
 - [ ] Dockerfile builds locally
 - [ ] Base image pinned (not `:latest`)
 - [ ] tmux/asciinema/bash present if needed
@@ -57,13 +60,17 @@ Print or keep open while reviewing. Goal: **Accept** (quality score 4–5).
 ```bash
 ./scripts/ingest-task.sh <zip-in-inbox>
 ./scripts/sync-problem-statement.sh tasks/active/<task>
-./scripts/preflight.sh tasks/active/<task> --docker
+./scripts/preflight.sh tasks/active/<task>            # docker + oracle 1.0 + NOP 0.0
+./scripts/preflight.sh tasks/active/<task> --rubric   # local rubric judge
 ./scripts/zip-task.sh tasks/active/<task>
 ```
 
-- [ ] Upload zip → run evals until all green (see `PLATFORM-TRIAGE.md` for infra vs task failures)
+- [ ] Preflight clean — every WARN fixed or explained in Comments for Reviewer
+- [ ] Upload zip with **Send to reviewer unchecked** → run evals until all green
+      (see `PLATFORM-TRIAGE.md` for infra vs task failures)
 - [ ] Quality Check: test_coverage + test_faithfulness OK
 - [ ] Fill submission form using `templates/submission-notes.md`
+- [ ] Read `REVISION-BUDGET.md` before checking Send to reviewer
 
 ## Common fix patterns that get accepted
 

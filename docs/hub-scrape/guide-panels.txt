@@ -1,0 +1,224 @@
+Sentinel Ultra Hub — collapsible panels
+
+Extracted 2026-08-03 from https://snorkel-ai.github.io/Sentinel_Ultra_Hub/assets/index-f4197387.js
+via scripts/fetch-hub-panels.py.
+
+The HTML scrape in guide.txt records these <details> sections as empty
+headers, so this file is the only local source for the environment,
+git, oracle, and verifiability tables. Prose and tables are faithful;
+fenced code blocks come through lossy.
+
+
+==============================================================================
+[panel: test-instruction-alignment]
+==============================================================================
+
+## Test ↔ instruction alignment
+
+Tests should map 1:1 with the instruction's requirements; the agent must be able to pass them using only the instruction and the environment. Check both directions:
+
+| Direction | Requirement
+| Instruction → Tests | Every required behavior is tested.
+| Tests → Instruction | Every assertion maps to something stated or reasonably implied.
+| No hidden checks | Tests don't grade behavior the instruction never asked for.
+
+Tests likely need a rewrite when they enforce undescribed behavior, require non-derivable names/paths/formats, over-constrain implementation, depend on verifier internals or hidden fixtures, can be passed by editing the tests, or miss/partially cover major requirements.
+
+
+==============================================================================
+[panel: at-least-10-fail-to-pass-tests]
+==============================================================================
+
+## At least 10 fail-to-pass tests
+
+Every task must ship with at least 10 fail-to-pass tests — the single most important guard against reward hacking and the main way to ensure sufficient behavioral coverage. If the task arrives with fewer than 10, mark it Fixable and add tests during your rewrite to reach at least 10 — ideally 10–20. Added tests must cover requirements stated or reasonably implied in the instruction (never undescribed behavior).
+
+
+==============================================================================
+[panel: outcome-based-tests]
+==============================================================================
+
+## Outcome-based tests
+
+Tests must verify observable behavior by running code and checking results — invoking the corrected API, querying a service, inspecting runtime output. They must not grade by patch structure, diff format, line numbers, file names, or source-code keyword matching, and must not be satisfiable by hardcoding or special-casing expected values.
+
+
+==============================================================================
+[panel: regression-test-required]
+==============================================================================
+
+## Regression test required
+
+The suite must include at least one test that directly reproduces the failure described in the issue — it fails on the pre-patch repo and passes after the fix.
+
+
+==============================================================================
+[panel: deterministic-and-fast]
+==============================================================================
+
+## Deterministic and fast
+aria-hiddentrue
+
+Tests must use deterministic inputs, seeds, and assertions, with no flaky or order-dependent behavior, and must finish within the configured timeout. Scope long suites to the relevant subset.
+
+
+==============================================================================
+[panel: independent-of-the-oracle]
+==============================================================================
+
+## Independent of the oracle
+
+Tests must not import or call the golden solution, compare against files created only by the solution, or otherwise depend on solution-side artifacts. Any fixtures or mock data must be committed into the verifier image so the agent cannot tamper with them.
+
+
+==============================================================================
+[panel: the-arbitrary-naming-problem]
+==============================================================================
+
+## The arbitrary naming problem
+
+A common alignment failure: tests expect a specific name the instruction never gave — a function/method/class name, exact error string, output format (JSON keys, log format), new module/file name, or CLI flag / config key.
+
+A name is derivable (and therefore acceptable) only if it:
+
+- already exists in the base codebase being modified (e.g. an existing parsedate()),
+- follows a standard language/framework convention (e.g. Python str, standard REST resource names), or
+- is explicitly stated in the instruction.
+
+Example — Invalid but Fixable: instruction says "Add a feature to validate emails," but the test asserts validateemailaddress(email) = True. The instruction never specified that name → add it in your rewrite.
+
+To catch it: list the names/formats the instruction explicitly specifies → scan the tests for expected names → flag any that aren't derivable.
+
+
+==============================================================================
+[panel: instructions-editable]
+==============================================================================
+
+## ✅ Instructions — editable
+
+Rewrite overly prescriptive instructions to mirror real-world engineering tasks. Focus on expected behavior, constraints, and observable outcomes, while still requiring standard codebase investigation.
+
+| ❌ Overly Prescriptive | ✅ Preferred Instructions
+| “The test testdownloadpackagesresumeonmirrorswitch uses /yum/partial and /yum/rangeonly to verify resume behavior.” | “When a resumed download fails after writing a valid partial file, retrying against another mirror should preserve the partial data and request only the remaining bytes.”
+| “Fix the range() call inside the list comprehension that creates schemas.SlotBase*.*” | “Generated slots must never extend past the schedule’s availability end time.”
+| “The hook should expose handleScrollContainerWheel because the tests reference this name.” | “The hook should expose a stable wheel handler for the scroll container.”
+
+
+==============================================================================
+[panel: tests-editable]
+==============================================================================
+
+## ✅ Tests — editable
+
+- Map tests 1:1 with the instruction's requirements. 
+- Ensure the suite has at least 10 fail-to-pass tests (ideally 10–20); if it's short, add tests covering requirements stated or reasonably implied in the instruction. 
+- Keep them flexible enough to allow multiple valid implementations where appropriate. 
+- Don't introduce arbitrary names, strings, paths, or formats that aren't derivable from the instruction. 
+- Validate observable behavior, not implementation details.
+
+Example config.json — tells the harness how to run the suite and which test ids decide the reward. fail_to_pass is the required, non-empty list; pass_to_pass is the regression guard.
+
+executioncommandspython -m pytest -q tests/test_resume.pytimeout_secgradingfail_to_passtests/test_resume.py::test_partial_file_preservedtests/test_resume.py::test_range_request_on_retrypass_to_passtests/test_resume.py::test_basic_downloadparserframeworkpytestresult_sourcestdout_stderrartifactsreward/logs/verifier/reward.txt
+
+Example test.sh — applies the tests, runs the suite, and writes the reward to the path Harbor reads. The exit code should match the reward it writes.
+
+1.00.0
+
+
+==============================================================================
+[panel: solution-oracle-editable-in-two-cases]
+==============================================================================
+
+## ✅ Solution & oracle — editable in two cases
+
+You may edit solve.sh / golden.patch in two cases: (1) to correct an oracle that does not implement the instruction, or (2) to expand PR scope to increase difficulty. When you do:
+
+- Match the canonical fix. The solution should correspond to the actual fix from the source PR — not an alternative you invented. Only diverge if the upstream fix is genuinely unavailable or unsuitable, and document why. 
+- No unnecessary changes. The patch should contain only what's needed to resolve the task. Don't fold in unrelated refactors, style cleanups, or drive-by edits. 
+- The expanded oracle must still resemble the source PR (anchor preserved, with additions) — never reduce or replace its intent. 
+- Update the instruction and tests in lockstep so the trio stays internally consistent, and the instruction reads as one realistic ask, not a tacked-on list. 
+- If you expanded scope, re-run the difficulty eval to confirm the task now clears the bar.
+
+If a fix would require reducing or replacing the PR's behavior, mark the task Not Fixable instead.
+
+
+==============================================================================
+[panel: environment-limited-fixes]
+==============================================================================
+
+## ⚠️ Environment — limited fixes
+
+problem_statement.md must be an exact copy of instruction.md. Check before submitting that the two files are identical — if you edit the instruction, copy the same content into problem_statement.md. (We're working to automate this so you don't have to do it in future!)
+
+You may make only specific, allowed fixes to the environment (chiefly environment/Dockerfile). Use the tables below to decide whether an environment issue is within the limited fixes you can make — otherwise the task is Not Fixable.
+
+Many environment failures are catchable before you submit — the local Docker build, the tests.patch-applies-to-base check, git-history hygiene, and the stray-artifact sweep are all in the Before You Upload checklist in the Tasking Guide.
+
+Fixable environment issues
+
+| Issue | What's happening | Fix
+| Alpine image missing bash | solve.sh/test.sh use a bash shebang but Alpine ships only ash (saw 55x) | apk add -no-cache bash. Has autocorrect: alpinebashautocorrect.
+| Missing environment/frozen-requirements.txt | Dockerfile COPYs it but it's absent (saw 683x) | Generate it. Has autocorrect: frozenrequirementsautocorrect.
+| tmux not installed in the task image | Harbor drives the agent/verifier inside a tmux pane; no tmux means the session never starts and the run errors before tests | apt-get install y tmux / apk add -no-cache tmux. Good autocorrect candidate.
+| asciinema not installed | Harbor records the terminal session with asciinema; a missing binary breaks the run | apt-get install y asciinema / pip install asciinema / apk add asciinema
+| Unpinned base image (FROM ...:latest) | Reproducibility failure | Pin to a concrete tag
+| DownloadVerifierDirError / verifier-output-not-found | When caused by the above (bash/sh mismatch, missing artifact path, missing tmux/asciinema) | Fix the upstream cause
+| Resource limits too low | Build OOM / disk-full from undersized cpus/memorymb/storagemb | Bump limits
+| Bad shell/shebang, CRLF line endings, non-executable scripts | Script fails to exec | Normalize / chmod x
+| Stray pipeline artifacts / wrong metadata blocking build prep | e.g. metadata.json in root, cpp vs c++, missing language. Strictly metadata, but they gate the task before it builds. | Clean up
+
+Not Fixable environment issues
+
+| Issue | When it's defensible
+| Image/dependency build failures | apt/pip/npm/cargo install errors, missing system libs, compiler flags. Adding a missing dev package or flag is under worth fixing; a tangled toolchain/version conflict is not.
+| Oracle timeout | harbor run timed out after n seconds. Can try bumping the timeout.
+| External-network dependency at build/solve time | curl/wget/HF/model pulls against a restricted or flaky sandbox. Vendoring one small file is under fixable; a multi-GB model pull or live external service is not.
+
+Git-repository problems (leaked fix history, remotes, a HEAD/base-commit mismatch, reflog, an oversized .git) are handled separately — see Git — fixable in the repo below. Most of them are fixable.
+
+
+==============================================================================
+[panel: git-fixable]
+==============================================================================
+
+## ✅ Git — fixable in the repo
+
+The shipped repo (environment/repo/) is a real git checkout, and its HEAD is the source of truth for the task. Git problems are fixable: do the git work inside environment/repo, then re-zip the task. You may clean git metadata (remotes, stray branches/tags, reflog, .git size) and realign task.toml to HEAD — but you must still never edit the repo's tracked source files, since that's what anchors the task to the real PR.
+
+When HEAD and the base_commit_sha declared in task.toml disagree, the shipped repo (HEAD) wins — realign the declared commit to HEAD. This misalignment mostly shows up on older tasks authored before a static-asset-generation fix; newer tasks generate the two in sync.
+
+Common git issues and how to fix them
+
+| Issue | Why it matters | Fix
+| .git missing | No .git means there's no repo for the agent to work in — usually a zip tool that dropped dotfiles | Make sure environment/repo/ is a real repo and .git/ is in the zip
+| HEAD doesn't resolve | A detached, empty, or corrupt HEAD can't be checked out | Ensure the repo has at least one commit and HEAD points at it (git rev-parse --verify HEAD)
+| HEAD ≠ declared base commit | The agent must start from the commit task.toml declares; the shipped repo (HEAD) is the source of truth | git checkout <base_commit_sha>, or edit task.toml so its base commit equals HEAD
+| Commits / branches / tags beyond HEAD | Any ref past HEAD can carry the fix history and leak the answer, making the difficulty signal worthless | Delete them so git rev-list --all --not HEAD is empty; ship a single branch at the base commit with no stray tags
+| Remote configured | An escape hatch to external history and an untrusted-config surface; tasks must be self-contained and offline | git remote remove <name> for each remote
+| Filter drivers (filter.*) | clean/smudge drivers are arbitrary commands git can run (e.g. on git status) — a security risk and non-reproducible | Remove every filter.* section from .git/config
+| Dirty working tree | Uncommitted or untracked changes make the start non-reproducible, and an uncommitted solution leaks the answer | Commit or discard until git status --porcelain prints nothing
+| Reflog present (.git/logs) | Records rewound commits (like your solution) and bloats the repo | git reflog expire --expire=now --all && git gc --prune=now, then remove .git/logs
+| .git over 100 MB | Almost always accidental large blobs; slows every trial and wastes storage | git gc --aggressive --prune=now; if still large, strip big blobs or ship a fresh single-commit base history (then reset the base commit in task.toml)
+| tests/tests.patch won't apply | A patch cut against a different base fails on every trial and invalidates the run | Fix HEAD == base commit first, then regenerate the patch against the shipped repo state
+
+Pre-submission checklist — run inside environment/repo before you re-zip; every line should be clean or empty.
+
+^filter\.
+
+How to zip the task
+
+Zip the flat contents of task/ — not the folder, not runs/. Your zip tool must store directory entries (zip -r does; some GUI tools and zip -rD don't, and silently drop the empty .git/refs/ that git gc leaves behind, which breaks the repo on the platform).
+
+*.DS_Store__MACOSX/*
+
+The Before You Upload checklist in the Tasking Guide has more on regenerating tests.patch when it doesn't apply.
+
+
+==============================================================================
+[panel: repo-files-never-edit]
+==============================================================================
+
+## ❌ Repo source files — never edit
+aria-hiddentrue
+
+Never edit the tracked source files inside environment/repo/. The task is anchored to the real base repository; changing its code breaks that grounding and is not allowed. This is separate from git hygiene — cleaning .git metadata and restoring the tree to the base commit (see Git — fixable in the repo) is allowed and expected.

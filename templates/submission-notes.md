@@ -317,12 +317,13 @@ Optional context for reviewer — assumptions, edge cases, anything worth flaggi
 
 ## Internal checklist (NOT on platform — verify before Submit)
 
-- [ ] 10–20 fail-to-pass in config.json (platform rejects >20)
+- [ ] 11–20 fail-to-pass in config.json (the checkbox reads "More than 10")
 - [ ] Coverage + faithfulness both directions
 - [ ] problem_statement.md == instruction.md
 - [ ] tests.patch applies to base commit
 - [ ] Git hygiene clean
-- [ ] preflight PASS
+- [ ] preflight PASS including oracle 1.0 / NOP 0.0
+- [ ] All platform checks green with Send to reviewer still unchecked
 - [ ] Verdict matches twice
 - [ ] Fixable: all 8 confirmation boxes honestly checked
 - [ ] Invalid: cited GUIDELINES rule; no corrected zip required

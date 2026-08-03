@@ -149,7 +149,7 @@ Each fix causes [specific regression]. Low probability of Accept vs EC time. Ski
 
 ## Agent workflow
 
-1. Step 1 or Step 5: check skip criteria above.
+1. Step 1 or eval triage: check skip criteria above.
 2. If skip recommended, tell user:
    - **Skip recommended** + which criterion
    - Platform radio to pick

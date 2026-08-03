@@ -44,11 +44,14 @@ else
   echo "WARN  base_commit_sha not found in task.toml — verify HEAD manually"
 fi
 
+# Only sees commits parked on another ref (stray branch or tag). A commit made on
+# HEAD's own branch moves HEAD, so the base_commit_sha comparison above is what
+# catches that — which is why a missing base_commit_sha is worth fixing.
 if [[ -z "$(git rev-list --all --not HEAD 2>/dev/null || true)" ]]; then
   echo "PASS  no commits beyond HEAD"
 else
   echo "FAIL  leaked commits/branches/tags beyond HEAD"
-  git rev-list --all --not HEAD 2>/dev/null | head -5
+  git rev-list --all --not HEAD 2>/dev/null | head -5 || true
   FAIL=1
 fi
 

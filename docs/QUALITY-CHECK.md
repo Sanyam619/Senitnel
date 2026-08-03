@@ -41,6 +41,11 @@ If a judge scores ≤2 and cites one of these, task is removed outright:
 | **Fail-open** | `if not output.exists(): return`, broad try/except, gated assertions |
 | **Overreach** | Names/formats/thresholds not in instruction and not derivable |
 
+`validate_task.py` catches the mechanical forms of these (`@pytest.mark.skip`,
+`importorskip`, `t.Skip`, `it.skip`/`xit`, `.only`, `GTEST_SKIP`, `DISABLED_`, empty
+`catch {}`, `except ... pass`, exists-guard returns, unpaired existence checks). Overreach
+and no-CLI-invocation still need a human read.
+
 ## Test-writing checklist
 
 **Do:**
@@ -67,13 +72,37 @@ If a judge scores ≤2 and cites one of these, task is removed outright:
 
 ## Self-audit before upload
 
+Steps 1–4 are judgment and cannot be automated — they are also what the judge scores.
+
 1. List every requirement sentence in `instruction.md`
-2. For each, find ≥1 test assertion (coverage)
-3. List every assertion in patched tests
-4. For each, find instruction grounding or derivable codebase name (faithfulness)
-5. Count f2p entries in `config.json` — need **10–20** (platform rejects >20)
-6. Grep tests for `skip`, `pytest.importorskip`, bare `exists()`, `try:...except: pass`
+2. For each, name ≥1 test assertion that enforces it (coverage)
+3. List every assertion in the patched tests
+4. For each, cite instruction grounding or a derivable codebase name (faithfulness)
+
+Then let the tooling cover the mechanical half. `validate_task.py` reads the added lines of
+`tests.patch` — where the real tests live — and flags the auto-REMOVE patterns across
+Python, Go, JS/TS and gtest, plus f2p count, id traceability, and patch integrity:
 
 ```bash
-python3 scripts/validate_task.py tasks/active/<task> --strict
+python3 scripts/validate_task.py tasks/active/<task>
+./scripts/preflight.sh tasks/active/<task> --rubric   # local rubric judge
 ```
+
+`--rubric` runs `harbor check`, the closest local stand-in for this blocking eval. Fix what
+it cites before uploading — it costs nothing, unlike a revision.
+
+### Enabling the rubric judge
+
+`harbor check` calls Anthropic directly and needs a key of your own; the Portkey host in
+`[agent] allowed_hosts` is for the agent inside the trial, not for this. Without the key it
+exits after roughly 20 seconds, so preflight checks for it first and tells you rather than
+letting you wait:
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+./scripts/preflight.sh tasks/active/<task> --rubric
+```
+
+The report lands in `.preflight/<task>/rubric.json` with `rubric.log` beside it. **Not yet
+run in this workspace** — the wiring is tested up to the credential check and no further, so
+treat the first successful run as new information and record what the JSON actually contains.

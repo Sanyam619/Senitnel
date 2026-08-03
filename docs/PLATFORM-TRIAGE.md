@@ -29,8 +29,10 @@ These reproduce identically every run. Resubmitting unchanged zip always fails t
 |---------|-----|
 | `tests.patch` won't apply | Regenerate from base commit; see `TASKING-GUIDE.md` |
 | 0/8 valid trials — infra/harness | Usually patch apply, git hygiene, or packaging |
-| Static check: f2p count | Must be **10–20** in `config.json` |
+| 0/N trials after agents wrote tests | `tests.patch` targets a path the agent also creates — rename to `eval_*` or a verifier-only dir, and tell the agent to leave test files alone |
+| Static check: f2p count | Must be **11–20** in `config.json` |
 | Packaging axis cap at 1 | Stray artifacts (`node_modules`, `__pycache__`, `.DS_Store`, etc.) |
+| Reward always 0 despite passing tests | An f2p id in `config.json` that the runner never reports |
 
 ## Agent nonzero exit code
 
@@ -62,3 +64,6 @@ Use when GUI flickers or disagrees with actual pipeline state.
 
 Platform eval button has a **~5 minute** limit. For Fixable tasks, run evals and iterate
 **before** checking Send to reviewer on final submit.
+
+Eval runs cost nothing; a reviewer round-trip costs one of two revisions. See
+`docs/REVISION-BUDGET.md`.

@@ -1,5 +1,9 @@
 # Harbor Framework — task structure
 
+Canonical for the task layout, `task.toml` schema, and the published resource limits. The
+enforced values live in `scripts/validate_task.py`; change them there and here together, or
+`scripts/check-docs.py` will fail.
+
 ## Directory layout
 
 ```
@@ -28,35 +32,75 @@
 3. Reward written to `/logs/verifier/reward.txt`
 4. **1.0** = all fail-to-pass pass + no pass-to-pass regressions
 
-## task.toml schema
+## task.toml — published limits
+
+`validate_task.py` enforces every row of this table.
+
+| Block | Field | Allowed |
+|-------|-------|---------|
+| `[environment]` | `os` | e.g. `linux` |
+| | `cpus` | 2 or 4 |
+| | `memory_mb` | 2048–16384 |
+| | `storage_mb` | 5120–10240 |
+| | `gpus` | always 0 |
+| | `build_timeout_sec` | max 1800 |
+| | `network_mode` | `"public"` |
+| `[agent]` | `network_mode` | `"allowlist"` |
+| | `allowed_hosts` | `["api.portkey.ai"]` |
+| | `timeout_sec` | max **7200** — set it at the ceiling; a tight limit fails tasks that would pass |
+| `[verifier]` | `network_mode` | `"no-network"` |
+| | `timeout_sec` | max 1800 |
+
+Only the source, verifier, agent, and environment timeouts affect validity. Never strip the
+per-block `network_mode` fields, and remove `network_mode = "none"` from
+`docker_compose.yaml` if present.
+
+## task.toml — as it actually ships
+
+The hub's example is trimmed. Real Sentinel tasks carry more `[metadata]`, and timeouts
+arrive as floats:
 
 ```toml
-schema_version = "1.3"   # Harbor format version (NOT task content version)
-
-[environment]
-os                = "linux"
-cpus              = 2          # 2 or 4
-memory_mb         = 2048       # 2048–16384
-storage_mb        = 5120       # 5120–10240
-gpus              = 0          # always 0
-build_timeout_sec = 600        # max 1800
-network_mode      = "public"
-
-[agent]
-network_mode  = "allowlist"
-allowed_hosts = ["api.portkey.ai"]
-timeout_sec   = 300            # max 7200 — raise if agents timeout
-
-[verifier]
-network_mode = "no-network"
-timeout_sec  = 120             # max 1800
+schema_version = "1.3"           # Harbor format version, NOT the task content version
 
 [metadata]
-category               = "..."
-difficulty_explanation = "..."
-source                 = "https://github.com/org/repo/pull/1234"
-# base_commit_sha may appear — must match environment/repo HEAD
+category               = "implementation"
+subcategory            = "feature"
+coding_language        = "go"
+repo_name              = "opensandbox"
+repo_license           = "Apache-2.0"
+source_pr_url          = "https://github.com/org/repo/pull/183"
+source                 = "https://github.com/org/repo/pull/183"   # legacy alias
+base_commit_sha        = "f755a673..."   # must equal environment/repo HEAD
+model_difficulty       = "medium"
+difficulty             = "hard"          # legacy alias
+tags                   = ["egress", "nftables"]
+pass_at_k_opus_4_8     = "0/3"           # measured, do not hand-edit
+pass_at_k_gpt_5_5      = "0/3"
+hardening_cycles       = "2"
+agent_hardened         = "true"
+
+[environment]
+cpus = 4
+memory_mb = 8192
+storage_mb = 10240
+gpus = 0
+build_timeout_sec = 900.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 7200.0
+network_mode = "allowlist"
+allowed_hosts = ["api.portkey.ai"]
+
+[verifier]
+timeout_sec = 300.0
+network_mode = "no-network"
 ```
+
+**Do not hand-edit `pass_at_k_*`, `model_difficulty`, or `difficulty`** to satisfy a
+difficulty complaint — the linter rejects tasks it reads as "easy" and the two goals pull
+against each other. Flag the conflict instead (`PLATFORM-TRIAGE.md`).
 
 ## config.json shape
 
@@ -80,7 +124,10 @@ source                 = "https://github.com/org/repo/pull/1234"
 }
 ```
 
-**fail_to_pass** must have **10–20** entries (platform static check rejects >20).
+**fail_to_pass** must have **11–20** entries, and every id must be traceable into
+`tests.patch` — an id the runner never reports pins the reward at 0. Set
+`allow_extra_failures: false` so unrelated failures cannot be ignored. (Floor and ceiling
+rationale: `GUIDELINES.md` → Test requirements.)
 
 ## test.sh pattern
 
